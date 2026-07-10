@@ -1,0 +1,20 @@
+{
+  "name": "Go",
+  "node_id": "go_v4",
+  "parent_id": "languages_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "编程语言",
+  "children": [
+    "Goroutine",
+    "Channel"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Go是Google开发的编译型语言，简洁高效，原生支持并发。goroutine和channel是Go的标志性特性。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

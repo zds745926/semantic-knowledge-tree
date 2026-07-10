@@ -1,0 +1,20 @@
+{
+  "name": "进程间通信 IPC",
+  "node_id": "proc_comm_v4",
+  "parent_id": "proc_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "进程与线程管理",
+  "children": [
+    "管道",
+    "共享内存"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "进程间通信方式包括管道、共享内存、信号量、消息队列和套接字。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Bash 控制流",
+  "node_id": "bash_control_v4",
+  "parent_id": "shell_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Shell 脚本",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Bash 控制流",
+      "uri": "knowledge://bash_control_v4",
+      "content_preview": "if/for/while/case。条件判断[[ ]]。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "virtualenv",
+  "node_id": "py_virtualenv_v4",
+  "parent_id": "py_venv_branch_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "虚拟环境",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "virtualenv",
+      "uri": "knowledge://py_virtualenv_v4",
+      "content_preview": "virtualenv创建隔离环境。比venv更早，支持Python 2。--system-site-packages。"
+    }
+  ],
+  "related_nodes": []
+}

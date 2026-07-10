@@ -1,0 +1,21 @@
+{
+  "name": "短作业优先 SJF",
+  "node_id": "sjf_v4",
+  "parent_id": "sched_algo_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "调度算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "短作业优先 SJF",
+      "uri": "knowledge://sjf_v4",
+      "content_preview": "选最短CPU突发时间的进程。平均等待最小。无法预知。"
+    }
+  ],
+  "related_nodes": []
+}

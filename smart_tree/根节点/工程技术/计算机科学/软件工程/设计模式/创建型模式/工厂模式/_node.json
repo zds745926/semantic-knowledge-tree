@@ -1,0 +1,21 @@
+{
+  "name": "工厂模式",
+  "node_id": "factory_v4",
+  "parent_id": "creational_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "创建型模式",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "工厂模式",
+      "uri": "knowledge://factory_v4",
+      "content_preview": "简单工厂/工厂方法/抽象工厂。解耦客户端和具体类。"
+    }
+  ],
+  "related_nodes": []
+}

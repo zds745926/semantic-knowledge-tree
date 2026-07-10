@@ -1,0 +1,22 @@
+{
+  "name": "语言核心",
+  "node_id": "py_core_v4",
+  "parent_id": "python_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "Python",
+  "children": [
+    "变量与类型系统",
+    "控制流",
+    "函数",
+    "字符串"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python语言核心包括变量与类型系统、控制流、函数定义、字符串操作等基础语法要素。Python的设计哲学强调简洁和可读性，'Pythonic'代表符合语言习惯的高质量代码风格。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

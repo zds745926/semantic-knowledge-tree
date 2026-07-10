@@ -1,0 +1,21 @@
+{
+  "name": "CDN",
+  "node_id": "cdn_v4",
+  "parent_id": "app_layer_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "应用层协议",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "CDN",
+      "uri": "knowledge://cdn_v4",
+      "content_preview": "全球缓存节点。请求到最近节点。回源获取。边缘计算。"
+    }
+  ],
+  "related_nodes": []
+}

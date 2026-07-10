@@ -1,0 +1,21 @@
+{
+  "name": "原型链",
+  "node_id": "js_prototype_v4",
+  "parent_id": "js_core_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "JavaScript 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "原型链",
+      "uri": "knowledge://js_prototype_v4",
+      "content_preview": "JS继承机制。__proto__指向prototype。属性查找沿原型链向上。"
+    }
+  ],
+  "related_nodes": []
+}

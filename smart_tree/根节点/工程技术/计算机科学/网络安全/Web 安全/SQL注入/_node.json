@@ -1,0 +1,21 @@
+{
+  "name": "SQL注入",
+  "node_id": "sql_injection_v4",
+  "parent_id": "web_sec_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Web 安全",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "SQL注入",
+      "uri": "knowledge://sql_injection_v4",
+      "content_preview": "恶意SQL拼接到查询。参数化查询/ORM防护。"
+    }
+  ],
+  "related_nodes": []
+}

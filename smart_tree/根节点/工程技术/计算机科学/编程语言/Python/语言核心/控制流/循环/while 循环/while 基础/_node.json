@@ -1,0 +1,21 @@
+{
+  "name": "while 基础",
+  "node_id": "py_while_basic_v4",
+  "parent_id": "py_while_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "while 循环",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "while 基础",
+      "uri": "knowledge://py_while_basic_v4",
+      "content_preview": "while condition: 重复执行。break退出，continue跳过本轮。"
+    }
+  ],
+  "related_nodes": []
+}

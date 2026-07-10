@@ -1,0 +1,21 @@
+{
+  "name": "configparser",
+  "node_id": "py_configparser_v4",
+  "parent_id": "py_serialization_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "数据序列化",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "configparser",
+      "uri": "knowledge://py_configparser_v4",
+      "content_preview": "ini配置文件解析。sections/options。getint/getboolean类型安全。"
+    }
+  ],
+  "related_nodes": []
+}

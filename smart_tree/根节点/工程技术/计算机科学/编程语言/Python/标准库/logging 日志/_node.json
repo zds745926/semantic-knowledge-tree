@@ -1,0 +1,21 @@
+{
+  "name": "logging 日志",
+  "node_id": "py_logging_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "标准库",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "logging 日志",
+      "uri": "knowledge://py_logging_v4",
+      "content_preview": "logging模块：Logger/Handler/Formatter/Filter。级别DEBUG<INFO<WARNING<ERROR<CRITICAL。"
+    }
+  ],
+  "related_nodes": []
+}

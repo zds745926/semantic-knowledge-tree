@@ -1,0 +1,21 @@
+{
+  "name": "分布式 ID",
+  "node_id": "distributed_id_v4",
+  "parent_id": "dist_sys_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "分布式系统",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "分布式 ID",
+      "uri": "knowledge://distributed_id_v4",
+      "content_preview": "雪花算法(Snowflake)：时间戳+机器ID+序列号。UUID。"
+    }
+  ],
+  "related_nodes": []
+}

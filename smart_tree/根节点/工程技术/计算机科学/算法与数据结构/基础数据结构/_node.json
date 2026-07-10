@@ -1,0 +1,22 @@
+{
+  "name": "基础数据结构",
+  "node_id": "ds_basics_v4",
+  "parent_id": "algo_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "算法与数据结构",
+  "children": [
+    "数组",
+    "链表",
+    "栈",
+    "队列"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "基础数据结构包括数组、链表、栈和队列，是更复杂结构的基础。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

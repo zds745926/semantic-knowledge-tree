@@ -1,0 +1,21 @@
+{
+  "name": "Future 对象",
+  "node_id": "py_future_object_v4",
+  "parent_id": "py_futures_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "concurrent.futures",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Future 对象",
+      "uri": "knowledge://py_future_object_v4",
+      "content_preview": "Future.result()阻塞获取结果。done()/cancelled()。add_done_callback。"
+    }
+  ],
+  "related_nodes": []
+}

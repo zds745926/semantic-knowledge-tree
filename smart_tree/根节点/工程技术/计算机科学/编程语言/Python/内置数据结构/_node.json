@@ -1,0 +1,21 @@
+{
+  "name": "内置数据结构",
+  "node_id": "py_ds_v4",
+  "parent_id": "python_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "Python",
+  "children": [
+    "列表 list",
+    "字典 dict",
+    "集合与元组"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python 内置了丰富的数据结构：列表(list)、字典(dict)、集合(set)和元组(tuple)。这些数据结构经过精心优化，是Python编程的基石。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

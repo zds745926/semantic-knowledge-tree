@@ -1,0 +1,21 @@
+{
+  "name": "KNN",
+  "node_id": "knn_v4",
+  "parent_id": "classification_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "分类",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "KNN",
+      "uri": "knowledge://knn_v4",
+      "content_preview": "K个最近邻投票。距离度量。无训练过程。"
+    }
+  ],
+  "related_nodes": []
+}

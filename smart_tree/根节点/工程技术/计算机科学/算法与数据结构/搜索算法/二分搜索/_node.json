@@ -1,0 +1,23 @@
+{
+  "name": "二分搜索",
+  "node_id": "binary_search_v4",
+  "parent_id": "search_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "搜索算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "二分搜索",
+      "uri": "knowledge://binary_search_v4",
+      "content_preview": "每次中间比较缩小一半。O(log n)。要求已排序。Python bisect模块。"
+    }
+  ],
+  "related_nodes": [
+    "bst_search_v4"
+  ]
+}

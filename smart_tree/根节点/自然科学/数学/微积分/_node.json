@@ -1,0 +1,20 @@
+{
+  "name": "微积分",
+  "node_id": "calc_v4",
+  "parent_id": "math_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "数学",
+  "children": [
+    "导数",
+    "积分"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "微积分研究函数的变化率和累积效应，包括极限、导数、积分和微分方程。牛顿和莱布尼茨各自独立创立微积分，是近代数学最伟大的成就之一。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

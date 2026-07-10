@@ -1,0 +1,21 @@
+{
+  "name": "列表基础",
+  "node_id": "py_list_basics_v4",
+  "parent_id": "py_list_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "列表 list",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "列表基础",
+      "uri": "knowledge://py_list_basics_v4",
+      "content_preview": "list 可变有序。索引从0开始，负索引从末尾。切片[start:stop:step]。"
+    }
+  ],
+  "related_nodes": []
+}

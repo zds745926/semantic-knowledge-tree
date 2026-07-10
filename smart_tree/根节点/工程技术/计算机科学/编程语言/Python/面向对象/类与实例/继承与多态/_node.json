@@ -1,0 +1,20 @@
+{
+  "name": "继承与多态",
+  "node_id": "py_inherit_v4",
+  "parent_id": "py_class_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "类与实例",
+  "children": [
+    "单继承",
+    "Mixin 混入"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python 支持单继承和多继承(Mixin)。super()调用父类。MRO决定方法搜索顺序。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,20 @@
+{
+  "name": "UDP 协议",
+  "node_id": "udp_v4",
+  "parent_id": "transport_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "传输层",
+  "children": [
+    "UDP 基础",
+    "UDP vs TCP"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "UDP无连接不可靠，头部仅8字节。适合实时应用和简单请求。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,20 @@
+{
+  "name": "二叉树",
+  "node_id": "binary_tree_v4",
+  "parent_id": "tree_algo_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "树与图算法",
+  "children": [
+    "二叉搜索树 BST",
+    "平衡树"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "二叉树每个节点最多两个子节点。二叉搜索树(BST)左小右大，中序遍历得有序序列。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

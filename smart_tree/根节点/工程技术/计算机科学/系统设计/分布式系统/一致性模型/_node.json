@@ -1,0 +1,21 @@
+{
+  "name": "一致性模型",
+  "node_id": "consistency_models_v4",
+  "parent_id": "dist_sys_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "分布式系统",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "一致性模型",
+      "uri": "knowledge://consistency_models_v4",
+      "content_preview": "强一致性/最终一致性。Quorum读写。PACELC定理。"
+    }
+  ],
+  "related_nodes": []
+}

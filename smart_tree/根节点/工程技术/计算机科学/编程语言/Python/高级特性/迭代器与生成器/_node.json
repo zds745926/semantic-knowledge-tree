@@ -1,0 +1,22 @@
+{
+  "name": "迭代器与生成器",
+  "node_id": "py_iter_gen_v4",
+  "parent_id": "py_adv_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "高级特性",
+  "children": [
+    "迭代器协议",
+    "生成器 yield",
+    "yield from",
+    "生成器表达式"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "迭代器协议和生成器是Python惰性求值的核心机制，节省内存。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

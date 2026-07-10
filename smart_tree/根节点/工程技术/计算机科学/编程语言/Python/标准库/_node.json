@@ -1,0 +1,36 @@
+{
+  "name": "标准库",
+  "node_id": "py_stdlib_v4",
+  "parent_id": "python_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "Python",
+  "children": [
+    "JSON 处理",
+    "正则表达式",
+    "os 模块",
+    "sys 模块",
+    "pathlib 模块",
+    "文件 I/O",
+    "logging 日志",
+    "collections 模块",
+    "math 模块",
+    "random 模块",
+    "hashlib 模块",
+    "subprocess 模块",
+    "itertools 模块",
+    "functools 模块",
+    "数据序列化",
+    "时间与日期",
+    "路径与文件",
+    "国际化"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python 标准库提供了丰富的内置模块，覆盖操作系统接口、数据处理、网络通信等。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

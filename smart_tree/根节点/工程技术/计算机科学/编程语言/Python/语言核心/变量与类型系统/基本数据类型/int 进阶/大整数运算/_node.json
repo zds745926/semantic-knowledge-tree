@@ -1,0 +1,21 @@
+{
+  "name": "大整数运算",
+  "node_id": "py_int_bignum_v4",
+  "parent_id": "py_int_sub_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "int 进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "大整数运算",
+      "uri": "knowledge://py_int_bignum_v4",
+      "content_preview": "Python int 自动处理任意大整数，可计算 2**1000000 这种天文数字。在RSA密码学中广泛应用。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "计数排序",
+  "node_id": "counting_sort_v4",
+  "parent_id": "sort_linear_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "线性排序",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "计数排序",
+      "uri": "knowledge://counting_sort_v4",
+      "content_preview": "统计出现次数→累加→输出。O(n+k)，限整数且范围不大。"
+    }
+  ],
+  "related_nodes": []
+}

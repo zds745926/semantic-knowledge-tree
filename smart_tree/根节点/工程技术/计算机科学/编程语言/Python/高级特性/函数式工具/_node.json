@@ -1,0 +1,21 @@
+{
+  "name": "函数式工具",
+  "node_id": "py_fp_v4",
+  "parent_id": "py_adv_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "高级特性",
+  "children": [
+    "map/filter/reduce",
+    "偏函数 partial",
+    "itertools 模块"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python 提供了map/filter/reduce、偏函数和itertools等函数式工具。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

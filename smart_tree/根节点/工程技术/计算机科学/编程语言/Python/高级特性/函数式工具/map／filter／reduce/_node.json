@@ -1,0 +1,21 @@
+{
+  "name": "map/filter/reduce",
+  "node_id": "py_map_filter_reduce_v4",
+  "parent_id": "py_fp_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "函数式工具",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "map/filter/reduce",
+      "uri": "knowledge://py_map_filter_reduce_v4",
+      "content_preview": "map(func,iter)映射、filter(func,iter)过滤、reduce(func,iter)归约。"
+    }
+  ],
+  "related_nodes": []
+}

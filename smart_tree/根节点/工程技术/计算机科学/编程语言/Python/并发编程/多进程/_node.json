@@ -1,0 +1,26 @@
+{
+  "name": "多进程",
+  "node_id": "py_process_v4",
+  "parent_id": "py_conc_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "并发编程",
+  "children": [
+    "multiprocessing",
+    "Process 类",
+    "Pool 进程池",
+    "Manager",
+    "进程间 Queue",
+    "进程间通信 IPC",
+    "共享内存",
+    "进程同步"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "multiprocessing跨过GIL，利用多核CPU。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

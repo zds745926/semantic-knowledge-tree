@@ -44,17 +44,6 @@ class QueryLogger:
                 }
                 for p in result.get("_penetration_raw", [])
             ],
-            # 捷径搜索详情
-            "shortcut": [
-                {
-                    "leaf": s.get("leaf_name"),
-                    "path": " → ".join(s.get("path", [])),
-                    "similarity": round(s.get("score", 0), 6),
-                    "data_count": len(s.get("data_pointers", [])),
-                    "cross_refs": s.get("related_nodes", []),
-                }
-                for s in result.get("_shortcut_raw", [])
-            ],
             # 融合结果
             "fused": [
                 {

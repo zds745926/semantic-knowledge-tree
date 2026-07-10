@@ -1,0 +1,21 @@
+{
+  "name": "有限自动机",
+  "node_id": "finite_automata_v4",
+  "parent_id": "comp_theory_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "计算理论",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "有限自动机",
+      "uri": "knowledge://finite_automata_v4",
+      "content_preview": "有限自动机是只有有限个状态的抽象计算模型，有DFA和NFA两种。正则表达式等价于有限自动机。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "深度学习",
+  "node_id": "dl_v4",
+  "parent_id": "ml_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "机器学习",
+  "children": [
+    "神经网络基础",
+    "CNN",
+    "Transformer"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "深度学习使用多层神经网络学习复杂模式和表示。核心架构包括CNN、RNN和Transformer。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

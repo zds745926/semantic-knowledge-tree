@@ -1,0 +1,21 @@
+{
+  "name": "背包问题",
+  "node_id": "knapsack_v4",
+  "parent_id": "dp_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "动态规划",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "背包问题",
+      "uri": "knowledge://knapsack_v4",
+      "content_preview": "0-1背包。完全背包(内循环正序)。多重背包(二进制优化)。"
+    }
+  ],
+  "related_nodes": []
+}

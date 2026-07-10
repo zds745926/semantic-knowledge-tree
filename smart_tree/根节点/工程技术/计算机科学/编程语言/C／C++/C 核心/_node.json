@@ -1,0 +1,20 @@
+{
+  "name": "C 核心",
+  "node_id": "c_core_v4",
+  "parent_id": "cpp_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "C/C++",
+  "children": [
+    "指针",
+    "内存管理"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "C核心包括指针、内存管理、结构体和预处理。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

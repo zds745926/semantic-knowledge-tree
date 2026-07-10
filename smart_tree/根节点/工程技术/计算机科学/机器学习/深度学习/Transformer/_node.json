@@ -1,0 +1,21 @@
+{
+  "name": "Transformer",
+  "node_id": "transformer_v4",
+  "parent_id": "dl_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "深度学习",
+  "children": [
+    "Transformer 架构",
+    "自注意力",
+    "预训练+微调"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Transformer 利用自注意力机制处理序列，是BERT/GPT等大模型的基础架构。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

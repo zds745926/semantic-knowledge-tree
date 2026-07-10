@@ -1,0 +1,20 @@
+{
+  "name": "消息队列",
+  "node_id": "mq_v4",
+  "parent_id": "sd_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "系统设计",
+  "children": [
+    "Kafka",
+    "RabbitMQ"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "消息队列解耦服务，提供异步通信、削峰填谷和流量控制。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

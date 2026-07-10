@@ -1,0 +1,21 @@
+{
+  "name": "纯函数",
+  "node_id": "pure_functions_v4",
+  "parent_id": "functional_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "函数式编程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "纯函数",
+      "uri": "knowledge://pure_functions_v4",
+      "content_preview": "纯函数相同输入总是返回相同输出，无副作用。好处：可缓存、可测试、可并行。"
+    }
+  ],
+  "related_nodes": []
+}

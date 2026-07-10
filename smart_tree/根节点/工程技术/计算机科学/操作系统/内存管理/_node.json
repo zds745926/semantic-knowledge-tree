@@ -1,0 +1,19 @@
+{
+  "name": "内存管理",
+  "node_id": "mem_v4",
+  "parent_id": "os_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "操作系统",
+  "children": [
+    "虚拟内存"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "内存管理负责分配和回收进程内存空间，通过虚拟内存、分页和分段机制实现。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

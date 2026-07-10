@@ -1,0 +1,20 @@
+{
+  "name": "循环",
+  "node_id": "py_loop_v4",
+  "parent_id": "py_flow_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "控制流",
+  "children": [
+    "for 循环",
+    "while 循环"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python 循环包括 for 循环(遍历可迭代对象)和 while 循环(条件驱动)。break/continue 控制循环流程，else 子句在循环正常结束时执行。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

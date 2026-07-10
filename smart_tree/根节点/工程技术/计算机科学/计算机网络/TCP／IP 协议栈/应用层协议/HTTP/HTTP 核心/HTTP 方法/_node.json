@@ -1,0 +1,23 @@
+{
+  "name": "HTTP 方法",
+  "node_id": "http_methods_v4",
+  "parent_id": "http_core_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "HTTP 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "HTTP 方法",
+      "uri": "knowledge://http_methods_v4",
+      "content_preview": "GET/POST/PUT/DELETE/PATCH/HEAD/OPTIONS。"
+    }
+  ],
+  "related_nodes": [
+    "http_status_v4"
+  ]
+}

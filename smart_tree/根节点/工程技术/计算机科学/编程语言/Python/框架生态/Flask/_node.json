@@ -1,0 +1,21 @@
+{
+  "name": "Flask",
+  "node_id": "py_flask_v4",
+  "parent_id": "py_fw_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "框架生态",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Flask",
+      "uri": "knowledge://py_flask_v4",
+      "content_preview": "微框架：轻量灵活。Jinja2模板/Werkzeug WSGI。蓝图模块化。"
+    }
+  ],
+  "related_nodes": []
+}

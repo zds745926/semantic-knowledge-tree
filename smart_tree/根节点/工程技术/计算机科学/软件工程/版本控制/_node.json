@@ -1,0 +1,19 @@
+{
+  "name": "版本控制",
+  "node_id": "vcs_v4",
+  "parent_id": "se_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "软件工程",
+  "children": [
+    "Git"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "版本控制记录文件变更历史，支持协作开发和回滚。Git是当前最流行的版本控制系统。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

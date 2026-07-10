@@ -1,0 +1,21 @@
+{
+  "name": "死锁",
+  "node_id": "deadlock_v4",
+  "parent_id": "sync_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "同步与互斥",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "死锁",
+      "uri": "knowledge://deadlock_v4",
+      "content_preview": "四个必要条件。预防/避免/检测/恢复。银行家算法。"
+    }
+  ],
+  "related_nodes": []
+}

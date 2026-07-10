@@ -1,0 +1,21 @@
+{
+  "name": "可串行化",
+  "node_id": "serializable_v4",
+  "parent_id": "isolation_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "隔离级别",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "可串行化",
+      "uri": "knowledge://serializable_v4",
+      "content_preview": "最高级。事务串行执行。无并发问题。性能最低。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "数据库",
+  "node_id": "db_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "关系型数据库",
+    "NoSQL",
+    "分布式数据库"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "数据库系统化地存储和管理数据。关系型数据库(SQL)和非关系型数据库(NoSQL)是最常用的两类。核心概念包括SQL、索引、事务、ACID和分布式。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

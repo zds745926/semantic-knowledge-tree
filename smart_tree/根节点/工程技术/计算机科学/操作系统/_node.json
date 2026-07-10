@@ -1,0 +1,22 @@
+{
+  "name": "操作系统",
+  "node_id": "os_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "进程与线程管理",
+    "内存管理",
+    "文件系统",
+    "I/O 管理"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "操作系统是管理计算机硬件和软件资源的系统软件。核心功能包括进程管理、内存管理、文件系统和I/O管理。操作系统是用户和硬件之间的桥梁，常见的有Linux、Windows、macOS。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

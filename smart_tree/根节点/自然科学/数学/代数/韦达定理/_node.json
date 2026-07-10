@@ -1,0 +1,21 @@
+{
+  "name": "韦达定理",
+  "node_id": "vieta_v4",
+  "parent_id": "algebra_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "代数",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "韦达定理",
+      "uri": "knowledge://vieta_v4",
+      "content_preview": "韦达定理：ax²+bx+c=0 的两根 x₁,x₂ 满足 x₁+x₂=-b/a, x₁·x₂=c/a。"
+    }
+  ],
+  "related_nodes": []
+}

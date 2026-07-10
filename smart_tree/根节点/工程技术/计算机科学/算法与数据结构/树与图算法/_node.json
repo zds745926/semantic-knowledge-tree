@@ -1,0 +1,20 @@
+{
+  "name": "树与图算法",
+  "node_id": "tree_algo_v4",
+  "parent_id": "algo_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "算法与数据结构",
+  "children": [
+    "二叉树",
+    "图算法"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "树和图是最重要的非线性数据结构，它们的算法(遍历/最短路径/生成树)是面试和竞赛的核心。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

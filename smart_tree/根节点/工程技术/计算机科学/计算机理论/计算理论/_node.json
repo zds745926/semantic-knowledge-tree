@@ -1,0 +1,21 @@
+{
+  "name": "计算理论",
+  "node_id": "comp_theory_v4",
+  "parent_id": "cb_theory_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "计算机理论",
+  "children": [
+    "图灵机",
+    "P与NP问题",
+    "有限自动机"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "计算理论研究计算的数学模型和基本限制，包括图灵机、形式语言和计算复杂性。P vs NP 问题是计算机科学最重要的未解决问题之一。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "sudo",
+  "node_id": "sudo_v4",
+  "parent_id": "linux_perm_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "权限管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "sudo",
+      "uri": "knowledge://sudo_v4",
+      "content_preview": "普通用户以root执行。visudo编辑配置。NOPASSWD免密。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "栈",
+  "node_id": "stack_v4",
+  "parent_id": "ds_basics_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "基础数据结构",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "栈",
+      "uri": "knowledge://stack_v4",
+      "content_preview": "后进先出LIFO。push/pop/peek O(1)。应用：函数调用/括号匹配/后退导航。"
+    }
+  ],
+  "related_nodes": []
+}

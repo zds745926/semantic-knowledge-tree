@@ -1,0 +1,20 @@
+{
+  "name": "条件判断",
+  "node_id": "py_cond_v4",
+  "parent_id": "py_flow_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "控制流",
+  "children": [
+    "if 语句",
+    "模式匹配 (match)"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "条件判断通过 if、elif、else 关键字实现分支逻辑。Python 无 switch/case。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

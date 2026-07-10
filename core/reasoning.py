@@ -61,27 +61,16 @@ class ReasoningLayer:
         def _zh(s): return set(c for c in s if '\u4e00' <= c <= '\u9fff')
         q_chars = _zh(query)
 
-        # 汇总渗透路径（简化，去重）
+        # 汇总渗透路径（去重）
         seen = set()
         items = []
-        for p in merged.get('_penetration_raw', [])[:10]:
+        for p in merged.get('_penetration_raw', [])[:20]:
             leaf = p.get('leaf_name','')
             if leaf in seen: continue
             seen.add(leaf)
             c = (p.get('data_pointers',[{}])[0].get('content_preview','')[:120]
                  if p.get('data_pointers') else '')
             path = ' → '.join(p.get('path',[]))
-            ov = q_chars & _zh(leaf)
-            tag = " [相关]" if ov else ""
-            items.append(f"• {leaf}{tag}: {c}")
-
-        # 捷径结果去重补充
-        for s in merged.get('_shortcut_raw', [])[:15]:
-            leaf = s.get('leaf_name','')
-            if leaf in seen: continue
-            seen.add(leaf)
-            c = (s.get('data_pointers',[{}])[0].get('content_preview','')[:120]
-                 if s.get('data_pointers') else '')
             ov = q_chars & _zh(leaf)
             tag = " [相关]" if ov else ""
             items.append(f"• {leaf}{tag}: {c}")
@@ -95,21 +84,18 @@ class ReasoningLayer:
         prompt = f"用户问题: {query}\n\n知识树参考数据:\n{context}\n\n回答："
         return _call_ollama(prompt, system, temperature=0.3, max_tokens=600)
 
-    def merge_results(self, query: str, penetration: List[Dict],
-                      shortcut: List[Dict]) -> Dict:
+    def merge_results(self, query: str, penetration: List[Dict]) -> Dict:
         """
-        不做融合排序，把所有原始结果传给 AI 自行判断。
+        把渗透结果传给 AI 自行判断。
         """
         intent = self.classify_intent(query)
 
         merged = {
             "intent": intent,
             "query": query,
-            "results": [],  # 不再做 top-k 截断
+            "results": [],
             "penetration_count": len(penetration),
-            "shortcut_count": len(shortcut),
             "_penetration_raw": penetration,
-            "_shortcut_raw": shortcut,
         }
 
         merged["answer"] = self.answer_query(query, merged)

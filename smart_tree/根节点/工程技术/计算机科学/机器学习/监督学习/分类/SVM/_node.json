@@ -1,0 +1,21 @@
+{
+  "name": "SVM",
+  "node_id": "svm_v4",
+  "parent_id": "classification_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "分类",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "SVM",
+      "uri": "knowledge://svm_v4",
+      "content_preview": "最大间隔超平面。核技巧RBF。适合小规模高维数据。"
+    }
+  ],
+  "related_nodes": []
+}

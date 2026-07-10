@@ -1,0 +1,23 @@
+{
+  "name": "Promise",
+  "node_id": "js_promise_v4",
+  "parent_id": "js_async_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "异步 JS",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Promise",
+      "uri": "knowledge://js_promise_v4",
+      "content_preview": "pending/fulfilled/rejected。then/catch链式。Promise.all/race。"
+    }
+  ],
+  "related_nodes": [
+    "js_event_loop_v4"
+  ]
+}

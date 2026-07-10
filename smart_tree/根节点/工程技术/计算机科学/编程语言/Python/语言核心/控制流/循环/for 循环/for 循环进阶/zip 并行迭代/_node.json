@@ -1,0 +1,21 @@
+{
+  "name": "zip 并行迭代",
+  "node_id": "py_for_zip_v4",
+  "parent_id": "py_for_detail_v4",
+  "level": 10,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "for 循环进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "zip 并行迭代",
+      "uri": "knowledge://py_for_zip_v4",
+      "content_preview": "zip(iter1, iter2) 并行迭代多个序列，取对应位置元素。zip_longest填充到最长。"
+    }
+  ],
+  "related_nodes": []
+}

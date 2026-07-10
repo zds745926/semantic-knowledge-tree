@@ -1,0 +1,23 @@
+{
+  "name": "Dijkstra 最短路径",
+  "node_id": "dijkstra_v4",
+  "parent_id": "graph_algo_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "图算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Dijkstra 最短路径",
+      "uri": "knowledge://dijkstra_v4",
+      "content_preview": "单源最短路径(非负权)。贪心+优先队列。O(E log V)。导航核心。"
+    }
+  ],
+  "related_nodes": [
+    "floyd_v4"
+  ]
+}

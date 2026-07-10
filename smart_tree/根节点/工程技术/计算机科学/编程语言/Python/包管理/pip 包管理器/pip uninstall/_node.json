@@ -1,0 +1,21 @@
+{
+  "name": "pip uninstall",
+  "node_id": "py_pip_uninstall_v4",
+  "parent_id": "py_pip_branch_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "pip 包管理器",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "pip uninstall",
+      "uri": "knowledge://py_pip_uninstall_v4",
+      "content_preview": "pip uninstall package 卸载。pip uninstall -y 自动确认。"
+    }
+  ],
+  "related_nodes": []
+}

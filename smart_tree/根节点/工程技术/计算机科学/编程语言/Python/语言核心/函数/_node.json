@@ -1,0 +1,20 @@
+{
+  "name": "函数",
+  "node_id": "py_func_v4",
+  "parent_id": "py_core_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "语言核心",
+  "children": [
+    "函数定义",
+    "函数高级特性"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python 函数是组织和复用代码的基本单位。支持位置参数、默认参数、可变参数(*args)和关键字参数(**kwargs)。函数可嵌套定义形成闭包，可赋值传递作为一等公民。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

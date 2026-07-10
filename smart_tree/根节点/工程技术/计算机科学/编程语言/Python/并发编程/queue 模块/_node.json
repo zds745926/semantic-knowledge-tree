@@ -1,0 +1,22 @@
+{
+  "name": "queue 模块",
+  "node_id": "py_queue_v4",
+  "parent_id": "py_conc_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "并发编程",
+  "children": [
+    "Queue (FIFO)",
+    "LifoQueue",
+    "PriorityQueue",
+    "SimpleQueue"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "queue模块提供线程安全的队列实现。支持FIFO、LIFO和优先队列。生产者-消费者模式的核心组件，多线程编程中安全传递数据。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

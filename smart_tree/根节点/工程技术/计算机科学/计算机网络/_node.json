@@ -1,0 +1,19 @@
+{
+  "name": "计算机网络",
+  "node_id": "net_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "TCP/IP 协议栈"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "计算机网络研究数据在不同设备间传输的协议和技术。核心是TCP/IP协议栈，涵盖传输层(TCP/UDP)、网络层(IP/路由)和应用层(HTTP/DNS)等层次。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

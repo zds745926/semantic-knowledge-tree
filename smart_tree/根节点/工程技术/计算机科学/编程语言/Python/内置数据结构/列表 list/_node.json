@@ -1,0 +1,21 @@
+{
+  "name": "列表 list",
+  "node_id": "py_list_v4",
+  "parent_id": "py_ds_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "内置数据结构",
+  "children": [
+    "列表基础",
+    "列表方法",
+    "列表推导式"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "列表是可变有序序列，支持索引、切片和方法操作。列表推导式是Python的标志性语法。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "索引类型",
+  "node_id": "index_types_v4",
+  "parent_id": "index_db_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "索引",
+  "children": [
+    "B+ 树索引",
+    "哈希索引",
+    "全文索引"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "不同索引类型适用于不同查询模式。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

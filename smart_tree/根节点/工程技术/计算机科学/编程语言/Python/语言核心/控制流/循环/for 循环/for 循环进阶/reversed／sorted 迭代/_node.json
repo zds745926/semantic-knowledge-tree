@@ -1,0 +1,21 @@
+{
+  "name": "reversed/sorted 迭代",
+  "node_id": "py_for_reversed_v4",
+  "parent_id": "py_for_detail_v4",
+  "level": 10,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "for 循环进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "reversed/sorted 迭代",
+      "uri": "knowledge://py_for_reversed_v4",
+      "content_preview": "reversed(seq) 反向迭代。sorted(seq) 排序后迭代。reversed返回迭代器。"
+    }
+  ],
+  "related_nodes": []
+}

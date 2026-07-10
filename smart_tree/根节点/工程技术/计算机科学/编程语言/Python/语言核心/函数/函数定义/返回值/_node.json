@@ -1,0 +1,21 @@
+{
+  "name": "返回值",
+  "node_id": "py_return_v4",
+  "parent_id": "py_func_def_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "函数定义",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "返回值",
+      "uri": "knowledge://py_return_v4",
+      "content_preview": "return 返回结果。无 return 返回 None。返回多个值本质是元组。"
+    }
+  ],
+  "related_nodes": []
+}

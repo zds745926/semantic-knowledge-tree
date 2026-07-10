@@ -1,0 +1,21 @@
+{
+  "name": "整型 int",
+  "node_id": "py_int_v4",
+  "parent_id": "py_basic_types_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "基本数据类型",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "整型 int",
+      "uri": "knowledge://py_int_v4",
+      "content_preview": "Python 的 int 是任意精度整数（大整数自动扩展）。支持二进制(0b)、八进制(0o)、十六进制(0x)字面量。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "基数排序",
+  "node_id": "radix_sort_v4",
+  "parent_id": "sort_linear_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "线性排序",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "基数排序",
+      "uri": "knowledge://radix_sort_v4",
+      "content_preview": "按位从低到高排序(每位稳定排序)。O(d·n)。适用整数/定长字符串。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "QUIC 协议",
+  "node_id": "quic_v4",
+  "parent_id": "http3_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "HTTP/3",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "QUIC 协议",
+      "uri": "knowledge://quic_v4",
+      "content_preview": "Google设计，IETF标准化。基于UDP+内置TLS1.3。连接迁移。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "enumerate 详解",
+  "node_id": "py_enumerate_v4",
+  "parent_id": "py_for_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "for 循环",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "enumerate 详解",
+      "uri": "knowledge://py_enumerate_v4",
+      "content_preview": "enumerate(iterable,start=0)返回(index,value)对，替代C风格索引循环。"
+    }
+  ],
+  "related_nodes": []
+}

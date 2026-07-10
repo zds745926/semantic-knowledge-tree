@@ -1,0 +1,21 @@
+{
+  "name": "FastAPI",
+  "node_id": "py_fastapi_v4",
+  "parent_id": "py_fw_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "框架生态",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "FastAPI",
+      "uri": "knowledge://py_fastapi_v4",
+      "content_preview": "现代异步Web框架。自动OpenAPI文档。Pydantic校验。类型注解驱动。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,20 @@
+{
+  "name": "虚拟内存",
+  "node_id": "mem_virt_v4",
+  "parent_id": "mem_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "内存管理",
+  "children": [
+    "分页机制",
+    "页面置换算法"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "虚拟内存将进程逻辑地址映射到物理内存，提供隔离和扩展。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Kruskal 最小生成树",
+  "node_id": "kruskal_v4",
+  "parent_id": "graph_algo_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "图算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Kruskal 最小生成树",
+      "uri": "knowledge://kruskal_v4",
+      "content_preview": "按边权排序，不形成环的边加入。并查集检测环。O(E log E)。"
+    }
+  ],
+  "related_nodes": []
+}

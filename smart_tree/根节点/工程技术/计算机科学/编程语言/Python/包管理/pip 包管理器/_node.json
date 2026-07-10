@@ -1,0 +1,22 @@
+{
+  "name": "pip 包管理器",
+  "node_id": "py_pip_branch_v4",
+  "parent_id": "py_pkg_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "包管理",
+  "children": [
+    "pip install",
+    "pip uninstall",
+    "pip freeze",
+    "requirements.txt"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "pip是Python官方包管理器。从PyPI安装第三方包。支持依赖解析和虚拟环境。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

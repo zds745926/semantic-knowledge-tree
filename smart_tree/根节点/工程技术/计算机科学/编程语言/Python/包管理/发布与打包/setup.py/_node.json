@@ -1,0 +1,23 @@
+{
+  "name": "setup.py",
+  "node_id": "py_setup_py_v4",
+  "parent_id": "py_deploy_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "发布与打包",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "setup.py",
+      "uri": "knowledge://py_setup_py_v4",
+      "content_preview": "传统打包脚本。setuptools.setup。name/version/install_requires。setuptools是传统方式。"
+    }
+  ],
+  "related_nodes": [
+    "py_pyproject_v4"
+  ]
+}

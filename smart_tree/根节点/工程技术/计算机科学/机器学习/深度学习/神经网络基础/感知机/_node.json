@@ -1,0 +1,21 @@
+{
+  "name": "感知机",
+  "node_id": "perceptron_v4",
+  "parent_id": "nn_basics_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "神经网络基础",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "感知机",
+      "uri": "knowledge://perceptron_v4",
+      "content_preview": "y=σ(w·x+b)。多层感知机(MLP)可拟合任意函数。"
+    }
+  ],
+  "related_nodes": []
+}

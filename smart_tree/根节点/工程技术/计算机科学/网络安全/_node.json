@@ -1,0 +1,20 @@
+{
+  "name": "网络安全",
+  "node_id": "sec_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "密码学",
+    "Web 安全"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "网络安全保护系统、网络和数据免受攻击。核心领域包括密码学、Web安全和网络攻防。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

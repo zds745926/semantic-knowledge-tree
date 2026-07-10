@@ -1,0 +1,21 @@
+{
+  "name": "自顶向下设计",
+  "node_id": "top_down_design_v4",
+  "parent_id": "procedural_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "面向过程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "自顶向下设计",
+      "uri": "knowledge://top_down_design_v4",
+      "content_preview": "自顶向下设计将复杂问题逐层分解为更简单的子问题，逐步细化每个模块。"
+    }
+  ],
+  "related_nodes": []
+}

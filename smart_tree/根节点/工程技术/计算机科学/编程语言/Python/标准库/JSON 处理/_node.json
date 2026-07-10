@@ -1,0 +1,21 @@
+{
+  "name": "JSON 处理",
+  "node_id": "py_json_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "标准库",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "JSON 处理",
+      "uri": "knowledge://py_json_v4",
+      "content_preview": "json.dumps(obj,ensure_ascii=False)序列化。json.loads(str)反序列化。"
+    }
+  ],
+  "related_nodes": []
+}

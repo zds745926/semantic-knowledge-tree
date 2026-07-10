@@ -1,0 +1,21 @@
+{
+  "name": "参数传递深入",
+  "node_id": "py_func_params_v4",
+  "parent_id": "py_func_def_v4",
+  "level": 8,
+  "is_leaf": false,
+  "absorption_rate": 0.13999999999999999,
+  "version": 1,
+  "parent": "函数定义",
+  "children": [
+    "*args 和 **kwargs",
+    "参数传递机制",
+    "仅关键字参数"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python参数传递机制和参数定义方式的深入理解是写出高质量函数的关键。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

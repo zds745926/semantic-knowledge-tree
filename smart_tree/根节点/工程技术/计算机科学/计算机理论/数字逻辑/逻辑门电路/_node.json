@@ -1,0 +1,21 @@
+{
+  "name": "逻辑门电路",
+  "node_id": "gate_circuits_v4",
+  "parent_id": "digi_logic_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "数字逻辑",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "逻辑门电路",
+      "uri": "knowledge://gate_circuits_v4",
+      "content_preview": "基本逻辑门：与门(AND)、或门(OR)、非门(NOT)、与非门(NAND)。与非门是通用门。"
+    }
+  ],
+  "related_nodes": []
+}

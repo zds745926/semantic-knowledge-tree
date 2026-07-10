@@ -1,0 +1,21 @@
+{
+  "name": "红黑树",
+  "node_id": "red_black_tree_v4",
+  "parent_id": "balanced_tree_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "平衡树",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "红黑树",
+      "uri": "knowledge://red_black_tree_v4",
+      "content_preview": "近似平衡。5条性质。旋转+变色维护。Java TreeMap/nginx使用。"
+    }
+  ],
+  "related_nodes": []
+}

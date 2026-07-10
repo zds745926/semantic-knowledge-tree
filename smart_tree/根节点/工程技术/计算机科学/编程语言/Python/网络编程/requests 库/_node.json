@@ -1,0 +1,21 @@
+{
+  "name": "requests 库",
+  "node_id": "py_requests_v4",
+  "parent_id": "py_net_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "网络编程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "requests 库",
+      "uri": "knowledge://py_requests_v4",
+      "content_preview": "requests.get/post/put/delete。Session复用连接。最流行的HTTP库。"
+    }
+  ],
+  "related_nodes": []
+}

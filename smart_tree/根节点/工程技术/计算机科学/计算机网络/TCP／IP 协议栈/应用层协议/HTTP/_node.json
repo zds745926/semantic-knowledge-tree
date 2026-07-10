@@ -1,0 +1,21 @@
+{
+  "name": "HTTP",
+  "node_id": "http_v4",
+  "parent_id": "app_layer_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "应用层协议",
+  "children": [
+    "HTTP 核心",
+    "HTTP/2",
+    "HTTP/3"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "HTTP是Web的基石，请求-响应模型，无状态。HTTP/1.1文本协议。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

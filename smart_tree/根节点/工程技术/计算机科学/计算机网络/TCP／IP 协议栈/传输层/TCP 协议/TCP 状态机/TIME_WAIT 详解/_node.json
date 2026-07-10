@@ -1,0 +1,21 @@
+{
+  "name": "TIME_WAIT 详解",
+  "node_id": "tcp_timewait_v4",
+  "parent_id": "tcp_state_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "TCP 状态机",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "TIME_WAIT 详解",
+      "uri": "knowledge://tcp_timewait_v4",
+      "content_preview": "主动关闭方发送最后ACK后进入TIME_WAIT约60秒。确保ACK到达且旧包消失。"
+    }
+  ],
+  "related_nodes": []
+}

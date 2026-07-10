@@ -1,0 +1,21 @@
+{
+  "name": "time",
+  "node_id": "py_time_lib_v4",
+  "parent_id": "py_time_date_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "时间与日期",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "time",
+      "uri": "knowledge://py_time_lib_v4",
+      "content_preview": "time.time()时间戳。time.sleep()暂停。time.localtime/mktime/strptime。"
+    }
+  ],
+  "related_nodes": []
+}

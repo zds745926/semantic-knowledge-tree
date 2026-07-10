@@ -1,0 +1,21 @@
+{
+  "name": "for-else 子句",
+  "node_id": "py_for_else_v4",
+  "parent_id": "py_for_detail_v4",
+  "level": 10,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "for 循环进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "for-else 子句",
+      "uri": "knowledge://py_for_else_v4",
+      "content_preview": "for 循环的 else 子句在循环正常结束(非break)时执行。常用于搜索未找到时的兜底处理。"
+    }
+  ],
+  "related_nodes": []
+}

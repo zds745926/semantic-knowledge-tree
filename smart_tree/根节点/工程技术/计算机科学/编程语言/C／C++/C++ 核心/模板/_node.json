@@ -1,0 +1,21 @@
+{
+  "name": "模板",
+  "node_id": "cpp_templates_v4",
+  "parent_id": "cpp_core_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "C++ 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "模板",
+      "uri": "knowledge://cpp_templates_v4",
+      "content_preview": "template<typename T>泛型。模板特化。模板元编程编译期计算。"
+    }
+  ],
+  "related_nodes": []
+}

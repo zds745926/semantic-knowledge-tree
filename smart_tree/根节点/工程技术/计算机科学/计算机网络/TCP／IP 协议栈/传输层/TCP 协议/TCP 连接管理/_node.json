@@ -1,0 +1,20 @@
+{
+  "name": "TCP 连接管理",
+  "node_id": "tcp_handshake_v4",
+  "parent_id": "tcp_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "TCP 协议",
+  "children": [
+    "三次握手",
+    "四次挥手"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "三次握手建立连接，四次挥手关闭连接。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,19 @@
+{
+  "name": "自然科学",
+  "node_id": "natural_sciences",
+  "parent_id": "root",
+  "level": 1,
+  "is_leaf": false,
+  "absorption_rate": 0.035,
+  "version": 1,
+  "parent": "根节点",
+  "children": [
+    "数学"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "自然科学是研究自然现象和规律的学科群，包括数学、物理、化学、生物学、地球科学等基础科学。通过观察、实验和理论推导揭示自然界的本质规律，为工程技术提供理论基础。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

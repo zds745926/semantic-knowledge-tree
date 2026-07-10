@@ -1,0 +1,21 @@
+{
+  "name": "Mixin 混入",
+  "node_id": "py_mixin_v4",
+  "parent_id": "py_inherit_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "继承与多态",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Mixin 混入",
+      "uri": "knowledge://py_mixin_v4",
+      "content_preview": "Mixin 提供特定功能的小型基类，通过多继承组合。命名约定以 Mixin 结尾。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "REST API",
+  "node_id": "rest_api_v4",
+  "parent_id": "be_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "后端开发",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "REST API",
+      "uri": "knowledge://rest_api_v4",
+      "content_preview": "资源导向。GET/POST/PUT/DELETE。状态无关。OpenAPI文档。"
+    }
+  ],
+  "related_nodes": []
+}

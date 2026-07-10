@@ -1,0 +1,21 @@
+{
+  "name": "密码学",
+  "node_id": "crypto_v4",
+  "parent_id": "sec_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "网络安全",
+  "children": [
+    "对称加密",
+    "非对称加密",
+    "哈希函数"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "密码学通过加密保护信息安全。对称和非对称加密是两大体系。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

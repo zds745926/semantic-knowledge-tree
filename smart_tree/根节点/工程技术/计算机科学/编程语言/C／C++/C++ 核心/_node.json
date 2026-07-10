@@ -1,0 +1,22 @@
+{
+  "name": "C++ 核心",
+  "node_id": "cpp_core_v4",
+  "parent_id": "cpp_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "C/C++",
+  "children": [
+    "C++ OOP",
+    "模板",
+    "STL 标准库",
+    "智能指针"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "C++核心包括OOP、模板和STL。智能指针RAII管理资源。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

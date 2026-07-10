@@ -1,0 +1,23 @@
+{
+  "name": "CAP 定理",
+  "node_id": "cap_v4",
+  "parent_id": "dist_db_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "分布式数据库",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "CAP 定理",
+      "uri": "knowledge://cap_v4",
+      "content_preview": "Consistency/Availability/Partition tolerance 三者不可兼得。"
+    }
+  ],
+  "related_nodes": [
+    "raft_v4"
+  ]
+}

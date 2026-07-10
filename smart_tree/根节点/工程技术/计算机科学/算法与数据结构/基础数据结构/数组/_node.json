@@ -1,0 +1,21 @@
+{
+  "name": "数组",
+  "node_id": "array_v4",
+  "parent_id": "ds_basics_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "基础数据结构",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "数组",
+      "uri": "knowledge://array_v4",
+      "content_preview": "连续内存线性结构。随机访问O(1)，插入删除O(n)。缓存友好。"
+    }
+  ],
+  "related_nodes": []
+}

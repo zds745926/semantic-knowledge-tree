@@ -1,0 +1,21 @@
+{
+  "name": "SimpleQueue",
+  "node_id": "py_simple_queue_v4",
+  "parent_id": "py_queue_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "queue 模块",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "SimpleQueue",
+      "uri": "knowledge://py_simple_queue_v4",
+      "content_preview": "queue.SimpleQueue(3.8+) 轻量FIFO。无task_door/join。更快。"
+    }
+  ],
+  "related_nodes": []
+}

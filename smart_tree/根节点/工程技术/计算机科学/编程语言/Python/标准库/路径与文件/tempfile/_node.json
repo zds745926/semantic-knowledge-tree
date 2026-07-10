@@ -1,0 +1,21 @@
+{
+  "name": "tempfile",
+  "node_id": "py_tempfile_v4",
+  "parent_id": "py_path_file_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "路径与文件",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "tempfile",
+      "uri": "knowledge://py_tempfile_v4",
+      "content_preview": "tempfile.TemporaryFile(自动删除)/NamedTemporaryFile/mkdtemp。安全临时文件。"
+    }
+  ],
+  "related_nodes": []
+}

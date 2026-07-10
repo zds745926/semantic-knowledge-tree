@@ -1,0 +1,21 @@
+{
+  "name": "Inode",
+  "node_id": "inode_v4",
+  "parent_id": "vfs_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "虚拟文件系统 VFS",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Inode",
+      "uri": "knowledge://inode_v4",
+      "content_preview": "存储文件元数据。不存文件名。硬链接计数管理生命周期。"
+    }
+  ],
+  "related_nodes": []
+}

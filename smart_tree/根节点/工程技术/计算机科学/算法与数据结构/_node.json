@@ -1,0 +1,24 @@
+{
+  "name": "算法与数据结构",
+  "node_id": "algo_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "基础数据结构",
+    "排序算法",
+    "搜索算法",
+    "树与图算法",
+    "动态规划",
+    "高级数据结构"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "算法是解决问题的步骤和方法，数据结构是组织和存储数据的方式。两者是计算机科学的核心基础，直接影响程序性能和质量。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

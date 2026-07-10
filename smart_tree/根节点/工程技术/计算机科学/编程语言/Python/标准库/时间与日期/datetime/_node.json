@@ -1,0 +1,21 @@
+{
+  "name": "datetime",
+  "node_id": "py_datetime_lib_v4",
+  "parent_id": "py_time_date_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "时间与日期",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "datetime",
+      "uri": "knowledge://py_datetime_lib_v4",
+      "content_preview": "datetime.now()/timedelta/date/time/datetime。strftime格式化。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -455,8 +455,6 @@ def build_v4(encoder=None) -> SemanticKnowledgeTree:
         "json.dumps(obj,ensure_ascii=False)序列化。json.loads(str)反序列化。")
     _add_leaf(tree, py_stdlib.node_id, "py_regex_v4", "正则表达式",
         "re.search/match/findall/sub。预编译re.compile。")
-    _add_leaf(tree, py_stdlib.node_id, "py_datetime_v4", "时间与日期",
-        "datetime.now()/timedelta/strftime/time.sleep/timezone。")
 
     # ── 并发编程 (L5) ──
     py_conc = _add_node(tree, py.node_id, "py_conc_v4", "并发编程",
@@ -497,6 +495,290 @@ def build_v4(encoder=None) -> SemanticKnowledgeTree:
         "科学计算基础库。ndarray高效数组。向量化运算比Python快10-100x。")
     _add_leaf(tree, py_fw.node_id, "py_pandas_v4", "Pandas",
         "DataFrame数据结构。read_csv/groupby/merge/pivot。数据科学与分析核心。")
+    _add_leaf(tree, py_fw.node_id, "py_matplotlib_v4", "Matplotlib",
+        "Python标准可视化库。pyplot接口支持折线/散点/柱状/热力图。面向对象绘图API。")
+    _add_leaf(tree, py_fw.node_id, "py_scipy_v4", "SciPy",
+        "科学计算库。优化/线性代数/积分/插值/信号处理。基于NumPy ndarray构建。")
+    _add_leaf(tree, py_fw.node_id, "py_sklearn_v4", "scikit-learn",
+        "经典机器学习库。分类/回归/聚类/降维。统一fit/predict API。与NumPy/Pandas无缝集成。")
+    _add_leaf(tree, py_fw.node_id, "py_sqlalchemy_v4", "SQLAlchemy",
+        "Python ORM框架。声明式映射/会话管理/关系加载。核心SQL表达式语言独立于ORM。")
+    _add_leaf(tree, py_fw.node_id, "py_torch_v4", "PyTorch",
+        "深度学习框架。动态计算图/自动求导。Tensor核心数据结构。torch.nn构建神经网络。")
+
+    # ── 扩展标准库 (L6) ──
+    _add_leaf(tree, py_stdlib.node_id, "py_os_module_v4", "os 模块",
+        "os模块提供操作系统接口：文件操作(os.remove/rename)、目录遍历(os.walk)、环境变量(os.environ)。")
+    _add_leaf(tree, py_stdlib.node_id, "py_sys_module_v4", "sys 模块",
+        "sys模块访问解释器变量和函数：sys.argv命令行参数、sys.path模块搜索路径、sys.exit退出。")
+    _add_leaf(tree, py_stdlib.node_id, "py_pathlib_v4", "pathlib 模块",
+        "面向对象的路径操作库。Path对象替代os.path字符串操作。支持/运算符拼接路径。3.4+标准。")
+    _add_leaf(tree, py_stdlib.node_id, "py_fileio_module_v4", "文件 I/O",
+        "open()内置函数。r/w/a/b/t模式。with语句自动关闭。TextIOWrapper/BufferedReader等底层IO类。")
+    _add_leaf(tree, py_stdlib.node_id, "py_logging_v4", "logging 日志",
+        "logging模块：Logger/Handler/Formatter/Filter。级别DEBUG<INFO<WARNING<ERROR<CRITICAL。")
+    _add_leaf(tree, py_stdlib.node_id, "py_collections_module_v4", "collections 模块",
+        "特殊容器：defaultdict自动默认值、Counter计数、deque双端队列O(1)两端操作、namedtuple具名元组。")
+    _add_leaf(tree, py_stdlib.node_id, "py_math_module_v4", "math 模块",
+        "数学函数：math.floor/ceil/round/sqrt/log/sin/cos。常数math.pi/math.e。cmath支持复数。")
+    _add_leaf(tree, py_stdlib.node_id, "py_random_v4", "random 模块",
+        "random.random()浮点数、randint(start,stop)整数、choice/shuffle序列操作。secrets模块安全随机。")
+    _add_leaf(tree, py_stdlib.node_id, "py_hashlib_v4", "hashlib 模块",
+        "hashlib.md5/sha1/sha256。update()累积数据。hexdigest()十六进制摘要。密码哈希用bcrypt。")
+    _add_leaf(tree, py_stdlib.node_id, "py_subprocess_v4", "subprocess 模块",
+        "运行外部命令：subprocess.run()简洁、Popen底层控制。shell=True注意注入风险。")
+    _add_leaf(tree, py_stdlib.node_id, "py_itertools_v4", "itertools 模块",
+        "迭代器工具：chain串联、cycle循环、count计数、product笛卡尔积、permutations排列、combinations组合、groupby分组。")
+    _add_leaf(tree, py_stdlib.node_id, "py_functools_v4", "functools 模块",
+        "高阶函数工具：partial固定参数、lru_cache缓存、wraps保留元信息、reduce归约、singledispatch单分派。")
+
+    # ── 测试 (L6) ──
+    py_testing = _add_node(tree, py.node_id, "py_testing_v4", "测试",
+        "Python拥有丰富的测试工具链。单元测试确保代码正确性，pytest提供简洁的测试语法，"
+        "unittest.mock模拟外部依赖。TDD是Python社区的推荐实践。")
+    _add_leaf(tree, py_testing.node_id, "py_pytest_v4", "pytest",
+        "Python最流行的测试框架。assert断言。fixture管理依赖。参数化测试。conftest共享配置。")
+    _add_leaf(tree, py_testing.node_id, "py_unittest_v4", "unittest",
+        "内置测试框架。TestCase类。setUp/tearDown。assertEqual/assertRaises。mock集成。")
+    _add_leaf(tree, py_testing.node_id, "py_mock_v4", "Mock 模拟",
+        "unittest.mock替换外部依赖。Mock/MagicMock/patch。side_effect/return_value控制行为。")
+
+    # ── 包管理 (L6) ──
+    py_pkg = _add_node(tree, py.node_id, "py_pkg_v4", "包管理",
+        "Python包管理工具链包括pip依赖安装、venv环境隔离、pyproject.toml项目规范。"
+        "PDM/Poetry等现代工具进一步简化了依赖管理和发布流程。")
+    _add_leaf(tree, py_pkg.node_id, "py_venv_v4", "虚拟环境 venv",
+        "python -m venv创建隔离环境。避免包版本冲突。激活后pip安装到环境内。")
+    _add_leaf(tree, py_pkg.node_id, "py_pyproject_v4", "pyproject.toml",
+        "PEP 518/621项目规范元数据。[build-system]声明构建后端。[project]依赖版本。")
+
+    # ── 类补充特性 (L7) ──
+    _add_leaf(tree, py_class.node_id, "py_property_v4", "property 装饰器",
+        "@property将方法变为属性访问。setter/deleter控制赋值删除。计算属性不占存储。")
+    _add_leaf(tree, py_class.node_id, "py_dataclass_v4", "dataclasses 数据类",
+        "@dataclass自动生成__init__/__repr__/__eq__。field()自定义字段。frozen不可变。3.7+。")
+    _add_leaf(tree, py_class.node_id, "py_enum_v4", "enum 枚举",
+        "from enum import Enum。Enum/IntEnum/Flag。name/value。类型安全替代魔数。")
+    _add_leaf(tree, py_class.node_id, "py_abc_v4", "ABC 抽象基类",
+        "from abc import ABC,abstractmethod。定义接口契约。子类必须实现抽象方法。collections.abc混入协议。")
+
+    # ── 交叉引用 ──
+    tree.add_cross_reference("py_pytest_v4", "py_mock_v4")
+    tree.add_cross_reference("py_unittest_v4", "py_mock_v4")
+    tree.add_cross_reference("py_math_module_v4", "py_random_v4")
+    tree.add_cross_reference("py_subprocess_v4", "py_os_module_v4")
+    tree.add_cross_reference("py_pathlib_v4", "py_os_module_v4")
+    tree.add_cross_reference("py_property_v4", "py_dataclass_v4")
+    tree.add_cross_reference("py_itertools_v4", "py_functools_v4")
+
+    # ═══════════════════════════════════════════════════════
+    # 并发编程扩展 — threading 详细 (L7)
+    # ═══════════════════════════════════════════════════════
+    # 展开 threading 分支：目前有 py_threading_basic_v4 + py_thread_sync_v4
+    _add_leaf(tree, py_thread.node_id, "py_lock_v4", "Lock 与 RLock",
+        "threading.Lock 互斥锁(不可重入)。RLock 可重入锁，同一线程可多次acquire。")
+    _add_leaf(tree, py_thread.node_id, "py_condition_v4", "Condition",
+        "threading.Condition 条件变量。wait()等待通知，notify()/notify_all()唤醒。生产者-消费者。")
+    _add_leaf(tree, py_thread.node_id, "py_event_v4", "Event",
+        "threading.Event 事件标志。set()/clear()/wait()。多线程等待某事件发生。")
+    _add_leaf(tree, py_thread.node_id, "py_barrier_v4", "Barrier",
+        "threading.Barrier 屏障。n个线程全部到达后同时继续。分阶段并行。")
+    _add_leaf(tree, py_thread.node_id, "py_timer_v4", "Timer",
+        "threading.Timer 定时器。interval后执行function。cancel取消。")
+    _add_leaf(tree, py_thread.node_id, "py_tls_v4", "线程局部存储 TLS",
+        "threading.local() 每个线程独立存储。thread-local数据隔离。")
+    _add_leaf(tree, py_thread.node_id, "py_daemon_thread_v4", "daemon 线程",
+        "daemon=True 守护线程，主线程退出时自动结束。不阻塞程序退出。")
+    _add_leaf(tree, py_thread.node_id, "py_thread_safety_v4", "线程安全",
+        "原子操作(int/float赋值)线程安全。列表等非原子。threading.settrace。")
+
+    # ═══════════════════════════════════════════════════════
+    # 并发编程扩展 — multiprocessing 详细 (L7)
+    # ═══════════════════════════════════════════════════════
+    _add_leaf(tree, py_process.node_id, "py_process_class_v4", "Process 类",
+        "multiprocessing.Process。target/args。start()/join()/terminate()。")
+    _add_leaf(tree, py_process.node_id, "py_pool_v4", "Pool 进程池",
+        "Pool.map/apply/starmap。进程复用。map无序/apply有序。")
+    _add_leaf(tree, py_process.node_id, "py_manager_v4", "Manager",
+        "multiprocessing.Manager 共享对象代理。list/dict/Queue/Namespace。")
+    _add_leaf(tree, py_process.node_id, "py_mp_queue_v4", "进程间 Queue",
+        "multiprocessing.Queue 进程安全队列。put/get。JoinableQueue。")
+    _add_leaf(tree, py_process.node_id, "py_ipc_v4", "进程间通信 IPC",
+        "Pipe(双向管道)/Queue/共享内存。Value/Array共享ctypes。")
+    _add_leaf(tree, py_process.node_id, "py_shared_memory_v4", "共享内存",
+        "multiprocessing.shared_memory(3.8+)。ShareableList。多个进程直接读写同一内存块。")
+    _add_leaf(tree, py_process.node_id, "py_proc_sync_v4", "进程同步",
+        "multiprocessing.Lock/RLock/Semaphore/Event/Condition 跨进程同步。")
+
+    # ═══════════════════════════════════════════════════════
+    # 并发编程扩展 — asyncio 详细 (L7)
+    # ═══════════════════════════════════════════════════════
+    _add_leaf(tree, py_async.node_id, "py_coroutine_v4", "协程 coroutine",
+        "async def 协程函数。await挂起等待。协程是Python异步编程的核心。")
+    _add_leaf(tree, py_async.node_id, "py_event_loop_v4", "事件循环",
+        "asyncio.run()创建事件循环。loop.run_until_complete。get_event_loop。")
+    _add_leaf(tree, py_async.node_id, "py_asyncio_task_v4", "Task 任务",
+        "asyncio.create_task() 创建任务。task.cancel()取消。task.result()结果。")
+    _add_leaf(tree, py_async.node_id, "py_gather_v4", "gather",
+        "asyncio.gather(task1,task2) 并发运行多个协程。返回结果列表。return_exceptions。")
+    _add_leaf(tree, py_async.node_id, "py_as_completed_v4", "as_completed",
+        "asyncio.as_completed(fs) 按完成顺序yield。先完成的先处理。")
+    _add_leaf(tree, py_async.node_id, "py_asyncio_wait_v4", "wait",
+        "asyncio.wait(fs) 等待。return_when=FIRST_COMPLETED/ALL_COMPLETED/FIRST_EXCEPTION。")
+    _add_leaf(tree, py_async.node_id, "py_asyncio_lock_v4", "asyncio Lock",
+        "asyncio.Lock 异步锁。async with lock:。Semaphore/BoundedSemaphore。")
+    _add_leaf(tree, py_async.node_id, "py_asyncio_queue_v4", "asyncio Queue",
+        "asyncio.Queue。async put/get。maxsize。LifoQueue/PriorityQueue。")
+
+    # ═══════════════════════════════════════════════════════
+    # 并发编程扩展 — concurrent.futures (L7 new)
+    # ═══════════════════════════════════════════════════════
+    py_futures = _add_node(tree, py_conc.node_id, "py_futures_v4", "concurrent.futures",
+        "concurrent.futures 提供统一的高层异步执行接口。ThreadPoolExecutor和ProcessPoolExecutor两种实现。"
+        "submit()提交任务返回Future对象，as_completed()和wait()管理任务生命周期。")
+    _add_leaf(tree, py_futures.node_id, "py_thread_pool_executor_v4", "ThreadPoolExecutor",
+        "线程池执行器。max_workers控制线程数。submit返回Future。适合I/O密集型。")
+    _add_leaf(tree, py_futures.node_id, "py_process_pool_executor_v4", "ProcessPoolExecutor",
+        "进程池执行器。跨GIL，适合CPU密集型。参数需可pickle。")
+    _add_leaf(tree, py_futures.node_id, "py_future_object_v4", "Future 对象",
+        "Future.result()阻塞获取结果。done()/cancelled()。add_done_callback。")
+    _add_leaf(tree, py_futures.node_id, "py_futures_as_completed_v4", "as_completed",
+        "concurrent.futures.as_completed(fs) 按完成顺序yield。先完成的先处理。")
+    _add_leaf(tree, py_futures.node_id, "py_futures_map_v4", "map 方法",
+        "executor.map(func, iterable) 批量提交。返回结果迭代器。顺序对应输入。")
+
+    # ═══════════════════════════════════════════════════════
+    # queue 模块 (L7 new, under py_conc)
+    # ═══════════════════════════════════════════════════════
+    py_queue_module = _add_node(tree, py_conc.node_id, "py_queue_v4", "queue 模块",
+        "queue模块提供线程安全的队列实现。支持FIFO、LIFO和优先队列。"
+        "生产者-消费者模式的核心组件，多线程编程中安全传递数据。")
+    _add_leaf(tree, py_queue_module.node_id, "py_queue_fifo_v4", "Queue (FIFO)",
+        "queue.Queue(maxsize) 先进先出。put(block)/get(block)。task_done/join。")
+    _add_leaf(tree, py_queue_module.node_id, "py_lifo_queue_v4", "LifoQueue",
+        "queue.LifoQueue 后进先出（栈）。put/get。适合DFS遍历。")
+    _add_leaf(tree, py_queue_module.node_id, "py_priority_queue_v4", "PriorityQueue",
+        "queue.PriorityQueue 优先级队列(最小堆)。put((priority,item))。")
+    _add_leaf(tree, py_queue_module.node_id, "py_simple_queue_v4", "SimpleQueue",
+        "queue.SimpleQueue(3.8+) 轻量FIFO。无task_door/join。更快。")
+
+    # ═══════════════════════════════════════════════════════
+    # 包管理扩展 (L6)
+    # ═══════════════════════════════════════════════════════
+    # pip 转为分支
+    py_pip_detail = _add_node(tree, py_pkg.node_id, "py_pip_branch_v4", "pip 包管理器",
+        "pip是Python官方包管理器。从PyPI安装第三方包。支持依赖解析和虚拟环境。")
+    _add_leaf(tree, py_pip_detail.node_id, "py_pip_install_v4", "pip install",
+        "pip install package。pip install -r requirements.txt。-U升级。-e可编辑。")
+    _add_leaf(tree, py_pip_detail.node_id, "py_pip_uninstall_v4", "pip uninstall",
+        "pip uninstall package 卸载。pip uninstall -y 自动确认。")
+    _add_leaf(tree, py_pip_detail.node_id, "py_pip_freeze_v4", "pip freeze",
+        "pip freeze > requirements.txt 导出当前环境包列表。pip list 列出已安装包。")
+    _add_leaf(tree, py_pip_detail.node_id, "py_requirements_v4", "requirements.txt",
+        "依赖描述文件。==指定版本/>=最低版本。pip-compile生成锁定文件。")
+
+    # 虚拟环境扩展
+    py_venv_detail = _add_node(tree, py_pkg.node_id, "py_venv_branch_v4", "虚拟环境",
+        "虚拟环境创建隔离的Python运行环境，避免包版本冲突。venv是官方方案，virtualenv和conda是替代。")
+    _add_leaf(tree, py_venv_detail.node_id, "py_venv_v4", "venv",
+        "python -m venv .venv 创建。source激活。标准库自带。")
+    _add_leaf(tree, py_venv_detail.node_id, "py_conda_v4", "conda",
+        "Anaconda包与环境管理器。conda create/env/activate。跨语言(支持R/Python)。")
+    _add_leaf(tree, py_venv_detail.node_id, "py_virtualenv_v4", "virtualenv",
+        "virtualenv创建隔离环境。比venv更早，支持Python 2。--system-site-packages。")
+
+    # 发布与打包
+    py_deploy = _add_node(tree, py_pkg.node_id, "py_deploy_v4", "发布与打包",
+        "Python包发布流程包括源代码打包、Wheel构建和PyPI上传。setuptools是传统方式，flit/hatchling等现代工具简化流程。")
+    _add_leaf(tree, py_deploy.node_id, "py_setup_py_v4", "setup.py",
+        "传统打包脚本。setuptools.setup。name/version/install_requires。setuptools是传统方式。")
+    _add_leaf(tree, py_deploy.node_id, "py_pyproject_v4", "pyproject.toml",
+        "PEP 518/621项目规范。[build-system]声明构建后端。[project]元数据。现代标准。")
+    _add_leaf(tree, py_deploy.node_id, "py_wheel_v4", "Wheel",
+        ".whl二进制分发格式。pip install比源码快。纯Python/平台特定wheel。")
+    _add_leaf(tree, py_deploy.node_id, "py_pypi_upload_v4", "PyPI 上传",
+        "twine upload dist/* 上传。TestPyPI测试。API token认证。")
+
+    # 依赖管理
+    py_dep_mgmt = _add_node(tree, py_pkg.node_id, "py_dep_mgmt_v4", "依赖管理",
+        "现代Python依赖管理工具提供更可靠的依赖解析和锁定功能。")
+    _add_leaf(tree, py_dep_mgmt.node_id, "py_poetry_v4", "Poetry",
+        "pyproject.toml管理依赖。poetry.lock锁定版本。poetry add/remove/install。")
+    _add_leaf(tree, py_dep_mgmt.node_id, "py_pdm_v4", "PDM",
+        "PEP 582无虚拟环境方案。pdm add/install/lock。支持多个Python版本。")
+    _add_leaf(tree, py_dep_mgmt.node_id, "py_pipenv_v4", "Pipenv",
+        "Pipfile+Pipfile.lock。自动创建虚拟环境。pipenv install/run/shell。")
+
+    # ═══════════════════════════════════════════════════════
+    # 标准库扩展 — 子分支 (L7)
+    # ═══════════════════════════════════════════════════════
+    # 数据序列化
+    py_serialization = _add_node(tree, py_stdlib.node_id, "py_serialization_v4", "数据序列化",
+        "Python支持多种数据序列化格式。json跨语言、pickle Python专用、csv表格、configparser配置。")
+    _add_leaf(tree, py_serialization.node_id, "py_json_ser_v4", "json",
+        "json.dumps/loads。ensure_ascii=False中文。json.dump/load文件。")
+    _add_leaf(tree, py_serialization.node_id, "py_pickle_v4", "pickle",
+        "pickle.dump/load Python对象序列化。不安全(任意代码执行)。不跨语言。")
+    _add_leaf(tree, py_serialization.node_id, "py_csv_v4", "csv",
+        "csv.reader/writer。DictReader/DictWriter。dialect方言。")
+    _add_leaf(tree, py_serialization.node_id, "py_xml_v4", "xml",
+        "xml.etree.ElementTree。find/findall。lxml更强大。")
+    _add_leaf(tree, py_serialization.node_id, "py_configparser_v4", "configparser",
+        "ini配置文件解析。sections/options。getint/getboolean类型安全。")
+
+    # 时间与日期
+    py_time_date = _add_node(tree, py_stdlib.node_id, "py_time_date_v4", "时间与日期",
+        "Python时间处理核心模块：datetime面向对象、time底层时间函数、calendar日历和zoneinfo时区(3.9+)。")
+    _add_leaf(tree, py_time_date.node_id, "py_datetime_lib_v4", "datetime",
+        "datetime.now()/timedelta/date/time/datetime。strftime格式化。")
+    _add_leaf(tree, py_time_date.node_id, "py_time_lib_v4", "time",
+        "time.time()时间戳。time.sleep()暂停。time.localtime/mktime/strptime。")
+    _add_leaf(tree, py_time_date.node_id, "py_calendar_v4", "calendar",
+        "calendar.month/year日历文本。isleap闰年。weekday星期几。")
+    _add_leaf(tree, py_time_date.node_id, "py_zoneinfo_v4", "zoneinfo",
+        "zoneinfo.ZoneInfo(3.9+) IANA时区。datetime.replace(tzinfo=)。")
+
+    # 路径与文件
+    py_path_file = _add_node(tree, py_stdlib.node_id, "py_path_file_v4", "路径与文件",
+        "Python提供多种文件和路径操作工具，从os.path传统接口到pathlib面向对象再到glob/fnmatch模式匹配。")
+    _add_leaf(tree, py_path_file.node_id, "py_pathlib_std_v4", "pathlib",
+        "Path对象。Path.cwd()/home()/mkdir/glob/read_text。/运算符拼接。")
+    _add_leaf(tree, py_path_file.node_id, "py_glob_v4", "glob",
+        "glob.glob('**/*.py',recursive=True) 文件模式匹配。等同于pathlib.Path.glob。")
+    _add_leaf(tree, py_path_file.node_id, "py_fnmatch_v4", "fnmatch",
+        "fnmatch.fnmatch('file.txt','*.txt') Unix风格文件名匹配。fnmatch.filter。")
+    _add_leaf(tree, py_path_file.node_id, "py_tempfile_v4", "tempfile",
+        "tempfile.TemporaryFile(自动删除)/NamedTemporaryFile/mkdtemp。安全临时文件。")
+
+    # 国际化
+    py_i18n = _add_node(tree, py_stdlib.node_id, "py_i18n_v4", "国际化",
+        "Python国际化通过gettext和locale模块实现。gettext管理翻译，locale处理区域格式。")
+    _add_leaf(tree, py_i18n.node_id, "py_gettext_v4", "gettext",
+        "gettext.translation加载.mo文件。_('msgid')翻译。install()全局绑定。")
+    _add_leaf(tree, py_i18n.node_id, "py_locale_v4", "locale",
+        "locale.setlocale设置区域。currency/format/strcoll排序。LC_ALL/LC_TIME。")
+
+    # ═══════════════════════════════════════════════════════
+    # 测试扩展 (L7)
+    # ═══════════════════════════════════════════════════════
+    _add_leaf(tree, py_testing.node_id, "py_pdb_v4", "pdb 调试器",
+        "python -m pdb script.py 启动。l列出/n下一步/s进入/c继续/p打印/q退出。")
+    _add_leaf(tree, py_testing.node_id, "py_doctest_v4", "doctest",
+        "文档字符串中的测试用例。python -m doctest module.py。文档即测试。")
+
+    # ═══════════════════════════════════════════════════════
+    # 交叉引用
+    # ═══════════════════════════════════════════════════════
+    tree.add_cross_reference("py_lock_v4", "py_thread_sync_v4")
+    tree.add_cross_reference("py_event_loop_v4", "py_asyncio_task_v4")
+    tree.add_cross_reference("py_event_loop_v4", "py_coroutine_v4")
+    tree.add_cross_reference("py_futures_v4", "py_thread_pool_executor_v4")
+    tree.add_cross_reference("py_futures_v4", "py_process_pool_executor_v4")
+    tree.add_cross_reference("py_conda_v4", "py_virtualenv_v4")
+    tree.add_cross_reference("py_pip_install_v4", "py_requirements_v4")
+    tree.add_cross_reference("py_setup_py_v4", "py_pyproject_v4")
+    tree.add_cross_reference("py_poetry_v4", "py_pdm_v4")
+    tree.add_cross_reference("py_gettext_v4", "py_locale_v4")
 
     # ═══════════════════════════════════════════════════════════
     # 其他编程语言 (L4 Java/JS/C++)

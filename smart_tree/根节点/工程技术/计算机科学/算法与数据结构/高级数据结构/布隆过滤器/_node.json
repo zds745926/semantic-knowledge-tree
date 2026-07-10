@@ -1,0 +1,21 @@
+{
+  "name": "布隆过滤器",
+  "node_id": "bloom_filter_v4",
+  "parent_id": "adv_ds_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "高级数据结构",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "布隆过滤器",
+      "uri": "knowledge://bloom_filter_v4",
+      "content_preview": "位数组+多哈希。判断'一定不在'或'可能在'。防缓存穿透/去重。"
+    }
+  ],
+  "related_nodes": []
+}

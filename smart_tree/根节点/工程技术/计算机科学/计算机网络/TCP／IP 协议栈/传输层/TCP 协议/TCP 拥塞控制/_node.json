@@ -1,0 +1,21 @@
+{
+  "name": "TCP 拥塞控制",
+  "node_id": "tcp_congestion_v4",
+  "parent_id": "tcp_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "TCP 协议",
+  "children": [
+    "慢启动",
+    "拥塞避免",
+    "TCP BBR"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "拥塞控制防止网络过载，包括慢启动、拥塞避免和快速恢复。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,20 @@
+{
+  "name": "可观测性",
+  "node_id": "monitoring_v4",
+  "parent_id": "devops_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "DevOps",
+  "children": [
+    "Prometheus",
+    "Grafana"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "可观测性包括监控(Metrics)、追踪(Trace)和日志(Log)三大支柱。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

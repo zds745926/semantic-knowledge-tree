@@ -1,0 +1,21 @@
+{
+  "name": "装饰器原理",
+  "node_id": "py_deco_closure_v4",
+  "parent_id": "py_adv_deco_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "装饰器进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "装饰器原理",
+      "uri": "knowledge://py_deco_closure_v4",
+      "content_preview": "func = decorator(func)。闭包捕获原函数。wraps复制元信息。"
+    }
+  ],
+  "related_nodes": []
+}

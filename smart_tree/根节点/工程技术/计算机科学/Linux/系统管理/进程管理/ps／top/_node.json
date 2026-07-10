@@ -1,0 +1,21 @@
+{
+  "name": "ps/top",
+  "node_id": "ps_top_v4",
+  "parent_id": "linux_proc_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "进程管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "ps/top",
+      "uri": "knowledge://ps_top_v4",
+      "content_preview": "ps aux所有进程。top实时视图。htop增强交互。"
+    }
+  ],
+  "related_nodes": []
+}

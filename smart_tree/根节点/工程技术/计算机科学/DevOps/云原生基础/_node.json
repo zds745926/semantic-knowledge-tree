@@ -1,0 +1,20 @@
+{
+  "name": "云原生基础",
+  "node_id": "cloud_v4",
+  "parent_id": "devops_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "DevOps",
+  "children": [
+    "AWS",
+    "Terraform"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "云原生技术利用云计算模型构建和运行应用。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

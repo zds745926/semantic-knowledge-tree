@@ -1,0 +1,21 @@
+{
+  "name": "导数",
+  "node_id": "derivative_v4",
+  "parent_id": "calc_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "微积分",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "导数",
+      "uri": "knowledge://derivative_v4",
+      "content_preview": "导数 f'(x)=lim_{h→0}[f(x+h)-f(x)]/h 表示函数在某点的瞬时变化率。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Pod",
+  "node_id": "k8s_pod_v4",
+  "parent_id": "k8s_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Kubernetes",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Pod",
+      "uri": "knowledge://k8s_pod_v4",
+      "content_preview": "最小调度单元。一个或多个容器共享网络/存储。Sidecar模式。"
+    }
+  ],
+  "related_nodes": [
+    "k8s_deploy_v4"
+  ]
+}

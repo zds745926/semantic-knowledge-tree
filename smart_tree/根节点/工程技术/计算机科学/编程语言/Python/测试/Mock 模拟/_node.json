@@ -1,0 +1,21 @@
+{
+  "name": "Mock 模拟",
+  "node_id": "py_mock_v4",
+  "parent_id": "py_testing_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "测试",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Mock 模拟",
+      "uri": "knowledge://py_mock_v4",
+      "content_preview": "unittest.mock替换外部依赖。Mock/MagicMock/patch。side_effect/return_value控制行为。"
+    }
+  ],
+  "related_nodes": []
+}

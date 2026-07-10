@@ -1,0 +1,21 @@
+{
+  "name": "pip freeze",
+  "node_id": "py_pip_freeze_v4",
+  "parent_id": "py_pip_branch_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "pip 包管理器",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "pip freeze",
+      "uri": "knowledge://py_pip_freeze_v4",
+      "content_preview": "pip freeze > requirements.txt 导出当前环境包列表。pip list 列出已安装包。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "链表",
+  "node_id": "linked_list_v4",
+  "parent_id": "ds_basics_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "基础数据结构",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "链表",
+      "uri": "knowledge://linked_list_v4",
+      "content_preview": "节点含数据和指针。单链表/双链表/循环链表。插入删除O(1)。"
+    }
+  ],
+  "related_nodes": []
+}

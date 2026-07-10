@@ -1,0 +1,20 @@
+{
+  "name": "Linux",
+  "node_id": "linux_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "系统管理",
+    "Shell 脚本"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Linux是一种自由开源的操作系统内核，广泛应用于服务器、嵌入式系统和云计算。以其稳定性、安全性和灵活性著称，是互联网基础设施的核心。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

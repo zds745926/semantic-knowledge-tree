@@ -1,0 +1,23 @@
+{
+  "name": "数据序列化",
+  "node_id": "py_serialization_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "标准库",
+  "children": [
+    "json",
+    "pickle",
+    "csv",
+    "xml",
+    "configparser"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python支持多种数据序列化格式。json跨语言、pickle Python专用、csv表格、configparser配置。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

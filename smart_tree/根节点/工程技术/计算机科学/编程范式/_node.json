@@ -1,0 +1,21 @@
+{
+  "name": "编程范式",
+  "node_id": "paradigms_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "面向过程",
+    "面向对象",
+    "函数式编程"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "编程范式是编程的基本风格和方法论，包括面向过程、面向对象、函数式和声明式等。每种范式提供了不同的抽象方式和思维模型，理解多种范式有助于写出更好的代码。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "OSPF",
+  "node_id": "ospf_v4",
+  "parent_id": "routing_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "路由协议",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "OSPF",
+      "uri": "knowledge://ospf_v4",
+      "content_preview": "链路状态路由。Dijkstra SPF计算路径。区域分层。收敛快。"
+    }
+  ],
+  "related_nodes": []
+}

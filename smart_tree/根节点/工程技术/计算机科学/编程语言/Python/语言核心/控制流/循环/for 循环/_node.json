@@ -1,0 +1,22 @@
+{
+  "name": "for 循环",
+  "node_id": "py_for_v4",
+  "parent_id": "py_loop_v4",
+  "level": 8,
+  "is_leaf": false,
+  "absorption_rate": 0.13999999999999999,
+  "version": 1,
+  "parent": "循环",
+  "children": [
+    "range 详解",
+    "enumerate 详解",
+    "for 迭代原理",
+    "for 循环进阶"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "for 循环遍历可迭代对象。range生成等差数列，enumerate带索引遍历。for 循环的迭代原理基于迭代器协议。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

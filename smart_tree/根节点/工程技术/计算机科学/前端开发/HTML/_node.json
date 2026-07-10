@@ -1,0 +1,21 @@
+{
+  "name": "HTML",
+  "node_id": "html_basics_v4",
+  "parent_id": "fe_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "前端开发",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "HTML",
+      "uri": "knowledge://html_basics_v4",
+      "content_preview": "标签结构<html><head><body>。语义化header/nav/main/section/article/footer。"
+    }
+  ],
+  "related_nodes": []
+}

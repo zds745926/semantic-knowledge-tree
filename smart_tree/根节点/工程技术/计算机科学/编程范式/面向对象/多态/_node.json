@@ -1,0 +1,21 @@
+{
+  "name": "多态",
+  "node_id": "polymorphism_v4",
+  "parent_id": "oop_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "面向对象",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "多态",
+      "uri": "knowledge://polymorphism_v4",
+      "content_preview": "多态指同一操作在不同对象上有不同行为。编译时多态(重载)和运行时多态(重写)。"
+    }
+  ],
+  "related_nodes": []
+}

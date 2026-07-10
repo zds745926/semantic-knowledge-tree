@@ -1,0 +1,21 @@
+{
+  "name": "函数高级特性",
+  "node_id": "py_func_adv_v4",
+  "parent_id": "py_func_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "函数",
+  "children": [
+    "lambda 表达式",
+    "闭包",
+    "装饰器"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python的函数高级特性包括闭包、装饰器和lambda表达式。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

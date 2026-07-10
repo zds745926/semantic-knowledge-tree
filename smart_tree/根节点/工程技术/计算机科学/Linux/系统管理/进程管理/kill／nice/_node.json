@@ -1,0 +1,21 @@
+{
+  "name": "kill/nice",
+  "node_id": "kill_nice_v4",
+  "parent_id": "linux_proc_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "进程管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "kill/nice",
+      "uri": "knowledge://kill_nice_v4",
+      "content_preview": "kill -9强制。nice/renice调优先级。"
+    }
+  ],
+  "related_nodes": []
+}

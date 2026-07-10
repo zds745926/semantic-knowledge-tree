@@ -1,0 +1,21 @@
+{
+  "name": "DNS",
+  "node_id": "dns_v4",
+  "parent_id": "app_layer_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "应用层协议",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "DNS",
+      "uri": "knowledge://dns_v4",
+      "content_preview": "域名→IP。递归/迭代查询。A/AAAA/CNAME/MX记录。根服务器13组。"
+    }
+  ],
+  "related_nodes": []
+}

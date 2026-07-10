@@ -1,0 +1,21 @@
+{
+  "name": "K-Means",
+  "node_id": "kmeans_v4",
+  "parent_id": "unsupervised_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "无监督学习",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "K-Means",
+      "uri": "knowledge://kmeans_v4",
+      "content_preview": "迭代聚类。K值需预设。肘部法确定K。"
+    }
+  ],
+  "related_nodes": []
+}

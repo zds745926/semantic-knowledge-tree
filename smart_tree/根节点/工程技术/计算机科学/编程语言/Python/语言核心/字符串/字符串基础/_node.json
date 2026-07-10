@@ -1,0 +1,21 @@
+{
+  "name": "字符串基础",
+  "node_id": "py_str_basic_v4",
+  "parent_id": "py_str_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "字符串",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "字符串基础",
+      "uri": "knowledge://py_str_basic_v4",
+      "content_preview": "str 不可变序列。' 和 \" 定义。f-string 是最佳格式化：f'值：{x}'。"
+    }
+  ],
+  "related_nodes": []
+}

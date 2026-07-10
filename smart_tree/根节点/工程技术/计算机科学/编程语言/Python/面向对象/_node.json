@@ -1,0 +1,21 @@
+{
+  "name": "面向对象",
+  "node_id": "py_oop_v4",
+  "parent_id": "python_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "Python",
+  "children": [
+    "类与实例",
+    "魔术方法",
+    "异常处理"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python 支持面向对象编程，包括类定义、继承、多态和魔术方法。Python的OOP灵活而强大，@property/@classmethod/@staticmethod等装饰器丰富类功能。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "SciPy",
+  "node_id": "py_scipy_v4",
+  "parent_id": "py_fw_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "框架生态",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "SciPy",
+      "uri": "knowledge://py_scipy_v4",
+      "content_preview": "科学计算库。优化/线性代数/积分/插值/信号处理。基于NumPy ndarray构建。"
+    }
+  ],
+  "related_nodes": []
+}

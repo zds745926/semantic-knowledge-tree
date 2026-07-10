@@ -1,0 +1,21 @@
+{
+  "name": "Floyd-Warshall",
+  "node_id": "floyd_v4",
+  "parent_id": "graph_algo_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "图算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Floyd-Warshall",
+      "uri": "knowledge://floyd_v4",
+      "content_preview": "所有节点对最短路径。动态规划。O(V³)。代码极简洁。"
+    }
+  ],
+  "related_nodes": []
+}

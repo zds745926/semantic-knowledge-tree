@@ -1,0 +1,21 @@
+{
+  "name": "时间片轮转 RR",
+  "node_id": "rr_v4",
+  "parent_id": "sched_algo_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "调度算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "时间片轮转 RR",
+      "uri": "knowledge://rr_v4",
+      "content_preview": "固定时间片循环执行。响应快。时间片选择关键。"
+    }
+  ],
+  "related_nodes": []
+}

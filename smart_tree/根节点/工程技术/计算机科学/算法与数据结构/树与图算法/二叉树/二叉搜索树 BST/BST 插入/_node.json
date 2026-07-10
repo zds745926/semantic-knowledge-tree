@@ -1,0 +1,21 @@
+{
+  "name": "BST 插入",
+  "node_id": "bst_insert_v4",
+  "parent_id": "bst_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "二叉搜索树 BST",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "BST 插入",
+      "uri": "knowledge://bst_insert_v4",
+      "content_preview": "先搜索找到位置并插入。O(h)。不允许重复键。中序遍历得到有序。"
+    }
+  ],
+  "related_nodes": []
+}

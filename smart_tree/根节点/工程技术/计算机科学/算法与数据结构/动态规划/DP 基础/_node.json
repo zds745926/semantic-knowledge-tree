@@ -1,0 +1,23 @@
+{
+  "name": "DP 基础",
+  "node_id": "dp_basics_v4",
+  "parent_id": "dp_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "动态规划",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "DP 基础",
+      "uri": "knowledge://dp_basics_v4",
+      "content_preview": "最优子结构+重叠子问题。自顶向下(记忆化) vs 自底向上(表格)。"
+    }
+  ],
+  "related_nodes": [
+    "knapsack_v4"
+  ]
+}

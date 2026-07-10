@@ -1,0 +1,21 @@
+{
+  "name": "PCA",
+  "node_id": "pca_v4",
+  "parent_id": "unsupervised_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "无监督学习",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "PCA",
+      "uri": "knowledge://pca_v4",
+      "content_preview": "主成分分析降维。去相关去噪。最大化保留方差。"
+    }
+  ],
+  "related_nodes": []
+}

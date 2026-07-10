@@ -1,0 +1,21 @@
+{
+  "name": "自注意力",
+  "node_id": "self_attention_v4",
+  "parent_id": "transformer_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Transformer",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "自注意力",
+      "uri": "knowledge://self_attention_v4",
+      "content_preview": "QKV机制：softmax(QK^T/√d)V。O(n²)复杂度。"
+    }
+  ],
+  "related_nodes": []
+}

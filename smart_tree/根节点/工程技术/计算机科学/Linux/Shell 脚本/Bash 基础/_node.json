@@ -1,0 +1,21 @@
+{
+  "name": "Bash 基础",
+  "node_id": "bash_basics_v4",
+  "parent_id": "shell_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Shell 脚本",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Bash 基础",
+      "uri": "knowledge://bash_basics_v4",
+      "content_preview": "#!/bin/bash。变量${var}。$0/$1/$#/$?。$(cmd)替换。"
+    }
+  ],
+  "related_nodes": []
+}

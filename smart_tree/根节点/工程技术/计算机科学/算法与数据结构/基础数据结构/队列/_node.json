@@ -1,0 +1,21 @@
+{
+  "name": "队列",
+  "node_id": "queue_v4",
+  "parent_id": "ds_basics_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "基础数据结构",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "队列",
+      "uri": "knowledge://queue_v4",
+      "content_preview": "先进先出FIFO。enqueue/dequeue O(1)。应用：BFS/任务调度/消息队列。"
+    }
+  ],
+  "related_nodes": []
+}

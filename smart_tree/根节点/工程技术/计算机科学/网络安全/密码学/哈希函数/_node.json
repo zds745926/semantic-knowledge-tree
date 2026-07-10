@@ -1,0 +1,21 @@
+{
+  "name": "哈希函数",
+  "node_id": "hash_v4",
+  "parent_id": "crypto_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "密码学",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "哈希函数",
+      "uri": "knowledge://hash_v4",
+      "content_preview": "SHA-256/3。不可逆抗碰撞。bcrypt/argon2密码哈希。"
+    }
+  ],
+  "related_nodes": []
+}

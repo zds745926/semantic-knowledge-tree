@@ -1,0 +1,21 @@
+{
+  "name": "模式匹配 (match)",
+  "node_id": "py_match_v4",
+  "parent_id": "py_cond_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "条件判断",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "模式匹配 (match)",
+      "uri": "knowledge://py_match_v4",
+      "content_preview": "Python 3.10+ 的 match/case 支持字面值、通配符、序列解包、守卫条件等多种模式。"
+    }
+  ],
+  "related_nodes": []
+}

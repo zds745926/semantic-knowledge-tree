@@ -1,0 +1,20 @@
+{
+  "name": "排序算法",
+  "node_id": "sorting_v4",
+  "parent_id": "algo_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "算法与数据结构",
+  "children": [
+    "比较排序",
+    "线性排序"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "排序是计算机科学中最基础和重要的算法之一。分为比较排序和非比较排序两类。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

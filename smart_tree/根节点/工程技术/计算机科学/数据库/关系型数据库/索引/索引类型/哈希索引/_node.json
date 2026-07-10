@@ -1,0 +1,21 @@
+{
+  "name": "哈希索引",
+  "node_id": "hash_index_v4",
+  "parent_id": "index_types_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "索引类型",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "哈希索引",
+      "uri": "knowledge://hash_index_v4",
+      "content_preview": "键哈希映射。仅等值查询。Memery引擎默认。O(1)查询。"
+    }
+  ],
+  "related_nodes": []
+}

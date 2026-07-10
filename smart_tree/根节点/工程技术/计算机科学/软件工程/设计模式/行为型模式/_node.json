@@ -1,0 +1,21 @@
+{
+  "name": "行为型模式",
+  "node_id": "behavioral_v4",
+  "parent_id": "design_patterns_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "设计模式",
+  "children": [
+    "观察者模式",
+    "策略模式",
+    "责任链模式"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "行为型模式关注对象间的交互和职责分配。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

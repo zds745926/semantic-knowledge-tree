@@ -1,0 +1,20 @@
+{
+  "name": "TCP 可靠传输",
+  "node_id": "tcp_reliable_v4",
+  "parent_id": "tcp_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "TCP 协议",
+  "children": [
+    "流量控制",
+    "滑动窗口"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "TCP通过序列号、确认应答、重传超时和滑动窗口实现可靠传输。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "带参数装饰器",
+  "node_id": "py_deco_params_v4",
+  "parent_id": "py_adv_deco_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "装饰器进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "带参数装饰器",
+      "uri": "knowledge://py_deco_params_v4",
+      "content_preview": "def decorator(args): def inner(func): ... 三层嵌套。"
+    }
+  ],
+  "related_nodes": []
+}

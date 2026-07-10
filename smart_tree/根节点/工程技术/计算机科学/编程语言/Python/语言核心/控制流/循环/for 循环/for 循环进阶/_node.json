@@ -1,0 +1,21 @@
+{
+  "name": "for 循环进阶",
+  "node_id": "py_for_detail_v4",
+  "parent_id": "py_for_v4",
+  "level": 9,
+  "is_leaf": false,
+  "absorption_rate": 0.155,
+  "version": 1,
+  "parent": "for 循环",
+  "children": [
+    "for-else 子句",
+    "zip 并行迭代",
+    "reversed/sorted 迭代"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "for 循环的进阶用法包括for-else子句、zip并行迭代和reversed/sorted反向排序迭代。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

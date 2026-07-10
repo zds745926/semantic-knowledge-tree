@@ -1,0 +1,21 @@
+{
+  "name": "读未提交",
+  "node_id": "read_uncommitted_v4",
+  "parent_id": "isolation_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "隔离级别",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "读未提交",
+      "uri": "knowledge://read_uncommitted_v4",
+      "content_preview": "最低级。可读到未提交数据(脏读)。几乎不用。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ProcessPoolExecutor",
+  "node_id": "py_process_pool_executor_v4",
+  "parent_id": "py_futures_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "concurrent.futures",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "ProcessPoolExecutor",
+      "uri": "knowledge://py_process_pool_executor_v4",
+      "content_preview": "进程池执行器。跨GIL，适合CPU密集型。参数需可pickle。"
+    }
+  ],
+  "related_nodes": []
+}

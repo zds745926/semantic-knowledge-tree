@@ -1,0 +1,21 @@
+{
+  "name": "网络配置",
+  "node_id": "linux_net_v4",
+  "parent_id": "linux_admin_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "系统管理",
+  "children": [
+    "ip/ss",
+    "iptables/nftables",
+    "SSH"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Linux网络配置包括ip/ss命令、iptables防火墙和SSH远程连接。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

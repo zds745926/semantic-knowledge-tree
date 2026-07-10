@@ -1,0 +1,19 @@
+{
+  "name": "JavaScript",
+  "node_id": "js_v4",
+  "parent_id": "languages_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "编程语言",
+  "children": [
+    "JavaScript 核心"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "JavaScript是Web的核心编程语言，单线程非阻塞，事件驱动。ES6+带来class/箭头函数/Promise。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

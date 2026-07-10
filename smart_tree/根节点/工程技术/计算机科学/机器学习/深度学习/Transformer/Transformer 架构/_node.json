@@ -1,0 +1,23 @@
+{
+  "name": "Transformer 架构",
+  "node_id": "transformer_arch_v4",
+  "parent_id": "transformer_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Transformer",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Transformer 架构",
+      "uri": "knowledge://transformer_arch_v4",
+      "content_preview": "编码器+解码器。自注意力+前馈网络。位置编码。LayerNorm。"
+    }
+  ],
+  "related_nodes": [
+    "self_attention_v4"
+  ]
+}

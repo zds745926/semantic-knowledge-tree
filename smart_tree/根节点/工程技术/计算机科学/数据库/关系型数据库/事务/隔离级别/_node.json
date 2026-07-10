@@ -1,0 +1,22 @@
+{
+  "name": "隔离级别",
+  "node_id": "isolation_v4",
+  "parent_id": "tx_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "事务",
+  "children": [
+    "读未提交",
+    "读已提交",
+    "可重复读",
+    "可串行化"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "四种隔离级别控制并发事务的可见性。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

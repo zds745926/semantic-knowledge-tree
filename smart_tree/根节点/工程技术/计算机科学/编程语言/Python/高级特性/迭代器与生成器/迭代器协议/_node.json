@@ -1,0 +1,23 @@
+{
+  "name": "迭代器协议",
+  "node_id": "py_iterator_proto_v4",
+  "parent_id": "py_iter_gen_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "迭代器与生成器",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "迭代器协议",
+      "uri": "knowledge://py_iterator_proto_v4",
+      "content_preview": "__iter__返回self，__next__返回元素或raise StopIteration。"
+    }
+  ],
+  "related_nodes": [
+    "py_for_v4"
+  ]
+}

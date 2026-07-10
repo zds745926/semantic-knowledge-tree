@@ -1,0 +1,22 @@
+{
+  "name": "比较排序",
+  "node_id": "sort_compare_v4",
+  "parent_id": "sorting_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "排序算法",
+  "children": [
+    "快速排序",
+    "归并排序",
+    "堆排序",
+    "插入排序"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "比较排序基于元素间的比较操作，通用性强。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

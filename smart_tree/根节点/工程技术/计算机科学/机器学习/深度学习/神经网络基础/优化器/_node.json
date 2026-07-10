@@ -1,0 +1,21 @@
+{
+  "name": "优化器",
+  "node_id": "optimizers_v4",
+  "parent_id": "nn_basics_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "神经网络基础",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "优化器",
+      "uri": "knowledge://optimizers_v4",
+      "content_preview": "SGD/Adam/RMSprop/AdamW。学习率调度。"
+    }
+  ],
+  "related_nodes": []
+}

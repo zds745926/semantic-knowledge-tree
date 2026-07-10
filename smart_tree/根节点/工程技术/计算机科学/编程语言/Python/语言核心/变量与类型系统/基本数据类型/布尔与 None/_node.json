@@ -1,0 +1,21 @@
+{
+  "name": "布尔与 None",
+  "node_id": "py_bool_none_v4",
+  "parent_id": "py_basic_types_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "基本数据类型",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "布尔与 None",
+      "uri": "knowledge://py_bool_none_v4",
+      "content_preview": "bool 是 int 的子类，True/False 值为 1/0。None 表示空值。条件中 False/0/''/[]/{} 均为假。"
+    }
+  ],
+  "related_nodes": []
+}

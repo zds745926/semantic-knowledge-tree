@@ -1,0 +1,21 @@
+{
+  "name": "状态转移详解",
+  "node_id": "tcp_state_trans_v4",
+  "parent_id": "tcp_state_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "TCP 状态机",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "状态转移详解",
+      "uri": "knowledge://tcp_state_trans_v4",
+      "content_preview": "11种状态：CLOSED/LISTEN/SYN_SENT/SYN_RCVD/ESTABLISHED等。各状态间通过包触发转移。"
+    }
+  ],
+  "related_nodes": []
+}

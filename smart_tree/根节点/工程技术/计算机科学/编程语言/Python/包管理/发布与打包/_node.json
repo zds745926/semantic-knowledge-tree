@@ -1,0 +1,22 @@
+{
+  "name": "发布与打包",
+  "node_id": "py_deploy_v4",
+  "parent_id": "py_pkg_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "包管理",
+  "children": [
+    "setup.py",
+    "pyproject.toml",
+    "Wheel",
+    "PyPI 上传"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python包发布流程包括源代码打包、Wheel构建和PyPI上传。setuptools是传统方式，flit/hatchling等现代工具简化流程。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

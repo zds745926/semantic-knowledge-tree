@@ -1,0 +1,23 @@
+{
+  "name": "广度优先搜索 BFS",
+  "node_id": "bfs_v4",
+  "parent_id": "search_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "搜索算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "广度优先搜索 BFS",
+      "uri": "knowledge://bfs_v4",
+      "content_preview": "用队列逐层遍历。找最短路径。O(V+E)。应用：迷宫/社交网络。"
+    }
+  ],
+  "related_nodes": [
+    "dfs_v4"
+  ]
+}

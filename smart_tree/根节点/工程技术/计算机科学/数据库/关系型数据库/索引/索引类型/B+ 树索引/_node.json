@@ -1,0 +1,23 @@
+{
+  "name": "B+ 树索引",
+  "node_id": "btree_index_v4",
+  "parent_id": "index_types_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "索引类型",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "B+ 树索引",
+      "uri": "knowledge://btree_index_v4",
+      "content_preview": "所有数据在叶子节点，内部只有键值指针。叶子链表。InnoDB聚簇索引。"
+    }
+  ],
+  "related_nodes": [
+    "hash_index_v4"
+  ]
+}

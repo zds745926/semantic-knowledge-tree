@@ -1,0 +1,21 @@
+{
+  "name": "PyPI 上传",
+  "node_id": "py_pypi_upload_v4",
+  "parent_id": "py_deploy_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "发布与打包",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "PyPI 上传",
+      "uri": "knowledge://py_pypi_upload_v4",
+      "content_preview": "twine upload dist/* 上传。TestPyPI测试。API token认证。"
+    }
+  ],
+  "related_nodes": []
+}

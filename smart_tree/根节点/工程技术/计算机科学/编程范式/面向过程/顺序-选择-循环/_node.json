@@ -1,0 +1,21 @@
+{
+  "name": "顺序-选择-循环",
+  "node_id": "sequence_selection_iteration_v4",
+  "parent_id": "procedural_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "面向过程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "顺序-选择-循环",
+      "uri": "knowledge://sequence_selection_iteration_v4",
+      "content_preview": "面向过程编程的三种基本结构：顺序执行、条件选择(if-else)、循环(while/for)。"
+    }
+  ],
+  "related_nodes": []
+}

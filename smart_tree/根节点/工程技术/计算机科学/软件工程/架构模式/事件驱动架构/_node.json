@@ -1,0 +1,21 @@
+{
+  "name": "事件驱动架构",
+  "node_id": "event_driven_v4",
+  "parent_id": "arch_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "架构模式",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "事件驱动架构",
+      "uri": "knowledge://event_driven_v4",
+      "content_preview": "组件通过事件通信。松耦合高扩展。Kafka/RabbitMQ。"
+    }
+  ],
+  "related_nodes": []
+}

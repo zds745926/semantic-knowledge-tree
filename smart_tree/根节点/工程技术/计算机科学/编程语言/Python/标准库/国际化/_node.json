@@ -1,0 +1,20 @@
+{
+  "name": "国际化",
+  "node_id": "py_i18n_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "标准库",
+  "children": [
+    "gettext",
+    "locale"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python国际化通过gettext和locale模块实现。gettext管理翻译，locale处理区域格式。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

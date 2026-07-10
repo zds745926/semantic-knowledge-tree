@@ -1,0 +1,19 @@
+{
+  "name": "工程技术",
+  "node_id": "engineering",
+  "parent_id": "root",
+  "level": 1,
+  "is_leaf": false,
+  "absorption_rate": 0.035,
+  "version": 1,
+  "parent": "根节点",
+  "children": [
+    "计算机科学"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "工程技术是将科学原理应用于实际生产和问题解决的学科领域。涵盖计算机科学、电子工程、机械工程、土木工程等应用学科。核心特征是实践性、创新性和系统性，推动社会技术进步和产业升级。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

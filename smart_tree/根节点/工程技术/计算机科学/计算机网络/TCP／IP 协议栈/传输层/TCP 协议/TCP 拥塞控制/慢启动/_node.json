@@ -1,0 +1,23 @@
+{
+  "name": "慢启动",
+  "node_id": "tcp_slow_start_v4",
+  "parent_id": "tcp_congestion_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "TCP 拥塞控制",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "慢启动",
+      "uri": "knowledge://tcp_slow_start_v4",
+      "content_preview": "cwnd从1MSS开始，每收到ACK翻倍(指数增长)。到达ssthresh转拥塞避免。"
+    }
+  ],
+  "related_nodes": [
+    "tcp_congestion_avoid_v4"
+  ]
+}

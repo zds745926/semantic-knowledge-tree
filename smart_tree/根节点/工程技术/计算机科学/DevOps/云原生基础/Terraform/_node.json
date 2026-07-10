@@ -1,0 +1,21 @@
+{
+  "name": "Terraform",
+  "node_id": "terraform_v4",
+  "parent_id": "cloud_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "云原生基础",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Terraform",
+      "uri": "knowledge://terraform_v4",
+      "content_preview": "IaC(HCL语言)。plan/apply/destroy。状态文件。多provider。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "dataclasses 数据类",
+  "node_id": "py_dataclass_v4",
+  "parent_id": "py_class_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "类与实例",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "dataclasses 数据类",
+      "uri": "knowledge://py_dataclass_v4",
+      "content_preview": "@dataclass自动生成__init__/__repr__/__eq__。field()自定义字段。frozen不可变。3.7+。"
+    }
+  ],
+  "related_nodes": []
+}

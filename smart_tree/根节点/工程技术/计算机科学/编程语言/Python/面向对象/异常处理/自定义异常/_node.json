@@ -1,0 +1,21 @@
+{
+  "name": "自定义异常",
+  "node_id": "py_custom_except_v4",
+  "parent_id": "py_except_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "异常处理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "自定义异常",
+      "uri": "knowledge://py_custom_except_v4",
+      "content_preview": "class MyError(Exception): pass。自定义异常。"
+    }
+  ],
+  "related_nodes": []
+}

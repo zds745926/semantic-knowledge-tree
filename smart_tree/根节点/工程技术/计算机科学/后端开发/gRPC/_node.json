@@ -1,0 +1,21 @@
+{
+  "name": "gRPC",
+  "node_id": "grpc_v4",
+  "parent_id": "be_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "后端开发",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "gRPC",
+      "uri": "knowledge://grpc_v4",
+      "content_preview": "高性能RPC。Protobuf序列化。HTTP/2。流式通信。"
+    }
+  ],
+  "related_nodes": []
+}

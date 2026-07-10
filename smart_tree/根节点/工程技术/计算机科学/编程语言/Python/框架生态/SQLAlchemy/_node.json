@@ -1,0 +1,21 @@
+{
+  "name": "SQLAlchemy",
+  "node_id": "py_sqlalchemy_v4",
+  "parent_id": "py_fw_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "框架生态",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "SQLAlchemy",
+      "uri": "knowledge://py_sqlalchemy_v4",
+      "content_preview": "Python ORM框架。声明式映射/会话管理/关系加载。核心SQL表达式语言独立于ORM。"
+    }
+  ],
+  "related_nodes": []
+}

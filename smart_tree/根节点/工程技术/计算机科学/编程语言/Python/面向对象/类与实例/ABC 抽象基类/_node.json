@@ -1,0 +1,21 @@
+{
+  "name": "ABC 抽象基类",
+  "node_id": "py_abc_v4",
+  "parent_id": "py_class_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "类与实例",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "ABC 抽象基类",
+      "uri": "knowledge://py_abc_v4",
+      "content_preview": "from abc import ABC,abstractmethod。定义接口契约。子类必须实现抽象方法。collections.abc混入协议。"
+    }
+  ],
+  "related_nodes": []
+}

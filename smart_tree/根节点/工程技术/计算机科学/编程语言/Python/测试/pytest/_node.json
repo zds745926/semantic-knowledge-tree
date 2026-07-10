@@ -1,0 +1,23 @@
+{
+  "name": "pytest",
+  "node_id": "py_pytest_v4",
+  "parent_id": "py_testing_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "测试",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "pytest",
+      "uri": "knowledge://py_pytest_v4",
+      "content_preview": "Python最流行的测试框架。assert断言。fixture管理依赖。参数化测试。conftest共享配置。"
+    }
+  ],
+  "related_nodes": [
+    "py_mock_v4"
+  ]
+}

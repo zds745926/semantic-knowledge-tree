@@ -1,0 +1,21 @@
+{
+  "name": "Channel",
+  "node_id": "go_channel_v4",
+  "parent_id": "go_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Go",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Channel",
+      "uri": "knowledge://go_channel_v4",
+      "content_preview": "ch := make(chan int)。ch<-val发送/<-ch接收。select多路复用。"
+    }
+  ],
+  "related_nodes": []
+}

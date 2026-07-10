@@ -1,0 +1,20 @@
+{
+  "name": "传输层",
+  "node_id": "transport_v4",
+  "parent_id": "tcpip_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "TCP/IP 协议栈",
+  "children": [
+    "TCP 协议",
+    "UDP 协议"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "传输层提供端到端通信，主要有TCP(可靠)和UDP(不可靠)两种协议。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -17,8 +17,8 @@ from core.logger import QueryLogger
 
 
 def get_or_build_tree() -> SemanticKnowledgeTree:
-    """从持久化加载，不存在则构建并保存"""
-    db = TreePersistence("data/knowledge_tree.db")
+    """从文件系统加载，不存在则构建并保存"""
+    db = TreePersistence("smart_tree")
     tree = db.load_tree()
     if tree is not None:
         return tree, db
@@ -38,10 +38,9 @@ def run_query(tree, query, reasoner, logger):
     """执行查询：全量数据写日志，控制台只展示 AI 答案"""
     qvec = tree.encoder.encode(query)
     pen = tree.penetrate(query, query_vec=qvec, verbose=False)
-    short = tree.shortcut_search(query, query_vec=qvec, verbose=False)
 
     # AI 融合 + 生成答案
-    merged = reasoner.merge_results(query, pen, short)
+    merged = reasoner.merge_results(query, pen)
 
     # 写日志（全量技术数据）
     log_path, seq = logger.log_query(query, merged)
@@ -126,7 +125,7 @@ def main():
     logger = QueryLogger()
     print(f"  ✅ {MODEL} 就绪  |  日志 → {logger.get_session_path()}")
     ds = db.stats()
-    print(f"  📦 {ds['db_path']} ({ds['db_size_bytes']/1024:.0f} KB)")
+    print(f"  📦 {ds['tree_path']} ({ds['tree_size_bytes']/1024:.0f} KB)")
 
     print(f"\n{'─' * 55}")
     print("  1 — 批量演示")

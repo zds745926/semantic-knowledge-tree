@@ -1,0 +1,20 @@
+{
+  "name": "Java",
+  "node_id": "java_v4",
+  "parent_id": "languages_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "编程语言",
+  "children": [
+    "Java 核心",
+    "集合框架"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Java是静态类型、面向对象的编译型语言，JVM提供跨平台能力。Java拥有丰富的企业级生态(Spring/Hibernate)，是大型系统的常用语言。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

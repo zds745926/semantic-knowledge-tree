@@ -1,0 +1,21 @@
+{
+  "name": "装饰器进阶",
+  "node_id": "py_adv_deco_v4",
+  "parent_id": "py_adv_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "高级特性",
+  "children": [
+    "装饰器原理",
+    "带参数装饰器",
+    "类装饰器"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "装饰器的本质是闭包，掌握其原理可写出灵活的装饰器。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

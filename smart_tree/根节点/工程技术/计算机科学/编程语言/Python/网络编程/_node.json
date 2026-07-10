@@ -1,0 +1,20 @@
+{
+  "name": "网络编程",
+  "node_id": "py_net_v4",
+  "parent_id": "python_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "Python",
+  "children": [
+    "requests 库",
+    "socket 底层 API"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python网络编程涵盖urllib内置库和requests/aiohttp等第三方库。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

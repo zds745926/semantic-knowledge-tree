@@ -1,0 +1,21 @@
+{
+  "name": "图灵机",
+  "node_id": "turing_machine_v4",
+  "parent_id": "comp_theory_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "计算理论",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "图灵机",
+      "uri": "knowledge://turing_machine_v4",
+      "content_preview": "图灵机是计算理论中的抽象模型，由一个无限长的纸带和一个读写头组成。可模拟任何计算机算法。"
+    }
+  ],
+  "related_nodes": []
+}

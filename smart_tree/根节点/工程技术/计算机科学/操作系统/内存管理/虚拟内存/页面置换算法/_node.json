@@ -1,0 +1,21 @@
+{
+  "name": "页面置换算法",
+  "node_id": "page_replacement_v4",
+  "parent_id": "mem_virt_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "虚拟内存",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "页面置换算法",
+      "uri": "knowledge://page_replacement_v4",
+      "content_preview": "FIFO/LRU/Clock。缺页率影响性能。"
+    }
+  ],
+  "related_nodes": []
+}

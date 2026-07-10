@@ -1,0 +1,24 @@
+{
+  "name": "互斥锁 Mutex",
+  "node_id": "mutex_lock_v4",
+  "parent_id": "sync_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "同步与互斥",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "互斥锁 Mutex",
+      "uri": "knowledge://mutex_lock_v4",
+      "content_preview": "保证同一时间只有一个线程访问临界区。P/V操作。"
+    }
+  ],
+  "related_nodes": [
+    "semaphore_v4",
+    "deadlock_v4"
+  ]
+}

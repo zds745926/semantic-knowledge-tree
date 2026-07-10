@@ -1,0 +1,21 @@
+{
+  "name": "Git 基础",
+  "node_id": "git_basics_v4",
+  "parent_id": "git_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Git",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Git 基础",
+      "uri": "knowledge://git_basics_v4",
+      "content_preview": "init/clone/add/commit/push/pull。暂存区工作流。"
+    }
+  ],
+  "related_nodes": []
+}

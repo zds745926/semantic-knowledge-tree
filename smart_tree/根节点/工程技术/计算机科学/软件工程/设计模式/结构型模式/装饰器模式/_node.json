@@ -1,0 +1,21 @@
+{
+  "name": "装饰器模式",
+  "node_id": "decorator_v4",
+  "parent_id": "structural_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "结构型模式",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "装饰器模式",
+      "uri": "knowledge://decorator_v4",
+      "content_preview": "动态给对象加职责。比继承灵活。IO流BufferedInputStream。"
+    }
+  ],
+  "related_nodes": []
+}

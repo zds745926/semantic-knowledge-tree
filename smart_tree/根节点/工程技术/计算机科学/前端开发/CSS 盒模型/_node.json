@@ -1,0 +1,21 @@
+{
+  "name": "CSS 盒模型",
+  "node_id": "css_box_model_v4",
+  "parent_id": "fe_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "前端开发",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "CSS 盒模型",
+      "uri": "knowledge://css_box_model_v4",
+      "content_preview": "content/padding/border/margin。box-sizing。display。"
+    }
+  ],
+  "related_nodes": []
+}

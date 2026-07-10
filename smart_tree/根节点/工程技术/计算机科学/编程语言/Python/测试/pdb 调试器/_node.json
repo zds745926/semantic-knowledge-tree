@@ -1,0 +1,21 @@
+{
+  "name": "pdb 调试器",
+  "node_id": "py_pdb_v4",
+  "parent_id": "py_testing_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "测试",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "pdb 调试器",
+      "uri": "knowledge://py_pdb_v4",
+      "content_preview": "python -m pdb script.py 启动。l列出/n下一步/s进入/c继续/p打印/q退出。"
+    }
+  ],
+  "related_nodes": []
+}

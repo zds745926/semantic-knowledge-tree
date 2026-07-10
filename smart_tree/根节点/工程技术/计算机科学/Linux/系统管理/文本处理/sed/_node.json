@@ -1,0 +1,21 @@
+{
+  "name": "sed",
+  "node_id": "sed_v4",
+  "parent_id": "linux_text_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "文本处理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "sed",
+      "uri": "knowledge://sed_v4",
+      "content_preview": "sed 's/old/new/g'替换。sed -n '1,10p'打印范围。"
+    }
+  ],
+  "related_nodes": []
+}

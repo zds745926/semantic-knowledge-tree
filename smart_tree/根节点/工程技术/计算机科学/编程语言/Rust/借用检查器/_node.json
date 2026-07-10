@@ -1,0 +1,21 @@
+{
+  "name": "借用检查器",
+  "node_id": "rust_borrow_checker_v4",
+  "parent_id": "rust_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Rust",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "借用检查器",
+      "uri": "knowledge://rust_borrow_checker_v4",
+      "content_preview": "编译时分析引用：一个可变引用或多个不可变引用，不可同时存在。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,19 @@
+{
+  "name": "HTTP/2",
+  "node_id": "http2_v4",
+  "parent_id": "http_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "HTTP",
+  "children": [
+    "多路复用"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "HTTP/2二进制分帧，多路复用。头部压缩HPACK。服务器推送。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

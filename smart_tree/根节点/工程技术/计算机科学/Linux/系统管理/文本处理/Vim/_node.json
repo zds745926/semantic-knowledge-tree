@@ -1,0 +1,21 @@
+{
+  "name": "Vim",
+  "node_id": "vim_basics_v4",
+  "parent_id": "linux_text_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "文本处理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Vim",
+      "uri": "knowledge://vim_basics_v4",
+      "content_preview": "三种模式。:wq保存 :q!不存。dd/yy/p。"
+    }
+  ],
+  "related_nodes": []
+}

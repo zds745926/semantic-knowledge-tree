@@ -1,0 +1,23 @@
+{
+  "name": "先来先服务 FCFS",
+  "node_id": "fcfs_v4",
+  "parent_id": "sched_algo_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "调度算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "先来先服务 FCFS",
+      "uri": "knowledge://fcfs_v4",
+      "content_preview": "按到达顺序。非抢占。平均等待时间长(护航效应)。批处理系统。"
+    }
+  ],
+  "related_nodes": [
+    "rr_v4"
+  ]
+}

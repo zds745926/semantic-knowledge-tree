@@ -1,0 +1,21 @@
+{
+  "name": "魔术方法",
+  "node_id": "py_magic_v4",
+  "parent_id": "py_oop_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "面向对象",
+  "children": [
+    "字符串表示",
+    "容器方法",
+    "运算符重载"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "魔术方法是Python对象模型的核心，以双下划线命名(__xxx__)，实现运算符重载和协议。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

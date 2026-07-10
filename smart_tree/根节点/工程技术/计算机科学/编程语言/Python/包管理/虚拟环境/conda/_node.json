@@ -1,0 +1,23 @@
+{
+  "name": "conda",
+  "node_id": "py_conda_v4",
+  "parent_id": "py_venv_branch_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "虚拟环境",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "conda",
+      "uri": "knowledge://py_conda_v4",
+      "content_preview": "Anaconda包与环境管理器。conda create/env/activate。跨语言(支持R/Python)。"
+    }
+  ],
+  "related_nodes": [
+    "py_virtualenv_v4"
+  ]
+}

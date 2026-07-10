@@ -1,0 +1,21 @@
+{
+  "name": "PyTorch",
+  "node_id": "py_torch_v4",
+  "parent_id": "py_fw_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "框架生态",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "PyTorch",
+      "uri": "knowledge://py_torch_v4",
+      "content_preview": "深度学习框架。动态计算图/自动求导。Tensor核心数据结构。torch.nn构建神经网络。"
+    }
+  ],
+  "related_nodes": []
+}

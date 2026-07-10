@@ -1,0 +1,23 @@
+{
+  "name": "单例模式",
+  "node_id": "singleton_v4",
+  "parent_id": "creational_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "创建型模式",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "单例模式",
+      "uri": "knowledge://singleton_v4",
+      "content_preview": "保证类只有一个实例。饿汉/懒汉。Spring Bean默认单例。"
+    }
+  ],
+  "related_nodes": [
+    "proxy_v4"
+  ]
+}

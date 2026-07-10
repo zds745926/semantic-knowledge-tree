@@ -1,0 +1,21 @@
+{
+  "name": "yield from",
+  "node_id": "py_yield_from_v4",
+  "parent_id": "py_iter_gen_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "迭代器与生成器",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "yield from",
+      "uri": "knowledge://py_yield_from_v4",
+      "content_preview": "yield from sub_gen 委托子生成器。简化生成器嵌套。"
+    }
+  ],
+  "related_nodes": []
+}

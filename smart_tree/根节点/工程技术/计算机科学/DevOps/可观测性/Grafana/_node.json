@@ -1,0 +1,21 @@
+{
+  "name": "Grafana",
+  "node_id": "grafana_v4",
+  "parent_id": "monitoring_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "可观测性",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Grafana",
+      "uri": "knowledge://grafana_v4",
+      "content_preview": "可视化仪表盘。多数据源。告警规则。面板类型丰富。"
+    }
+  ],
+  "related_nodes": []
+}

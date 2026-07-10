@@ -1,0 +1,21 @@
+{
+  "name": "Kafka",
+  "node_id": "kafka_v4",
+  "parent_id": "mq_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "消息队列",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Kafka",
+      "uri": "knowledge://kafka_v4",
+      "content_preview": "Topic/Partition/Offset。高吞吐顺序IO。发布-订阅。"
+    }
+  ],
+  "related_nodes": []
+}

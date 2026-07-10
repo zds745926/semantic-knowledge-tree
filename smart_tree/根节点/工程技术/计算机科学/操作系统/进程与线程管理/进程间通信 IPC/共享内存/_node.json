@@ -1,0 +1,21 @@
+{
+  "name": "共享内存",
+  "node_id": "shm_v4",
+  "parent_id": "proc_comm_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "进程间通信 IPC",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "共享内存",
+      "uri": "knowledge://shm_v4",
+      "content_preview": "最快IPC。多个进程映射同一物理内存。需信号量同步。"
+    }
+  ],
+  "related_nodes": []
+}

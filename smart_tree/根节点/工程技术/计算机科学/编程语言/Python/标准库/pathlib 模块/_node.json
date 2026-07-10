@@ -1,0 +1,23 @@
+{
+  "name": "pathlib 模块",
+  "node_id": "py_pathlib_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "标准库",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "pathlib 模块",
+      "uri": "knowledge://py_pathlib_v4",
+      "content_preview": "面向对象的路径操作库。Path对象替代os.path字符串操作。支持/运算符拼接路径。3.4+标准。"
+    }
+  ],
+  "related_nodes": [
+    "py_os_module_v4"
+  ]
+}

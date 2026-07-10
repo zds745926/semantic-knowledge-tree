@@ -1,0 +1,21 @@
+{
+  "name": "Docker 容器",
+  "node_id": "docker_container_v4",
+  "parent_id": "docker_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Docker",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Docker 容器",
+      "uri": "knowledge://docker_container_v4",
+      "content_preview": "镜像运行实例。run/exec/stop/rm。端口映射-p。卷挂载-v。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "集合 set",
+  "node_id": "py_set_basics_v4",
+  "parent_id": "py_set_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "集合与元组",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "集合 set",
+      "uri": "knowledge://py_set_basics_v4",
+      "content_preview": "set 无序不重复。&交集 |并集 -差集 ^对称差集。"
+    }
+  ],
+  "related_nodes": []
+}

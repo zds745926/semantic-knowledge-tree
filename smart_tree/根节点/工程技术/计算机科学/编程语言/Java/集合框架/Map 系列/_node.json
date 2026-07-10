@@ -1,0 +1,23 @@
+{
+  "name": "Map 系列",
+  "node_id": "java_map_v4",
+  "parent_id": "java_col_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "集合框架",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Map 系列",
+      "uri": "knowledge://java_map_v4",
+      "content_preview": "HashMap(哈希)/TreeMap(红黑树)/LinkedHashMap(有序)/ConcurrentHashMap(并发)。"
+    }
+  ],
+  "related_nodes": [
+    "red_black_tree_v4"
+  ]
+}

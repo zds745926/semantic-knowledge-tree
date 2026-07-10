@@ -1,0 +1,21 @@
+{
+  "name": "可重复读",
+  "node_id": "repeatable_read_v4",
+  "parent_id": "isolation_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "隔离级别",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "可重复读",
+      "uri": "knowledge://repeatable_read_v4",
+      "content_preview": "多次读同记录结果一致。InnoDB默认。MVCC快照读。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "threading 基础",
+  "node_id": "py_threading_basic_v4",
+  "parent_id": "py_thread_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多线程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "threading 基础",
+      "uri": "knowledge://py_threading_basic_v4",
+      "content_preview": "Thread创建/start/join。daemon守护线程。GIL限制CPU并行。"
+    }
+  ],
+  "related_nodes": []
+}

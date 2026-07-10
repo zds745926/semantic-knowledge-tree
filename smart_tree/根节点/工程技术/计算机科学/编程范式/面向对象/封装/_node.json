@@ -1,0 +1,21 @@
+{
+  "name": "封装",
+  "node_id": "encapsulation_v4",
+  "parent_id": "oop_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "面向对象",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "封装",
+      "uri": "knowledge://encapsulation_v4",
+      "content_preview": "封装将数据和操作数据的方法绑定在一起，通过访问控制(public/protected/private)实现信息隐藏。"
+    }
+  ],
+  "related_nodes": []
+}

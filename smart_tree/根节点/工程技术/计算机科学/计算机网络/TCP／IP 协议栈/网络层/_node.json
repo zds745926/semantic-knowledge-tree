@@ -1,0 +1,20 @@
+{
+  "name": "网络层",
+  "node_id": "network_layer_v4",
+  "parent_id": "tcpip_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "TCP/IP 协议栈",
+  "children": [
+    "IP 协议",
+    "路由协议"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "网络层负责包的路由和转发，核心协议是IP协议。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,23 @@
+{
+  "name": "基本数据类型",
+  "node_id": "py_basic_types_v4",
+  "parent_id": "py_types_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "变量与类型系统",
+  "children": [
+    "整型 int",
+    "浮点型 float",
+    "布尔与 None",
+    "int 进阶",
+    "float 进阶"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python 基本数据类型包括整型(int)、浮点型(float)、复数(complex)、布尔型(bool)和NoneType。数值类型支持任意精度运算，是Python数据处理的基础。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

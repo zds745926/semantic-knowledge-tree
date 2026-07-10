@@ -1,0 +1,21 @@
+{
+  "name": "反向传播",
+  "node_id": "backpropagation_v4",
+  "parent_id": "nn_basics_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "神经网络基础",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "反向传播",
+      "uri": "knowledge://backpropagation_v4",
+      "content_preview": "链式法则计算梯度。前向→损失→反向→更新。"
+    }
+  ],
+  "related_nodes": []
+}

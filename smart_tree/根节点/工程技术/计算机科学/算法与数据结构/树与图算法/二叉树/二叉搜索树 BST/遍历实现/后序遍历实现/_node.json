@@ -1,0 +1,21 @@
+{
+  "name": "后序遍历实现",
+  "node_id": "bst_postorder_v4",
+  "parent_id": "bst_trav_detail_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "遍历实现",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "后序遍历实现",
+      "uri": "knowledge://bst_postorder_v4",
+      "content_preview": "左→右→根。先删子节点再删父节点(释放树)。双栈实现。"
+    }
+  ],
+  "related_nodes": []
+}

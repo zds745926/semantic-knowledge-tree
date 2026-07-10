@@ -1,0 +1,21 @@
+{
+  "name": "gather",
+  "node_id": "py_gather_v4",
+  "parent_id": "py_async_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "异步编程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "gather",
+      "uri": "knowledge://py_gather_v4",
+      "content_preview": "asyncio.gather(task1,task2) 并发运行多个协程。返回结果列表。return_exceptions。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "HTTPS",
+  "node_id": "https_v4",
+  "parent_id": "http_core_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "HTTP 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "HTTPS",
+      "uri": "knowledge://https_v4",
+      "content_preview": "HTTP+SSL/TLS。TLS握手加密+证书验证。TLS 1.3只需1个RTT。"
+    }
+  ],
+  "related_nodes": []
+}

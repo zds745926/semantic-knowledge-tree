@@ -1,0 +1,21 @@
+{
+  "name": "所有权",
+  "node_id": "rust_ownership_v4",
+  "parent_id": "rust_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Rust",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "所有权",
+      "uri": "knowledge://rust_ownership_v4",
+      "content_preview": "每个值有唯一所有者。所有权转移(move)vs借用(&/&mut)。编译期内存安全。"
+    }
+  ],
+  "related_nodes": []
+}

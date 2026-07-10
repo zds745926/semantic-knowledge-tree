@@ -1,0 +1,22 @@
+{
+  "name": "搜索算法",
+  "node_id": "search_v4",
+  "parent_id": "algo_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "算法与数据结构",
+  "children": [
+    "线性搜索",
+    "二分搜索",
+    "广度优先搜索 BFS",
+    "深度优先搜索 DFS"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "搜索算法在数据中查找目标元素，包括线性搜索、二分搜索和图搜索。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

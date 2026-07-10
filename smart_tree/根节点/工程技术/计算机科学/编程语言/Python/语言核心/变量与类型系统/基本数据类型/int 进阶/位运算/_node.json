@@ -1,0 +1,21 @@
+{
+  "name": "位运算",
+  "node_id": "py_int_bitops_v4",
+  "parent_id": "py_int_sub_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "int 进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "位运算",
+      "uri": "knowledge://py_int_bitops_v4",
+      "content_preview": "& 按位与、| 按位或、^ 异或、<< 左移、>> 右移。比算术运算快，用于权限标记和底层优化。"
+    }
+  ],
+  "related_nodes": []
+}

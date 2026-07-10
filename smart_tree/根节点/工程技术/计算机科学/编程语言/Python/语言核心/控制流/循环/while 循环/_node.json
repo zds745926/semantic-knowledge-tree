@@ -1,0 +1,20 @@
+{
+  "name": "while 循环",
+  "node_id": "py_while_v4",
+  "parent_id": "py_loop_v4",
+  "level": 8,
+  "is_leaf": false,
+  "absorption_rate": 0.13999999999999999,
+  "version": 1,
+  "parent": "循环",
+  "children": [
+    "while 基础",
+    "while 典型用法"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "while 条件循环，常用于不确定次数的迭代场景。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

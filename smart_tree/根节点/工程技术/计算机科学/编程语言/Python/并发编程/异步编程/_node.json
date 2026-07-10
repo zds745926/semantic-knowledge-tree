@@ -1,0 +1,27 @@
+{
+  "name": "异步编程",
+  "node_id": "py_async_v4",
+  "parent_id": "py_conc_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "并发编程",
+  "children": [
+    "async/await",
+    "协程 coroutine",
+    "事件循环",
+    "Task 任务",
+    "gather",
+    "as_completed",
+    "wait",
+    "asyncio Lock",
+    "asyncio Queue"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "async/await协程是单线程并发模型，适合高I/O并发。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

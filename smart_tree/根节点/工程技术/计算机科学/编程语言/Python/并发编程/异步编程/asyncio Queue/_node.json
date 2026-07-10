@@ -1,0 +1,21 @@
+{
+  "name": "asyncio Queue",
+  "node_id": "py_asyncio_queue_v4",
+  "parent_id": "py_async_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "异步编程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "asyncio Queue",
+      "uri": "knowledge://py_asyncio_queue_v4",
+      "content_preview": "asyncio.Queue。async put/get。maxsize。LifoQueue/PriorityQueue。"
+    }
+  ],
+  "related_nodes": []
+}

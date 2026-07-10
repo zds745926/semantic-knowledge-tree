@@ -1,0 +1,21 @@
+{
+  "name": "平衡树",
+  "node_id": "balanced_tree_v4",
+  "parent_id": "binary_tree_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "二叉树",
+  "children": [
+    "AVL 树",
+    "红黑树",
+    "B 树"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "平衡树通过旋转或变色操作保持树的高度平衡，保证O(log n)操作时间。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

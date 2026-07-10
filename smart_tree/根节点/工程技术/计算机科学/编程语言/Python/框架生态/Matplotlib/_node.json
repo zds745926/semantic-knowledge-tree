@@ -1,0 +1,21 @@
+{
+  "name": "Matplotlib",
+  "node_id": "py_matplotlib_v4",
+  "parent_id": "py_fw_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "框架生态",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Matplotlib",
+      "uri": "knowledge://py_matplotlib_v4",
+      "content_preview": "Python标准可视化库。pyplot接口支持折线/散点/柱状/热力图。面向对象绘图API。"
+    }
+  ],
+  "related_nodes": []
+}

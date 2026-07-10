@@ -1,0 +1,21 @@
+{
+  "name": "关系型数据库",
+  "node_id": "rdb_v4",
+  "parent_id": "db_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "数据库",
+  "children": [
+    "SQL 语言",
+    "索引",
+    "事务"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "关系型数据库以表(关系)组织数据，支持ACID事务和SQL查询。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

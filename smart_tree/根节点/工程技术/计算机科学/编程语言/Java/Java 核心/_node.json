@@ -1,0 +1,21 @@
+{
+  "name": "Java 核心",
+  "node_id": "java_core_v4",
+  "parent_id": "java_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "Java",
+  "children": [
+    "JVM 基础",
+    "Java OOP",
+    "泛型"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Java核心包括JVM机制、OOP、泛型、集合框架和IO体系。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

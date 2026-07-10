@@ -1,0 +1,21 @@
+{
+  "name": "深度优先搜索 DFS",
+  "node_id": "dfs_v4",
+  "parent_id": "search_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "搜索算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "深度优先搜索 DFS",
+      "uri": "knowledge://dfs_v4",
+      "content_preview": "递归或栈深入到底再回溯。O(V+E)。应用：连通分量/拓扑排序。"
+    }
+  ],
+  "related_nodes": []
+}

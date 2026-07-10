@@ -1,0 +1,20 @@
+{
+  "name": "类型注解",
+  "node_id": "py_type_hints_v4",
+  "parent_id": "py_type_system_v4",
+  "level": 8,
+  "is_leaf": false,
+  "absorption_rate": 0.13999999999999999,
+  "version": 1,
+  "parent": "类型系统特性",
+  "children": [
+    "基本类型注解",
+    "高级类型注解"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "类型注解为Python变量和函数参数添加类型信息，提升代码可读性和IDE支持。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

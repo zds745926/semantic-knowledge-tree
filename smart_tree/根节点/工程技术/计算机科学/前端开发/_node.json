@@ -1,0 +1,25 @@
+{
+  "name": "前端开发",
+  "node_id": "fe_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "HTML",
+    "CSS 盒模型",
+    "CSS 布局",
+    "React Hooks",
+    "虚拟 DOM",
+    "Next.js",
+    "Vite"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "前端开发构建用户界面和交互体验。核心技术HTML/CSS/JavaScript，现代框架React/Vue/Angular。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

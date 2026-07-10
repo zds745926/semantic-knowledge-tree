@@ -1,0 +1,21 @@
+{
+  "name": "观察者模式",
+  "node_id": "observer_v4",
+  "parent_id": "behavioral_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "行为型模式",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "观察者模式",
+      "uri": "knowledge://observer_v4",
+      "content_preview": "一对多依赖，状态变化通知所有观察者。发布-订阅。"
+    }
+  ],
+  "related_nodes": []
+}

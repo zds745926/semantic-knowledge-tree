@@ -1,0 +1,21 @@
+{
+  "name": "BST 搜索",
+  "node_id": "bst_search_v4",
+  "parent_id": "bst_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "二叉搜索树 BST",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "BST 搜索",
+      "uri": "knowledge://bst_search_v4",
+      "content_preview": "从根开始，比根小走左比根大走右。平均O(log n)，最坏O(n)。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "进程管理",
+  "node_id": "linux_proc_v4",
+  "parent_id": "linux_admin_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "系统管理",
+  "children": [
+    "ps/top",
+    "systemd",
+    "kill/nice"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Linux进程管理涉及ps/top查看、kill控制和systemd服务管理。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

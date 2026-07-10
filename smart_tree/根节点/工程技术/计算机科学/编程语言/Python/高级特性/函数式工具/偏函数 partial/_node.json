@@ -1,0 +1,21 @@
+{
+  "name": "偏函数 partial",
+  "node_id": "py_partial_v4",
+  "parent_id": "py_fp_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "函数式工具",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "偏函数 partial",
+      "uri": "knowledge://py_partial_v4",
+      "content_preview": "functools.partial固定部分参数，返回新可调用对象。"
+    }
+  ],
+  "related_nodes": []
+}

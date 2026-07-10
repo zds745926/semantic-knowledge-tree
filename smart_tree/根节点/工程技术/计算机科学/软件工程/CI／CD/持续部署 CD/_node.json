@@ -1,0 +1,21 @@
+{
+  "name": "持续部署 CD",
+  "node_id": "cd_basics_v4",
+  "parent_id": "cicd_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "CI/CD",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "持续部署 CD",
+      "uri": "knowledge://cd_basics_v4",
+      "content_preview": "CI通过自动部署到环境。蓝绿/滚动/金丝雀发布。"
+    }
+  ],
+  "related_nodes": []
+}

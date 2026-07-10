@@ -1,0 +1,21 @@
+{
+  "name": "ip/ss",
+  "node_id": "ip_ss_v4",
+  "parent_id": "linux_net_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "网络配置",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "ip/ss",
+      "uri": "knowledge://ip_ss_v4",
+      "content_preview": "ip addr/link/route。ss -tuln 替代netstat。"
+    }
+  ],
+  "related_nodes": []
+}

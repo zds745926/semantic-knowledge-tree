@@ -1,0 +1,21 @@
+{
+  "name": "经典 CNN 架构",
+  "node_id": "cnn_arch_v4",
+  "parent_id": "cnn_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "CNN",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "经典 CNN 架构",
+      "uri": "knowledge://cnn_arch_v4",
+      "content_preview": "LeNet/AlexNet/VGG/ResNet/Inception。"
+    }
+  ],
+  "related_nodes": []
+}

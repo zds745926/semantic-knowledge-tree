@@ -1,0 +1,21 @@
+{
+  "name": "线性搜索",
+  "node_id": "linear_search_v4",
+  "parent_id": "search_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "搜索算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "线性搜索",
+      "uri": "knowledge://linear_search_v4",
+      "content_preview": "从头到尾遍历。O(n)。最简单但低效。适用无序数据。"
+    }
+  ],
+  "related_nodes": []
+}

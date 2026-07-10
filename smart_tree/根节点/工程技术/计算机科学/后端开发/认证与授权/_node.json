@@ -1,0 +1,21 @@
+{
+  "name": "认证与授权",
+  "node_id": "auth_v4",
+  "parent_id": "be_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "后端开发",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "认证与授权",
+      "uri": "knowledge://auth_v4",
+      "content_preview": "JWT无状态/OAuth2.0授权/Session-Cookie有状态/RBAC权限。"
+    }
+  ],
+  "related_nodes": []
+}

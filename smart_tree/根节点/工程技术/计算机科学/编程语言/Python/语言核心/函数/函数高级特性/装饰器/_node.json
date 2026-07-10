@@ -1,0 +1,23 @@
+{
+  "name": "装饰器",
+  "node_id": "py_decorator_v4",
+  "parent_id": "py_func_adv_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "函数高级特性",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "装饰器",
+      "uri": "knowledge://py_decorator_v4",
+      "content_preview": "@decorator 语法糖。装饰器是接受函数返回函数的高阶函数。functools.wraps保留元信息。"
+    }
+  ],
+  "related_nodes": [
+    "py_adv_deco_v4"
+  ]
+}

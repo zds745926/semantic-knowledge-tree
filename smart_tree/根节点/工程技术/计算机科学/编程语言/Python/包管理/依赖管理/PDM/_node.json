@@ -1,0 +1,21 @@
+{
+  "name": "PDM",
+  "node_id": "py_pdm_v4",
+  "parent_id": "py_dep_mgmt_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "依赖管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "PDM",
+      "uri": "knowledge://py_pdm_v4",
+      "content_preview": "PEP 582无虚拟环境方案。pdm add/install/lock。支持多个Python版本。"
+    }
+  ],
+  "related_nodes": []
+}

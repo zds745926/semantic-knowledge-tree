@@ -1,0 +1,21 @@
+{
+  "name": "元组 tuple",
+  "node_id": "py_tuple_v4",
+  "parent_id": "py_set_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "集合与元组",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "元组 tuple",
+      "uri": "knowledge://py_tuple_v4",
+      "content_preview": "tuple 不可变有序。(1,2,3)创建。可用作字典键。namedtuple具名元组。"
+    }
+  ],
+  "related_nodes": []
+}

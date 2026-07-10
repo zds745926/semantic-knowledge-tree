@@ -1,0 +1,20 @@
+{
+  "name": "上下文管理器",
+  "node_id": "py_context_v4",
+  "parent_id": "py_adv_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "高级特性",
+  "children": [
+    "类实现上下文",
+    "contextmanager"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "with 语句管理资源(文件/锁/连接)，通过 __enter__/__exit__ 实现。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

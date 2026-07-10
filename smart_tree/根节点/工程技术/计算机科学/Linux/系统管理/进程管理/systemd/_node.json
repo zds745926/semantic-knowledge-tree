@@ -1,0 +1,21 @@
+{
+  "name": "systemd",
+  "node_id": "systemd_v4",
+  "parent_id": "linux_proc_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "进程管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "systemd",
+      "uri": "knowledge://systemd_v4",
+      "content_preview": "系统和服务管理器。systemctl/unit/journalctl。"
+    }
+  ],
+  "related_nodes": []
+}

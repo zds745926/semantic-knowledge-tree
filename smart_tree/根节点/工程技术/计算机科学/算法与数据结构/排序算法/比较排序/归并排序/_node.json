@@ -1,0 +1,21 @@
+{
+  "name": "归并排序",
+  "node_id": "merge_sort_v4",
+  "parent_id": "sort_compare_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "比较排序",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "归并排序",
+      "uri": "knowledge://merge_sort_v4",
+      "content_preview": "分治：对半分割→递归→合并。稳定O(n log n)。需O(n)空间。外部排序标准。"
+    }
+  ],
+  "related_nodes": []
+}

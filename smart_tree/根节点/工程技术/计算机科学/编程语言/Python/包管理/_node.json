@@ -1,0 +1,24 @@
+{
+  "name": "包管理",
+  "node_id": "py_pkg_v4",
+  "parent_id": "python_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "Python",
+  "children": [
+    "虚拟环境 venv",
+    "pyproject.toml",
+    "pip 包管理器",
+    "虚拟环境",
+    "发布与打包",
+    "依赖管理"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python包管理工具链包括pip依赖安装、venv环境隔离、pyproject.toml项目规范。PDM/Poetry等现代工具进一步简化了依赖管理和发布流程。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

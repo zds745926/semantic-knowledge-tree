@@ -1,0 +1,23 @@
+{
+  "name": "JavaScript 核心",
+  "node_id": "js_core_v4",
+  "parent_id": "js_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "JavaScript",
+  "children": [
+    "执行上下文",
+    "作用域链",
+    "闭包",
+    "原型链",
+    "异步 JS"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "JS核心包括执行上下文、作用域链、闭包、原型链和异步编程。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

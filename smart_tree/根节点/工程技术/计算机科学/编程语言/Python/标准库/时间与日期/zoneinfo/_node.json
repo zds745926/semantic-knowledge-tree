@@ -1,0 +1,21 @@
+{
+  "name": "zoneinfo",
+  "node_id": "py_zoneinfo_v4",
+  "parent_id": "py_time_date_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "时间与日期",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "zoneinfo",
+      "uri": "knowledge://py_zoneinfo_v4",
+      "content_preview": "zoneinfo.ZoneInfo(3.9+) IANA时区。datetime.replace(tzinfo=)。"
+    }
+  ],
+  "related_nodes": []
+}

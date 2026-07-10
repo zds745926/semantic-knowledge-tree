@@ -1,0 +1,21 @@
+{
+  "name": "random 模块",
+  "node_id": "py_random_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "标准库",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "random 模块",
+      "uri": "knowledge://py_random_v4",
+      "content_preview": "random.random()浮点数、randint(start,stop)整数、choice/shuffle序列操作。secrets模块安全随机。"
+    }
+  ],
+  "related_nodes": []
+}

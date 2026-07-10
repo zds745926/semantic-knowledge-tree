@@ -1,0 +1,21 @@
+{
+  "name": "sys 模块",
+  "node_id": "py_sys_module_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "标准库",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "sys 模块",
+      "uri": "knowledge://py_sys_module_v4",
+      "content_preview": "sys模块访问解释器变量和函数：sys.argv命令行参数、sys.path模块搜索路径、sys.exit退出。"
+    }
+  ],
+  "related_nodes": []
+}

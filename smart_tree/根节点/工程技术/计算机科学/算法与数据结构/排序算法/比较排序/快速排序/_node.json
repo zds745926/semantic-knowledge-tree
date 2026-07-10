@@ -1,0 +1,24 @@
+{
+  "name": "快速排序",
+  "node_id": "quick_sort_v4",
+  "parent_id": "sort_compare_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "比较排序",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "快速排序",
+      "uri": "knowledge://quick_sort_v4",
+      "content_preview": "分治：选基准(pivot)分区。平均O(n log n)，最坏O(n²)。原地不稳定。"
+    }
+  ],
+  "related_nodes": [
+    "merge_sort_v4",
+    "heap_sort_v4"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "文件系统",
+  "node_id": "fs_v4",
+  "parent_id": "os_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "操作系统",
+  "children": [
+    "虚拟文件系统 VFS"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "文件系统管理持久数据的组织和存储。VFS抽象层屏蔽底层差异。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

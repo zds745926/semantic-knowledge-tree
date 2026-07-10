@@ -1,0 +1,20 @@
+{
+  "name": "容器化",
+  "node_id": "container_v4",
+  "parent_id": "devops_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "DevOps",
+  "children": [
+    "Docker",
+    "Kubernetes"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "容器提供轻量级的应用隔离和打包方式。Docker是容器化的标准。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Web 安全",
+  "node_id": "web_sec_v4",
+  "parent_id": "sec_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "网络安全",
+  "children": [
+    "XSS 跨站脚本",
+    "CSRF",
+    "SQL注入"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Web安全防御常见攻击。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

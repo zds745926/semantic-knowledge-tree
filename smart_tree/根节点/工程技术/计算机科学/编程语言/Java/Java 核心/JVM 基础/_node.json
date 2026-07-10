@@ -1,0 +1,23 @@
+{
+  "name": "JVM 基础",
+  "node_id": "java_vm_basics_v4",
+  "parent_id": "java_core_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Java 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "JVM 基础",
+      "uri": "knowledge://java_vm_basics_v4",
+      "content_preview": "JVM执行字节码。类加载机制。内存区域：堆/栈/方法区。GC自动回收。"
+    }
+  ],
+  "related_nodes": [
+    "java_oop_v4"
+  ]
+}

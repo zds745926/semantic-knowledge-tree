@@ -1,0 +1,21 @@
+{
+  "name": "TCP/IP 协议栈",
+  "node_id": "tcpip_v4",
+  "parent_id": "net_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "计算机网络",
+  "children": [
+    "传输层",
+    "网络层",
+    "应用层协议"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "TCP/IP四层模型：网络接口→网际→传输→应用。是互联网的通信基础。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

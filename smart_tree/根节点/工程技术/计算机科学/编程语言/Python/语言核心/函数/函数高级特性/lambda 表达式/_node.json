@@ -1,0 +1,21 @@
+{
+  "name": "lambda 表达式",
+  "node_id": "py_lambda_v4",
+  "parent_id": "py_func_adv_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "函数高级特性",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "lambda 表达式",
+      "uri": "knowledge://py_lambda_v4",
+      "content_preview": "lambda 参数: 表达式 创建匿名函数。常用于 sorted(key=...)、map/filter。"
+    }
+  ],
+  "related_nodes": []
+}

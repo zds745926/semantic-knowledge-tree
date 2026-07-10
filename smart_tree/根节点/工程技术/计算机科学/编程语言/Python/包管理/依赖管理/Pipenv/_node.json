@@ -1,0 +1,21 @@
+{
+  "name": "Pipenv",
+  "node_id": "py_pipenv_v4",
+  "parent_id": "py_dep_mgmt_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "依赖管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Pipenv",
+      "uri": "knowledge://py_pipenv_v4",
+      "content_preview": "Pipfile+Pipfile.lock。自动创建虚拟环境。pipenv install/run/shell。"
+    }
+  ],
+  "related_nodes": []
+}

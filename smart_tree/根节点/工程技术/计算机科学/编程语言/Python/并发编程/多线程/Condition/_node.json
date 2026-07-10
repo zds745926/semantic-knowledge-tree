@@ -1,0 +1,21 @@
+{
+  "name": "Condition",
+  "node_id": "py_condition_v4",
+  "parent_id": "py_thread_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多线程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Condition",
+      "uri": "knowledge://py_condition_v4",
+      "content_preview": "threading.Condition 条件变量。wait()等待通知，notify()/notify_all()唤醒。生产者-消费者。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "doctest",
+  "node_id": "py_doctest_v4",
+  "parent_id": "py_testing_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "测试",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "doctest",
+      "uri": "knowledge://py_doctest_v4",
+      "content_preview": "文档字符串中的测试用例。python -m doctest module.py。文档即测试。"
+    }
+  ],
+  "related_nodes": []
+}

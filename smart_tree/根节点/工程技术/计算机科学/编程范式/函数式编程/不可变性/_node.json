@@ -1,0 +1,21 @@
+{
+  "name": "不可变性",
+  "node_id": "immutability_v4",
+  "parent_id": "functional_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "函数式编程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "不可变性",
+      "uri": "knowledge://immutability_v4",
+      "content_preview": "数据创建后不可修改，更新操作返回新对象。避免副作用简化并发。"
+    }
+  ],
+  "related_nodes": []
+}

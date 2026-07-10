@@ -1,0 +1,33 @@
+{
+  "name": "计算机科学",
+  "node_id": "cs_v4",
+  "parent_id": "engineering",
+  "level": 2,
+  "is_leaf": false,
+  "absorption_rate": 0.05,
+  "version": 1,
+  "parent": "工程技术",
+  "children": [
+    "计算机理论",
+    "编程范式",
+    "编程语言",
+    "算法与数据结构",
+    "操作系统",
+    "计算机网络",
+    "数据库",
+    "Linux",
+    "软件工程",
+    "机器学习",
+    "前端开发",
+    "后端开发",
+    "系统设计",
+    "网络安全",
+    "DevOps"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "计算机科学研究信息处理和计算的原理、方法和应用。涵盖计算机理论、编程语言、算法与数据结构、操作系统、计算机网络、数据库、软件工程、人工智能、机器学习、安全性等子领域。计算机科学是现代信息技术的核心驱动力。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

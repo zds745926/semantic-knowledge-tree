@@ -1,0 +1,21 @@
+{
+  "name": "字符串表示",
+  "node_id": "py_magic_str_v4",
+  "parent_id": "py_magic_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "魔术方法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "字符串表示",
+      "uri": "knowledge://py_magic_str_v4",
+      "content_preview": "__str__用户字符串、__repr__开发字符串、__format__格式化。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "遍历实现",
+  "node_id": "bst_trav_detail_v4",
+  "parent_id": "bst_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "二叉搜索树 BST",
+  "children": [
+    "前序遍历实现",
+    "中序遍历实现",
+    "后序遍历实现"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "二叉树的三种深度优先遍历方式各有特点和用途。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

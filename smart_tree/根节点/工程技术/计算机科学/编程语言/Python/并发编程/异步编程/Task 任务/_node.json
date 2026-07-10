@@ -1,0 +1,21 @@
+{
+  "name": "Task 任务",
+  "node_id": "py_asyncio_task_v4",
+  "parent_id": "py_async_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "异步编程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Task 任务",
+      "uri": "knowledge://py_asyncio_task_v4",
+      "content_preview": "asyncio.create_task() 创建任务。task.cancel()取消。task.result()结果。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,28 @@
+{
+  "name": "框架生态",
+  "node_id": "py_fw_v4",
+  "parent_id": "python_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "Python",
+  "children": [
+    "Django",
+    "FastAPI",
+    "Flask",
+    "NumPy",
+    "Pandas",
+    "Matplotlib",
+    "SciPy",
+    "scikit-learn",
+    "SQLAlchemy",
+    "PyTorch"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python拥有丰富的框架生态，涵盖Web开发、数据科学、机器学习等。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

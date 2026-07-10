@@ -1,0 +1,21 @@
+{
+  "name": "信息论",
+  "node_id": "info_theory_v4",
+  "parent_id": "cb_theory_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "计算机理论",
+  "children": [
+    "信息熵",
+    "互信息",
+    "KL散度"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "信息论由克劳德·香农创立，研究信息的度量、存储和通信。核心概念包括信息熵、互信息和KL散度。信息论为数据压缩、通信编码和机器学习提供了理论基础。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

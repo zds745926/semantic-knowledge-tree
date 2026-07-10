@@ -1,0 +1,21 @@
+{
+  "name": "拥塞避免",
+  "node_id": "tcp_congestion_avoid_v4",
+  "parent_id": "tcp_congestion_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "TCP 拥塞控制",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "拥塞避免",
+      "uri": "knowledge://tcp_congestion_avoid_v4",
+      "content_preview": "cwnd≥ssthresh后每RTT加1MSS(线性增长)。AIMD原则。"
+    }
+  ],
+  "related_nodes": []
+}

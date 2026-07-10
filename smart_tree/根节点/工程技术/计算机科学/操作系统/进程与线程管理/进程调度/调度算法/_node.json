@@ -1,0 +1,21 @@
+{
+  "name": "调度算法",
+  "node_id": "sched_algo_v4",
+  "parent_id": "proc_sched_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "进程调度",
+  "children": [
+    "先来先服务 FCFS",
+    "短作业优先 SJF",
+    "时间片轮转 RR"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "调度算法影响系统的吞吐量、响应时间和公平性。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

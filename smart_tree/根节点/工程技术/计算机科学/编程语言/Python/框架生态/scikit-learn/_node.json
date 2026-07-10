@@ -1,0 +1,21 @@
+{
+  "name": "scikit-learn",
+  "node_id": "py_sklearn_v4",
+  "parent_id": "py_fw_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "框架生态",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "scikit-learn",
+      "uri": "knowledge://py_sklearn_v4",
+      "content_preview": "经典机器学习库。分类/回归/聚类/降维。统一fit/predict API。与NumPy/Pandas无缝集成。"
+    }
+  ],
+  "related_nodes": []
+}

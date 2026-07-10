@@ -1,0 +1,21 @@
+{
+  "name": "分词",
+  "node_id": "tokenization_v4",
+  "parent_id": "nlp_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "自然语言处理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "分词",
+      "uri": "knowledge://tokenization_v4",
+      "content_preview": "BPE/WordPiece/Unigram。SentencePiece。"
+    }
+  ],
+  "related_nodes": []
+}

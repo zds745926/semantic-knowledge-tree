@@ -1,0 +1,21 @@
+{
+  "name": "线程局部存储 TLS",
+  "node_id": "py_tls_v4",
+  "parent_id": "py_thread_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多线程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "线程局部存储 TLS",
+      "uri": "knowledge://py_tls_v4",
+      "content_preview": "threading.local() 每个线程独立存储。thread-local数据隔离。"
+    }
+  ],
+  "related_nodes": []
+}

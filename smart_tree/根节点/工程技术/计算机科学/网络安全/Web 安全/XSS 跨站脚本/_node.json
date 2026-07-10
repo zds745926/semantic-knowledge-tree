@@ -1,0 +1,23 @@
+{
+  "name": "XSS 跨站脚本",
+  "node_id": "xss_v4",
+  "parent_id": "web_sec_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Web 安全",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "XSS 跨站脚本",
+      "uri": "knowledge://xss_v4",
+      "content_preview": "反射/存储/DOM型。CSP/HttpOnly Cookie防护。"
+    }
+  ],
+  "related_nodes": [
+    "csrf_v4"
+  ]
+}

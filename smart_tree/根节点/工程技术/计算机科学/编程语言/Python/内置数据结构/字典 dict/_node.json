@@ -1,0 +1,20 @@
+{
+  "name": "字典 dict",
+  "node_id": "py_dict_v4",
+  "parent_id": "py_ds_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "内置数据结构",
+  "children": [
+    "字典基础",
+    "字典方法"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "字典是键值对映射结构，键必须可哈希。Python 3.7+ 保持插入顺序。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

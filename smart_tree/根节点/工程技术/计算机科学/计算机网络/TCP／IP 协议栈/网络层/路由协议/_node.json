@@ -1,0 +1,20 @@
+{
+  "name": "路由协议",
+  "node_id": "routing_v4",
+  "parent_id": "network_layer_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "网络层",
+  "children": [
+    "OSPF",
+    "BGP"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "路由协议决定数据包从源到目的的最佳路径。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

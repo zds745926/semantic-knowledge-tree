@@ -1,0 +1,21 @@
+{
+  "name": "浮点型 float",
+  "node_id": "py_float_v4",
+  "parent_id": "py_basic_types_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "基本数据类型",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "浮点型 float",
+      "uri": "knowledge://py_float_v4",
+      "content_preview": "Python 的 float 是双精度64位浮点数(IEEE 754)。浮点运算有精度误差，decimal.Decimal提供精确计算。"
+    }
+  ],
+  "related_nodes": []
+}

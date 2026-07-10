@@ -1,0 +1,24 @@
+{
+  "name": "编程语言",
+  "node_id": "languages_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "Python",
+    "Java",
+    "JavaScript",
+    "C/C++",
+    "Go",
+    "Rust"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "编程语言是人与计算机交流的形式化语言。每种语言有其设计哲学、类型系统和适用场景。主流编程语言包括Python、Java、JavaScript、C/C++、Go、Rust等。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

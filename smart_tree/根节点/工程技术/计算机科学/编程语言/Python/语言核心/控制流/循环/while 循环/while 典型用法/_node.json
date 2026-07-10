@@ -1,0 +1,21 @@
+{
+  "name": "while 典型用法",
+  "node_id": "py_while_usage_v4",
+  "parent_id": "py_while_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "while 循环",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "while 典型用法",
+      "uri": "knowledge://py_while_usage_v4",
+      "content_preview": "while True + break 模式配合 input() 验证或队列实现生产者-消费者。"
+    }
+  ],
+  "related_nodes": []
+}

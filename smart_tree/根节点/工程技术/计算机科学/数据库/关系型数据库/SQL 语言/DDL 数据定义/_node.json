@@ -1,0 +1,21 @@
+{
+  "name": "DDL 数据定义",
+  "node_id": "ddl_v4",
+  "parent_id": "sql_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "SQL 语言",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "DDL 数据定义",
+      "uri": "knowledge://ddl_v4",
+      "content_preview": "CREATE/ALTER/DROP TABLE。数据类型和约束。PRIMARY KEY/FOREIGN KEY。"
+    }
+  ],
+  "related_nodes": []
+}

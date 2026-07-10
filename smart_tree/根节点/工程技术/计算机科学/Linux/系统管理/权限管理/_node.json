@@ -1,0 +1,20 @@
+{
+  "name": "权限管理",
+  "node_id": "linux_perm_v4",
+  "parent_id": "linux_admin_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "系统管理",
+  "children": [
+    "chmod/chown",
+    "sudo"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Linux权限三位一组(rwx)。chmod/chown管理。sudo授权。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

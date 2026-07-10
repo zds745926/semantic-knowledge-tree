@@ -1,0 +1,19 @@
+{
+  "name": "进程调度",
+  "node_id": "proc_sched_v4",
+  "parent_id": "proc_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "进程与线程管理",
+  "children": [
+    "调度算法"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "进程调度决定就绪队列中哪个进程获得CPU，常用算法包括FCFS、SJF、RR和MLFQ。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

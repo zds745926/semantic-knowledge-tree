@@ -1,0 +1,25 @@
+{
+  "name": "类与实例",
+  "node_id": "py_class_v4",
+  "parent_id": "py_oop_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "面向对象",
+  "children": [
+    "class 定义",
+    "类高级功能",
+    "继承与多态",
+    "property 装饰器",
+    "dataclasses 数据类",
+    "enum 枚举",
+    "ABC 抽象基类"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "class 定义类，__init__ 构造方法。self 是实例引用。classmethod/staticmethod/property。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

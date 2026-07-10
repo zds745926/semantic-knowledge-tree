@@ -1,0 +1,21 @@
+{
+  "name": "BGP",
+  "node_id": "bgp_v4",
+  "parent_id": "routing_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "路由协议",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "BGP",
+      "uri": "knowledge://bgp_v4",
+      "content_preview": "互联网的粘合剂。路径向量协议。iBGP(AS内)/eBGP(AS间)。"
+    }
+  ],
+  "related_nodes": []
+}

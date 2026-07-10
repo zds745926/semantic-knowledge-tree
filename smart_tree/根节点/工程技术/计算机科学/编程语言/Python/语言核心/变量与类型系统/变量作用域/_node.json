@@ -1,0 +1,19 @@
+{
+  "name": "变量作用域",
+  "node_id": "py_scopes_v4",
+  "parent_id": "py_types_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "变量与类型系统",
+  "children": [
+    "LEGB 规则"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python变量解析遵循LEGB规则：Local→Enclosing→Global→Built-in。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

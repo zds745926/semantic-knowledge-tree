@@ -1,0 +1,20 @@
+{
+  "name": "TCP 状态机",
+  "node_id": "tcp_state_v4",
+  "parent_id": "tcp_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "TCP 协议",
+  "children": [
+    "状态转移详解",
+    "TIME_WAIT 详解"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "TCP连接经历11种状态，通过三次握手建立、四次挥手关闭。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

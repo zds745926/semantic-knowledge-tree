@@ -1,0 +1,21 @@
+{
+  "name": "字典基础",
+  "node_id": "py_dict_basics_v4",
+  "parent_id": "py_dict_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "字典 dict",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "字典基础",
+      "uri": "knowledge://py_dict_basics_v4",
+      "content_preview": "{} 创建。d[key] 访问，d.get(key,default) 安全访问。3.7+ 保持插入顺序。"
+    }
+  ],
+  "related_nodes": []
+}

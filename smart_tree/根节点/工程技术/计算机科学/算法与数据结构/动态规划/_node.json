@@ -1,0 +1,22 @@
+{
+  "name": "动态规划",
+  "node_id": "dp_v4",
+  "parent_id": "algo_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "算法与数据结构",
+  "children": [
+    "DP 基础",
+    "背包问题",
+    "最长公共子序列 LCS",
+    "最长递增子序列 LIS"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "动态规划将问题分解为重叠子问题。核心：状态定义→转移方程→边界条件→遍历顺序。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

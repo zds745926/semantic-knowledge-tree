@@ -1,0 +1,22 @@
+{
+  "name": "软件工程",
+  "node_id": "se_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "设计模式",
+    "版本控制",
+    "CI/CD",
+    "架构模式"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "软件工程是用系统化方法指导软件开发、运行和维护的工程学科。涵盖设计模式、版本控制、CI/CD、架构模式和项目管理等。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

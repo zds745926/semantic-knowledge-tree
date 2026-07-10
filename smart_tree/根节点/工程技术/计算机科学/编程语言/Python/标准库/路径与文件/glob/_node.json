@@ -1,0 +1,21 @@
+{
+  "name": "glob",
+  "node_id": "py_glob_v4",
+  "parent_id": "py_path_file_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "路径与文件",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "glob",
+      "uri": "knowledge://py_glob_v4",
+      "content_preview": "glob.glob('**/*.py',recursive=True) 文件模式匹配。等同于pathlib.Path.glob。"
+    }
+  ],
+  "related_nodes": []
+}

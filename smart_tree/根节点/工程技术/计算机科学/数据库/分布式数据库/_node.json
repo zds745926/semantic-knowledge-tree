@@ -1,0 +1,21 @@
+{
+  "name": "分布式数据库",
+  "node_id": "dist_db_v4",
+  "parent_id": "db_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "数据库",
+  "children": [
+    "CAP 定理",
+    "Raft 共识算法",
+    "分片"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "分布式数据库将数据分布在多台机器上。CAP定理是理论基础。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

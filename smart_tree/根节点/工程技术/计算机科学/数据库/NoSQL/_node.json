@@ -1,0 +1,20 @@
+{
+  "name": "NoSQL",
+  "node_id": "nosql_v4",
+  "parent_id": "db_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "数据库",
+  "children": [
+    "Redis",
+    "MongoDB"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "NoSQL数据库提供灵活的数据模型和水平扩展能力。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

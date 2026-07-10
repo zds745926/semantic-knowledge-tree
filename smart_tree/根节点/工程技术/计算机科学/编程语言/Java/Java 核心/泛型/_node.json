@@ -1,0 +1,21 @@
+{
+  "name": "泛型",
+  "node_id": "java_generics_v4",
+  "parent_id": "java_core_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Java 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "泛型",
+      "uri": "knowledge://java_generics_v4",
+      "content_preview": "List<T>类型参数。通配符<? extends E>/<? super E>。类型擦除。"
+    }
+  ],
+  "related_nodes": []
+}

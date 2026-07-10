@@ -1,0 +1,21 @@
+{
+  "name": "微服务",
+  "node_id": "microservices_v4",
+  "parent_id": "arch_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "架构模式",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "微服务",
+      "uri": "knowledge://microservices_v4",
+      "content_preview": "独立服务独立部署。服务间轻量API通信。DB per Service。"
+    }
+  ],
+  "related_nodes": []
+}

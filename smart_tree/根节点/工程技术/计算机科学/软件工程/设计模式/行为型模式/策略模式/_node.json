@@ -1,0 +1,21 @@
+{
+  "name": "策略模式",
+  "node_id": "strategy_v4",
+  "parent_id": "behavioral_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "行为型模式",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "策略模式",
+      "uri": "knowledge://strategy_v4",
+      "content_preview": "定义可互相替换的算法族。消除if-else。"
+    }
+  ],
+  "related_nodes": []
+}

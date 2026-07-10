@@ -1,0 +1,23 @@
+{
+  "name": "unittest",
+  "node_id": "py_unittest_v4",
+  "parent_id": "py_testing_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "测试",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "unittest",
+      "uri": "knowledge://py_unittest_v4",
+      "content_preview": "内置测试框架。TestCase类。setUp/tearDown。assertEqual/assertRaises。mock集成。"
+    }
+  ],
+  "related_nodes": [
+    "py_mock_v4"
+  ]
+}

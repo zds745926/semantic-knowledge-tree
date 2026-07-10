@@ -1,0 +1,21 @@
+{
+  "name": "预训练+微调",
+  "node_id": "pretrain_finetune_v4",
+  "parent_id": "transformer_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Transformer",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "预训练+微调",
+      "uri": "knowledge://pretrain_finetune_v4",
+      "content_preview": "大规模预训练+下游微调。BERT MLM/GPT自回归/LoRA。"
+    }
+  ],
+  "related_nodes": []
+}

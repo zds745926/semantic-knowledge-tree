@@ -1,0 +1,21 @@
+{
+  "name": "locale",
+  "node_id": "py_locale_v4",
+  "parent_id": "py_i18n_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "国际化",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "locale",
+      "uri": "knowledge://py_locale_v4",
+      "content_preview": "locale.setlocale设置区域。currency/format/strcoll排序。LC_ALL/LC_TIME。"
+    }
+  ],
+  "related_nodes": []
+}

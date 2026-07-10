@@ -1,0 +1,21 @@
+{
+  "name": "IPv6",
+  "node_id": "ipv6_v4",
+  "parent_id": "ip_proto_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "IP 协议",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "IPv6",
+      "uri": "knowledge://ipv6_v4",
+      "content_preview": "128位地址冒分十六进制。无NAT无校验和。即插即用SLAAC。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "P与NP问题",
+  "node_id": "p_vs_np_v4",
+  "parent_id": "comp_theory_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "计算理论",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "P与NP问题",
+      "uri": "knowledge://p_vs_np_v4",
+      "content_preview": "P类问题可在多项式时间内求解，NP类问题可在多项式时间内验证。P=NP? 是计算机科学最重要的开放问题。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "进程同步",
+  "node_id": "py_proc_sync_v4",
+  "parent_id": "py_process_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多进程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "进程同步",
+      "uri": "knowledge://py_proc_sync_v4",
+      "content_preview": "multiprocessing.Lock/RLock/Semaphore/Event/Condition 跨进程同步。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,26 @@
+{
+  "name": "concurrent.futures",
+  "node_id": "py_futures_v4",
+  "parent_id": "py_conc_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "并发编程",
+  "children": [
+    "ThreadPoolExecutor",
+    "ProcessPoolExecutor",
+    "Future 对象",
+    "as_completed",
+    "map 方法"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "concurrent.futures 提供统一的高层异步执行接口。ThreadPoolExecutor和ProcessPoolExecutor两种实现。submit()提交任务返回Future对象，as_completed()和wait()管理任务生命周期。"
+  },
+  "data_pointers": [],
+  "related_nodes": [
+    "py_thread_pool_executor_v4",
+    "py_process_pool_executor_v4"
+  ]
+}

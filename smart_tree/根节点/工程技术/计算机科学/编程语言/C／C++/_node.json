@@ -1,0 +1,20 @@
+{
+  "name": "C/C++",
+  "node_id": "cpp_v4",
+  "parent_id": "languages_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "编程语言",
+  "children": [
+    "C 核心",
+    "C++ 核心"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "C语言是系统编程的基础语言，提供对硬件的直接控制。C++在C基础上增加OOP和模板。两者都是编译型语言，追求极致的性能和灵活的内存管理。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

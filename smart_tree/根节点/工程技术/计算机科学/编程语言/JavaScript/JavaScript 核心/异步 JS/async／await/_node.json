@@ -1,0 +1,21 @@
+{
+  "name": "async/await",
+  "node_id": "js_async_await_v4",
+  "parent_id": "js_async_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "异步 JS",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "async/await",
+      "uri": "knowledge://js_async_await_v4",
+      "content_preview": "async function返回Promise。await暂停直到Promise解决。"
+    }
+  ],
+  "related_nodes": []
+}

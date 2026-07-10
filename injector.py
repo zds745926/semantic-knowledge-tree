@@ -253,7 +253,7 @@ def main():
     print(f"  模型: {MODEL}")
     print("=" * 55)
 
-    db = TreePersistence("data/knowledge_tree.db")
+    db = TreePersistence("smart_tree")
     tree = db.load_tree()
     if not tree:
         print("❌ 知识树不存在，请先 run.sh 构建")
@@ -332,7 +332,7 @@ def main():
     # 保存
     db.save_tree(tree)
     s = db.stats()
-    print(f"\n📦 保存: {s['total_nodes']} 节点, {s['leaf_nodes']} 叶子, {s['db_path']}")
+    print(f"\n📦 保存: {s['total_nodes']} 节点, {s['leaf_nodes']} 叶子, {s['tree_path']}")
     db.close()
 
 

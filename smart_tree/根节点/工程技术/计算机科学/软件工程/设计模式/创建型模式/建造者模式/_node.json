@@ -1,0 +1,21 @@
+{
+  "name": "建造者模式",
+  "node_id": "builder_v4",
+  "parent_id": "creational_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "创建型模式",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "建造者模式",
+      "uri": "knowledge://builder_v4",
+      "content_preview": "分步构造复杂对象。链式调用。StringBuilder/Lombok@Builder。"
+    }
+  ],
+  "related_nodes": []
+}

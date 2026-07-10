@@ -1,0 +1,21 @@
+{
+  "name": "分布式缓存",
+  "node_id": "distributed_cache_v4",
+  "parent_id": "cache_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "缓存",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "分布式缓存",
+      "uri": "knowledge://distributed_cache_v4",
+      "content_preview": "Redis Cluster/一致性哈希/虚拟节点。多级缓存L1+L2。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Kubernetes",
+  "node_id": "k8s_v4",
+  "parent_id": "container_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "容器化",
+  "children": [
+    "Pod",
+    "Deployment",
+    "Service"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "K8s容器编排平台。管理容器化应用的部署、扩展和运维。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

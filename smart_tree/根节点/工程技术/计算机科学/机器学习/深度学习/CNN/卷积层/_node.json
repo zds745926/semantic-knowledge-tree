@@ -1,0 +1,21 @@
+{
+  "name": "卷积层",
+  "node_id": "conv_layer_v4",
+  "parent_id": "cnn_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "CNN",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "卷积层",
+      "uri": "knowledge://conv_layer_v4",
+      "content_preview": "卷积核滑动提取特征。参数共享。padding/stride。"
+    }
+  ],
+  "related_nodes": []
+}

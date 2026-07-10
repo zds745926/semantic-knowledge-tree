@@ -1,0 +1,23 @@
+{
+  "name": "Docker 镜像",
+  "node_id": "docker_image_v4",
+  "parent_id": "docker_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Docker",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Docker 镜像",
+      "uri": "knowledge://docker_image_v4",
+      "content_preview": "只读模板分层构建。Dockerfile定义步骤。镜象层缓存加速。"
+    }
+  ],
+  "related_nodes": [
+    "docker_container_v4"
+  ]
+}

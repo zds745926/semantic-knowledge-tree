@@ -1,0 +1,21 @@
+{
+  "name": "运算符重载",
+  "node_id": "py_magic_ops_v4",
+  "parent_id": "py_magic_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "魔术方法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "运算符重载",
+      "uri": "knowledge://py_magic_ops_v4",
+      "content_preview": "__add__/__eq__/__lt__/__hash__/__call__。"
+    }
+  ],
+  "related_nodes": []
+}

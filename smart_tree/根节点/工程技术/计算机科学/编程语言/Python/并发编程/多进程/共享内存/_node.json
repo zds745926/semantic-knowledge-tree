@@ -1,0 +1,21 @@
+{
+  "name": "共享内存",
+  "node_id": "py_shared_memory_v4",
+  "parent_id": "py_process_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多进程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "共享内存",
+      "uri": "knowledge://py_shared_memory_v4",
+      "content_preview": "multiprocessing.shared_memory(3.8+)。ShareableList。多个进程直接读写同一内存块。"
+    }
+  ],
+  "related_nodes": []
+}

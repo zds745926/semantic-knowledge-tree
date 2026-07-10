@@ -1,0 +1,21 @@
+{
+  "name": "闭包",
+  "node_id": "py_closure_v4",
+  "parent_id": "py_func_adv_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "函数高级特性",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "闭包",
+      "uri": "knowledge://py_closure_v4",
+      "content_preview": "闭包引用了外部函数变量的内部函数。即使外部函数已返回，闭包仍能访问外部变量。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "find/locate",
+  "node_id": "find_locate_v4",
+  "parent_id": "linux_fs_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "文件管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "find/locate",
+      "uri": "knowledge://find_locate_v4",
+      "content_preview": "find按名/型/大查找。locate快但非实时。"
+    }
+  ],
+  "related_nodes": []
+}

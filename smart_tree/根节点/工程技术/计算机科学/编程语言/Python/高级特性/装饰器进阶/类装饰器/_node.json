@@ -1,0 +1,21 @@
+{
+  "name": "类装饰器",
+  "node_id": "py_deco_class_v4",
+  "parent_id": "py_adv_deco_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "装饰器进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "类装饰器",
+      "uri": "knowledge://py_deco_class_v4",
+      "content_preview": "类实现 __call__ 作为装饰器。适合需要持久状态的场景。"
+    }
+  ],
+  "related_nodes": []
+}

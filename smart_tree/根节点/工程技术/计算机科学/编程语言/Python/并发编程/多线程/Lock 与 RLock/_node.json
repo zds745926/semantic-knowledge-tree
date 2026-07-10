@@ -1,0 +1,23 @@
+{
+  "name": "Lock 与 RLock",
+  "node_id": "py_lock_v4",
+  "parent_id": "py_thread_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多线程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Lock 与 RLock",
+      "uri": "knowledge://py_lock_v4",
+      "content_preview": "threading.Lock 互斥锁(不可重入)。RLock 可重入锁，同一线程可多次acquire。"
+    }
+  ],
+  "related_nodes": [
+    "py_thread_sync_v4"
+  ]
+}

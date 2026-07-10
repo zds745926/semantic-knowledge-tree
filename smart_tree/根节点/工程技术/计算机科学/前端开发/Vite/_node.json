@@ -1,0 +1,21 @@
+{
+  "name": "Vite",
+  "node_id": "vite_v4",
+  "parent_id": "fe_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "前端开发",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Vite",
+      "uri": "knowledge://vite_v4",
+      "content_preview": "基于ESM的构建工具。毫秒HMR。Rollup打包。取代Webpack趋势。"
+    }
+  ],
+  "related_nodes": []
+}

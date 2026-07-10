@@ -1,0 +1,21 @@
+{
+  "name": "NAT",
+  "node_id": "nat_v4",
+  "parent_id": "ip_proto_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "IP 协议",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "NAT",
+      "uri": "knowledge://nat_v4",
+      "content_preview": "私网↔公网映射。SNAT内网上网/DNAT端口映射。破坏端到端透明。"
+    }
+  ],
+  "related_nodes": []
+}

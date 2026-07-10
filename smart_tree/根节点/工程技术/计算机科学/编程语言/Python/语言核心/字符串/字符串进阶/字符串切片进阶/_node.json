@@ -1,0 +1,21 @@
+{
+  "name": "字符串切片进阶",
+  "node_id": "py_str_slicing_v4",
+  "parent_id": "py_str_adv_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "字符串进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "字符串切片进阶",
+      "uri": "knowledge://py_str_slicing_v4",
+      "content_preview": "s[start:stop:step] 步长为负可反向。s[::-1] 反转字符串。"
+    }
+  ],
+  "related_nodes": []
+}

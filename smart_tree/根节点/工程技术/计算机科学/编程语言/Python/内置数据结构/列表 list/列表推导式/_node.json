@@ -1,0 +1,21 @@
+{
+  "name": "列表推导式",
+  "node_id": "py_list_comprehension_v4",
+  "parent_id": "py_list_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "列表 list",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "列表推导式",
+      "uri": "knowledge://py_list_comprehension_v4",
+      "content_preview": "[表达式 for 变量 in 可迭代对象 if 条件]。比 for 循环更简洁高效。"
+    }
+  ],
+  "related_nodes": []
+}

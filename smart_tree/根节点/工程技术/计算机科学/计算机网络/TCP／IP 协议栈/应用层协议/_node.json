@@ -1,0 +1,21 @@
+{
+  "name": "应用层协议",
+  "node_id": "app_layer_v4",
+  "parent_id": "tcpip_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "TCP/IP 协议栈",
+  "children": [
+    "HTTP",
+    "DNS",
+    "CDN"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "应用层协议为应用程序提供网络服务，包括HTTP、DNS、FTP等。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

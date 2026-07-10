@@ -1,0 +1,21 @@
+{
+  "name": "哲学",
+  "node_id": "hum_philo",
+  "parent_id": "humanities",
+  "level": 2,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "人文社科",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "哲学",
+      "uri": "knowledge://hum_philo",
+      "content_preview": "哲学探讨存在、知识、价值、理性等根本问题。主要分支：形而上学、认识论、伦理学、美学。"
+    }
+  ],
+  "related_nodes": []
+}

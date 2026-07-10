@@ -1,0 +1,21 @@
+{
+  "name": "依赖管理",
+  "node_id": "py_dep_mgmt_v4",
+  "parent_id": "py_pkg_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "包管理",
+  "children": [
+    "Poetry",
+    "PDM",
+    "Pipenv"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "现代Python依赖管理工具提供更可靠的依赖解析和锁定功能。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

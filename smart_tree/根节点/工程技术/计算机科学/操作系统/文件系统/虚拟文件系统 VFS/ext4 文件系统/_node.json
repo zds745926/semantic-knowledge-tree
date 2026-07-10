@@ -1,0 +1,21 @@
+{
+  "name": "ext4 文件系统",
+  "node_id": "ext4_v4",
+  "parent_id": "vfs_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "虚拟文件系统 VFS",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "ext4 文件系统",
+      "uri": "knowledge://ext4_v4",
+      "content_preview": "Linux默认。16TB文件/1EB卷。日志保证一致性。extents减少元数据。"
+    }
+  ],
+  "related_nodes": []
+}

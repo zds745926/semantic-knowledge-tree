@@ -1,0 +1,21 @@
+{
+  "name": "*args 和 **kwargs",
+  "node_id": "py_args_kwargs_v4",
+  "parent_id": "py_func_params_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "参数传递深入",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "*args 和 **kwargs",
+      "uri": "knowledge://py_args_kwargs_v4",
+      "content_preview": "*args 收集多余位置参数为元组，**kwargs 收集多余关键字参数为字典。解包操作符用于函数调用。"
+    }
+  ],
+  "related_nodes": []
+}

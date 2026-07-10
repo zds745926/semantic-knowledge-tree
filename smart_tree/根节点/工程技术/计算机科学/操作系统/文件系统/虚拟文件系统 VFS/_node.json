@@ -1,0 +1,20 @@
+{
+  "name": "虚拟文件系统 VFS",
+  "node_id": "vfs_v4",
+  "parent_id": "fs_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "文件系统",
+  "children": [
+    "ext4 文件系统",
+    "Inode"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "VFS提供统一文件操作接口，支持ext4/XFS/Btrfs等具体文件系统。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "触发器和寄存器",
+  "node_id": "flip_flops_v4",
+  "parent_id": "digi_logic_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "数字逻辑",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "触发器和寄存器",
+      "uri": "knowledge://flip_flops_v4",
+      "content_preview": "触发器是存储1位信息的基本单元。多个D触发器并联构成寄存器，是CPU寄存器的基础。"
+    }
+  ],
+  "related_nodes": []
+}

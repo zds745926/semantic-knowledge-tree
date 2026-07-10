@@ -1,0 +1,21 @@
+{
+  "name": "管道",
+  "node_id": "pipe_v4",
+  "parent_id": "proc_comm_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "进程间通信 IPC",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "管道",
+      "uri": "knowledge://pipe_v4",
+      "content_preview": "单向数据流。无名管道仅父子进程。命名管道mkfifo。Shell | 操作符。"
+    }
+  ],
+  "related_nodes": []
+}

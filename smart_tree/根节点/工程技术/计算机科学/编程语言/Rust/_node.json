@@ -1,0 +1,21 @@
+{
+  "name": "Rust",
+  "node_id": "rust_v4",
+  "parent_id": "languages_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "编程语言",
+  "children": [
+    "所有权",
+    "借用检查器",
+    "Trait 系统"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Rust是Mozilla开发的系统级语言，以零成本抽象和内存安全著称。所有权系统和借用检查器在编译时确保内存安全，无需GC。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,23 @@
+{
+  "name": "subprocess 模块",
+  "node_id": "py_subprocess_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "标准库",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "subprocess 模块",
+      "uri": "knowledge://py_subprocess_v4",
+      "content_preview": "运行外部命令：subprocess.run()简洁、Popen底层控制。shell=True注意注入风险。"
+    }
+  ],
+  "related_nodes": [
+    "py_os_module_v4"
+  ]
+}

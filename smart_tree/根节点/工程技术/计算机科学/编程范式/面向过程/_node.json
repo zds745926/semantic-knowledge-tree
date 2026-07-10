@@ -1,0 +1,21 @@
+{
+  "name": "面向过程",
+  "node_id": "procedural_v4",
+  "parent_id": "paradigms_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "编程范式",
+  "children": [
+    "顺序-选择-循环",
+    "模块化编程",
+    "自顶向下设计"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "面向过程编程以函数或过程为基本组织单位，强调顺序-选择-循环三种基本结构。C语言是面向过程编程的典型代表，适合系统级编程和性能敏感场景。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

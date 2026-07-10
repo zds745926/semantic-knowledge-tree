@@ -1,0 +1,22 @@
+{
+  "name": "路径与文件",
+  "node_id": "py_path_file_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "标准库",
+  "children": [
+    "pathlib",
+    "glob",
+    "fnmatch",
+    "tempfile"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python提供多种文件和路径操作工具，从os.path传统接口到pathlib面向对象再到glob/fnmatch模式匹配。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

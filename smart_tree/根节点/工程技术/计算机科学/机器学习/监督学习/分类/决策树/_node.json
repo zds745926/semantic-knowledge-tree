@@ -1,0 +1,23 @@
+{
+  "name": "决策树",
+  "node_id": "decision_tree_v4",
+  "parent_id": "classification_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "分类",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "决策树",
+      "uri": "knowledge://decision_tree_v4",
+      "content_preview": "树状决策。信息增益/基尼系数分裂。可解释性强。"
+    }
+  ],
+  "related_nodes": [
+    "random_forest_v4"
+  ]
+}

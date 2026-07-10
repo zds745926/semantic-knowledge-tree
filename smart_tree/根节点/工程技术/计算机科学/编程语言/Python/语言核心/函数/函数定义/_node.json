@@ -1,0 +1,21 @@
+{
+  "name": "函数定义",
+  "node_id": "py_func_def_v4",
+  "parent_id": "py_func_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "函数",
+  "children": [
+    "参数传递深入",
+    "函数定义基础",
+    "返回值"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "def 语句定义函数，return 返回值。支持多种参数类型组合。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "代理模式",
+  "node_id": "proxy_v4",
+  "parent_id": "structural_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "结构型模式",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "代理模式",
+      "uri": "knowledge://proxy_v4",
+      "content_preview": "为对象提供替身控制访问。远程/虚拟/保护代理。AOP底层。"
+    }
+  ],
+  "related_nodes": []
+}

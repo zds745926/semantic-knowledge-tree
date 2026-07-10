@@ -1,0 +1,21 @@
+{
+  "name": "Java OOP",
+  "node_id": "java_oop_v4",
+  "parent_id": "java_core_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Java 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Java OOP",
+      "uri": "knowledge://java_oop_v4",
+      "content_preview": "extends单继承，implements多接口。abstract/final。"
+    }
+  ],
+  "related_nodes": []
+}

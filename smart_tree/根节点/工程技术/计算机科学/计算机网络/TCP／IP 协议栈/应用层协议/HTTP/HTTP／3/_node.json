@@ -1,0 +1,19 @@
+{
+  "name": "HTTP/3",
+  "node_id": "http3_v4",
+  "parent_id": "http_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "HTTP",
+  "children": [
+    "QUIC 协议"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "HTTP/3基于QUIC(UDP)，彻底解决TCP队头阻塞。0-RTT重连。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

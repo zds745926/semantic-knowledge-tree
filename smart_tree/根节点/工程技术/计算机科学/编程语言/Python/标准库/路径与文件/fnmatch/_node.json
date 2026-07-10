@@ -1,0 +1,21 @@
+{
+  "name": "fnmatch",
+  "node_id": "py_fnmatch_v4",
+  "parent_id": "py_path_file_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "路径与文件",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "fnmatch",
+      "uri": "knowledge://py_fnmatch_v4",
+      "content_preview": "fnmatch.fnmatch('file.txt','*.txt') Unix风格文件名匹配。fnmatch.filter。"
+    }
+  ],
+  "related_nodes": []
+}

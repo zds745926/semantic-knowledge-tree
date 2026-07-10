@@ -1,0 +1,21 @@
+{
+  "name": "线程安全",
+  "node_id": "py_thread_safety_v4",
+  "parent_id": "py_thread_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多线程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "线程安全",
+      "uri": "knowledge://py_thread_safety_v4",
+      "content_preview": "原子操作(int/float赋值)线程安全。列表等非原子。threading.settrace。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "读已提交",
+  "node_id": "read_committed_v4",
+  "parent_id": "isolation_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "隔离级别",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "读已提交",
+      "uri": "knowledge://read_committed_v4",
+      "content_preview": "只能读已提交。避免脏读。不可重复读。"
+    }
+  ],
+  "related_nodes": []
+}

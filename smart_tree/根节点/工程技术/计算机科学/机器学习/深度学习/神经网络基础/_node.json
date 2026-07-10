@@ -1,0 +1,24 @@
+{
+  "name": "神经网络基础",
+  "node_id": "nn_basics_v4",
+  "parent_id": "dl_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "深度学习",
+  "children": [
+    "感知机",
+    "激活函数",
+    "反向传播",
+    "优化器"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "神经网络由神经元层叠而成，通过反向传播学习。"
+  },
+  "data_pointers": [],
+  "related_nodes": [
+    "cnn_v4"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "缓存策略",
+  "node_id": "cache_strategies_v4",
+  "parent_id": "cache_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "缓存",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "缓存策略",
+      "uri": "knowledge://cache_strategies_v4",
+      "content_preview": "Cache Aside旁路。穿透/雪崩/击穿。布隆过滤器/互斥锁。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "pyproject.toml",
+  "node_id": "py_pyproject_v4",
+  "parent_id": "py_deploy_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "发布与打包",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "pyproject.toml",
+      "uri": "knowledge://py_pyproject_v4",
+      "content_preview": "PEP 518/621项目规范。[build-system]声明构建后端。[project]元数据。现代标准。"
+    }
+  ],
+  "related_nodes": []
+}

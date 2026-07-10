@@ -1,0 +1,21 @@
+{
+  "name": "作用域链",
+  "node_id": "js_scope_chain_v4",
+  "parent_id": "js_core_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "JavaScript 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "作用域链",
+      "uri": "knowledge://js_scope_chain_v4",
+      "content_preview": "变量查找沿作用域链向上。let/const块级作用域。闭包保持外部引用。"
+    }
+  ],
+  "related_nodes": []
+}

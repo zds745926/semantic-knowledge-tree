@@ -1,0 +1,21 @@
+{
+  "name": "Timer",
+  "node_id": "py_timer_v4",
+  "parent_id": "py_thread_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多线程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Timer",
+      "uri": "knowledge://py_timer_v4",
+      "content_preview": "threading.Timer 定时器。interval后执行function。cancel取消。"
+    }
+  ],
+  "related_nodes": []
+}

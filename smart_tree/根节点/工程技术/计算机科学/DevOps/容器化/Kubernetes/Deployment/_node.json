@@ -1,0 +1,21 @@
+{
+  "name": "Deployment",
+  "node_id": "k8s_deploy_v4",
+  "parent_id": "k8s_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Kubernetes",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Deployment",
+      "uri": "knowledge://k8s_deploy_v4",
+      "content_preview": "声明式Pod更新。滚动更新/回滚。HPA水平扩缩。"
+    }
+  ],
+  "related_nodes": []
+}

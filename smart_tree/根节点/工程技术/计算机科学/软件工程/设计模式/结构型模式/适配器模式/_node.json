@@ -1,0 +1,21 @@
+{
+  "name": "适配器模式",
+  "node_id": "adapter_v4",
+  "parent_id": "structural_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "结构型模式",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "适配器模式",
+      "uri": "knowledge://adapter_v4",
+      "content_preview": "将不兼容接口转为客户端期望的接口。类适配器/对象适配器。"
+    }
+  ],
+  "related_nodes": []
+}

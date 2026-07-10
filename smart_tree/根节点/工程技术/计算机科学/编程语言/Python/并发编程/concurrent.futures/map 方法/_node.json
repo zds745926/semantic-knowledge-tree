@@ -1,0 +1,21 @@
+{
+  "name": "map 方法",
+  "node_id": "py_futures_map_v4",
+  "parent_id": "py_futures_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "concurrent.futures",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "map 方法",
+      "uri": "knowledge://py_futures_map_v4",
+      "content_preview": "executor.map(func, iterable) 批量提交。返回结果迭代器。顺序对应输入。"
+    }
+  ],
+  "related_nodes": []
+}

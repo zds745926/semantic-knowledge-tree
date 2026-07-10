@@ -132,94 +132,102 @@ class SemanticKnowledgeTree:
         self,
         query: str,
         query_vec: Optional[np.ndarray] = None,
-        min_weight: float = 0.001,
-        max_paths: int = 10,
+        elimination_ratio: float = 0.3,
         verbose: bool = False,
     ) -> List[Dict]:
         """
-        逐层渗透：从根节点向下传播权重，返回激活路径
+        逐层渗透算法 v2
+
+        核心规则：
+          - 共 10 层，每层分配 10 权重，总计 100
+          - 同一层所有候选节点按语义相似度比例分配该层 10 权重
+          - 动态淘汰：相似度 < 本层最高相似度 × elimination_ratio 的节点被淘汰
+          - 某层全部淘汰则终止
+          - 叶子节点记录累计权重，按权重降序返回
 
         Args:
             query: 查询文本
-            query_vec: 预编码查询向量（若为 None 则自动编码）
-            min_weight: 剪枝权重阈值（低于此值的分支中断下传）
-            max_paths: 返回最多路径数
+            query_vec: 预编码查询向量
+            elimination_ratio: 淘汰比例（默认 0.3，即低于最高分 30% 的淘汰）
             verbose: 是否打印详细路径
 
         Returns:
-            激活路径列表，每条含：
-              - path: 节点名称序列
-              - node_ids: 节点ID序列
-              - total_weight: 叶子累积吸收权重
-              - leaf: 叶子节点信息
-              - weights: 各层相似度分布
+            叶子激活路径列表，按 total_weight 降序
         """
         if query_vec is None:
             query_vec = self.encoder.encode(query)
 
-        # BFS 逐层渗透
-        active_paths: List[Dict] = []
-        # (node, weight_in, path_names, path_ids, weight_list)
-        # weight_in = 从上个节点下传进来的权重
-        # path_names/path_ids 初始为空，进入节点时附加自身
-        stack = [(self.root, 1.0, [], [], [])]
+        LAYER_WEIGHT = 10.0
+        MAX_DEPTH = 10
+        results: List[Dict] = []
 
-        while stack:
-            node, weight_in, path_names, path_ids, weight_list = stack.pop(0)
+        # 候选列表：(node, cumulative_weight, path_names, path_ids, layer_weights)
+        candidates: List[Tuple] = [
+            (child, 0.0, [self.root.name], [self.root.node_id], [])
+            for child in self.root.children.values()
+        ]
 
-            if node.vector is None:
-                sim = 0.0
-            else:
-                sim = self.encoder.similarity(query_vec, node.vector)
+        for depth in range(MAX_DEPTH):
+            if not candidates:
+                break
 
-            # 当前层的语义相似度（用于路径解释）
-            layer_sim = sim
-            current_weight_list = weight_list + [layer_sim]
+            # 1. 计算所有候选节点的语义相似度
+            scored = []
+            for node, cum_w, p_names, p_ids, l_w in candidates:
+                sim = self.encoder.similarity(query_vec, node.vector) if node.vector is not None else 0.0
+                scored.append((node, sim, cum_w, p_names, p_ids, l_w))
 
-            if node.is_leaf():
-                # 叶子节点：始终记录（激活权重 = weight_in × sim）
-                leaf_activation = weight_in * sim
-                active_paths.append({
-                    "path": path_names + [node.name],
-                    "node_ids": path_ids + [node.node_id],
-                    "total_weight": leaf_activation,
-                    "leaf_id": node.node_id,
-                    "leaf_name": node.name,
-                    "weights": current_weight_list,
-                    "data_pointers": node.data_pointers,
-                    "related_nodes": node.related_nodes,
-                })
-            else:
-                # 非叶子节点
-                # 节点激活权重 = 接收权重 × 语义相似度
-                activation = weight_in * sim
+            # 2. 动态淘汰：低于最高相似度 × elimination_ratio 的淘汰
+            max_sim = max(s for _, s, _, _, _, _ in scored)
+            threshold = max_sim * elimination_ratio
 
-                # 吸收（保留在此层的语义贡献）
-                absorbed = activation * node.absorption_rate
+            survivors = [x for x in scored if x[1] >= threshold]
 
-                # 下传给子节点
-                pass_down = activation * (1 - node.absorption_rate)
+            if not survivors:
+                break  # 全部淘汰，终止
 
-                # 剪枝：下传权重过小时中断
-                if pass_down > min_weight:
+            # 3. 按语义相似度比例分配 10 权重
+            total_sim = sum(max(s, 0.0) for _, s, _, _, _, _ in survivors)
+            next_candidates = []
+
+            for node, sim, cum_w, p_names, p_ids, l_w in survivors:
+                if total_sim > 0:
+                    share = LAYER_WEIGHT * (max(sim, 0.0) / total_sim)
+                else:
+                    share = LAYER_WEIGHT / len(survivors)
+
+                new_cum_w = cum_w + share
+                new_p_names = p_names + [node.name]
+                new_p_ids = p_ids + [node.node_id]
+                new_l_w = l_w + [share]
+
+                if node.is_leaf():
+                    results.append({
+                        "path": new_p_names,
+                        "node_ids": new_p_ids,
+                        "total_weight": new_cum_w,
+                        "leaf_id": node.node_id,
+                        "leaf_name": node.name,
+                        "weights": new_l_w,
+                        "data_pointers": node.data_pointers,
+                        "related_nodes": node.related_nodes,
+                    })
+                else:
                     for child in node.children.values():
-                        stack.append((
-                            child, pass_down,
-                            path_names + [node.name],
-                            path_ids + [node.node_id],
-                            current_weight_list,
-                        ))
+                        next_candidates.append(
+                            (child, new_cum_w, new_p_names, new_p_ids, new_l_w)
+                        )
 
-        # 按激活权重（叶子总贡献）排序
-        active_paths.sort(key=lambda x: x["total_weight"], reverse=True)
+            candidates = next_candidates
 
-        result = active_paths[:max_paths]
+        # 按权重降序
+        results.sort(key=lambda x: x["total_weight"], reverse=True)
 
         if verbose:
             print(f"\n{'='*60}")
             print(f"🔍 查询: {query}")
             print(f"{'='*60}")
-            for i, p in enumerate(result):
+            for i, p in enumerate(results):
                 print(f"\n  [{i+1}] 路径权重: {p['total_weight']:.4f}")
                 print(f"      路径: {' → '.join(p['path'])}")
                 print(f"      叶子: {p['leaf_name']}")
@@ -230,96 +238,7 @@ class SemanticKnowledgeTree:
                 if p['related_nodes']:
                     print(f"      跨域: {p['related_nodes']}")
 
-        return result
-
-    def shortcut_search(
-        self,
-        query: str,
-        query_vec: Optional[np.ndarray] = None,
-        top_k: int = 10,
-        verbose: bool = False,
-    ) -> List[Dict]:
-        """
-        捷径机制：全局叶子 Top-K 匹配，绕过逐层衰减
-
-        Args:
-            query: 查询文本
-            query_vec: 预编码向量
-            top_k: 返回 top-k 叶子
-            verbose: 是否打印
-
-        Returns:
-            叶子匹配结果列表
-        """
-        if query_vec is None:
-            query_vec = self.encoder.encode(query)
-
-        if not self._all_leaves:
-            return []
-
-        leaf_ids = list(self._all_leaves.keys())
-        leaf_vecs = np.array([
-            self._all_leaves[lid].vector
-            for lid in leaf_ids
-            if self._all_leaves[lid].vector is not None
-        ])
-
-        if len(leaf_vecs) == 0:
-            return []
-
-        scores = np.dot(leaf_vecs, query_vec)
-        top_indices = np.argsort(scores)[::-1][:top_k]
-
-        results = []
-        for idx in top_indices:
-            lid = leaf_ids[idx]
-            leaf = self._all_leaves[lid]
-            score = float(scores[idx])
-            results.append({
-                "leaf_id": lid,
-                "leaf_name": leaf.name,
-                "score": score,
-                "path": self._get_path_to(leaf),
-                "data_pointers": leaf.data_pointers,
-                "related_nodes": leaf.related_nodes,
-            })
-
-        if verbose:
-            print(f"\n{'='*60}")
-            print(f"⚡ 捷径搜索: {query}")
-            print(f"{'='*60}")
-            for i, r in enumerate(results[:5]):
-                print(f"  [{i+1}] 得分: {r['score']:.4f} | {r['leaf_name']}")
-                print(f"      路径: {' → '.join(r['path'])}")
-
         return results
-
-    def hybrid_search(
-        self,
-        query: str,
-        top_k: int = 10,
-        verbose: bool = False,
-    ) -> Dict:
-        """
-        混合搜索：渗透 + 捷径，由调用方（AI推理层）融合
-
-        Returns:
-            {"penetration": [...], "shortcut": [...], "query": query}
-        """
-        query_vec = self.encoder.encode(query)
-
-        penetration_results = self.penetrate(
-            query, query_vec=query_vec, verbose=verbose
-        )
-        shortcut_results = self.shortcut_search(
-            query, query_vec=query_vec, top_k=top_k, verbose=verbose
-        )
-
-        return {
-            "query": query,
-            "penetration": penetration_results,
-            "shortcut": shortcut_results,
-        }
 
     # ─── 内部方法 ───────────────────────────────────
 

@@ -1,0 +1,21 @@
+{
+  "name": "协程 coroutine",
+  "node_id": "py_coroutine_v4",
+  "parent_id": "py_async_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "异步编程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "协程 coroutine",
+      "uri": "knowledge://py_coroutine_v4",
+      "content_preview": "async def 协程函数。await挂起等待。协程是Python异步编程的核心。"
+    }
+  ],
+  "related_nodes": []
+}

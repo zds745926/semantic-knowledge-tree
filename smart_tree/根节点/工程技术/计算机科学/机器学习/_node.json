@@ -1,0 +1,22 @@
+{
+  "name": "机器学习",
+  "node_id": "ml_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "监督学习",
+    "无监督学习",
+    "深度学习",
+    "自然语言处理"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "机器学习让计算机从数据中学习规律，无需显式编程。分为监督学习、无监督学习、半监督学习和强化学习。深度学习是其重要分支。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

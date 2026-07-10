@@ -1,0 +1,21 @@
+{
+  "name": "Barrier",
+  "node_id": "py_barrier_v4",
+  "parent_id": "py_thread_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多线程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Barrier",
+      "uri": "knowledge://py_barrier_v4",
+      "content_preview": "threading.Barrier 屏障。n个线程全部到达后同时继续。分阶段并行。"
+    }
+  ],
+  "related_nodes": []
+}

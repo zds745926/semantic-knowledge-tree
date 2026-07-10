@@ -1,0 +1,21 @@
+{
+  "name": "全文索引",
+  "node_id": "fulltext_index_v4",
+  "parent_id": "index_types_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "索引类型",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "全文索引",
+      "uri": "knowledge://fulltext_index_v4",
+      "content_preview": "倒排索引：词→文档列表。MATCH AGAINST。"
+    }
+  ],
+  "related_nodes": []
+}

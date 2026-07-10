@@ -1,0 +1,21 @@
+{
+  "name": "仅关键字参数",
+  "node_id": "py_keyword_only_v4",
+  "parent_id": "py_func_params_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "参数传递深入",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "仅关键字参数",
+      "uri": "knowledge://py_keyword_only_v4",
+      "content_preview": "* 后的参数必须用 name=value 传递，提高代码可读性。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ls/cd/pwd",
+  "node_id": "ls_cd_pwd_v4",
+  "parent_id": "linux_fs_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "文件管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "ls/cd/pwd",
+      "uri": "knowledge://ls_cd_pwd_v4",
+      "content_preview": "ls -l详细 -a隐藏 -h可读。cd ~回家。pwd当前路径。"
+    }
+  ],
+  "related_nodes": []
+}

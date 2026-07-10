@@ -1,0 +1,21 @@
+{
+  "name": "functools 模块",
+  "node_id": "py_functools_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "标准库",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "functools 模块",
+      "uri": "knowledge://py_functools_v4",
+      "content_preview": "高阶函数工具：partial固定参数、lru_cache缓存、wraps保留元信息、reduce归约、singledispatch单分派。"
+    }
+  ],
+  "related_nodes": []
+}

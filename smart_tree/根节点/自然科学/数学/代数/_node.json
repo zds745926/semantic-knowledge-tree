@@ -1,0 +1,20 @@
+{
+  "name": "代数",
+  "node_id": "algebra_v4",
+  "parent_id": "math_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "数学",
+  "children": [
+    "一元二次方程求根公式",
+    "韦达定理"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "代数是数学中研究运算规则和结构的核心分支，包括方程求解、线性代数、抽象代数等。一元二次方程求根公式和韦达定理是代数的基本成果，广泛应用于数学建模和工程计算。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

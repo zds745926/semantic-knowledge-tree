@@ -1,0 +1,21 @@
+{
+  "name": "数字逻辑",
+  "node_id": "digi_logic_v4",
+  "parent_id": "cb_theory_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "计算机理论",
+  "children": [
+    "布尔代数",
+    "逻辑门电路",
+    "触发器和寄存器"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "数字逻辑研究用电子电路实现布尔运算的原理，包括布尔代数、逻辑门和触发器。数字逻辑是计算机硬件的基础，从简单的逻辑门到复杂的CPU都是数字逻辑的工程实现。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

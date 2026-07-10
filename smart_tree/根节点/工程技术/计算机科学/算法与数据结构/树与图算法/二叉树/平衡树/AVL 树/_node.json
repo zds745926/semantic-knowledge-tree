@@ -1,0 +1,23 @@
+{
+  "name": "AVL 树",
+  "node_id": "avl_tree_v4",
+  "parent_id": "balanced_tree_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "平衡树",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "AVL 树",
+      "uri": "knowledge://avl_tree_v4",
+      "content_preview": "严格平衡：左右子树高度差≤1。四种旋转(LL/RR/LR/RL)保持平衡。"
+    }
+  ],
+  "related_nodes": [
+    "red_black_tree_v4"
+  ]
+}

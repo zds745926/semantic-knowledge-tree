@@ -1,0 +1,22 @@
+{
+  "name": "字符串",
+  "node_id": "py_str_v4",
+  "parent_id": "py_core_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "语言核心",
+  "children": [
+    "字符串基础",
+    "字符串方法",
+    "f-string 详解",
+    "字符串进阶"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python 字符串(str)是不可变的Unicode字符序列。支持索引、切片、格式化和丰富的字符串方法。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,23 @@
+{
+  "name": "gettext",
+  "node_id": "py_gettext_v4",
+  "parent_id": "py_i18n_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "国际化",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "gettext",
+      "uri": "knowledge://py_gettext_v4",
+      "content_preview": "gettext.translation加载.mo文件。_('msgid')翻译。install()全局绑定。"
+    }
+  ],
+  "related_nodes": [
+    "py_locale_v4"
+  ]
+}

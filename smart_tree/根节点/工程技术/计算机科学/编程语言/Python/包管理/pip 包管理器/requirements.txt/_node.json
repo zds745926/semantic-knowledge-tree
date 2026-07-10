@@ -1,0 +1,21 @@
+{
+  "name": "requirements.txt",
+  "node_id": "py_requirements_v4",
+  "parent_id": "py_pip_branch_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "pip 包管理器",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "requirements.txt",
+      "uri": "knowledge://py_requirements_v4",
+      "content_preview": "依赖描述文件。==指定版本/>=最低版本。pip-compile生成锁定文件。"
+    }
+  ],
+  "related_nodes": []
+}

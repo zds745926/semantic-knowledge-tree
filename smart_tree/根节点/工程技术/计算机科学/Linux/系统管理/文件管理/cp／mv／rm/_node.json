@@ -1,0 +1,21 @@
+{
+  "name": "cp/mv/rm",
+  "node_id": "cp_mv_rm_v4",
+  "parent_id": "linux_fs_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "文件管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "cp/mv/rm",
+      "uri": "knowledge://cp_mv_rm_v4",
+      "content_preview": "cp -r递归目录。mv移动重命名。rm -rf慎用。"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "字符串进阶",
+  "node_id": "py_str_adv_v4",
+  "parent_id": "py_str_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "字符串",
+  "children": [
+    "编码与 bytes",
+    "字符串切片进阶",
+    "字符串正则进阶"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "字符串进阶包括编码转换、高级切片和正则表达式。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

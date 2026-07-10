@@ -1,0 +1,20 @@
+{
+  "name": "回归",
+  "node_id": "regression_v4",
+  "parent_id": "supervised_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "监督学习",
+  "children": [
+    "线性回归",
+    "逻辑回归"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "回归预测连续值。线性回归和逻辑回归是最基础的回归算法。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

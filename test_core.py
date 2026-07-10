@@ -35,53 +35,6 @@ def test_penetration_basic(tree):
     print("  ✅ 基本渗透测试通过")
 
 
-def test_shortcut_mechanism(tree):
-    """测试捷径机制"""
-    print("\n═══ 测试 2: 捷径机制 ═══")
-
-    results = tree.shortcut_search("Python 列表", verbose=False)
-
-    assert len(results) > 0, "捷径应返回结果"
-    print(f"  ✅ 捷径返回 {len(results)} 个结果")
-
-    # 检查是否按得分降序排列
-    scores = [r["score"] for r in results]
-    assert all(scores[i] >= scores[i+1] for i in range(len(scores)-1)), "应降序排列"
-    print(f"  ✅ 得分降序排列: {[f'{s:.4f}' for s in scores[:5]]}")
-
-    # 检查路径信息完整性
-    for r in results[:3]:
-        assert "path" in r
-        assert "leaf_name" in r
-        assert "data_pointers" in r
-        print(f"  ✅ {r['leaf_name']} → {'→'.join(r['path'])} (s={r['score']:.4f})")
-
-    print("  ✅ 捷径机制测试通过")
-
-
-def test_hybrid_search(tree):
-    """测试混合搜索"""
-    print("\n═══ 测试 3: 混合搜索 ═══")
-
-    result = tree.hybrid_search("二分搜索", verbose=False)
-
-    assert "penetration" in result
-    assert "shortcut" in result
-    assert "query" in result
-
-    print(f"  ✅ 渗透: {len(result['penetration'])} 条路径")
-    print(f"  ✅ 捷径: {len(result['shortcut'])} 个叶子")
-
-    # 检查是否去重
-    all_leaves = set()
-    all_leaves.update(r["leaf_id"] for r in result["penetration"])
-    all_leaves.update(r["leaf_id"] for r in result["shortcut"])
-    total_entries = len(result["penetration"]) + len(result["shortcut"])
-    print(f"  ✅ 总条目: {total_entries}, 唯一叶子: {len(all_leaves)}")
-
-    print("  ✅ 混合搜索测试通过")
-
-
 def test_cross_reference(tree):
     """测试跨域引用"""
     print("\n═══ 测试 4: 跨域引用 ═══")
@@ -95,13 +48,7 @@ def test_cross_reference(tree):
             print(f"  ✅ {r['leaf_name']} 关联: {r['related_nodes']}")
 
     if not cross_refs_found:
-        # 也可能通过捷径找到
-        shortcut = tree.shortcut_search("矩阵", verbose=False)
-        for s in shortcut:
-            if s["related_nodes"]:
-                cross_refs_found = True
-                print(f"  ✅ 捷径找到归联: {s['leaf_name']} 关联: {s['related_nodes']}")
-                break
+        pass  # 跨域引用是增强机制，非必需
 
     # 跨域引用是增强机制，非必需，所以不 assert
     print("  ✅ 跨域引用检查通过")
@@ -135,7 +82,7 @@ def test_pruning(tree):
     print("\n═══ 测试 6: 剪枝机制 ═══")
 
     # 用完全不相关的查询应该不会有激活路径
-    results = tree.penetrate("量子物理与弦论", verbose=False, min_weight=0.02)
+    results = tree.penetrate("量子物理与弦论", verbose=False)
 
     print(f"  不相关查询 '量子物理' 激活路径: {len(results)} 条")
     # 由于回退编码器的随机向量，可能仍然有随机激活
@@ -168,13 +115,10 @@ def test_reasoning_layer():
         {"leaf_id": "a", "leaf_name": "测试A", "path": ["根", "A"],
          "total_weight": 0.8, "data_pointers": [], "related_nodes": []},
     ]
-    fake_short = [
-        {"leaf_id": "b", "leaf_name": "测试B", "path": ["根", "B"],
-         "score": 0.9, "data_pointers": [], "related_nodes": []},
-    ]
-    merged = reasoner.merge_results("测试", fake_pen, fake_short)
-    assert len(merged["results"]) == 2
-    print(f"  ✅ 融合测试: {len(merged['results'])} 个结果")
+
+    merged = reasoner.merge_results("测试", fake_pen)
+    assert len(merged["_penetration_raw"]) == 1
+    print(f"  ✅ 融合测试: {len(merged['_penetration_raw'])} 条渗透结果")
     print(f"  ✅ 推理层测试通过")
 
 
@@ -197,9 +141,9 @@ def test_edge_cases(tree):
     results = tree.penetrate("linear algebra 矩阵", verbose=False)
     print(f"  ✅ 混合中英文: {len(results)} 条路径")
 
-    # 查询不存在的叶子
-    results = tree.shortcut_search("量子物理弦论", verbose=False)
-    print(f"  ✅ 不存知识查询: {len(results)} 个结果 (可能随机匹配)")
+    # 查询不存在的叶子（渗透会自然淘汰）
+    results = tree.penetrate("量子物理弦论", verbose=False)
+    print(f"  ✅ 不存知识查询: {len(results)} 个结果")
 
     print("  ✅ 边界情况测试通过")
 
@@ -226,8 +170,6 @@ def main():
 
     # 运行所有测试
     test_penetration_basic(tree)
-    test_shortcut_mechanism(tree)
-    test_hybrid_search(tree)
     test_cross_reference(tree)
     test_weight_absorption(tree)
     test_pruning(tree)
@@ -245,12 +187,10 @@ def main():
 
     print()
     print("✅ 所有核心机制验证通过!")
-    print("   - 逐层渗透与权重吸收")
-    print("   - 捷径全局Top-K匹配")
-    print("   - 混合搜索与去重")
+    print("   - 逐层渗透 v2（每层10权重、语义比例分配、动态淘汰）")
     print("   - 跨域引用指针")
     print("   - AI推理层意图分类与融合")
-    print("   - 剪枝与边界情况")
+    print("   - 边界情况")
 
 
 if __name__ == "__main__":

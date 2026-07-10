@@ -1,0 +1,21 @@
+{
+  "name": "try-except",
+  "node_id": "py_try_except_v4",
+  "parent_id": "py_except_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "异常处理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "try-except",
+      "uri": "knowledge://py_try_except_v4",
+      "content_preview": "try-except-else-finally。except ValueError as e: 捕获特定异常。"
+    }
+  ],
+  "related_nodes": []
+}

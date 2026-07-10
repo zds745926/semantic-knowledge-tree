@@ -1,0 +1,28 @@
+{
+  "name": "多线程",
+  "node_id": "py_thread_v4",
+  "parent_id": "py_conc_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "并发编程",
+  "children": [
+    "threading 基础",
+    "线程同步",
+    "Lock 与 RLock",
+    "Condition",
+    "Event",
+    "Barrier",
+    "Timer",
+    "线程局部存储 TLS",
+    "daemon 线程",
+    "线程安全"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "threading模块创建线程。GIL限制CPU并行，适合I/O密集型。"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}
