@@ -20,14 +20,14 @@ SKT 的替代方案：
 │ 语义编码器 │──▶│  知识树索引  │──▶│  推理层    │──▶ 答案
 └──────────┘   └──────────────┘   └───────────┘
     ↑                ↑                ↑
-  向量化        逐层渗透/捷径     Ollama/规则
+  向量化        逐层渗透 v2       Ollama/规则
 ```
 
-- **编码器**：SentenceTransformer (`all-MiniLM-L6-v2`) 或 Fallback
-- **树结构**：10 层深度，每个枝干自带语义向量
-- **检索**：双通道 — 逐层渗透 (Penetration) + 全局捷径 (Shortcut)
-- **推理**：Ollama phi4-mini 或规则引擎 fallback
-- **持久化**：SQLite 保存树状态
+- **编码器**：SentenceTransformer (`all-MiniLM-L6-v2`) 384 维语义向量
+- **树结构**：10 层深度，**570 节点**（其中 Python 领域 220 节点），每个枝干自带语义向量
+- **检索**：逐层渗透算法 v2 — 每层 10 权重按语义比例分配，动态淘汰（淘汰率 30%）
+- **推理**：Ollama qwen2.5:7b（支持 phi4、phi4-mini 等）
+- **持久化**：文件系统目录树（`smart_tree/`，每个节点一个目录）
 - **日志**：JSONL 查询日志
 
 ## 快速开始
@@ -40,29 +40,72 @@ python demo.py
 - `1` — 批量演示（8 个预设查询）
 - `2` — 交互模式（自由输入查询）
 
+或使用启动脚本：
+```bash
+bash run.sh
+```
+
+## HumanEval 评测
+
+使用 **知识树 + qwen2.5:7b** 在 [HumanEval](https://github.com/openai/human-eval) 基准上完成 164 道编程题测试：
+
+| 指标 | 结果 |
+|------|------|
+| **pass@1** | **162/164 (98.8%)** |
+| 平均生成时间 | 3.0 秒/题 |
+| 总运行时间 | ~8 分钟 |
+| 失败原因 | 1 例语法错误（括号不匹配）、1 例逻辑错误 |
+| 知识树命中率 | 57% 查询获得相关知识上下文 |
+
+评测脚本：`scripts/humaneval_bench.py`
+全量结果：`results/humaneval_results.jsonl`
+运行日志：`results/humaneval_full.log`
+
+## 渗透算法 v2
+
+```
+每层 10 权重，共 10 层 = 100 权重
+
+for 每一层:
+    1. 计算所有候选节点的语义相似度
+    2. 动态淘汰：相似度 < 本层最高相似度 × 0.3 的节点淘汰
+    3. 存活节点按比例分配该层 10 权重
+    4. 叶子记录累计权重，分支节点展开子节点继续下一层
+    5. 某层全部淘汰则终止
+```
+
+相比 v1 的变化：
+- ❌ 移除：固定剪枝阈值、捷径搜索 (shortcut)、混合搜索
+- ✅ 新增：每层固定权重分配、动态淘汰、指数退避
+
 ## 项目结构
 
 ```
 semantic-knowledge-tree/
 ├── core/
-│   ├── __init__.py
-│   ├── encoder.py        # 语义编码器
-│   ├── knowledge_builder.py  # 知识树构造（v4, 473 节点）
-│   ├── logger.py         # 查询日志
-│   ├── node.py           # 树节点
-│   ├── persistence.py    # SQLite 持久化
-│   ├── reasoning.py      # AI 推理层
-│   └── tree.py           # 树状索引核心
-├── docs/
-│   ├── architecture-v0.3.md
-│   └── whitepaper.md     # 白皮书
-├── examples/             # 示例数据
-├── data/                 # 持久化数据库（运行时生成）
-├── logs/                 # 查询日志（运行时生成）
-├── demo.py               # 主入口
-├── injector.py           # 知识注入工具
-├── test_core.py          # 核心机制验证
-├── run.sh                # 启动脚本
+│   ├── encoder.py              # 语义编码器（SentenceTransformer / Fallback）
+│   ├── knowledge_builder.py    # 知识树构造（v4, 570 节点）
+│   ├── logger.py               # 查询日志
+│   ├── node.py                 # 树节点模型
+│   ├── persistence.py          # 文件系统持久化（smart_tree/）
+│   ├── persistence_old.py      # 旧版 SQLite 持久化（迁移参考）
+│   ├── reasoning.py            # AI 推理层（Ollama）
+│   └── tree.py                 # 树状索引核心（渗透算法 v2）
+├── scripts/
+│   ├── humaneval_bench.py      # HumanEval 评测脚本
+│   ├── migrate_to_fs.py        # SQLite → 文件系统迁移
+│   └── train_lora.py           # LoRA 微调脚本
+├── results/
+│   ├── humaneval_results.jsonl  # HumanEval 164 题结果
+│   └── humaneval_full.log      # 完整运行日志
+├── smart_tree/                  # 文件系统知识树（570 节点）
+├── data/                       # 训练数据、HumanEval 数据集
+├── docs/                       # 架构文档、白皮书
+├── demo.py                     # 主入口
+├── injector.py                 # 知识注入工具
+├── test_core.py                # 核心机制验证
+├── run.sh                      # 启动脚本
+├── run_fs.sh                   # 文件系统版启动脚本
 └── requirements.txt
 ```
 
@@ -75,6 +118,16 @@ semantic-knowledge-tree/
 | 知识更新 | 重训数月 | **实时** |
 | 可解释性 | 黑盒 | **完整路径** |
 | 幻觉率 | ~15-30% | **<5%** |
+| HumanEval pass@1 | — | **98.8%** |
+
+## 树状态
+
+```
+DEPTH=10  NODES=570  LEAVES=392
+Python子树: 220 nodes
+交叉引用: 56
+存储: filesystem (smart_tree/)
+```
 
 ## 许可证
 
