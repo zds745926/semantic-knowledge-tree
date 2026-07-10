@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>知识树 · Knowledge Tree</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#1a1a2e;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#fff}
+canvas{display:block;width:100%;height:100%;cursor:grab}
+canvas:active{cursor:grabbing}
+.title{position:fixed;top:20px;right:28px;font-size:13px;font-weight:300;letter-spacing:2px;color:rgba(255,255,255,0.25);pointer-events:none;z-index:10}
+.panel{position:fixed;bottom:24px;left:24px;background:rgba(20,20,35,0.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.05);border-radius:8px;padding:12px 16px;font-size:12px;line-height:1.5;color:rgba(255,255,255,0.4);pointer-events:none;z-index:10;min-width:130px}
+.panel .v{color:#7ec850;font-weight:500}
+.panel .h{color:#e8c87a}
+.tip{position:fixed;background:rgba(15,18,25,0.85);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(126,200,80,0.12);border-radius:8px;padding:10px 14px;max-width:220px;font-size:12px;line-height:1.4;color:rgba(255,255,255,0.75);pointer-events:none;z-index:20;opacity:0;transition:opacity 0.2s}
+.tip.show{opacity:1}
+.tip .nm{font-size:13px;font-weight:500;color:#7ec850;margin-bottom:2px}
+.tip .lv{font-size:10px;color:rgba(232,200,122,0.6);margin-bottom:3px}
+.tip .de{color:rgba(255,255,255,0.4);font-size:11px}
+.hint{position:fixed;bottom:24px;right:24px;font-size:10px;color:rgba(255,255,255,0.1);pointer-events:none;z-index:10}
+</style>
+</head>
+<body>
+<div class="title">知识树 · Knowledge Tree</div>
+<div class="panel">节点 <span class="v" id="nodeCount">0</span><br>枝干 <span class="h" id="hoverName">—</span></div>
+<div class="tip" id="tip"><div class="nm" id="ttName"></div><div class="lv" id="ttLevel"></div><div class="de" id="ttDesc"></div></div>
+<div class="hint">滚轮缩放 · 拖动平移</div>
+<canvas id="c"></canvas>
+<script>
+/* ============================================================
+   知识树 — 真树模型 · 自我验证 · Canvas 渲染
+   ============================================================ */
+const c=document.getElementById('c'),ctx=c.getContext('2d'),tip=document.getElementById('tip');
+
+/* ── 颜色 #5c3d2e→#7ec850 ── */
+const C0={r:0x5c,g:0x3d,b:0x2e},C1={r:0x7e,g:0xc8,b:0x50};
+function col(t){const n=(c)=>Math.round(C0[c]+(C1[c]-C0[c])*t);return`rgb(${n('r')},${n('g')},${n('b')})`}
+
+/* ── 节点 ── */
+let nodes=[],nMap={},nid=0;
+function N(n,d,l,p){const o={id:nid++,name:n,desc:d,lv:l,pid:p,ch:[],x:0,y:0,cx:0,cy:0,sx:0,sy:0};nodes.push(o);nMap[o.id]=o;return o}
+
+/* ── 名称池 ── */
+const NAMES=[
+  '自然科学','工程技术','生命医学','人文社科',
+  '物理学','化学','生物学','计算机','电子工程','机械工程','临床医学','药理学',
+  '经济学','心理学','社会学','法学','历史学','哲学','文学','艺术学',
+  '量子力学','热力学','电磁学','相对论','光学','分子生物学','细胞生物学','遗传学',
+  '算法','数据结构','操作系统','计算机网络','数据库','软件工程','人工智能','机器学习',
+  '信号处理','通信原理','控制理论','电路设计','病理学','免疫学','流行病学',
+  '宏观经济学','认知心理学','社会心理学','宪法学','民法学','刑法学',
+  '中国古代史','世界近代史','考古学','认识论','伦理学','美学',
+  '古代文学','语言学','绘画','建筑','音乐','舞蹈',
+];
+
+/* ── 树参数 ── */
+let MAX_R=200;
+
+function calcMaxR(){
+  const W=c.width;
+  MAX_R=Math.max(W*0.35,160);
+}
+
+/* ── 椭球树冠轮廓函数 ── */
+function crownR(y){
+  const H=c.height,bottom=H*0.85;
+  if(bottom<=0)return MAX_R;
+  const t=1-y/bottom;
+  const peak=0.6,wd=0.5;
+  const r=1-Math.pow((t-peak)/wd,2)*0.7;
+  return Math.max(0.3,Math.min(1,r))*MAX_R;
+}
+
+/* ── 生成树 ── */
+function gen(){
+  calcMaxR();
+  for(let at=0;at<3;at++){
+    nodes=[];nMap={};nid=0;
+    build();
+    const v=validate();
+    if(v.pass){console.log(`[SKT] ✅ 第${at+1}次尝试通过`);return true;}
+    console.log(`[SKT] ❌ 第${at+1}次: 向下=${v.down} 角度=${v.angleBad} 重叠=${v.overlap} 轮廓=${v.crownOk?'✅':'❌'}`);
+  }
+  console.warn('[SKT] 3次均失败');
+  return false;
+}
+
+function build(){
+  const W=c.width,H=c.height;
+  const cx=W/2,bottom=H*0.85;
+
+  // 根
+  const root=N('🌳 全人类知识','知识体系之根',0,-1);
+  root.x=cx;root.y=bottom;
+
+  // ── 主干 5~7节点 ──
+  const tc=5+Math.floor(Math.random()*3);
+  const gapB=80+Math.random()*20,gapT=30+Math.random()*20;
+  const gapS=(gapB-gapT)/(tc-1);
+  let trunk=[root],nameIdx=0;
+
+  for(let i=0;i<tc;i++){
+    const gap=gapB-gapS*i;
+    const prev=trunk[trunk.length-1];
+    const n=N('枝干','主干第'+(i+1)+'节',i+1,prev.id);
+    n.x=cx;n.y=prev.y-gap;
+    prev.ch.push(n);trunk.push(n);
+  }
+
+  // ── 侧枝 ──
+  for(let ti=1;ti<trunk.length;ti++){
+    const nd=trunk[ti];
+    const hr=1-nd.y/bottom;
+    let cnt=hr>0.6?2+(Math.random()<0.5?1:0):hr>0.3?2:1;
+    if(cnt>3)cnt=3;
+    if(hr<0.15)cnt=0;
+    if(cnt<1)cnt=1;
+
+    for(let si=0;si<cnt;si++){
+      const side=Math.random()>0.5?1:-1;
+      const ang=(25+Math.random()*25)*Math.PI/180*side;
+      const tR=crownR(nd.y);
+      const base=tR*0.45*(0.7+Math.random()*0.5);
+      const len=base*(1-(ti/tc)*0.35);
+      const ex=nd.x+Math.sin(ang)*len;
+      const ey=nd.y-Math.cos(ang)*len;
+      const nm=nameIdx<NAMES.length?NAMES[nameIdx++]:'细项';
+      const n=N(nm,'',nd.lv*10+si+1,nd.id);
+      n.x=ex;n.y=ey;n.sx=nd.x;n.sy=nd.y;
+      const mx=(n.sx+ex)/2,my=(n.sy+ey)/2;
+      const px=-(ey-n.sy),py=ex-n.sx;
+      const pl=Math.hypot(px,py)||1;
+      n.cx=mx+px/pl*len*0.2;
+      n.cy=my+py/pl*len*0.2;
+      nd.ch.push(n);
+      // 子枝
+      addSub(n,ang,side,2+Math.floor(Math.random()*2),len,nameIdx);
+    }
+  }
+}
+
+function addSub(parent,baseAng,side,rem,len,nameIdx){
+  if(rem<=0||nameIdx>=NAMES.length)return;
+  const adj=baseAng+((Math.random()-0.5)*20)*Math.PI/180;
+  const newL=len*(0.5+Math.random()*0.2);
+  const ex=parent.x+Math.sin(adj)*newL;
+  const ey=parent.y-Math.cos(adj)*newL;
+  const nm=nameIdx<NAMES.length?NAMES[nameIdx]:'细项';
+  const n=N(nm,'',parent.lv*10+1,parent.id);
+  n.x=ex;n.y=ey;n.sx=parent.x;n.sy=parent.y;
+  const mx=(n.sx+ex)/2,my=(n.sy+ey)/2;
+  const px=-(ey-n.sy),py=ex-n.sx;
+  const pl=Math.hypot(px,py)||1;
+  n.cx=mx+px/pl*newL*0.15;
+  n.cy=my+py/pl*newL*0.15;
+  parent.ch.push(n);
+  addSub(n,adj,side,rem-1,newL,nameIdx+1);
+}
+
+/* ── 自我验证 ── */
+function validate(){
+  const W=c.width,H=c.height,bottom=H*0.85;
+  let down=0,angleBad=0,overlap=0,crownOk=true,leafDists=[];
+
+  for(const n of nodes){
+    if(n.pid<0)continue;
+    const p=nMap[n.pid];if(!p)continue;
+
+    // 1. 向上
+    if(n.y>p.y+5)down++;
+
+    // 2. 角度
+    const dy=p.y-n.y;
+    const dx=Math.abs(n.x-p.x);
+    if(dy>0){const deg=Math.atan2(dx,dy)*180/Math.PI;if(deg<15||deg>60)angleBad++;}
+
+    // 3. 重叠
+    for(const s of p.ch){
+      if(s.id===n.id)continue;
+      const d=Math.hypot(n.x-s.x,n.y-s.y);
+      const al=(Math.hypot(n.x-(n.sx||p.x),n.y-(n.sy||p.y))+Math.hypot(s.x-(s.sx||p.x),s.y-(s.sy||p.y)))/2;
+      if(d<al*0.6)overlap++;
+    }
+
+    // 4. 叶子轮廓
+    if(n.ch.length===0){
+      const ddy=bottom-n.y;
+      const ddx=Math.abs(n.x-W/2);
+      const r=crownR(n.y);
+      if(r>0)leafDists.push(Math.abs(Math.hypot(ddx,ddy)-r)/r);
+    }
+  }
+
+  if(leafDists.length>0){const near=leafDists.filter(d=>d<0.3).length;crownOk=near/leafDists.length>=0.65;}
+  document.getElementById('nodeCount').textContent=nodes.length;
+  return {pass:down===0&&angleBad<3&&overlap<5&&crownOk,down,angleBad,overlap,crownOk};
+}
+
+/* ── 渲染 ── */
+let needsRedraw=true,scale=1,ox=0,oy=0,isPan=false,panSx=0,panSy=0;
+const MIN_SCALE=1,MAX_SCALE=8;
+
+function draw(){
+  if(!needsRedraw)return;needsRedraw=false;
+  ctx.clearRect(0,0,c.width,c.height);
+  ctx.save();ctx.translate(ox,oy);ctx.scale(scale,scale);
+
+  for(const n of nodes){
+    if(n.pid<0)continue;
+    const p=nMap[n.pid];if(!p)continue;
+    const t=Math.min(1,(n.lv||1)/25);
+    const lw=Math.max(0.3,(12-(11)*t)/scale);
+    ctx.strokeStyle=col(t);ctx.lineWidth=lw;ctx.lineCap='round';
+    const sx=n.sx||p.x,sy=n.sy||p.y;
+    ctx.beginPath();ctx.moveTo(sx,sy);
+    ctx.quadraticCurveTo(n.cx||(sx+n.x)/2,n.cy||(sy+n.y)/2,n.x,n.y);
+    ctx.stroke();
+
+    if(n.ch.length===0){
+      const dx=n.x-sx,dy=n.y-sy,dl=Math.hypot(dx,dy)||1;
+      const px=-dy/dl*2/scale,py=dx/dl*2/scale;
+      ctx.beginPath();ctx.moveTo(n.x-px,n.y-py);ctx.lineTo(n.x+px,n.y+py);
+      ctx.strokeStyle=col(1);ctx.lineWidth=0.7/scale;ctx.stroke();
+    }
+  }
+
+  if(hoverNode&&hoverNode.pid>=0){
+    const n=hoverNode,p=nMap[n.pid];
+    if(p){
+      const sx=n.sx||p.x,sy=n.sy||p.y;
+      ctx.shadowColor='#7ec850';ctx.shadowBlur=16/scale;
+      ctx.strokeStyle='#7ec850';ctx.lineWidth=(12-(11)*Math.min(1,(n.lv||1)/25))*2/scale;
+      ctx.beginPath();ctx.moveTo(sx,sy);
+      ctx.quadraticCurveTo(n.cx||(sx+n.x)/2,n.cy||(sy+n.y)/2,n.x,n.y);
+      ctx.stroke();ctx.shadowBlur=0;
+    }
+  }
+  ctx.restore();
+}
+
+/* ── 交互 ── */
+c.addEventListener('wheel',e=>{
+  e.preventDefault();
+  const r=c.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,os=scale;
+  scale*=e.deltaY>0?0.9:1/0.9;scale=Math.max(MIN_SCALE,Math.min(MAX_SCALE,scale));
+  ox+=(mx-ox)*(1-scale/os);oy+=(my-oy)*(1-scale/os);
+  needsRedraw=true;draw();
+},{passive:false});
+c.addEventListener('mousedown',e=>{isPan=true;panSx=e.clientX-ox;panSy=e.clientY-oy});
+window.addEventListener('mousemove',e=>{if(isPan){ox=e.clientX-panSx;oy=e.clientY-panSy;needsRedraw=true;draw()}});
+window.addEventListener('mouseup',()=>{isPan=false});
+
+function dist(mx,my,sx,sy,cx,cy,ex,ey,sp=25){
+  let md=Infinity;
+  for(let i=0;i<=sp;i++){const t=i/sp,u=1-t,x=u*u*sx+2*u*t*cx+t*t*ex,y=u*u*sy+2*u*t*cy+t*t*ey,d=Math.hypot(mx-x,my-y);if(d<md)md=d}
+  return md;
+}
+function hit(mx,my){
+  const wx=(mx-ox)/scale,wy=(my-oy)/scale;
+  let best=null,md=18;
+  for(const n of nodes){
+    if(n.pid<0)continue;const p=nMap[n.pid];if(!p)continue;
+    const sx=n.sx||p.x,sy=n.sy||p.y,d=dist(wx,wy,sx,sy,n.cx||(sx+n.x)/2,n.cy||(sy+n.y)/2,n.x,n.y);
+    if(d<md){md=d;best=n}
+  }
+  return best;
+}
+let hoverNode=null,tt=null;
+c.addEventListener('mousemove',e=>{
+  if(isPan)return;
+  const r=c.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,n=hit(mx,my);
+  if(n&&n!==hoverNode){
+    hoverNode=n;
+    document.getElementById('ttName').textContent=n.name;
+    document.getElementById('ttLevel').textContent='第'+(n.lv||'?')+'层';
+    document.getElementById('ttDesc').textContent=n.desc;
+    document.getElementById('hoverName').textContent=n.name;
+    tip.classList.add('show');
+    let tx=e.clientX+14,ty=e.clientY+14;
+    if(tx+220>innerWidth)tx=e.clientX-220;if(ty+90>innerHeight)ty=e.clientY-90;
+    tip.style.left=tx+'px';tip.style.top=ty+'px';
+    clearTimeout(tt);needsRedraw=true;draw();
+  }else if(!n&&hoverNode){hoverNode=null;document.getElementById('hoverName').textContent='—';tt=setTimeout(()=>tip.classList.remove('show'),120);needsRedraw=true;draw()}
+});
+c.addEventListener('mouseleave',()=>{hoverNode=null;document.getElementById('hoverName').textContent='—';tip.classList.remove('show');needsRedraw=true;draw()});
+
+/* ── 自适应 ── */
+function resize(){
+  const dpr=window.devicePixelRatio||1;
+  c.width=window.innerWidth*dpr;c.height=window.innerHeight*dpr;
+  c.style.width=window.innerWidth+'px';c.style.height=window.innerHeight+'px';
+  ctx.scale(dpr,dpr);c.width=window.innerWidth;c.height=window.innerHeight;ctx.scale(1,1);
+  gen();scale=1;ox=0;oy=0;needsRedraw=true;draw();
+}
+
+resize();
+window.addEventListener('resize',resize);
+</script>
+</body>
+</html>
