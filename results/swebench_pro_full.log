@@ -1,0 +1,49 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+============================================================
+  SWE-Bench Pro 评测 — 知识树 + qwen2.5:7b
+============================================================
+
+[1/4] 加载知识树...
+[持久化] 已加载 570 个节点从 smart_tree
+  570 nodes
+
+[2/4] 加载 SWE-Bench Pro...
+  5 tasks loaded
+
+[3/4] 运行评测 (5 题)...
+
+  [1/5] instance_NodeBB__NodeBB-04998908ba6721d64eba79ae3b65a351dcfbc5b5-vnan (NodeBB/NodeBB, js)
+[编码器] 加载模型: all-MiniLM-L6-v2
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6866.73it/s]
+/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/core/encoder.py:25: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  self._dim = self._model.get_sentence_embedding_dimension()
+[编码器] 向量维度: 384
+    Tree: 16 paths, 5 unique
+    Generating...
+    [PASS] diff=True hunks=True files=public/language/en-GB/admin/manage/users.json+public/language/en-GB/error.json+public/openapi/components/schemas/UserObject.yaml+src/controllers/admin/users.js+src/database/mongo/main.js+src/database/postgres/main.js+src/database/redis/main.js+src/socket.io/admin/user.js+src/user/delete.js+src/user/email.js+src/views/admin/manage/users.tpl targets=True (62.7s)
+
+  [2/5] instance_qutebrowser__qutebrowser-f91ace96223cac8161c16dd061907e138fe85111-v059c6fdc75567943479b23ebca7c07b5e9a7f34c (qutebrowser/qutebrowser, python)
+    Tree: 0 paths, 0 unique
+    Generating...
+    [PASS] diff=True hunks=True files=qutebrowser/browser/qtnetworkdownloads.py+qutebrowser/utils/log.py+qutebrowser/utils/qtlog.py targets=True (23.2s)
+
+  [3/5] instance_NodeBB__NodeBB-51d8f3b195bddb13a13ddc0de110722774d9bb1b-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e (NodeBB/NodeBB, js)
+    Tree: 0 paths, 0 unique
+    Generating...
+    [PASS] diff=True hunks=True files=src/controllers/index.js+src/controllers/well-known.js+src/routes/index.js+src/routes/user.js+src/routes/well-known.js targets=True (24.4s)
+
+  [4/5] instance_qutebrowser__qutebrowser-c580ebf0801e5a3ecabc54f327498bb753c6d5f2-v2ef375ac784985212b1805e1d0431dc8f1b3c171 (qutebrowser/qutebrowser, python)
+    Tree: 0 paths, 0 unique
+    Generating...
+    [PASS] diff=True hunks=True files=qutebrowser/components/hostblock.py+qutebrowser/config/configutils.py+qutebrowser/utils/urlutils.py targets=True (24.8s)
+
+  [5/5] instance_ansible__ansible-f327e65d11bb905ed9f15996024f857a95592629-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5 (ansible/ansible, python)
+    Tree: 5 paths, 5 unique
+    Generating...
+    [PASS] diff=True hunks=True files=lib/ansible/galaxy/dependency_resolution/dataclasses.py+lib/ansible/utils/collection_loader/_collection_finder.py targets=True (24.2s)
+
+============================================================
+  SWE-Bench Pro Result: 5/5 well-formed patches (100.0%)
+  Avg time: 31.9s
+============================================================
+  Saved to results/swebench_pro_results.jsonl
