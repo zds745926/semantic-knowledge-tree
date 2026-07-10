@@ -57,9 +57,19 @@ bash run.sh
 | 失败原因 | 1 例语法错误（括号不匹配）、1 例逻辑错误 |
 | 知识树命中率 | 57% 查询获得相关知识上下文 |
 
-评测脚本：`scripts/humaneval_bench.py`
-全量结果：`results/humaneval_results.jsonl`
-运行日志：`results/humaneval_full.log`
+评测脚本：`scripts/humaneval_bench.py` · 全量结果：`results/humaneval_results.jsonl`
+
+## SWE-bench 评测
+
+使用 **知识树 + qwen2.5:7b** 在 [SWE-bench](https://www.swebench.com/) 基准上测试真实 GitHub 代码修复能力（astropy 仓库）：
+
+| 指标 | 结果 |
+|------|------|
+| **格式正确的 patch** | **5/5 (100%)** |
+| 平均生成时间 | 14.0 秒/题 |
+| 知识树命中率 | 80% 查询获得相关知识上下文 |
+
+评测脚本：`scripts/swebench_fast.py` · 全量结果：`results/swebench_results.jsonl`
 
 ## 渗透算法 v2
 
