@@ -99,15 +99,15 @@ bash run.sh
 
 ## SWE-bench 评测
 
-使用 **知识树 + qwen2.5:7b** 在 [SWE-bench](https://www.swebench.com/) 基准上测试真实 GitHub 代码修复能力（astropy 仓库）：
+使用 **知识树 + qwen2.5:7b** 在 [SWE-bench](https://www.swebench.com/) 基准上测试真实 GitHub 代码修复能力：
 
-| 指标 | 结果 |
-|------|------|
-| **格式正确的 patch** | **5/5 (100%)** |
-| 平均生成时间 | 14.0 秒/题 |
-| 知识树命中率 | 80% 查询获得相关知识上下文 |
+| 版本 | 格式正确率 | 平均时间 | 树命中率 |
+|------|:---------:|:--------:|:--------:|
+| **SWE-bench** (astropy) | **5/5 (100%)** | 14.0s | 80% |
+| **SWE-bench Pro** (NodeBB/qutebrowser/ansible) | **5/5 (100%)** | **31.9s** | **40%** |
 
-评测脚本：`scripts/swebench_fast.py` · 全量结果：`results/swebench_results.jsonl`
+- SWE-bench: `scripts/swebench_fast.py` → `results/swebench_results.jsonl`
+- SWE-bench Pro: `scripts/swebench_pro_bench.py` → `results/swebench_pro_results.jsonl`
 
 ## 渗透算法 v2
 
