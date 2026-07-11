@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "传输层",
   "children": [
-    "UDP 基础",
-    "UDP vs TCP"
+    "UDP vs TCP",
+    "UDP 基础"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "UDP无连接不可靠，头部仅8字节。适合实时应用和简单请求。"
+    "description": "UDP is connectionless and unreliable, with only an 8-byte header. It is suitable for real-time applications and simple requests. Python code example: ```python import socket # Create a UDP socket sock"
   },
   "data_pointers": [],
   "related_nodes": []

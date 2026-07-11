@@ -14,10 +14,8 @@
     {
       "title": "React Hooks",
       "uri": "knowledge://react_hooks_v4",
-      "content_preview": "useState/useEffect/useRef/useContext/useMemo/useCallback。"
+      "content_preview": "Translation: - `useState` - `useEffect` - `useRef` - `useContext` - `useMemo` - `useCallback` Brief explanations and examples in Python (where applicable): 1. **`useState`**: This hook allows you to a"
     }
   ],
-  "related_nodes": [
-    "react_vdom_v4"
-  ]
+  "related_nodes": []
 }

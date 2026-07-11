@@ -14,7 +14,7 @@
     {
       "title": "字符串正则进阶",
       "uri": "knowledge://py_str_regex_v4",
-      "content_preview": "re.match/re.search/re.findall/re.sub。捕获组()和非捕获组(?:)。"
+      "content_preview": "re.match/re.search/re.findall/re.sub. Capturing groups () and non-capturing groups (?:). In regular expressions used in programming, `re.match`, `re.search`, `re.findall`, and `re.sub` are commonly us"
     }
   ],
   "related_nodes": []

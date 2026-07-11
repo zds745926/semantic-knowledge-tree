@@ -14,7 +14,7 @@
     {
       "title": "信息熵",
       "uri": "knowledge://entropy_v4",
-      "content_preview": "信息熵 H(X) = -∑p(x)log₂p(x) 度量随机变量的不确定性，单位为比特。熵越高，信息量越大。"
+      "content_preview": "Information entropy H(X) = -∑p(x)log₂p(x) measures the uncertainty of a random variable, with units in bits. The higher the entropy, the greater the information content. Here's a brief Python code exa"
     }
   ],
   "related_nodes": []

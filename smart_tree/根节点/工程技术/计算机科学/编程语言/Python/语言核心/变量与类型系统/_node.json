@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "语言核心",
   "children": [
+    "变量作用域",
     "基本数据类型",
-    "类型系统特性",
-    "变量作用域"
+    "类型系统特性"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python 是动态类型语言，变量只是对象的标签。类型系统支持基本数据类型、类型注解和鸭子类型。理解 Python 的类型系统是写出健壮代码的基础。"
+    "description": "Python is a dynamically typed language where variables are just labels for objects. The type system supports basic data types, type annotations, and duck typing. Understanding Python's type system is "
   },
   "data_pointers": [],
   "related_nodes": []

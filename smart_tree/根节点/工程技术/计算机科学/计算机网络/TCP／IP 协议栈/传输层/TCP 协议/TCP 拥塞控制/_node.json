@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "TCP 协议",
   "children": [
+    "TCP BBR",
     "慢启动",
-    "拥塞避免",
-    "TCP BBR"
+    "拥塞避免"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "拥塞控制防止网络过载，包括慢启动、拥塞避免和快速恢复。"
+    "description": "Congestion control prevents network overload, including slow start, congestion avoidance, and fast recovery. Here are brief explanations of these concepts along with corresponding Python code examples"
   },
   "data_pointers": [],
   "related_nodes": []

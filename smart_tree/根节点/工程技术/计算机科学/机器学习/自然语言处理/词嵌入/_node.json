@@ -14,7 +14,7 @@
     {
       "title": "词嵌入",
       "uri": "knowledge://embedding_v4",
-      "content_preview": "Word2Vec/GloVe/FastText。BERT上下文嵌入超越静态向量。"
+      "content_preview": "Word2Vec/GloVe/FastText. BERT contextual embeddings surpass static vectors. Python code examples for context: 1. **Word2Vec**: ```python from gensim.models import Word2Vec # Example training of a Word"
     }
   ],
   "related_nodes": []

@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "字符串",
   "children": [
-    "编码与 bytes",
     "字符串切片进阶",
-    "字符串正则进阶"
+    "字符串正则进阶",
+    "编码与 bytes"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "字符串进阶包括编码转换、高级切片和正则表达式。"
+    "description": "Advanced string handling includes encoding conversion, advanced slicing, and regular expressions. Here are brief explanations for each concept along with Python code examples: 1. **Encoding Conversion"
   },
   "data_pointers": [],
   "related_nodes": []

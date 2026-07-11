@@ -14,7 +14,7 @@
     {
       "title": "适配器模式",
       "uri": "knowledge://adapter_v4",
-      "content_preview": "将不兼容接口转为客户端期望的接口。类适配器/对象适配器。"
+      "content_preview": "Translate the given Chinese technical text to English: \"Convert incompatible interfaces to match what the client expects. Class Adapter/Object Adapter.\" For further elaboration, let's provide a brief "
     }
   ],
   "related_nodes": []

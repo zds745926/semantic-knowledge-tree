@@ -14,7 +14,7 @@
     {
       "title": "RabbitMQ",
       "uri": "knowledge://rabbitmq_v4",
-      "content_preview": "AMQP。Exchange(Topic/Direct/Fanout)。消息确认ACK。"
+      "content_preview": "AMQP. Exchange (Topic/Direct/Fanout). Message Acknowledgment (ACK). Here is a brief explanation with a related Python code example using the `pika` library, which is commonly used for working with AMQ"
     }
   ],
   "related_nodes": []

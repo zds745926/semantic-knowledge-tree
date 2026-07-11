@@ -14,7 +14,7 @@
     {
       "title": "页面置换算法",
       "uri": "knowledge://page_replacement_v4",
-      "content_preview": "FIFO/LRU/Clock。缺页率影响性能。"
+      "content_preview": "FIFO/LRU/Clock. Page fault rate affects performance. ### Explanation: - **FIFO (First-In-First-Out)**: A memory replacement policy where the oldest page is replaced when a new page needs to be loaded "
     }
   ],
   "related_nodes": []

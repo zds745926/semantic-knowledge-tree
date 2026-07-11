@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "事务是数据库操作的基本单元，具有ACID特性。"
+    "description": "A transaction is the basic unit of database operations and has ACID properties. To provide a more comprehensive explanation, let's break down what ACID stands for: - Atomicity: A transaction must be t"
   },
   "data_pointers": [],
   "related_nodes": []

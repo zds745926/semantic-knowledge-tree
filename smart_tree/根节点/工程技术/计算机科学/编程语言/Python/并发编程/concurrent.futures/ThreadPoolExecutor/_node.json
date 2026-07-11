@@ -14,7 +14,7 @@
     {
       "title": "ThreadPoolExecutor",
       "uri": "knowledge://py_thread_pool_executor_v4",
-      "content_preview": "线程池执行器。max_workers控制线程数。submit返回Future。适合I/O密集型。"
+      "content_preview": "Thread pool executor. `max_workers` controls the number of threads. `submit` returns a Future object. Suitable for I/O-bound tasks. Here's an example using Python's `concurrent.futures` module: ```pyt"
     }
   ],
   "related_nodes": []

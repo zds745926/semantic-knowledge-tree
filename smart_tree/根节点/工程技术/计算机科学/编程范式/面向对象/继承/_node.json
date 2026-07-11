@@ -14,7 +14,7 @@
     {
       "title": "继承",
       "uri": "knowledge://inheritance_v4",
-      "content_preview": "继承允许子类复用父类的属性和方法。单继承(Java) vs 多继承(C++)。"
+      "content_preview": "Inheritance allows subclasses to reuse the attributes and methods of their parent classes. Single inheritance (in Java) vs multiple inheritance (in C++). Here are brief Python code examples for both c"
     }
   ],
   "related_nodes": []

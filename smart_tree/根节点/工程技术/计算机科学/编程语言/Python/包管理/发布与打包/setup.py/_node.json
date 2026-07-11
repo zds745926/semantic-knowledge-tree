@@ -14,10 +14,8 @@
     {
       "title": "setup.py",
       "uri": "knowledge://py_setup_py_v4",
-      "content_preview": "传统打包脚本。setuptools.setup。name/version/install_requires。setuptools是传统方式。"
+      "content_preview": "Traditional packaging script. `setuptools.setup`. `name`, `version`, `install_requires`. `setuptools` is the traditional approach. Here's a brief Python code example using `setuptools.setup`: ```pytho"
     }
   ],
-  "related_nodes": [
-    "py_pyproject_v4"
-  ]
+  "related_nodes": []
 }

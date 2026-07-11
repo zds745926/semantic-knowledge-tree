@@ -14,7 +14,7 @@
     {
       "title": "线性搜索",
       "uri": "knowledge://linear_search_v4",
-      "content_preview": "从头到尾遍历。O(n)。最简单但低效。适用无序数据。"
+      "content_preview": "Traverse from start to end. O(n). The simplest but least efficient. Suitable for unordered data. Python example: ```python def traverse_unordered_data(data): for item in data: print(item) ``` This fun"
     }
   ],
   "related_nodes": []

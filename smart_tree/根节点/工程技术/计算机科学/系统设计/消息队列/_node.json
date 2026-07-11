@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "消息队列解耦服务，提供异步通信、削峰填谷和流量控制。"
+    "description": "Message queues decouple services by providing asynchronous communication, smoothing out peaks and valleys in traffic, and enabling traffic control. Python code example for asynchronous communication u"
   },
   "data_pointers": [],
   "related_nodes": []

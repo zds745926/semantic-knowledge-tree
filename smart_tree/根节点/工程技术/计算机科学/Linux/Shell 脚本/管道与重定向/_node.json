@@ -14,7 +14,7 @@
     {
       "title": "管道与重定向",
       "uri": "knowledge://bash_pipe_v4",
-      "content_preview": "| 管道。> < 重定向。2>&1 合并错误。tee分流。"
+      "content_preview": "Pipes. Redirections. 2>&1 Merge errors. Tee split. Here are the technical terms translated with brief explanations and a Python code example for the `tee` command: - **Pipes**: Used to connect the out"
     }
   ],
   "related_nodes": []

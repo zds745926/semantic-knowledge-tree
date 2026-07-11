@@ -14,7 +14,7 @@
     {
       "title": "装饰器原理",
       "uri": "knowledge://py_deco_closure_v4",
-      "content_preview": "func = decorator(func)。闭包捕获原函数。wraps复制元信息。"
+      "content_preview": "Translation: `func = decorator(func)` captures the original function within a closure. `wraps` copies metadata. Python code example for `wraps` usage: ```python from functools import wraps def my_deco"
     }
   ],
   "related_nodes": []

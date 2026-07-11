@@ -14,10 +14,8 @@
     {
       "title": "三次握手",
       "uri": "knowledge://three_way_v4",
-      "content_preview": "SYN→SYN+ACK→ACK。确认收发能力。同步初始序列号。"
+      "content_preview": "Translation: SYN→SYN+ACK→ACK. Establishes the ability to send and receive confirmations. Synchronizes initial sequence numbers. Python code example (using socket programming to demonstrate a simple TC"
     }
   ],
-  "related_nodes": [
-    "four_way_v4"
-  ]
+  "related_nodes": []
 }

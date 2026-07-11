@@ -14,10 +14,8 @@
     {
       "title": "XSS 跨站脚本",
       "uri": "knowledge://xss_v4",
-      "content_preview": "反射/存储/DOM型。CSP/HttpOnly Cookie防护。"
+      "content_preview": "Reflection/Storage/DOM Type. CSP/HttpOnly Cookie Protection. ### Explanation: - **Reflection/Storage/DOM Type**: This refers to the different types of Cross-Site Scripting (XSS) attacks, where data is"
     }
   ],
-  "related_nodes": [
-    "csrf_v4"
-  ]
+  "related_nodes": []
 }

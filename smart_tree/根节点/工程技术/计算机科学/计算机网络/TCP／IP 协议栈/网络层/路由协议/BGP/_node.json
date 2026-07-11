@@ -14,7 +14,7 @@
     {
       "title": "BGP",
       "uri": "knowledge://bgp_v4",
-      "content_preview": "互联网的粘合剂。路径向量协议。iBGP(AS内)/eBGP(AS间)。"
+      "content_preview": "The glue that holds the internet together. Path Vector Protocol. iBGP (within AS)/eBGP (between AS). To provide a bit more context, BGP (Border Gateway Protocol) is used to exchange routing informatio"
     }
   ],
   "related_nodes": []

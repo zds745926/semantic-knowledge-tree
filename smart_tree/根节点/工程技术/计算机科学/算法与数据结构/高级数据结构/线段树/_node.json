@@ -14,7 +14,7 @@
     {
       "title": "线段树",
       "uri": "knowledge://segment_tree_v4",
-      "content_preview": "区间查询和单点更新O(log n)。懒标记支持区间更新。"
+      "content_preview": "Range query and single point update in O(log n). Lazy propagation supports range updates. To provide a more detailed explanation with a Python code example, let's consider an implementation of a segme"
     }
   ],
   "related_nodes": []

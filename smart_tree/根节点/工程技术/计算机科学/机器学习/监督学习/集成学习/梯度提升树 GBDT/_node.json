@@ -14,7 +14,7 @@
     {
       "title": "梯度提升树 GBDT",
       "uri": "knowledge://gbdt_v4",
-      "content_preview": "逐步添加残差拟合。XGBoost/LightGBM。表格数据最佳。"
+      "content_preview": "Gradually adding residual fitting. XGBoost/LightGBM. Optimal table data. For context, let's assume you want to provide a brief Python code example for using XGBoost or LightGBM with residual fitting i"
     }
   ],
   "related_nodes": []

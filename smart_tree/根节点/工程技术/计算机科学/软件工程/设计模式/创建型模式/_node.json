@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "创建型模式抽象对象实例化过程，使系统独立于对象的创建方式。"
+    "description": "Creation patterns abstract the instantiation process of objects, making the system independent of how objects are created. To provide a more concrete example, let's consider the Factory Method pattern"
   },
   "data_pointers": [],
   "related_nodes": []

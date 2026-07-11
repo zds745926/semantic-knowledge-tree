@@ -14,7 +14,7 @@
     {
       "title": "死锁",
       "uri": "knowledge://deadlock_v4",
-      "content_preview": "四个必要条件。预防/避免/检测/恢复。银行家算法。"
+      "content_preview": "Four necessary conditions. Prevention/Avoidance/Detection/Recovery. Banker's Algorithm. Here are the translations with added Python code examples for the coding/programming concept: 1. **Prevention** "
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "pickle",
       "uri": "knowledge://py_pickle_v4",
-      "content_preview": "pickle.dump/load Python对象序列化。不安全(任意代码执行)。不跨语言。"
+      "content_preview": "pickle.dump/pickle.load for serializing Python objects. Insecure (arbitrary code execution). Not language-agnostic. Here is a brief Python code example to illustrate the use of `pickle`: ```python imp"
     }
   ],
   "related_nodes": []

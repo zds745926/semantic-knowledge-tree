@@ -14,7 +14,7 @@
     {
       "title": "STL 标准库",
       "uri": "knowledge://cpp_stl_v4",
-      "content_preview": "vector/list/map。sort/find。迭代器。函数对象与lambda。"
+      "content_preview": "Translation: Vectors/lists/maps. Sort/find. Iterators. Function objects and lambda. Python code examples: 1. Vectors/lists/maps: ```python # Using list as an example for vectors/lists, and a dictionar"
     }
   ],
   "related_nodes": []

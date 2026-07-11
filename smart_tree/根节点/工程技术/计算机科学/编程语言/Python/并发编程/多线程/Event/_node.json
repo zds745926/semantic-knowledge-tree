@@ -14,7 +14,7 @@
     {
       "title": "Event",
       "uri": "knowledge://py_event_v4",
-      "content_preview": "threading.Event 事件标志。set()/clear()/wait()。多线程等待某事件发生。"
+      "content_preview": "Threading Event flag. Methods include `set()`, `clear()`, and `wait()`. Used for multiple threads to wait for a specific event to occur. Here's a brief Python code example using threading.Event: ```py"
     }
   ],
   "related_nodes": []

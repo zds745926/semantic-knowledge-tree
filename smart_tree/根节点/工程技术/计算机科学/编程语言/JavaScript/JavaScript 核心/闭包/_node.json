@@ -14,10 +14,8 @@
     {
       "title": "闭包",
       "uri": "knowledge://js_closure_v4",
-      "content_preview": "内部函数访问外部函数变量的能力。用于模块模式/防抖节流。"
+      "content_preview": "The ability of an internal function to access variables from an external function. Used in module patterns and for implementing debouncing/throttling. Here are some examples: 1. **Module Pattern**: Th"
     }
   ],
-  "related_nodes": [
-    "js_async_await_v4"
-  ]
+  "related_nodes": []
 }

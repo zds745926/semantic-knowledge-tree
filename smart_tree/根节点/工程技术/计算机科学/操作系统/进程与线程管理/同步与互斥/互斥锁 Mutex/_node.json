@@ -14,11 +14,8 @@
     {
       "title": "互斥锁 Mutex",
       "uri": "knowledge://mutex_lock_v4",
-      "content_preview": "保证同一时间只有一个线程访问临界区。P/V操作。"
+      "content_preview": "Ensure that only one thread accesses the critical section at any given time. P/V operations (also known as semaphore operations). Here's a brief explanation of P/V operations in the context of Python,"
     }
   ],
-  "related_nodes": [
-    "semaphore_v4",
-    "deadlock_v4"
-  ]
+  "related_nodes": []
 }

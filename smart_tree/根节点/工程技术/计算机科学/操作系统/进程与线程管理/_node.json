@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "操作系统",
   "children": [
+    "同步与互斥",
     "进程调度",
-    "进程间通信 IPC",
-    "同步与互斥"
+    "进程间通信 IPC"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "进程是资源分配的基本单位，线程是CPU调度的基本单位。操作系统通过调度算法决定哪个进程获得CPU。"
+    "description": "Processes are the basic units for resource allocation, while threads are the basic units for CPU scheduling. The operating system decides which process gets the CPU through a scheduling algorithm. Her"
   },
   "data_pointers": [],
   "related_nodes": []

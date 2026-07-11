@@ -14,7 +14,7 @@
     {
       "title": "LifoQueue",
       "uri": "knowledge://py_lifo_queue_v4",
-      "content_preview": "queue.LifoQueue 后进先出（栈）。put/get。适合DFS遍历。"
+      "content_preview": "queue.LifoQueue is a Last-In-First-Out (LIFO) data structure, similar to a stack. It supports put and get methods. This data structure is suitable for Depth-First Search (DFS) traversal. Here's a brie"
     }
   ],
   "related_nodes": []

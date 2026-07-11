@@ -14,7 +14,7 @@
     {
       "title": "IPv6",
       "uri": "knowledge://ipv6_v4",
-      "content_preview": "128位地址冒分十六进制。无NAT无校验和。即插即用SLAAC。"
+      "content_preview": "128-bit address in colon-separated hexadecimal notation. No NAT, no checksum. Plug-and-play SLAAC. Here's a brief explanation of the terms: - **128-bit address**: This refers to an IPv6 address. - **C"
     }
   ],
   "related_nodes": []

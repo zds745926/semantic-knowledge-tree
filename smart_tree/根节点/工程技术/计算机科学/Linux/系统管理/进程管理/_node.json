@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "系统管理",
   "children": [
+    "kill/nice",
     "ps/top",
-    "systemd",
-    "kill/nice"
+    "systemd"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Linux进程管理涉及ps/top查看、kill控制和systemd服务管理。"
+    "description": "Linux process management involves using tools like `ps` and `top` for monitoring, `kill` for termination, and `systemd` for service management. Here are brief explanations of each concept with Python "
   },
   "data_pointers": [],
   "related_nodes": []

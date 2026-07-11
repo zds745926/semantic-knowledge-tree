@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "系统管理",
   "children": [
-    "ip/ss",
+    "SSH",
     "iptables/nftables",
-    "SSH"
+    "ip/ss"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Linux网络配置包括ip/ss命令、iptables防火墙和SSH远程连接。"
+    "description": "Linux network configuration includes `ip` and `ss` commands, iptables firewall, and SSH remote connection. Here are brief explanations for each component: 1. **ip and ss commands**: These are modern c"
   },
   "data_pointers": [],
   "related_nodes": []

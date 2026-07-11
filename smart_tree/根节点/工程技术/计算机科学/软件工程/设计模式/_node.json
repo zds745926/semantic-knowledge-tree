@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "设计模式是软件设计中常见问题的可复用解决方案。分为创建型、结构型和行为型三类。"
+    "description": "Design patterns are reusable solutions to common problems in software design. They are categorized into three types: creational, structural, and behavioral. Here's a brief explanation of each category"
   },
   "data_pointers": [],
   "related_nodes": []

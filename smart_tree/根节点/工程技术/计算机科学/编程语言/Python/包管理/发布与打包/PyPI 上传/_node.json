@@ -14,7 +14,7 @@
     {
       "title": "PyPI 上传",
       "uri": "knowledge://py_pypi_upload_v4",
-      "content_preview": "twine upload dist/* 上传。TestPyPI测试。API token认证。"
+      "content_preview": "Translation: ```python # Command for uploading to PyPI twine upload dist/* # Test the upload on TestPyPI first twine upload --repository-url https://test.pypi.org/legacy/ dist/* # API token authentica"
     }
   ],
   "related_nodes": []

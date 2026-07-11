@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "JS异步模型从回调到Promise到async/await演进。"
+    "description": "The JavaScript asynchronous model has evolved from callbacks to Promises and then to async/await. To provide a more detailed explanation along with a Python code example for the `async/await` concept,"
   },
   "data_pointers": [],
   "related_nodes": []

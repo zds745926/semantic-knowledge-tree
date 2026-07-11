@@ -14,7 +14,7 @@
     {
       "title": "单继承",
       "uri": "knowledge://py_single_inherit_v4",
-      "content_preview": "class B(A): B继承A。super().__init__()调用父类。isinstance类型检查。"
+      "content_preview": "Translation: Class B(A): Class B inherits from A. `super().__init__()` calls the constructor of the parent class. `isinstance` is used for type checking. Python code example: ```python class A: def __"
     }
   ],
   "related_nodes": []

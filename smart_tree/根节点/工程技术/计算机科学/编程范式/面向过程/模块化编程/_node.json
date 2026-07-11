@@ -14,7 +14,7 @@
     {
       "title": "模块化编程",
       "uri": "knowledge://modular_programming_v4",
-      "content_preview": "模块化编程将程序分解为独立的模块或函数，接口与实现分离，降低耦合。"
+      "content_preview": "Modular programming decomposes the program into independent modules or functions, separating interfaces from implementations to reduce coupling. Python code example: ```python # Define a module with a"
     }
   ],
   "related_nodes": []

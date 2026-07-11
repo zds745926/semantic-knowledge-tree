@@ -14,10 +14,8 @@
     {
       "title": "AVL 树",
       "uri": "knowledge://avl_tree_v4",
-      "content_preview": "严格平衡：左右子树高度差≤1。四种旋转(LL/RR/LR/RL)保持平衡。"
+      "content_preview": "Strict Balance: The height difference between the left and right subtrees is ≤ 1. Four rotations (LL, RR, LR, RL) are used to maintain balance. Python code example for rotation in a binary search tree"
     }
   ],
-  "related_nodes": [
-    "red_black_tree_v4"
-  ]
+  "related_nodes": []
 }

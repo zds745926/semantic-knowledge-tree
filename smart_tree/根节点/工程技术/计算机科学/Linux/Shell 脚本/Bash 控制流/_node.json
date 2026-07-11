@@ -14,7 +14,7 @@
     {
       "title": "Bash 控制流",
       "uri": "knowledge://bash_control_v4",
-      "content_preview": "if/for/while/case。条件判断[[ ]]。"
+      "content_preview": "Translation: if/for/while/case. Conditional statements [[ ]]. Explanation of the technical terms and addition of a brief Python code example: - `if`, `for`, `while`, `case`: These are control flow str"
     }
   ],
   "related_nodes": []

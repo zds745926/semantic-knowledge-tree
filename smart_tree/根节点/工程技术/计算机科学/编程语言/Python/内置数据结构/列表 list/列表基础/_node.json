@@ -14,7 +14,7 @@
     {
       "title": "列表基础",
       "uri": "knowledge://py_list_basics_v4",
-      "content_preview": "list 可变有序。索引从0开始，负索引从末尾。切片[start:stop:step]。"
+      "content_preview": "A list is mutable and ordered. Indexing starts at 0, and negative indices count from the end. Slicing can be done using the syntax [start:stop:step]. Here's a brief Python code example to illustrate s"
     }
   ],
   "related_nodes": []

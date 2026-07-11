@@ -14,7 +14,7 @@
     {
       "title": "logging 日志",
       "uri": "knowledge://py_logging_v4",
-      "content_preview": "logging模块：Logger/Handler/Formatter/Filter。级别DEBUG<INFO<WARNING<ERROR<CRITICAL。"
+      "content_preview": "Logging Module: Logger/Handler/Formatter/Filter. Levels: DEBUG < INFO < WARNING < ERROR < CRITICAL. Here's a brief explanation of each component with a Python code example: - **Logger**: An instance o"
     }
   ],
   "related_nodes": []

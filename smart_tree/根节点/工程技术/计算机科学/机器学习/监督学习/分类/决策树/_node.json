@@ -14,10 +14,8 @@
     {
       "title": "决策树",
       "uri": "knowledge://decision_tree_v4",
-      "content_preview": "树状决策。信息增益/基尼系数分裂。可解释性强。"
+      "content_preview": "Tree-based decision. Information gain/Gini split. Strong interpretability. Here is a brief explanation with a related Python code example using the `scikit-learn` library: In machine learning, tree-ba"
     }
   ],
-  "related_nodes": [
-    "random_forest_v4"
-  ]
+  "related_nodes": []
 }

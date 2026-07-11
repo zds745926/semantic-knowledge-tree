@@ -14,7 +14,7 @@
     {
       "title": "f-string 详解",
       "uri": "knowledge://py_fstring_v4",
-      "content_preview": "f'...{表达式}...' 嵌入变量。格式说明符：{x:.2f}保留小数，{x:>10}对齐。"
+      "content_preview": "The given Chinese text can be translated to English as follows: `f'...{expression}...' Embed variables. Format specifiers: {x:.2f} for retaining two decimal places, {x:>10} for right-aligning. Here is"
     }
   ],
   "related_nodes": []

@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "高级特性",
   "children": [
-    "装饰器原理",
     "带参数装饰器",
-    "类装饰器"
+    "类装饰器",
+    "装饰器原理"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "装饰器的本质是闭包，掌握其原理可写出灵活的装饰器。"
+    "description": "The essence of a decorator is a closure, and mastering its principles allows you to write flexible decorators. Here's an explanation with a brief Python code example: In Python, a decorator is a funct"
   },
   "data_pointers": [],
   "related_nodes": []

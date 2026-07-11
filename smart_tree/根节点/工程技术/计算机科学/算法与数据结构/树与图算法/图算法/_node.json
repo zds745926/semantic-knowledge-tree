@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "图算法解决最短路径、最小生成树和拓扑排序等典型问题。"
+    "description": "Graph algorithms solve typical problems such as finding the shortest path, minimum spanning tree, and topological sorting. Here are brief Python code examples for each of these concepts: 1. **Shortest"
   },
   "data_pointers": [],
   "related_nodes": []

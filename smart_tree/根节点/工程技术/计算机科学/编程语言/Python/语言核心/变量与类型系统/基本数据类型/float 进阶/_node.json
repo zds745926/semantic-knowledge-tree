@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "浮点数的精度问题和特殊值处理是数值计算中的关键知识点。"
+    "description": "The precision issues of floating-point numbers and the handling of special values are crucial topics in numerical computation. To illustrate this with an example using Python: ```python # Example to d"
   },
   "data_pointers": [],
   "related_nodes": []

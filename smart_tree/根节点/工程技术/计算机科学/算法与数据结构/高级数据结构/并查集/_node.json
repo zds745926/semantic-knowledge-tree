@@ -14,10 +14,8 @@
     {
       "title": "并查集",
       "uri": "knowledge://union_find_v4",
-      "content_preview": "集合合并和查找。路径压缩+按秩合并≈O(α(n))。连通分量/Kruskal。"
+      "content_preview": "Union and Find. Path Compression + Union by Rank ≈ O(α(n)). Connected Components/Kruskal's Algorithm. Here is a brief explanation with Python code examples: 1. **Union-Find Data Structure**: - This da"
     }
   ],
-  "related_nodes": [
-    "kruskal_v4"
-  ]
+  "related_nodes": []
 }

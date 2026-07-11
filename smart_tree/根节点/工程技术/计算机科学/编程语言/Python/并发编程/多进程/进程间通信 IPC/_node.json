@@ -14,7 +14,7 @@
     {
       "title": "进程间通信 IPC",
       "uri": "knowledge://py_ipc_v4",
-      "content_preview": "Pipe(双向管道)/Queue/共享内存。Value/Array共享ctypes。"
+      "content_preview": "Pipe (Bidirectional Pipeline) / Queue / Shared Memory. Value/Array Sharing via ctypes. Here is an example of how you might use `ctypes` in Python to share a simple value between processes: ```python i"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "最长公共子序列 LCS",
       "uri": "knowledge://lcs_v4",
-      "content_preview": "O(mn)。DNA序列比对/文本diff。"
+      "content_preview": "O(mn). DNA sequence alignment/text diff. ### Explanation: - **O(mn)**: This is the time complexity notation indicating that the algorithm's performance scales with the product of two variables, `m` an"
     }
   ],
   "related_nodes": []

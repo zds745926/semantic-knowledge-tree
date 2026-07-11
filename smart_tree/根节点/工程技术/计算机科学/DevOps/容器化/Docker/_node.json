@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "容器化",
   "children": [
-    "Docker 镜像",
     "Docker 容器",
-    "Docker 网络"
+    "Docker 网络",
+    "Docker 镜像"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Docker容器化平台。镜像分层UnionFS。容器隔离namespace+cgroups。"
+    "description": "Docker containerization platform. Image layering with UnionFS. Container isolation using namespaces and cgroups. Here are the corresponding technical terms explained briefly: - **Docker containerizati"
   },
   "data_pointers": [],
   "related_nodes": []

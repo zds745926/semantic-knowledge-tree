@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Transformer 利用自注意力机制处理序列，是BERT/GPT等大模型的基础架构。"
+    "description": "Transformers utilize self-attention mechanisms to process sequences and form the foundational architecture of large models like BERT and GPT. Python code example (a simple self-attention mechanism imp"
   },
   "data_pointers": [],
   "related_nodes": []

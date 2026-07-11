@@ -14,7 +14,7 @@
     {
       "title": "插入排序",
       "uri": "knowledge://insertion_sort_v4",
-      "content_preview": "O(n²)但小规模基本有序时O(n)。Timsort的组成部分。"
+      "content_preview": "O(n²) but O(n) for nearly sorted small-scale data. Components of Timsort. To provide a more detailed explanation, Timsort is a hybrid sorting algorithm derived from merge sort and insertion sort. It w"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "socket 底层 API",
       "uri": "knowledge://py_socket_v4",
-      "content_preview": "socket.socket/bind/listen/accept/connect/recv/send。"
+      "content_preview": "Translation: - `socket.socket`: This function creates a new socket object using the specified address family and socket type. In Python, you can create a TCP socket as follows: ```python import socket"
     }
   ],
   "related_nodes": []

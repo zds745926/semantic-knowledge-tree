@@ -14,7 +14,7 @@
     {
       "title": "位运算",
       "uri": "knowledge://py_int_bitops_v4",
-      "content_preview": "& 按位与、| 按位或、^ 异或、<< 左移、>> 右移。比算术运算快，用于权限标记和底层优化。"
+      "content_preview": "Bitwise AND (&), Bitwise OR (|), Bitwise XOR (^), Left Shift (<<), Right Shift (>>). These operations are faster than arithmetic operations and are commonly used for permission marking and low-level o"
     }
   ],
   "related_nodes": []

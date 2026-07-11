@@ -14,7 +14,7 @@
     {
       "title": "非对称加密",
       "uri": "knowledge://asymmetric_enc_v4",
-      "content_preview": "RSA/ECC。公钥加密私钥解密。数字签名。"
+      "content_preview": "RSA/ECC. Public key encryption with private key decryption. Digital signatures. Here are the corresponding concepts in Python using cryptography library examples: For RSA: ```python from cryptography."
     }
   ],
   "related_nodes": []

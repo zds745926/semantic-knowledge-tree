@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "标准库",
   "children": [
+    "calendar",
     "datetime",
     "time",
-    "calendar",
     "zoneinfo"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python时间处理核心模块：datetime面向对象、time底层时间函数、calendar日历和zoneinfo时区(3.9+)。"
+    "description": "Python Time Handling Core Modules: - `datetime`: An object-oriented approach to handling dates and times. ```python from datetime import datetime now = datetime.now() print(now) ``` - `time`: Lower-le"
   },
   "data_pointers": [],
   "related_nodes": []

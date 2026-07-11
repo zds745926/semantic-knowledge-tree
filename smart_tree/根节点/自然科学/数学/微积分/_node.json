@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "微积分研究函数的变化率和累积效应，包括极限、导数、积分和微分方程。牛顿和莱布尼茨各自独立创立微积分，是近代数学最伟大的成就之一。"
+    "description": "Calculus studies the rates of change and cumulative effects of functions, including limits, derivatives, integrals, and differential equations. Newton and Leibniz independently developed calculus, one"
   },
   "data_pointers": [],
   "related_nodes": []

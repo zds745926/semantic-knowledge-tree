@@ -14,10 +14,8 @@
     {
       "title": "单例模式",
       "uri": "knowledge://singleton_v4",
-      "content_preview": "保证类只有一个实例。饿汉/懒汉。Spring Bean默认单例。"
+      "content_preview": "Ensure that only one instance of the class exists. Hungry/Lazy Initialization. Spring Beans are default singletons. Here are brief explanations for each concept: 1. **Hungry Initialization (Eager Init"
     }
   ],
-  "related_nodes": [
-    "proxy_v4"
-  ]
+  "related_nodes": []
 }

@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "包管理",
   "children": [
+    "pip freeze",
     "pip install",
     "pip uninstall",
-    "pip freeze",
     "requirements.txt"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "pip是Python官方包管理器。从PyPI安装第三方包。支持依赖解析和虚拟环境。"
+    "description": "pip is the official package manager for Python. It installs third-party packages from PyPI (Python Package Index) and supports dependency resolution and virtual environments. Here's a brief example of"
   },
   "data_pointers": [],
   "related_nodes": []

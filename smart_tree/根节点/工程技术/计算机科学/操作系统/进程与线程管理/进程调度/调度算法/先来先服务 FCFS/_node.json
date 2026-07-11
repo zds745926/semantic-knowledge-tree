@@ -14,10 +14,8 @@
     {
       "title": "先来先服务 FCFS",
       "uri": "knowledge://fcfs_v4",
-      "content_preview": "按到达顺序。非抢占。平均等待时间长(护航效应)。批处理系统。"
+      "content_preview": "First-In-First-Out (FIFO). Non-preemptive. Long average waiting time due to the convoy effect. Batch system. Here is a brief Python code example to illustrate a simple FIFO queue, which can be used in"
     }
   ],
-  "related_nodes": [
-    "rr_v4"
-  ]
+  "related_nodes": []
 }

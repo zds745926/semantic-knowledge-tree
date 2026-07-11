@@ -12,7 +12,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "文件系统管理持久数据的组织和存储。VFS抽象层屏蔽底层差异。"
+    "description": "File system management organizes and stores persistent data. The VFS (Virtual File System) abstraction layer shields underlying differences. Here's an additional explanation with a brief Python code e"
   },
   "data_pointers": [],
   "related_nodes": []

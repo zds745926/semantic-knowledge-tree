@@ -14,7 +14,7 @@
     {
       "title": "线程局部存储 TLS",
       "uri": "knowledge://py_tls_v4",
-      "content_preview": "threading.local() 每个线程独立存储。thread-local数据隔离。"
+      "content_preview": "The `threading.local()` object provides thread-local data in each thread. Thread-local data is isolated among threads. Here's an example to illustrate this concept using Python: ```python import threa"
     }
   ],
   "related_nodes": []

@@ -14,10 +14,8 @@
     {
       "title": "慢启动",
       "uri": "knowledge://tcp_slow_start_v4",
-      "content_preview": "cwnd从1MSS开始，每收到ACK翻倍(指数增长)。到达ssthresh转拥塞避免。"
+      "content_preview": "The cwnd starts at 1 MSS and doubles with each received ACK (exponential growth). It switches to congestion avoidance when it reaches ssthresh. Here's a brief Python code example to illustrate the con"
     }
   ],
-  "related_nodes": [
-    "tcp_congestion_avoid_v4"
-  ]
+  "related_nodes": []
 }

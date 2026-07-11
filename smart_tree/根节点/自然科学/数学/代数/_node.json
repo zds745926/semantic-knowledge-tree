@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "代数是数学中研究运算规则和结构的核心分支，包括方程求解、线性代数、抽象代数等。一元二次方程求根公式和韦达定理是代数的基本成果，广泛应用于数学建模和工程计算。"
+    "description": "Algebra is a core branch of mathematics that focuses on the study of operation rules and structures, including equation solving, linear algebra, and abstract algebra. The quadratic formula for finding"
   },
   "data_pointers": [],
   "related_nodes": []

@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "编程语言",
   "children": [
-    "Goroutine",
-    "Channel"
+    "Channel",
+    "Goroutine"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Go是Google开发的编译型语言，简洁高效，原生支持并发。goroutine和channel是Go的标志性特性。"
+    "description": "Go is a compiled language developed by Google, known for its simplicity and efficiency. It natively supports concurrency through goroutines and channels. Here's a brief Python code example to illustra"
   },
   "data_pointers": [],
   "related_nodes": []

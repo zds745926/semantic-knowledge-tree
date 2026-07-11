@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Bash脚本是Linux自动化的核心工具，支持变量、控制流、管道和重定向。"
+    "description": "Bash scripts are the core tools for automation in Linux, supporting variables, control flow, pipelines, and redirection. Here's a brief explanation with a corresponding Python code example to illustra"
   },
   "data_pointers": [],
   "related_nodes": []

@@ -9,12 +9,11 @@
   "parent": "事务",
   "children": [
     "原子性",
-    "隔离性",
     "持久性"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "ACID保证事务的正确执行。"
+    "description": "ACID ensures the correct execution of transactions. To provide a more comprehensive explanation and include a relevant Python code example for a transactional context, we can elaborate as follows: ACI"
   },
   "data_pointers": [],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "Floyd-Warshall",
       "uri": "knowledge://floyd_v4",
-      "content_preview": "所有节点对最短路径。动态规划。O(V³)。代码极简洁。"
+      "content_preview": "All nodes find the shortest path. Dynamic programming. O(V³). The code is extremely concise. Here's an example of how you might implement this in Python using dynamic programming to solve the all-pair"
     }
   ],
   "related_nodes": []

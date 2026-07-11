@@ -8,15 +8,15 @@
   "version": 1,
   "parent": "JavaScript",
   "children": [
-    "执行上下文",
     "作用域链",
-    "闭包",
     "原型链",
-    "异步 JS"
+    "异步 JS",
+    "执行上下文",
+    "闭包"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "JS核心包括执行上下文、作用域链、闭包、原型链和异步编程。"
+    "description": "The core of JavaScript includes execution context, scope chain, closure, prototype chain, and asynchronous programming. - **Execution Context**: This refers to the environment in which a piece of code"
   },
   "data_pointers": [],
   "related_nodes": []

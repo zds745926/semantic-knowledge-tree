@@ -14,7 +14,7 @@
     {
       "title": "共享内存",
       "uri": "knowledge://py_shared_memory_v4",
-      "content_preview": "multiprocessing.shared_memory(3.8+)。ShareableList。多个进程直接读写同一内存块。"
+      "content_preview": "`multiprocessing.shared_memory` (3.8+). `ShareableList`. Multiple processes can directly read and write to the same memory block. Python code example: ```python import multiprocessing def worker(shm):"
     }
   ],
   "related_nodes": []

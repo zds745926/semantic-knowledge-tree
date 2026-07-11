@@ -14,7 +14,7 @@
     {
       "title": "KNN",
       "uri": "knowledge://knn_v4",
-      "content_preview": "K个最近邻投票。距离度量。无训练过程。"
+      "content_preview": "K-Nearest Neighbor Voting. Distance Metric. No training process. Python code example: ```python from sklearn.neighbors import KNeighborsClassifier import numpy as np # Sample data X = np.array([[1, 2]"
     }
   ],
   "related_nodes": []

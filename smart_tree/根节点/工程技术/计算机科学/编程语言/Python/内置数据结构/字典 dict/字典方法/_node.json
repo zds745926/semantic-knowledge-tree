@@ -14,7 +14,7 @@
     {
       "title": "字典方法",
       "uri": "knowledge://py_dict_methods_v4",
-      "content_preview": "keys/values/items 视图。setdefault/pop/update。| 操作符合并(3.9+)。"
+      "content_preview": "Translation: View of keys, values, and items. setdefault(), pop(), update(). | Operations that merge (3.9+). Python code examples: 1. **Keys, Values, and Items View**: ```python my_dict = {'a': 1, 'b'"
     }
   ],
   "related_nodes": []

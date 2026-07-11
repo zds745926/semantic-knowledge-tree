@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python 循环包括 for 循环(遍历可迭代对象)和 while 循环(条件驱动)。break/continue 控制循环流程，else 子句在循环正常结束时执行。"
+    "description": "Python loops include `for` loops (iterating over iterable objects) and `while` loops (driven by conditions). The `break` and `continue` statements control the flow of the loop, while an `else` clause "
   },
   "data_pointers": [],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "可串行化",
       "uri": "knowledge://serializable_v4",
-      "content_preview": "最高级。事务串行执行。无并发问题。性能最低。"
+      "content_preview": "Highest level. Serial execution of transactions. No concurrency issues. Lowest performance. Python code example (to illustrate serial transaction execution): ```python def process_transaction(transact"
     }
   ],
   "related_nodes": []

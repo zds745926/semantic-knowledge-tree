@@ -14,7 +14,7 @@
     {
       "title": "zip 并行迭代",
       "uri": "knowledge://py_for_zip_v4",
-      "content_preview": "zip(iter1, iter2) 并行迭代多个序列，取对应位置元素。zip_longest填充到最长。"
+      "content_preview": "The `zip(iter1, iter2)` function parallelly iterates over multiple sequences and pairs elements from the same index positions. The `zip_longest` variant fills in missing values with a specified fill v"
     }
   ],
   "related_nodes": []

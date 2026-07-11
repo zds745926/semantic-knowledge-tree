@@ -14,7 +14,7 @@
     {
       "title": "Wheel",
       "uri": "knowledge://py_wheel_v4",
-      "content_preview": ".whl二进制分发格式。pip install比源码快。纯Python/平台特定wheel。"
+      "content_preview": ".whl Binary distribution format. pip install is faster than installing from source code. Pure Python/platform-specific wheel. Here's an explanation with a brief Python code example to illustrate the u"
     }
   ],
   "related_nodes": []

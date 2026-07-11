@@ -14,7 +14,7 @@
     {
       "title": "ps/top",
       "uri": "knowledge://ps_top_v4",
-      "content_preview": "ps aux所有进程。top实时视图。htop增强交互。"
+      "content_preview": "ps aux for all processes. top for real-time view. htop for enhanced interactive view. Here are the corresponding Python code examples for each command: 1. **`ps aux`**: This command lists all running "
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "红黑树",
       "uri": "knowledge://red_black_tree_v4",
-      "content_preview": "近似平衡。5条性质。旋转+变色维护。Java TreeMap/nginx使用。"
+      "content_preview": "Approximate Balance. 5 Properties. Rotation and Recoloring Maintenance. Used in Java TreeMap/nginx. To provide more context and include a brief Python code example for a related concept, let's conside"
     }
   ],
   "related_nodes": []

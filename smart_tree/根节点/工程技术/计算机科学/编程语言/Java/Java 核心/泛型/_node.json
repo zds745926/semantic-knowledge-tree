@@ -14,7 +14,7 @@
     {
       "title": "泛型",
       "uri": "knowledge://java_generics_v4",
-      "content_preview": "List<T>类型参数。通配符<? extends E>/<? super E>。类型擦除。"
+      "content_preview": "List<T> type parameter. Wildcards <? extends E> / <? super E>. Type erasure. Here's a brief explanation with a related Python code example: - **List[T] type parameter**: In generic programming, `T` is"
     }
   ],
   "related_nodes": []

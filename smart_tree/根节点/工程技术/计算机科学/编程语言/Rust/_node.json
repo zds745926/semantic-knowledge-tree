@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "编程语言",
   "children": [
-    "所有权",
+    "Trait 系统",
     "借用检查器",
-    "Trait 系统"
+    "所有权"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Rust是Mozilla开发的系统级语言，以零成本抽象和内存安全著称。所有权系统和借用检查器在编译时确保内存安全，无需GC。"
+    "description": "Rust is a systems-level language developed by Mozilla, known for its zero-cost abstractions and memory safety. The ownership system and borrow checker ensure memory safety at compile time, eliminating"
   },
   "data_pointers": [],
   "related_nodes": []

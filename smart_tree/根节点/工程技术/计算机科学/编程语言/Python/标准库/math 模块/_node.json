@@ -14,10 +14,8 @@
     {
       "title": "math 模块",
       "uri": "knowledge://py_math_module_v4",
-      "content_preview": "数学函数：math.floor/ceil/round/sqrt/log/sin/cos。常数math.pi/math.e。cmath支持复数。"
+      "content_preview": "Math functions: `math.floor`, `math.ceil`, `math.round`, `math.sqrt`, `math.log`, `math.sin`, `math.cos`. Constants: `math.pi`, `math.e`. The `cmath` module supports complex numbers. Python code examp"
     }
   ],
-  "related_nodes": [
-    "py_random_v4"
-  ]
+  "related_nodes": []
 }

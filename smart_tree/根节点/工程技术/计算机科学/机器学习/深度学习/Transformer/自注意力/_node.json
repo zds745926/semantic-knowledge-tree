@@ -14,7 +14,7 @@
     {
       "title": "自注意力",
       "uri": "knowledge://self_attention_v4",
-      "content_preview": "QKV机制：softmax(QK^T/√d)V。O(n²)复杂度。"
+      "content_preview": "QKV Mechanism: softmax(QK^T/√d)V. O(n²) complexity. In the context of neural networks, particularly in self-attention mechanisms like those used in transformers, the QKV mechanism involves three vecto"
     }
   ],
   "related_nodes": []

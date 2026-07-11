@@ -14,7 +14,7 @@
     {
       "title": "contextmanager",
       "uri": "knowledge://py_contextlib_v4",
-      "content_preview": "@contextmanager 装饰器函数，yield前为进入后为退出。"
+      "content_preview": "The `@contextmanager` decorator function is used in Python for context management. The code within the function runs before the `yield` statement when entering the context, and any code after the `yie"
     }
   ],
   "related_nodes": []

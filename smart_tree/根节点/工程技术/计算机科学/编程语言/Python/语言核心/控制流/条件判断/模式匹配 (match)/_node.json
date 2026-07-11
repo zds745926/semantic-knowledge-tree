@@ -14,7 +14,7 @@
     {
       "title": "模式匹配 (match)",
       "uri": "knowledge://py_match_v4",
-      "content_preview": "Python 3.10+ 的 match/case 支持字面值、通配符、序列解包、守卫条件等多种模式。"
+      "content_preview": "Python 3.10+ supports the `match/case` pattern with various modes including literal values, wildcards, sequence unpacking, and guard conditions. Here's a brief Python code example demonstrating some o"
     }
   ],
   "related_nodes": []

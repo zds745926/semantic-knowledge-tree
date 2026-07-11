@@ -14,7 +14,7 @@
     {
       "title": "积分",
       "uri": "knowledge://integral_v4",
-      "content_preview": "积分是微分的逆运算。定积分 ∫ₐᵇ f(x)dx 表示曲线与 x 轴间的面积。"
+      "content_preview": "Integration is the inverse operation of differentiation. A definite integral ∫ₐᵇ f(x)dx represents the area between the curve and the x-axis. Here's a brief Python code example using the `scipy` libra"
     }
   ],
   "related_nodes": []

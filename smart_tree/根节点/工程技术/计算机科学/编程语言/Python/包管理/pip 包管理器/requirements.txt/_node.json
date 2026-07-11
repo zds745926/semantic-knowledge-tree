@@ -14,7 +14,7 @@
     {
       "title": "requirements.txt",
       "uri": "knowledge://py_requirements_v4",
-      "content_preview": "依赖描述文件。==指定版本/>=最低版本。pip-compile生成锁定文件。"
+      "content_preview": "Dependency via specification file. == Specify version >= minimum version. `pip-compile` generates the lock file. Here's an example of how you might specify a package with a minimum version requirement"
     }
   ],
   "related_nodes": []

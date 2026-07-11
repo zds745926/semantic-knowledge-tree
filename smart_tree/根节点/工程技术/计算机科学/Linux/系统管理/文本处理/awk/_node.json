@@ -14,7 +14,7 @@
     {
       "title": "awk",
       "uri": "knowledge://awk_v4",
-      "content_preview": "awk '{print $1,$NF}'列处理。条件统计和报表。"
+      "content_preview": "Translation: \"awk '{print $1,$NF}' field processing. Conditional statistics and reports.\" Explanation of the technical term with a Python code example: The `awk` command in the original text is used f"
     }
   ],
   "related_nodes": []

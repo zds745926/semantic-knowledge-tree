@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "网络层负责包的路由和转发，核心协议是IP协议。"
+    "description": "The network layer is responsible for packet routing and forwarding, with the core protocol being the IP (Internet Protocol). Python code example to illustrate basic IP addressing and routing concepts:"
   },
   "data_pointers": [],
   "related_nodes": []

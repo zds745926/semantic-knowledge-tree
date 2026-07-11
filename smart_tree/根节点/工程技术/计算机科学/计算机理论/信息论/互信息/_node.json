@@ -14,7 +14,7 @@
     {
       "title": "互信息",
       "uri": "knowledge://mutual_info_v4",
-      "content_preview": "互信息 I(X;Y) = H(X)-H(X|Y) 度量两个随机变量共享的信息量。在特征选择中广泛应用。"
+      "content_preview": "Mutual Information I(X;Y) = H(X) - H(X|Y) measures the amount of information that two random variables share. It is widely applied in feature selection. Here's a brief Python code example using the `s"
     }
   ],
   "related_nodes": []

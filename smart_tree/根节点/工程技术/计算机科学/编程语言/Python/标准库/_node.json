@@ -9,27 +9,27 @@
   "parent": "Python",
   "children": [
     "JSON 处理",
-    "正则表达式",
-    "os 模块",
-    "sys 模块",
-    "pathlib 模块",
-    "文件 I/O",
-    "logging 日志",
     "collections 模块",
-    "math 模块",
-    "random 模块",
-    "hashlib 模块",
-    "subprocess 模块",
-    "itertools 模块",
     "functools 模块",
+    "hashlib 模块",
+    "itertools 模块",
+    "logging 日志",
+    "math 模块",
+    "os 模块",
+    "pathlib 模块",
+    "random 模块",
+    "subprocess 模块",
+    "sys 模块",
+    "国际化",
     "数据序列化",
+    "文件 I/O",
     "时间与日期",
-    "路径与文件",
-    "国际化"
+    "正则表达式",
+    "路径与文件"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python 标准库提供了丰富的内置模块，覆盖操作系统接口、数据处理、网络通信等。"
+    "description": "The Python standard library offers a rich collection of built-in modules that cover operating system interfaces, data processing, network communication, and more. Here are some brief examples to illus"
   },
   "data_pointers": [],
   "related_nodes": []

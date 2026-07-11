@@ -14,7 +14,7 @@
     {
       "title": "Java OOP",
       "uri": "knowledge://java_oop_v4",
-      "content_preview": "extends单继承，implements多接口。abstract/final。"
+      "content_preview": "Translation: Single inheritance for `extends`, multiple interfaces through `implements`. `abstract` and `final`. Python code examples: For single inheritance using `extends` (in Java, but translated t"
     }
   ],
   "related_nodes": []

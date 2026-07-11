@@ -14,7 +14,7 @@
     {
       "title": "字典树 Trie",
       "uri": "knowledge://trie_v4",
-      "content_preview": "字符串前缀匹配。查找O(L)。自动补全/拼写检查/IP路由。"
+      "content_preview": "Prefix string matching. Time complexity O(L). Autocomplete/spell checking/IP routing. Here are some brief Python code examples for each concept: 1. **Prefix String Matching**: ```python def prefix_mat"
     }
   ],
   "related_nodes": []

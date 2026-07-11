@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "监督学习",
   "children": [
-    "决策树",
+    "KNN",
     "SVM",
-    "KNN"
+    "决策树"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "分类预测离散类别标签。"
+    "description": "Classification for predicting discrete category labels. For a brief illustration using Python, consider the following example where we use scikit-learn to perform classification: ```python from sklear"
   },
   "data_pointers": [],
   "related_nodes": []

@@ -9,12 +9,11 @@
   "parent": "高级特性",
   "children": [
     "map/filter/reduce",
-    "偏函数 partial",
-    "itertools 模块"
+    "偏函数 partial"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python 提供了map/filter/reduce、偏函数和itertools等函数式工具。"
+    "description": "Python provides functional tools such as `map`, `filter`, and `reduce` (note that `reduce` is not built-in in Python 3, but can be imported from the `functools` module), partial functions, and the `it"
   },
   "data_pointers": [],
   "related_nodes": []

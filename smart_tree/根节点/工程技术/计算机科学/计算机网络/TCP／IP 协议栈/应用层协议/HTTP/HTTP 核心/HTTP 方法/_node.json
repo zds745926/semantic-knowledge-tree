@@ -14,10 +14,8 @@
     {
       "title": "HTTP 方法",
       "uri": "knowledge://http_methods_v4",
-      "content_preview": "GET/POST/PUT/DELETE/PATCH/HEAD/OPTIONS。"
+      "content_preview": "GET/POST/PUT/DELETE/PATCH/HEAD/OPTIONS. These are HTTP methods used in web development to interact with resources on a server. Here's a brief explanation of each: - **GET**: Requests a representation "
     }
   ],
-  "related_nodes": [
-    "http_status_v4"
-  ]
+  "related_nodes": []
 }

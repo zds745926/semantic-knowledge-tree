@@ -14,7 +14,7 @@
     {
       "title": "Deployment",
       "uri": "knowledge://k8s_deploy_v4",
-      "content_preview": "声明式Pod更新。滚动更新/回滚。HPA水平扩缩。"
+      "content_preview": "Declarative Pod Updates. Rolling Update/Rollback. HPA for Horizontal Scaling. ### Explanation: - **Declarative Pod Updates**: This refers to a method where the desired state of the application is defi"
     }
   ],
   "related_nodes": []

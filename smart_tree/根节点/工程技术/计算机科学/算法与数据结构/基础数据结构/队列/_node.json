@@ -14,7 +14,7 @@
     {
       "title": "队列",
       "uri": "knowledge://queue_v4",
-      "content_preview": "先进先出FIFO。enqueue/dequeue O(1)。应用：BFS/任务调度/消息队列。"
+      "content_preview": "First-In-First-Out (FIFO). enqueue/dequeue operations are O(1). Applications: BFS/Breadth-First Search, task scheduling, message queues. Here's a brief Python code example for implementing a simple FI"
     }
   ],
   "related_nodes": []

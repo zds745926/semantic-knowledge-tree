@@ -14,7 +14,7 @@
     {
       "title": "闭包",
       "uri": "knowledge://py_closure_v4",
-      "content_preview": "闭包引用了外部函数变量的内部函数。即使外部函数已返回，闭包仍能访问外部变量。"
+      "content_preview": "A closure refers to an inner function that captures and remembers the variables from its enclosing (external) function. Even after the external function has returned, the closure can still access thes"
     }
   ],
   "related_nodes": []

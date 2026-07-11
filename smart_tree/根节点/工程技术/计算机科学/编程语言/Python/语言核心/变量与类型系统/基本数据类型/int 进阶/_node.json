@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "基本数据类型",
   "children": [
-    "大整数运算",
     "位运算",
+    "大整数运算",
     "进制转换"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python int 的进阶知识包括大整数运算、位操作和进制转换。位运算比算术运算更快，适合底层优化。"
+    "description": "Advanced knowledge of Python `int` includes large integer arithmetic, bitwise operations, and base conversion. Bitwise operations are generally faster than arithmetic operations and are suitable for l"
   },
   "data_pointers": [],
   "related_nodes": []

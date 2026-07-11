@@ -14,7 +14,7 @@
     {
       "title": "随机森林",
       "uri": "knowledge://random_forest_v4",
-      "content_preview": "Bagging+特征随机。多树投票。不易过拟合。"
+      "content_preview": "Bagging with feature randomness. Multiple tree voting. Less prone to overfitting. Python code example: ```python from sklearn.ensemble import BaggingClassifier from sklearn.tree import DecisionTreeCla"
     }
   ],
   "related_nodes": []

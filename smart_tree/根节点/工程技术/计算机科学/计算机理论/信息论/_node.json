@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "计算机理论",
   "children": [
-    "信息熵",
+    "KL散度",
     "互信息",
-    "KL散度"
+    "信息熵"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "信息论由克劳德·香农创立，研究信息的度量、存储和通信。核心概念包括信息熵、互信息和KL散度。信息论为数据压缩、通信编码和机器学习提供了理论基础。"
+    "description": "Information theory was founded by Claude Shannon and studies the measurement, storage, and communication of information. Core concepts include information entropy, mutual information, and Kullback-Lei"
   },
   "data_pointers": [],
   "related_nodes": []

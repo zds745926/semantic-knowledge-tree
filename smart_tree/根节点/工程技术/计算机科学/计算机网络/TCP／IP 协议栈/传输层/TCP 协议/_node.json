@@ -15,7 +15,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "TCP(传输控制协议)提供面向连接的可靠字节流服务。头部20字节。"
+    "description": "TCP (Transmission Control Protocol) provides a reliable byte stream service over a connection. Header size is 20 bytes. Python code example: ```python import socket # Create a TCP/IP socket sock = soc"
   },
   "data_pointers": [],
   "related_nodes": []

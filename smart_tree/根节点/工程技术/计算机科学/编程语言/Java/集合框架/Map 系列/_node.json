@@ -14,10 +14,8 @@
     {
       "title": "Map 系列",
       "uri": "knowledge://java_map_v4",
-      "content_preview": "HashMap(哈希)/TreeMap(红黑树)/LinkedHashMap(有序)/ConcurrentHashMap(并发)。"
+      "content_preview": "English translation: HashMap (Hash)/TreeMap (Red-Black Tree)/LinkedHashMap (Linked Order)/ConcurrentHashMap (Concurrency). Here are brief Python code examples for each concept to provide a better unde"
     }
   ],
-  "related_nodes": [
-    "red_black_tree_v4"
-  ]
+  "related_nodes": []
 }

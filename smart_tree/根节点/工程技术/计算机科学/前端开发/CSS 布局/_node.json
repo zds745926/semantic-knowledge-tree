@@ -14,7 +14,7 @@
     {
       "title": "CSS 布局",
       "uri": "knowledge://css_layout_v4",
-      "content_preview": "Flexbox一维/Grid二维。媒体查询响应式。"
+      "content_preview": "Flexbox for one-dimensional layout / Grid for two-dimensional layout. Media queries for responsive design. Here are the corresponding technical terms and examples in Python (assuming you want to provi"
     }
   ],
   "related_nodes": []

@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "网络安全",
   "children": [
-    "XSS 跨站脚本",
     "CSRF",
-    "SQL注入"
+    "SQL注入",
+    "XSS 跨站脚本"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Web安全防御常见攻击。"
+    "description": "Common web security defenses against attacks. Translation of the provided Chinese text: Common web security defenses include measures to protect against various types of attacks. Here are some key con"
   },
   "data_pointers": [],
   "related_nodes": []

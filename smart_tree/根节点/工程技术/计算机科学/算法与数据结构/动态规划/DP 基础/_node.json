@@ -14,10 +14,8 @@
     {
       "title": "DP 基础",
       "uri": "knowledge://dp_basics_v4",
-      "content_preview": "最优子结构+重叠子问题。自顶向下(记忆化) vs 自底向上(表格)。"
+      "content_preview": "Optimal Substructure + Overlapping Subproblems. Top-down (Memoization) vs Bottom-up (Tabulation). Here's a brief explanation with Python code examples for each approach: ### Optimal Substructure + Ove"
     }
   ],
-  "related_nodes": [
-    "knapsack_v4"
-  ]
+  "related_nodes": []
 }

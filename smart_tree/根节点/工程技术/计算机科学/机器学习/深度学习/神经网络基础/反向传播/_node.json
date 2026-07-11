@@ -14,7 +14,7 @@
     {
       "title": "反向传播",
       "uri": "knowledge://backpropagation_v4",
-      "content_preview": "链式法则计算梯度。前向→损失→反向→更新。"
+      "content_preview": "The chain rule is used to compute gradients. Forward → Loss → Backward → Update. In the context of neural networks and machine learning, this process can be described as follows: 1. **Forward Pass**: "
     }
   ],
   "related_nodes": []

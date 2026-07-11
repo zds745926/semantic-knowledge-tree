@@ -14,7 +14,7 @@
     {
       "title": "背包问题",
       "uri": "knowledge://knapsack_v4",
-      "content_preview": "0-1背包。完全背包(内循环正序)。多重背包(二进制优化)。"
+      "content_preview": "0-1 Knapsack. Complete Knapsack (Inner Loop in Ascending Order). Multiple Knapsack (Binary Optimization). ### Python Code Examples #### 0-1 Knapsack ```python def knapsack_01(weights, values, capacity"
     }
   ],
   "related_nodes": []

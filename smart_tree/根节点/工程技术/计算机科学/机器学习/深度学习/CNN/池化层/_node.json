@@ -14,7 +14,7 @@
     {
       "title": "池化层",
       "uri": "knowledge://pooling_v4",
-      "content_preview": "最大池化/平均池化。降采样。平移不变性。"
+      "content_preview": "Max Pooling/Average Pooling. Downsampling. Translation Invariance. Here are the translations with added Python code examples for max pooling and average pooling: Max Pooling: ```python import torch fr"
     }
   ],
   "related_nodes": []

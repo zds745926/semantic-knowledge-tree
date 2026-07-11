@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "面向过程",
+    "函数式编程",
     "面向对象",
-    "函数式编程"
+    "面向过程"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "编程范式是编程的基本风格和方法论，包括面向过程、面向对象、函数式和声明式等。每种范式提供了不同的抽象方式和思维模型，理解多种范式有助于写出更好的代码。"
+    "description": "Programming paradigms are the fundamental styles and methodologies in programming, including procedural, object-oriented, functional, and declarative approaches. Each paradigm offers different ways of"
   },
   "data_pointers": [],
   "related_nodes": []

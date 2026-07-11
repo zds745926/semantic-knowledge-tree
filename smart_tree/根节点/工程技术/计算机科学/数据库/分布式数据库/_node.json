@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "分布式数据库将数据分布在多台机器上。CAP定理是理论基础。"
+    "description": "Distributed databases distribute data across multiple machines. The CAP theorem serves as the theoretical foundation. To provide a more comprehensive explanation and include a relevant Python code exa"
   },
   "data_pointers": [],
   "related_nodes": []

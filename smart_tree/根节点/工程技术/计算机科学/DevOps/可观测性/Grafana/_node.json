@@ -14,7 +14,7 @@
     {
       "title": "Grafana",
       "uri": "knowledge://grafana_v4",
-      "content_preview": "可视化仪表盘。多数据源。告警规则。面板类型丰富。"
+      "content_preview": "Visualization dashboard. Multi-data source support. Alarm rules. Rich panel types. Here is an expanded version with a brief Python code example for creating a simple visualization using the `matplotli"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "内存管理",
       "uri": "knowledge://c_memory_v4",
-      "content_preview": "malloc/calloc/realloc/free。栈自动回收。Valgrind检测内存错误。"
+      "content_preview": "malloc/calloc/realloc/free. Stack memory is automatically reclaimed. Valgrind detects memory errors. Here are brief explanations of the terms and an example using Python to illustrate `realloc`: - **m"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "pyproject.toml",
       "uri": "knowledge://py_pyproject_v4",
-      "content_preview": "PEP 518/621项目规范。[build-system]声明构建后端。[project]元数据。现代标准。"
+      "content_preview": "PEP 518/621 Project Specifications. [build-system] declaration for defining the build backend. [project] metadata. Modern standards. Here is a brief explanation with an example of how you might implem"
     }
   ],
   "related_nodes": []

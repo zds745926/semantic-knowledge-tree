@@ -14,7 +14,7 @@
     {
       "title": "PDM",
       "uri": "knowledge://py_pdm_v4",
-      "content_preview": "PEP 582无虚拟环境方案。pdm add/install/lock。支持多个Python版本。"
+      "content_preview": "PEP 582 does not provide a virtual environment solution. It supports `pdm add`, `pdm install`, and `pdm lock`. This tool also supports multiple Python versions. Here is an example of how you might use"
     }
   ],
   "related_nodes": []

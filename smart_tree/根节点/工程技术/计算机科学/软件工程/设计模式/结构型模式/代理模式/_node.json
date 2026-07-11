@@ -14,7 +14,7 @@
     {
       "title": "代理模式",
       "uri": "knowledge://proxy_v4",
-      "content_preview": "为对象提供替身控制访问。远程/虚拟/保护代理。AOP底层。"
+      "content_preview": "Provide a proxy for controlling access to objects. Remote/virtual/protection proxies. AOP underlying layer. ### Explanation with Python Code Example In the context of programming, this could refer to "
     }
   ],
   "related_nodes": []

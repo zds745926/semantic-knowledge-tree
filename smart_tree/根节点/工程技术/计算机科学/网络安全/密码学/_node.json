@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "网络安全",
   "children": [
+    "哈希函数",
     "对称加密",
-    "非对称加密",
-    "哈希函数"
+    "非对称加密"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "密码学通过加密保护信息安全。对称和非对称加密是两大体系。"
+    "description": "Cryptography ensures the security of information through encryption. Symmetric and asymmetric encryption are the two main systems. Here's an example to illustrate symmetric encryption using Python wit"
   },
   "data_pointers": [],
   "related_nodes": []

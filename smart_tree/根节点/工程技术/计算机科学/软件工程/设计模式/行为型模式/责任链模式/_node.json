@@ -14,7 +14,7 @@
     {
       "title": "责任链模式",
       "uri": "knowledge://chain_v4",
-      "content_preview": "多个处理者串联。请求沿链传递直到被处理。Filter/Interceptor。"
+      "content_preview": "Multiple processors are chained together. Requests are passed along the chain until they are processed. This is similar to Filter/Interceptor in programming. Here's an example using Python with a simp"
     }
   ],
   "related_nodes": []

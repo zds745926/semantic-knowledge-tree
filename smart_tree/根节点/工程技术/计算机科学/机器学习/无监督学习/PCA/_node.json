@@ -14,7 +14,7 @@
     {
       "title": "PCA",
       "uri": "knowledge://pca_v4",
-      "content_preview": "主成分分析降维。去相关去噪。最大化保留方差。"
+      "content_preview": "Principal Component Analysis (PCA) dimensionality reduction. Uncorrelated noise removal. Maximizing variance retention. Python code example for PCA: ```python from sklearn.decomposition import PCA imp"
     }
   ],
   "related_nodes": []

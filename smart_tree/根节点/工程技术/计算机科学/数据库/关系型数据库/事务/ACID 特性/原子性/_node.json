@@ -14,10 +14,8 @@
     {
       "title": "原子性",
       "uri": "knowledge://atomicity_v4",
-      "content_preview": "事务全部成功或全部失败。WAL实现原子性。"
+      "content_preview": "All transactions either succeed completely or fail entirely. This is achieved through the Write-Ahead Log (WAL) mechanism, which ensures atomicity. Python code example: ```python import os class Datab"
     }
   ],
-  "related_nodes": [
-    "isolation_v4"
-  ]
+  "related_nodes": []
 }

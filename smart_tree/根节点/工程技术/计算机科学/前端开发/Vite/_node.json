@@ -14,7 +14,7 @@
     {
       "title": "Vite",
       "uri": "knowledge://vite_v4",
-      "content_preview": "基于ESM的构建工具。毫秒HMR。Rollup打包。取代Webpack趋势。"
+      "content_preview": "Translation: A build tool based on ESM (ECMAScript Modules). Millisecond HMR (Hot Module Replacement). Rollup bundling. Trending away from Webpack. Python code example for HMR using a simple Flask app"
     }
   ],
   "related_nodes": []

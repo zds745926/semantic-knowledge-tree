@@ -14,7 +14,7 @@
     {
       "title": "map 方法",
       "uri": "knowledge://py_futures_map_v4",
-      "content_preview": "executor.map(func, iterable) 批量提交。返回结果迭代器。顺序对应输入。"
+      "content_preview": "The `executor.map(func, iterable)` function batches the submissions and returns an iterator of results. The order of the results corresponds to the input. Here's a brief Python code example using the "
     }
   ],
   "related_nodes": []

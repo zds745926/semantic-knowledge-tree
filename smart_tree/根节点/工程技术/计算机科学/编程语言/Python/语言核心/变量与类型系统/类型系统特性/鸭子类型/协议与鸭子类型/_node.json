@@ -14,7 +14,7 @@
     {
       "title": "协议与鸭子类型",
       "uri": "knowledge://py_duck_proto_v4",
-      "content_preview": "collections.abc 定义了 Iterable/Sized 等抽象基类作为协议的正式定义。"
+      "content_preview": "The `collections.abc` module defines abstract base classes like `Iterable` and `Sized` as the formal definitions of protocols. Here's a brief Python code example to illustrate using these abstract bas"
     }
   ],
   "related_nodes": []

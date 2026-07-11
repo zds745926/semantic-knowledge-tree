@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "高级特性",
   "children": [
-    "迭代器协议",
-    "生成器 yield",
     "yield from",
-    "生成器表达式"
+    "生成器 yield",
+    "生成器表达式",
+    "迭代器协议"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "迭代器协议和生成器是Python惰性求值的核心机制，节省内存。"
+    "description": "The iterator protocol and generators are the core mechanisms for lazy evaluation in Python, saving memory. To provide a more detailed explanation, let's delve into how these concepts work with some Py"
   },
   "data_pointers": [],
   "related_nodes": []

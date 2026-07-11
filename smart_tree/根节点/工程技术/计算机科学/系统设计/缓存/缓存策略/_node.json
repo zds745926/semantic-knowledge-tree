@@ -14,7 +14,7 @@
     {
       "title": "缓存策略",
       "uri": "knowledge://cache_strategies_v4",
-      "content_preview": "Cache Aside旁路。穿透/雪崩/击穿。布隆过滤器/互斥锁。"
+      "content_preview": "Cache Aside - This is a design pattern where data that would normally be cached is instead read directly from the database. It's often used to avoid unnecessary cache invalidation. Cascading Failure /"
     }
   ],
   "related_nodes": []

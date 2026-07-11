@@ -14,7 +14,7 @@
     {
       "title": "Raft 共识算法",
       "uri": "knowledge://raft_v4",
-      "content_preview": "领导者选举→日志复制→安全性。Etcd/Consul/TiKV使用。"
+      "content_preview": "Leader Election → Log Replication → Security. Used in Etcd/Consul/TiKV. ### Leader Election In distributed systems, leader election is a process where nodes in the system elect one of themselves to be"
     }
   ],
   "related_nodes": []

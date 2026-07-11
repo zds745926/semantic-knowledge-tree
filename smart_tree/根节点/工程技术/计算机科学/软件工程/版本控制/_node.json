@@ -12,7 +12,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "版本控制记录文件变更历史，支持协作开发和回滚。Git是当前最流行的版本控制系统。"
+    "description": "Version control records the history of file changes, supporting collaborative development and rollbacks. Git is currently the most popular version control system. Python code example (to illustrate a "
   },
   "data_pointers": [],
   "related_nodes": []

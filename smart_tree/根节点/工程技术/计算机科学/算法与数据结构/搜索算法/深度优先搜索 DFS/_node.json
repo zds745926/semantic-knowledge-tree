@@ -14,7 +14,7 @@
     {
       "title": "深度优先搜索 DFS",
       "uri": "knowledge://dfs_v4",
-      "content_preview": "递归或栈深入到底再回溯。O(V+E)。应用：连通分量/拓扑排序。"
+      "content_preview": "Recursive calls or stack overflow until backtracking. O(V+E). Applications: Connected Components / Topological Sorting. Here are brief Python code examples for the applications mentioned: ### Connecte"
     }
   ],
   "related_nodes": []

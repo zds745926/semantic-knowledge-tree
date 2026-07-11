@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python 内置了丰富的数据结构：列表(list)、字典(dict)、集合(set)和元组(tuple)。这些数据结构经过精心优化，是Python编程的基石。"
+    "description": "Python comes with a rich set of built-in data structures: lists, dictionaries, sets, and tuples. These data structures are carefully optimized and form the foundation of Python programming. Here are b"
   },
   "data_pointers": [],
   "related_nodes": []

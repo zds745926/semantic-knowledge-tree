@@ -9,12 +9,12 @@
   "parent": "根节点",
   "children": [
     "历史",
-    "文学",
-    "哲学"
+    "哲学",
+    "文学"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "人文社科研究人类社会、文化和精神现象，包括历史、文学、哲学、社会学、心理学、政治学等。探索人类文明的演变、思想的发展和社会运行的规律，培养批判性思维和人文素养。"
+    "description": "Humanities and social sciences study human society, culture, and spiritual phenomena, including history, literature, philosophy, sociology, psychology, political science, etc. They explore the evoluti"
   },
   "data_pointers": [],
   "related_nodes": []

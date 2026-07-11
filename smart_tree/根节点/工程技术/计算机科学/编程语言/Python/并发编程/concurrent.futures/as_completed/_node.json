@@ -14,7 +14,7 @@
     {
       "title": "as_completed",
       "uri": "knowledge://py_futures_as_completed_v4",
-      "content_preview": "concurrent.futures.as_completed(fs) 按完成顺序yield。先完成的先处理。"
+      "content_preview": "The `concurrent.futures.as_completed(fs)` function yields futures objects as they complete. The ones that finish first are yielded first. Here's a brief Python code example to illustrate this: ```pyth"
     }
   ],
   "related_nodes": []

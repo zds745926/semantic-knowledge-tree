@@ -14,7 +14,7 @@
     {
       "title": "DDL 数据定义",
       "uri": "knowledge://ddl_v4",
-      "content_preview": "CREATE/ALTER/DROP TABLE。数据类型和约束。PRIMARY KEY/FOREIGN KEY。"
+      "content_preview": "CREATE/ALTER/DROP TABLE. Data types and constraints. PRIMARY KEY/FOREIGN KEY. Here are the translations with added Python code examples for coding/programming concepts: 1. **CREATE/ALTER/DROP TABLE** "
     }
   ],
   "related_nodes": []

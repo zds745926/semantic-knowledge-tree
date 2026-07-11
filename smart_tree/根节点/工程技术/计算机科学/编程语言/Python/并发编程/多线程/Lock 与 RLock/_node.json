@@ -14,10 +14,8 @@
     {
       "title": "Lock 与 RLock",
       "uri": "knowledge://py_lock_v4",
-      "content_preview": "threading.Lock 互斥锁(不可重入)。RLock 可重入锁，同一线程可多次acquire。"
+      "content_preview": "Threading.Lock is an exclusive lock (non-reentrant). RLock is a reentrant lock, meaning the same thread can acquire it multiple times. Here are brief Python code examples for both: For `threading.Lock"
     }
   ],
-  "related_nodes": [
-    "py_thread_sync_v4"
-  ]
+  "related_nodes": []
 }

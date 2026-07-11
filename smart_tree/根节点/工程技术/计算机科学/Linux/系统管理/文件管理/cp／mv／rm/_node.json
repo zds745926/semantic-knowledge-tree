@@ -14,7 +14,7 @@
     {
       "title": "cp/mv/rm",
       "uri": "knowledge://cp_mv_rm_v4",
-      "content_preview": "cp -r递归目录。mv移动重命名。rm -rf慎用。"
+      "content_preview": "Translation: `cp -r` recursively copies directories. `mv` moves and renames files or directories. `rm -rf` is dangerous to use and should be used with caution. Python code example for `cp -r` (directo"
     }
   ],
   "related_nodes": []

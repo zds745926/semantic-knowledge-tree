@@ -14,7 +14,7 @@
     {
       "title": "可重复读",
       "uri": "knowledge://repeatable_read_v4",
-      "content_preview": "多次读同记录结果一致。InnoDB默认。MVCC快照读。"
+      "content_preview": "The result of reading the same record multiple times is consistent. This is InnoDB's default behavior. MVCC snapshot reads are used to achieve this. To illustrate the concept with a brief Python code "
     }
   ],
   "related_nodes": []

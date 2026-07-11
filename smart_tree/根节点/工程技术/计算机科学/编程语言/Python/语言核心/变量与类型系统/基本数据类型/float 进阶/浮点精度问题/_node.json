@@ -14,7 +14,7 @@
     {
       "title": "浮点精度问题",
       "uri": "knowledge://py_float_precision_v4",
-      "content_preview": "0.1+0.2≠0.3 因为二进制无法精确表示某些十进制小数。使用 decimal.Decimal 或 math.isclose。"
+      "content_preview": "0.1 + 0.2 ≠ 0.3 because binary cannot precisely represent certain decimal fractions. Use `decimal.Decimal` or `math.isclose`. Python code example using `decimal.Decimal`: ```python from decimal import"
     }
   ],
   "related_nodes": []

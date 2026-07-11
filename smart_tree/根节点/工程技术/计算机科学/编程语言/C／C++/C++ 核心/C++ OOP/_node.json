@@ -14,7 +14,7 @@
     {
       "title": "C++ OOP",
       "uri": "knowledge://cpp_oop_v4",
-      "content_preview": "class/public/protected/private。virtual虚函数(vtable)。纯虚函数抽象类。"
+      "content_preview": "Translation: - `class`: A user-defined data type that can have methods and attributes. In Python, you define a class using the `class` keyword. - `public`: Access level for members of a class that can"
     }
   ],
   "related_nodes": []

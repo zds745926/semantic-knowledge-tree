@@ -14,7 +14,7 @@
     {
       "title": "Docker 容器",
       "uri": "knowledge://docker_container_v4",
-      "content_preview": "镜像运行实例。run/exec/stop/rm。端口映射-p。卷挂载-v。"
+      "content_preview": "Mirror running instances. run/exec/stop/rm. Port mapping -p. Volume mounting -v. Here are the corresponding brief Python code examples for some of these concepts, assuming we're working with Docker in"
     }
   ],
   "related_nodes": []

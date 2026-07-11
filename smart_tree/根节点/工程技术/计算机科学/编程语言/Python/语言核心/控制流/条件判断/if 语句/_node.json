@@ -14,7 +14,7 @@
     {
       "title": "if 语句",
       "uri": "knowledge://py_if_statement_v4",
-      "content_preview": "if condition: 判断。elif 多分支。else 兜底。三元表达式: x if cond else y。"
+      "content_preview": "Translation: ```python if condition:  # Conditional check. statement  # If the condition is true, execute this block of code. elif other_condition:  # Additional conditional branches. statement  # If "
     }
   ],
   "related_nodes": []

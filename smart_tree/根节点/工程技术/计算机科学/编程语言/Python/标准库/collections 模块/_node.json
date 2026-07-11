@@ -14,7 +14,7 @@
     {
       "title": "collections 模块",
       "uri": "knowledge://py_collections_module_v4",
-      "content_preview": "特殊容器：defaultdict自动默认值、Counter计数、deque双端队列O(1)两端操作、namedtuple具名元组。"
+      "content_preview": "Special Containers: - defaultdict with automatic default values - Counter for counting elements - deque for double-ended queue operations with O(1) time complexity at both ends - namedtuple for named "
     }
   ],
   "related_nodes": []

@@ -14,10 +14,8 @@
     {
       "title": "conda",
       "uri": "knowledge://py_conda_v4",
-      "content_preview": "Anaconda包与环境管理器。conda create/env/activate。跨语言(支持R/Python)。"
+      "content_preview": "Anaconda Package and Environment Manager. `conda create`, `conda env`, `conda activate`. Cross-language support (supports R/Python). Here's a brief explanation with Python code examples: - **Creating "
     }
   ],
-  "related_nodes": [
-    "py_virtualenv_v4"
-  ]
+  "related_nodes": []
 }

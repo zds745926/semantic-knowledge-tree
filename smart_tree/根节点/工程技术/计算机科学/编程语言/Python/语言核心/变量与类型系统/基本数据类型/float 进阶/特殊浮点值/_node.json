@@ -14,7 +14,7 @@
     {
       "title": "特殊浮点值",
       "uri": "knowledge://py_float_special_v4",
-      "content_preview": "float('inf')无穷大、float('nan')非数字。math.isinf/isnan 判断。nan任何比较都是False。"
+      "content_preview": "Infinite values and NaN (Not a Number) are represented as `float('inf')` and `float('nan')`, respectively. The `math.isinf()` and `math.isnan()` functions can be used to determine whether a value is i"
     }
   ],
   "related_nodes": []

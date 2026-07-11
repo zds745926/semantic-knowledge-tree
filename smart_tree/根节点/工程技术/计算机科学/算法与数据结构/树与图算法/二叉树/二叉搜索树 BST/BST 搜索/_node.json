@@ -14,7 +14,7 @@
     {
       "title": "BST 搜索",
       "uri": "knowledge://bst_search_v4",
-      "content_preview": "从根开始，比根小走左比根大走右。平均O(log n)，最坏O(n)。"
+      "content_preview": "Starting from the root, go left if the node is smaller than the root and go right if it is larger. The average time complexity is O(log n), while the worst-case scenario is O(n). Python code example f"
     }
   ],
   "related_nodes": []

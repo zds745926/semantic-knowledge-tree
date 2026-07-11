@@ -14,7 +14,7 @@
     {
       "title": "浮点型 float",
       "uri": "knowledge://py_float_v4",
-      "content_preview": "Python 的 float 是双精度64位浮点数(IEEE 754)。浮点运算有精度误差，decimal.Decimal提供精确计算。"
+      "content_preview": "Python's `float` is a double-precision 64-bit floating-point number (following the IEEE 754 standard). Floating-point operations can have precision errors, which is why `decimal.Decimal` provides prec"
     }
   ],
   "related_nodes": []

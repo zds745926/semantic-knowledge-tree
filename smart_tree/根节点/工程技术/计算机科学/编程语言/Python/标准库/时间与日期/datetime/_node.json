@@ -14,7 +14,7 @@
     {
       "title": "datetime",
       "uri": "knowledge://py_datetime_lib_v4",
-      "content_preview": "datetime.now()/timedelta/date/time/datetime。strftime格式化。"
+      "content_preview": "Here is the English translation with added Python code examples for clarity: \"datetime.now() / timedelta / date / time / datetime.strftime formatting.\" Python code examples: ```python from datetime im"
     }
   ],
   "related_nodes": []

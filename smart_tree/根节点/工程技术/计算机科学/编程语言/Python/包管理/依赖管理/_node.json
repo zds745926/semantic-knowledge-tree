@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "包管理",
   "children": [
-    "Poetry",
     "PDM",
-    "Pipenv"
+    "Pipenv",
+    "Poetry"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "现代Python依赖管理工具提供更可靠的依赖解析和锁定功能。"
+    "description": "Modern Python relies on dependency management tools to provide more reliable dependency resolution and locking capabilities. To illustrate the use of a dependency management tool in Python (such as pi"
   },
   "data_pointers": [],
   "related_nodes": []

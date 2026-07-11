@@ -14,7 +14,7 @@
     {
       "title": "xml",
       "uri": "knowledge://py_xml_v4",
-      "content_preview": "xml.etree.ElementTree。find/findall。lxml更强大。"
+      "content_preview": "xml.etree.ElementTree.find/findall. lxml is more powerful. Here are brief explanations and corresponding Python code examples for the mentioned concepts: 1. **xml.etree.ElementTree.find/findall**: - `"
     }
   ],
   "related_nodes": []

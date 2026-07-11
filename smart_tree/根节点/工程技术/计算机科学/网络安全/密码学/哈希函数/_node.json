@@ -14,7 +14,7 @@
     {
       "title": "哈希函数",
       "uri": "knowledge://hash_v4",
-      "content_preview": "SHA-256/3。不可逆抗碰撞。bcrypt/argon2密码哈希。"
+      "content_preview": "SHA-256/3. Non-reversible and collision-resistant. bcrypt/argon2 password hashing. For the coding/programming concepts, here are brief Python code examples: 1. **SHA-256**: ```python import hashlib de"
     }
   ],
   "related_nodes": []

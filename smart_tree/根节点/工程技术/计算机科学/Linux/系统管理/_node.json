@@ -10,13 +10,13 @@
   "children": [
     "文件管理",
     "文本处理",
-    "进程管理",
     "权限管理",
-    "网络配置"
+    "网络配置",
+    "进程管理"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Linux系统管理包括文件操作、文本处理、进程管理和权限控制等日常运维技能。"
+    "description": "Linux system management includes file operations, text processing, process management, and permission control—essential daily operational skills. For a more detailed explanation, here are some brief P"
   },
   "data_pointers": [],
   "related_nodes": []

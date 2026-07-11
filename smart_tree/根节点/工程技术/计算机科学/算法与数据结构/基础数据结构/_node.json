@@ -9,13 +9,13 @@
   "parent": "算法与数据结构",
   "children": [
     "数组",
-    "链表",
     "栈",
+    "链表",
     "队列"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "基础数据结构包括数组、链表、栈和队列，是更复杂结构的基础。"
+    "description": "Basic data structures include arrays, linked lists, stacks, and queues, which form the basis for more complex structures. Python examples: 1. Array (using Python's built-in list): ```python # Creating"
   },
   "data_pointers": [],
   "related_nodes": []

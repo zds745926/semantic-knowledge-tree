@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "C/C++",
   "children": [
-    "指针",
-    "内存管理"
+    "内存管理",
+    "指针"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "C核心包括指针、内存管理、结构体和预处理。"
+    "description": "The core of C includes pointers, memory management, structures, and preprocessing. To provide more context and include a brief Python code example for each concept: 1. **Pointers**: In C, pointers are"
   },
   "data_pointers": [],
   "related_nodes": []

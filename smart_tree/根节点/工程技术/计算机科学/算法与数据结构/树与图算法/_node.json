@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "树和图是最重要的非线性数据结构，它们的算法(遍历/最短路径/生成树)是面试和竞赛的核心。"
+    "description": "Trees and graphs are the most important non-linear data structures. Their algorithms (traversal, shortest path, spanning tree generation, etc.) are at the core of interviews and competitive programmin"
   },
   "data_pointers": [],
   "related_nodes": []

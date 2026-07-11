@@ -14,7 +14,7 @@
     {
       "title": "HTML",
       "uri": "knowledge://html_basics_v4",
-      "content_preview": "标签结构<html><head><body>。语义化header/nav/main/section/article/footer。"
+      "content_preview": "Translation: The tag structure is <html><head><body>. Semantic headers include <header>, <nav>, <main>, <section>, <article>, and <footer>. Python code example (using BeautifulSoup to demonstrate the "
     }
   ],
   "related_nodes": []

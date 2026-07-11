@@ -14,7 +14,7 @@
     {
       "title": "JSON 处理",
       "uri": "knowledge://py_json_v4",
-      "content_preview": "json.dumps(obj,ensure_ascii=False)序列化。json.loads(str)反序列化。"
+      "content_preview": "Translation: `json.dumps(obj, ensure_ascii=False)` serializes an object to a JSON formatted str. `json.loads(str)` deserializes a JSON formatted string back into a Python object. Python code examples:"
     }
   ],
   "related_nodes": []

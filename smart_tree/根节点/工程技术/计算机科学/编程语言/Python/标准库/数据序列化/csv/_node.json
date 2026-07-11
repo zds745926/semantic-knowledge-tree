@@ -14,7 +14,7 @@
     {
       "title": "csv",
       "uri": "knowledge://py_csv_v4",
-      "content_preview": "csv.reader/writer。DictReader/DictWriter。dialect方言。"
+      "content_preview": "CSV reader/writer. DictReader/DictWriter. dialect. Here are the explanations and corresponding Python code examples: 1. **csv.reader/csv.writer**: These classes read from and write to CSV files, respe"
     }
   ],
   "related_nodes": []

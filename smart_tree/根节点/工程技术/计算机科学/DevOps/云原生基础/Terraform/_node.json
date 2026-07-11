@@ -14,7 +14,7 @@
     {
       "title": "Terraform",
       "uri": "knowledge://terraform_v4",
-      "content_preview": "IaC(HCL语言)。plan/apply/destroy。状态文件。多provider。"
+      "content_preview": "IaC (HCL language). Plan/Apply/Destroy. State file. Multi-provider. Here's a brief explanation with a related Python code example for context, even though the original text is about Infrastructure as "
     }
   ],
   "related_nodes": []

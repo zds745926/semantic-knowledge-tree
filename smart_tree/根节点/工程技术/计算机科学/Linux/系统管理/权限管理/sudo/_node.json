@@ -14,7 +14,7 @@
     {
       "title": "sudo",
       "uri": "knowledge://sudo_v4",
-      "content_preview": "普通用户以root执行。visudo编辑配置。NOPASSWD免密。"
+      "content_preview": "Ordinary users execute with root privileges. Use `visudo` to edit the configuration. NOPASSWD allows passwordless execution. Here's a brief explanation and an example of how this might be implemented "
     }
   ],
   "related_nodes": []

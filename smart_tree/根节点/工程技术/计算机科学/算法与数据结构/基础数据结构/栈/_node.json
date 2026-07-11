@@ -14,7 +14,7 @@
     {
       "title": "栈",
       "uri": "knowledge://stack_v4",
-      "content_preview": "后进先出LIFO。push/pop/peek O(1)。应用：函数调用/括号匹配/后退导航。"
+      "content_preview": "Last In First Out (LIFO). Operations such as push, pop, and peek have a time complexity of O(1). Applications include function calls, bracket matching, and back navigation. Here is a brief Python code"
     }
   ],
   "related_nodes": []

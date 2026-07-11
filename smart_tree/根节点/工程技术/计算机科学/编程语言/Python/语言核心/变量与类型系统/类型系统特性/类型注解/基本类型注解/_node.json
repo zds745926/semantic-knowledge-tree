@@ -14,7 +14,7 @@
     {
       "title": "基本类型注解",
       "uri": "knowledge://py_hint_basic_v4",
-      "content_preview": "def add(x: int, y: int) -> int: 声明类型。typing: List[int]/Dict[str,int]/Optional。"
+      "content_preview": "Translation: ```python def add(x: int, y: int) -> int: # Declaration of types. typing: List[int]/Dict[str,int]/Optional. return x + y ``` Explanation: - `add(x: int, y: int) -> int:` is a function def"
     }
   ],
   "related_nodes": []

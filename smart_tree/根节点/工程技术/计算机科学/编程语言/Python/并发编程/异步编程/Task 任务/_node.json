@@ -14,7 +14,7 @@
     {
       "title": "Task 任务",
       "uri": "knowledge://py_asyncio_task_v4",
-      "content_preview": "asyncio.create_task() 创建任务。task.cancel()取消。task.result()结果。"
+      "content_preview": "The `asyncio.create_task()` function creates a task. The `task.cancel()` method cancels the task. The `task.result()` method retrieves the result of the task. Here are brief Python code examples for e"
     }
   ],
   "related_nodes": []

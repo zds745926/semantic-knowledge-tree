@@ -14,7 +14,7 @@
     {
       "title": "链表",
       "uri": "knowledge://linked_list_v4",
-      "content_preview": "节点含数据和指针。单链表/双链表/循环链表。插入删除O(1)。"
+      "content_preview": "Nodes contain data and pointers. Singly linked list / doubly linked list / circular linked list. Insertion/deletion O(1). Here's a brief explanation with Python code examples for the concepts mentione"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "TCP BBR",
       "uri": "knowledge://tcp_bbr_v4",
-      "content_preview": "Google提出。基于带宽和RTT建模，不依赖丢包。高吞吐低延迟。"
+      "content_preview": "Google proposed. Based on bandwidth and RTT modeling, without relying on packet loss. High throughput with low latency. To provide a more detailed explanation, this concept is often related to network"
     }
   ],
   "related_nodes": []

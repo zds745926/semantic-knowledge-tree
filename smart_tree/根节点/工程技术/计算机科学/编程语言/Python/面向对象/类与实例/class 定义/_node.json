@@ -14,10 +14,8 @@
     {
       "title": "class 定义",
       "uri": "knowledge://py_class_def_v4",
-      "content_preview": "class ClassName: 定义类。__init__构造。self实例引用。dataclass自动生成基础方法。"
+      "content_preview": "Translation: ```python class ClassName: # Define a class def __init__(self): # Constructor pass self  # Instance reference @dataclass # Automatically generate basic methods pass ``` Explanation of the"
     }
   ],
-  "related_nodes": [
-    "py_except_v4"
-  ]
+  "related_nodes": []
 }

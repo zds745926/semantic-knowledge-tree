@@ -14,10 +14,8 @@
     {
       "title": "property 装饰器",
       "uri": "knowledge://py_property_v4",
-      "content_preview": "@property将方法变为属性访问。setter/deleter控制赋值删除。计算属性不占存储。"
+      "content_preview": "The `@property` decorator allows methods to be accessed like attributes, providing a way to define getters and setters for class attributes. The `setter` and `deleter` control assignment and deletion "
     }
   ],
-  "related_nodes": [
-    "py_dataclass_v4"
-  ]
+  "related_nodes": []
 }

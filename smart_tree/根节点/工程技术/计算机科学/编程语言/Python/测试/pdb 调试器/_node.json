@@ -14,7 +14,7 @@
     {
       "title": "pdb 调试器",
       "uri": "knowledge://py_pdb_v4",
-      "content_preview": "python -m pdb script.py 启动。l列出/n下一步/s进入/c继续/p打印/q退出。"
+      "content_preview": "The command `python -m pdb script.py` starts the Python debugger (pdb) on the specified script. Here are the key commands you can use within pdb: - `l` (list): Lists the source code for the current sc"
     }
   ],
   "related_nodes": []

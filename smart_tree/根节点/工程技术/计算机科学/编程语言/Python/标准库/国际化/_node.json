@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python国际化通过gettext和locale模块实现。gettext管理翻译，locale处理区域格式。"
+    "description": "Python internationalization is achieved through the `gettext` and `locale` modules. The `gettext` module manages translations, while the `locale` module handles locale-specific formatting. Here's a br"
   },
   "data_pointers": [],
   "related_nodes": []

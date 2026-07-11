@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "设计模式",
-    "版本控制",
     "CI/CD",
-    "架构模式"
+    "架构模式",
+    "版本控制",
+    "设计模式"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "软件工程是用系统化方法指导软件开发、运行和维护的工程学科。涵盖设计模式、版本控制、CI/CD、架构模式和项目管理等。"
+    "description": "Software engineering is an engineering discipline that uses systematic methods to guide the development, operation, and maintenance of software. It encompasses design patterns, version control, CI/CD "
   },
   "data_pointers": [],
   "related_nodes": []

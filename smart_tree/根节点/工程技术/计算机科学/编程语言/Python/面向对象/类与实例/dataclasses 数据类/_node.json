@@ -14,7 +14,7 @@
     {
       "title": "dataclasses 数据类",
       "uri": "knowledge://py_dataclass_v4",
-      "content_preview": "@dataclass自动生成__init__/__repr__/__eq__。field()自定义字段。frozen不可变。3.7+。"
+      "content_preview": "The `@dataclass` decorator automatically generates the `__init__`, `__repr__`, and `__eq__` methods. The `field()` function allows for custom field definitions. The `frozen` parameter makes the class "
     }
   ],
   "related_nodes": []

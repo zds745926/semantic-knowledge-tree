@@ -14,7 +14,7 @@
     {
       "title": "Timer",
       "uri": "knowledge://py_timer_v4",
-      "content_preview": "threading.Timer 定时器。interval后执行function。cancel取消。"
+      "content_preview": "Threading Timer. Executes the `function` after a specified `interval`. The `cancel` method can be used to cancel the timer. Here is an example of how you might use it in Python: ```python import threa"
     }
   ],
   "related_nodes": []

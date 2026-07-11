@@ -14,7 +14,7 @@
     {
       "title": "共享内存",
       "uri": "knowledge://shm_v4",
-      "content_preview": "最快IPC。多个进程映射同一物理内存。需信号量同步。"
+      "content_preview": "Fastest Inter-Process Communication (IPC). Multiple processes map the same physical memory. Synchronization is required using semaphores. Here's a brief Python code example to illustrate how semaphore"
     }
   ],
   "related_nodes": []

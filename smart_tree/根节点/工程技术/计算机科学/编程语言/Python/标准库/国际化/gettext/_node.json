@@ -14,10 +14,8 @@
     {
       "title": "gettext",
       "uri": "knowledge://py_gettext_v4",
-      "content_preview": "gettext.translation加载.mo文件。_('msgid')翻译。install()全局绑定。"
+      "content_preview": "gettext.translation loads the .mo file. _('msgid') performs the translation. install() globally binds the translations. Here is a brief Python code example to illustrate these concepts: ```python impo"
     }
   ],
-  "related_nodes": [
-    "py_locale_v4"
-  ]
+  "related_nodes": []
 }

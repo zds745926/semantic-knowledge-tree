@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "传输层提供端到端通信，主要有TCP(可靠)和UDP(不可靠)两种协议。"
+    "description": "The transport layer provides end-to-end communication and mainly includes two protocols: TCP (reliable) and UDP (unreliable). Python code examples: For TCP: ```python import socket # Create a TCP/IP s"
   },
   "data_pointers": [],
   "related_nodes": []

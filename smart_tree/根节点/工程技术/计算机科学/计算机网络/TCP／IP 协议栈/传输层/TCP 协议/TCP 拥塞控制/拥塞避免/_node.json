@@ -14,7 +14,7 @@
     {
       "title": "拥塞避免",
       "uri": "knowledge://tcp_congestion_avoid_v4",
-      "content_preview": "cwnd≥ssthresh后每RTT加1MSS(线性增长)。AIMD原则。"
+      "content_preview": "When cwnd≥ssthresh, increase cwnd by 1 MSS per RTT (linear growth). AIMD principle. Here's a brief explanation of the terms: - **cwnd**: Congestion Window is the number of bytes that can be sent befor"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "持久性",
       "uri": "knowledge://durability_v4",
-      "content_preview": "已提交结果永久保存。Redo log重放。"
+      "content_preview": "The committed results are permanently stored. Redo logs are used for replaying transactions. Here is a brief explanation of \"Redo logs\" with an associated Python code example to illustrate how they mi"
     }
   ],
   "related_nodes": []

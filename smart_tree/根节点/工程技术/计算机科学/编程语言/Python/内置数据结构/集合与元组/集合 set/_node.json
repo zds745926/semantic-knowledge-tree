@@ -14,7 +14,7 @@
     {
       "title": "集合 set",
       "uri": "knowledge://py_set_basics_v4",
-      "content_preview": "set 无序不重复。&交集 |并集 -差集 ^对称差集。"
+      "content_preview": "The provided Chinese text appears to be describing set operations in mathematics or computer science. Here is the English translation with corresponding Python code examples for each operation: 1. **S"
     }
   ],
   "related_nodes": []

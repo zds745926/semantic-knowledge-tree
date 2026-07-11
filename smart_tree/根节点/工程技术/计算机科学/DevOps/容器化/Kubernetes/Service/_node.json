@@ -14,7 +14,7 @@
     {
       "title": "Service",
       "uri": "knowledge://k8s_service_v4",
-      "content_preview": "Pod稳定访问入口。ClusterIP/NodePort/LoadBalancer/Ingress。"
+      "content_preview": "Pod Stable Access Entry Points. ClusterIP/NodePort/LoadBalancer/Ingress. ### Explanation: - **ClusterIP**: This is the default service type that exposes the service on a cluster-internal IP. It's not "
     }
   ],
   "related_nodes": []

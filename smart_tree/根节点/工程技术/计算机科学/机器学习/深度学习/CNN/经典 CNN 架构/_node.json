@@ -14,7 +14,7 @@
     {
       "title": "经典 CNN 架构",
       "uri": "knowledge://cnn_arch_v4",
-      "content_preview": "LeNet/AlexNet/VGG/ResNet/Inception。"
+      "content_preview": "LeNet/AlexNet/VGG/ResNet/Inception. These are all well-known deep learning architectures in the field of computer vision. Here's a brief explanation for each: - **LeNet**: One of the earliest convolut"
     }
   ],
   "related_nodes": []

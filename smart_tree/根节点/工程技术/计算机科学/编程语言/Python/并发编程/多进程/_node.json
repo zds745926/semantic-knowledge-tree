@@ -8,18 +8,18 @@
   "version": 1,
   "parent": "并发编程",
   "children": [
-    "multiprocessing",
-    "Process 类",
-    "Pool 进程池",
     "Manager",
-    "进程间 Queue",
-    "进程间通信 IPC",
+    "Pool 进程池",
+    "Process 类",
+    "multiprocessing",
     "共享内存",
-    "进程同步"
+    "进程同步",
+    "进程间 Queue",
+    "进程间通信 IPC"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "multiprocessing跨过GIL，利用多核CPU。"
+    "description": "Multiprocessing bypasses the Global Interpreter Lock (GIL), leveraging multi-core CPUs. Python code example: ```python import multiprocessing def worker(num): \"\"\"worker function\"\"\" print(f'Worker {num"
   },
   "data_pointers": [],
   "related_nodes": []

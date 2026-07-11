@@ -14,7 +14,7 @@
     {
       "title": "random 模块",
       "uri": "knowledge://py_random_v4",
-      "content_preview": "random.random()浮点数、randint(start,stop)整数、choice/shuffle序列操作。secrets模块安全随机。"
+      "content_preview": "The provided Chinese text translates to: `random.random()` generates a floating-point number between 0 and 1 (exclusive of 1). `randint(start, stop)` generates an integer between `start` and `stop`, i"
     }
   ],
   "related_nodes": []

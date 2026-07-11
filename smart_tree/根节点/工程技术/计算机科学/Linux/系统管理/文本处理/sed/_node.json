@@ -14,7 +14,7 @@
     {
       "title": "sed",
       "uri": "knowledge://sed_v4",
-      "content_preview": "sed 's/old/new/g'替换。sed -n '1,10p'打印范围。"
+      "content_preview": "Translation: `sed 's/old/new/g'` substitution. `sed -n '1,10p'` to print a range. Python code example for the concepts mentioned: For `sed 's/old/new/g'`, you can use Python's `re` module to achieve s"
     }
   ],
   "related_nodes": []

@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "进程与线程管理",
   "children": [
-    "管道",
-    "共享内存"
+    "共享内存",
+    "管道"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "进程间通信方式包括管道、共享内存、信号量、消息队列和套接字。"
+    "description": "Process communication methods include pipes, shared memory, semaphores, message queues, and sockets. Here are brief descriptions of each method along with a Python code example for one of them: 1. **P"
   },
   "data_pointers": [],
   "related_nodes": []

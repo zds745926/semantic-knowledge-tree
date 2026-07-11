@@ -14,7 +14,7 @@
     {
       "title": "图灵机",
       "uri": "knowledge://turing_machine_v4",
-      "content_preview": "图灵机是计算理论中的抽象模型，由一个无限长的纸带和一个读写头组成。可模拟任何计算机算法。"
+      "content_preview": "Turing machines are abstract models in computational theory, consisting of an infinite tape and a read/write head. They can simulate any computer algorithm. Python code example to illustrate the basic"
     }
   ],
   "related_nodes": []

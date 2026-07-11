@@ -14,7 +14,7 @@
     {
       "title": "数组",
       "uri": "knowledge://array_v4",
-      "content_preview": "连续内存线性结构。随机访问O(1)，插入删除O(n)。缓存友好。"
+      "content_preview": "Continuous memory linear structure. Random access O(1), insertion and deletion O(n). Cache-friendly. Here is an explanation with a brief Python code example for the concept of random access in a list,"
     }
   ],
   "related_nodes": []

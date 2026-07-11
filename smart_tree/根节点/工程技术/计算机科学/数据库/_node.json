@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "关系型数据库",
     "NoSQL",
+    "关系型数据库",
     "分布式数据库"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "数据库系统化地存储和管理数据。关系型数据库(SQL)和非关系型数据库(NoSQL)是最常用的两类。核心概念包括SQL、索引、事务、ACID和分布式。"
+    "description": "Database systems systematically store and manage data. The two most commonly used types are relational databases (SQL) and non-relational databases (NoSQL). Key concepts include SQL, indexing, transac"
   },
   "data_pointers": [],
   "related_nodes": []

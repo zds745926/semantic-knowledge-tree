@@ -14,7 +14,7 @@
     {
       "title": "locale",
       "uri": "knowledge://py_locale_v4",
-      "content_preview": "locale.setlocale设置区域。currency/format/strcoll排序。LC_ALL/LC_TIME。"
+      "content_preview": "Translation: `locale.setlocale` sets the locale. `currency`, `format`, and `strcoll` are sorting methods. `LC_ALL` and `LC_TIME` are locale categories. Python code examples: ```python import locale # "
     }
   ],
   "related_nodes": []

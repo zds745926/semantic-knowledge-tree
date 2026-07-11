@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "系统管理",
-    "Shell 脚本"
+    "Shell 脚本",
+    "系统管理"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Linux是一种自由开源的操作系统内核，广泛应用于服务器、嵌入式系统和云计算。以其稳定性、安全性和灵活性著称，是互联网基础设施的核心。"
+    "description": "Linux is a free and open-source operating system kernel that is widely used in servers, embedded systems, and cloud computing. Known for its stability, security, and flexibility, it serves as the core"
   },
   "data_pointers": [],
   "related_nodes": []

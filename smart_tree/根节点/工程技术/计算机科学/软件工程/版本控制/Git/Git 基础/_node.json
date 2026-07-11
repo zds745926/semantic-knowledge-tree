@@ -14,7 +14,7 @@
     {
       "title": "Git 基础",
       "uri": "knowledge://git_basics_v4",
-      "content_preview": "init/clone/add/commit/push/pull。暂存区工作流。"
+      "content_preview": "Translation: Init/Clone/Add/Commit/Push/Pull. Staging Area Workflow. Explanation: These are common Git commands used in version control systems for software development. Here's a brief explanation and"
     }
   ],
   "related_nodes": []

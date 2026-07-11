@@ -14,7 +14,7 @@
     {
       "title": "状态转移详解",
       "uri": "knowledge://tcp_state_trans_v4",
-      "content_preview": "11种状态：CLOSED/LISTEN/SYN_SENT/SYN_RCVD/ESTABLISHED等。各状态间通过包触发转移。"
+      "content_preview": "11 States: CLOSED, LISTEN, SYN_SENT, SYN_RCVD, ESTABLISHED, etc. Transitions between states are triggered by packets. Here's a brief Python code example using the `socket` library to illustrate how th"
     }
   ],
   "related_nodes": []

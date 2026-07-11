@@ -14,7 +14,7 @@
     {
       "title": "布尔代数",
       "uri": "knowledge://boolean_algebra_v4",
-      "content_preview": "布尔代数基本运算：与(AND)、或(OR)、非(NOT)。德摩根定律可将与或互转。"
+      "content_preview": "Boolean Algebra Basic Operations: AND, OR, NOT. De Morgan's Laws allow the conversion between AND and OR operations. Here are brief Python code examples for these Boolean operations: ```python # Defin"
     }
   ],
   "related_nodes": []

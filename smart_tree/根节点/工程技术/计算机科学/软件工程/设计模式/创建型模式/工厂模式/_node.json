@@ -14,7 +14,7 @@
     {
       "title": "工厂模式",
       "uri": "knowledge://factory_v4",
-      "content_preview": "简单工厂/工厂方法/抽象工厂。解耦客户端和具体类。"
+      "content_preview": "Simple Factory, Factory Method, and Abstract Factory. Decoupling the client from concrete classes. ### Simple Factory A simple factory is a design pattern that provides an interface for creating objec"
     }
   ],
   "related_nodes": []

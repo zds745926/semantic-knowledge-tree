@@ -8,16 +8,14 @@
   "version": 1,
   "parent": "机器学习",
   "children": [
-    "回归",
     "分类",
+    "回归",
     "集成学习"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "监督学习使用有标签的训练数据学习输入到输出的映射。"
+    "description": "Supervised learning uses labeled training data to learn the mapping from inputs to outputs. Python code example: ```python from sklearn.datasets import load_iris from sklearn.model_selection import tr"
   },
   "data_pointers": [],
-  "related_nodes": [
-    "unsupervised_v4"
-  ]
+  "related_nodes": []
 }

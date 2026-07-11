@@ -14,7 +14,7 @@
     {
       "title": "LEGB 规则",
       "uri": "knowledge://py_scope_legb_v4",
-      "content_preview": "Python 变量解析遵循 Local → Enclosing → Global → Built-in 顺序。"
+      "content_preview": "Python variable lookup follows the order Local → Enclosing → Global → Built-in. To illustrate this with a simple Python code example: ```python # Define a global variable global_var = \"I am global\" de"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "类高级功能",
       "uri": "knowledge://py_class_advanced_v4",
-      "content_preview": "classmethod/staticmethod/property/ABC/abstractmethod/dataclass。"
+      "content_preview": "English translation: - `classmethod`: A class method receives the class as implicit first argument, just like an instance method receives the instance. To declare a class method, use this idiom: ```py"
     }
   ],
   "related_nodes": []

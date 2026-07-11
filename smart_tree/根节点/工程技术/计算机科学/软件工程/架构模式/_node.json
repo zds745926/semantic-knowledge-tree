@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "软件工程",
   "children": [
-    "微服务",
-    "事件驱动架构"
+    "事件驱动架构",
+    "微服务"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "架构模式是软件系统的顶层设计蓝图。"
+    "description": "Architectural patterns serve as the blueprint for the top-level design of software systems. To provide a more comprehensive explanation and include a relevant Python code example, let's consider an ar"
   },
   "data_pointers": [],
   "related_nodes": []

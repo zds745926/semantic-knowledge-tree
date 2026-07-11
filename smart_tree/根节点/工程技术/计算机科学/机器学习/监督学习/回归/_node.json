@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "回归预测连续值。线性回归和逻辑回归是最基础的回归算法。"
+    "description": "Regression for predicting continuous values. Linear regression and logistic regression are the most basic regression algorithms. For context: - **Linear Regression**: This is used when you want to pre"
   },
   "data_pointers": [],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "滑动窗口",
       "uri": "knowledge://tcp_sliding_window_v4",
-      "content_preview": "窗口内已发送等待ACK。收到ACK前移。累计确认。"
+      "content_preview": "Windows where sent data is waiting for ACK. Move forward while waiting for the ACK. Cumulative acknowledgment. To provide a more context-specific translation and to include a brief Python code example"
     }
   ],
   "related_nodes": []

@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "并发编程",
   "children": [
-    "Queue (FIFO)",
     "LifoQueue",
     "PriorityQueue",
+    "Queue (FIFO)",
     "SimpleQueue"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "queue模块提供线程安全的队列实现。支持FIFO、LIFO和优先队列。生产者-消费者模式的核心组件，多线程编程中安全传递数据。"
+    "description": "The `queue` module provides thread-safe queue implementations. It supports FIFO, LIFO (stack), and priority queues. A core component of the producer-consumer pattern, it enables safe data transfer in "
   },
   "data_pointers": [],
   "related_nodes": []

@@ -8,25 +8,25 @@
   "version": 1,
   "parent": "工程技术",
   "children": [
-    "计算机理论",
-    "编程范式",
-    "编程语言",
-    "算法与数据结构",
-    "操作系统",
-    "计算机网络",
-    "数据库",
+    "DevOps",
     "Linux",
-    "软件工程",
-    "机器学习",
     "前端开发",
     "后端开发",
+    "操作系统",
+    "数据库",
+    "机器学习",
+    "算法与数据结构",
     "系统设计",
+    "编程范式",
+    "编程语言",
     "网络安全",
-    "DevOps"
+    "计算机理论",
+    "计算机网络",
+    "软件工程"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "计算机科学研究信息处理和计算的原理、方法和应用。涵盖计算机理论、编程语言、算法与数据结构、操作系统、计算机网络、数据库、软件工程、人工智能、机器学习、安全性等子领域。计算机科学是现代信息技术的核心驱动力。"
+    "description": "Computer science researches the principles, methods, and applications of information processing and computation. It encompasses subfields such as theoretical computer science, programming languages, a"
   },
   "data_pointers": [],
   "related_nodes": []

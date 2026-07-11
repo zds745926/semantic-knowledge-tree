@@ -14,10 +14,8 @@
     {
       "title": "分页机制",
       "uri": "knowledge://paging_v4",
-      "content_preview": "逻辑地址→页号+偏移→页表→物理页框。TLB快表加速。4KB标准页。"
+      "content_preview": "Logical Address → Page Number + Offset → Page Table → Physical Frame. TLB (Translation Lookaside Buffer) Acceleration. 4 KB Standard Page. Here is a brief Python code example to illustrate the concept"
     }
   ],
-  "related_nodes": [
-    "page_replacement_v4"
-  ]
+  "related_nodes": []
 }

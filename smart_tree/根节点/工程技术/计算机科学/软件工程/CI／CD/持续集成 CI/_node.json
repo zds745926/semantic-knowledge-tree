@@ -14,7 +14,7 @@
     {
       "title": "持续集成 CI",
       "uri": "knowledge://ci_basics_v4",
-      "content_preview": "每次推送自动构建测试。Jenkins/GitLab CI/GitHub Actions。"
+      "content_preview": "Automatic build and test on every push. Jenkins/GitLab CI/GitHub Actions. For illustration purposes, here are some brief Python code examples for each of these continuous integration tools: ### Jenkin"
     }
   ],
   "related_nodes": []

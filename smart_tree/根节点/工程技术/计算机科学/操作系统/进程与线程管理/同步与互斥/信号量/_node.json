@@ -14,7 +14,7 @@
     {
       "title": "信号量",
       "uri": "knowledge://semaphore_v4",
-      "content_preview": "P(申请)/V(释放)。控制多个资源。经典问题：生产者-消费者。"
+      "content_preview": "P(V)/Wait/Signal. Managing multiple resources. Classic problem: Producer-Consumer. Here is a brief explanation and a corresponding Python code example for the producer-consumer problem: In this contex"
     }
   ],
   "related_nodes": []

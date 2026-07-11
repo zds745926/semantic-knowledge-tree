@@ -14,7 +14,7 @@
     {
       "title": "分布式 ID",
       "uri": "knowledge://distributed_id_v4",
-      "content_preview": "雪花算法(Snowflake)：时间戳+机器ID+序列号。UUID。"
+      "content_preview": "Snowflake Algorithm: Timestamp + Machine ID + Sequence Number. UUID. ### Snowflake Algorithm (Python Example) The Snowflake algorithm is commonly used for generating unique IDs in distributed systems."
     }
   ],
   "related_nodes": []

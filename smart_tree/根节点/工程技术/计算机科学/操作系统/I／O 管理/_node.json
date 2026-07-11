@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "操作系统",
   "children": [
-    "I/O 层次",
-    "DMA"
+    "DMA",
+    "I/O 层次"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "I/O管理协调外设与CPU的数据交换，涉及缓冲、DMA和中断。"
+    "description": "I/O management coordinates data exchange between peripherals and the CPU, involving buffering, DMA (Direct Memory Access), and interrupts. Here's a brief explanation of these concepts with Python code"
   },
   "data_pointers": [],
   "related_nodes": []

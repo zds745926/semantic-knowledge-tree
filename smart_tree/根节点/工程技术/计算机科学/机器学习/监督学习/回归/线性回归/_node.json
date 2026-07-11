@@ -14,10 +14,8 @@
     {
       "title": "线性回归",
       "uri": "knowledge://linear_reg_v4",
-      "content_preview": "y=wx+b。最小二乘法MSE。梯度下降优化。L1/L2正则化。"
+      "content_preview": "y = wx + b. Least Squares Method (MSE). Gradient Descent Optimization. L1/L2 Regularization. Here are brief explanations and corresponding Python code examples for each concept: 1. **Linear Equation**"
     }
   ],
-  "related_nodes": [
-    "logistic_reg_v4"
-  ]
+  "related_nodes": []
 }

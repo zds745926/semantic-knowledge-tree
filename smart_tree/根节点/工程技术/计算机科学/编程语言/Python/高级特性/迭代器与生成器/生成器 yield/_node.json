@@ -14,10 +14,8 @@
     {
       "title": "生成器 yield",
       "uri": "knowledge://py_generator_v4",
-      "content_preview": "yield 定义生成器函数。惰性序列，节省内存。"
+      "content_preview": "The `yield` keyword defines a generator function. It produces a sequence of values on the fly, which is memory-efficient. Example of using `yield` in Python: ```python def simple_generator(): yield 1 "
     }
   ],
-  "related_nodes": [
-    "py_async_await_v4"
-  ]
+  "related_nodes": []
 }

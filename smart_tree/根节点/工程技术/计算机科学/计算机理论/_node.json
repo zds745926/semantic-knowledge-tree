@@ -9,12 +9,12 @@
   "parent": "计算机科学",
   "children": [
     "信息论",
-    "计算理论",
-    "数字逻辑"
+    "数字逻辑",
+    "计算理论"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "计算机理论研究计算的本质、限制和可能性，包括信息论、计算理论和数字逻辑。它为所有计算机科学提供形式化基础，揭示可计算性的边界和信息的本质度量。"
+    "description": "Theoretical computer science investigates the essence, limits, and possibilities of computation, including information theory, computational theory, and digital logic. It provides a formal foundation "
   },
   "data_pointers": [],
   "related_nodes": []

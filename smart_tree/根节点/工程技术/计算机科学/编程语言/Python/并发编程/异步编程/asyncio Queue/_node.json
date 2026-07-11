@@ -14,7 +14,7 @@
     {
       "title": "asyncio Queue",
       "uri": "knowledge://py_asyncio_queue_v4",
-      "content_preview": "asyncio.Queue。async put/get。maxsize。LifoQueue/PriorityQueue。"
+      "content_preview": "asyncio.Queue. async put/get. maxsize. LifoQueue/PriorityQueue. Here are the translations with brief Python code examples: 1. **asyncio.Queue** - This is a queue implementation in asyncio for managing"
     }
   ],
   "related_nodes": []

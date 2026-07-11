@@ -8,19 +8,19 @@
   "version": 1,
   "parent": "并发编程",
   "children": [
-    "async/await",
-    "协程 coroutine",
-    "事件循环",
     "Task 任务",
-    "gather",
     "as_completed",
-    "wait",
     "asyncio Lock",
-    "asyncio Queue"
+    "asyncio Queue",
+    "async/await",
+    "gather",
+    "wait",
+    "事件循环",
+    "协程 coroutine"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "async/await协程是单线程并发模型，适合高I/O并发。"
+    "description": "Async/await coroutines are a model for single-threaded concurrency, suitable for high I/O concurrency. Here is a brief Python code example to illustrate the use of `async` and `await`: ```python impor"
   },
   "data_pointers": [],
   "related_nodes": []

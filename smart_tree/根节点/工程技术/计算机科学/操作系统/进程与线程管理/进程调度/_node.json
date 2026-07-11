@@ -12,7 +12,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "进程调度决定就绪队列中哪个进程获得CPU，常用算法包括FCFS、SJF、RR和MLFQ。"
+    "description": "Process scheduling determines which process from the ready queue gets access to the CPU. Common algorithms include FCFS (First-Come, First-Served), SJF (Shortest Job First), RR (Round Robin), and MLFQ"
   },
   "data_pointers": [],
   "related_nodes": []

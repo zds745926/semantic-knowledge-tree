@@ -14,7 +14,7 @@
     {
       "title": "JOIN 连接",
       "uri": "knowledge://join_v4",
-      "content_preview": "INNER/LEFT/RIGHT/FULL OUTER/CROSS JOIN。"
+      "content_preview": "INNER/LEFT/RIGHT/FULL OUTER/CROSS JOIN. These are types of SQL joins used in database management and query operations. Here’s a brief explanation along with Python code examples using the `pandas` lib"
     }
   ],
   "related_nodes": []

@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "TCP通过序列号、确认应答、重传超时和滑动窗口实现可靠传输。"
+    "description": "TCP achieves reliable transmission through sequence numbers, acknowledgment, retransmission timeout, and sliding window mechanism. Python code example for understanding the sliding window concept (thi"
   },
   "data_pointers": [],
   "related_nodes": []

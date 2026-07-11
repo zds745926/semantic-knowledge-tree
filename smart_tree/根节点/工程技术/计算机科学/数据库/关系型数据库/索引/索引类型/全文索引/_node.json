@@ -14,7 +14,7 @@
     {
       "title": "全文索引",
       "uri": "knowledge://fulltext_index_v4",
-      "content_preview": "倒排索引：词→文档列表。MATCH AGAINST。"
+      "content_preview": "Inverted Index: Word → Document List. MATCH AGAINST. Here is an explanation with a brief Python code example for creating and using an inverted index: An inverted index is a data structure used in inf"
     }
   ],
   "related_nodes": []

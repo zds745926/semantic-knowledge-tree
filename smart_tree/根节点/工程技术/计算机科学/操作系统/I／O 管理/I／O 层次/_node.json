@@ -14,7 +14,7 @@
     {
       "title": "I/O 层次",
       "uri": "knowledge://io_hierarchy_v4",
-      "content_preview": "应用→库→系统调用→VFS→块设备→驱动→硬件。每层抽象隐藏下层细节。"
+      "content_preview": "Application → Library → System Call → VFS (Virtual File System) → Block Device → Driver → Hardware. Each layer abstracts and hides the details of the underlying layers. Here's a brief Python code exam"
     }
   ],
   "related_nodes": []

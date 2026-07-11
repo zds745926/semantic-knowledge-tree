@@ -14,7 +14,7 @@
     {
       "title": "流量控制",
       "uri": "knowledge://tcp_flow_ctrl_v4",
-      "content_preview": "接收窗口 rwnd 告知发送方剩余缓冲区。防止快发慢收。"
+      "content_preview": "The receive window (rwnd) informs the sender of the remaining buffer space. This prevents fast senders from overwhelming slow receivers. To illustrate this concept with a Python code example, we can s"
     }
   ],
   "related_nodes": []

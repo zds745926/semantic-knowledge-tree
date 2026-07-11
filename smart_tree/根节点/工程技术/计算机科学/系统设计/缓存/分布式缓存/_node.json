@@ -14,7 +14,7 @@
     {
       "title": "分布式缓存",
       "uri": "knowledge://distributed_cache_v4",
-      "content_preview": "Redis Cluster/一致性哈希/虚拟节点。多级缓存L1+L2。"
+      "content_preview": "Translation: Redis Cluster / Consistent Hashing / Virtual Nodes. Multi-level Cache L1 + L2. Explanation: - **Redis Cluster**: A distributed key-value store that allows you to scale out your Redis inst"
     }
   ],
   "related_nodes": []

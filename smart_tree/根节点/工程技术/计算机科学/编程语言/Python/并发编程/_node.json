@@ -8,15 +8,15 @@
   "version": 1,
   "parent": "Python",
   "children": [
+    "concurrent.futures",
+    "queue 模块",
     "多线程",
     "多进程",
-    "异步编程",
-    "concurrent.futures",
-    "queue 模块"
+    "异步编程"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python 支持多线程、多进程和异步编程三种并发模型，各有适用场景。"
+    "description": "Python supports three concurrency models: multi-threading, multiprocessing, and asynchronous programming, each with its own applicable scenarios. Here are brief examples for each: 1. **Multi-threading"
   },
   "data_pointers": [],
   "related_nodes": []

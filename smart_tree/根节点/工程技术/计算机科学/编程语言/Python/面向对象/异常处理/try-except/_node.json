@@ -14,7 +14,7 @@
     {
       "title": "try-except",
       "uri": "knowledge://py_try_except_v4",
-      "content_preview": "try-except-else-finally。except ValueError as e: 捕获特定异常。"
+      "content_preview": "Translation: `try-except-else-finally`. The `except ValueError as e:` block captures a specific exception. Python code example: ```python def safe_conversion(input_str): try: # Attempt to convert the "
     }
   ],
   "related_nodes": []

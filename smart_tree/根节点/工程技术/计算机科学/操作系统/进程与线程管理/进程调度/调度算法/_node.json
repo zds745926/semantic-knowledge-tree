@@ -9,12 +9,12 @@
   "parent": "进程调度",
   "children": [
     "先来先服务 FCFS",
-    "短作业优先 SJF",
-    "时间片轮转 RR"
+    "时间片轮转 RR",
+    "短作业优先 SJF"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "调度算法影响系统的吞吐量、响应时间和公平性。"
+    "description": "Scheduling algorithms affect the system's throughput, response time, and fairness. To provide a more comprehensive explanation, let's consider an example of a simple round-robin scheduling algorithm i"
   },
   "data_pointers": [],
   "related_nodes": []

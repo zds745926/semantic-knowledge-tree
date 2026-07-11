@@ -14,7 +14,7 @@
     {
       "title": "借用检查器",
       "uri": "knowledge://rust_borrow_checker_v4",
-      "content_preview": "编译时分析引用：一个可变引用或多个不可变引用，不可同时存在。"
+      "content_preview": "Compile-time Analysis of References: A mutable reference or multiple immutable references cannot coexist simultaneously. To illustrate this with a simple Python code example, consider the following sc"
     }
   ],
   "related_nodes": []

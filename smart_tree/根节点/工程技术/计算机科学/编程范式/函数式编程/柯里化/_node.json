@@ -14,7 +14,7 @@
     {
       "title": "柯里化",
       "uri": "knowledge://currying_v4",
-      "content_preview": "柯里化将多参数函数转为单参数函数链：f(a,b,c) → f(a)(b)(c)。"
+      "content_preview": "Curring transforms a multi-argument function into a chain of single-argument functions: `f(a, b, c) → f(a)(b)(c)`. Here is a brief Python code example to illustrate currying: ```python def curry(func)"
     }
   ],
   "related_nodes": []

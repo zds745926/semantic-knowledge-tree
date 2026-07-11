@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "三次握手建立连接，四次挥手关闭连接。"
+    "description": "Three-way handshake establishes the connection, and four-way挥手 (wave) should be translated as \"shake\" in this context to maintain accuracy. Here is the translation with a brief Python code example for"
   },
   "data_pointers": [],
   "related_nodes": []

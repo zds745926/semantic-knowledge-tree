@@ -14,7 +14,7 @@
     {
       "title": "虚拟 DOM",
       "uri": "knowledge://react_vdom_v4",
-      "content_preview": "JSX编译为虚拟DOM。diff算法。Fiber可中断渲染。"
+      "content_preview": "JSX is compiled into a virtual DOM. Diff algorithm. Fiber allows for interruptible rendering. Here are some brief explanations and corresponding Python code examples to illustrate these concepts: 1. *"
     }
   ],
   "related_nodes": []

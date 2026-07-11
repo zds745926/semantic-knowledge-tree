@@ -14,7 +14,7 @@
     {
       "title": "fnmatch",
       "uri": "knowledge://py_fnmatch_v4",
-      "content_preview": "fnmatch.fnmatch('file.txt','*.txt') Unix风格文件名匹配。fnmatch.filter。"
+      "content_preview": "Translation: `fnmatch.fnmatch('file.txt', '*.txt')`: Unix-style filename matching. `fnmatch.filter`. Python Code Example for `fnmatch.fnmatch`: ```python import fnmatch # Check if a file name matches "
     }
   ],
   "related_nodes": []

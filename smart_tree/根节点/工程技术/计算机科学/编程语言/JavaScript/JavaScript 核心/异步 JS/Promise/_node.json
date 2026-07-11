@@ -14,10 +14,8 @@
     {
       "title": "Promise",
       "uri": "knowledge://js_promise_v4",
-      "content_preview": "pending/fulfilled/rejected。then/catch链式。Promise.all/race。"
+      "content_preview": "Pending/fulfilled/rejected. Then/catch chaining. Promise.all/Promise.race. Here are the corresponding Python code examples for these concepts: 1. **Pending/Fulfilled/Rejected**: These states refer to "
     }
   ],
-  "related_nodes": [
-    "js_event_loop_v4"
-  ]
+  "related_nodes": []
 }

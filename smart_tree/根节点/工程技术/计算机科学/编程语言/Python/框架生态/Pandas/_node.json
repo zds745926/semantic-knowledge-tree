@@ -14,7 +14,7 @@
     {
       "title": "Pandas",
       "uri": "knowledge://py_pandas_v4",
-      "content_preview": "DataFrame数据结构。read_csv/groupby/merge/pivot。数据科学与分析核心。"
+      "content_preview": "DataFrame Data Structure. read_csv/groupby/merge/pivot. Core of Data Science and Analysis. Here are brief explanations with corresponding Python code examples: 1. **DataFrame Data Structure**: A DataF"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "tempfile",
       "uri": "knowledge://py_tempfile_v4",
-      "content_preview": "tempfile.TemporaryFile(自动删除)/NamedTemporaryFile/mkdtemp。安全临时文件。"
+      "content_preview": "Here is the English translation with brief Python code examples for each: 1. tempfile.TemporaryFile(auto-delete) Python example: ```python import tempfile # Create a temporary file that will be delete"
     }
   ],
   "related_nodes": []

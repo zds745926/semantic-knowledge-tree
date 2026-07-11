@@ -14,7 +14,7 @@
     {
       "title": "SQL注入",
       "uri": "knowledge://sql_injection_v4",
-      "content_preview": "恶意SQL拼接到查询。参数化查询/ORM防护。"
+      "content_preview": "Malicious SQL injection into queries. Parameterized queries/ORM protection. ### Example in Python To illustrate the difference between vulnerable and secure practices, consider the following examples:"
     }
   ],
   "related_nodes": []

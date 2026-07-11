@@ -9,12 +9,12 @@
   "parent": "计算机科学",
   "children": [
     "分布式系统",
-    "缓存",
-    "消息队列"
+    "消息队列",
+    "缓存"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "系统设计构建大规模分布式系统的技术和架构，涉及分布式系统、缓存、消息队列等。"
+    "description": "The design and construction of large-scale distributed systems involve technologies and architectures related to distributed systems, caching, message queues, etc. To provide a more concrete example, "
   },
   "data_pointers": [],
   "related_nodes": []

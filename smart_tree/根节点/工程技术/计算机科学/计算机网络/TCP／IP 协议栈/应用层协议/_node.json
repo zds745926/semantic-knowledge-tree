@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "TCP/IP 协议栈",
   "children": [
-    "HTTP",
+    "CDN",
     "DNS",
-    "CDN"
+    "HTTP"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "应用层协议为应用程序提供网络服务，包括HTTP、DNS、FTP等。"
+    "description": "Application layer protocols provide network services for applications, including HTTP, DNS, and FTP. Python code examples: 1. **HTTP (using `requests` library)**: ```python import requests response = "
   },
   "data_pointers": [],
   "related_nodes": []

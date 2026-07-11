@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Git是分布式版本控制系统，核心概念包括提交、分支、合并和远程。"
+    "description": "Git is a distributed version control system, with core concepts including commits, branches, merges, and remotes. Here are brief explanations for each of these concepts along with corresponding Python"
   },
   "data_pointers": [],
   "related_nodes": []

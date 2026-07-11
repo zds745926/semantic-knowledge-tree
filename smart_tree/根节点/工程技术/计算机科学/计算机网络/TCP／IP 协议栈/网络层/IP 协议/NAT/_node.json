@@ -14,7 +14,7 @@
     {
       "title": "NAT",
       "uri": "knowledge://nat_v4",
-      "content_preview": "私网↔公网映射。SNAT内网上网/DNAT端口映射。破坏端到端透明。"
+      "content_preview": "Private Network ↔ Public Network Mapping. SNAT for Private to Public IP Address Translation / DNAT for Port Mapping. Destroys End-to-End Transparency. Python code example for DNAT (Port Mapping): ```p"
     }
   ],
   "related_nodes": []

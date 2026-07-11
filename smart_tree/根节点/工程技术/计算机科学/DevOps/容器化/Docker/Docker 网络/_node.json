@@ -14,7 +14,7 @@
     {
       "title": "Docker 网络",
       "uri": "knowledge://docker_network_v4",
-      "content_preview": "bridge默认/host共享/overlay跨主机。docker-compose多容器。"
+      "content_preview": "Bridge networking, host networking, and overlay networking are default configurations for network sharing across hosts. Docker Compose is used for managing multiple containers. Here are the correspond"
     }
   ],
   "related_nodes": []

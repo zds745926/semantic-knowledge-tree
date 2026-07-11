@@ -14,7 +14,7 @@
     {
       "title": "virtualenv",
       "uri": "knowledge://py_virtualenv_v4",
-      "content_preview": "virtualenv创建隔离环境。比venv更早，支持Python 2。--system-site-packages。"
+      "content_preview": "`virtualenv` creates isolated environments. It was created before `venv`, supporting Python 2 and allows access to the global site packages (`--system-site-packages`). Here is a brief example of creat"
     }
   ],
   "related_nodes": []

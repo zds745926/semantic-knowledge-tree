@@ -12,7 +12,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python变量解析遵循LEGB规则：Local→Enclosing→Global→Built-in。"
+    "description": "Python variable resolution follows the LEGB rule: Local → Enclosing → Global → Built-in. To provide a brief Python code example that illustrates this concept: ```python # Define a global variable glob"
   },
   "data_pointers": [],
   "related_nodes": []

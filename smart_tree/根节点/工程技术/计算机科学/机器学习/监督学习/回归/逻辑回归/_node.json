@@ -14,7 +14,7 @@
     {
       "title": "逻辑回归",
       "uri": "knowledge://logistic_reg_v4",
-      "content_preview": "sigmoid输出概率。交叉熵损失。二分类标准算法。"
+      "content_preview": "Sigmoid output probabilities. Cross-entropy loss. Standard algorithm for binary classification. Here is a brief explanation with a Python code example: 1. **Sigmoid Output Probabilities**: The Sigmoid"
     }
   ],
   "related_nodes": []

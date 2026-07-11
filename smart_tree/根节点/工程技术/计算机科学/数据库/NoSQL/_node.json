@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "数据库",
   "children": [
-    "Redis",
-    "MongoDB"
+    "MongoDB",
+    "Redis"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "NoSQL数据库提供灵活的数据模型和水平扩展能力。"
+    "description": "NoSQL databases offer flexible data models and horizontal scalability. Python code example (to illustrate flexibility in data modeling): ```python from pymongo import MongoClient # Connecting to Mongo"
   },
   "data_pointers": [],
   "related_nodes": []

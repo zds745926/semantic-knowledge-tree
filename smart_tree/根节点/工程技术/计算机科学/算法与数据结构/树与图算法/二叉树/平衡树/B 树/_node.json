@@ -14,10 +14,8 @@
     {
       "title": "B 树",
       "uri": "knowledge://b_tree_v4",
-      "content_preview": "多路平衡树。扇出高大，降低I/O。数据库B+树索引的基础。"
+      "content_preview": "Multi-way balanced tree. High fan-out to reduce I/O. Forms the basis of B+ tree indexes in databases. Python code example for a simple B+ tree node structure: ```python class BPlusTreeNode: def __init"
     }
   ],
-  "related_nodes": [
-    "btree_index_v4"
-  ]
+  "related_nodes": []
 }

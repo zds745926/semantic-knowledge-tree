@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "C语言是系统编程的基础语言，提供对硬件的直接控制。C++在C基础上增加OOP和模板。两者都是编译型语言，追求极致的性能和灵活的内存管理。"
+    "description": "C is the foundational language for systems programming, providing direct control over hardware. C++ builds upon C by adding Object-Oriented Programming (OOP) and templates. Both are compiled languages"
   },
   "data_pointers": [],
   "related_nodes": []

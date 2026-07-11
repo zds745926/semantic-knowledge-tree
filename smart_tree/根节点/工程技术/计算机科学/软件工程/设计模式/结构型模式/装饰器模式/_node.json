@@ -14,7 +14,7 @@
     {
       "title": "装饰器模式",
       "uri": "knowledge://decorator_v4",
-      "content_preview": "动态给对象加职责。比继承灵活。IO流BufferedInputStream。"
+      "content_preview": "Dynamic addition of responsibilities to objects. More flexible than inheritance. IO stream BufferedInputStream. In the context of programming, adding responsibilities dynamically to objects is often a"
     }
   ],
   "related_nodes": []

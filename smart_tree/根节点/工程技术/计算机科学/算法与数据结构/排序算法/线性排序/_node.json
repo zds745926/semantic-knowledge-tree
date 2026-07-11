@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "排序算法",
   "children": [
-    "计数排序",
-    "基数排序"
+    "基数排序",
+    "计数排序"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "线性排序不通过比较，利用数据特性达到O(n)时间复杂度。"
+    "description": "Linear sorting does not rely on comparisons but leverages the characteristics of the data to achieve O(n) time complexity. Here's an example using counting sort, a linear sorting algorithm that works "
   },
   "data_pointers": [],
   "related_nodes": []

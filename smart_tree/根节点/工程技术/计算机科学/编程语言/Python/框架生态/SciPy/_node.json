@@ -14,7 +14,7 @@
     {
       "title": "SciPy",
       "uri": "knowledge://py_scipy_v4",
-      "content_preview": "科学计算库。优化/线性代数/积分/插值/信号处理。基于NumPy ndarray构建。"
+      "content_preview": "Scientific computing library. Optimized for linear algebra, integration, interpolation, and signal processing. Built on top of NumPy's `ndarray`. Here is a brief Python code example demonstrating some"
     }
   ],
   "related_nodes": []

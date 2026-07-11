@@ -14,7 +14,7 @@
     {
       "title": "multiprocessing",
       "uri": "knowledge://py_multiprocessing_v4",
-      "content_preview": "Process/Pool.map/Queue/Pipe。不受GIL限制，适合CPU密集型。"
+      "content_preview": "Process/Pool.map/Queue/Pipe. Not constrained by GIL, suitable for CPU-intensive tasks. Here are brief explanations and corresponding Python code examples: 1. **Process**: A process is a program in exe"
     }
   ],
   "related_nodes": []

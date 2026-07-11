@@ -14,7 +14,7 @@
     {
       "title": "高级类型注解",
       "uri": "knowledge://py_hint_adv_v4",
-      "content_preview": "泛型 TypeVar、联合 Union 或 |、Callable、Literal。mypy 静态类型检查。"
+      "content_preview": "Generic TypeVar, Union or |, Callable, Literal. Static type checking with mypy. Here are brief explanations and corresponding Python code examples for each term: 1. **TypeVar**: - A way to define gene"
     }
   ],
   "related_nodes": []

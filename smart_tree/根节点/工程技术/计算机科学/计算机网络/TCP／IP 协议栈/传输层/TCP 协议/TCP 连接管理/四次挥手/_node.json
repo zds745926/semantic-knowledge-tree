@@ -14,7 +14,7 @@
     {
       "title": "四次挥手",
       "uri": "knowledge://four_way_v4",
-      "content_preview": "FIN→ACK→FIN→ACK。全双工关闭(需4次)。TIME_WAIT等待2MSL。"
+      "content_preview": "Translation: FIN→ACK→FIN→ACK. Full-duplex closure (requires 4 steps). TIME_WAIT waits for 2MSL. Python code example to illustrate the concept of a full-duplex closure in TCP: ```python import socket d"
     }
   ],
   "related_nodes": []

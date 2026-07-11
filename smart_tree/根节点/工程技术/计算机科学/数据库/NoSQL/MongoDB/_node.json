@@ -14,7 +14,7 @@
     {
       "title": "MongoDB",
       "uri": "knowledge://mongodb_v4",
-      "content_preview": "文档数据库(BSON)。无Schema。副本集+分片水平扩展。"
+      "content_preview": "Document Database (BSON). Schema-less. Replica Set + Sharding for Horizontal Scaling. Here is an additional explanation with a brief Python code example to illustrate the concept of a document databas"
     }
   ],
   "related_nodes": []

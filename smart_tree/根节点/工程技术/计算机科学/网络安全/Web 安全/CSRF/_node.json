@@ -14,7 +14,7 @@
     {
       "title": "CSRF",
       "uri": "knowledge://csrf_v4",
-      "content_preview": "用户已登录被诱导操作。CSRF Token/SameSite Cookie防护。"
+      "content_preview": "User login is induced to perform unwanted actions. CSRF Token and SameSite Cookie protection. To illustrate the implementation of these concepts in Python using Flask (a popular web framework), here a"
     }
   ],
   "related_nodes": []

@@ -11,17 +11,17 @@
     "Django",
     "FastAPI",
     "Flask",
+    "Matplotlib",
     "NumPy",
     "Pandas",
-    "Matplotlib",
-    "SciPy",
-    "scikit-learn",
+    "PyTorch",
     "SQLAlchemy",
-    "PyTorch"
+    "SciPy",
+    "scikit-learn"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python拥有丰富的框架生态，涵盖Web开发、数据科学、机器学习等。"
+    "description": "Python boasts a rich framework ecosystem that covers web development, data science, machine learning, and more. Here are some brief examples to illustrate coding/programming concepts in these areas: 1"
   },
   "data_pointers": [],
   "related_nodes": []

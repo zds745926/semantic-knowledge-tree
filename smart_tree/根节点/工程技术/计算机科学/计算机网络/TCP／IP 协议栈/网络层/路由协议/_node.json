@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "网络层",
   "children": [
-    "OSPF",
-    "BGP"
+    "BGP",
+    "OSPF"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "路由协议决定数据包从源到目的的最佳路径。"
+    "description": "Routing protocols determine the best path for packets from source to destination. To provide a more detailed explanation and an example related to routing in Python, we can use the `netmiko` library t"
   },
   "data_pointers": [],
   "related_nodes": []

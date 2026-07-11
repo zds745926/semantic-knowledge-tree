@@ -14,7 +14,7 @@
     {
       "title": "K-Means",
       "uri": "knowledge://kmeans_v4",
-      "content_preview": "迭代聚类。K值需预设。肘部法确定K。"
+      "content_preview": "Iterative Clustering. The K value needs to be preset. The Elbow Method is used to determine K. Python code example for the Elbow Method: ```python from sklearn.cluster import KMeans import matplotlib."
     }
   ],
   "related_nodes": []

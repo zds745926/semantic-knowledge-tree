@@ -14,7 +14,7 @@
     {
       "title": "一元二次方程求根公式",
       "uri": "knowledge://quad_formula_v4",
-      "content_preview": "一元二次方程 ax²+bx+c=0 (a≠0) 的求根公式为 x = [-b ± √(b²-4ac)]/(2a)。Δ=b²-4ac 为判别式。"
+      "content_preview": "The root formula for a quadratic equation \\(ax^2 + bx + c = 0\\) (where \\(a \\neq 0\\)) is given by \\(x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\). The discriminant, denoted as \\(\\Delta\\), is \\(b^2 - 4ac\\). He"
     }
   ],
   "related_nodes": []

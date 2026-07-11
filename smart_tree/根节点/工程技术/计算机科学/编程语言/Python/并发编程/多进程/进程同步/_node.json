@@ -14,7 +14,7 @@
     {
       "title": "进程同步",
       "uri": "knowledge://py_proc_sync_v4",
-      "content_preview": "multiprocessing.Lock/RLock/Semaphore/Event/Condition 跨进程同步。"
+      "content_preview": "Multiprocessing Lock/RLock/Semaphore/Event/Condition for inter-process synchronization. Here are some brief examples in Python to illustrate these concepts: 1. **Lock**: A simple lock that can be used"
     }
   ],
   "related_nodes": []

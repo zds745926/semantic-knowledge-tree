@@ -14,7 +14,7 @@
     {
       "title": "后序遍历实现",
       "uri": "knowledge://bst_postorder_v4",
-      "content_preview": "左→右→根。先删子节点再删父节点(释放树)。双栈实现。"
+      "content_preview": "Left → Right → Root. First delete the child nodes and then delete the parent node (release the tree). Implemented using two stacks. Here's a brief Python code example to illustrate this concept: ```py"
     }
   ],
   "related_nodes": []

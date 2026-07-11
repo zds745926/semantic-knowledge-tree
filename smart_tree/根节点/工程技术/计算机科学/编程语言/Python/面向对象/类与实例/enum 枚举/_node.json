@@ -14,7 +14,7 @@
     {
       "title": "enum 枚举",
       "uri": "knowledge://py_enum_v4",
-      "content_preview": "from enum import Enum。Enum/IntEnum/Flag。name/value。类型安全替代魔数。"
+      "content_preview": "Translation: ```python from enum import Enum, IntEnum, Flag class Color(Enum): RED = 0 GREEN = 1 BLUE = 2 print(Color.RED.name)  # Output: RED print(Color.RED.value)  # Output: 0 # Using IntEnum for i"
     }
   ],
   "related_nodes": []

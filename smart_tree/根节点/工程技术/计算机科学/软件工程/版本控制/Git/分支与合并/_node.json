@@ -14,7 +14,7 @@
     {
       "title": "分支与合并",
       "uri": "knowledge://git_branch_v4",
-      "content_preview": "branch/checkout/merge。冲突解决。rebase变基。Git Flow。"
+      "content_preview": "Translation: Branching/checkouting/merging. Conflict resolution. Rebasing. Git Flow. Python code examples for some of these concepts: 1. Branching and Merging: ```python # Example using GitPython to c"
     }
   ],
   "related_nodes": []

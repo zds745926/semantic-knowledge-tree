@@ -14,7 +14,7 @@
     {
       "title": "多态",
       "uri": "knowledge://polymorphism_v4",
-      "content_preview": "多态指同一操作在不同对象上有不同行为。编译时多态(重载)和运行时多态(重写)。"
+      "content_preview": "Polymorphism refers to the ability of an operation to exhibit different behaviors in different object types. There are two main forms of polymorphism: compile-time polymorphism (overloading) and run-t"
     }
   ],
   "related_nodes": []

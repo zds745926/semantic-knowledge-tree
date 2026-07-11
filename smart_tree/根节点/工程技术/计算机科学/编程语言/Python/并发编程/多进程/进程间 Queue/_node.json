@@ -14,7 +14,7 @@
     {
       "title": "进程间 Queue",
       "uri": "knowledge://py_mp_queue_v4",
-      "content_preview": "multiprocessing.Queue 进程安全队列。put/get。JoinableQueue。"
+      "content_preview": "Multiprocessing.Queue is a process-safe queue. It supports put and get methods. JoinableQueue is an extension of Queue that allows you to wait until all items have been retrieved from the queue. Pytho"
     }
   ],
   "related_nodes": []

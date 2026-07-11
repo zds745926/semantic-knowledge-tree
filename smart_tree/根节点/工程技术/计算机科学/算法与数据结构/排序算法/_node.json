@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "排序是计算机科学中最基础和重要的算法之一。分为比较排序和非比较排序两类。"
+    "description": "Sorting is one of the most fundamental and important algorithms in computer science, divided into comparison sorting and non-comparison sorting categories. Here are brief examples for both types: 1. *"
   },
   "data_pointers": [],
   "related_nodes": []

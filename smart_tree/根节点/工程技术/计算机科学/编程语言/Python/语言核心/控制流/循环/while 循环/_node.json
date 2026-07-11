@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "循环",
   "children": [
-    "while 基础",
-    "while 典型用法"
+    "while 典型用法",
+    "while 基础"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "while 条件循环，常用于不确定次数的迭代场景。"
+    "description": "While condition loop, often used in iteration scenarios with an uncertain number of iterations. Python code example: ```python # Example of a while loop for an uncertain number of iterations count = 0"
   },
   "data_pointers": [],
   "related_nodes": []

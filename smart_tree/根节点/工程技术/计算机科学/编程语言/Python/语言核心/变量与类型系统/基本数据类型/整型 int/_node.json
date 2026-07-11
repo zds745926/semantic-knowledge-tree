@@ -14,7 +14,7 @@
     {
       "title": "整型 int",
       "uri": "knowledge://py_int_v4",
-      "content_preview": "Python 的 int 是任意精度整数（大整数自动扩展）。支持二进制(0b)、八进制(0o)、十六进制(0x)字面量。"
+      "content_preview": "Python's `int` is an arbitrary-precision integer (large integers are automatically extended). It supports literal values in binary (0b), octal (0o), and hexadecimal (0x) formats. Here’s a brief Python"
     }
   ],
   "related_nodes": []

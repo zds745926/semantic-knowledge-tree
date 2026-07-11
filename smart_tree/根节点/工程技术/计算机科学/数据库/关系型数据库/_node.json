@@ -9,12 +9,12 @@
   "parent": "数据库",
   "children": [
     "SQL 语言",
-    "索引",
-    "事务"
+    "事务",
+    "索引"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "关系型数据库以表(关系)组织数据，支持ACID事务和SQL查询。"
+    "description": "Relational databases organize data into tables (relations) and support ACID transactions and SQL queries. Here is a brief Python code example using the `sqlite3` module to demonstrate creating a table"
   },
   "data_pointers": [],
   "related_nodes": []

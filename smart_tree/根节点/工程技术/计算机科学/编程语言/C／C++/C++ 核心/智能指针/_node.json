@@ -14,7 +14,7 @@
     {
       "title": "智能指针",
       "uri": "knowledge://cpp_smart_ptrs_v4",
-      "content_preview": "unique_ptr独占/shared_ptr共享/weak_ptr弱引用。自动释放防泄漏。"
+      "content_preview": "unique_ptr for exclusive ownership / shared_ptr for shared ownership / weak_ptr for weak references. Automatic release to prevent memory leaks. Here are the corresponding examples in Python, although "
     }
   ],
   "related_nodes": []

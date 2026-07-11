@@ -14,7 +14,7 @@
     {
       "title": "pathlib",
       "uri": "knowledge://py_pathlib_std_v4",
-      "content_preview": "Path对象。Path.cwd()/home()/mkdir/glob/read_text。/运算符拼接。"
+      "content_preview": "Path object. Path.cwd(), home(), mkdir(), glob(), read_text. / operator concatenation. Here is an explanation with corresponding Python code examples: - `Path.cwd()`: Returns the current working direc"
     }
   ],
   "related_nodes": []

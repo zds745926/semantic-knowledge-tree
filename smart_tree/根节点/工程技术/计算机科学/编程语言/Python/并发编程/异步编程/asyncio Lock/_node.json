@@ -14,7 +14,7 @@
     {
       "title": "asyncio Lock",
       "uri": "knowledge://py_asyncio_lock_v4",
-      "content_preview": "asyncio.Lock 异步锁。async with lock:。Semaphore/BoundedSemaphore。"
+      "content_preview": "Asynchronous Lock in asyncio. `async with lock:`. Semaphore and BoundedSemaphore. Here are the corresponding Python code examples: ```python import asyncio # Example of using an asyncio Lock async def"
     }
   ],
   "related_nodes": []

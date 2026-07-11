@@ -14,7 +14,7 @@
     {
       "title": "SQLAlchemy",
       "uri": "knowledge://py_sqlalchemy_v4",
-      "content_preview": "Python ORM框架。声明式映射/会话管理/关系加载。核心SQL表达式语言独立于ORM。"
+      "content_preview": "Python Object-Relational Mapping (ORM) Framework. Declarative mapping/session management/relation loading. Core SQL expression language independent of ORM. Here's a brief Python code example to illust"
     }
   ],
   "related_nodes": []

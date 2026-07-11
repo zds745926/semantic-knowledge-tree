@@ -14,7 +14,7 @@
     {
       "title": "大整数运算",
       "uri": "knowledge://py_int_bignum_v4",
-      "content_preview": "Python int 自动处理任意大整数，可计算 2**1000000 这种天文数字。在RSA密码学中广泛应用。"
+      "content_preview": "Python `int` automatically handles arbitrarily large integers, capable of computing values like 2**1000000, which are astronomical in scale. This feature is widely used in RSA cryptography. Here's a b"
     }
   ],
   "related_nodes": []

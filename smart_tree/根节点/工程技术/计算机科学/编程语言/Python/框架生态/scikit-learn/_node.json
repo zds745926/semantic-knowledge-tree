@@ -14,7 +14,7 @@
     {
       "title": "scikit-learn",
       "uri": "knowledge://py_sklearn_v4",
-      "content_preview": "经典机器学习库。分类/回归/聚类/降维。统一fit/predict API。与NumPy/Pandas无缝集成。"
+      "content_preview": "Classic machine learning library. Classification/regression/clustering/dimensionality reduction. Unified fit/predict API. Seamless integration with NumPy/Pandas. Here's a brief Python code example tha"
     }
   ],
   "related_nodes": []

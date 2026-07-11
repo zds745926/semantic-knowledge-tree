@@ -14,7 +14,7 @@
     {
       "title": "json",
       "uri": "knowledge://py_json_ser_v4",
-      "content_preview": "json.dumps/loads。ensure_ascii=False中文。json.dump/load文件。"
+      "content_preview": "`json.dumps` and `json.loads`. The parameter `ensure_ascii=False` in `json.dumps`. Writing/loading JSON files with `json.dump` and `json.load`. Here's a brief Python code example to illustrate these c"
     }
   ],
   "related_nodes": []

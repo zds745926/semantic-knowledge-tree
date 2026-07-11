@@ -14,7 +14,7 @@
     {
       "title": "systemd",
       "uri": "knowledge://systemd_v4",
-      "content_preview": "系统和服务管理器。systemctl/unit/journalctl。"
+      "content_preview": "System and service management. `systemctl`, `unit`, `journalctl`. Here are brief explanations with related Python code examples where applicable: - **`systemctl`**: This is a command-line tool used to"
     }
   ],
   "related_nodes": []

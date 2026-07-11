@@ -14,7 +14,7 @@
     {
       "title": "calendar",
       "uri": "knowledge://py_calendar_v4",
-      "content_preview": "calendar.month/year日历文本。isleap闰年。weekday星期几。"
+      "content_preview": "Translation: - `calendar.month/day`: Calendar textual representation of the month or day. - `isleap`: Determine if a year is a leap year. - `weekday`: Get the day of the week as an integer (where Mond"
     }
   ],
   "related_nodes": []

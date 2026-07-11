@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Linux权限三位一组(rwx)。chmod/chown管理。sudo授权。"
+    "description": "Linux permissions are represented in three-digit groups (rwx). The `chmod` and `chown` commands manage these permissions. `sudo` is used for authorization. Here's a brief explanation of each concept: "
   },
   "data_pointers": [],
   "related_nodes": []

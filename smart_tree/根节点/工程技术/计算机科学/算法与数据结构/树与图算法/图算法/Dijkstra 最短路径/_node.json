@@ -14,10 +14,8 @@
     {
       "title": "Dijkstra 最短路径",
       "uri": "knowledge://dijkstra_v4",
-      "content_preview": "单源最短路径(非负权)。贪心+优先队列。O(E log V)。导航核心。"
+      "content_preview": "Single-source shortest path (non-negative weights). Greedy + priority queue. O(E log V). Navigation core. Here is a brief explanation with a Python code example for the single-source shortest path alg"
     }
   ],
-  "related_nodes": [
-    "floyd_v4"
-  ]
+  "related_nodes": []
 }

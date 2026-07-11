@@ -14,7 +14,7 @@
     {
       "title": "REST API",
       "uri": "knowledge://rest_api_v4",
-      "content_preview": "资源导向。GET/POST/PUT/DELETE。状态无关。OpenAPI文档。"
+      "content_preview": "Resource-oriented. GET/POST/PUT/DELETE. Stateless. OpenAPI documentation. Here is an additional explanation with a brief Python code example for the `GET` method, which is commonly used in resource-or"
     }
   ],
   "related_nodes": []

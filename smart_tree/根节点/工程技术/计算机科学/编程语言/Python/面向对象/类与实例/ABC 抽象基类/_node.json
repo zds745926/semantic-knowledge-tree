@@ -14,7 +14,7 @@
     {
       "title": "ABC 抽象基类",
       "uri": "knowledge://py_abc_v4",
-      "content_preview": "from abc import ABC,abstractmethod。定义接口契约。子类必须实现抽象方法。collections.abc混入协议。"
+      "content_preview": "Translation: ```python from abc import ABC, abstractmethod # Define an interface contract. class MyInterface(ABC): @abstractmethod def my_method(self): pass # Subclasses must implement the abstract me"
     }
   ],
   "related_nodes": []

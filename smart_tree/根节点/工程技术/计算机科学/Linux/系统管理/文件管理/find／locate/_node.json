@@ -14,7 +14,7 @@
     {
       "title": "find/locate",
       "uri": "knowledge://find_locate_v4",
-      "content_preview": "find按名/型/大查找。locate快但非实时。"
+      "content_preview": "Find by name/type/large. locate is fast but not real-time. To provide a more detailed explanation and include a relevant Python code snippet for the \"find\" concept, we can say: Find by name/type/large"
     }
   ],
   "related_nodes": []

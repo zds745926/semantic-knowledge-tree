@@ -14,7 +14,7 @@
     {
       "title": "事件循环",
       "uri": "knowledge://js_event_loop_v4",
-      "content_preview": "JS单线程。宏任务(setTimeout)和微任务(Promise)。执行顺序控制。"
+      "content_preview": "JS is single-threaded. It manages tasks through macrotasks (e.g., `setTimeout`) and microtasks (e.g., `Promise`). The execution order of these tasks is controlled by the JavaScript event loop. Here's "
     }
   ],
   "related_nodes": []

@@ -8,20 +8,20 @@
   "version": 1,
   "parent": "并发编程",
   "children": [
-    "threading 基础",
-    "线程同步",
-    "Lock 与 RLock",
+    "Barrier",
     "Condition",
     "Event",
-    "Barrier",
+    "Lock 与 RLock",
     "Timer",
-    "线程局部存储 TLS",
     "daemon 线程",
-    "线程安全"
+    "threading 基础",
+    "线程同步",
+    "线程安全",
+    "线程局部存储 TLS"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "threading模块创建线程。GIL限制CPU并行，适合I/O密集型。"
+    "description": "The `threading` module creates threads. GIL limits CPU parallelism, making it suitable for I/O-bound tasks. Here's a brief explanation of the concepts with a Python code example: - **Threading Module*"
   },
   "data_pointers": [],
   "related_nodes": []

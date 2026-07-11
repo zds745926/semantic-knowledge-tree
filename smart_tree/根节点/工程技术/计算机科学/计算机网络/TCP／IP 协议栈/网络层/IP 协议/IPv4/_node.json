@@ -14,7 +14,7 @@
     {
       "title": "IPv4",
       "uri": "knowledge://ipv4_v4",
-      "content_preview": "32位地址点分十进制。A/B/C/D/E类。NAT缓解地址枯竭。"
+      "content_preview": "32-bit address in dotted decimal notation. Class A/B/C/D/E addresses. NAT to alleviate address exhaustion. Python code example for IP address representation (using a class to represent an IP address):"
     }
   ],
   "related_nodes": []

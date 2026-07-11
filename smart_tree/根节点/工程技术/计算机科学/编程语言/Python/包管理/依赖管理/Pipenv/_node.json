@@ -14,7 +14,7 @@
     {
       "title": "Pipenv",
       "uri": "knowledge://py_pipenv_v4",
-      "content_preview": "Pipfile+Pipfile.lock。自动创建虚拟环境。pipenv install/run/shell。"
+      "content_preview": "Pipfile and Pipfile.lock. Automatically creates a virtual environment. pipenv install/run/shell. Here are the translations with added Python code examples for clarity: - **Pipfile**: A file that conta"
     }
   ],
   "related_nodes": []

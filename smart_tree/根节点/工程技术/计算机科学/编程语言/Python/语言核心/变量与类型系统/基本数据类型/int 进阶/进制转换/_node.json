@@ -14,7 +14,7 @@
     {
       "title": "进制转换",
       "uri": "knowledge://py_int_bases_v4",
-      "content_preview": "bin(x)二进制、oct(x)八进制、hex(x)十六进制。int('1010',2)字符串转整数。"
+      "content_preview": "Translation: `bin(x)` binary, `oct(x)` octal, `hex(x)` hexadecimal. `int('1010', 2)` string to integer. Python code example for conversion: ```python # Example of converting between different numeral "
     }
   ],
   "related_nodes": []

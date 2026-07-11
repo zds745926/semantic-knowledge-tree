@@ -14,7 +14,7 @@
     {
       "title": "自顶向下设计",
       "uri": "knowledge://top_down_design_v4",
-      "content_preview": "自顶向下设计将复杂问题逐层分解为更简单的子问题，逐步细化每个模块。"
+      "content_preview": "Top-down design breaks down complex problems into simpler sub-problems layer by layer, progressively refining each module. Here's a brief Python code example to illustrate the top-down approach in sol"
     }
   ],
   "related_nodes": []

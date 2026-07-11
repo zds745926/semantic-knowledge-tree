@@ -12,7 +12,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "内存管理负责分配和回收进程内存空间，通过虚拟内存、分页和分段机制实现。"
+    "description": "Memory management is responsible for allocating and deallocating process memory spaces, which are achieved through mechanisms such as virtual memory, paging, and segmentation. Here's a brief Python co"
   },
   "data_pointers": [],
   "related_nodes": []

@@ -8,9 +8,9 @@
   "version": 1,
   "parent": null,
   "children": [
-    "自然科学",
+    "人文社科",
     "工程技术",
-    "人文社科"
+    "自然科学"
   ],
   "vector_file": "vector.txt",
   "metadata": {},

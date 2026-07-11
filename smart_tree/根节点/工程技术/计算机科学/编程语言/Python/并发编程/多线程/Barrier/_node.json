@@ -14,7 +14,7 @@
     {
       "title": "Barrier",
       "uri": "knowledge://py_barrier_v4",
-      "content_preview": "threading.Barrier 屏障。n个线程全部到达后同时继续。分阶段并行。"
+      "content_preview": "Threading Barrier. All n threads wait until they reach the barrier point and then proceed simultaneously. This allows for phased parallelism. Here's a brief Python code example using `threading.Barrie"
     }
   ],
   "related_nodes": []

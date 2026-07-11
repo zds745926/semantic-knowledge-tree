@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Java是静态类型、面向对象的编译型语言，JVM提供跨平台能力。Java拥有丰富的企业级生态(Spring/Hibernate)，是大型系统的常用语言。"
+    "description": "Java is a statically typed, object-oriented compiled language that provides cross-platform capabilities via the JVM. It boasts a rich enterprise ecosystem (Spring/Hibernate), making it a common choice"
   },
   "data_pointers": [],
   "related_nodes": []

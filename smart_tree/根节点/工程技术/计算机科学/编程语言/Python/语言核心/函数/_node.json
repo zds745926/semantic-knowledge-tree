@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python 函数是组织和复用代码的基本单位。支持位置参数、默认参数、可变参数(*args)和关键字参数(**kwargs)。函数可嵌套定义形成闭包，可赋值传递作为一等公民。"
+    "description": "Python functions are the basic units for organizing and reusing code. They support positional arguments, default parameters, variable-length argument lists (*args), and keyword arguments (**kwargs). F"
   },
   "data_pointers": [],
   "related_nodes": []

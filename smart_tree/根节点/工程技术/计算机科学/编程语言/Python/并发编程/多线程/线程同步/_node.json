@@ -14,7 +14,7 @@
     {
       "title": "线程同步",
       "uri": "knowledge://py_thread_sync_v4",
-      "content_preview": "Lock/RLock/Semaphore/Event/Condition。"
+      "content_preview": "Translation: Lock/RLock/Semaphore/Event/Condition. In the context of concurrent programming and threading in Python, these are synchronization primitives used to control access to shared resources. He"
     }
   ],
   "related_nodes": []

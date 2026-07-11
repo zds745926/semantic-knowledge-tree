@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "编程范式",
   "children": [
+    "多态",
     "封装",
-    "继承",
-    "多态"
+    "继承"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "面向对象编程以类和对象为基本组织单位，核心特性包括封装、继承和多态。Java和C++是面向对象编程的典型代表，广泛应用于大型软件系统开发。"
+    "description": "Object-oriented programming (OOP) is organized around the concepts of classes and objects, with core features including encapsulation, inheritance, and polymorphism. Java and C++ are typical represent"
   },
   "data_pointers": [],
   "related_nodes": []

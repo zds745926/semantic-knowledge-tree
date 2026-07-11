@@ -14,7 +14,7 @@
     {
       "title": "事件驱动架构",
       "uri": "knowledge://event_driven_v4",
-      "content_preview": "组件通过事件通信。松耦合高扩展。Kafka/RabbitMQ。"
+      "content_preview": "Components communicate through events, achieving loose coupling and high scalability. Kafka/RabbitMQ. Here is an example of how components might use RabbitMQ for communication in a Python application:"
     }
   ],
   "related_nodes": []

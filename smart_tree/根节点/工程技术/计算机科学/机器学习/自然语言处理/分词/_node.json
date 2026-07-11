@@ -14,7 +14,7 @@
     {
       "title": "分词",
       "uri": "knowledge://tokenization_v4",
-      "content_preview": "BPE/WordPiece/Unigram。SentencePiece。"
+      "content_preview": "BPE/WordPiece/Unigram. SentencePiece. Here are brief explanations and corresponding Python code examples for each of these concepts: 1. **BPE (Byte Pair Encoding)** - BPE is a subword tokenization met"
     }
   ],
   "related_nodes": []

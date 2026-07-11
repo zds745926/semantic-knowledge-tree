@@ -14,7 +14,7 @@
     {
       "title": "观察者模式",
       "uri": "knowledge://observer_v4",
-      "content_preview": "一对多依赖，状态变化通知所有观察者。发布-订阅。"
+      "content_preview": "One-to-many dependency, state change notifies all observers. Publish-subscribe pattern. In the context of software design patterns, this refers to the Observer pattern. Here is a brief Python code exa"
     }
   ],
   "related_nodes": []

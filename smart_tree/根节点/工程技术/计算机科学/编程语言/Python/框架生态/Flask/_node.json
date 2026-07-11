@@ -14,7 +14,7 @@
     {
       "title": "Flask",
       "uri": "knowledge://py_flask_v4",
-      "content_preview": "微框架：轻量灵活。Jinja2模板/Werkzeug WSGI。蓝图模块化。"
+      "content_preview": "Microframeworks: Lightweight and flexible. Jinja2 template engine/Werkzeug WSGI. Blueprint for modularization. Here is a brief Python code example to illustrate the use of Flask (a popular microframew"
     }
   ],
   "related_nodes": []

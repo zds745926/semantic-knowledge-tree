@@ -14,7 +14,7 @@
     {
       "title": "布隆过滤器",
       "uri": "knowledge://bloom_filter_v4",
-      "content_preview": "位数组+多哈希。判断'一定不在'或'可能在'。防缓存穿透/去重。"
+      "content_preview": "Bit array + multiple hash. Determine if something is 'definitely not' or 'possibly in'. Prevents cache penetration/de-duplication. Here's a brief explanation with Python code examples for the concepts"
     }
   ],
   "related_nodes": []

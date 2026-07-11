@@ -14,7 +14,7 @@
     {
       "title": "HTTP 状态码",
       "uri": "knowledge://http_status_v4",
-      "content_preview": "2xx成功/3xx重定向/4xx客户端错误/5xx服务端错误。"
+      "content_preview": "Translation: HTTP status codes are categorized into four classes: - 2xx Success - 3xx Redirection - 4xx Client Error - 5xx Server Error Python code example for checking HTTP response status: ```python"
     }
   ],
   "related_nodes": []

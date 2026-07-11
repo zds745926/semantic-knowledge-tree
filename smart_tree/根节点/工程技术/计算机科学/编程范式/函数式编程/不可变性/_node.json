@@ -14,7 +14,7 @@
     {
       "title": "不可变性",
       "uri": "knowledge://immutability_v4",
-      "content_preview": "数据创建后不可修改，更新操作返回新对象。避免副作用简化并发。"
+      "content_preview": "Data created is immutable; update operations return new objects. This avoids side effects and simplifies concurrent operations. Python code example: ```python class ImmutableData: def __init__(self, v"
     }
   ],
   "related_nodes": []

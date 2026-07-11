@@ -14,7 +14,7 @@
     {
       "title": "Goroutine",
       "uri": "knowledge://go_goroutine_v4",
-      "content_preview": "go func()启动轻量级协程。百万并发不费力。栈初始小可动态扩展。"
+      "content_preview": "The `go` function启动s lightweight goroutines. Handling millions of concurrent requests is effortless. The stack size starts small and can dynamically expand. Here's a brief Python code example to illus"
     }
   ],
   "related_nodes": []

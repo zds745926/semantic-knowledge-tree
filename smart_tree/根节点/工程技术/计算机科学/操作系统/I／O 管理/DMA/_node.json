@@ -14,7 +14,7 @@
     {
       "title": "DMA",
       "uri": "knowledge://dma_v4",
-      "content_preview": "设备直接读写内存，不占CPU。传输完成中断通知。高速设备必需。"
+      "content_preview": "The device directly reads and writes memory without occupying the CPU. Transmission completion triggers an interrupt notification. This is essential for high-speed devices. Python code example (to ill"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "计数排序",
       "uri": "knowledge://counting_sort_v4",
-      "content_preview": "统计出现次数→累加→输出。O(n+k)，限整数且范围不大。"
+      "content_preview": "Count occurrences → accumulate → output. O(n+k), limited to integers with not too large a range. Python code example: ```python from collections import Counter def count_and_accumulate(numbers): # Cou"
     }
   ],
   "related_nodes": []

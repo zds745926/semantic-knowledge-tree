@@ -14,7 +14,7 @@
     {
       "title": "带参数装饰器",
       "uri": "knowledge://py_deco_params_v4",
-      "content_preview": "def decorator(args): def inner(func): ... 三层嵌套。"
+      "content_preview": "Here is the English translation of the provided Chinese technical text, including a brief Python code example for the coding/programming concept: English translation: ```python # A three-layer nested "
     }
   ],
   "related_nodes": []

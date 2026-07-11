@@ -14,7 +14,7 @@
     {
       "title": "os 模块",
       "uri": "knowledge://py_os_module_v4",
-      "content_preview": "os模块提供操作系统接口：文件操作(os.remove/rename)、目录遍历(os.walk)、环境变量(os.environ)。"
+      "content_preview": "The `os` module provides operating system interfaces: file operations (e.g., `os.remove()`, `os.rename()`), directory traversal (`os.walk()`), and environment variables (`os.environ`). Here are brief "
     }
   ],
   "related_nodes": []

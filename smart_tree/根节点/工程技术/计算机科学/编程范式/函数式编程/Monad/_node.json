@@ -14,7 +14,7 @@
     {
       "title": "Monad",
       "uri": "knowledge://monad_v4",
-      "content_preview": "Monad封装计算上下文。Maybe处理空值，Either处理错误，IO处理副作用。"
+      "content_preview": "Monads encapsulate computational contexts. `Maybe` handles null values, `Either` handles errors, and `IO` deals with side effects. Here are brief Python code examples for each concept: 1. **Monad (usi"
     }
   ],
   "related_nodes": []

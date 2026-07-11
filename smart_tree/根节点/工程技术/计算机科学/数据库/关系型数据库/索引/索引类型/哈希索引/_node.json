@@ -14,7 +14,7 @@
     {
       "title": "哈希索引",
       "uri": "knowledge://hash_index_v4",
-      "content_preview": "键哈希映射。仅等值查询。Memery引擎默认。O(1)查询。"
+      "content_preview": "Key Hash Mapping. Only equal value queries. Memery engine by default. O(1) query. For the technical term \"Memery engine,\" it seems there might be a typo, as the correct term is likely \"Memory engine.\""
     }
   ],
   "related_nodes": []

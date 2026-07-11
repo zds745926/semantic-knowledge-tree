@@ -9,12 +9,12 @@
   "parent": "内置数据结构",
   "children": [
     "列表基础",
-    "列表方法",
-    "列表推导式"
+    "列表推导式",
+    "列表方法"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "列表是可变有序序列，支持索引、切片和方法操作。列表推导式是Python的标志性语法。"
+    "description": "Lists are mutable ordered sequences that support indexing, slicing, and method operations. List comprehensions are a distinctive syntax of Python. Here's an example to illustrate the use of list compr"
   },
   "data_pointers": [],
   "related_nodes": []

@@ -9,13 +9,13 @@
   "parent": "C/C++",
   "children": [
     "C++ OOP",
-    "模板",
     "STL 标准库",
-    "智能指针"
+    "智能指针",
+    "模板"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "C++核心包括OOP、模板和STL。智能指针RAII管理资源。"
+    "description": "The core of C++ includes OOP (Object-Oriented Programming), templates, and STL (Standard Template Library). Smart pointers using RAII manage resources. Here are brief Python code examples for some rel"
   },
   "data_pointers": [],
   "related_nodes": []

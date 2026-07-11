@@ -14,7 +14,7 @@
     {
       "title": "字符串表示",
       "uri": "knowledge://py_magic_str_v4",
-      "content_preview": "__str__用户字符串、__repr__开发字符串、__format__格式化。"
+      "content_preview": "Here is the translation with brief explanations and corresponding Python code examples for each term: 1. **`__str__` User String**: - This method returns a string that represents the object in a way t"
     }
   ],
   "related_nodes": []

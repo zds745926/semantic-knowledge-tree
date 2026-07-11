@@ -14,7 +14,7 @@
     {
       "title": "偏函数 partial",
       "uri": "knowledge://py_partial_v4",
-      "content_preview": "functools.partial固定部分参数，返回新可调用对象。"
+      "content_preview": "The `functools.partial` function fixes some of the parameters of a function and returns a new callable object. Here is an example to illustrate this: ```python import functools # Define a sample funct"
     }
   ],
   "related_nodes": []

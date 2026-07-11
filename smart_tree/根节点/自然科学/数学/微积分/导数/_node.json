@@ -14,7 +14,7 @@
     {
       "title": "导数",
       "uri": "knowledge://derivative_v4",
-      "content_preview": "导数 f'(x)=lim_{h→0}[f(x+h)-f(x)]/h 表示函数在某点的瞬时变化率。"
+      "content_preview": "The derivative \\( f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\) represents the instantaneous rate of change of a function at a particular point. Here is a brief Python code example using the sympy"
     }
   ],
   "related_nodes": []

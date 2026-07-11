@@ -8,15 +8,15 @@
   "version": 1,
   "parent": "编程范式",
   "children": [
-    "纯函数",
+    "Monad",
     "不可变性",
-    "高阶函数",
     "柯里化",
-    "Monad"
+    "纯函数",
+    "高阶函数"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "函数式编程以纯函数为核心，强调不可变性和无副作用。核心概念包括纯函数、高阶函数、柯里化和Monad。Haskell、Scala、Clojure等语言支持函数式编程，现代语言(JS/Python/Kotlin)也吸收了许多函数式特性。"
+    "description": "Functional programming centers around pure functions, emphasizing immutability and side-effect-free operations. Key concepts include pure functions, higher-order functions, currying, and monads. Langu"
   },
   "data_pointers": [],
   "related_nodes": []

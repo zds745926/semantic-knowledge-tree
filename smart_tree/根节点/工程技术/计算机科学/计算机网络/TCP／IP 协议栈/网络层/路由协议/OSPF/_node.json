@@ -14,7 +14,7 @@
     {
       "title": "OSPF",
       "uri": "knowledge://ospf_v4",
-      "content_preview": "链路状态路由。Dijkstra SPF计算路径。区域分层。收敛快。"
+      "content_preview": "Link-state routing. Dijkstra's SPF algorithm calculates paths. Area hierarchy. Fast convergence. Here is a brief explanation with a related Python code example for the Dijkstra's SPF algorithm: ```pyt"
     }
   ],
   "related_nodes": []

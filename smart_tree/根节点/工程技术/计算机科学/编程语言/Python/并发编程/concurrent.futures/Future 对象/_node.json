@@ -14,7 +14,7 @@
     {
       "title": "Future 对象",
       "uri": "knowledge://py_future_object_v4",
-      "content_preview": "Future.result()阻塞获取结果。done()/cancelled()。add_done_callback。"
+      "content_preview": "The `Future.result()` method blocks until the result is available and then retrieves it. The `done()` and `cancelled()` methods check if the future has completed or been cancelled, respectively. The `"
     }
   ],
   "related_nodes": []

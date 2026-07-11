@@ -14,7 +14,7 @@
     {
       "title": "zoneinfo",
       "uri": "knowledge://py_zoneinfo_v4",
-      "content_preview": "zoneinfo.ZoneInfo(3.9+) IANA时区。datetime.replace(tzinfo=)。"
+      "content_preview": "zoneinfo.ZoneInfo(3.9+) IANA Time Zone. datetime.replace(tzinfo=). Here is an example of how you might use `ZoneInfo` and `replace` in Python: ```python from datetime import datetime import zoneinfo #"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "建造者模式",
       "uri": "knowledge://builder_v4",
-      "content_preview": "分步构造复杂对象。链式调用。StringBuilder/Lombok@Builder。"
+      "content_preview": "Step-by-step construction of complex objects. Method chaining. Using `StringBuilder` or Lombok's `@Builder`. ### Example with `StringBuilder`: ```python # Python equivalent using a class and method ch"
     }
   ],
   "related_nodes": []

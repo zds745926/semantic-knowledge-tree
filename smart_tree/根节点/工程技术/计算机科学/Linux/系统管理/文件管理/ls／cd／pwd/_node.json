@@ -14,7 +14,7 @@
     {
       "title": "ls/cd/pwd",
       "uri": "knowledge://ls_cd_pwd_v4",
-      "content_preview": "ls -l详细 -a隐藏 -h可读。cd ~回家。pwd当前路径。"
+      "content_preview": "Translation: `ls -l` detailed view - `-a` show hidden files - `-h` human-readable file sizes. `cd ~` go home. `pwd` print working directory. Python code example for `ls -l` with `-a` and `-h` (Note th"
     }
   ],
   "related_nodes": []

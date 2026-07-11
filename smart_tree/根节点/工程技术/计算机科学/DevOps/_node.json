@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "容器化",
+    "云原生基础",
     "可观测性",
-    "云原生基础"
+    "容器化"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "DevOps通过自动化工具和文化实践，实现开发和运维的协作。核心包括容器化、Kubernetes和可观测性。"
+    "description": "DevOps leverages automation tools and cultural practices to facilitate collaboration between development and operations. Key components include containerization, Kubernetes, and observability. Here's "
   },
   "data_pointers": [],
   "related_nodes": []

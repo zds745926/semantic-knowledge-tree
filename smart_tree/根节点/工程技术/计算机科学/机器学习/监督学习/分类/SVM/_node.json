@@ -14,7 +14,7 @@
     {
       "title": "SVM",
       "uri": "knowledge://svm_v4",
-      "content_preview": "最大间隔超平面。核技巧RBF。适合小规模高维数据。"
+      "content_preview": "Maximum Margin Hyperplane. Radial Basis Function (RBF) Kernel. Suitable for small-scale high-dimensional data. Here is an explanation with a brief Python code example using the concepts mentioned: - *"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "策略模式",
       "uri": "knowledge://strategy_v4",
-      "content_preview": "定义可互相替换的算法族。消除if-else。"
+      "content_preview": "Define a family of algorithms that can be used interchangeably. Eliminate if-else statements. Python code example: Suppose we have an algorithm to process different types of data, and instead of using"
     }
   ],
   "related_nodes": []

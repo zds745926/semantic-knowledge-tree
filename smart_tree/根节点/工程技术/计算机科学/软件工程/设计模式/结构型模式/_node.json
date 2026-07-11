@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "设计模式",
   "children": [
-    "适配器模式",
     "代理模式",
-    "装饰器模式"
+    "装饰器模式",
+    "适配器模式"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "结构型模式关注类和对象的组合。"
+    "description": "Structural design patterns focus on the composition of classes and objects. Here is an example using Python to illustrate the Adapter pattern, which is a structural design pattern: ```python from abc "
   },
   "data_pointers": [],
   "related_nodes": []

@@ -14,10 +14,8 @@
     {
       "title": "CAP 定理",
       "uri": "knowledge://cap_v4",
-      "content_preview": "Consistency/Availability/Partition tolerance 三者不可兼得。"
+      "content_preview": "Consistency, Availability, and Partition Tolerance cannot all be achieved simultaneously. In the context of distributed systems, this principle is often referred to as the CAP theorem. Here's a brief "
     }
   ],
-  "related_nodes": [
-    "raft_v4"
-  ]
+  "related_nodes": []
 }

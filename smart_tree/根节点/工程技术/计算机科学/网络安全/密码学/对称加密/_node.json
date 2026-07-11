@@ -14,7 +14,7 @@
     {
       "title": "对称加密",
       "uri": "knowledge://symmetric_enc_v4",
-      "content_preview": "AES/Rijndael。GCM模式推荐。密钥分发问题。"
+      "content_preview": "AES/Rijndael. GCM mode is recommended. Key distribution issues. Python code example for using AES in GCM mode: ```python from Crypto.Cipher import AES from Crypto.Random import get_random_bytes from C"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "协程 coroutine",
       "uri": "knowledge://py_coroutine_v4",
-      "content_preview": "async def 协程函数。await挂起等待。协程是Python异步编程的核心。"
+      "content_preview": "English translation: ```python async def coroutine_function(): await suspended_wait  # Await is used to suspend the function until awaited object is resolved. # Example usage: import asyncio async def"
     }
   ],
   "related_nodes": []

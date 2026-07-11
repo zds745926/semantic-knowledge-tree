@@ -14,10 +14,8 @@
     {
       "title": "B+ 树索引",
       "uri": "knowledge://btree_index_v4",
-      "content_preview": "所有数据在叶子节点，内部只有键值指针。叶子链表。InnoDB聚簇索引。"
+      "content_preview": "All data resides in the leaf nodes, with internal nodes containing only key-value pointers. A leaf-linked list. InnoDB Clustered Index. To provide a more detailed explanation and include a Python code"
     }
   ],
-  "related_nodes": [
-    "hash_index_v4"
-  ]
+  "related_nodes": []
 }

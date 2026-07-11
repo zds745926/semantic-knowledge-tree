@@ -14,11 +14,8 @@
     {
       "title": "事件循环",
       "uri": "knowledge://py_event_loop_v4",
-      "content_preview": "asyncio.run()创建事件循环。loop.run_until_complete。get_event_loop。"
+      "content_preview": "The `asyncio.run()` function creates an event loop and runs the given coroutine until it completes. It is equivalent to using `loop = asyncio.get_event_loop(); loop.run_until_complete(coroutine)`. Her"
     }
   ],
-  "related_nodes": [
-    "py_asyncio_task_v4",
-    "py_coroutine_v4"
-  ]
+  "related_nodes": []
 }

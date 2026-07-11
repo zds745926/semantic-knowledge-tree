@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "HTTP是Web的基石，请求-响应模型，无状态。HTTP/1.1文本协议。"
+    "description": "HTTP is the foundation of the Web, operating on a request-response model and being stateless. The HTTP/1.1 text protocol. To provide a brief Python code example related to this concept, here's how you"
   },
   "data_pointers": [],
   "related_nodes": []

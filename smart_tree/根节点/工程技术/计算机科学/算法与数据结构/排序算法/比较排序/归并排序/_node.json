@@ -14,7 +14,7 @@
     {
       "title": "归并排序",
       "uri": "knowledge://merge_sort_v4",
-      "content_preview": "分治：对半分割→递归→合并。稳定O(n log n)。需O(n)空间。外部排序标准。"
+      "content_preview": "Divide and Conquer: Split in half → Recursion → Merge. Stable O(n log n). Requires O(n) space. External sorting criterion. Here's a brief Python code example for the merge step of the divide and conqu"
     }
   ],
   "related_nodes": []

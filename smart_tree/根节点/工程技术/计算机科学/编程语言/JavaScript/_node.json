@@ -12,7 +12,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "JavaScript是Web的核心编程语言，单线程非阻塞，事件驱动。ES6+带来class/箭头函数/Promise。"
+    "description": "JavaScript is the core programming language for web development, characterized by being single-threaded and non-blocking, with an event-driven model. ES6+ introduced classes, arrow functions, and Prom"
   },
   "data_pointers": [],
   "related_nodes": []

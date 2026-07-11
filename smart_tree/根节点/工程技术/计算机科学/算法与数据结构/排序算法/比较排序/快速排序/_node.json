@@ -14,11 +14,8 @@
     {
       "title": "快速排序",
       "uri": "knowledge://quick_sort_v4",
-      "content_preview": "分治：选基准(pivot)分区。平均O(n log n)，最坏O(n²)。原地不稳定。"
+      "content_preview": "Divide and Conquer: Selecting a pivot to partition. Average O(n log n), worst-case O(n²). In-place but unstable. Python code example: ```python def quicksort(arr): if len(arr) <= 1: return arr else: p"
     }
   ],
-  "related_nodes": [
-    "merge_sort_v4",
-    "heap_sort_v4"
-  ]
+  "related_nodes": []
 }

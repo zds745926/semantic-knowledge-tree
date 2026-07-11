@@ -14,7 +14,7 @@
     {
       "title": "range 详解",
       "uri": "knowledge://py_range_v4",
-      "content_preview": "range(stop)/range(start,stop)/range(start,stop,step)。惰性求值。"
+      "content_preview": "The `range(stop)` / `range(start, stop)` / `range(start, stop, step)` functions. Lazy evaluation. Here's a brief explanation with Python code examples: - **`range(stop)`**: Generates a sequence of num"
     }
   ],
   "related_nodes": []

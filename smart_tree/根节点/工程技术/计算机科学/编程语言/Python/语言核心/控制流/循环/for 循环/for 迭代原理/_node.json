@@ -14,7 +14,7 @@
     {
       "title": "for 迭代原理",
       "uri": "knowledge://py_iter_for_v4",
-      "content_preview": "for x in iterable: 等价于 iter()→__next__()直到StopIteration。"
+      "content_preview": "The given Chinese technical text translates to: \"For `x` in `iterable`: is equivalent to calling `iter()` → `__next__()` until `StopIteration`. Here's a brief Python code example to illustrate this co"
     }
   ],
   "related_nodes": []

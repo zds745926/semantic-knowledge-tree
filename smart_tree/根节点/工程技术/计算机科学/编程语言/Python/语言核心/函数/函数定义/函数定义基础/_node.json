@@ -14,7 +14,7 @@
     {
       "title": "函数定义基础",
       "uri": "knowledge://py_def_basic_v4",
-      "content_preview": "def 函数名(参数): 函数体。位置参数、默认参数、*args、**kwargs。"
+      "content_preview": "Translation: A function in Python is defined as `def function_name(parameters): function_body`. It can include positional arguments, default arguments, *args, and **kwargs. Example with brief explanat"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "HTTP核心包括请求方法、状态码和缓存机制。"
+    "description": "HTTP core includes request methods, status codes, and caching mechanisms. To provide a more comprehensive explanation, here are some brief descriptions of these components: 1. **Request Methods**: The"
   },
   "data_pointers": [],
   "related_nodes": []

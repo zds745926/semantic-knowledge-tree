@@ -14,7 +14,7 @@
     {
       "title": "高阶函数",
       "uri": "knowledge://higher_order_v4",
-      "content_preview": "高阶函数接受函数作为参数或返回函数。map/filter/reduce是典型例子。"
+      "content_preview": "Higher-order functions accept functions as parameters or return functions. `map`, `filter`, and `reduce` are typical examples. Here's a brief explanation of each with Python code examples: 1. **Map**:"
     }
   ],
   "related_nodes": []

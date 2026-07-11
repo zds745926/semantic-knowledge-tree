@@ -14,7 +14,7 @@
     {
       "title": "线程安全",
       "uri": "knowledge://py_thread_safety_v4",
-      "content_preview": "原子操作(int/float赋值)线程安全。列表等非原子。threading.settrace。"
+      "content_preview": "Atomic operations (int/float assignments) are thread-safe. Lists and similar non-atomic structures are not. `threading.settrace` is used to set a trace function for all threads. Python code example: `"
     }
   ],
   "related_nodes": []

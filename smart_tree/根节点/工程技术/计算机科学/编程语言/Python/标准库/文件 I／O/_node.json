@@ -14,7 +14,7 @@
     {
       "title": "文件 I/O",
       "uri": "knowledge://py_fileio_module_v4",
-      "content_preview": "open()内置函数。r/w/a/b/t模式。with语句自动关闭。TextIOWrapper/BufferedReader等底层IO类。"
+      "content_preview": "Built-in `open()` function. Modes like 'r', 'w', 'a', 'b', and 't'. The `with` statement automatically closes the file. Classes like `TextIOWrapper` and `BufferedReader` for low-level I/O operations. "
     }
   ],
   "related_nodes": []

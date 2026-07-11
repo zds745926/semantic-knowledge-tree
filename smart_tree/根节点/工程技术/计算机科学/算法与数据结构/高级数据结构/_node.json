@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "算法与数据结构",
   "children": [
-    "并查集",
-    "线段树",
     "字典树 Trie",
-    "布隆过滤器"
+    "布隆过滤器",
+    "并查集",
+    "线段树"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "高级数据结构解决特定场景问题，包括并查集、线段树、字典树和布隆过滤器。"
+    "description": "Advanced data structures solve specific scenario problems, including disjoint-set (union-find), segment trees, tries, and Bloom filters. Here are brief Python code examples for each: 1. **Disjoint-Set"
   },
   "data_pointers": [],
   "related_nodes": []

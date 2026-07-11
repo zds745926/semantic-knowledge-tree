@@ -14,7 +14,7 @@
     {
       "title": "布尔与 None",
       "uri": "knowledge://py_bool_none_v4",
-      "content_preview": "bool 是 int 的子类，True/False 值为 1/0。None 表示空值。条件中 False/0/''/[]/{} 均为假。"
+      "content_preview": "In this context, `bool` is a subclass of `int`, with `True` and `False` values corresponding to `1` and `0`. `None` represents a null value. In conditions, `False`, `0`, `''` (empty string), `[]` (emp"
     }
   ],
   "related_nodes": []

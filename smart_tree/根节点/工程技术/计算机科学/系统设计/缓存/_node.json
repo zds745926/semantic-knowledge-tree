@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "系统设计",
   "children": [
-    "缓存策略",
-    "分布式缓存"
+    "分布式缓存",
+    "缓存策略"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "缓存提升系统性能。核心策略包括Cache Aside和分布式缓存。"
+    "description": "Caching enhances system performance. Key strategies include Cache Aside and distributed caching. Here are brief explanations for each strategy with corresponding Python code examples: 1. **Cache Aside"
   },
   "data_pointers": [],
   "related_nodes": []

@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "条件判断通过 if、elif、else 关键字实现分支逻辑。Python 无 switch/case。"
+    "description": "Condition judgment is implemented through branch logic using the `if`, `elif`, and `else` keywords in Python. There is no built-in `switch/case` statement. Here's a brief example of how to use these k"
   },
   "data_pointers": [],
   "related_nodes": []

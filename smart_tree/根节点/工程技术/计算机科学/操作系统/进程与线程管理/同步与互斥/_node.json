@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "同步机制确保并发执行的正确性和数据一致性。"
+    "description": "Synchronization mechanisms ensure the correctness of concurrent execution and data consistency. To illustrate a synchronization mechanism in Python, let's consider an example using threading where we "
   },
   "data_pointers": [],
   "related_nodes": []

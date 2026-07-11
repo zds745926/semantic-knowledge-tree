@@ -14,7 +14,7 @@
     {
       "title": "DNS",
       "uri": "knowledge://dns_v4",
-      "content_preview": "域名→IP。递归/迭代查询。A/AAAA/CNAME/MX记录。根服务器13组。"
+      "content_preview": "Domain Name → IP. Recursive/Iterative Query. A/A AAA/CNAME/MX Records. 13 Root Server Groups. Here's a brief explanation with Python code examples for some of the concepts: Recursive/Iterative Query: "
     }
   ],
   "related_nodes": []

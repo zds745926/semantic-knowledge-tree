@@ -9,12 +9,12 @@
   "parent": "计算机理论",
   "children": [
     "布尔代数",
-    "逻辑门电路",
-    "触发器和寄存器"
+    "触发器和寄存器",
+    "逻辑门电路"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "数字逻辑研究用电子电路实现布尔运算的原理，包括布尔代数、逻辑门和触发器。数字逻辑是计算机硬件的基础，从简单的逻辑门到复杂的CPU都是数字逻辑的工程实现。"
+    "description": "Digital logic studies the principles of implementing Boolean operations using electronic circuits, including Boolean algebra, logic gates, and flip-flops. Digital logic forms the foundation of compute"
   },
   "data_pointers": [],
   "related_nodes": []

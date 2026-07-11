@@ -14,7 +14,7 @@
     {
       "title": "pip uninstall",
       "uri": "knowledge://py_pip_uninstall_v4",
-      "content_preview": "pip uninstall package 卸载。pip uninstall -y 自动确认。"
+      "content_preview": "Uninstalling a package using pip involves the command `pip uninstall package`. For automatic confirmation, you can use `pip uninstall -y`. Here is a brief explanation and an example of how this might "
     }
   ],
   "related_nodes": []

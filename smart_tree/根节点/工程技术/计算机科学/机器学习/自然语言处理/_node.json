@@ -9,12 +9,12 @@
   "parent": "机器学习",
   "children": [
     "分词",
-    "词嵌入",
-    "大语言模型 LLM"
+    "大语言模型 LLM",
+    "词嵌入"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "NLP让计算机理解、生成和处理人类语言。"
+    "description": "NLP enables computers to understand, generate, and process human language. Here is a brief Python code example using the `nltk` library for tokenizing text, which is a fundamental step in natural lang"
   },
   "data_pointers": [],
   "related_nodes": []

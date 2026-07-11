@@ -14,7 +14,7 @@
     {
       "title": "Kafka",
       "uri": "knowledge://kafka_v4",
-      "content_preview": "Topic/Partition/Offset。高吞吐顺序IO。发布-订阅。"
+      "content_preview": "Topic/Partition/Offset. High-throughput sequential IO. Publish-Subscribe. Here are the technical terms translated with brief Python code examples where applicable: 1. **Topic/Partition/Offset** - In d"
     }
   ],
   "related_nodes": []

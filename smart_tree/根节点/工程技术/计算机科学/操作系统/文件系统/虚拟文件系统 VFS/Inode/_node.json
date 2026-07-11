@@ -14,7 +14,7 @@
     {
       "title": "Inode",
       "uri": "knowledge://inode_v4",
-      "content_preview": "存储文件元数据。不存文件名。硬链接计数管理生命周期。"
+      "content_preview": "Store file metadata. Do not store filenames. Hard link count manages the lifecycle. Python code example for managing hard links: ```python import os def create_hard_link(original_file, new_link_name):"
     }
   ],
   "related_nodes": []

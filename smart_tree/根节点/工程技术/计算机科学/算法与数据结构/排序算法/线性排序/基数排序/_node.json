@@ -14,7 +14,7 @@
     {
       "title": "基数排序",
       "uri": "knowledge://radix_sort_v4",
-      "content_preview": "按位从低到高排序(每位稳定排序)。O(d·n)。适用整数/定长字符串。"
+      "content_preview": "Bitwise sort from low to high (bit stable sort). O(d·n). Applicable for integers/fixed-length strings. Here is a brief Python code example using a bit-stable sorting algorithm, such as radix sort: ```"
     }
   ],
   "related_nodes": []

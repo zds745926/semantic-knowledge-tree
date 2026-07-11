@@ -14,7 +14,7 @@
     {
       "title": "模板",
       "uri": "knowledge://cpp_templates_v4",
-      "content_preview": "template<typename T>泛型。模板特化。模板元编程编译期计算。"
+      "content_preview": "Template<typename T> Generic Template. Template Specialization. Compile-Time Metaprogramming. Here are the explanations with a brief Python code example for each concept: 1. **Generic Template (Templa"
     }
   ],
   "related_nodes": []

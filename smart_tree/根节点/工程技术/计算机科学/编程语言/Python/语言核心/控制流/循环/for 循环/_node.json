@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "循环",
   "children": [
-    "range 详解",
     "enumerate 详解",
+    "for 循环进阶",
     "for 迭代原理",
-    "for 循环进阶"
+    "range 详解"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "for 循环遍历可迭代对象。range生成等差数列，enumerate带索引遍历。for 循环的迭代原理基于迭代器协议。"
+    "description": "The `for` loop iterates over iterable objects. The `range()` function generates an arithmetic sequence, while `enumerate()` is used to iterate over a sequence with index tracking. The iteration princi"
   },
   "data_pointers": [],
   "related_nodes": []

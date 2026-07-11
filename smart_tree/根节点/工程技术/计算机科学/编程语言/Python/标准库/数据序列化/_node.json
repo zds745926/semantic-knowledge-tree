@@ -8,15 +8,15 @@
   "version": 1,
   "parent": "标准库",
   "children": [
+    "configparser",
+    "csv",
     "json",
     "pickle",
-    "csv",
-    "xml",
-    "configparser"
+    "xml"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python支持多种数据序列化格式。json跨语言、pickle Python专用、csv表格、configparser配置。"
+    "description": "Python supports multiple data serialization formats. json is cross-language and platform-independent; pickle is specific to Python; csv is used for tabular data; configparser is used for configuration"
   },
   "data_pointers": [],
   "related_nodes": []

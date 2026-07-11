@@ -14,7 +14,7 @@
     {
       "title": "Mock 模拟",
       "uri": "knowledge://py_mock_v4",
-      "content_preview": "unittest.mock替换外部依赖。Mock/MagicMock/patch。side_effect/return_value控制行为。"
+      "content_preview": "unittest.mock replaces external dependencies. It includes `Mock`, `MagicMock`, and `patch`. `side_effect` and `return_value` are used to control behavior. Here's a brief explanation with Python code e"
     }
   ],
   "related_nodes": []

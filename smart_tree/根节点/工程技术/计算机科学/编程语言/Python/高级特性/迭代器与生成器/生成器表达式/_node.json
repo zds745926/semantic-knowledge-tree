@@ -14,7 +14,7 @@
     {
       "title": "生成器表达式",
       "uri": "knowledge://py_gen_expression_v4",
-      "content_preview": "(x**2 for x in range(10)) 惰性求值，比列表推导式省内存。"
+      "content_preview": "The given Chinese text translates to: \"This is a lazy evaluation, which saves memory compared to list comprehension. For example, in Python: ```python gen = (x**2 for x in range(10)) ``` This generato"
     }
   ],
   "related_nodes": []

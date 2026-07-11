@@ -14,7 +14,7 @@
     {
       "title": "参数传递机制",
       "uri": "knowledge://py_param_passing_v4",
-      "content_preview": "Python 参数传递是'对象引用传递'。可变对象可被修改，不可变对象不可修改。"
+      "content_preview": "Python parameter passing is 'pass by object reference'. Mutable objects can be modified, while immutable objects cannot be changed. To illustrate this concept with a brief Python code example: ```pyth"
     }
   ],
   "related_nodes": []

@@ -14,10 +14,8 @@
     {
       "title": "广度优先搜索 BFS",
       "uri": "knowledge://bfs_v4",
-      "content_preview": "用队列逐层遍历。找最短路径。O(V+E)。应用：迷宫/社交网络。"
+      "content_preview": "Breadth-first traversal using a queue to find the shortest path. Time complexity: O(V + E). Applications: mazes/social networks. Python code example for breadth-first search (BFS): ```python from coll"
     }
   ],
-  "related_nodes": [
-    "dfs_v4"
-  ]
+  "related_nodes": []
 }

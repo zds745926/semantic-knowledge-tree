@@ -14,7 +14,7 @@
     {
       "title": "逻辑门电路",
       "uri": "knowledge://gate_circuits_v4",
-      "content_preview": "基本逻辑门：与门(AND)、或门(OR)、非门(NOT)、与非门(NAND)。与非门是通用门。"
+      "content_preview": "Basic logic gates: AND gate, OR gate, NOT gate, NAND gate. The NAND gate is a universal gate. Here are brief Python code examples for each of these gates: 1. **NOT Gate**: ```python def not_gate(input"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "Bash 基础",
       "uri": "knowledge://bash_basics_v4",
-      "content_preview": "#!/bin/bash。变量${var}。$0/$1/$#/$?。$(cmd)替换。"
+      "content_preview": "#!/bin/bash. Variable ${var}. $0/$1/$#/$. Command substitution: $(cmd). Here's an explanation with a brief Python code example for each concept: - `#!/bin/bash`: This is a shebang line indicating that"
     }
   ],
   "related_nodes": []

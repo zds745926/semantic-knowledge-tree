@@ -14,7 +14,7 @@
     {
       "title": "grep",
       "uri": "knowledge://grep_v4",
-      "content_preview": "grep模式搜索。常用：-i忽略 -r递归 -n行号 -v反向。"
+      "content_preview": "Grep pattern search. Common options: - `-i` ignore case - `-r` recursive - `-n` line numbers - `-v` reverse match Here is a brief Python code example to demonstrate using the `re` module for similar f"
     }
   ],
   "related_nodes": []

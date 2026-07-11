@@ -14,7 +14,7 @@
     {
       "title": "Process 类",
       "uri": "knowledge://py_process_class_v4",
-      "content_preview": "multiprocessing.Process。target/args。start()/join()/terminate()。"
+      "content_preview": "multiprocessing.Process. target/args. start()/join()/terminate(). Here are the explanations and corresponding Python code examples: 1. **multiprocessing.Process**: This is a class in Python's `multipr"
     }
   ],
   "related_nodes": []

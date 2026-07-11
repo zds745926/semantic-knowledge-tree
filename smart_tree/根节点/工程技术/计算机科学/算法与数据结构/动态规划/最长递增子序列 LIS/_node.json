@@ -14,7 +14,7 @@
     {
       "title": "最长递增子序列 LIS",
       "uri": "knowledge://lis_v4",
-      "content_preview": "O(n²)DP。二分优化O(n log n)。合唱队形/股票分析。"
+      "content_preview": "O(n²) DP. Binary search optimization to O(n log n). Singing team formation / Stock analysis. ### Explanation and Example 1. **O(n²) DP (Dynamic Programming):** - This refers to a dynamic programming s"
     }
   ],
   "related_nodes": []

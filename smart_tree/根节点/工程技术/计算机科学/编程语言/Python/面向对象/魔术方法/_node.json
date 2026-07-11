@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "魔术方法是Python对象模型的核心，以双下划线命名(__xxx__)，实现运算符重载和协议。"
+    "description": "Magic methods are at the core of the Python object model, named with double underscores (e.g., `__xxx__`), and are used to overload operators and implement protocols. Here's a brief example in Python "
   },
   "data_pointers": [],
   "related_nodes": []

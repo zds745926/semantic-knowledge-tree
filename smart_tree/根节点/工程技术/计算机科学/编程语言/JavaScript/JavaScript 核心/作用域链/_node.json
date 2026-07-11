@@ -14,7 +14,7 @@
     {
       "title": "作用域链",
       "uri": "knowledge://js_scope_chain_v4",
-      "content_preview": "变量查找沿作用域链向上。let/const块级作用域。闭包保持外部引用。"
+      "content_preview": "Variable lookup traverses up the scope chain. `let` and `const` define block-level scope. Closures retain references to external variables. Here's a brief Python code example to illustrate these conce"
     }
   ],
   "related_nodes": []

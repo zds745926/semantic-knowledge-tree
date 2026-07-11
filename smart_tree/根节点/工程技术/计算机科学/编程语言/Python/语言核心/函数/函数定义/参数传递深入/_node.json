@@ -9,12 +9,12 @@
   "parent": "函数定义",
   "children": [
     "*args 和 **kwargs",
-    "参数传递机制",
-    "仅关键字参数"
+    "仅关键字参数",
+    "参数传递机制"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python参数传递机制和参数定义方式的深入理解是写出高质量函数的关键。"
+    "description": "A deep understanding of Python's parameter passing mechanisms and definition methods is crucial for writing high-quality functions. To illustrate some key concepts with Python code examples: 1. Positi"
   },
   "data_pointers": [],
   "related_nodes": []

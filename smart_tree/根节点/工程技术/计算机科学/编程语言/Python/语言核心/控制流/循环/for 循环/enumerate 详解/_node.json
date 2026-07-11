@@ -14,7 +14,7 @@
     {
       "title": "enumerate 详解",
       "uri": "knowledge://py_enumerate_v4",
-      "content_preview": "enumerate(iterable,start=0)返回(index,value)对，替代C风格索引循环。"
+      "content_preview": "The `enumerate(iterable, start=0)` function returns a sequence of tuples (index, value), replacing C-style index loops. Here's an example to illustrate how it works in Python: ```python # Example usag"
     }
   ],
   "related_nodes": []

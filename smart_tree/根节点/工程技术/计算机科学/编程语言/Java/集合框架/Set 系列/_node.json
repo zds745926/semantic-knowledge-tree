@@ -14,7 +14,7 @@
     {
       "title": "Set 系列",
       "uri": "knowledge://java_set_v4",
-      "content_preview": "HashSet/TreeSet/LinkedHashSet。"
+      "content_preview": "Translation: HashSet/TreeSet/LinkedHashSet. In Java, these are three different implementations of the Set interface, each with its own characteristics and use cases. Here's a brief description of each"
     }
   ],
   "related_nodes": []

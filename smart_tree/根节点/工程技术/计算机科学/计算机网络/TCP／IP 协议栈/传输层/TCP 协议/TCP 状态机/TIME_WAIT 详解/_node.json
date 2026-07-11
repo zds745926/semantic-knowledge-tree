@@ -14,7 +14,7 @@
     {
       "title": "TIME_WAIT 详解",
       "uri": "knowledge://tcp_timewait_v4",
-      "content_preview": "主动关闭方发送最后ACK后进入TIME_WAIT约60秒。确保ACK到达且旧包消失。"
+      "content_preview": "The active closing side enters the TIME_WAIT state for approximately 60 seconds after sending the final ACK. This ensures that the ACK has been received and that old packets have disappeared. Python c"
     }
   ],
   "related_nodes": []

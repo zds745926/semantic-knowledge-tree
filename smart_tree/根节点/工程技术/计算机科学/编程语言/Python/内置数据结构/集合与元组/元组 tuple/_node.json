@@ -14,7 +14,7 @@
     {
       "title": "元组 tuple",
       "uri": "knowledge://py_tuple_v4",
-      "content_preview": "tuple 不可变有序。(1,2,3)创建。可用作字典键。namedtuple具名元组。"
+      "content_preview": "A tuple is an immutable ordered collection. It can be created using (1, 2, 3). Tuples can be used as dictionary keys. Named tuples are a subclass of tuples with named fields. Here's a brief Python cod"
     }
   ],
   "related_nodes": []

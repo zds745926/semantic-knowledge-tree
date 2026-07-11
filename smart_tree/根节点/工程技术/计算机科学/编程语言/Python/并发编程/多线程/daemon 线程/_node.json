@@ -14,7 +14,7 @@
     {
       "title": "daemon 线程",
       "uri": "knowledge://py_daemon_thread_v4",
-      "content_preview": "daemon=True 守护线程，主线程退出时自动结束。不阻塞程序退出。"
+      "content_preview": "Daemon thread, which automatically terminates when the main thread exits without blocking the program's exit. Python code example: ```python import threading def worker(): while True: print(\"Working.."
     }
   ],
   "related_nodes": []

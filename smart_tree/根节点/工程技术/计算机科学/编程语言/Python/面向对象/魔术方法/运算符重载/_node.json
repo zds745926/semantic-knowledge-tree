@@ -14,7 +14,7 @@
     {
       "title": "运算符重载",
       "uri": "knowledge://py_magic_ops_v4",
-      "content_preview": "__add__/__eq__/__lt__/__hash__/__call__。"
+      "content_preview": "Translation: `__add__`, `__eq__`, `__lt__`, `__hash__`, `__call__`. Explanation of the terms and a brief Python code example for each: 1. **`__add__`**: This special method is used to define behavior "
     }
   ],
   "related_nodes": []

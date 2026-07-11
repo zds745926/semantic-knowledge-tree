@@ -14,7 +14,7 @@
     {
       "title": "kill/nice",
       "uri": "knowledge://kill_nice_v4",
-      "content_preview": "kill -9强制。nice/renice调优先级。"
+      "content_preview": "Translation: `kill -9` force. `nice`/`renice` adjust priority. Python code examples: For `kill -9`, this is typically used in shell scripting or command-line operations, and there isn't a direct equiv"
     }
   ],
   "related_nodes": []

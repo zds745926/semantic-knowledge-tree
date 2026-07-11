@@ -14,10 +14,8 @@
     {
       "title": "迭代器协议",
       "uri": "knowledge://py_iterator_proto_v4",
-      "content_preview": "__iter__返回self，__next__返回元素或raise StopIteration。"
+      "content_preview": "The `__iter__` method returns `self`, while the `__next__` method returns an element or raises `StopIteration`. Python code example: ```python class IteratorExample: def __init__(self, limit): self.li"
     }
   ],
-  "related_nodes": [
-    "py_for_v4"
-  ]
+  "related_nodes": []
 }

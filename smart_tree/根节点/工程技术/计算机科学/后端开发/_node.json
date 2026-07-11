@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
+    "GraphQL",
     "REST API",
     "gRPC",
-    "GraphQL",
     "认证与授权"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "后端开发处理服务器端逻辑、API设计和数据存储。关键技术包括REST、gRPC、GraphQL和认证授权。"
+    "description": "Backend development handles server-side logic, API design, and data storage. Key technologies include REST, gRPC, GraphQL, and authentication/authorization. Here's a brief Python code example for impl"
   },
   "data_pointers": [],
   "related_nodes": []

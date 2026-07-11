@@ -14,7 +14,7 @@
     {
       "title": "Manager",
       "uri": "knowledge://py_manager_v4",
-      "content_preview": "multiprocessing.Manager 共享对象代理。list/dict/Queue/Namespace。"
+      "content_preview": "Translation: `multiprocessing.Manager` shared object proxies. `list`, `dict`, `Queue`, `Namespace`. Explanation of terms and a brief Python code example: - **`multiprocessing.Manager`**: This is a cla"
     }
   ],
   "related_nodes": []

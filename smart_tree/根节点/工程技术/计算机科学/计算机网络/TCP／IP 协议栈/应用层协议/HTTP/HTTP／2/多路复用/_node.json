@@ -14,10 +14,8 @@
     {
       "title": "多路复用",
       "uri": "knowledge://http2_multiplex_v4",
-      "content_preview": "单一TCP连接并行传输多个流。解决HTTP/1.1队头阻塞。"
+      "content_preview": "Multiple streams can be concurrently transmitted over a single TCP connection. This addresses the HTTP/1.1 head-of-line blocking issue. To illustrate this concept with a Python code example, consider "
     }
   ],
-  "related_nodes": [
-    "quic_v4"
-  ]
+  "related_nodes": []
 }

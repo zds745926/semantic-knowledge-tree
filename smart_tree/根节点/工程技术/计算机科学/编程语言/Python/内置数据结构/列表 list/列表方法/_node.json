@@ -14,7 +14,7 @@
     {
       "title": "列表方法",
       "uri": "knowledge://py_list_methods_v4",
-      "content_preview": "append/extend/insert/remove/pop/sort/reverse。"
+      "content_preview": "Translation: - `append`: Adds an element to the end of the list. ```python my_list = [1, 2, 3] my_list.append(4) print(my_list)  # Output: [1, 2, 3, 4] ``` - `extend`: Extends the list by appending el"
     }
   ],
   "related_nodes": []

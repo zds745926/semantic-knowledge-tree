@@ -14,7 +14,7 @@
     {
       "title": "卷积层",
       "uri": "knowledge://conv_layer_v4",
-      "content_preview": "卷积核滑动提取特征。参数共享。padding/stride。"
+      "content_preview": "Convolutional kernels slide over the input to extract features. Parameter sharing occurs. Padding and stride are applied. Here is a brief explanation with a Python code example using TensorFlow/Keras:"
     }
   ],
   "related_nodes": []

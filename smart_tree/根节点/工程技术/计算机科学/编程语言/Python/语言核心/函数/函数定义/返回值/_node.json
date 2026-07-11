@@ -14,7 +14,7 @@
     {
       "title": "返回值",
       "uri": "knowledge://py_return_v4",
-      "content_preview": "return 返回结果。无 return 返回 None。返回多个值本质是元组。"
+      "content_preview": "Translation: `return` returns the result. If there is no `return`, it returns `None`. Returning multiple values essentially means returning a tuple. Python code example for returning multiple values: "
     }
   ],
   "related_nodes": []

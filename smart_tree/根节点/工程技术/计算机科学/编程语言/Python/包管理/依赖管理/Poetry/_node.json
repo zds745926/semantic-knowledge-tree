@@ -14,10 +14,8 @@
     {
       "title": "Poetry",
       "uri": "knowledge://py_poetry_v4",
-      "content_preview": "pyproject.toml管理依赖。poetry.lock锁定版本。poetry add/remove/install。"
+      "content_preview": "Managing dependencies with `pyproject.toml`. Locking versions with `poetry.lock`. Commands for adding/removing/installing packages using Poetry: ```python # Example of using poetry commands in a Pytho"
     }
   ],
-  "related_nodes": [
-    "py_pdm_v4"
-  ]
+  "related_nodes": []
 }

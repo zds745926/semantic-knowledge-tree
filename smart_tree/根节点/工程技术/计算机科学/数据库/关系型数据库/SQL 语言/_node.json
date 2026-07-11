@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "SQL是关系数据库的标准查询语言，分DDL/DML/DCL。"
+    "description": "SQL is the standard query language for relational databases, divided into DDL (Data Definition Language), DML (Data Manipulation Language), and DCL (Data Control Language). Here are brief explanations"
   },
   "data_pointers": [],
   "related_nodes": []

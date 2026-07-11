@@ -14,7 +14,7 @@
     {
       "title": "tar/gzip",
       "uri": "knowledge://tar_gzip_v4",
-      "content_preview": "tar -czf打包压缩。tar -xzf解压。gz/bz2/xz。"
+      "content_preview": "English translation: `tar -czf` is used to create and compress a tarball. `tar -xzf` is used to extract a tarball. The file extensions `.gz`, `.bz2`, and `.xz` indicate the compression format. Example"
     }
   ],
   "related_nodes": []

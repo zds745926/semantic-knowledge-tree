@@ -14,7 +14,7 @@
     {
       "title": "SSH",
       "uri": "knowledge://ssh_v4",
-      "content_preview": "ssh user@host。密钥认证。scp复制。端口转发。"
+      "content_preview": "SSH user@host. Key-based authentication. SCP copying. Port forwarding. Here are the translations with brief Python code examples for relevant concepts: 1. **SSH user@host** - This refers to establishi"
     }
   ],
   "related_nodes": []

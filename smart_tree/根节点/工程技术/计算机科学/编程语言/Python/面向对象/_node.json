@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "Python",
   "children": [
+    "异常处理",
     "类与实例",
-    "魔术方法",
-    "异常处理"
+    "魔术方法"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python 支持面向对象编程，包括类定义、继承、多态和魔术方法。Python的OOP灵活而强大，@property/@classmethod/@staticmethod等装饰器丰富类功能。"
+    "description": "Python supports object-oriented programming (OOP), including class definition, inheritance, polymorphism, and magic methods. Python's OOP is flexible and powerful, with decorators like `@property`, `@"
   },
   "data_pointers": [],
   "related_nodes": []

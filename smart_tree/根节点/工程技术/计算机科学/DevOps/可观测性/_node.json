@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "DevOps",
   "children": [
-    "Prometheus",
-    "Grafana"
+    "Grafana",
+    "Prometheus"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "可观测性包括监控(Metrics)、追踪(Trace)和日志(Log)三大支柱。"
+    "description": "Observability encompasses three main pillars: Metrics, Tracing, and Logging. Here are brief explanations for each term: 1. **Metrics**: This refers to the collection of numerical data that provides in"
   },
   "data_pointers": [],
   "related_nodes": []

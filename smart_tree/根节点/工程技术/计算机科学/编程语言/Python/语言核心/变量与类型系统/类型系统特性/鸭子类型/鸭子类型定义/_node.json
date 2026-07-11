@@ -14,7 +14,7 @@
     {
       "title": "鸭子类型定义",
       "uri": "knowledge://py_duck_def_v4",
-      "content_preview": "如果它走起来像鸭子、叫起来像鸭子，那它就是鸭子。实现 __iter__ 即满足 Iterable 协议。"
+      "content_preview": "If it walks like a duck and quacks like a duck, then it is a duck. Implementing the `__iter__` method satisfies the Iterable protocol. Here's a brief Python code example to illustrate implementing the"
     }
   ],
   "related_nodes": []

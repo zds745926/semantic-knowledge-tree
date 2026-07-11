@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "监督学习",
   "children": [
-    "随机森林",
-    "梯度提升树 GBDT"
+    "梯度提升树 GBDT",
+    "随机森林"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "集成学习组合多个弱学习器提升效果。"
+    "description": "Ensemble learning combines multiple weak learners to enhance performance. Python code example: ```python from sklearn.ensemble import BaggingClassifier from sklearn.tree import DecisionTreeClassifier "
   },
   "data_pointers": [],
   "related_nodes": []

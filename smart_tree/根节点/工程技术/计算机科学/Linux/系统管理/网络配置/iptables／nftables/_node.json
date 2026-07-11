@@ -14,7 +14,7 @@
     {
       "title": "iptables/nftables",
       "uri": "knowledge://iptables_v4",
-      "content_preview": "filter表INPUT/FORWARD/OUTPUT。规则匹配动作。"
+      "content_preview": "Filter table INPUT/FORWARD/OUTPUT. Rule match actions. Here are some brief explanations for each part: - **Filter Table**: In Linux networking, the `filter` table is one of the built-in tables used by"
     }
   ],
   "related_nodes": []

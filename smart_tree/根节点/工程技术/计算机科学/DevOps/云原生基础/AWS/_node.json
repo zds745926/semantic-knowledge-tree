@@ -14,7 +14,7 @@
     {
       "title": "AWS",
       "uri": "knowledge://aws_basics_v4",
-      "content_preview": "EC2/S3/RDS/Lambda/CloudFront/VPC。IAM权限管理。"
+      "content_preview": "EC2/S3/RDS/Lambda/CloudFront/VPC. IAM permission management. For the technical terms listed (EC2, S3, RDS, Lambda, CloudFront, VPC), these are all AWS services. Here is a brief explanation with Python"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "读未提交",
       "uri": "knowledge://read_uncommitted_v4",
-      "content_preview": "最低级。可读到未提交数据(脏读)。几乎不用。"
+      "content_preview": "The lowest level allows reading uncommitted data (dirty reads), which is almost never used. In the context of database transactions and concurrency control, here's a brief explanation with a Python co"
     }
   ],
   "related_nodes": []

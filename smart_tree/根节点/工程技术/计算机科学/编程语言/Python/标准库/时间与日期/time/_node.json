@@ -14,7 +14,7 @@
     {
       "title": "time",
       "uri": "knowledge://py_time_lib_v4",
-      "content_preview": "time.time()时间戳。time.sleep()暂停。time.localtime/mktime/strptime。"
+      "content_preview": "Translation: - `time.time()` timestamp. - `time.sleep()` pause. - `time.localtime`, `time.mktime`, `time.strptime`. Python code examples: ```python import time # Example of using time.time() to get th"
     }
   ],
   "related_nodes": []

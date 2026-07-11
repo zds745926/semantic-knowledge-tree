@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "高级特性",
   "children": [
-    "类实现上下文",
-    "contextmanager"
+    "contextmanager",
+    "类实现上下文"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "with 语句管理资源(文件/锁/连接)，通过 __enter__/__exit__ 实现。"
+    "description": "The `with` statement manages resources (files/locks/connections), achieving this through the use of `__enter__` and `__exit__`. Here's a brief example in Python to illustrate how the `with` statement "
   },
   "data_pointers": [],
   "related_nodes": []

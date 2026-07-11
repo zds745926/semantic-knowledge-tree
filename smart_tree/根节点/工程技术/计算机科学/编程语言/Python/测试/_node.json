@@ -8,15 +8,15 @@
   "version": 1,
   "parent": "Python",
   "children": [
-    "pytest",
-    "unittest",
     "Mock 模拟",
+    "doctest",
     "pdb 调试器",
-    "doctest"
+    "pytest",
+    "unittest"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python拥有丰富的测试工具链。单元测试确保代码正确性，pytest提供简洁的测试语法，unittest.mock模拟外部依赖。TDD是Python社区的推荐实践。"
+    "description": "Python has an extensive suite of testing tools. Unit tests ensure the correctness of the code, with pytest providing a concise testing syntax and unittest.mock for mocking external dependencies. TDD i"
   },
   "data_pointers": [],
   "related_nodes": []

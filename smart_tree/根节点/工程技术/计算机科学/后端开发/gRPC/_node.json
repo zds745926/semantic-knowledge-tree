@@ -14,7 +14,7 @@
     {
       "title": "gRPC",
       "uri": "knowledge://grpc_v4",
-      "content_preview": "高性能RPC。Protobuf序列化。HTTP/2。流式通信。"
+      "content_preview": "High-performance RPC. Protobuf serialization. HTTP/2. Streaming communication. Here are the technical terms translated with brief Python code examples where applicable: 1. **High-performance RPC (Remo"
     }
   ],
   "related_nodes": []

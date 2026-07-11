@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "二叉树每个节点最多两个子节点。二叉搜索树(BST)左小右大，中序遍历得有序序列。"
+    "description": "A binary tree has at most two children for each node. A binary search tree (BST) follows the property that for any given node, all values in its left subtree are smaller and all values in its right su"
   },
   "data_pointers": [],
   "related_nodes": []

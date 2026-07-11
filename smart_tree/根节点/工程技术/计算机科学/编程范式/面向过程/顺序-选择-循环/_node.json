@@ -14,7 +14,7 @@
     {
       "title": "顺序-选择-循环",
       "uri": "knowledge://sequence_selection_iteration_v4",
-      "content_preview": "面向过程编程的三种基本结构：顺序执行、条件选择(if-else)、循环(while/for)。"
+      "content_preview": "The three basic structures of procedural programming: sequential execution, conditional selection (if-else), and looping (while/for). Here are brief Python code examples for each: 1. **Sequential Exec"
     }
   ],
   "related_nodes": []

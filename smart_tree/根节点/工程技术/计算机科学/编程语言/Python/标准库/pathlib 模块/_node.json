@@ -14,10 +14,8 @@
     {
       "title": "pathlib 模块",
       "uri": "knowledge://py_pathlib_v4",
-      "content_preview": "面向对象的路径操作库。Path对象替代os.path字符串操作。支持/运算符拼接路径。3.4+标准。"
+      "content_preview": "Object-oriented path manipulation library. The `Path` object replaces string-based operations with `os.path`. It supports the `/` operator for path concatenation and is compatible with Python 3.4+. He"
     }
   ],
-  "related_nodes": [
-    "py_os_module_v4"
-  ]
+  "related_nodes": []
 }

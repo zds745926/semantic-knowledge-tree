@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "语言核心",
   "children": [
-    "条件判断",
-    "循环"
+    "循环",
+    "条件判断"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python 控制流包括条件判断(if-elif-else)和循环(for/while)结构。Python 3.10+ 还引入了 match/case 模式匹配语法。"
+    "description": "Python control flow includes conditional judgments (if-elif-else) and looping structures (for/while). Python 3.10+ also introduces the match/case pattern matching syntax. Here are brief examples for e"
   },
   "data_pointers": [],
   "related_nodes": []

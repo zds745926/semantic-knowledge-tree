@@ -14,7 +14,7 @@
     {
       "title": "pip freeze",
       "uri": "knowledge://py_pip_freeze_v4",
-      "content_preview": "pip freeze > requirements.txt 导出当前环境包列表。pip list 列出已安装包。"
+      "content_preview": "The command `pip freeze > requirements.txt` exports the current environment package list. The command `pip list` lists installed packages. Here is a brief Python code example to demonstrate how you mi"
     }
   ],
   "related_nodes": []

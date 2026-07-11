@@ -12,7 +12,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "HTTP/3基于QUIC(UDP)，彻底解决TCP队头阻塞。0-RTT重连。"
+    "description": "HTTP/3 is based on QUIC (a UDP-based protocol), fundamentally solving the TCP head-of-line blocking problem. 0-RTT reconnection. Here's a brief explanation of these concepts with a Python code example"
   },
   "data_pointers": [],
   "related_nodes": []

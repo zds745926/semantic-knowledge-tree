@@ -14,7 +14,7 @@
     {
       "title": "持续部署 CD",
       "uri": "knowledge://cd_basics_v4",
-      "content_preview": "CI通过自动部署到环境。蓝绿/滚动/金丝雀发布。"
+      "content_preview": "CI (Continuous Integration) facilitates automatic deployment to environments. Blue-green, rolling, and canary releases are common strategies used in this process. Here's a brief explanation of each st"
     }
   ],
   "related_nodes": []

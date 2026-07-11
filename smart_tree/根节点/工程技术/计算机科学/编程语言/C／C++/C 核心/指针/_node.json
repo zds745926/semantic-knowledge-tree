@@ -14,7 +14,7 @@
     {
       "title": "指针",
       "uri": "knowledge://c_pointers_v4",
-      "content_preview": "指针存储地址。*解引用/&取地址。函数指针。指针运算是C的核心能力。"
+      "content_preview": "Pointer storage of addresses. Dereferencing/* and address-of/& operations. Function pointers. Pointer arithmetic is a core capability of C. Here are brief Python code examples to illustrate some of th"
     }
   ],
   "related_nodes": []

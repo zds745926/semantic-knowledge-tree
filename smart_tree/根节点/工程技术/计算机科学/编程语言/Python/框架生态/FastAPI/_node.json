@@ -14,7 +14,7 @@
     {
       "title": "FastAPI",
       "uri": "knowledge://py_fastapi_v4",
-      "content_preview": "现代异步Web框架。自动OpenAPI文档。Pydantic校验。类型注解驱动。"
+      "content_preview": "Modern asynchronous web framework. Automatic OpenAPI documentation. Pydantic validation. Type annotation-driven. Python code example for type annotation and Pydantic validation: ```python from pydanti"
     }
   ],
   "related_nodes": []

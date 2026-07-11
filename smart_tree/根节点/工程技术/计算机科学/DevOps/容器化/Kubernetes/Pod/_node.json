@@ -14,10 +14,8 @@
     {
       "title": "Pod",
       "uri": "knowledge://k8s_pod_v4",
-      "content_preview": "最小调度单元。一个或多个容器共享网络/存储。Sidecar模式。"
+      "content_preview": "Minimum Scheduling Unit. One or more containers share network/storage resources. Sidecar Pattern. Python code example for the Sidecar pattern (assuming a simple logging sidecar container): ```python i"
     }
   ],
-  "related_nodes": [
-    "k8s_deploy_v4"
-  ]
+  "related_nodes": []
 }

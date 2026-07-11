@@ -14,7 +14,7 @@
     {
       "title": "Redis",
       "uri": "knowledge://redis_v4",
-      "content_preview": "内存键值数据库。String/List/Set/SortedSet/Hash/Bitmap/GEO。"
+      "content_preview": "Memory-based key-value database. String/List/Set/SortedSet/Hash/Bitmap/GEO. Here is a brief explanation of each term along with a corresponding Python code example using the `redis` library, which is "
     }
   ],
   "related_nodes": []

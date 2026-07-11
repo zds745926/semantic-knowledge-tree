@@ -9,12 +9,12 @@
   "parent": "计算机网络",
   "children": [
     "传输层",
-    "网络层",
-    "应用层协议"
+    "应用层协议",
+    "网络层"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "TCP/IP四层模型：网络接口→网际→传输→应用。是互联网的通信基础。"
+    "description": "TCP/IP Four-Layer Model: Network Interface → Internet Layer → Transport Layer → Application Layer. This is the communication foundation of the internet. Here's a brief explanation with Python code exa"
   },
   "data_pointers": [],
   "related_nodes": []

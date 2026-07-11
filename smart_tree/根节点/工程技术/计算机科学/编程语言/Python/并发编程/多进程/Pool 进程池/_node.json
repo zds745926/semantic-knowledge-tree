@@ -14,7 +14,7 @@
     {
       "title": "Pool 进程池",
       "uri": "knowledge://py_pool_v4",
-      "content_preview": "Pool.map/apply/starmap。进程复用。map无序/apply有序。"
+      "content_preview": "Pool.map/apply/starmap. Process reuse. map is unordered/apply is ordered. Here are brief explanations and corresponding Python code examples for each: 1. **`Pool.map()`**: - This function applies a gi"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "while 基础",
       "uri": "knowledge://py_while_basic_v4",
-      "content_preview": "while condition: 重复执行。break退出，continue跳过本轮。"
+      "content_preview": "Translation: While the condition is true, the loop will repeatedly execute. The `break` statement exits the loop entirely, whereas the `continue` statement skips the rest of the current iteration and "
     }
   ],
   "related_nodes": []

@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "无监督学习从无标签数据中发现结构。"
+    "description": "Unsupervised learning discovers structure from unlabeled data. Here is a brief Python code example using the KMeans clustering algorithm from the `sklearn` library to demonstrate unsupervised learning"
   },
   "data_pointers": [],
   "related_nodes": []

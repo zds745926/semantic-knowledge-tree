@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "虚拟内存将进程逻辑地址映射到物理内存，提供隔离和扩展。"
+    "description": "Virtual memory maps a process's logical addresses to physical memory, providing isolation and expansion. To illustrate the concept of virtual memory mapping in Python, consider the following simple ex"
   },
   "data_pointers": [],
   "related_nodes": []

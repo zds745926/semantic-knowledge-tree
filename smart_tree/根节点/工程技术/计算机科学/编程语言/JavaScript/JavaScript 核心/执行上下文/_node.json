@@ -14,7 +14,7 @@
     {
       "title": "执行上下文",
       "uri": "knowledge://js_exec_ctx_v4",
-      "content_preview": "执行上下文包含变量环境、词法环境、this绑定。执行栈管理。"
+      "content_preview": "Execution context includes variable environment, lexical environment, and this binding. Execution stack management. To provide a more detailed explanation with a Python code example for the concept of"
     }
   ],
   "related_nodes": []

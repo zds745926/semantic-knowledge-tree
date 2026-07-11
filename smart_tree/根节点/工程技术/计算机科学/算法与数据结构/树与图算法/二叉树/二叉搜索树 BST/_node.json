@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "二叉树",
   "children": [
-    "BST 搜索",
     "BST 插入",
+    "BST 搜索",
     "遍历实现"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "BST是二叉树中最常用的变体。左子树<根<右子树，中序遍历有序。"
+    "description": "BST is the most commonly used variant of binary trees. The left subtree < root < right subtree, and an in-order traversal yields a sorted sequence. Here's a brief Python code example to demonstrate an"
   },
   "data_pointers": [],
   "related_nodes": []

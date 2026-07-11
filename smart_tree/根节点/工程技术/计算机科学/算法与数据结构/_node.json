@@ -8,16 +8,16 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
+    "动态规划",
     "基础数据结构",
     "排序算法",
     "搜索算法",
     "树与图算法",
-    "动态规划",
     "高级数据结构"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "算法是解决问题的步骤和方法，数据结构是组织和存储数据的方式。两者是计算机科学的核心基础，直接影响程序性能和质量。"
+    "description": "Algorithms are the steps and methods for solving problems, while data structures are the ways to organize and store data. Both are core foundations in computer science and directly impact program perf"
   },
   "data_pointers": [],
   "related_nodes": []

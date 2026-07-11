@@ -14,7 +14,7 @@
     {
       "title": "Vim",
       "uri": "knowledge://vim_basics_v4",
-      "content_preview": "三种模式。:wq保存 :q!不存。dd/yy/p。"
+      "content_preview": "Three modes.:wq to save :q! not to save dd/yy/p. In the context of Vim text editor, here are the translations with brief Python code examples for related concepts: 1. **Save (\":wq\")**: - In Vim, `:wq`"
     }
   ],
   "related_nodes": []

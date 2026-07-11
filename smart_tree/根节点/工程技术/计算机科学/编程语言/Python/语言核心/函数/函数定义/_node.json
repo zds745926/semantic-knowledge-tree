@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "函数",
   "children": [
-    "参数传递深入",
     "函数定义基础",
+    "参数传递深入",
     "返回值"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "def 语句定义函数，return 返回值。支持多种参数类型组合。"
+    "description": "The `def` statement defines a function, and `return` is used to return values. It supports various combinations of parameter types. Here's a brief Python code example: ```python def add_numbers(a, b):"
   },
   "data_pointers": [],
   "related_nodes": []

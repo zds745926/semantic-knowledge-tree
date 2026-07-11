@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "Python",
   "children": [
-    "装饰器进阶",
-    "迭代器与生成器",
     "上下文管理器",
-    "函数式工具"
+    "函数式工具",
+    "装饰器进阶",
+    "迭代器与生成器"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python 高级特性包括装饰器进阶、迭代器生成器、上下文管理器和函数式工具。这些特性让Python代码更优雅、更高效。"
+    "description": "The advanced features of Python include decorator advancements, iterator generators, context managers, and functional tools. These features make Python code more elegant and efficient. Here are brief "
   },
   "data_pointers": [],
   "related_nodes": []

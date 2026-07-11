@@ -14,7 +14,7 @@
     {
       "title": "管道",
       "uri": "knowledge://pipe_v4",
-      "content_preview": "单向数据流。无名管道仅父子进程。命名管道mkfifo。Shell | 操作符。"
+      "content_preview": "One-way data flow. Unnamed pipes are limited to parent-child processes, while named pipes use `mkfifo`. Shell pipe operator `|`. Here's a brief explanation with Python code examples for the concepts m"
     }
   ],
   "related_nodes": []

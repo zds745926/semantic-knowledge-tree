@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Java集合框架包括List/Map/Set三大接口及其实现。"
+    "description": "The Java collection framework includes the List, Map, and Set interfaces along with their implementations. Here are some brief examples in Python to illustrate these concepts: 1. **List**: In Python, "
   },
   "data_pointers": [],
   "related_nodes": []

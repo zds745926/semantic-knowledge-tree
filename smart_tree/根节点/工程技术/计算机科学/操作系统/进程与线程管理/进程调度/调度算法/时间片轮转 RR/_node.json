@@ -14,7 +14,7 @@
     {
       "title": "时间片轮转 RR",
       "uri": "knowledge://rr_v4",
-      "content_preview": "固定时间片循环执行。响应快。时间片选择关键。"
+      "content_preview": "Fixed-time slice cyclic execution. Responsive. Time slice selection is critical. ### Example in Python To illustrate the concept of fixed-time slice cyclic execution, consider a simple timer-based tas"
     }
   ],
   "related_nodes": []

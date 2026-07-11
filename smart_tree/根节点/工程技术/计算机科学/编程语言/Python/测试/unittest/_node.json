@@ -14,10 +14,8 @@
     {
       "title": "unittest",
       "uri": "knowledge://py_unittest_v4",
-      "content_preview": "内置测试框架。TestCase类。setUp/tearDown。assertEqual/assertRaises。mock集成。"
+      "content_preview": "Built-in testing framework. `TestCase` class. `setUp`/`tearDown`. `assertEqual`/`assertRaises`. Mock integration. Here's a brief explanation with Python code examples: - **`TestCase` class**: This is "
     }
   ],
-  "related_nodes": [
-    "py_mock_v4"
-  ]
+  "related_nodes": []
 }

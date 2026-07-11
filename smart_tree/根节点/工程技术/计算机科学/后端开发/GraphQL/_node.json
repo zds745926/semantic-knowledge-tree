@@ -14,7 +14,7 @@
     {
       "title": "GraphQL",
       "uri": "knowledge://graphql_v4",
-      "content_preview": "客户端声明字段。单一端点。避免过/欠获取。"
+      "content_preview": "Client declares fields. Single endpoint. Avoid over-fetching or under-fetching. Here is a brief Python code example to illustrate the concept of using a single endpoint in API calls, which can help av"
     }
   ],
   "related_nodes": []

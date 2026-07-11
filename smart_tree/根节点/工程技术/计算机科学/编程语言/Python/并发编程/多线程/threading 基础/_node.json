@@ -14,7 +14,7 @@
     {
       "title": "threading 基础",
       "uri": "knowledge://py_threading_basic_v4",
-      "content_preview": "Thread创建/start/join。daemon守护线程。GIL限制CPU并行。"
+      "content_preview": "Thread creation/start/join. Daemon threads. GIL and its impact on CPU parallelism. Here are the translations with added Python code examples for clarity: 1. **Thread Creation/Start/Join** - In Python,"
     }
   ],
   "related_nodes": []

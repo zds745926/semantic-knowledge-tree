@@ -14,10 +14,8 @@
     {
       "title": "pytest",
       "uri": "knowledge://py_pytest_v4",
-      "content_preview": "Python最流行的测试框架。assert断言。fixture管理依赖。参数化测试。conftest共享配置。"
+      "content_preview": "Python is the most popular testing framework. Assert statements are used for making assertions. Fixtures manage dependencies. Parameterized tests allow for flexible test cases. Conftest files share co"
     }
   ],
-  "related_nodes": [
-    "py_mock_v4"
-  ]
+  "related_nodes": []
 }

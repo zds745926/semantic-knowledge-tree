@@ -14,7 +14,7 @@
     {
       "title": "触发器和寄存器",
       "uri": "knowledge://flip_flops_v4",
-      "content_preview": "触发器是存储1位信息的基本单元。多个D触发器并联构成寄存器，是CPU寄存器的基础。"
+      "content_preview": "Triggers are the basic units that store 1-bit information. Multiple D triggers connected in parallel form a register, which is the foundation of CPU registers. To provide a more detailed explanation a"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "map/filter/reduce",
       "uri": "knowledge://py_map_filter_reduce_v4",
-      "content_preview": "map(func,iter)映射、filter(func,iter)过滤、reduce(func,iter)归约。"
+      "content_preview": "The `map(func, iter)` function applies a given function `func` to each item of an iterable `iter` and returns a map object (an iterator). The `filter(func, iter)` function filters items from an iterab"
     }
   ],
   "related_nodes": []

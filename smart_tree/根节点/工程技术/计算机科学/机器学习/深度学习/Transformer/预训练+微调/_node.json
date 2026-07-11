@@ -14,7 +14,7 @@
     {
       "title": "预训练+微调",
       "uri": "knowledge://pretrain_finetune_v4",
-      "content_preview": "大规模预训练+下游微调。BERT MLM/GPT自回归/LoRA。"
+      "content_preview": "Large-scale pre-training + downstream fine-tuning. BERT MLM/GPT autoregressive/LoRA. Here are the explanations and corresponding Python code examples for each term: 1. **Large-scale pre-training**: Th"
     }
   ],
   "related_nodes": []

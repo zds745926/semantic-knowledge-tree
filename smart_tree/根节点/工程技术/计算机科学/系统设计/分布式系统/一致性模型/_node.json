@@ -14,7 +14,7 @@
     {
       "title": "一致性模型",
       "uri": "knowledge://consistency_models_v4",
-      "content_preview": "强一致性/最终一致性。Quorum读写。PACELC定理。"
+      "content_preview": "Strong Consistency/Final Consistency. Quorum Read-Write. PACELC Theorem. ### Explanation with Python Code Example **1. Strong Consistency vs Final Consistency** - **Strong Consistency**: Ensures that "
     }
   ],
   "related_nodes": []

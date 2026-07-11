@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "类与实例",
   "children": [
-    "单继承",
-    "Mixin 混入"
+    "Mixin 混入",
+    "单继承"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python 支持单继承和多继承(Mixin)。super()调用父类。MRO决定方法搜索顺序。"
+    "description": "Python supports single inheritance and multiple inheritance (using Mixin). The `super()` function is used to call the parent class. Method Resolution Order (MRO) determines the method search sequence."
   },
   "data_pointers": [],
   "related_nodes": []

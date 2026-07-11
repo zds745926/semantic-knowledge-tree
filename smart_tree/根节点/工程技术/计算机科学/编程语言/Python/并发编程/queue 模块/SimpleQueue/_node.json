@@ -14,7 +14,7 @@
     {
       "title": "SimpleQueue",
       "uri": "knowledge://py_simple_queue_v4",
-      "content_preview": "queue.SimpleQueue(3.8+) 轻量FIFO。无task_door/join。更快。"
+      "content_preview": "queue.SimpleQueue(3.8+) Lightweight FIFO (First-In-First-Out) queue. No task door/join required, faster. Python code example: ```python import queue # Create a SimpleQueue with Python's built-in queue"
     }
   ],
   "related_nodes": []

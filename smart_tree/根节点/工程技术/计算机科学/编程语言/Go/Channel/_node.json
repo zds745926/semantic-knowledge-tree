@@ -14,7 +14,7 @@
     {
       "title": "Channel",
       "uri": "knowledge://go_channel_v4",
-      "content_preview": "ch := make(chan int)。ch<-val发送/<-ch接收。select多路复用。"
+      "content_preview": "Translation: `ch := make(chan int)` creates an integer channel. `ch <- val` sends a value `<-ch` receives a value. `select` is used for multiplexing. Python code example (using similar concepts): ```p"
     }
   ],
   "related_nodes": []

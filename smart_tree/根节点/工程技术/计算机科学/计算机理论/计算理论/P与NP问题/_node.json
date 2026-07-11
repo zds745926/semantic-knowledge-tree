@@ -14,7 +14,7 @@
     {
       "title": "P与NP问题",
       "uri": "knowledge://p_vs_np_v4",
-      "content_preview": "P类问题可在多项式时间内求解，NP类问题可在多项式时间内验证。P=NP? 是计算机科学最重要的开放问题。"
+      "content_preview": "P-class problems can be solved in polynomial time, whereas NP-class problems can be verified in polynomial time. Is P = NP? This is the most important open question in computer science. Here's a brief"
     }
   ],
   "related_nodes": []

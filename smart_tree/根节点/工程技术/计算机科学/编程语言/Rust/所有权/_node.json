@@ -14,7 +14,7 @@
     {
       "title": "所有权",
       "uri": "knowledge://rust_ownership_v4",
-      "content_preview": "每个值有唯一所有者。所有权转移(move)vs借用(&/&mut)。编译期内存安全。"
+      "content_preview": "Each value has a unique owner. Ownership is transferred (move) versus borrowing (&/&mut). Compile-time memory safety. Here's a brief explanation with a Python code example to illustrate the concept of"
     }
   ],
   "related_nodes": []

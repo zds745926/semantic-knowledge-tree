@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "排序算法",
   "children": [
-    "快速排序",
-    "归并排序",
     "堆排序",
+    "归并排序",
+    "快速排序",
     "插入排序"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "比较排序基于元素间的比较操作，通用性强。"
+    "description": "Comparison sorting is based on comparison operations between elements and has strong generality. To provide a more comprehensive response, here is a simple Python code example for a comparison-based s"
   },
   "data_pointers": [],
   "related_nodes": []

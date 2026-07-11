@@ -14,7 +14,7 @@
     {
       "title": "堆排序",
       "uri": "knowledge://heap_sort_v4",
-      "content_preview": "建堆→交换堆顶→调整。O(n log n)原地。不稳定。无最坏退化。"
+      "content_preview": "Heapify → Swap the root → Adjust. O(n log n) in-place. Unstable. No worst-case degeneration. Here's a brief Python code example for heapifying an array and then swapping the root with the last element"
     }
   ],
   "related_nodes": []

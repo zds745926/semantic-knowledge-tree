@@ -14,7 +14,7 @@
     {
       "title": "字符串方法",
       "uri": "knowledge://py_str_methods_v4",
-      "content_preview": "join/split/strip/replace/find/startswith/endswith。"
+      "content_preview": "Translation: - join: This function concatenates sequences (such as strings) into one string with a specified separator. Example in Python: ```python parts = ['Hello', 'World'] separator = ' ' result ="
     }
   ],
   "related_nodes": []

@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "容器化",
   "children": [
-    "Pod",
     "Deployment",
+    "Pod",
     "Service"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "K8s容器编排平台。管理容器化应用的部署、扩展和运维。"
+    "description": "Kubernetes container orchestration platform. Manage the deployment, scaling, and operations of containerized applications. Here is a brief Python code example to demonstrate how you might interact wit"
   },
   "data_pointers": [],
   "related_nodes": []

@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "变量与类型系统",
   "children": [
-    "鸭子类型",
-    "类型注解"
+    "类型注解",
+    "鸭子类型"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python 类型系统的高级特性包括鸭子类型、类型注解和变量作用域规则。mypy 等工具可在编译时检查类型错误，提升代码质量。"
+    "description": "The advanced features of Python's type system include duck typing, type annotations, and scope rules for variables. Tools like mypy can check for type errors at compile time, thereby improving code qu"
   },
   "data_pointers": [],
   "related_nodes": []

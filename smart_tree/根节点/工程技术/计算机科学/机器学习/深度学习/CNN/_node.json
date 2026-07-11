@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "卷积神经网络通过卷积核提取局部特征，适合图像处理。"
+    "description": "Convolutional neural networks extract local features using convolutional kernels and are suitable for image processing. Here is a brief Python code example using TensorFlow to create a simple convolut"
   },
   "data_pointers": [],
   "related_nodes": []

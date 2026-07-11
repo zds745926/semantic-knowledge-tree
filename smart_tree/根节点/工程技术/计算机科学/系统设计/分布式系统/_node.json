@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "分布式系统由多台计算机协同工作，对外表现为单一系统。挑战包括一致性、分区容错。"
+    "description": "Distributed systems consist of multiple computers working together to present themselves as a single system externally. Challenges include consistency and partition tolerance. To provide a more concre"
   },
   "data_pointers": [],
   "related_nodes": []

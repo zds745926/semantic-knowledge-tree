@@ -14,7 +14,7 @@
     {
       "title": "字符串基础",
       "uri": "knowledge://py_str_basic_v4",
-      "content_preview": "str 不可变序列。' 和 \" 定义。f-string 是最佳格式化：f'值：{x}'。"
+      "content_preview": "String is an immutable sequence. ' and \" are used to define strings. f-string is the best format for string interpolation: `f'value: {x}'`. Here's a brief Python code example using f-strings: ```pytho"
     }
   ],
   "related_nodes": []

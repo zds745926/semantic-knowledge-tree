@@ -14,10 +14,8 @@
     {
       "title": "Prometheus",
       "uri": "knowledge://prometheus_v4",
-      "content_preview": "时序数据库+监控。Pull模式抓取。PromQL查询。Alertmanager告警。"
+      "content_preview": "Time-series database + monitoring. Pull mode fetching. PromQL query. Alertmanager alert. Here is a brief explanation with a related Python code example for the pull mode fetching concept: Pull mode fe"
     }
   ],
-  "related_nodes": [
-    "grafana_v4"
-  ]
+  "related_nodes": []
 }

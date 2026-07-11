@@ -8,16 +8,14 @@
   "version": 1,
   "parent": "Python",
   "children": [
-    "虚拟环境 venv",
-    "pyproject.toml",
     "pip 包管理器",
-    "虚拟环境",
+    "依赖管理",
     "发布与打包",
-    "依赖管理"
+    "虚拟环境"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python包管理工具链包括pip依赖安装、venv环境隔离、pyproject.toml项目规范。PDM/Poetry等现代工具进一步简化了依赖管理和发布流程。"
+    "description": "The Python package management toolchain includes pip for dependency installation, venv for environment isolation, and pyproject.toml for project specifications. Modern tools like PDM and Poetry furthe"
   },
   "data_pointers": [],
   "related_nodes": []

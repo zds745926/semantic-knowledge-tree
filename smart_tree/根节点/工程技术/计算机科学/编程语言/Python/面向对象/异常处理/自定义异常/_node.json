@@ -14,7 +14,7 @@
     {
       "title": "自定义异常",
       "uri": "knowledge://py_custom_except_v4",
-      "content_preview": "class MyError(Exception): pass。自定义异常。"
+      "content_preview": "English translation: ```python class MyError(Exception): pass  # A custom exception. ``` This Python code defines a custom exception called `MyError` that inherits from the base `Exception` class. The"
     }
   ],
   "related_nodes": []

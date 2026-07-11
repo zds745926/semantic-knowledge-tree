@@ -14,7 +14,7 @@
     {
       "title": "微服务",
       "uri": "knowledge://microservices_v4",
-      "content_preview": "独立服务独立部署。服务间轻量API通信。DB per Service。"
+      "content_preview": "Independent services with independent deployment. Lightweight API communication between services. DB per service. For the technical terms and to provide a brief Python code example for the coding/prog"
     }
   ],
   "related_nodes": []

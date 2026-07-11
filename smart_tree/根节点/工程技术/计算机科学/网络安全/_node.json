@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "密码学",
-    "Web 安全"
+    "Web 安全",
+    "密码学"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "网络安全保护系统、网络和数据免受攻击。核心领域包括密码学、Web安全和网络攻防。"
+    "description": "Network security protection systems safeguard networks and data from attacks. Key areas include cryptography, web security, and network offense-defense. Here are brief Python code examples for some of"
   },
   "data_pointers": [],
   "related_nodes": []

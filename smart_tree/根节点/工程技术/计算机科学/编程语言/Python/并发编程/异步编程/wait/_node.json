@@ -14,7 +14,7 @@
     {
       "title": "wait",
       "uri": "knowledge://py_asyncio_wait_v4",
-      "content_preview": "asyncio.wait(fs) 等待。return_when=FIRST_COMPLETED/ALL_COMPLETED/FIRST_EXCEPTION。"
+      "content_preview": "The `asyncio.wait(fs)` function waits for the completion of the given futures or tasks. The `return_when` parameter can be set to one of the following values: - `FIRST_COMPLETED`: Returns as soon as a"
     }
   ],
   "related_nodes": []

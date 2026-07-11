@@ -14,7 +14,7 @@
     {
       "title": "分片",
       "uri": "knowledge://sharding_v4",
-      "content_preview": "水平拆分：按哈希/范围/列表分布。分片键选择关键。"
+      "content_preview": "Horizontal Sharding: Distributed by Hashing/Ranges/List. The shard key is chosen based on criticality. Python code example for horizontal sharding using a hash-based approach: ```python def get_shard_"
     }
   ],
   "related_nodes": []

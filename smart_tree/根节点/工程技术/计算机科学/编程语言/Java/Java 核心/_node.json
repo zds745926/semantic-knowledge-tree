@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Java核心包括JVM机制、OOP、泛型、集合框架和IO体系。"
+    "description": "Java core includes the JVM mechanism, OOP (Object-Oriented Programming), generics, collection framework, and I/O system. Here are brief explanations with relevant Python code examples where applicable"
   },
   "data_pointers": [],
   "related_nodes": []

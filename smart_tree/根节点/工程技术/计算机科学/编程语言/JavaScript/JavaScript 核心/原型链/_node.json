@@ -14,7 +14,7 @@
     {
       "title": "原型链",
       "uri": "knowledge://js_prototype_v4",
-      "content_preview": "JS继承机制。__proto__指向prototype。属性查找沿原型链向上。"
+      "content_preview": "JavaScript Inheritance Mechanism. `__proto__` points to the prototype. Property lookup traverses up the prototype chain. Here's a brief explanation with a Python code example to illustrate: In JavaScr"
     }
   ],
   "related_nodes": []

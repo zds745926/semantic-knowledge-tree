@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "软件工程",
   "children": [
-    "持续集成 CI",
-    "持续部署 CD"
+    "持续部署 CD",
+    "持续集成 CI"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "持续集成(CI)和持续部署(CD)实现代码自动构建、测试和部署。"
+    "description": "Continuous Integration (CI) and Continuous Deployment (CD) enable automated code building, testing, and deployment. Here's a brief explanation with a Python code example for a simple CI/CD pipeline us"
   },
   "data_pointers": [],
   "related_nodes": []

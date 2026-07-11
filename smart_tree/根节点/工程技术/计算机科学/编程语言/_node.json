@@ -8,16 +8,16 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "Python",
-    "Java",
-    "JavaScript",
     "C/C++",
     "Go",
+    "Java",
+    "JavaScript",
+    "Python",
     "Rust"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "编程语言是人与计算机交流的形式化语言。每种语言有其设计哲学、类型系统和适用场景。主流编程语言包括Python、Java、JavaScript、C/C++、Go、Rust等。"
+    "description": "Programming languages are formal languages for communication between humans and computers. Each language has its design philosophy, type system, and applicable scenarios. Mainstream programming langua"
   },
   "data_pointers": [],
   "related_nodes": []

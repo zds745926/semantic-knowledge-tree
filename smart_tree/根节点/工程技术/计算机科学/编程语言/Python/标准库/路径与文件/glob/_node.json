@@ -14,7 +14,7 @@
     {
       "title": "glob",
       "uri": "knowledge://py_glob_v4",
-      "content_preview": "glob.glob('**/*.py',recursive=True) 文件模式匹配。等同于pathlib.Path.glob。"
+      "content_preview": "The `glob.glob('**/*.py', recursive=True)` function performs file pattern matching. It is equivalent to using `Path.glob` from the `pathlib` module. ### Python Example: ```python from glob import glob"
     }
   ],
   "related_nodes": []

@@ -14,7 +14,7 @@
     {
       "title": "Trait 系统",
       "uri": "knowledge://rust_trait_v4",
-      "content_preview": "trait定义共享行为。泛型约束fn foo<T: Display>(t: T)。trait对象。"
+      "content_preview": "Traits define shared behavior. Generic constraint `fn foo<T: Display>(t: T)`. Trait objects. Here's a brief explanation with a Python code example to illustrate the concept: In Rust, traits are used t"
     }
   ],
   "related_nodes": []

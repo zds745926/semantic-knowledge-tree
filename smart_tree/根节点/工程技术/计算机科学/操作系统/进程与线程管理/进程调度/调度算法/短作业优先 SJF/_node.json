@@ -14,7 +14,7 @@
     {
       "title": "短作业优先 SJF",
       "uri": "knowledge://sjf_v4",
-      "content_preview": "选最短CPU突发时间的进程。平均等待最小。无法预知。"
+      "content_preview": "Select the process with the shortest CPU burst time. This minimizes average waiting time. However, this cannot be predicted in advance. Python code example (using a simple simulation to illustrate the"
     }
   ],
   "related_nodes": []

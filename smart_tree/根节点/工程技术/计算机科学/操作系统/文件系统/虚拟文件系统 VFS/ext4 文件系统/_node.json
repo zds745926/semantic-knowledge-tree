@@ -14,7 +14,7 @@
     {
       "title": "ext4 文件系统",
       "uri": "knowledge://ext4_v4",
-      "content_preview": "Linux默认。16TB文件/1EB卷。日志保证一致性。extents减少元数据。"
+      "content_preview": "Linux default. 16TB file/1 EB volume. Log ensures consistency. Extents reduce metadata overhead. Here is the explanation with a brief Python code example for one of the concepts: - **Log ensures consi"
     }
   ],
   "related_nodes": []

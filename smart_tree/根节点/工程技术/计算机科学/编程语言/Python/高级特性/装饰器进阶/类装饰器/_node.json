@@ -14,7 +14,7 @@
     {
       "title": "类装饰器",
       "uri": "knowledge://py_deco_class_v4",
-      "content_preview": "类实现 __call__ 作为装饰器。适合需要持久状态的场景。"
+      "content_preview": "Implementing the `__call__` method as a decorator allows for scenarios where persistent state is needed. Here’s an example to illustrate this concept: In Python, you can define a class that acts both "
     }
   ],
   "related_nodes": []

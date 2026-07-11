@@ -14,7 +14,7 @@
     {
       "title": "Mixin 混入",
       "uri": "knowledge://py_mixin_v4",
-      "content_preview": "Mixin 提供特定功能的小型基类，通过多继承组合。命名约定以 Mixin 结尾。"
+      "content_preview": "Mixin provides specific functionalities as small base classes and can be combined through multiple inheritance. The naming convention typically ends with \"Mixin.\" Here's a brief Python code example to"
     }
   ],
   "related_nodes": []

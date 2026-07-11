@@ -14,7 +14,7 @@
     {
       "title": "NumPy",
       "uri": "knowledge://py_numpy_v4",
-      "content_preview": "科学计算基础库。ndarray高效数组。向量化运算比Python快10-100x。"
+      "content_preview": "Scientific computing foundation library. ndarray for efficient arrays. Vectorized operations are 10-100 times faster than Python. Here's a brief example of vectorized operation in Python using NumPy, "
     }
   ],
   "related_nodes": []

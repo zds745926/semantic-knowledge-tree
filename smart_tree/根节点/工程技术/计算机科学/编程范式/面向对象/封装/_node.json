@@ -14,7 +14,7 @@
     {
       "title": "封装",
       "uri": "knowledge://encapsulation_v4",
-      "content_preview": "封装将数据和操作数据的方法绑定在一起，通过访问控制(public/protected/private)实现信息隐藏。"
+      "content_preview": "Encapsulation binds data with the methods that operate on that data, achieving information hiding through access control (public/protected/private). Here is a brief Python code example to illustrate e"
     }
   ],
   "related_nodes": []

@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "文件系统",
   "children": [
-    "ext4 文件系统",
-    "Inode"
+    "Inode",
+    "ext4 文件系统"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "VFS提供统一文件操作接口，支持ext4/XFS/Btrfs等具体文件系统。"
+    "description": "VFS provides a unified file operation interface that supports specific filesystems such as ext4, XFS, and Btrfs. Python code example (to illustrate the concept of using VFS for file operations): ```py"
   },
   "data_pointers": [],
   "related_nodes": []

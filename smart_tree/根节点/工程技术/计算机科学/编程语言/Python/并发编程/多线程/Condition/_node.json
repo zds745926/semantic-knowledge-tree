@@ -14,7 +14,7 @@
     {
       "title": "Condition",
       "uri": "knowledge://py_condition_v4",
-      "content_preview": "threading.Condition 条件变量。wait()等待通知，notify()/notify_all()唤醒。生产者-消费者。"
+      "content_preview": "Translation: `threading.Condition`: A condition variable. It is used for waiting and notification between threads. The `wait()` method causes the current thread to wait until it is notified, while `no"
     }
   ],
   "related_nodes": []
