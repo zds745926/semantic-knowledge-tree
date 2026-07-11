@@ -135,14 +135,10 @@ def run_test(problem: Dict, generated_code: str) -> bool:
                 imports.append(line)
 
         import_block = "\n".join(imports)
-        full_code = import_block + "\n\n" + generated_code + "\n\n" + test
+        # Append the actual check() call — test code only defines check() but never calls it
+        entry_point = problem['entry_point']
+        full_code = import_block + "\n\n" + generated_code + "\n\n" + test + f"\n\ncheck({entry_point})"
         exec(compile(full_code, "<humaneval>", "exec"), exec_globals)
-
-        # Run the check function (HumanEval convention: check_{entry_point})
-        test_func_name = f"check_{problem['entry_point']}"
-        if test_func_name in exec_globals:
-            exec_globals[test_func_name]()
-            return True
         return True
     except AssertionError:
         return False
