@@ -29,3 +29,18 @@ Thumbs.db
 # Environment
 .env
 *.env.local
+models/
+swebench_pro_data/
+swebench_pro_eval/
+swe_bench_pro_full.csv
+results/eval_output/
+results/*.bak
+results/*backup*
+results/predictions*.json
+results/patches_for_eval.json
+dockerfiles
+docker_tags.txt
+pull_all.sh
+server.key
+stk.*
+data/database_export.json

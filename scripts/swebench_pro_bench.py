@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""SWE-Bench Pro 快速评测 — 知识树 + qwen2.5:7b"""
+"""SWE-Bench Pro 全量评测 — 知识树 + qwen2.5:7b
+用法: nohup python3 scripts/swebench_pro_bench.py > results/swebench_pro_full.log 2>&1 &
+"""
 import sys, os, json, urllib.request, time, re
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from core.persistence import TreePersistence
@@ -7,7 +9,8 @@ from core.persistence import TreePersistence
 OLLAMA = "http://localhost:11434/api/generate"
 MODEL = "qwen2.5:7b"
 RESULTS_FILE = "results/swebench_pro_results.jsonl"
-MAX_TASKS = 5
+PROGRESS_FILE = "results/swebench_pro_progress.json"
+MAX_TASKS = 1865
 
 def call_ollama(prompt: str) -> str:
     data = {"model": MODEL, "prompt": prompt, "stream": False,
@@ -57,9 +60,56 @@ def main():
     # 3. Evaluate
     print(f"\n[3/4] 运行评测 ({len(tasks)} 题)...")
     results = []
+    completed_ids = set()
+
+    # 断点续传：加载已完成的任务ID
+    if os.path.exists(RESULTS_FILE):
+        with open(RESULTS_FILE) as f:
+            for line in f:
+                if line.strip():
+                    try:
+                        r = json.loads(line)
+                        completed_ids.add(r["instance_id"])
+                        results.append(r)
+                    except: pass
+        print(f"  已加载 {len(completed_ids)} 条已有结果（断点续传）")
+    start_time = time.time()
+
+    # 断点续传：跳过已处理的
+    done_ids = set()
+    if os.path.exists(RESULTS_FILE):
+        with open(RESULTS_FILE) as _f:
+            for _line in _f:
+                if _line.strip():
+                    try: done_ids.add(json.loads(_line)["instance_id"])
+                    except: pass
+        print(f"  已有 {len(done_ids)} 条结果，跳过已处理任务")
 
     for i, task in enumerate(tasks):
         instance_id = task["instance_id"]
+        if instance_id in done_ids:
+            print(f"  [{i+1}/{len(tasks)}] {instance_id[:50]}... ⏭️ 已处理")
+            continue
+        if instance_id in completed_ids:
+            if (i+1) % 50 == 0:
+                print(f"  ...进度: {i+1}/{len(tasks)} (跳过已完成)")
+            continue
+
+    # 断点续传：跳过已处理的
+    done_ids = set()
+    if os.path.exists(RESULTS_FILE):
+        with open(RESULTS_FILE) as _f:
+            for _line in _f:
+                if _line.strip():
+                    try: done_ids.add(json.loads(_line)["instance_id"])
+                    except: pass
+        print(f"  已有 {len(done_ids)} 条结果，跳过已处理任务")
+
+    for i, task in enumerate(tasks):
+        instance_id = task["instance_id"]
+        if instance_id in done_ids:
+            print(f"  [{i+1}/{len(tasks)}] {instance_id[:50]}... ⏭️ 已处理")
+            continue
         repo = task["repo"]
         problem = task["problem_statement"]
         gold_patch = task["patch"]
@@ -148,19 +198,39 @@ Generate a complete git diff patch. Output ONLY the patch in ```diff ... ``` blo
             "tree_context": ctx, "gold_files": files,
             "generated_preview": generated[:500],
         })
+        # 增量写入
+        with open(RESULTS_FILE, "a") as f:
+            f.write(json.dumps(results[-1], ensure_ascii=False) + "\n")
+
+        # 每50题输出进度摘要
+        if (i+1) % 50 == 0:
+            done = sum(1 for r in results if r["passed"])
+            total_done = len(results)
+            elapsed_h = (time.time() - start_time) / 3600 0
+            rate = total_done / max(1, (time.time() - time.time())) * 60
+            print(f"  ⏱ 进度: {len(completed_ids)+i+1}/{len(tasks)} | 通过: {done}/{total_done} ({done/max(1,total_done)*100:.0f}%) | 速率: {rate:.1f}题/分 | {elapsed_h:.1f}h已过")
+
+            # 保存进度
+            with open(PROGRESS_FILE, "w") as f:
+                json.dump({
+                    "completed": len(completed_ids) + i + 1,
+                    "total": len(tasks),
+                    "passed": done,
+                    "total_results": total_done,
+                    "elapsed_h": round(elapsed_h, 2),
+                }, f)
 
     # Summary
     passed = sum(1 for r in results if r["passed"])
     total = len(results)
+    elapsed_total = time.time() - start_time
     print(f"\n{'='*60}")
     print(f"  SWE-Bench Pro Result: {passed}/{total} well-formed patches ({passed/total*100:.1f}%)")
-    print(f"  Avg time: {sum(r['time'] for r in results)/total:.1f}s")
+    print(f"  Avg time: {elapsed_total/max(1,total):.1f}s")
+    print(f"  Total time: {elapsed_total/60:.0f}min ({elapsed_total/3600:.1f}h)")
     print(f"{'='*60}")
 
-    with open(RESULTS_FILE, "w") as f:
-        for r in results:
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
-    print(f"  Saved to {RESULTS_FILE}")
+    print(f"  Results saved to {RESULTS_FILE}")
     db.close()
 
 if __name__ == "__main__":

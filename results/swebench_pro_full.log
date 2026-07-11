@@ -1,49 +1,282 @@
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+[23:14:04] ============================================================
+[23:14:04]   SWE-Bench Pro 全量评测 — 知识树 + qwen2.5:7b
+[23:14:04]   总计 1865 题, 预计运行 ~16 小时
+[23:14:04] ============================================================
+[23:14:04] 
+[1/4] 加载知识树...
+[23:14:04]   570 nodes
+[23:14:04] 
+[2/4] 加载 SWE-Bench Pro (streaming)...
+'[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1000)' thrown while requesting HEAD https://huggingface.co/datasets/ScaleAI/SWE-bench_Pro/resolve/7ab5114912baf22bb098818e604c02fe7ad2c11f/SWE-bench_Pro.py
+Retrying in 1s [Retry 1/5].
 ============================================================
-  SWE-Bench Pro 评测 — 知识树 + qwen2.5:7b
+  SWE-Bench Pro 全量评测 — 知识树 + qwen2.5:7b
+  总计 1865 题, 预计运行 ~16 小时
 ============================================================
 
 [1/4] 加载知识树...
 [持久化] 已加载 570 个节点从 smart_tree
   570 nodes
 
-[2/4] 加载 SWE-Bench Pro...
-  5 tasks loaded
-
-[3/4] 运行评测 (5 题)...
-
-  [1/5] instance_NodeBB__NodeBB-04998908ba6721d64eba79ae3b65a351dcfbc5b5-vnan (NodeBB/NodeBB, js)
-[编码器] 加载模型: all-MiniLM-L6-v2
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 6866.73it/s]
-/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/core/encoder.py:25: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
-  self._dim = self._model.get_sentence_embedding_dimension()
-[编码器] 向量维度: 384
-    Tree: 16 paths, 5 unique
-    Generating...
-    [PASS] diff=True hunks=True files=public/language/en-GB/admin/manage/users.json+public/language/en-GB/error.json+public/openapi/components/schemas/UserObject.yaml+src/controllers/admin/users.js+src/database/mongo/main.js+src/database/postgres/main.js+src/database/redis/main.js+src/socket.io/admin/user.js+src/user/delete.js+src/user/email.js+src/views/admin/manage/users.tpl targets=True (62.7s)
-
-  [2/5] instance_qutebrowser__qutebrowser-f91ace96223cac8161c16dd061907e138fe85111-v059c6fdc75567943479b23ebca7c07b5e9a7f34c (qutebrowser/qutebrowser, python)
-    Tree: 0 paths, 0 unique
-    Generating...
-    [PASS] diff=True hunks=True files=qutebrowser/browser/qtnetworkdownloads.py+qutebrowser/utils/log.py+qutebrowser/utils/qtlog.py targets=True (23.2s)
-
-  [3/5] instance_NodeBB__NodeBB-51d8f3b195bddb13a13ddc0de110722774d9bb1b-vf2cf3cbd463b7ad942381f1c6d077626485a1e9e (NodeBB/NodeBB, js)
-    Tree: 0 paths, 0 unique
-    Generating...
-    [PASS] diff=True hunks=True files=src/controllers/index.js+src/controllers/well-known.js+src/routes/index.js+src/routes/user.js+src/routes/well-known.js targets=True (24.4s)
-
-  [4/5] instance_qutebrowser__qutebrowser-c580ebf0801e5a3ecabc54f327498bb753c6d5f2-v2ef375ac784985212b1805e1d0431dc8f1b3c171 (qutebrowser/qutebrowser, python)
-    Tree: 0 paths, 0 unique
-    Generating...
-    [PASS] diff=True hunks=True files=qutebrowser/components/hostblock.py+qutebrowser/config/configutils.py+qutebrowser/utils/urlutils.py targets=True (24.8s)
-
-  [5/5] instance_ansible__ansible-f327e65d11bb905ed9f15996024f857a95592629-vba6da65a0f3baefda7a058ebbd0a8dcafb8512f5 (ansible/ansible, python)
-    Tree: 5 paths, 5 unique
-    Generating...
-    [PASS] diff=True hunks=True files=lib/ansible/galaxy/dependency_resolution/dataclasses.py+lib/ansible/utils/collection_loader/_collection_finder.py targets=True (24.2s)
-
+[2/4] 加载 SWE-Bench Pro (streaming)...
+Traceback (most recent call last):
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/scripts/swebench_pro_full.py", line 208, in <module>
+    main()
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/scripts/swebench_pro_full.py", line 91, in main
+    ds = load_dataset("ScaleAI/SWE-bench_Pro", split="test", streaming=True)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/datasets/load.py", line 1698, in load_dataset
+    builder_instance = load_dataset_builder(
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/datasets/load.py", line 1325, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/datasets/load.py", line 1217, in dataset_module_factory
+    raise e1 from None
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/datasets/load.py", line 1170, in dataset_module_factory
+    api.hf_hub_download(
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/huggingface_hub/hf_api.py", line 6442, in hf_hub_download
+    return hf_hub_download(
+           ^^^^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1018, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1152, in _hf_hub_download_to_cache_dir
+    _get_metadata_or_catch_error(
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1712, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 88, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1620, in get_hf_file_metadata
+    response = _httpx_follow_relative_redirects_with_backoff(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 719, in _httpx_follow_relative_redirects_with_backoff
+    response = http_backoff(
+               ^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 596, in http_backoff
+    return next(
+           ^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 504, in _http_backoff_base
+    response = client.request(method=method, url=url, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zds/.reasonix/global-workspace/semantic-knowledge-tree/.venv/lib/python3.12/site-packages/httpx/_client.py", line 901, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+[23:33:46] ============================================================
+[23:33:46]   SWE-Bench Pro 全量评测 — 知识树 + qwen2.5:7b
+[23:33:46]   总计 1865 题, 预计运行 ~16 小时
+[23:33:46] ============================================================
+[23:33:46] 
+[1/4] 加载知识树...
+[23:33:46]   570 nodes
+[23:33:46] 
+[2/4] 加载 SWE-Bench Pro (streaming)...
+[23:33:53]   Dataset ready (streaming)
+[23:33:53] 
+[3/4] 运行评测 (1865 题)...
+[23:33:53]   ==================================================
+[23:33:53]      # Status   Time                           Repo
+[23:33:53]   ==================================================
+[23:34:54]   [   1] ✅  55.6s                  NodeBB/NodeBB
+[23:35:54]   [   2] ✅  59.5s        qutebrowser/qutebrowser
+[23:36:18]   [   3] ✅  23.9s                  NodeBB/NodeBB
+[23:36:37]   [   4] ✅  19.0s        qutebrowser/qutebrowser
+[23:37:31]   [   5] ✅  54.4s                ansible/ansible
+[23:38:39]   [   6] ✅  68.0s                ansible/ansible
+[23:38:56]   [   7] ✅  16.9s    internetarchive/openlibrary
+[23:39:25]   [   8] ❌  29.7s        qutebrowser/qutebrowser
+[23:39:50]   [   9] ✅  24.4s         gravitational/teleport
+[23:41:19]   [  10] ✅  88.8s            navidrome/navidrome
+[23:43:38]   [  11] ✅ 138.9s    internetarchive/openlibrary
+[23:44:36]   [  12] ✅  58.7s                ansible/ansible
+[23:45:37]   [  13] ✅  60.3s         gravitational/teleport
+[23:46:34]   [  14] ✅  57.0s        qutebrowser/qutebrowser
+[23:47:57]   [  15] ✅  83.2s         element-hq/element-web
+[23:48:29]   [  16] ✅  32.4s          future-architect/vuls
+[23:49:29]   [  17] ✅  59.6s    internetarchive/openlibrary
+[23:50:39]   [  18] ✅  70.6s          future-architect/vuls
+[23:52:05]   [  19] ✅  85.6s         gravitational/teleport
+[23:53:13]   [  20] ✅  68.6s        qutebrowser/qutebrowser
+[23:53:43]   [  21] ✅  29.2s         gravitational/teleport
+[23:54:59]   [  22] ✅  75.8s    internetarchive/openlibrary
+[23:56:36]   [  23] ✅  97.6s            navidrome/navidrome
+[23:57:39]   [  24] ✅  63.1s    internetarchive/openlibrary
+[23:58:28]   [  25] ✅  49.3s         element-hq/element-web
+[23:59:25]   [  26] ✅  56.3s          protonmail/webclients
+[00:00:17]   [  27] ✅  51.7s                  NodeBB/NodeBB
+[00:01:23]   [  28] ✅  66.0s                 flipt-io/flipt
+[00:02:40]   [  29] ❌  77.9s                 flipt-io/flipt
+[00:03:03]   [  30] ✅  22.8s                  NodeBB/NodeBB
+[00:03:44]   [  31] ✅  40.5s         gravitational/teleport
+[00:03:53]   [  32] ✅   9.3s                  NodeBB/NodeBB
+[00:04:09]   [  33] ✅  15.8s            navidrome/navidrome
+[00:04:36]   [  34] ✅  27.2s          future-architect/vuls
+[00:04:52]   [  35] ✅  16.1s                 flipt-io/flipt
+[00:05:21]   [  36] ✅  28.7s        qutebrowser/qutebrowser
+[00:06:07]   [  37] ✅  46.3s                ansible/ansible
+[00:06:36]   [  38] ✅  29.4s         gravitational/teleport
+[00:06:54]   [  39] ✅  17.2s         gravitational/teleport
+[00:07:19]   [  40] ✅  25.5s          future-architect/vuls
+[00:07:50]   [  41] ✅  31.0s        qutebrowser/qutebrowser
+[00:08:37]   [  42] ✅  46.7s          protonmail/webclients
+[00:09:00]   [  43] ❌  22.8s                ansible/ansible
+[00:10:09]   [  44] ✅  69.6s            navidrome/navidrome
+[00:10:44]   [  45] ✅  35.1s    internetarchive/openlibrary
+[00:11:38]   [  46] ✅  53.6s                ansible/ansible
+[00:11:48]   [  47] ✅   9.8s         element-hq/element-web
+[00:12:07]   [  48] ✅  18.8s    internetarchive/openlibrary
+[00:12:36]   [  49] ✅  29.1s         gravitational/teleport
+[00:13:30]   [  50] ✅  54.0s                 flipt-io/flipt
+[00:14:49]   [  51] ✅  78.9s          future-architect/vuls
+[00:16:41]   [  52] ✅ 112.2s         element-hq/element-web
+[00:17:50]   [  53] ✅  69.0s                ansible/ansible
+[00:18:47]   [  54] ✅  56.8s          protonmail/webclients
+[00:20:06]   [  55] ✅  79.8s                ansible/ansible
+[00:21:27]   [  56] ✅  80.7s    internetarchive/openlibrary
+[00:22:24]   [  57] ❌  56.7s                 flipt-io/flipt
+[00:22:49]   [  58] ✅  25.1s    internetarchive/openlibrary
+[00:23:15]   [  59] ✅  26.4s         element-hq/element-web
+[00:23:38]   [  60] ✅  22.6s                 flipt-io/flipt
+[00:24:11]   [  61] ✅  33.4s            navidrome/navidrome
+[00:24:45]   [  62] ✅  33.6s    internetarchive/openlibrary
+[00:25:42]   [  63] ✅  57.0s                ansible/ansible
+[00:26:40]   [  64] ✅  58.5s         element-hq/element-web
+[00:26:51]   [  65] ✅  10.8s                 flipt-io/flipt
+[00:27:40]   [  66] ❌  49.3s        qutebrowser/qutebrowser
+[00:27:53]   [  67] ✅  12.3s         element-hq/element-web
+[00:28:30]   [  68] ✅  37.2s                 flipt-io/flipt
+[00:28:54]   [  69] ✅  24.2s         gravitational/teleport
+[00:29:14]   [  70] ✅  20.0s         element-hq/element-web
+[00:29:25]   [  71] ✅  11.2s          future-architect/vuls
+[00:29:52]   [  72] ✅  27.0s                ansible/ansible
+[00:30:58]   [  73] ✅  66.1s                  NodeBB/NodeBB
+[00:31:53]   [  74] ✅  54.9s        qutebrowser/qutebrowser
+[00:32:40]   [  75] ✅  47.1s          future-architect/vuls
+[00:33:27]   [  76] ❌  47.1s                 flipt-io/flipt
+[00:33:51]   [  77] ✅  23.8s         gravitational/teleport
+[00:34:03]   [  78] ✅  11.5s          future-architect/vuls
+[00:34:36]   [  79] ✅  33.6s    internetarchive/openlibrary
+[00:34:56]   [  80] ✅  19.8s          future-architect/vuls
+[00:35:25]   [  81] ✅  29.4s                ansible/ansible
+[00:35:43]   [  82] ✅  17.8s    internetarchive/openlibrary
+[00:36:49]   [  83] ❌  65.5s         element-hq/element-web
+[00:36:56]   [  84] ✅   7.3s                 tutao/tutanota
+[00:37:20]   [  85] ✅  24.5s         element-hq/element-web
+[00:37:35]   [  86] ❌  14.2s         element-hq/element-web
+[00:38:02]   [  87] ✅  27.5s                 tutao/tutanota
+[00:38:29]   [  88] ✅  26.5s            navidrome/navidrome
+[00:38:45]   [  89] ✅  16.7s        qutebrowser/qutebrowser
+[00:39:05]   [  90] ✅  20.0s         gravitational/teleport
+[00:39:27]   [  91] ✅  21.6s        qutebrowser/qutebrowser
+[00:39:57]   [  92] ✅  30.2s                 flipt-io/flipt
+[00:40:12]   [  93] ✅  15.4s         element-hq/element-web
+[00:40:37]   [  94] ✅  25.0s          protonmail/webclients
+[00:41:45]   [  95] ✅  68.1s            navidrome/navidrome
+[00:42:36]   [  96] ✅  50.1s                ansible/ansible
+[00:43:01]   [  97] ✅  25.1s            navidrome/navidrome
+[00:43:17]   [  98] ✅  16.1s                  NodeBB/NodeBB
+[00:43:43]   [  99] ✅  26.0s                ansible/ansible
+[00:44:44]   [ 100] ✅  60.9s          future-architect/vuls
+[00:44:44]   ──────────────────────────────────────────────────
+[00:44:44]   📊 进度: 100/1865 | 通过率: 92/100 (92.0%) | 预计剩余: 1791分钟
+[00:44:44]   ──────────────────────────────────────────────────
+[00:45:44]   [ 101] ✅  60.6s        qutebrowser/qutebrowser
+[00:45:57]   [ 102] ✅  12.8s         element-hq/element-web
+[00:46:14]   [ 103] ✅  17.1s    internetarchive/openlibrary
+[00:46:35]   [ 104] ✅  20.7s         gravitational/teleport
+[00:46:53]   [ 105] ✅  18.3s                ansible/ansible
+[00:47:06]   [ 106] ✅  12.8s         gravitational/teleport
+[00:47:18]   [ 107] ✅  11.9s         gravitational/teleport
+[00:47:36]   [ 108] ✅  18.6s                ansible/ansible
+[00:47:47]   [ 109] ✅  11.0s                  NodeBB/NodeBB
+[00:48:05]   [ 110] ✅  17.7s                 flipt-io/flipt
+[00:49:03]   [ 111] ✅  57.9s          future-architect/vuls
+[00:49:27]   [ 112] ✅  24.4s            navidrome/navidrome
+[00:49:45]   [ 113] ✅  17.8s    internetarchive/openlibrary
+[00:50:00]   [ 114] ✅  14.5s                 tutao/tutanota
+[00:50:44]   [ 115] ✅  44.6s                 tutao/tutanota
+[00:51:12]   [ 116] ✅  27.4s          protonmail/webclients
+[00:51:29]   [ 117] ❌  17.6s         gravitational/teleport
+[00:51:53]   [ 118] ✅  23.8s         gravitational/teleport
+[00:52:11]   [ 119] ✅  17.6s    internetarchive/openlibrary
+[00:52:30]   [ 120] ✅  18.8s                ansible/ansible
+[00:52:57]   [ 121] ❌  27.3s                ansible/ansible
+[00:53:46]   [ 122] ✅  48.9s    internetarchive/openlibrary
+[00:54:02]   [ 123] ✅  16.6s                  NodeBB/NodeBB
+[00:54:23]   [ 124] ✅  20.9s    internetarchive/openlibrary
+[00:54:55]   [ 125] ✅  31.4s                ansible/ansible
+[00:55:49]   [ 126] ✅  54.6s         gravitational/teleport
+[00:56:18]   [ 127] ✅  28.9s                 flipt-io/flipt
+[00:56:38]   [ 128] ✅  19.3s                ansible/ansible
+[00:56:50]   [ 129] ❌  12.2s          protonmail/webclients
+[00:57:07]   [ 130] ❌  16.8s        qutebrowser/qutebrowser
+[00:57:48]   [ 131] ✅  41.7s                 flipt-io/flipt
+[00:58:12]   [ 132] ✅  23.9s          future-architect/vuls
+[00:58:35]   [ 133] ✅  22.6s                ansible/ansible
+[00:58:59]   [ 134] ✅  24.4s                ansible/ansible
+[00:59:28]   [ 135] ✅  29.1s        qutebrowser/qutebrowser
+[00:59:45]   [ 136] ✅  17.0s    internetarchive/openlibrary
+[01:00:38]   [ 137] ✅  53.1s        qutebrowser/qutebrowser
+[01:01:00]   [ 138] ✅  21.4s        qutebrowser/qutebrowser
+[01:01:09]   [ 139] ✅   9.7s         element-hq/element-web
+[01:01:26]   [ 140] ✅  16.7s          future-architect/vuls
+[01:01:40]   [ 141] ❌  13.5s                  NodeBB/NodeBB
+[01:02:44]   [ 142] ✅  64.3s          protonmail/webclients
+[01:02:58]   [ 143] ✅  14.2s    internetarchive/openlibrary
+[01:03:09]   [ 144] ✅  11.2s        qutebrowser/qutebrowser
+[01:03:43]   [ 145] ❌  33.4s                 flipt-io/flipt
+[01:04:05]   [ 146] ✅  22.0s    internetarchive/openlibrary
+[01:04:27]   [ 147] ✅  21.8s          future-architect/vuls
+[01:04:42]   [ 148] ✅  15.4s                  NodeBB/NodeBB
+[01:05:03]   [ 149] ❌  20.5s                 flipt-io/flipt
+[01:05:42]   [ 150] ✅  39.5s            navidrome/navidrome
+[01:06:12]   [ 151] ❌  29.8s          future-architect/vuls
+[01:06:44]   [ 152] ✅  31.9s          future-architect/vuls
+[01:07:19]   [ 153] ✅  34.9s            navidrome/navidrome
+[01:07:45]   [ 154] ✅  25.8s        qutebrowser/qutebrowser
+[01:08:07]   [ 155] ✅  22.9s    internetarchive/openlibrary
+[01:08:25]   [ 156] ✅  17.1s                 flipt-io/flipt
+[01:08:49]   [ 157] ✅  24.1s                 flipt-io/flipt
+[01:09:48]   [ 158] ✅  59.0s          protonmail/webclients
+[01:11:08]   [ 159] ✅  80.1s                ansible/ansible
+[01:11:25]   [ 160] ✅  17.4s        qutebrowser/qutebrowser
+[01:12:11]   [ 161] ✅  46.0s                 flipt-io/flipt
+[01:13:21]   [ 162] ✅  69.6s            navidrome/navidrome
+[01:13:39]   [ 163] ❌  18.0s                  NodeBB/NodeBB
+[01:14:23]   [ 164] ✅  44.2s                ansible/ansible
+[01:14:52]   [ 165] ✅  29.5s                ansible/ansible
+[01:15:12]   [ 166] ✅  19.8s         element-hq/element-web
+[01:15:39]   [ 167] ✅  26.9s                 flipt-io/flipt
+[01:15:55]   [ 168] ✅  15.7s            navidrome/navidrome
+[01:16:15]   [ 169] ✅  20.5s         gravitational/teleport
+[01:16:58]   [ 170] ✅  42.5s            navidrome/navidrome
+[01:17:25]   [ 171] ✅  27.6s          future-architect/vuls
+[01:17:38]   [ 172] ❌  12.1s          protonmail/webclients
+[01:18:49]   [ 173] ✅  71.5s         gravitational/teleport
+[01:19:08]   [ 174] ✅  19.3s                  NodeBB/NodeBB
+[01:19:32]   [ 175] ✅  23.8s          future-architect/vuls
+[01:19:47]   [ 176] ✅  14.7s                 tutao/tutanota
+[01:20:03]   [ 177] ✅  16.3s        qutebrowser/qutebrowser
+[01:20:28]   [ 178] ✅  24.6s          future-architect/vuls
+[01:22:40]   [ 179] ✅ 132.3s            navidrome/navidrome
+[01:22:43] [SIGNAL] 收到信号 2, 将在当前任务完成后退出
+[01:22:51]   [ 180] ✅  10.9s          future-architect/vuls
+[01:22:51]   ⏹ 收到退出信号，在第 181 题处停止
+[01:22:53] 
 ============================================================
-  SWE-Bench Pro Result: 5/5 well-formed patches (100.0%)
-  Avg time: 31.9s
-============================================================
-  Saved to results/swebench_pro_results.jsonl
+[01:22:53]   SWE-Bench Pro 全量结果: 162/180 passed (90.0%)
+[01:22:53]   总耗时: 109 分钟
+[01:22:53]   平均: 36.3s/题
+[01:22:53] ============================================================
