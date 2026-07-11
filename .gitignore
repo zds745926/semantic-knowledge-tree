@@ -43,4 +43,7 @@ docker_tags.txt
 pull_all.sh
 server.key
 stk.*
+
+# Agent / tooling
+.reasonix/
 data/database_export.json
