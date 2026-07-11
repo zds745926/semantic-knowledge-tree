@@ -133,7 +133,49 @@ semantic-knowledge-tree/
 | 知识更新 | 重训数月 | **实时** |
 | 可解释性 | 黑盒 | **完整路径** |
 | 幻觉率 | ~15-30% | **<5%** |
-| HumanEval pass@1 | — | **78.0%** |
+| HumanEval pass@1 | 84.8% (官方) | **78.0% (SKT)** |
+
+## HumanEval 基准对比
+
+> 数据来源：[Qwen2.5 官方博客](https://qwenlm.github.io/blog/qwen2.5-llm/) · [DataLearnerAI 排行榜](https://www.datalearner.com/benchmarks/humaneval)
+
+### Base 模型（0-shot，基础预训练模型）
+
+| 模型 | 参数量 | HumanEval |
+|------|:-----:|:---------:|
+| Qwen2.5-0.5B | 0.5B | 30.5 |
+| Qwen2.5-1.5B | 1.5B | 37.2 |
+| Qwen2.5-3B | 3B | 42.1 |
+| Qwen2.5-7B | 7B | **57.9** |
+| Qwen2.5-14B | 14B | 56.7 |
+| Qwen2.5-32B | 32B | 58.5 |
+| Qwen2.5-72B | 72B | 59.1 |
+
+### Instruct 模型（指令微调版本）
+
+| 模型 | 参数量 | HumanEval |
+|------|:-----:|:---------:|
+| Qwen2.5-0.5B-Instruct | 0.5B | 35.4 |
+| Qwen2.5-1.5B-Instruct | 1.5B | 61.6 |
+| Qwen2.5-3B-Instruct | 3B | 74.4 |
+| **Qwen2.5-7B-Instruct** | **7B** | **84.8** |
+| Qwen2.5-14B-Instruct | 14B | 83.5 |
+| Qwen2.5-32B-Instruct | 32B | 88.4 |
+| Qwen2.5-72B-Instruct | 72B | 86.6 |
+
+### SKT 评测对比
+
+SKT 使用 **Qwen2.5-7B-Instruct**（通过 Ollama 调用，temperature=0.1）+ 知识树上下文检索。
+
+| 配置 | HumanEval pass@1 | 与官方对比 |
+|------|:---------------:|:---------:|
+| Qwen2.5-7B-Instruct（官方） | **84.8%** | — |
+| **SKT + qwen2.5:7b** | **78.0%** | 差距 -6.8% |
+
+SKT 当前得分低于官方 Instruct 版本，主要原因：
+1. Ollama 调用 prompt 模板与官方评测有差异
+2. 知识树上下文可能引入噪音（仅 57% 命中率，且部分命中的是无关节点）
+3. 代码提取逻辑（`extract_code`）可能截断或遗漏部分生成内容
 
 ## 树状态
 
