@@ -53,25 +53,28 @@ bash run.sh
 
 | 指标 | 结果 |
 |------|------|
-| **pass@1** | **162/164 (98.8%)** |
+| **pass@1** | **162/164 (98.8%)** ✅ |
 | 平均生成时间 | 3.0 秒/题 |
 | 总运行时间 | ~8 分钟 |
 | 失败原因 | 1 例语法错误（括号不匹配）、1 例逻辑错误 |
-| 知识树命中率 | 57% 查询获得相关知识上下文 |
+| 知识树命中率 | **57%**（94/164 题目获得相关知识上下文） |
 
 评测脚本：`scripts/humaneval_bench.py` · 全量结果：`results/humaneval_results.jsonl`
 
 ## SWE-bench 评测
 
-使用 **知识树 + qwen2.5:7b** 在 [SWE-bench](https://www.swebench.com/) 基准上测试真实 GitHub 代码修复能力：
+使用 **知识树 + qwen2.5:7b** 在 [SWE-bench](https://www.swebench.com/) 基准上测试真实 GitHub 代码修复能力。
 
-| 版本 | 格式正确率 | 平均时间 | 树命中率 |
-|------|:---------:|:--------:|:--------:|
-| **SWE-bench** (astropy) | **5/5 (100%)** | 14.0s | 80% |
-| **SWE-bench Pro** (NodeBB/qutebrowser/ansible) | **5/5 (100%)** | **31.9s** | **40%** |
+> ⚠️ **说明：** 以下评测仅做 **格式正确性检查**（检查生成的 patch 是否包含 `diff --git` 头、`@@` hunk 标记、目标文件是否正确），**未实际执行 `git apply` 或运行测试用例**。因设备资源（磁盘空间、网络带宽）限制，暂未进行实际应用测试。
+
+| 版本 | 题数 | 格式通过率 | 平均时间 | 树命中率 |
+|------|:---:|:---------:|:--------:|:--------:|
+| **SWE-bench** (astropy) | 5 | **5/5 (100%)** | 14.0s | 80% |
+| **SWE-bench Pro** (多仓库) | 730 | **711/730 (97.4%)** | **29.1s** | **43.8%** |
 
 - SWE-bench: `scripts/swebench_fast.py` → `results/swebench_results.jsonl`
 - SWE-bench Pro: `scripts/swebench_pro_bench.py` → `results/swebench_pro_results.jsonl`
+- 知识库当前仅覆盖 Python 垂直领域，**SWE-bench Pro 涉及 JS/Go/Python 多语言仓库**，跨语言场景下树命中率偏低
 
 ## 渗透算法 v2
 
@@ -139,7 +142,14 @@ DEPTH=10  NODES=570  LEAVES=392
 Python子树: 220 nodes
 交叉引用: 56
 存储: filesystem (smart_tree/)
+
+--- 评测知识库命中率 ---
+HumanEval:     57.3%  (94/164)
+SWE-bench:     80.0%  (4/5)
+SWE-bench Pro: 43.8%  (320/730)
 ```
+
+> 📌 当前知识库主要覆盖 Python 领域（220 节点），SWE-bench Pro 涉及 JS/Go/Python 多语言仓库，跨语言场景下树命中率明显下降。
 
 ## 许可证
 
