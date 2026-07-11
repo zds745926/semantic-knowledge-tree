@@ -2,43 +2,7 @@
 
 > 不把知识"记住"在模型权重里，而是将知识组织为一棵自带语义向量的树状索引 — 让极小的推理模型（1.5B）通过树的检索路径获得超越千亿参数模型的知识广度。
 
-## 🌐 Multi-Language / Berbagai Bahasa / 多语言
-
-**🇨🇳 中文 (Chinese)**
-全球语义知识树（SKT）— 不把知识"记住"在模型权重里，而是将知识组织为一棵自带语义向量的树状索引。让极小的推理模型通过树的检索路径获得超越千亿参数模型的知识广度。
-
-**🇬🇧 English**
-Semantic Knowledge Tree (SKT) — Instead of memorizing knowledge in model weights, SKT organizes knowledge as a tree with semantic vectors. Tiny 1.5B models can surpass 100B+ models by retrieving knowledge through the tree.
-
-**🇮🇩 Bahasa Indonesia**
-Pohon Pengetahuan Semantik (SKT) — Alih-alih menyimpan pengetahuan di dalam bobot model, SKT mengorganisir pengetahuan sebagai pohon dengan vektor semantik. Model kecil 1.5B dapat melampaui model 100B+ dengan mengambil pengetahuan melalui pohon.
-
-**🇪🇸 Español**
-Árbol de Conocimiento Semántico (SKT) — En lugar de memorizar el conocimiento en los pesos del modelo, SKT organiza el conocimiento como un árbol con vectores semánticos. Modelos pequeños de 1.5B pueden superar a modelos de 100B+ recuperando conocimiento a través del árbol.
-
-**🇯🇵 日本語**
-Semantic Knowledge Tree (SKT) — 知識をモデルの重みに記憶させる代わりに、SKTは知識をセマンティックベクトルを持つツリーとして整理します。1.5Bの小さなモデルが、ツリーを通じて知識を検索することで100B+のモデルを凌駕できます。
-
-**🇰🇷 한국어**
-시맨틱 지식 트리(SKT) — 지식을 모델 가중치에 기억시키는 대신, SKT는 지식을 의미 벡터를 가진 트리로 구성합니다. 1.5B의 작은 모델이 트리를 통해 지식을 검색하여 100B+ 모델을 능가할 수 있습니다.
-
-**🇫🇷 Français**
-Arbre de Connaissances Sémantiques (SKT) — Au lieu de mémoriser les connaissances dans les poids du modèle, SKT organise les connaissances sous forme d'arbre avec des vecteurs sémantiques. De petits modèles de 1.5B peuvent surpasser des modèles de 100B+ en récupérant des connaissances via l'arbre.
-
-**🇩🇪 Deutsch**
-Semantischer Wissensbaum (SKT) — Anstatt Wissen in Modellgewichten zu speichern, organisiert SKT Wissen als Baum mit semantischen Vektoren. Kleine 1.5B-Modelle können 100B+-Modelle übertreffen, indem sie Wissen durch den Baum abrufen.
-
-**🇦🇪 العربية**
-شجرة المعرفة الدلالية (SKT) — بدلاً من حفظ المعرفة في أوزان النموذج، تنظم SKT المعرفة كشجرة ذات متجهات دلالية. يمكن للنماذج الصغيرة بحجم 1.5B أن تتفوق على نماذج 100B+ من خلال استرجاع المعرفة عبر الشجرة.
-
-**🇷🇺 Русский**
-Семантическое дерево знаний (SKT) — Вместо запоминания знаний в весах модели, SKT организует знания в виде дерева с семантическими векторами. Небольшие модели на 1.5B могут превзойти модели на 100B+, извлекая знания через дерево.
-
-**🇵🇹 Português**
-Árvore de Conhecimento Semântico (SKT) — Em vez de memorizar conhecimento nos pesos do modelo, SKT organiza o conhecimento como uma árvore com vetores semânticos. Modelos pequenos de 1.5B podem superar modelos de 100B+ recuperando conhecimento através da árvore.
-
-**🇻🇳 Tiếng Việt**
-Cây Tri Thức Ngữ Nghĩa (SKT) — Thay vì ghi nhớ kiến thức trong trọng số mô hình, SKT tổ chức kiến thức như một cây với các vector ngữ nghĩa. Mô hình nhỏ 1.5B có thể vượt qua mô hình 100B+ bằng cách truy xuất kiến thức qua cây.
+🌐 **Language / 语言:** [🇨🇳 中文](#zh) | [🇬🇧 English](#en) | [🇮🇩 Bahasa Indonesia](#id) | [🇪🇸 Español](#es) | [🇯🇵 日本語](#ja) | [🇰🇷 한국어](#ko) | [🇫🇷 Français](#fr) | [🇩🇪 Deutsch](#de) | [🇦🇪 العربية](#ar) | [🇷🇺 Русский](#ru) | [🇵🇹 Português](#pt) | [🇻🇳 Tiếng Việt](#vi)
 
 ## 核心思想
 
@@ -180,3 +144,43 @@ Python子树: 220 nodes
 ## 许可证
 
 [MIT](LICENSE)
+
+## 🌐 多语言说明
+
+点击上方链接跳转到对应语言的完整描述。
+
+### <a name="zh"></a>🇨🇳 中文
+全球语义知识树（SKT）— 不把知识"记住"在模型权重里，而是将知识组织为一棵自带语义向量的树状索引。让极小的推理模型通过树的检索路径获得超越千亿参数模型的知识广度。
+
+### <a name="en"></a>🇬🇧 English
+Semantic Knowledge Tree (SKT) — Instead of memorizing knowledge in model weights, SKT organizes knowledge as a tree with semantic vectors. Tiny 1.5B models can surpass 100B+ models by retrieving knowledge through the tree.
+
+### <a name="id"></a>🇮🇩 Bahasa Indonesia
+Pohon Pengetahuan Semantik (SKT) — Alih-alih menyimpan pengetahuan di dalam bobot model, SKT mengorganisir pengetahuan sebagai pohon dengan vektor semantik. Model kecil 1.5B dapat melampaui model 100B+ dengan mengambil pengetahuan melalui pohon.
+
+### <a name="es"></a>🇪🇸 Español
+Árbol de Conocimiento Semántico (SKT) — En lugar de memorizar el conocimiento en los pesos del modelo, SKT organiza el conocimiento como un árbol con vectores semánticos. Modelos pequeños de 1.5B pueden superar a modelos de 100B+ recuperando conocimiento a través del árbol.
+
+### <a name="ja"></a>🇯🇵 日本語
+Semantic Knowledge Tree (SKT) — 知識をモデルの重みに記憶させる代わりに、SKTは知識をセマンティックベクトルを持つツリーとして整理します。1.5Bの小さなモデルが、ツリーを通じて知識を検索することで100B+のモデルを凌駕できます。
+
+### <a name="ko"></a>🇰🇷 한국어
+시맨틱 지식 트리(SKT) — 지식을 모델 가중치에 기억시키는 대신, SKT는 지식을 의미 벡터를 가진 트리로 구성합니다. 1.5B의 작은 모델이 트리를 통해 지식을 검색하여 100B+ 모델을 능가할 수 있습니다.
+
+### <a name="fr"></a>🇫🇷 Français
+Arbre de Connaissances Sémantiques (SKT) — Au lieu de mémoriser les connaissances dans les poids du modèle, SKT organise les connaissances sous forme d'arbre avec des vecteurs sémantiques. De petits modèles de 1.5B peuvent surpasser des modèles de 100B+ en récupérant des connaissances via l'arbre.
+
+### <a name="de"></a>🇩🇪 Deutsch
+Semantischer Wissensbaum (SKT) — Anstatt Wissen in Modellgewichten zu speichern, organisiert SKT Wissen als Baum mit semantischen Vektoren. Kleine 1.5B-Modelle können 100B+-Modelle übertreffen, indem sie Wissen durch den Baum abrufen.
+
+### <a name="ar"></a>🇦🇪 العربية
+شجرة المعرفة الدلالية (SKT) — بدلاً من حفظ المعرفة في أوزان النموذج، تنظم SKT المعرفة كشجرة ذات متجهات دلالية. يمكن للنماذج الصغيرة بحجم 1.5B أن تتفوق على نماذج 100B+ من خلال استرجاع المعرفة عبر الشجرة.
+
+### <a name="ru"></a>🇷🇺 Русский
+Семантическое дерево знаний (SKT) — Вместо запоминания знаний в весах модели, SKT организует знания в виде дерева с семантическими векторами. Небольшие модели на 1.5B могут превзойти модели на 100B+, извлекая знания через дерево.
+
+### <a name="pt"></a>🇵🇹 Português
+Árvore de Conhecimento Semântico (SKT) — Em vez de memorizar conhecimento nos pesos do modelo, SKT organiza o conhecimento como uma árvore com vetores semânticos. Modelos pequenos de 1.5B podem superar modelos de 100B+ recuperando conhecimento através da árvore.
+
+### <a name="vi"></a>🇻🇳 Tiếng Việt
+Cây Tri Thức Ngữ Nghĩa (SKT) — Thay vì ghi nhớ kiến thức trong trọng số mô hình, SKT tổ chức kiến thức như một cây với các vector ngữ nghĩa. Mô hình nhỏ 1.5B có thể vượt qua mô hình 100B+ bằng cách truy xuất kiến thức qua cây.
