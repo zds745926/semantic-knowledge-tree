@@ -9,12 +9,14 @@
   "parent": "concurrent.futures",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "ProcessPoolExecutor: Process pool executor. Across the Global Interpreter Lock (GIL), suitable for CPU-intensive tasks. Parameters must be picklable. Here is a brief Python code example to illustrate using a process pool executor: ```python from multiprocessing import Pool def cpu_intensive_task(x): # Example task: compute x squared return x * x if __name__ == \"__main__\": with Pool() as p: results = p.map(cpu_intensive_task, [1, 2, 3, 4, 5]) print(results) ``` In this example, the `Pool` class from the `multiprocessing` module is used to create a process pool. The `map` method of the `Pool` object is then used to apply the `cpu_intensive_task` function to each element in the list `[1, 2, 3, 4, 5]`. Note that the task must be picklable for it to work with multiprocessing."
+  },
   "data_pointers": [
     {
       "title": "ProcessPoolExecutor",
       "uri": "knowledge://py_process_pool_executor_v4",
-      "content_preview": "Process pool executor. Across the Global Interpreter Lock (GIL), suitable for CPU-intensive tasks. Parameters must be picklable. Here is a brief Python code example to illustrate using a process pool "
+      "content_preview": "ProcessPoolExecutor: Process pool executor. Across the Global Interpreter Lock (GIL), suitable for CPU-intensive tasks. Parameters must be picklable. Here is a brief Python code example to illustrate using a process pool executor: ```python from multiprocessing import Pool def cpu_intensive_task(x): # Example task: compute x squared return x * x if __name__ == \"__main__\": with Pool() as p: results = p.map(cpu_intensive_task, [1, 2, 3, 4, 5]) print(results) ``` In this example, the `Pool` class from the `multiprocessing` module is used to create a process pool. The `map` method of the `Pool` object is then used to apply the `cpu_intensive_task` function to each element in the list `[1, 2, 3, 4, 5]`. Note that the task must be picklable for it to work with multiprocessing."
     }
   ],
   "related_nodes": []

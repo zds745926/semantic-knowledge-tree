@@ -8,15 +8,15 @@
   "version": 1,
   "parent": "编程范式",
   "children": [
-    "Monad",
-    "不可变性",
-    "柯里化",
     "纯函数",
-    "高阶函数"
+    "不可变性",
+    "高阶函数",
+    "柯里化",
+    "Monad"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Functional programming centers around pure functions, emphasizing immutability and side-effect-free operations. Key concepts include pure functions, higher-order functions, currying, and monads. Langu"
+    "description": "函数式编程: Functional programming centers around pure functions, emphasizing immutability and side-effect-free operations. Key concepts include pure functions, higher-order functions, currying, and monads. Languages like Haskell, Scala, and Clojure support functional programming, while modern languages such as JavaScript, Python, and Kotlin have incorporated many functional features. Here's a brief example of using a higher-order function in Python: ```python def apply_function(func, value): return func(value) # Example usage with a pure function (a simple lambda) result = apply_function(lambda x: x * 2, 5) # result will be 10 print(result) ``` In this example, `apply_function` is a higher-order function that takes another function (`func`) and a value as arguments. The provided function is then applied to the given value."
   },
   "data_pointers": [],
   "related_nodes": []

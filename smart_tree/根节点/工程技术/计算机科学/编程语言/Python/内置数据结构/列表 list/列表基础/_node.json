@@ -9,12 +9,14 @@
   "parent": "列表 list",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "列表基础: A list is mutable and ordered. Indexing starts at 0, and negative indices count from the end. Slicing can be done using the syntax [start:stop:step]. Here's a brief Python code example to illustrate slicing: ```python # Example list my_list = [10, 20, 30, 40, 50] # Slicing example sliced_list = my_list[1:4] # This will return [20, 30, 40] print(sliced_list) # Using negative indices and step sliced_list_negatives = my_list[-3:-1] # This will return [30, 40] print(sliced_list_negatives) ``` This example demonstrates how to slice a list using both positive and negative indices."
+  },
   "data_pointers": [
     {
       "title": "列表基础",
       "uri": "knowledge://py_list_basics_v4",
-      "content_preview": "A list is mutable and ordered. Indexing starts at 0, and negative indices count from the end. Slicing can be done using the syntax [start:stop:step]. Here's a brief Python code example to illustrate s"
+      "content_preview": "列表基础: A list is mutable and ordered. Indexing starts at 0, and negative indices count from the end. Slicing can be done using the syntax [start:stop:step]. Here's a brief Python code example to illustrate slicing: ```python # Example list my_list = [10, 20, 30, 40, 50] # Slicing example sliced_list = my_list[1:4] # This will return [20, 30, 40] print(sliced_list) # Using negative indices and step sliced_list_negatives = my_list[-3:-1] # This will return [30, 40] print(sliced_list_negatives) ``` This example demonstrates how to slice a list using both positive and negative indices."
     }
   ],
   "related_nodes": []

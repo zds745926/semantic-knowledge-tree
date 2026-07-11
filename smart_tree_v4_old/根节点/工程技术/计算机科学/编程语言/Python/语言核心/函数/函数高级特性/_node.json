@@ -1,0 +1,21 @@
+{
+  "name": "函数高级特性",
+  "node_id": "py_func_adv_v4",
+  "parent_id": "py_func_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "函数",
+  "children": [
+    "lambda 表达式",
+    "装饰器",
+    "闭包"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "The advanced features of Python functions include closures, decorators, and lambda expressions. Here are brief explanations with corresponding Python code examples for each: 1. **Closures**: A closure"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

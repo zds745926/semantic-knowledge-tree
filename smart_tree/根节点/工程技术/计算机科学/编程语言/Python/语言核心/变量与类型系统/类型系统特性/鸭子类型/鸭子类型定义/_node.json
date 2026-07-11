@@ -9,12 +9,14 @@
   "parent": "鸭子类型",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "鸭子类型定义: If it walks like a duck and quacks like a duck, then it is a duck. Implementing the `__iter__` method satisfies the Iterable protocol. Here's a brief Python code example to illustrate implementing the `__iter__` method: ```python class Duck: def __iter__(self): # This method should return an iterator object. # For simplicity, let's assume it returns self as an iterator. return self def __next__(self): # This method should define how to get the next item in the iteration. raise StopIteration # In a real implementation, this would return the next value. # Example usage: duck = Duck() try: for quack in duck: print(quack) except StopIteration: pass ``` In this example, the `Duck` class implements both the `__iter__` and `__next__` methods to satisfy the Iterable protocol. Note that a real implementation would need to define how to generate or access the items being iterated over."
+  },
   "data_pointers": [
     {
       "title": "鸭子类型定义",
       "uri": "knowledge://py_duck_def_v4",
-      "content_preview": "If it walks like a duck and quacks like a duck, then it is a duck. Implementing the `__iter__` method satisfies the Iterable protocol. Here's a brief Python code example to illustrate implementing the"
+      "content_preview": "鸭子类型定义: If it walks like a duck and quacks like a duck, then it is a duck. Implementing the `__iter__` method satisfies the Iterable protocol. Here's a brief Python code example to illustrate implementing the `__iter__` method: ```python class Duck: def __iter__(self): # This method should return an iterator object. # For simplicity, let's assume it returns self as an iterator. return self def __next__(self): # This method should define how to get the next item in the iteration. raise StopIteration # In a real implementation, this would return the next value. # Example usage: duck = Duck() try: for quack in duck: print(quack) except StopIteration: pass ``` In this example, the `Duck` class implements both the `__iter__` and `__next__` methods to satisfy the Iterable protocol. Note that a real implementation would need to define how to generate or access the items being iterated over."
     }
   ],
   "related_nodes": []

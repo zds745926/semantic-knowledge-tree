@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "包管理",
   "children": [
-    "conda",
     "venv",
+    "conda",
     "virtualenv"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Virtual environments create isolated Python runtime environments to avoid package version conflicts. `venv` is the official solution, while `virtualenv` and `conda` are alternatives. Here's a brief ex"
+    "description": "虚拟环境: Virtual environments create isolated Python runtime environments to avoid package version conflicts. `venv` is the official solution, while `virtualenv` and `conda` are alternatives. Here's a brief example of creating and activating a virtual environment using `venv` in Python: ```python # Create a new virtual environment named 'myenv' !python -m venv myenv # Activate the virtual environment on Windows !myenv\\Scripts\\activate # Or activate it on Unix or MacOS #!source myenv/bin/activate ``` This code uses shell commands to create and activate a virtual environment, which can be executed in a Python script or directly in a terminal."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "基础数据结构",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "队列: First-In-First-Out (FIFO). enqueue/dequeue operations are O(1). Applications: BFS/Breadth-First Search, task scheduling, message queues. Here's a brief Python code example for implementing a simple FIFO queue: ```python class Queue: def __init__(self): self.items = [] def is_empty(self): return not bool(self.items) def enqueue(self, item): self.items.append(item) def dequeue(self): if not self.is_empty(): return self.items.pop(0) else: raise IndexError(\"pop from empty queue\") def size(self): return len(self.items) # Example usage q = Queue() q.enqueue('first') q.enqueue('second') print(q.dequeue()) # Output: 'first' print(q.dequeue()) # Output: 'second' ``` This code defines a `Queue` class with methods to enqueue, dequeue items, check if the queue is empty, and get its size."
+  },
   "data_pointers": [
     {
       "title": "队列",
       "uri": "knowledge://queue_v4",
-      "content_preview": "First-In-First-Out (FIFO). enqueue/dequeue operations are O(1). Applications: BFS/Breadth-First Search, task scheduling, message queues. Here's a brief Python code example for implementing a simple FI"
+      "content_preview": "队列: First-In-First-Out (FIFO). enqueue/dequeue operations are O(1). Applications: BFS/Breadth-First Search, task scheduling, message queues. Here's a brief Python code example for implementing a simple FIFO queue: ```python class Queue: def __init__(self): self.items = [] def is_empty(self): return not bool(self.items) def enqueue(self, item): self.items.append(item) def dequeue(self): if not self.is_empty(): return self.items.pop(0) else: raise IndexError(\"pop from empty queue\") def size(self): return len(self.items) # Example usage q = Queue() q.enqueue('first') q.enqueue('second') print(q.dequeue()) # Output: 'first' print(q.dequeue()) # Output: 'second' ``` This code defines a `Queue` class with methods to enqueue, dequeue items, check if the queue is empty, and get its size."
     }
   ],
   "related_nodes": []

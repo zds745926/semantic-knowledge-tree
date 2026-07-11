@@ -9,12 +9,14 @@
   "parent": "类与实例",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "dataclasses 数据类: The `@dataclass` decorator automatically generates the `__init__`, `__repr__`, and `__eq__` methods. The `field()` function allows for custom field definitions. The `frozen` parameter makes the class immutable. This feature is available in Python 3.7 and later. ```python from dataclasses import dataclass, field @dataclass(frozen=True) class ExampleClass: x: int = field(default=0) # Custom field definition with a default value def __repr__(self): return f\"ExampleClass(x={self.x})\" ``` This example demonstrates the use of `@dataclass` and `field()` to create an immutable class with a custom field. The `__repr__` method is also defined for better object representation."
+  },
   "data_pointers": [
     {
       "title": "dataclasses 数据类",
       "uri": "knowledge://py_dataclass_v4",
-      "content_preview": "The `@dataclass` decorator automatically generates the `__init__`, `__repr__`, and `__eq__` methods. The `field()` function allows for custom field definitions. The `frozen` parameter makes the class "
+      "content_preview": "dataclasses 数据类: The `@dataclass` decorator automatically generates the `__init__`, `__repr__`, and `__eq__` methods. The `field()` function allows for custom field definitions. The `frozen` parameter makes the class immutable. This feature is available in Python 3.7 and later. ```python from dataclasses import dataclass, field @dataclass(frozen=True) class ExampleClass: x: int = field(default=0) # Custom field definition with a default value def __repr__(self): return f\"ExampleClass(x={self.x})\" ``` This example demonstrates the use of `@dataclass` and `field()` to create an immutable class with a custom field. The `__repr__` method is also defined for better object representation."
     }
   ],
   "related_nodes": []

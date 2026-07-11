@@ -8,16 +8,16 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "动态规划",
     "基础数据结构",
     "排序算法",
     "搜索算法",
     "树与图算法",
+    "动态规划",
     "高级数据结构"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Algorithms are the steps and methods for solving problems, while data structures are the ways to organize and store data. Both are core foundations in computer science and directly impact program perf"
+    "description": "算法与数据结构: Algorithms are the steps and methods for solving problems, while data structures are the ways to organize and store data. Both are core foundations in computer science and directly impact program performance and quality. Here's a brief Python code example that demonstrates both an algorithm (searching for an element in a list) and a common data structure (a list): ```python # Example of using a list as a data structure and implementing a simple search algorithm def linear_search(data, target): \"\"\" Perform a linear search on the given list to find the target value. :param data: List of elements to search through :param target: The element we are searching for :return: Index of the target if found, otherwise -1 \"\"\" for index, element in enumerate(data): if element == target: return index return -1 # Example usage data_list = [5, 3, 7, 2, 8] target_value = 7 result = linear_search(data_list, target_value) if result != -1: print(f\"Element found at index: {result}\") else: print(\"Element not found\") ``` This code defines a simple `linear_search` function that uses a list as a data structure to find an element. The algorithm iterates through each element in the list, checking if it matches the target value. If a match is found, the index is returned; otherwise, -1 is returned indicating the target was not found."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -1,0 +1,23 @@
+{
+  "name": "数据序列化",
+  "node_id": "py_serialization_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "标准库",
+  "children": [
+    "configparser",
+    "csv",
+    "json",
+    "pickle",
+    "xml"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python supports multiple data serialization formats. json is cross-language and platform-independent; pickle is specific to Python; csv is used for tabular data; configparser is used for configuration"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

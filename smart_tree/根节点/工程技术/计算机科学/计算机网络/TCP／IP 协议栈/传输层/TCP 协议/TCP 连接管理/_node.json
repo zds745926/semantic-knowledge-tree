@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Three-way handshake establishes the connection, and four-way挥手 (wave) should be translated as \"shake\" in this context to maintain accuracy. Here is the translation with a brief Python code example for"
+    "description": "TCP 连接管理: Three-way handshake establishes the connection, and four-way挥手 (wave) should be translated as \"shake\" in this context to maintain accuracy. Here is the translation with a brief Python code example for the three-way handshake concept: Three-way handshake establishes the connection, and four-way handshake closes the connection. Python code example for three-way handshake: ```python import socket def client(): # Create a socket object using IPv4 and TCP protocol s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Define the server's IP address and port number server_address = ('localhost', 10000) try: print(\"Connecting to server...\") # Step 1: Client sends a SYN packet to the server s.connect(server_address) # Step 2: Server responds with a SYN-ACK packet syn_ack = s.recv(1024) # Step 3: Client acknowledges the server's SYN-ACK by sending an ACK packet s.send(syn_ack) print(\"Connection established.\") finally: s.close() print(\"Connection closed.\") client() ``` This Python code demonstrates a simplified version of the three-way handshake process used in establishing a TCP connection."
   },
   "data_pointers": [],
   "related_nodes": []

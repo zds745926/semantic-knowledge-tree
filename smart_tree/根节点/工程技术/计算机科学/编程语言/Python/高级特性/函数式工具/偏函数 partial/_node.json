@@ -9,12 +9,14 @@
   "parent": "函数式工具",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "偏函数 partial: The `functools.partial` function fixes some of the parameters of a function and returns a new callable object. Here is an example to illustrate this: ```python import functools # Define a sample function with three parameters. def sample_function(a, b, c): return a + b + c # Use functools.partial to fix the first parameter 'a' to 10. partial_func = functools.partial(sample_function, a=10) # Now partial_func can be called with only two arguments. result = partial_func(b=20, c=30) print(result) # Output: 60 ``` In this example, `functools.partial` is used to create a new function `partial_func` that always calls `sample_function` with the first argument fixed at 10."
+  },
   "data_pointers": [
     {
       "title": "偏函数 partial",
       "uri": "knowledge://py_partial_v4",
-      "content_preview": "The `functools.partial` function fixes some of the parameters of a function and returns a new callable object. Here is an example to illustrate this: ```python import functools # Define a sample funct"
+      "content_preview": "偏函数 partial: The `functools.partial` function fixes some of the parameters of a function and returns a new callable object. Here is an example to illustrate this: ```python import functools # Define a sample function with three parameters. def sample_function(a, b, c): return a + b + c # Use functools.partial to fix the first parameter 'a' to 10. partial_func = functools.partial(sample_function, a=10) # Now partial_func can be called with only two arguments. result = partial_func(b=20, c=30) print(result) # Output: 60 ``` In this example, `functools.partial` is used to create a new function `partial_func` that always calls `sample_function` with the first argument fixed at 10."
     }
   ],
   "related_nodes": []

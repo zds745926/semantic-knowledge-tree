@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "NoSQL",
     "关系型数据库",
+    "NoSQL",
     "分布式数据库"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Database systems systematically store and manage data. The two most commonly used types are relational databases (SQL) and non-relational databases (NoSQL). Key concepts include SQL, indexing, transac"
+    "description": "数据库: Database systems systematically store and manage data. The two most commonly used types are relational databases (SQL) and non-relational databases (NoSQL). Key concepts include SQL, indexing, transactions, ACID properties, and distribution. Here's a brief Python code example to illustrate the use of SQL in interacting with a database: ```python import sqlite3 # Connect to SQLite database (or create it if it doesn't exist) conn = sqlite3.connect('example.db') # Create a cursor object using the cursor method cursor = conn.cursor() # Create table - an example of SQL command execution cursor.execute('''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)''') # Insert data into the table cursor.execute(\"INSERT INTO users (name, age) VALUES ('Alice', 30)\") # Commit the transaction to save changes conn.commit() # Query the database - another example of SQL command execution cursor.execute('SELECT * FROM users') print(cursor.fetchall()) # Close the connection conn.close() ``` This code snippet demonstrates basic operations such as creating a table, inserting data, querying the database, and closing the connection."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -1,0 +1,21 @@
+{
+  "name": "pdb 调试器",
+  "node_id": "py_pdb_v4",
+  "parent_id": "py_testing_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "测试",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "pdb 调试器",
+      "uri": "knowledge://py_pdb_v4",
+      "content_preview": "The command `python -m pdb script.py` starts the Python debugger (pdb) on the specified script. Here are the key commands you can use within pdb: - `l` (list): Lists the source code for the current sc"
+    }
+  ],
+  "related_nodes": []
+}

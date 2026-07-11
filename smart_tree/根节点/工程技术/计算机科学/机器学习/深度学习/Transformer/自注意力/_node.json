@@ -9,12 +9,14 @@
   "parent": "Transformer",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "自注意力: QKV Mechanism: softmax(QK^T/√d)V. O(n²) complexity. In the context of neural networks, particularly in self-attention mechanisms like those used in transformers, the QKV mechanism involves three vectors for each token: Query (Q), Key (K), and Value (V). The attention score is computed using a softmax function on the dot product of the query and key vectors, scaled by the square root of the dimension size \\(d\\), followed by multiplying with the value vector. Here's a brief Python code example to illustrate this concept: ```python import torch def qkv_attention(q, k, v): d_k = q.size(-1) scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(d_k) # QK^T/√d p_attn = torch.softmax(scores, dim=-1) # softmax(QK^T/√d) output = torch.matmul(p_attn, v) # softmax(QK^T/√d)V return output # Example usage: q = torch.randn(10, 8, 64) # Query vector of shape (batch_size, num_heads, seq_length, d_k) k = torch.randn(10, 8, 64) # Key vector of the same shape v = torch.randn(10, 8, 64) # Value vector of the same shape output = qkv_attention(q, k, v) print(output.shape) # Should print: torch.Size([10, 8, 64]) ``` This code defines a function `qkv_attention` that takes query (`q`), key (`k`), and value (`v`) tensors as input and returns the attention output. The example usage demonstrates how to call this function with random tensor inputs of appropriate shapes."
+  },
   "data_pointers": [
     {
       "title": "自注意力",
       "uri": "knowledge://self_attention_v4",
-      "content_preview": "QKV Mechanism: softmax(QK^T/√d)V. O(n²) complexity. In the context of neural networks, particularly in self-attention mechanisms like those used in transformers, the QKV mechanism involves three vecto"
+      "content_preview": "自注意力: QKV Mechanism: softmax(QK^T/√d)V. O(n²) complexity. In the context of neural networks, particularly in self-attention mechanisms like those used in transformers, the QKV mechanism involves three vectors for each token: Query (Q), Key (K), and Value (V). The attention score is computed using a softmax function on the dot product of the query and key vectors, scaled by the square root of the dimension size \\(d\\), followed by multiplying with the value vector. Here's a brief Python code example to illustrate this concept: ```python import torch def qkv_attention(q, k, v): d_k = q.size(-1) scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(d_k) # QK^T/√d p_attn = torch.softmax(scores, dim=-1) # softmax(QK^T/√d) output = torch.matmul(p_attn, v) # softmax(QK^T/√d)V return output # Example usage: q = torch.randn(10, 8, 64) # Query vector of shape (batch_size, num_heads, seq_length, d_k) k = torch.randn(10, 8, 64) # Key vector of the same shape v = torch.randn(10, 8, 64) # Value vector of the same shape output = qkv_attention(q, k, v) print(output.shape) # Should print: torch.Size([10, 8, 64]) ``` This code defines a function `qkv_attention` that takes query (`q`), key (`k`), and value (`v`) tensors as input and returns the attention output. The example usage demonstrates how to call this function with random tensor inputs of appropriate shapes."
     }
   ],
   "related_nodes": []

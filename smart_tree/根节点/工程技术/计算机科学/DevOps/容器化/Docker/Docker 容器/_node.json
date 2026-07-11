@@ -9,12 +9,14 @@
   "parent": "Docker",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Docker 容器: Mirror running instances. run/exec/stop/rm. Port mapping -p. Volume mounting -v. Here are the corresponding brief Python code examples for some of these concepts, assuming we're working with Docker in a Python environment using the `docker` library: ```python # Importing the docker library import docker client = docker.from_env() # Running an instance container = client.containers.run(\"nginx\", detach=True) print(container.id) # Executing a command inside the container exec_id = client.containers.get(container.id).exec_run(\"echo 'Hello, World!'\") print(exec_id.output.decode()) # Stopping the container client.containers.get(container.id).stop() # Removing the container client.containers.get(container.id).remove() # Port mapping -p container_with_ports = client.containers.run(\"nginx\", ports={\"80/tcp\": 8080}, detach=True) print(container_with_ports.ports) # Volume mounting -v from docker.models.mounts import Mount mount = Mount(source=\"my_volume\", target=\"/data\", type=\"bind\") container_with_volumes = client.containers.run(\"nginx\", mounts=[mount], detach=True) print(container_with_volumes.attrs[\"Mounts\"]) ``` Note: The `docker` library is a Python wrapper for the Docker API and must be installed in your environment (`pip install docker`)."
+  },
   "data_pointers": [
     {
       "title": "Docker 容器",
       "uri": "knowledge://docker_container_v4",
-      "content_preview": "Mirror running instances. run/exec/stop/rm. Port mapping -p. Volume mounting -v. Here are the corresponding brief Python code examples for some of these concepts, assuming we're working with Docker in"
+      "content_preview": "Docker 容器: Mirror running instances. run/exec/stop/rm. Port mapping -p. Volume mounting -v. Here are the corresponding brief Python code examples for some of these concepts, assuming we're working with Docker in a Python environment using the `docker` library: ```python # Importing the docker library import docker client = docker.from_env() # Running an instance container = client.containers.run(\"nginx\", detach=True) print(container.id) # Executing a command inside the container exec_id = client.containers.get(container.id).exec_run(\"echo 'Hello, World!'\") print(exec_id.output.decode()) # Stopping the container client.containers.get(container.id).stop() # Removing the container client.containers.get(container.id).remove() # Port mapping -p container_with_ports = client.containers.run(\"nginx\", ports={\"80/tcp\": 8080}, detach=True) print(container_with_ports.ports) # Volume mounting -v from docker.models.mounts import Mount mount = Mount(source=\"my_volume\", target=\"/data\", type=\"bind\") container_with_volumes = client.containers.run(\"nginx\", mounts=[mount], detach=True) print(container_with_volumes.attrs[\"Mounts\"]) ``` Note: The `docker` library is a Python wrapper for the Docker API and must be installed in your environment (`pip install docker`)."
     }
   ],
   "related_nodes": []

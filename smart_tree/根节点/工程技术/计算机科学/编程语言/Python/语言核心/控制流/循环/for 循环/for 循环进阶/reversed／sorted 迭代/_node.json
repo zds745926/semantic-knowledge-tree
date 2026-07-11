@@ -9,12 +9,14 @@
   "parent": "for 循环进阶",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "reversed/sorted 迭代: `reversed(seq)` performs reverse iteration. `sorted(seq)` performs iteration after sorting. `reversed` returns an iterator. Python code examples: ```python # Example of using reversed() original_list = [1, 2, 3, 4] for item in reversed(original_list): print(item) # Output: # 4 # 3 # 2 # 1 # Example of using sorted() with reverse=True for sorting and iteration original_list = [1, 2, 3, 4] for item in sorted(original_list, reverse=True): print(item) # Output: # 4 # 3 # 2 # 1 ``` These examples demonstrate how to use the `reversed()` function for reverse iteration and the `sorted()` function with a custom sort order."
+  },
   "data_pointers": [
     {
       "title": "reversed/sorted 迭代",
       "uri": "knowledge://py_for_reversed_v4",
-      "content_preview": "Translation: `reversed(seq)` performs reverse iteration. `sorted(seq)` performs iteration after sorting. `reversed` returns an iterator. Python code examples: ```python # Example of using reversed() o"
+      "content_preview": "reversed/sorted 迭代: `reversed(seq)` performs reverse iteration. `sorted(seq)` performs iteration after sorting. `reversed` returns an iterator. Python code examples: ```python # Example of using reversed() original_list = [1, 2, 3, 4] for item in reversed(original_list): print(item) # Output: # 4 # 3 # 2 # 1 # Example of using sorted() with reverse=True for sorting and iteration original_list = [1, 2, 3, 4] for item in sorted(original_list, reverse=True): print(item) # Output: # 4 # 3 # 2 # 1 ``` These examples demonstrate how to use the `reversed()` function for reverse iteration and the `sorted()` function with a custom sort order."
     }
   ],
   "related_nodes": []

@@ -1,0 +1,21 @@
+{
+  "name": "CDN",
+  "node_id": "cdn_v4",
+  "parent_id": "app_layer_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "应用层协议",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "CDN",
+      "uri": "knowledge://cdn_v4",
+      "content_preview": "Global Cache Nodes. Request to the nearest node. Origin pull if necessary. Edge computing. Here is a brief explanation with a related Python code example for the concept of requesting data from the ne"
+    }
+  ],
+  "related_nodes": []
+}

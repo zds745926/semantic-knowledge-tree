@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "包管理",
   "children": [
+    "Poetry",
     "PDM",
-    "Pipenv",
-    "Poetry"
+    "Pipenv"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Modern Python relies on dependency management tools to provide more reliable dependency resolution and locking capabilities. To illustrate the use of a dependency management tool in Python (such as pi"
+    "description": "依赖管理: Modern Python relies on dependency management tools to provide more reliable dependency resolution and locking capabilities. To illustrate the use of a dependency management tool in Python (such as pip or poetry), here is an example using `poetry`: ```python # Using Poetry for dependency management # First, install Poetry if you haven't already: # curl -sSL https://install.python-poetry.org | python3 - # Then, create a new project and initialize dependencies: poetry new my_project # Navigate into the project directory: cd my_project # Add a dependency to your project (e.g., requests): poetry add requests # Lock the dependencies to ensure reproducibility: poetry lock # View the current lock file: cat pyproject.toml ``` In this example, `poetry` is used to manage and resolve Python package dependencies. The commands demonstrate how to install Poetry, create a new project, add a dependency, lock the dependencies, and view the resulting lock file."
   },
   "data_pointers": [],
   "related_nodes": []

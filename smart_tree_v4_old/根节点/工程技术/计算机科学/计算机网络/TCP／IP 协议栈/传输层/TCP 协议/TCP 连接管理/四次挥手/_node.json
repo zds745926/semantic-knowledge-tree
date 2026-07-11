@@ -1,0 +1,21 @@
+{
+  "name": "四次挥手",
+  "node_id": "four_way_v4",
+  "parent_id": "tcp_handshake_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "TCP 连接管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "四次挥手",
+      "uri": "knowledge://four_way_v4",
+      "content_preview": "Translation: FIN→ACK→FIN→ACK. Full-duplex closure (requires 4 steps). TIME_WAIT waits for 2MSL. Python code example to illustrate the concept of a full-duplex closure in TCP: ```python import socket d"
+    }
+  ],
+  "related_nodes": []
+}

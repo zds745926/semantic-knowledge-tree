@@ -1,0 +1,21 @@
+{
+  "name": "逻辑回归",
+  "node_id": "logistic_reg_v4",
+  "parent_id": "regression_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "回归",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "逻辑回归",
+      "uri": "knowledge://logistic_reg_v4",
+      "content_preview": "Sigmoid output probabilities. Cross-entropy loss. Standard algorithm for binary classification. Here is a brief explanation with a Python code example: 1. **Sigmoid Output Probabilities**: The Sigmoid"
+    }
+  ],
+  "related_nodes": []
+}

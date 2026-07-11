@@ -9,12 +9,14 @@
   "parent": "代数",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "韦达定理: Vieta's Formulas: For the quadratic equation \\( ax^2 + bx + c = 0 \\), the roots \\( x_1 \\) and \\( x_2 \\) satisfy \\( x_1 + x_2 = -\\frac{b}{a} \\) and \\( x_1 \\cdot x_2 = \\frac{c}{a} \\). Here is a brief Python code example to demonstrate these formulas: ```python import sympy as sp # Define the symbols a, b, c, x1, x2 = sp.symbols('a b c x1 x2') # Vieta's formulas sum_of_roots = -b/a product_of_roots = c/a # Example quadratic equation coefficients a_val = 1 b_val = 5 c_val = 6 # Calculate the roots using sympy's solve function roots = sp.solve(a*x**2 + b*x + c, x) x1_val = roots[0] x2_val = roots[1] # Verify Vieta's formulas sum_check = x1_val + x2_val == -b/a product_check = x1_val * x2_val == c/a print(\"Sum of roots:\", sum_of_roots.subs({a: a_val, b: b_val})) print(\"Product of roots:\", product_of_roots.subs({a: a_val, c: c_val})) print(\"Sum check (should be -5):\", sum_check) print(\"Product check (should be 6):\", product_check) ``` This code uses the `sympy` library to define symbols and solve for the roots of a quadratic equation. It then verifies Vieta's formulas by substituting the calculated roots back into the formulas."
+  },
   "data_pointers": [
     {
       "title": "韦达定理",
       "uri": "knowledge://vieta_v4",
-      "content_preview": "Vieta's Formulas: For the quadratic equation \\( ax^2 + bx + c = 0 \\), the roots \\( x_1 \\) and \\( x_2 \\) satisfy \\( x_1 + x_2 = -\\frac{b}{a} \\) and \\( x_1 \\cdot x_2 = \\frac{c}{a} \\). Here is a brief Py"
+      "content_preview": "韦达定理: Vieta's Formulas: For the quadratic equation \\( ax^2 + bx + c = 0 \\), the roots \\( x_1 \\) and \\( x_2 \\) satisfy \\( x_1 + x_2 = -\\frac{b}{a} \\) and \\( x_1 \\cdot x_2 = \\frac{c}{a} \\). Here is a brief Python code example to demonstrate these formulas: ```python import sympy as sp # Define the symbols a, b, c, x1, x2 = sp.symbols('a b c x1 x2') # Vieta's formulas sum_of_roots = -b/a product_of_roots = c/a # Example quadratic equation coefficients a_val = 1 b_val = 5 c_val = 6 # Calculate the roots using sympy's solve function roots = sp.solve(a*x**2 + b*x + c, x) x1_val = roots[0] x2_val = roots[1] # Verify Vieta's formulas sum_check = x1_val + x2_val == -b/a product_check = x1_val * x2_val == c/a print(\"Sum of roots:\", sum_of_roots.subs({a: a_val, b: b_val})) print(\"Product of roots:\", product_of_roots.subs({a: a_val, c: c_val})) print(\"Sum check (should be -5):\", sum_check) print(\"Product check (should be 6):\", product_check) ``` This code uses the `sympy` library to define symbols and solve for the roots of a quadratic equation. It then verifies Vieta's formulas by substituting the calculated roots back into the formulas."
     }
   ],
   "related_nodes": []

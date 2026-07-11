@@ -1,0 +1,21 @@
+{
+  "name": "itertools 模块",
+  "node_id": "py_itertools_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "标准库",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "itertools 模块",
+      "uri": "knowledge://py_itertools_v4",
+      "content_preview": "Iterator Tools: `chain` for concatenation, `cycle` for looping, `count` for counting, `product` for Cartesian product, `permutations` for permutations, `combinations` for combinations, and `groupby` f"
+    }
+  ],
+  "related_nodes": []
+}

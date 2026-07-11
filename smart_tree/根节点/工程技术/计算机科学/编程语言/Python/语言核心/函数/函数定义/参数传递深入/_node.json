@@ -9,12 +9,12 @@
   "parent": "函数定义",
   "children": [
     "*args 和 **kwargs",
-    "仅关键字参数",
-    "参数传递机制"
+    "参数传递机制",
+    "仅关键字参数"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "A deep understanding of Python's parameter passing mechanisms and definition methods is crucial for writing high-quality functions. To illustrate some key concepts with Python code examples: 1. Positi"
+    "description": "参数传递深入: A deep understanding of Python's parameter passing mechanisms and definition methods is crucial for writing high-quality functions. To illustrate some key concepts with Python code examples: 1. Positional Arguments: ```python def add(a, b): return a + b result = add(3, 4) # result will be 7 ``` 2. Keyword Arguments: ```python def greet(name, message=\"Hello\"): print(f\"{message}, {name}!\") greet(name=\"Alice\") # prints \"Hello, Alice!\" greet(message=\"Hi\", name=\"Bob\") # prints \"Hi, Bob!\" ``` 3. Default Arguments: ```python def power(base, exponent=2): return base ** exponent print(power(2)) # Output: 4 print(power(2, 3)) # Output: 8 ``` 4. Variable-Length Argument Lists: ```python def sum_all(*args): return sum(args) print(sum_all(1, 2, 3, 4)) # Output: 10 ``` 5. Keyword-Only Arguments (Python 3.0+): ```python def log(message, *, level=\"INFO\"): print(f\"{level}: {message}\") log(\"Error occurred\", level=\"CRITICAL\") # prints \"CRITICAL: Error occurred\" ``` 6. Arbitrary Keyword Arguments: ```python def build_person(first_name, last_name, **kwargs): person = {\"first\": first_name, \"last\": last_name} for key, value in kwargs.items(): person[key] = value return person print(build_person(\"John\", \"Doe\", age=30, city=\"New York\")) # Output: {'first': 'John', 'last': 'Doe', 'age': 30, 'city': 'New York'} ``` These examples cover some of the main ways to define and pass parameters in Python functions. Understanding these mechanisms is essential for writing flexible and robust code."
   },
   "data_pointers": [],
   "related_nodes": []

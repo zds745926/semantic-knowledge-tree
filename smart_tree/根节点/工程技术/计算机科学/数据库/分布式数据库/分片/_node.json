@@ -9,12 +9,14 @@
   "parent": "分布式数据库",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "分片: Horizontal Sharding: Distributed by Hashing/Ranges/List. The shard key is chosen based on criticality. Python code example for horizontal sharding using a hash-based approach: ```python def get_shard_key(user_id): # Example of a simple hash-based shard key return user_id % 4 # Simulate a list of users and their data users = [ {\"user_id\": 1, \"name\": \"Alice\"}, {\"user_id\": 2, \"name\": \"Bob\"}, {\"user_id\": 3, \"name\": \"Charlie\"}, {\"user_id\": 4, \"name\": \"David\"}, {\"user_id\": 5, \"name\": \"Eve\"} ] # Shard the users based on the shard key shards = {i: [] for i in range(4)} for user in users: shard_key = get_shard_key(user[\"user_id\"]) shards[shard_key].append(user) print(\"Sharded Users:\") for shard, users_in_shard in shards.items(): print(f\"Shard {shard}: {users_in_shard}\") ``` This example demonstrates how to distribute a list of user data across four shards using a simple modulo operation as the shard key."
+  },
   "data_pointers": [
     {
       "title": "分片",
       "uri": "knowledge://sharding_v4",
-      "content_preview": "Horizontal Sharding: Distributed by Hashing/Ranges/List. The shard key is chosen based on criticality. Python code example for horizontal sharding using a hash-based approach: ```python def get_shard_"
+      "content_preview": "分片: Horizontal Sharding: Distributed by Hashing/Ranges/List. The shard key is chosen based on criticality. Python code example for horizontal sharding using a hash-based approach: ```python def get_shard_key(user_id): # Example of a simple hash-based shard key return user_id % 4 # Simulate a list of users and their data users = [ {\"user_id\": 1, \"name\": \"Alice\"}, {\"user_id\": 2, \"name\": \"Bob\"}, {\"user_id\": 3, \"name\": \"Charlie\"}, {\"user_id\": 4, \"name\": \"David\"}, {\"user_id\": 5, \"name\": \"Eve\"} ] # Shard the users based on the shard key shards = {i: [] for i in range(4)} for user in users: shard_key = get_shard_key(user[\"user_id\"]) shards[shard_key].append(user) print(\"Sharded Users:\") for shard, users_in_shard in shards.items(): print(f\"Shard {shard}: {users_in_shard}\") ``` This example demonstrates how to distribute a list of user data across four shards using a simple modulo operation as the shard key."
     }
   ],
   "related_nodes": []

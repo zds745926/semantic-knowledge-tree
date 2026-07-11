@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "标准库",
   "children": [
-    "fnmatch",
-    "glob",
     "pathlib",
+    "glob",
+    "fnmatch",
     "tempfile"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python provides various tools for file and path operations, ranging from the traditional `os.path` interface to the object-oriented approach with `pathlib`, and including pattern matching with `glob` "
+    "description": "路径与文件: Python provides various tools for file and path operations, ranging from the traditional `os.path` interface to the object-oriented approach with `pathlib`, and including pattern matching with `glob` and `fnmatch`. Here are brief examples of each: 1. **Using `os.path`:** ```python import os # Get the current working directory cwd = os.getcwd() print(cwd) # Join paths file_path = os.path.join(cwd, 'example.txt') print(file_path) ``` 2. **Using `pathlib`:** ```python from pathlib import Path # Get the current working directory cwd = Path.cwd() print(cwd) # Join paths file_path = cwd / 'example.txt' print(file_path) ``` 3. **Using `glob` for pattern matching:** ```python import glob # Find all .txt files in the current directory and its subdirectories txt_files = glob.glob('**/*.txt', recursive=True) print(txt_files) ``` 4. **Using `fnmatch` for pattern matching:** ```python import fnmatch # List of filenames to match against filenames = ['example.txt', 'report.pdf', 'notes.docx'] # Match .txt files txt_files = [name for name in filenames if fnmatch.fnmatch(name, '*.txt')] print(txt_files) ```"
   },
   "data_pointers": [],
   "related_nodes": []

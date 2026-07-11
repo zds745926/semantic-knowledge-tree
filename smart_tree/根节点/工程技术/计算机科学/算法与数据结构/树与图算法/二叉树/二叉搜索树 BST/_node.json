@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "二叉树",
   "children": [
-    "BST 插入",
     "BST 搜索",
+    "BST 插入",
     "遍历实现"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "BST is the most commonly used variant of binary trees. The left subtree < root < right subtree, and an in-order traversal yields a sorted sequence. Here's a brief Python code example to demonstrate an"
+    "description": "二叉搜索树 BST: BST is the most commonly used variant of binary trees. The left subtree < root < right subtree, and an in-order traversal yields a sorted sequence. Here's a brief Python code example to demonstrate an in-order traversal of a BST: ```python class TreeNode: def __init__(self, key): self.left = None self.right = None self.val = key def inorder_traversal(root): \"\"\" Perform in-order traversal of the binary search tree. \"\"\" if root: # Traverse left subtree inorder_traversal(root.left) # Visit root node print(root.val, end=' ') # Traverse right subtree inorder_traversal(root.right) # Example usage: # Constructing a simple BST root = TreeNode(20) root.left = TreeNode(8) root.right = TreeNode(42) root.left.left = TreeNode(4) root.left.right = TreeNode(12) root.right.left = TreeNode(35) root.right.right = TreeNode(50) # Perform in-order traversal inorder_traversal(root) # Expected output: 4 8 12 20 35 42 50 ``` This code defines a simple BST and performs an in-order traversal, which prints the nodes in sorted order."
   },
   "data_pointers": [],
   "related_nodes": []

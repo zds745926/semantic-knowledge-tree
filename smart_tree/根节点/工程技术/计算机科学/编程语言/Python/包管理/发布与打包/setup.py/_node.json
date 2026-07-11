@@ -9,13 +9,17 @@
   "parent": "发布与打包",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "setup.py: Traditional packaging script. `setuptools.setup`. `name`, `version`, `install_requires`. `setuptools` is the traditional approach. Here's a brief Python code example using `setuptools.setup`: ```python from setuptools import setup setup( name='MyPackage', # Name of your package version='1.0.0', # Version number install_requires=[ # Dependencies required for installation 'numpy>=1.20.0', 'pandas>=1.2.0' ] ) ``` This example sets up a basic `setuptools` configuration, specifying the package name, version, and dependencies needed during installation."
+  },
   "data_pointers": [
     {
       "title": "setup.py",
       "uri": "knowledge://py_setup_py_v4",
-      "content_preview": "Traditional packaging script. `setuptools.setup`. `name`, `version`, `install_requires`. `setuptools` is the traditional approach. Here's a brief Python code example using `setuptools.setup`: ```pytho"
+      "content_preview": "setup.py: Traditional packaging script. `setuptools.setup`. `name`, `version`, `install_requires`. `setuptools` is the traditional approach. Here's a brief Python code example using `setuptools.setup`: ```python from setuptools import setup setup( name='MyPackage', # Name of your package version='1.0.0', # Version number install_requires=[ # Dependencies required for installation 'numpy>=1.20.0', 'pandas>=1.2.0' ] ) ``` This example sets up a basic `setuptools` configuration, specifying the package name, version, and dependencies needed during installation."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_pyproject_v4"
+  ]
 }

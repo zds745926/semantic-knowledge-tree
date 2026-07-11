@@ -15,7 +15,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "TCP (Transmission Control Protocol) provides a reliable byte stream service over a connection. Header size is 20 bytes. Python code example: ```python import socket # Create a TCP/IP socket sock = soc"
+    "description": "TCP 协议: TCP (Transmission Control Protocol) provides a reliable byte stream service over a connection. Header size is 20 bytes. Python code example: ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) sock.connect(server_address) try: # Send data message = 'This is the message. It will be repeated.' print(f'Sending: {message}') sock.sendall(message.encode()) finally: print('Closing socket') sock.close() ``` In this example, a simple TCP connection is established to `localhost` on port `10000`, and a message is sent over the connection. This demonstrates the use of TCP for reliable data transmission."
   },
   "data_pointers": [],
   "related_nodes": []

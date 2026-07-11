@@ -9,12 +9,14 @@
   "parent": "异步 JS",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "async/await: The `async function` returns a Promise. The `await` keyword pauses execution until the Promise resolves. Here is an example to illustrate this in Python-like pseudocode: ```python # Define an asynchronous function using async/await async def fetch_data(url): response = await get_request(url) # Await the promise returned by get_request return response.json() # Process the resolved value # Example usage of the async function result = fetch_data(\"https://api.example.com/data\") print(result) # This will print the JSON data once the Promise is resolved ``` In this example, `fetch_data` is an asynchronous function that uses `await` to wait for a promise (in this case, returned by `get_request`) to resolve before proceeding. The result of the promise resolution is then processed and can be used in further operations."
+  },
   "data_pointers": [
     {
       "title": "async/await",
       "uri": "knowledge://js_async_await_v4",
-      "content_preview": "The `async function` returns a Promise. The `await` keyword pauses execution until the Promise resolves. Here is an example to illustrate this in Python-like pseudocode: ```python # Define an asynchro"
+      "content_preview": "async/await: The `async function` returns a Promise. The `await` keyword pauses execution until the Promise resolves. Here is an example to illustrate this in Python-like pseudocode: ```python # Define an asynchronous function using async/await async def fetch_data(url): response = await get_request(url) # Await the promise returned by get_request return response.json() # Process the resolved value # Example usage of the async function result = fetch_data(\"https://api.example.com/data\") print(result) # This will print the JSON data once the Promise is resolved ``` In this example, `fetch_data` is an asynchronous function that uses `await` to wait for a promise (in this case, returned by `get_request`) to resolve before proceeding. The result of the promise resolution is then processed and can be used in further operations."
     }
   ],
   "related_nodes": []

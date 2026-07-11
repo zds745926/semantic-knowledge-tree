@@ -9,12 +9,14 @@
   "parent": "发布与打包",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "pyproject.toml: PEP 518/621 Project Specifications. [build-system] declaration for defining the build backend. [project] metadata. Modern standards. Here is a brief explanation with an example of how you might implement this in Python using `setuptools`: ```python from setuptools import setup setup( name='example_package', version='0.1.0', description='An example package to demonstrate PEP 518/621 usage.', # [project] metadata url='https://github.com/example/example_package', author='Example Author', author_email='author@example.com', # [build-system] declaration for defining the build backend python_requires='>=3.7', install_requires=[ 'numpy' ], setup_requires=[ 'setuptools>=40.8.0', 'wheel' ], tests_require=[ 'pytest' ] ) ``` In this example, `setup()` is used to define the package metadata and build system requirements according to PEP 518/621 standards."
+  },
   "data_pointers": [
     {
       "title": "pyproject.toml",
       "uri": "knowledge://py_pyproject_v4",
-      "content_preview": "PEP 518/621 Project Specifications. [build-system] declaration for defining the build backend. [project] metadata. Modern standards. Here is a brief explanation with an example of how you might implem"
+      "content_preview": "pyproject.toml: PEP 518/621 Project Specifications. [build-system] declaration for defining the build backend. [project] metadata. Modern standards. Here is a brief explanation with an example of how you might implement this in Python using `setuptools`: ```python from setuptools import setup setup( name='example_package', version='0.1.0', description='An example package to demonstrate PEP 518/621 usage.', # [project] metadata url='https://github.com/example/example_package', author='Example Author', author_email='author@example.com', # [build-system] declaration for defining the build backend python_requires='>=3.7', install_requires=[ 'numpy' ], setup_requires=[ 'setuptools>=40.8.0', 'wheel' ], tests_require=[ 'pytest' ] ) ``` In this example, `setup()` is used to define the package metadata and build system requirements according to PEP 518/621 standards."
     }
   ],
   "related_nodes": []

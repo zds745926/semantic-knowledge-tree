@@ -1,0 +1,21 @@
+{
+  "name": "分布式数据库",
+  "node_id": "dist_db_v4",
+  "parent_id": "db_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "数据库",
+  "children": [
+    "CAP 定理",
+    "Raft 共识算法",
+    "分片"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Distributed databases distribute data across multiple machines. The CAP theorem serves as the theoretical foundation. To provide a more comprehensive explanation and include a relevant Python code exa"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

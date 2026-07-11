@@ -9,12 +9,14 @@
   "parent": "异常处理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "自定义异常: English translation: ```python class MyError(Exception): pass # A custom exception. ``` This Python code defines a custom exception called `MyError` that inherits from the base `Exception` class. The `pass` statement indicates that this exception class does not implement any additional methods or properties beyond what is provided by the base `Exception` class."
+  },
   "data_pointers": [
     {
       "title": "自定义异常",
       "uri": "knowledge://py_custom_except_v4",
-      "content_preview": "English translation: ```python class MyError(Exception): pass  # A custom exception. ``` This Python code defines a custom exception called `MyError` that inherits from the base `Exception` class. The"
+      "content_preview": "自定义异常: English translation: ```python class MyError(Exception): pass # A custom exception. ``` This Python code defines a custom exception called `MyError` that inherits from the base `Exception` class. The `pass` statement indicates that this exception class does not implement any additional methods or properties beyond what is provided by the base `Exception` class."
     }
   ],
   "related_nodes": []

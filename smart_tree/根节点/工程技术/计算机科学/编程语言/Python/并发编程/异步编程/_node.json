@@ -8,19 +8,19 @@
   "version": 1,
   "parent": "并发编程",
   "children": [
-    "Task 任务",
-    "as_completed",
-    "asyncio Lock",
-    "asyncio Queue",
     "async/await",
-    "gather",
-    "wait",
+    "协程 coroutine",
     "事件循环",
-    "协程 coroutine"
+    "Task 任务",
+    "gather",
+    "as_completed",
+    "wait",
+    "asyncio Lock",
+    "asyncio Queue"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Async/await coroutines are a model for single-threaded concurrency, suitable for high I/O concurrency. Here is a brief Python code example to illustrate the use of `async` and `await`: ```python impor"
+    "description": "异步编程: Async/await coroutines are a model for single-threaded concurrency, suitable for high I/O concurrency. Here is a brief Python code example to illustrate the use of `async` and `await`: ```python import asyncio # Define an asynchronous function using async/await async def fetch_data(): print(\"Start fetching\") await asyncio.sleep(2) # Simulate an I/O operation print(\"Data fetched\") return {\"data\": 123} # Main function to run the coroutine async def main(): result = await fetch_data() # Wait for the coroutine to complete print(result) # Run the event loop asyncio.run(main()) ``` In this example, `fetch_data` is an asynchronous function that uses `await` to wait for an I/O operation (simulated by `asyncio.sleep(2)`). The `main` function demonstrates how to call and await the completion of an async function."
   },
   "data_pointers": [],
   "related_nodes": []

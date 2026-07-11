@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "编程语言",
   "children": [
-    "Channel",
-    "Goroutine"
+    "Goroutine",
+    "Channel"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Go is a compiled language developed by Google, known for its simplicity and efficiency. It natively supports concurrency through goroutines and channels. Here's a brief Python code example to illustra"
+    "description": "Go: Go is a compiled language developed by Google, known for its simplicity and efficiency. It natively supports concurrency through goroutines and channels. Here's a brief Python code example to illustrate the concept of goroutines (using threading as an analogy): ```python import threading def worker(id): print(f\"Worker {id} started\") # Simulate some work import time time.sleep(2) print(f\"Worker {id} finished\") # Create and start 3 goroutine-like threads for i in range(3): thread = threading.Thread(target=worker, args=(i,)) thread.start() ``` Note that Python's `threading` module does not provide the same level of concurrency as Go's goroutines due to the Global Interpreter Lock (GIL). However, this example demonstrates the basic idea of running multiple concurrent tasks."
   },
   "data_pointers": [],
   "related_nodes": []

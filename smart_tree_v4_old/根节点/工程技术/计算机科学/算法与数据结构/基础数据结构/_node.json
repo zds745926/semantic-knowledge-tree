@@ -1,0 +1,22 @@
+{
+  "name": "基础数据结构",
+  "node_id": "ds_basics_v4",
+  "parent_id": "algo_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "算法与数据结构",
+  "children": [
+    "数组",
+    "栈",
+    "链表",
+    "队列"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Basic data structures include arrays, linked lists, stacks, and queues, which form the basis for more complex structures. Python examples: 1. Array (using Python's built-in list): ```python # Creating"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

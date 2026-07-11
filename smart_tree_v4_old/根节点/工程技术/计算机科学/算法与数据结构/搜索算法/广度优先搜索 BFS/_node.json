@@ -1,0 +1,21 @@
+{
+  "name": "广度优先搜索 BFS",
+  "node_id": "bfs_v4",
+  "parent_id": "search_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "搜索算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "广度优先搜索 BFS",
+      "uri": "knowledge://bfs_v4",
+      "content_preview": "Breadth-first traversal using a queue to find the shortest path. Time complexity: O(V + E). Applications: mazes/social networks. Python code example for breadth-first search (BFS): ```python from coll"
+    }
+  ],
+  "related_nodes": []
+}

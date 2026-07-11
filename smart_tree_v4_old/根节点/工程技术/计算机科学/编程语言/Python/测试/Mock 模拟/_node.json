@@ -1,0 +1,21 @@
+{
+  "name": "Mock 模拟",
+  "node_id": "py_mock_v4",
+  "parent_id": "py_testing_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "测试",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Mock 模拟",
+      "uri": "knowledge://py_mock_v4",
+      "content_preview": "unittest.mock replaces external dependencies. It includes `Mock`, `MagicMock`, and `patch`. `side_effect` and `return_value` are used to control behavior. Here's a brief explanation with Python code e"
+    }
+  ],
+  "related_nodes": []
+}

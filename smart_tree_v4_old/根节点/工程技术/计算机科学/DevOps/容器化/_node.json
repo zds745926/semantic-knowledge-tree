@@ -1,0 +1,20 @@
+{
+  "name": "容器化",
+  "node_id": "container_v4",
+  "parent_id": "devops_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "DevOps",
+  "children": [
+    "Docker",
+    "Kubernetes"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Containers provide a lightweight application isolation and packaging method. Docker is the standard for containerization. Here’s an additional explanation with a brief Python code example to illustrat"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

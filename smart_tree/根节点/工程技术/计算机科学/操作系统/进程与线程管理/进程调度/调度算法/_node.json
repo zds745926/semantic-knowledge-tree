@@ -9,12 +9,12 @@
   "parent": "进程调度",
   "children": [
     "先来先服务 FCFS",
-    "时间片轮转 RR",
-    "短作业优先 SJF"
+    "短作业优先 SJF",
+    "时间片轮转 RR"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Scheduling algorithms affect the system's throughput, response time, and fairness. To provide a more comprehensive explanation, let's consider an example of a simple round-robin scheduling algorithm i"
+    "description": "调度算法: Scheduling algorithms affect the system's throughput, response time, and fairness. To provide a more comprehensive explanation, let's consider an example of a simple round-robin scheduling algorithm in Python. In this context, \"throughput\" can be thought of as the number of tasks completed per unit time, \"response time\" is the average time taken to complete a task, and \"fairness\" ensures that each process gets an equal share of CPU time. Here's a simple round-robin scheduling algorithm in Python: ```python class Process: def __init__(self, name, burst_time): self.name = name self.burst_time = burst_time def round_robin(processes, quantum=2): remaining_time = [p.burst_time for p in processes] time_slice = 0 while any(remaining_time): for i, process in enumerate(processes): if remaining_time[i] > 0: if remaining_time[i] <= quantum: time_slice += remaining_time[i] remaining_time[i] = 0 else: time_slice += quantum remaining_time[i] -= quantum return time_slice # Example usage processes = [Process(\"P1\", 5), Process(\"P2\", 3), Process(\"P3\", 4)] total_time = round_robin(processes) print(f\"Total time slice: {total_time}\") ``` In this example, the `round_robin` function simulates a simple round-robin scheduling algorithm where each process is given a quantum of CPU time. The `Process` class represents a process with a name and burst time (the total execution time). The `round_robin` function calculates the total time slice used by all processes under this scheduling algorithm, which can be related to throughput in terms of how much work gets done over time. This example helps illustrate how different scheduling algorithms can impact system performance metrics like throughput, response time, and fairness."
   },
   "data_pointers": [],
   "related_nodes": []

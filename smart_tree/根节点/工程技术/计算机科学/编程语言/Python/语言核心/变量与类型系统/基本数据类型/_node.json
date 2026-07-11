@@ -8,15 +8,15 @@
   "version": 1,
   "parent": "变量与类型系统",
   "children": [
-    "float 进阶",
-    "int 进阶",
-    "布尔与 None",
     "整型 int",
-    "浮点型 float"
+    "浮点型 float",
+    "布尔与 None",
+    "int 进阶",
+    "float 进阶"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The basic data types in Python include integer (int), float, complex, boolean (bool), and NoneType. Numeric types support arbitrary-precision arithmetic, forming the foundation for data processing in "
+    "description": "基本数据类型: The basic data types in Python include integer (int), float, complex, boolean (bool), and NoneType. Numeric types support arbitrary-precision arithmetic, forming the foundation for data processing in Python. Here are brief examples of each type using Python code: 1. Integer: ```python x = 42 print(type(x)) # <class 'int'> ``` 2. Float: ```python y = 3.14 print(type(y)) # <class 'float'> ``` 3. Complex: ```python z = 1 + 2j print(type(z)) # <class 'complex'> ``` 4. Boolean: ```python b = True print(type(b)) # <class 'bool'> ``` 5. NoneType: ```python none_value = None print(type(none_value)) # <class 'NoneType'> ```"
   },
   "data_pointers": [],
   "related_nodes": []

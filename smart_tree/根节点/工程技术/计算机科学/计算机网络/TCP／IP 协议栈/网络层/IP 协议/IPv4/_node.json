@@ -9,12 +9,14 @@
   "parent": "IP 协议",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "IPv4: 32-bit address in dotted decimal notation. Class A/B/C/D/E addresses. NAT to alleviate address exhaustion. Python code example for IP address representation (using a class to represent an IP address): ```python class IPAddress: def __init__(self, ip_str): self.ip = [int(part) for part in ip_str.split('.')] def __str__(self): return '.'.join(map(str, self.ip)) # Example usage: ip = IPAddress('192.0.2.1') print(ip) # Output: 192.0.2.1 ``` This code defines a simple class to represent an IP address in dotted decimal notation and includes a brief example of how it can be used."
+  },
   "data_pointers": [
     {
       "title": "IPv4",
       "uri": "knowledge://ipv4_v4",
-      "content_preview": "32-bit address in dotted decimal notation. Class A/B/C/D/E addresses. NAT to alleviate address exhaustion. Python code example for IP address representation (using a class to represent an IP address):"
+      "content_preview": "IPv4: 32-bit address in dotted decimal notation. Class A/B/C/D/E addresses. NAT to alleviate address exhaustion. Python code example for IP address representation (using a class to represent an IP address): ```python class IPAddress: def __init__(self, ip_str): self.ip = [int(part) for part in ip_str.split('.')] def __str__(self): return '.'.join(map(str, self.ip)) # Example usage: ip = IPAddress('192.0.2.1') print(ip) # Output: 192.0.2.1 ``` This code defines a simple class to represent an IP address in dotted decimal notation and includes a brief example of how it can be used."
     }
   ],
   "related_nodes": []

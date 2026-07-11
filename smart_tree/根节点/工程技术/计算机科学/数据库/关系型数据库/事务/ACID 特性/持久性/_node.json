@@ -9,12 +9,14 @@
   "parent": "ACID 特性",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "持久性: The committed results are permanently stored. Redo logs are used for replaying transactions. Here is a brief explanation of \"Redo logs\" with an associated Python code example to illustrate how they might be implemented in a simple logging context: Redo logs are used in database systems to ensure that all committed transactions are written to the data files, even if there is a system failure. This helps in recovering the database state after a crash. Python Code Example: ```python class RedoLog: def __init__(self): self.log = [] def record_transaction(self, transaction): # Simulate recording a transaction (could be a database write) print(f\"Recording transaction: {transaction}\") self.log.append(transaction) def replay_transactions(self): # Simulate replaying transactions print(\"Replaying transactions:\") for transaction in self.log: print(f\" Replay: {transaction}\") # Example usage redo_log = RedoLog() redo_log.record_transaction(\"Transaction1\") redo_log.record_transaction(\"Transaction2\") # Simulating a crash and recovery print(\"\\nSimulating crash and recovery...\") redo_log.replay_transactions() ``` This example demonstrates how transactions can be recorded in a redo log, which can then be replayed to recover the state of a system."
+  },
   "data_pointers": [
     {
       "title": "持久性",
       "uri": "knowledge://durability_v4",
-      "content_preview": "The committed results are permanently stored. Redo logs are used for replaying transactions. Here is a brief explanation of \"Redo logs\" with an associated Python code example to illustrate how they mi"
+      "content_preview": "持久性: The committed results are permanently stored. Redo logs are used for replaying transactions. Here is a brief explanation of \"Redo logs\" with an associated Python code example to illustrate how they might be implemented in a simple logging context: Redo logs are used in database systems to ensure that all committed transactions are written to the data files, even if there is a system failure. This helps in recovering the database state after a crash. Python Code Example: ```python class RedoLog: def __init__(self): self.log = [] def record_transaction(self, transaction): # Simulate recording a transaction (could be a database write) print(f\"Recording transaction: {transaction}\") self.log.append(transaction) def replay_transactions(self): # Simulate replaying transactions print(\"Replaying transactions:\") for transaction in self.log: print(f\" Replay: {transaction}\") # Example usage redo_log = RedoLog() redo_log.record_transaction(\"Transaction1\") redo_log.record_transaction(\"Transaction2\") # Simulating a crash and recovery print(\"\\nSimulating crash and recovery...\") redo_log.replay_transactions() ``` This example demonstrates how transactions can be recorded in a redo log, which can then be replayed to recover the state of a system."
     }
   ],
   "related_nodes": []

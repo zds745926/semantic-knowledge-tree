@@ -1,0 +1,21 @@
+{
+  "name": "xml",
+  "node_id": "py_xml_v4",
+  "parent_id": "py_serialization_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "数据序列化",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "xml",
+      "uri": "knowledge://py_xml_v4",
+      "content_preview": "xml.etree.ElementTree.find/findall. lxml is more powerful. Here are brief explanations and corresponding Python code examples for the mentioned concepts: 1. **xml.etree.ElementTree.find/findall**: - `"
+    }
+  ],
+  "related_nodes": []
+}

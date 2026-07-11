@@ -9,12 +9,14 @@
   "parent": "网络编程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "requests 库: `requests.get/post/put/delete`. Session for reusing connections. One of the most popular HTTP libraries. Python code examples: ```python import requests # Using GET request response = requests.get('https://api.example.com/data') print(response.status_code) # Using POST request with data data = {'key': 'value'} response = requests.post('https://api.example.com/submit', data=data) print(response.status_code) # Using PUT request headers = {'Content-Type': 'application/json'} json_data = {'id': 1, 'name': 'example'} response = requests.put('https://api.example.com/update', json=json_data, headers=headers) print(response.status_code) # Using DELETE request response = requests.delete('https://api.example.com/delete/1') print(response.status_code) # Session for reusing connections s = requests.Session() response = s.get('https://api.example.com/data') print(response.status_code) ``` This code demonstrates the use of various HTTP methods (`get`, `post`, `put`, and `delete`) with the `requests` library, as well as how to reuse a session for multiple requests."
+  },
   "data_pointers": [
     {
       "title": "requests 库",
       "uri": "knowledge://py_requests_v4",
-      "content_preview": "Translation: `requests.get/post/put/delete`. Session for reusing connections. One of the most popular HTTP libraries. Python code examples: ```python import requests # Using GET request response = req"
+      "content_preview": "requests 库: `requests.get/post/put/delete`. Session for reusing connections. One of the most popular HTTP libraries. Python code examples: ```python import requests # Using GET request response = requests.get('https://api.example.com/data') print(response.status_code) # Using POST request with data data = {'key': 'value'} response = requests.post('https://api.example.com/submit', data=data) print(response.status_code) # Using PUT request headers = {'Content-Type': 'application/json'} json_data = {'id': 1, 'name': 'example'} response = requests.put('https://api.example.com/update', json=json_data, headers=headers) print(response.status_code) # Using DELETE request response = requests.delete('https://api.example.com/delete/1') print(response.status_code) # Session for reusing connections s = requests.Session() response = s.get('https://api.example.com/data') print(response.status_code) ``` This code demonstrates the use of various HTTP methods (`get`, `post`, `put`, and `delete`) with the `requests` library, as well as how to reuse a session for multiple requests."
     }
   ],
   "related_nodes": []

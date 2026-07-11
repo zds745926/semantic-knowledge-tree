@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "操作系统",
   "children": [
-    "DMA",
-    "I/O 层次"
+    "I/O 层次",
+    "DMA"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "I/O management coordinates data exchange between peripherals and the CPU, involving buffering, DMA (Direct Memory Access), and interrupts. Here's a brief explanation of these concepts with Python code"
+    "description": "I/O 管理: I/O management coordinates data exchange between peripherals and the CPU, involving buffering, DMA (Direct Memory Access), and interrupts. Here's a brief explanation of these concepts with Python code examples: 1. **Buffering**: Buffering is used to temporarily store data before it is processed or transferred. In Python, you can use lists as buffers. ```python buffer = [] # Initialize an empty list as a buffer def read_data(): global buffer buffer.append(\"Data from peripheral\") # Simulate reading data and storing in the buffer def process_data(): if buffer: print(buffer.pop(0)) # Process data by removing it from the buffer ``` 2. **DMA (Direct Memory Access)**: DMA allows peripherals to access memory directly without involving the CPU, which can improve performance. ```python class Peripheral: def __init__(self): self.memory = [0] * 100 # Simulate a small memory def write_to_memory(self, address, data): self.memory[address] = data # Directly write to the simulated memory peripheral = Peripheral() peripheral.write_to_memory(5, 42) # Write data directly to memory ``` 3. **Interrupts**: Interrupts are signals that temporarily halt CPU execution and allow other tasks to be handled. ```python def handle_interrupt(): print(\"Handling interrupt...\") def main(): while True: if some_condition: # Simulate a condition that triggers an interrupt handle_interrupt() # Handle the interrupt main() ``` These examples provide basic illustrations of how these concepts might be implemented in Python, though real-world implementations would involve more complex interactions and error handling."
   },
   "data_pointers": [],
   "related_nodes": []

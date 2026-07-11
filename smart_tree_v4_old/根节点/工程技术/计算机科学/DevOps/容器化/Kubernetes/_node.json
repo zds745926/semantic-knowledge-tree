@@ -1,0 +1,21 @@
+{
+  "name": "Kubernetes",
+  "node_id": "k8s_v4",
+  "parent_id": "container_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "容器化",
+  "children": [
+    "Deployment",
+    "Pod",
+    "Service"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Kubernetes container orchestration platform. Manage the deployment, scaling, and operations of containerized applications. Here is a brief Python code example to demonstrate how you might interact wit"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

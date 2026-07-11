@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "标准库",
   "children": [
-    "calendar",
     "datetime",
     "time",
+    "calendar",
     "zoneinfo"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python Time Handling Core Modules: - `datetime`: An object-oriented approach to handling dates and times. ```python from datetime import datetime now = datetime.now() print(now) ``` - `time`: Lower-le"
+    "description": "时间与日期: Python Time Handling Core Modules: - `datetime`: An object-oriented approach to handling dates and times. ```python from datetime import datetime now = datetime.now() print(now) ``` - `time`: Lower-level time functions for operations like sleep and formatting timestamps. ```python import time time.sleep(2) # Sleep for 2 seconds current_time = time.time() # Get the current timestamp in seconds since the Epoch print(current_time) ``` - `calendar`: Functions related to calendars, such as month views and leap year determination. ```python import calendar cal = calendar.month(2023, 4) # Print April 2023 calendar print(cal) ``` - `zoneinfo` (introduced in Python 3.9): Handling time zones with first-class support for IANA time zone database. ```python from datetime import datetime from zoneinfo import ZoneInfo dt = datetime(2023, 4, 1, tzinfo=ZoneInfo(\"America/New_York\")) print(dt) ``` Note: The `zoneinfo` module is available starting with Python 3.9 and provides a more robust way to handle time zones compared to the older `pytz` library."
   },
   "data_pointers": [],
   "related_nodes": []

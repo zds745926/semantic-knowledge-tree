@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The Java collection framework includes the List, Map, and Set interfaces along with their implementations. Here are some brief examples in Python to illustrate these concepts: 1. **List**: In Python, "
+    "description": "集合框架: The Java collection framework includes the List, Map, and Set interfaces along with their implementations. Here are some brief examples in Python to illustrate these concepts: 1. **List**: In Python, lists are similar to the `List` interface in Java. ```python # Example of a list in Python my_list = [1, 2, 3] print(my_list) # Output: [1, 2, 3] ``` 2. **Map**: In Python, dictionaries are used to implement the `Map` interface. ```python # Example of a dictionary (map) in Python my_map = {'a': 1, 'b': 2} print(my_map['a']) # Output: 1 ``` 3. **Set**: In Python, sets are used to implement the `Set` interface. ```python # Example of a set in Python my_set = {1, 2, 3} print(my_set) # Output might be {1, 2, 3} (order is not guaranteed) ``` These examples should help illustrate the basic usage and behavior of these data structures in Python."
   },
   "data_pointers": [],
   "related_nodes": []

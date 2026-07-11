@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "排序算法",
   "children": [
-    "基数排序",
-    "计数排序"
+    "计数排序",
+    "基数排序"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Linear sorting does not rely on comparisons but leverages the characteristics of the data to achieve O(n) time complexity. Here's an example using counting sort, a linear sorting algorithm that works "
+    "description": "线性排序: Linear sorting does not rely on comparisons but leverages the characteristics of the data to achieve O(n) time complexity. Here's an example using counting sort, a linear sorting algorithm that works well when the range of input values is not significantly greater than the number of items to be sorted: ```python def counting_sort(arr): if len(arr) == 0: return arr # Find the maximum value in the array max_val = max(arr) # Initialize count array count = [0] * (max_val + 1) # Count each element for num in arr: count[num] += 1 # Reconstruct the sorted array sorted_arr = [] for i, cnt in enumerate(count): sorted_arr.extend([i] * cnt) return sorted_arr # Example usage arr = [4, 2, 2, 8, 3, 3, 1] sorted_arr = counting_sort(arr) print(sorted_arr) # Output: [1, 2, 2, 3, 3, 4, 8] ``` This Python code demonstrates the counting sort algorithm, which is a linear sorting technique that operates in O(n + k) time complexity, where `k` is the range of input values."
   },
   "data_pointers": [],
   "related_nodes": []

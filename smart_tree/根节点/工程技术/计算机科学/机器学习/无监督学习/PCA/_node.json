@@ -9,12 +9,14 @@
   "parent": "无监督学习",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "PCA: Principal Component Analysis (PCA) dimensionality reduction. Uncorrelated noise removal. Maximizing variance retention. Python code example for PCA: ```python from sklearn.decomposition import PCA import numpy as np # Sample data generation np.random.seed(0) data = np.random.rand(100, 5) # 100 samples with 5 features each # Applying PCA pca = PCA(n_components=2) # Reduce to 2 principal components principal Components = pca.fit_transform(data) print(\"Principal Components shape:\", principal_components.shape) ``` In this example, we use the `PCA` class from `sklearn.decomposition` to perform dimensionality reduction on a sample dataset. The data is reduced from 5 dimensions to 2 dimensions while retaining as much variance as possible."
+  },
   "data_pointers": [
     {
       "title": "PCA",
       "uri": "knowledge://pca_v4",
-      "content_preview": "Principal Component Analysis (PCA) dimensionality reduction. Uncorrelated noise removal. Maximizing variance retention. Python code example for PCA: ```python from sklearn.decomposition import PCA imp"
+      "content_preview": "PCA: Principal Component Analysis (PCA) dimensionality reduction. Uncorrelated noise removal. Maximizing variance retention. Python code example for PCA: ```python from sklearn.decomposition import PCA import numpy as np # Sample data generation np.random.seed(0) data = np.random.rand(100, 5) # 100 samples with 5 features each # Applying PCA pca = PCA(n_components=2) # Reduce to 2 principal components principal Components = pca.fit_transform(data) print(\"Principal Components shape:\", principal_components.shape) ``` In this example, we use the `PCA` class from `sklearn.decomposition` to perform dimensionality reduction on a sample dataset. The data is reduced from 5 dimensions to 2 dimensions while retaining as much variance as possible."
     }
   ],
   "related_nodes": []

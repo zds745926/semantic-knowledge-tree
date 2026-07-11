@@ -9,12 +9,14 @@
   "parent": "继承与多态",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "单继承: Class B(A): Class B inherits from A. `super().__init__()` calls the constructor of the parent class. `isinstance` is used for type checking. Python code example: ```python class A: def __init__(self): print(\"Initializing A\") class B(A): def __init__(self): super().__init__() # Calls the constructor of class A # Example usage b = B() # Output: Initializing A ``` In this example, `B` is a subclass of `A`, and when an instance of `B` is created, `super().__init__()` ensures that the initializer of `A` is called. The `isinstance` function could be used elsewhere in the code to check if an object is an instance of class `A` or `B`."
+  },
   "data_pointers": [
     {
       "title": "单继承",
       "uri": "knowledge://py_single_inherit_v4",
-      "content_preview": "Translation: Class B(A): Class B inherits from A. `super().__init__()` calls the constructor of the parent class. `isinstance` is used for type checking. Python code example: ```python class A: def __"
+      "content_preview": "单继承: Class B(A): Class B inherits from A. `super().__init__()` calls the constructor of the parent class. `isinstance` is used for type checking. Python code example: ```python class A: def __init__(self): print(\"Initializing A\") class B(A): def __init__(self): super().__init__() # Calls the constructor of class A # Example usage b = B() # Output: Initializing A ``` In this example, `B` is a subclass of `A`, and when an instance of `B` is created, `super().__init__()` ensures that the initializer of `A` is called. The `isinstance` function could be used elsewhere in the code to check if an object is an instance of class `A` or `B`."
     }
   ],
   "related_nodes": []

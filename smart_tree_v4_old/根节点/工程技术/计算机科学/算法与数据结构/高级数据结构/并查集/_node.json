@@ -1,0 +1,21 @@
+{
+  "name": "并查集",
+  "node_id": "union_find_v4",
+  "parent_id": "adv_ds_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "高级数据结构",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "并查集",
+      "uri": "knowledge://union_find_v4",
+      "content_preview": "Union and Find. Path Compression + Union by Rank ≈ O(α(n)). Connected Components/Kruskal's Algorithm. Here is a brief explanation with Python code examples: 1. **Union-Find Data Structure**: - This da"
+    }
+  ],
+  "related_nodes": []
+}

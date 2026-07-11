@@ -9,13 +9,17 @@
   "parent": "标准库",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "pathlib 模块: Object-oriented path manipulation library. The `Path` object replaces string-based operations with `os.path`. It supports the `/` operator for path concatenation and is compatible with Python 3.4+. Here's a brief example of how you might use such a `Path` class in Python: ```python from pathlib import Path # Create a Path object p = Path('/home/user/documents') # Use / operator to concatenate paths new_path = p / 'report.txt' print(new_path) # Output: /home/user/documents/report.txt ``` This example uses Python's built-in `pathlib` module, which provides the `Path` class for object-oriented path manipulation."
+  },
   "data_pointers": [
     {
       "title": "pathlib 模块",
       "uri": "knowledge://py_pathlib_v4",
-      "content_preview": "Object-oriented path manipulation library. The `Path` object replaces string-based operations with `os.path`. It supports the `/` operator for path concatenation and is compatible with Python 3.4+. He"
+      "content_preview": "pathlib 模块: Object-oriented path manipulation library. The `Path` object replaces string-based operations with `os.path`. It supports the `/` operator for path concatenation and is compatible with Python 3.4+. Here's a brief example of how you might use such a `Path` class in Python: ```python from pathlib import Path # Create a Path object p = Path('/home/user/documents') # Use / operator to concatenate paths new_path = p / 'report.txt' print(new_path) # Output: /home/user/documents/report.txt ``` This example uses Python's built-in `pathlib` module, which provides the `Path` class for object-oriented path manipulation."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_os_module_v4"
+  ]
 }

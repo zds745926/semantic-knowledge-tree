@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "Python",
   "children": [
-    "上下文管理器",
-    "函数式工具",
     "装饰器进阶",
-    "迭代器与生成器"
+    "迭代器与生成器",
+    "上下文管理器",
+    "函数式工具"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The advanced features of Python include decorator advancements, iterator generators, context managers, and functional tools. These features make Python code more elegant and efficient. Here are brief "
+    "description": "高级特性: The advanced features of Python include decorator advancements, iterator generators, context managers, and functional tools. These features make Python code more elegant and efficient. Here are brief examples for each: 1. **Decorator Advancements**: Decorators can be used to modify the behavior of functions or methods. For example, you can create a simple timer decorator to measure function execution time. ```python import time def timer_decorator(func): def wrapper(*args, **kwargs): start_time = time.time() result = func(*args, **kwargs) end_time = time.time() print(f\"Function {func.__name__} took {end_time - start_time:.4f} seconds to execute.\") return result return wrapper @timer_decorator def example_function(n): sum = 0 for i in range(n): sum += i return sum example_function(1000000) ``` 2. **Iterator Generators**: Iterator generators are a type of generator that can be used to create iterators. They use the `yield` keyword. ```python def count_up_to(n): i = 0 while i < n: yield i i += 1 for number in count_up_to(5): print(number) ``` 3. **Context Managers**: Context managers are used to wrap the execution of a block of code within a try/finally statement, ensuring that resources are properly managed. ```python from contextlib import contextmanager @contextmanager def file_open(file_name): f = open(file_name, 'w') try: yield f finally: f.close() with file_open('example.txt') as f: f.write(\"Hello, world!\") ``` 4. **Functional Tools**: Python provides several functional programming tools such as `map`, `filter`, and `reduce`. These can be used to process collections in a more declarative way. ```python numbers = [1, 2, 3, 4, 5] # Using map to double each number doubled_numbers = list(map(lambda x: x * 2, numbers)) print(doubled_numbers) # Output: [2, 4, 6, 8, 10] # Using filter to get even numbers even_numbers = list(filter(lambda x: x % 2 == 0, numbers)) print(even_numbers) # Output: [2, 4] ``` These examples illustrate how these advanced features can be utilized in Python programming."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "索引类型",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "哈希索引: Key Hash Mapping. Only equal value queries. Memery engine by default. O(1) query. For the technical term \"Memery engine,\" it seems there might be a typo, as the correct term is likely \"Memory engine.\" Here's an accurate translation with a brief Python code example for the concept of key hash mapping: Key Hash Mapping. Only equal value queries. Memory engine by default. O(1) query. Python code example: ```python class SimpleHashTable: def __init__(self, size=10): self.size = size self.table = [None] * size def _hash_function(self, key): return hash(key) % self.size def insert(self, key, value): index = self._hash_function(key) self.table[index] = (key, value) def get(self, key): index = self._hash_function(key) entry = self.table[index] if entry and entry[0] == key: return entry[1] else: return None # Example usage ht = SimpleHashTable() ht.insert('apple', 5) print(ht.get('apple')) # Output: 5 ``` This Python code defines a simple hash table that performs O(1) average-time complexity for insert and get operations, demonstrating the key hash mapping concept."
+  },
   "data_pointers": [
     {
       "title": "哈希索引",
       "uri": "knowledge://hash_index_v4",
-      "content_preview": "Key Hash Mapping. Only equal value queries. Memery engine by default. O(1) query. For the technical term \"Memery engine,\" it seems there might be a typo, as the correct term is likely \"Memory engine.\""
+      "content_preview": "哈希索引: Key Hash Mapping. Only equal value queries. Memery engine by default. O(1) query. For the technical term \"Memery engine,\" it seems there might be a typo, as the correct term is likely \"Memory engine.\" Here's an accurate translation with a brief Python code example for the concept of key hash mapping: Key Hash Mapping. Only equal value queries. Memory engine by default. O(1) query. Python code example: ```python class SimpleHashTable: def __init__(self, size=10): self.size = size self.table = [None] * size def _hash_function(self, key): return hash(key) % self.size def insert(self, key, value): index = self._hash_function(key) self.table[index] = (key, value) def get(self, key): index = self._hash_function(key) entry = self.table[index] if entry and entry[0] == key: return entry[1] else: return None # Example usage ht = SimpleHashTable() ht.insert('apple', 5) print(ht.get('apple')) # Output: 5 ``` This Python code defines a simple hash table that performs O(1) average-time complexity for insert and get operations, demonstrating the key hash mapping concept."
     }
   ],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "迭代器与生成器",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "生成器表达式: The given Chinese text translates to: \"This is a lazy evaluation, which saves memory compared to list comprehension. For example, in Python: ```python gen = (x**2 for x in range(10)) ``` This generator expression `gen` generates squared values on the fly without creating an intermediate list, thus saving memory.\" In this translation: - \"惰性求值\" is translated as \"lazy evaluation,\" which is a common term in programming. - The Python code example demonstrates how to use a generator expression, which is a form of lazy evaluation."
+  },
   "data_pointers": [
     {
       "title": "生成器表达式",
       "uri": "knowledge://py_gen_expression_v4",
-      "content_preview": "The given Chinese text translates to: \"This is a lazy evaluation, which saves memory compared to list comprehension. For example, in Python: ```python gen = (x**2 for x in range(10)) ``` This generato"
+      "content_preview": "生成器表达式: The given Chinese text translates to: \"This is a lazy evaluation, which saves memory compared to list comprehension. For example, in Python: ```python gen = (x**2 for x in range(10)) ``` This generator expression `gen` generates squared values on the fly without creating an intermediate list, thus saving memory.\" In this translation: - \"惰性求值\" is translated as \"lazy evaluation,\" which is a common term in programming. - The Python code example demonstrates how to use a generator expression, which is a form of lazy evaluation."
     }
   ],
   "related_nodes": []

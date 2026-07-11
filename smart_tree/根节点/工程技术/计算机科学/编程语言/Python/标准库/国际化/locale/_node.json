@@ -9,12 +9,14 @@
   "parent": "国际化",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "locale: `locale.setlocale` sets the locale. `currency`, `format`, and `strcoll` are sorting methods. `LC_ALL` and `LC_TIME` are locale categories. Python code examples: ```python import locale # Set the locale to a specific language (e.g., French) locale.setlocale(locale.LC_ALL, 'fr_FR.UTF-8') # Example of using currency formatting price = 1234.56 formatted_price = locale.currency(price, grouping=True) print(formatted_price) # Output will depend on the locale settings # Example of sorting strings according to the current locale rules strings = ['banana', 'apple', 'cherry'] sorted_strings = sorted(strings, key=locale.strxfrm) print(sorted_strings) # Sorted based on the current locale's collation rules # LC_ALL setting affects all categories locale.setlocale(locale.LC_TIME, 'en_US.UTF-8') current_date = \"2023-10-05\" formatted_date = current_date.strftime(\"%A %B %d, %Y\") print(formatted_date) # Output will depend on the locale settings # LC_TIME setting affects date and time formatting ``` Note: The actual output of `locale.currency` and `strftime` depends on the system's locale settings."
+  },
   "data_pointers": [
     {
       "title": "locale",
       "uri": "knowledge://py_locale_v4",
-      "content_preview": "Translation: `locale.setlocale` sets the locale. `currency`, `format`, and `strcoll` are sorting methods. `LC_ALL` and `LC_TIME` are locale categories. Python code examples: ```python import locale # "
+      "content_preview": "locale: `locale.setlocale` sets the locale. `currency`, `format`, and `strcoll` are sorting methods. `LC_ALL` and `LC_TIME` are locale categories. Python code examples: ```python import locale # Set the locale to a specific language (e.g., French) locale.setlocale(locale.LC_ALL, 'fr_FR.UTF-8') # Example of using currency formatting price = 1234.56 formatted_price = locale.currency(price, grouping=True) print(formatted_price) # Output will depend on the locale settings # Example of sorting strings according to the current locale rules strings = ['banana', 'apple', 'cherry'] sorted_strings = sorted(strings, key=locale.strxfrm) print(sorted_strings) # Sorted based on the current locale's collation rules # LC_ALL setting affects all categories locale.setlocale(locale.LC_TIME, 'en_US.UTF-8') current_date = \"2023-10-05\" formatted_date = current_date.strftime(\"%A %B %d, %Y\") print(formatted_date) # Output will depend on the locale settings # LC_TIME setting affects date and time formatting ``` Note: The actual output of `locale.currency` and `strftime` depends on the system's locale settings."
     }
   ],
   "related_nodes": []

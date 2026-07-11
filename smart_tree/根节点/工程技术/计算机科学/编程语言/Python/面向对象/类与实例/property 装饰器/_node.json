@@ -9,13 +9,17 @@
   "parent": "类与实例",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "property 装饰器: The `@property` decorator allows methods to be accessed like attributes, providing a way to define getters and setters for class attributes. The `setter` and `deleter` control assignment and deletion of values. Computed properties do not consume storage. Here is an example in Python: ```python class Circle: def __init__(self, radius): self._radius = radius @property def radius(self): \"\"\"Getter for the radius\"\"\" return self._radius @radius.setter def radius(self, value): \"\"\"Setter for the radius\"\"\" if value < 0: raise ValueError(\"Radius cannot be negative\") self._radius = value @property def area(self): \"\"\"Computed property: Area of the circle\"\"\" return 3.14159 * self.radius ** 2 # Example usage: circle = Circle(5) print(circle.radius) # Accessing radius as an attribute circle.radius = 7 # Setting a new value for radius using setter print(circle.area) # Area is computed on the fly ``` In this example, `radius` and `area` are accessed like attributes but are actually methods. The `@property` decorator makes `radius` and `area` accessible as properties, while the `setter` method ensures that the radius cannot be set to a negative value."
+  },
   "data_pointers": [
     {
       "title": "property 装饰器",
       "uri": "knowledge://py_property_v4",
-      "content_preview": "The `@property` decorator allows methods to be accessed like attributes, providing a way to define getters and setters for class attributes. The `setter` and `deleter` control assignment and deletion "
+      "content_preview": "property 装饰器: The `@property` decorator allows methods to be accessed like attributes, providing a way to define getters and setters for class attributes. The `setter` and `deleter` control assignment and deletion of values. Computed properties do not consume storage. Here is an example in Python: ```python class Circle: def __init__(self, radius): self._radius = radius @property def radius(self): \"\"\"Getter for the radius\"\"\" return self._radius @radius.setter def radius(self, value): \"\"\"Setter for the radius\"\"\" if value < 0: raise ValueError(\"Radius cannot be negative\") self._radius = value @property def area(self): \"\"\"Computed property: Area of the circle\"\"\" return 3.14159 * self.radius ** 2 # Example usage: circle = Circle(5) print(circle.radius) # Accessing radius as an attribute circle.radius = 7 # Setting a new value for radius using setter print(circle.area) # Area is computed on the fly ``` In this example, `radius` and `area` are accessed like attributes but are actually methods. The `@property` decorator makes `radius` and `area` accessible as properties, while the `setter` method ensures that the radius cannot be set to a negative value."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_dataclass_v4"
+  ]
 }

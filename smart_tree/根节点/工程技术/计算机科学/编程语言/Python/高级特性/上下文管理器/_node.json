@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "高级特性",
   "children": [
-    "contextmanager",
-    "类实现上下文"
+    "类实现上下文",
+    "contextmanager"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The `with` statement manages resources (files/locks/connections), achieving this through the use of `__enter__` and `__exit__`. Here's a brief example in Python to illustrate how the `with` statement "
+    "description": "上下文管理器: The `with` statement manages resources (files/locks/connections), achieving this through the use of `__enter__` and `__exit__`. Here's a brief example in Python to illustrate how the `with` statement works with file management: ```python # Using 'with' for file handling try: with open('example.txt', 'r') as file: content = file.read() print(content) except FileNotFoundError: print(\"The file was not found.\") ``` In this example, the `__enter__` method is called when entering the `with` block (when the file is opened), and the `__exit__` method is called after the block is executed (regardless of whether an exception occurred or not). This ensures that the file is properly closed even if an error occurs within the block."
   },
   "data_pointers": [],
   "related_nodes": []

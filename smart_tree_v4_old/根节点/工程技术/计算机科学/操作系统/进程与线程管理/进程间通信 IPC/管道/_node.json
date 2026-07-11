@@ -1,0 +1,21 @@
+{
+  "name": "管道",
+  "node_id": "pipe_v4",
+  "parent_id": "proc_comm_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "进程间通信 IPC",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "管道",
+      "uri": "knowledge://pipe_v4",
+      "content_preview": "One-way data flow. Unnamed pipes are limited to parent-child processes, while named pipes use `mkfifo`. Shell pipe operator `|`. Here's a brief explanation with Python code examples for the concepts m"
+    }
+  ],
+  "related_nodes": []
+}

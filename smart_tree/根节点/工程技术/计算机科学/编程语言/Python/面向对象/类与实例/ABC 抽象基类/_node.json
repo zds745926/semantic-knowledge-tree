@@ -9,12 +9,14 @@
   "parent": "类与实例",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "ABC 抽象基类: ```python from abc import ABC, abstractmethod # Define an interface contract. class MyInterface(ABC): @abstractmethod def my_method(self): pass # Subclasses must implement the abstract method. class MyClass(MyInterface): def my_method(self): print(\"Method implemented\") # collections.abc includes mixin protocols. from collections.abc import Iterable class MyIterableClass(Iterable): def __iter__(self): yield 1 yield 2 yield 3 ``` Explanation: - `ABC` and `abstractmethod` are used to define an abstract base class with an abstract method, which enforces that any subclass must implement the specified method. - The `collections.abc` module provides a set of mixin protocols (like `Iterable`) that can be used to add specific behaviors to classes without inheriting from them directly."
+  },
   "data_pointers": [
     {
       "title": "ABC 抽象基类",
       "uri": "knowledge://py_abc_v4",
-      "content_preview": "Translation: ```python from abc import ABC, abstractmethod # Define an interface contract. class MyInterface(ABC): @abstractmethod def my_method(self): pass # Subclasses must implement the abstract me"
+      "content_preview": "ABC 抽象基类: ```python from abc import ABC, abstractmethod # Define an interface contract. class MyInterface(ABC): @abstractmethod def my_method(self): pass # Subclasses must implement the abstract method. class MyClass(MyInterface): def my_method(self): print(\"Method implemented\") # collections.abc includes mixin protocols. from collections.abc import Iterable class MyIterableClass(Iterable): def __iter__(self): yield 1 yield 2 yield 3 ``` Explanation: - `ABC` and `abstractmethod` are used to define an abstract base class with an abstract method, which enforces that any subclass must implement the specified method. - The `collections.abc` module provides a set of mixin protocols (like `Iterable`) that can be used to add specific behaviors to classes without inheriting from them directly."
     }
   ],
   "related_nodes": []

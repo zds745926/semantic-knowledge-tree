@@ -9,13 +9,17 @@
   "parent": "HTTP/2",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "多路复用: Multiple streams can be concurrently transmitted over a single TCP connection. This addresses the HTTP/1.1 head-of-line blocking issue. To illustrate this concept with a Python code example, consider using the `http.client` module to demonstrate concurrent requests: ```python import http.client import threading def fetch_url(url): conn = http.client.HTTPSConnection(\"www.example.com\") conn.request(\"GET\", url) response = conn.getresponse() print(response.status, response.reason) data = response.read() print(data.decode('utf-8')) conn.close() urls = [\"/stream1\", \"/stream2\", \"/stream3\"] threads = [] for url in urls: thread = threading.Thread(target=fetch_url, args=(url,)) threads.append(thread) thread.start() # Wait for all threads to complete for thread in threads: thread.join() ``` This example uses Python's `threading` module to concurrently send multiple HTTP GET requests over a single TCP connection. Each request is handled by a separate thread, demonstrating how multiple streams can be managed within the same connection."
+  },
   "data_pointers": [
     {
       "title": "多路复用",
       "uri": "knowledge://http2_multiplex_v4",
-      "content_preview": "Multiple streams can be concurrently transmitted over a single TCP connection. This addresses the HTTP/1.1 head-of-line blocking issue. To illustrate this concept with a Python code example, consider "
+      "content_preview": "多路复用: Multiple streams can be concurrently transmitted over a single TCP connection. This addresses the HTTP/1.1 head-of-line blocking issue. To illustrate this concept with a Python code example, consider using the `http.client` module to demonstrate concurrent requests: ```python import http.client import threading def fetch_url(url): conn = http.client.HTTPSConnection(\"www.example.com\") conn.request(\"GET\", url) response = conn.getresponse() print(response.status, response.reason) data = response.read() print(data.decode('utf-8')) conn.close() urls = [\"/stream1\", \"/stream2\", \"/stream3\"] threads = [] for url in urls: thread = threading.Thread(target=fetch_url, args=(url,)) threads.append(thread) thread.start() # Wait for all threads to complete for thread in threads: thread.join() ``` This example uses Python's `threading` module to concurrently send multiple HTTP GET requests over a single TCP connection. Each request is handled by a separate thread, demonstrating how multiple streams can be managed within the same connection."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "quic_v4"
+  ]
 }

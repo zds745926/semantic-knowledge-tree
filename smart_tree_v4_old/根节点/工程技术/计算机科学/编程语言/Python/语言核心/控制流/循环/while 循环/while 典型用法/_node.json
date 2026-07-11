@@ -1,0 +1,21 @@
+{
+  "name": "while 典型用法",
+  "node_id": "py_while_usage_v4",
+  "parent_id": "py_while_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "while 循环",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "while 典型用法",
+      "uri": "knowledge://py_while_usage_v4",
+      "content_preview": "The `while True` loop combined with the `break` statement is often used for implementing validation or queue-based producer-consumer scenarios using `input()` in Python. In a validation context, this "
+    }
+  ],
+  "related_nodes": []
+}

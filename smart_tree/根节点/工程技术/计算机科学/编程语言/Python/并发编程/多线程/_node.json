@@ -8,20 +8,20 @@
   "version": 1,
   "parent": "并发编程",
   "children": [
-    "Barrier",
-    "Condition",
-    "Event",
-    "Lock 与 RLock",
-    "Timer",
-    "daemon 线程",
     "threading 基础",
     "线程同步",
-    "线程安全",
-    "线程局部存储 TLS"
+    "Lock 与 RLock",
+    "Condition",
+    "Event",
+    "Barrier",
+    "Timer",
+    "线程局部存储 TLS",
+    "daemon 线程",
+    "线程安全"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The `threading` module creates threads. GIL limits CPU parallelism, making it suitable for I/O-bound tasks. Here's a brief explanation of the concepts with a Python code example: - **Threading Module*"
+    "description": "多线程: The `threading` module creates threads. GIL limits CPU parallelism, making it suitable for I/O-bound tasks. Here's a brief explanation of the concepts with a Python code example: - **Threading Module**: The `threading` module in Python is used to create and manage threads. ```python import threading def print_numbers(): for i in range(5): print(i) # Creating two threads thread1 = threading.Thread(target=print_numbers) thread2 = threading.Thread(target=print_numbers) # Starting the threads thread1.start() thread2.start() # Waiting for both threads to complete thread1.join() thread2.join() ``` - **GIL (Global Interpreter Lock)**: The Global Interpreter Lock is a mutex that prevents multiple native threads from executing Python bytecodes at once. This lock is necessary because Python's memory management is not thread-safe. ```python import threading def print_numbers(): for i in range(5): print(i) # Creating two threads thread1 = threading.Thread(target=print_numbers) thread2 = threading.Thread(target=print_numbers) # Starting the threads thread1.start() thread2.start() # Waiting for both threads to complete thread1.join() thread2.join() ``` In this example, even though we have multiple threads, due to GIL, they will not run in true parallel on a multi-core CPU. This is why the `threading` module is more suitable for I/O-bound tasks where waiting for external resources (like network or file operations) can be effectively managed by switching between threads."
   },
   "data_pointers": [],
   "related_nodes": []

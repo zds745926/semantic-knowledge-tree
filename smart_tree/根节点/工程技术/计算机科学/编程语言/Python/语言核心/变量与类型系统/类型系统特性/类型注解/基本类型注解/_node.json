@@ -9,12 +9,14 @@
   "parent": "类型注解",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "基本类型注解: ```python def add(x: int, y: int) -> int: # Declaration of types. typing: List[int]/Dict[str,int]/Optional. return x + y ``` Explanation: - `add(x: int, y: int) -> int:` is a function definition in Python that takes two integer parameters and returns an integer. - The comment \"Declaration of types. typing: List[int]/Dict[str,int]/Optional.\" refers to type hints or annotations used for clarity and static type checking. In this context, it's not directly applicable since the function only deals with integers, but I've included a brief explanation in the docstring. Here is an example of how you might use `List` and `Dict` from the `typing` module: ```python from typing import List, Dict, Optional def process_numbers(numbers: List[int]) -> None: \"\"\" Process a list of integers. :param numbers: A list of integers. \"\"\" print(\"Processing numbers:\", numbers) def get_value(d: Dict[str, int], key: str) -> Optional[int]: \"\"\" Get the value from a dictionary with string keys and integer values. :param d: A dictionary mapping strings to integers. :param key: The key to look up in the dictionary. :return: The corresponding integer value or None if the key is not found. \"\"\" return d.get(key) ``` This example demonstrates how to use `List` and `Dict` from the `typing` module for type hints."
+  },
   "data_pointers": [
     {
       "title": "基本类型注解",
       "uri": "knowledge://py_hint_basic_v4",
-      "content_preview": "Translation: ```python def add(x: int, y: int) -> int: # Declaration of types. typing: List[int]/Dict[str,int]/Optional. return x + y ``` Explanation: - `add(x: int, y: int) -> int:` is a function def"
+      "content_preview": "基本类型注解: ```python def add(x: int, y: int) -> int: # Declaration of types. typing: List[int]/Dict[str,int]/Optional. return x + y ``` Explanation: - `add(x: int, y: int) -> int:` is a function definition in Python that takes two integer parameters and returns an integer. - The comment \"Declaration of types. typing: List[int]/Dict[str,int]/Optional.\" refers to type hints or annotations used for clarity and static type checking. In this context, it's not directly applicable since the function only deals with integers, but I've included a brief explanation in the docstring. Here is an example of how you might use `List` and `Dict` from the `typing` module: ```python from typing import List, Dict, Optional def process_numbers(numbers: List[int]) -> None: \"\"\" Process a list of integers. :param numbers: A list of integers. \"\"\" print(\"Processing numbers:\", numbers) def get_value(d: Dict[str, int], key: str) -> Optional[int]: \"\"\" Get the value from a dictionary with string keys and integer values. :param d: A dictionary mapping strings to integers. :param key: The key to look up in the dictionary. :return: The corresponding integer value or None if the key is not found. \"\"\" return d.get(key) ``` This example demonstrates how to use `List` and `Dict` from the `typing` module for type hints."
     }
   ],
   "related_nodes": []

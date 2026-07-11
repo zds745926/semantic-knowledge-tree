@@ -1,0 +1,21 @@
+{
+  "name": "正则表达式",
+  "node_id": "py_regex_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "标准库",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "正则表达式",
+      "uri": "knowledge://py_regex_v4",
+      "content_preview": "Translation: `re.search`, `re.match`, `re.findall`, `re.sub`. Pre-compile with `re.compile`. Python code examples: ```python import re # Example 1: Using re.search to find a pattern in a string patter"
+    }
+  ],
+  "related_nodes": []
+}

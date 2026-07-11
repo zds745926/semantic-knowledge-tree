@@ -9,12 +9,14 @@
   "parent": "计算理论",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "P与NP问题: P-class problems can be solved in polynomial time, whereas NP-class problems can be verified in polynomial time. Is P = NP? This is the most important open question in computer science. Here's a brief explanation of these concepts with a Python code example: - **P Class**: Problems that can be solved efficiently (in polynomial time). ```python def is_prime(n): if n <= 1: return False for i in range(2, int(n**0.5) + 1): if n % i == 0: return False return True # Example: Check if a number is prime (efficiently solvable) print(is_prime(17)) # Output: True ``` - **NP Class**: Problems for which a proposed solution can be verified efficiently (in polynomial time). ```python def verify_solution(n, solution): return all(solution[i] in [0, 1] and sum(solution) == n // 2 for i in range(len(solution))) # Example: Verify if a given list of 0s and 1s sums to half the length (efficiently verifiable) print(verify_solution(8, [1, 0, 1, 0, 1, 0, 1, 0])) # Output: True ``` The question \"Is P = NP?\" asks whether every problem whose solution can be quickly verified can also be quickly solved."
+  },
   "data_pointers": [
     {
       "title": "P与NP问题",
       "uri": "knowledge://p_vs_np_v4",
-      "content_preview": "P-class problems can be solved in polynomial time, whereas NP-class problems can be verified in polynomial time. Is P = NP? This is the most important open question in computer science. Here's a brief"
+      "content_preview": "P与NP问题: P-class problems can be solved in polynomial time, whereas NP-class problems can be verified in polynomial time. Is P = NP? This is the most important open question in computer science. Here's a brief explanation of these concepts with a Python code example: - **P Class**: Problems that can be solved efficiently (in polynomial time). ```python def is_prime(n): if n <= 1: return False for i in range(2, int(n**0.5) + 1): if n % i == 0: return False return True # Example: Check if a number is prime (efficiently solvable) print(is_prime(17)) # Output: True ``` - **NP Class**: Problems for which a proposed solution can be verified efficiently (in polynomial time). ```python def verify_solution(n, solution): return all(solution[i] in [0, 1] and sum(solution) == n // 2 for i in range(len(solution))) # Example: Verify if a given list of 0s and 1s sums to half the length (efficiently verifiable) print(verify_solution(8, [1, 0, 1, 0, 1, 0, 1, 0])) # Output: True ``` The question \"Is P = NP?\" asks whether every problem whose solution can be quickly verified can also be quickly solved."
     }
   ],
   "related_nodes": []

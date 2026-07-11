@@ -1,0 +1,21 @@
+{
+  "name": "random 模块",
+  "node_id": "py_random_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "标准库",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "random 模块",
+      "uri": "knowledge://py_random_v4",
+      "content_preview": "The provided Chinese text translates to: `random.random()` generates a floating-point number between 0 and 1 (exclusive of 1). `randint(start, stop)` generates an integer between `start` and `stop`, i"
+    }
+  ],
+  "related_nodes": []
+}

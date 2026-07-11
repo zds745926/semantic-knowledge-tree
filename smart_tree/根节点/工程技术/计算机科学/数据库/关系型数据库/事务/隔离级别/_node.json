@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "事务",
   "children": [
-    "可串行化",
-    "可重复读",
+    "读未提交",
     "读已提交",
-    "读未提交"
+    "可重复读",
+    "可串行化"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Four isolation levels control the visibility of concurrent transactions. To provide a more detailed explanation and an example related to this concept in Python using the `sqlite3` library (which supp"
+    "description": "隔离级别: Four isolation levels control the visibility of concurrent transactions. To provide a more detailed explanation and an example related to this concept in Python using the `sqlite3` library (which supports SQL transaction isolation levels), here's how you can demonstrate different isolation levels: ```python import sqlite3 # Connect to SQLite database (or create it if it doesn't exist) conn = sqlite3.connect('example.db') cursor = conn.cursor() # Create a table for demonstration purposes cursor.execute('''CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, name TEXT)''') def set_isolation_level(level): \"\"\"Set the transaction isolation level.\"\"\" conn.isolation_level = level def read_items(): \"\"\"Read all items from the database.\"\"\" cursor.execute('SELECT * FROM items') return cursor.fetchall() # Example 1: Read Uncommitted (SQLite default) print(\"Read Uncommitted:\") set_isolation_level(None) # None means \"read uncommitted\" items = read_items() print(items) # Example 2: Read Committed print(\"\\nRead Committed:\") set_isolation_level('DEFERRED') # Default in SQLite, but explicitly set for clarity items = read_items() print(items) # Example 3: Repeatable Read print(\"\\nRepeatable Read:\") set_isolation_level('IMMEDIATE') items = read_items() print(items) # Example 4: Serializable print(\"\\nSerializable:\") set_isolation_level('EXCLUSIVE') items = read_items() print(items) # Close the connection conn.close() ``` This Python script demonstrates how to set different isolation levels in an SQLite database using the `sqlite3` module. Each level affects when changes made by other transactions are visible to the current transaction."
   },
   "data_pointers": [],
   "related_nodes": []

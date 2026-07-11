@@ -1,0 +1,21 @@
+{
+  "name": "Trait 系统",
+  "node_id": "rust_trait_v4",
+  "parent_id": "rust_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Rust",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Trait 系统",
+      "uri": "knowledge://rust_trait_v4",
+      "content_preview": "Traits define shared behavior. Generic constraint `fn foo<T: Display>(t: T)`. Trait objects. Here's a brief explanation with a Python code example to illustrate the concept: In Rust, traits are used t"
+    }
+  ],
+  "related_nodes": []
+}

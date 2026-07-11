@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "设计模式",
   "children": [
+    "适配器模式",
     "代理模式",
-    "装饰器模式",
-    "适配器模式"
+    "装饰器模式"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Structural design patterns focus on the composition of classes and objects. Here is an example using Python to illustrate the Adapter pattern, which is a structural design pattern: ```python from abc "
+    "description": "结构型模式: Structural design patterns focus on the composition of classes and objects. Here is an example using Python to illustrate the Adapter pattern, which is a structural design pattern: ```python from abc import ABC, abstractmethod # Target interface class Target(ABC): @abstractmethod def request(self) -> str: pass # Adaptee class class Adaptee: def specific_request(self) -> str: return \".eetpad\" # Adapter class class Adapter(Target): def __init__(self, adaptee: Adaptee): self._adaptee = adaptee def request(self) -> str: return f\"Adapter: {self._adaptee.specific_request()[::-1]}\" # Client code if __name__ == \"__main__\": adaptee = Adaptee() adapter = Adapter(adaptee) print(adapter.request()) # Output: Adapter: deetpad ``` This example demonstrates how the `Adapter` class adapts the interface of `Adaptee` to match that of `Target`."
   },
   "data_pointers": [],
   "related_nodes": []

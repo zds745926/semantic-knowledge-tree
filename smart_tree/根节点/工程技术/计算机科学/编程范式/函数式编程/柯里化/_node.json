@@ -9,12 +9,14 @@
   "parent": "函数式编程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "柯里化: Curring transforms a multi-argument function into a chain of single-argument functions: `f(a, b, c) → f(a)(b)(c)`. Here is a brief Python code example to illustrate currying: ```python def curry(func): def curried(*args): if len(args) >= func.__code__.co_argcount: return func(*args) else: def wrapper(*more_args): return curried(*(args + more_args)) return wrapper return curried @curry def add(a, b, c): return a + b + c # Usage examples result1 = add(1)(2)(3) # Result: 6 result2 = add(1, 2)(3) # Result: 6 result3 = add(1)(2, 3) # Result: 6 ``` In this example, the `curry` function takes a multi-argument function and returns a curried version of it. The `add` function is then defined using the `@curry` decorator, allowing us to call it in a curried manner as shown in the usage examples."
+  },
   "data_pointers": [
     {
       "title": "柯里化",
       "uri": "knowledge://currying_v4",
-      "content_preview": "Curring transforms a multi-argument function into a chain of single-argument functions: `f(a, b, c) → f(a)(b)(c)`. Here is a brief Python code example to illustrate currying: ```python def curry(func)"
+      "content_preview": "柯里化: Curring transforms a multi-argument function into a chain of single-argument functions: `f(a, b, c) → f(a)(b)(c)`. Here is a brief Python code example to illustrate currying: ```python def curry(func): def curried(*args): if len(args) >= func.__code__.co_argcount: return func(*args) else: def wrapper(*more_args): return curried(*(args + more_args)) return wrapper return curried @curry def add(a, b, c): return a + b + c # Usage examples result1 = add(1)(2)(3) # Result: 6 result2 = add(1, 2)(3) # Result: 6 result3 = add(1)(2, 3) # Result: 6 ``` In this example, the `curry` function takes a multi-argument function and returns a curried version of it. The `add` function is then defined using the `@curry` decorator, allowing us to call it in a curried manner as shown in the usage examples."
     }
   ],
   "related_nodes": []

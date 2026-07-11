@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The precision issues of floating-point numbers and the handling of special values are crucial topics in numerical computation. To illustrate this with an example using Python: ```python # Example to d"
+    "description": "float 进阶: The precision issues of floating-point numbers and the handling of special values are crucial topics in numerical computation. To illustrate this with an example using Python: ```python # Example to demonstrate floating point precision issue a = 0.1 + 0.2 print(\"Sum of 0.1 + 0.2:\", a) print(\"Expected: 0.3\") # Output will likely be something like: Sum of 0.1 + 0.2: 0.30000000000000004 # Handling special values such as infinity import math b = float('inf') print(\"Value of positive infinity:\", b) c = 1 / b print(\"Result of dividing 1 by infinity:\", c) # Output will be: Value of positive infinity: inf, Result of dividing 1 by infinity: 0.0 ``` This example demonstrates both the precision issue with floating-point arithmetic and how to handle special values like infinity in Python."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "无监督学习",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "K-Means: Iterative Clustering. The K value needs to be preset. The Elbow Method is used to determine K. Python code example for the Elbow Method: ```python from sklearn.cluster import KMeans import matplotlib.pyplot as plt # Assuming 'data' is your dataset distortions = [] K = range(1, 10) for k in K: kmeanModel = KMeans(n_clusters=k) kmeanModel.fit(data) distortions.append(kmeanModel.inertia_) # Plotting the elbow curve plt.plot(K, distortions, 'bx-') plt.xlabel('K') plt.ylabel('Distortion') plt.title('The Elbow Method showing the optimal K') plt.show() ``` This code snippet demonstrates how to use the Elbow Method to determine the optimal number of clusters (K) for a dataset using the `KMeans` algorithm from scikit-learn. The distortion value, which is the sum of squared distances of samples to their closest cluster center, is calculated for different values of K and plotted to identify the \"elbow\" point where the rate of decrease sharply shifts."
+  },
   "data_pointers": [
     {
       "title": "K-Means",
       "uri": "knowledge://kmeans_v4",
-      "content_preview": "Iterative Clustering. The K value needs to be preset. The Elbow Method is used to determine K. Python code example for the Elbow Method: ```python from sklearn.cluster import KMeans import matplotlib."
+      "content_preview": "K-Means: Iterative Clustering. The K value needs to be preset. The Elbow Method is used to determine K. Python code example for the Elbow Method: ```python from sklearn.cluster import KMeans import matplotlib.pyplot as plt # Assuming 'data' is your dataset distortions = [] K = range(1, 10) for k in K: kmeanModel = KMeans(n_clusters=k) kmeanModel.fit(data) distortions.append(kmeanModel.inertia_) # Plotting the elbow curve plt.plot(K, distortions, 'bx-') plt.xlabel('K') plt.ylabel('Distortion') plt.title('The Elbow Method showing the optimal K') plt.show() ``` This code snippet demonstrates how to use the Elbow Method to determine the optimal number of clusters (K) for a dataset using the `KMeans` algorithm from scikit-learn. The distortion value, which is the sum of squared distances of samples to their closest cluster center, is calculated for different values of K and plotted to identify the \"elbow\" point where the rate of decrease sharply shifts."
     }
   ],
   "related_nodes": []

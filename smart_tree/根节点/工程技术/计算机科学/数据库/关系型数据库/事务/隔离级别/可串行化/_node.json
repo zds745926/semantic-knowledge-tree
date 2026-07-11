@@ -9,12 +9,14 @@
   "parent": "隔离级别",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "可串行化: Highest level. Serial execution of transactions. No concurrency issues. Lowest performance. Python code example (to illustrate serial transaction execution): ```python def process_transaction(transaction): # Simulate a database operation print(f\"Processing {transaction}...\") # List of transactions to be processed transactions = [\"Transaction1\", \"Transaction2\", \"Transaction3\"] # Serial execution of transactions for transaction in transactions: process_transaction(transaction) ``` This example demonstrates serial execution, where each transaction is processed one after another without any concurrency."
+  },
   "data_pointers": [
     {
       "title": "可串行化",
       "uri": "knowledge://serializable_v4",
-      "content_preview": "Highest level. Serial execution of transactions. No concurrency issues. Lowest performance. Python code example (to illustrate serial transaction execution): ```python def process_transaction(transact"
+      "content_preview": "可串行化: Highest level. Serial execution of transactions. No concurrency issues. Lowest performance. Python code example (to illustrate serial transaction execution): ```python def process_transaction(transaction): # Simulate a database operation print(f\"Processing {transaction}...\") # List of transactions to be processed transactions = [\"Transaction1\", \"Transaction2\", \"Transaction3\"] # Serial execution of transactions for transaction in transactions: process_transaction(transaction) ``` This example demonstrates serial execution, where each transaction is processed one after another without any concurrency."
     }
   ],
   "related_nodes": []

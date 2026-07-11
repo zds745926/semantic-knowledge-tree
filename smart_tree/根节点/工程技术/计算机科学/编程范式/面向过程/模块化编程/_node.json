@@ -9,12 +9,14 @@
   "parent": "面向过程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "模块化编程: Modular programming decomposes the program into independent modules or functions, separating interfaces from implementations to reduce coupling. Python code example: ```python # Define a module with a function def calculate_area(length, width): \"\"\"Calculate the area of a rectangle.\"\"\" return length * width # Another module using the above function def main(): length = 10 width = 5 area = calculate_area(length, width) print(f\"The area is {area}\") if __name__ == \"__main__\": main() ``` In this example, `calculate_area` is a separate module that calculates the area of a rectangle. The `main` function uses this module without knowing its internal implementation details, demonstrating separation of interface and implementation."
+  },
   "data_pointers": [
     {
       "title": "模块化编程",
       "uri": "knowledge://modular_programming_v4",
-      "content_preview": "Modular programming decomposes the program into independent modules or functions, separating interfaces from implementations to reduce coupling. Python code example: ```python # Define a module with a"
+      "content_preview": "模块化编程: Modular programming decomposes the program into independent modules or functions, separating interfaces from implementations to reduce coupling. Python code example: ```python # Define a module with a function def calculate_area(length, width): \"\"\"Calculate the area of a rectangle.\"\"\" return length * width # Another module using the above function def main(): length = 10 width = 5 area = calculate_area(length, width) print(f\"The area is {area}\") if __name__ == \"__main__\": main() ``` In this example, `calculate_area` is a separate module that calculates the area of a rectangle. The `main` function uses this module without knowing its internal implementation details, demonstrating separation of interface and implementation."
     }
   ],
   "related_nodes": []

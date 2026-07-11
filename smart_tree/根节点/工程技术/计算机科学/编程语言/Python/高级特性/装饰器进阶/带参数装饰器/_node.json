@@ -9,12 +9,14 @@
   "parent": "装饰器进阶",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "带参数装饰器: Here is the English translation of the provided Chinese technical text, including a brief Python code example for the coding/programming concept: English translation: ```python # A three-layer nested decorator function in Python def decorator(args): def inner(func): # The actual logic of the decorator would go here def wrapper(*args_func, **kwargs): print(\"Before calling\", func.__name__) result = func(*args_func, **kwargs) print(\"After calling\", func.__name__) return result return wrapper return inner # Example usage: @decorator('some_args') def sample_function(param1, param2): print(f\"Function called with {param1} and {param2}\") sample_function('arg1', 'arg2') ``` In this example, `decorator` is a three-layer nested function. The outermost `decorator` takes an argument `args`, the middle `inner` function takes a function `func`, and the innermost `wrapper` function handles the actual logic of the decorator (in this case, printing messages before and after calling the decorated function)."
+  },
   "data_pointers": [
     {
       "title": "带参数装饰器",
       "uri": "knowledge://py_deco_params_v4",
-      "content_preview": "Here is the English translation of the provided Chinese technical text, including a brief Python code example for the coding/programming concept: English translation: ```python # A three-layer nested "
+      "content_preview": "带参数装饰器: Here is the English translation of the provided Chinese technical text, including a brief Python code example for the coding/programming concept: English translation: ```python # A three-layer nested decorator function in Python def decorator(args): def inner(func): # The actual logic of the decorator would go here def wrapper(*args_func, **kwargs): print(\"Before calling\", func.__name__) result = func(*args_func, **kwargs) print(\"After calling\", func.__name__) return result return wrapper return inner # Example usage: @decorator('some_args') def sample_function(param1, param2): print(f\"Function called with {param1} and {param2}\") sample_function('arg1', 'arg2') ``` In this example, `decorator` is a three-layer nested function. The outermost `decorator` takes an argument `args`, the middle `inner` function takes a function `func`, and the innermost `wrapper` function handles the actual logic of the decorator (in this case, printing messages before and after calling the decorated function)."
     }
   ],
   "related_nodes": []

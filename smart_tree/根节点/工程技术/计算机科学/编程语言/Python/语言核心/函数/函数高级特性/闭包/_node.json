@@ -9,12 +9,14 @@
   "parent": "函数高级特性",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "闭包: A closure refers to an inner function that captures and remembers the variables from its enclosing (external) function. Even after the external function has returned, the closure can still access these external variables. Here's a brief Python code example illustrating this concept: ```python def outer_function(x): def inner_function(y): return x + y # The inner function uses the variable 'x' from the outer scope return inner_function # Using the outer function to create a closure closure = outer_function(10) print(closure(5)) # Output: 15, even though outer_function has already returned ``` In this example, `inner_function` is a closure that retains access to the variable `x` from its enclosing scope (`outer_function`). This allows `inner_function` to remember and use the value of `x` even after `outer_function` has finished executing."
+  },
   "data_pointers": [
     {
       "title": "闭包",
       "uri": "knowledge://py_closure_v4",
-      "content_preview": "A closure refers to an inner function that captures and remembers the variables from its enclosing (external) function. Even after the external function has returned, the closure can still access thes"
+      "content_preview": "闭包: A closure refers to an inner function that captures and remembers the variables from its enclosing (external) function. Even after the external function has returned, the closure can still access these external variables. Here's a brief Python code example illustrating this concept: ```python def outer_function(x): def inner_function(y): return x + y # The inner function uses the variable 'x' from the outer scope return inner_function # Using the outer function to create a closure closure = outer_function(10) print(closure(5)) # Output: 15, even though outer_function has already returned ``` In this example, `inner_function` is a closure that retains access to the variable `x` from its enclosing scope (`outer_function`). This allows `inner_function` to remember and use the value of `x` even after `outer_function` has finished executing."
     }
   ],
   "related_nodes": []

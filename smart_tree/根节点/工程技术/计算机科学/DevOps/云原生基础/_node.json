@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Cloud-native technologies utilize cloud computing models to build and run applications. To provide a more detailed explanation, cloud-native technologies are designed to take full advantage of the cap"
+    "description": "云原生基础: Cloud-native technologies utilize cloud computing models to build and run applications. To provide a more detailed explanation, cloud-native technologies are designed to take full advantage of the capabilities offered by modern cloud environments. These include automated deployment, scaling, and management of applications using containerization (e.g., Docker), service meshes, and other tools that facilitate efficient application development and operation in a cloud environment. Here is a brief Python code example demonstrating how one might use containers with Docker to run an application: ```python # This script demonstrates running a simple Python Flask web server inside a Docker container import subprocess def start_flask_app(): # Start the Flask app using Docker try: result = subprocess.run(['docker', 'run', '-p', '5000:5000', 'flask-app'], check=True) print(\"Flask application is running on port 5000\") except subprocess.CalledProcessError as e: print(f\"Failed to start Flask app: {e}\") if __name__ == \"__main__\": start_flask_app() ``` In this example, the `subprocess.run` function is used to execute a Docker command that runs a Flask application container and maps port 5000 of the host machine to port 5000 inside the container."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -1,0 +1,21 @@
+{
+  "name": "SQL 语言",
+  "node_id": "sql_v4",
+  "parent_id": "rdb_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "关系型数据库",
+  "children": [
+    "DDL 数据定义",
+    "DML 数据操作",
+    "JOIN 连接"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "SQL is the standard query language for relational databases, divided into DDL (Data Definition Language), DML (Data Manipulation Language), and DCL (Data Control Language). Here are brief explanations"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

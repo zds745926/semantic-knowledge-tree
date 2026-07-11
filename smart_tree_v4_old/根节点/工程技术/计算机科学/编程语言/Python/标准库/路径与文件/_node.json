@@ -1,0 +1,22 @@
+{
+  "name": "路径与文件",
+  "node_id": "py_path_file_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "标准库",
+  "children": [
+    "fnmatch",
+    "glob",
+    "pathlib",
+    "tempfile"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python provides various tools for file and path operations, ranging from the traditional `os.path` interface to the object-oriented approach with `pathlib`, and including pattern matching with `glob` "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

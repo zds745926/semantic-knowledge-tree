@@ -9,12 +9,14 @@
   "parent": "动态规划",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "最长递增子序列 LIS: O(n²) DP. Binary search optimization to O(n log n). Singing team formation / Stock analysis. ### Explanation and Example 1. **O(n²) DP (Dynamic Programming):** - This refers to a dynamic programming solution that has a time complexity of \\(O(n^2)\\). ```python def max_subarray_sum(arr): n = len(arr) dp = [0] * n # Initialize the DP array for i in range(n): dp[i] = arr[i] for j in range(i): if arr[i] > arr[j]: dp[i] = max(dp[i], dp[j] + arr[i]) return max(dp) ``` 2. **Binary search optimization to O(n log n):** - This refers to using binary search to optimize a solution that originally had a time complexity of \\(O(n^2)\\) or higher, reducing it to \\(O(n \\log n)\\). ```python def find_first_greater(arr, target): left, right = 0, len(arr) while left < right: mid = (left + right) // 2 if arr[mid] > target: right = mid else: left = mid + 1 return left ``` 3. **Singing team formation:** - This could refer to a problem where you need to form teams for a singing competition based on certain criteria. 4. **Stock analysis:** - This involves analyzing stock prices or trends using various algorithms and techniques, often involving time series analysis or machine learning models. These examples provide a basic understanding of the concepts mentioned in your text."
+  },
   "data_pointers": [
     {
       "title": "最长递增子序列 LIS",
       "uri": "knowledge://lis_v4",
-      "content_preview": "O(n²) DP. Binary search optimization to O(n log n). Singing team formation / Stock analysis. ### Explanation and Example 1. **O(n²) DP (Dynamic Programming):** - This refers to a dynamic programming s"
+      "content_preview": "最长递增子序列 LIS: O(n²) DP. Binary search optimization to O(n log n). Singing team formation / Stock analysis. ### Explanation and Example 1. **O(n²) DP (Dynamic Programming):** - This refers to a dynamic programming solution that has a time complexity of \\(O(n^2)\\). ```python def max_subarray_sum(arr): n = len(arr) dp = [0] * n # Initialize the DP array for i in range(n): dp[i] = arr[i] for j in range(i): if arr[i] > arr[j]: dp[i] = max(dp[i], dp[j] + arr[i]) return max(dp) ``` 2. **Binary search optimization to O(n log n):** - This refers to using binary search to optimize a solution that originally had a time complexity of \\(O(n^2)\\) or higher, reducing it to \\(O(n \\log n)\\). ```python def find_first_greater(arr, target): left, right = 0, len(arr) while left < right: mid = (left + right) // 2 if arr[mid] > target: right = mid else: left = mid + 1 return left ``` 3. **Singing team formation:** - This could refer to a problem where you need to form teams for a singing competition based on certain criteria. 4. **Stock analysis:** - This involves analyzing stock prices or trends using various algorithms and techniques, often involving time series analysis or machine learning models. These examples provide a basic understanding of the concepts mentioned in your text."
     }
   ],
   "related_nodes": []

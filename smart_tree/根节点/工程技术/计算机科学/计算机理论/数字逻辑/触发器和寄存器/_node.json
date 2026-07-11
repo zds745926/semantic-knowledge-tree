@@ -9,12 +9,14 @@
   "parent": "数字逻辑",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "触发器和寄存器: Triggers are the basic units that store 1-bit information. Multiple D triggers connected in parallel form a register, which is the foundation of CPU registers. To provide a more detailed explanation and include a Python code example for a simple D trigger simulation: A D trigger (D-type flip-flop) can be simulated using Python to demonstrate its functionality. Here's a basic example: ```python class DTrigger: def __init__(self): self.state = 0 # Initial state is low (0) def update(self, d_input): \"\"\" Update the trigger state based on the input. :param d_input: The data input to set the trigger state to. \"\"\" self.state = d_input # Example usage: if __name__ == \"__main__\": # Create a D trigger instance d_trigger = DTrigger() # Update the state with new data inputs print(\"Initial state:\", d_trigger.state) # Output: Initial state: 0 d_trigger.update(1) print(\"State after update to 1:\", d_trigger.state) # Output: State after update to 1: 1 d_trigger.update(0) print(\"State after update to 0:\", d_trigger.state) # Output: State after update to 0: 0 ``` This Python class `DTrigger` simulates the behavior of a D trigger, where the state is updated based on the input value. Multiple instances of this class could be used to simulate registers in a CPU."
+  },
   "data_pointers": [
     {
       "title": "触发器和寄存器",
       "uri": "knowledge://flip_flops_v4",
-      "content_preview": "Triggers are the basic units that store 1-bit information. Multiple D triggers connected in parallel form a register, which is the foundation of CPU registers. To provide a more detailed explanation a"
+      "content_preview": "触发器和寄存器: Triggers are the basic units that store 1-bit information. Multiple D triggers connected in parallel form a register, which is the foundation of CPU registers. To provide a more detailed explanation and include a Python code example for a simple D trigger simulation: A D trigger (D-type flip-flop) can be simulated using Python to demonstrate its functionality. Here's a basic example: ```python class DTrigger: def __init__(self): self.state = 0 # Initial state is low (0) def update(self, d_input): \"\"\" Update the trigger state based on the input. :param d_input: The data input to set the trigger state to. \"\"\" self.state = d_input # Example usage: if __name__ == \"__main__\": # Create a D trigger instance d_trigger = DTrigger() # Update the state with new data inputs print(\"Initial state:\", d_trigger.state) # Output: Initial state: 0 d_trigger.update(1) print(\"State after update to 1:\", d_trigger.state) # Output: State after update to 1: 1 d_trigger.update(0) print(\"State after update to 0:\", d_trigger.state) # Output: State after update to 0: 0 ``` This Python class `DTrigger` simulates the behavior of a D trigger, where the state is updated based on the input value. Multiple instances of this class could be used to simulate registers in a CPU."
     }
   ],
   "related_nodes": []

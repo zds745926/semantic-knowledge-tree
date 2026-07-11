@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "数据库",
   "children": [
-    "MongoDB",
-    "Redis"
+    "Redis",
+    "MongoDB"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "NoSQL databases offer flexible data models and horizontal scalability. Python code example (to illustrate flexibility in data modeling): ```python from pymongo import MongoClient # Connecting to Mongo"
+    "description": "NoSQL: NoSQL databases offer flexible data models and horizontal scalability. Python code example (to illustrate flexibility in data modeling): ```python from pymongo import MongoClient # Connecting to MongoDB, a popular NoSQL database client = MongoClient('mongodb://localhost:27017/') # Creating a simple document-oriented collection db = client['sample_db'] collection = db['users'] # Inserting documents with varying structures (flexibility) user1 = {\"name\": \"John\", \"age\": 30, \"email\": \"john@example.com\"} user2 = {\"username\": \"jane_doe\", \"age\": 25, \"bio\": \"Software Developer\"} collection.insert_one(user1) collection.insert_one(user2) # Querying the collection (horizontal scalability allows for distributed queries) for user in collection.find({\"age\": {\"$gt\": 25}}): print(user) ``` This example uses MongoDB, a NoSQL database, to demonstrate flexible data modeling by inserting documents with different schemas and querying them horizontally."
   },
   "data_pointers": [],
   "related_nodes": []

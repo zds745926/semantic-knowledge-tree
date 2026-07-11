@@ -1,0 +1,21 @@
+{
+  "name": "类实现上下文",
+  "node_id": "py_with_class_v4",
+  "parent_id": "py_context_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "上下文管理器",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "类实现上下文",
+      "uri": "knowledge://py_with_class_v4",
+      "content_preview": "The `__enter__` and `__exit__` methods are used for handling context management (entering and exiting a block of code), including exception handling. Here is an example to illustrate the use of these "
+    }
+  ],
+  "related_nodes": []
+}

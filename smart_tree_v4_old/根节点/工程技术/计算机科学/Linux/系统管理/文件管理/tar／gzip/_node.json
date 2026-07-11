@@ -1,0 +1,21 @@
+{
+  "name": "tar/gzip",
+  "node_id": "tar_gzip_v4",
+  "parent_id": "linux_fs_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "文件管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "tar/gzip",
+      "uri": "knowledge://tar_gzip_v4",
+      "content_preview": "English translation: `tar -czf` is used to create and compress a tarball. `tar -xzf` is used to extract a tarball. The file extensions `.gz`, `.bz2`, and `.xz` indicate the compression format. Example"
+    }
+  ],
+  "related_nodes": []
+}

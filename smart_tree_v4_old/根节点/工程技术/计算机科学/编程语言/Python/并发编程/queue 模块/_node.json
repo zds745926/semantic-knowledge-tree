@@ -1,0 +1,22 @@
+{
+  "name": "queue 模块",
+  "node_id": "py_queue_v4",
+  "parent_id": "py_conc_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "并发编程",
+  "children": [
+    "LifoQueue",
+    "PriorityQueue",
+    "Queue (FIFO)",
+    "SimpleQueue"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "The `queue` module provides thread-safe queue implementations. It supports FIFO, LIFO (stack), and priority queues. A core component of the producer-consumer pattern, it enables safe data transfer in "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

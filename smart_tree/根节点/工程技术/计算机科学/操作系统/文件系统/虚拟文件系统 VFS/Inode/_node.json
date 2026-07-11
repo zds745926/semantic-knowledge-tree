@@ -9,12 +9,14 @@
   "parent": "虚拟文件系统 VFS",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Inode: Store file metadata. Do not store filenames. Hard link count manages the lifecycle. Python code example for managing hard links: ```python import os def create_hard_link(original_file, new_link_name): \"\"\" Create a hard link to an existing file. :param original_file: The path of the original file. :param new_link_name: The name of the new hard link. \"\"\" try: os.link(original_file, new_link_name) print(f\"Hard link '{new_link_name}' created for file '{original_file}'.\") except OSError as e: print(f\"Error creating hard link: {e}\") def remove_hard_link(linked_file): \"\"\" Remove a hard link to an existing file. :param linked_file: The path of the hard link to be removed. \"\"\" try: os.unlink(linked_file) print(f\"Hard link '{linked_file}' removed.\") except OSError as e: print(f\"Error removing hard link: {e}\") # Example usage original_path = 'example.txt' hard_link_path = 'example_hardlink.txt' create_hard_link(original_path, hard_link_path) # The file will still exist even if the original is deleted because of the hard link. os.remove(original_path) print(f\"Original file '{original_path}' has been removed.\") remove_hard_link(hard_link_path) ``` This Python script demonstrates creating and removing hard links, which can be used to manage the lifecycle of files through their hard link count."
+  },
   "data_pointers": [
     {
       "title": "Inode",
       "uri": "knowledge://inode_v4",
-      "content_preview": "Store file metadata. Do not store filenames. Hard link count manages the lifecycle. Python code example for managing hard links: ```python import os def create_hard_link(original_file, new_link_name):"
+      "content_preview": "Inode: Store file metadata. Do not store filenames. Hard link count manages the lifecycle. Python code example for managing hard links: ```python import os def create_hard_link(original_file, new_link_name): \"\"\" Create a hard link to an existing file. :param original_file: The path of the original file. :param new_link_name: The name of the new hard link. \"\"\" try: os.link(original_file, new_link_name) print(f\"Hard link '{new_link_name}' created for file '{original_file}'.\") except OSError as e: print(f\"Error creating hard link: {e}\") def remove_hard_link(linked_file): \"\"\" Remove a hard link to an existing file. :param linked_file: The path of the hard link to be removed. \"\"\" try: os.unlink(linked_file) print(f\"Hard link '{linked_file}' removed.\") except OSError as e: print(f\"Error removing hard link: {e}\") # Example usage original_path = 'example.txt' hard_link_path = 'example_hardlink.txt' create_hard_link(original_path, hard_link_path) # The file will still exist even if the original is deleted because of the hard link. os.remove(original_path) print(f\"Original file '{original_path}' has been removed.\") remove_hard_link(hard_link_path) ``` This Python script demonstrates creating and removing hard links, which can be used to manage the lifecycle of files through their hard link count."
     }
   ],
   "related_nodes": []

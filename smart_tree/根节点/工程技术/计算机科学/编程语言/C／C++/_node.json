@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "C is the foundational language for systems programming, providing direct control over hardware. C++ builds upon C by adding Object-Oriented Programming (OOP) and templates. Both are compiled languages"
+    "description": "C/C++: C is the foundational language for systems programming, providing direct control over hardware. C++ builds upon C by adding Object-Oriented Programming (OOP) and templates. Both are compiled languages that strive for optimal performance and flexible memory management. Here's a brief Python code example to illustrate some concepts: For C: ```c #include <stdio.h> int main() { int num = 5; printf(\"The number is %d\\n\", num); return 0; } ``` In Python, the equivalent would be simpler due to dynamic typing and higher-level abstractions: ```python num = 5 print(f\"The number is {num}\") ``` This example demonstrates how C requires more explicit memory management (like declaring `int num`), while Python handles this implicitly."
   },
   "data_pointers": [],
   "related_nodes": []

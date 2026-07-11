@@ -9,12 +9,14 @@
   "parent": "int 进阶",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "位运算: Bitwise AND (&), Bitwise OR (|), Bitwise XOR (^), Left Shift (<<), Right Shift (>>). These operations are faster than arithmetic operations and are commonly used for permission marking and low-level optimization. Here are some brief Python code examples to illustrate these bitwise operations: ```python # Example of Bitwise AND (&) a = 5 # binary: 0101 b = 3 # binary: 0011 print(a & b) # Output: 1 (binary: 0001) # Example of Bitwise OR (|) a = 5 # binary: 0101 b = 3 # binary: 0011 print(a | b) # Output: 7 (binary: 0111) # Example of Bitwise XOR (^) a = 5 # binary: 0101 b = 3 # binary: 0011 print(a ^ b) # Output: 6 (binary: 0110) # Example of Left Shift (<<) a = 2 # binary: 0010 print(a << 2) # Output: 8 (binary: 1000) # Example of Right Shift (>>) a = 8 # binary: 1000 print(a >> 2) # Output: 2 (binary: 0010) ``` These examples demonstrate how bitwise operations can be used in Python to manipulate bits directly, which is often more efficient for certain tasks."
+  },
   "data_pointers": [
     {
       "title": "位运算",
       "uri": "knowledge://py_int_bitops_v4",
-      "content_preview": "Bitwise AND (&), Bitwise OR (|), Bitwise XOR (^), Left Shift (<<), Right Shift (>>). These operations are faster than arithmetic operations and are commonly used for permission marking and low-level o"
+      "content_preview": "位运算: Bitwise AND (&), Bitwise OR (|), Bitwise XOR (^), Left Shift (<<), Right Shift (>>). These operations are faster than arithmetic operations and are commonly used for permission marking and low-level optimization. Here are some brief Python code examples to illustrate these bitwise operations: ```python # Example of Bitwise AND (&) a = 5 # binary: 0101 b = 3 # binary: 0011 print(a & b) # Output: 1 (binary: 0001) # Example of Bitwise OR (|) a = 5 # binary: 0101 b = 3 # binary: 0011 print(a | b) # Output: 7 (binary: 0111) # Example of Bitwise XOR (^) a = 5 # binary: 0101 b = 3 # binary: 0011 print(a ^ b) # Output: 6 (binary: 0110) # Example of Left Shift (<<) a = 2 # binary: 0010 print(a << 2) # Output: 8 (binary: 1000) # Example of Right Shift (>>) a = 8 # binary: 1000 print(a >> 2) # Output: 2 (binary: 0010) ``` These examples demonstrate how bitwise operations can be used in Python to manipulate bits directly, which is often more efficient for certain tasks."
     }
   ],
   "related_nodes": []

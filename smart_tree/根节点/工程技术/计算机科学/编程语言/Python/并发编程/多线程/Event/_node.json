@@ -9,12 +9,14 @@
   "parent": "多线程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Event: Threading Event flag. Methods include `set()`, `clear()`, and `wait()`. Used for multiple threads to wait for a specific event to occur. Here's a brief Python code example using threading.Event: ```python import threading def worker(event): print(\"Worker thread is waiting for the event...\") event.wait() # Wait until the event is set print(\"Event occurred, continuing execution...\") # Create an Event object event = threading.Event() # Start a new thread that will wait for the event thread = threading.Thread(target=worker, args=(event,)) thread.start() # Simulate some time passing or other work import time time.sleep(2) # Set the event to signal all waiting threads event.set() ``` In this example, `worker` is a function that waits for an event using `event.wait()`. The main thread sets the event after a delay of 2 seconds, which signals the worker thread to continue execution."
+  },
   "data_pointers": [
     {
       "title": "Event",
       "uri": "knowledge://py_event_v4",
-      "content_preview": "Threading Event flag. Methods include `set()`, `clear()`, and `wait()`. Used for multiple threads to wait for a specific event to occur. Here's a brief Python code example using threading.Event: ```py"
+      "content_preview": "Event: Threading Event flag. Methods include `set()`, `clear()`, and `wait()`. Used for multiple threads to wait for a specific event to occur. Here's a brief Python code example using threading.Event: ```python import threading def worker(event): print(\"Worker thread is waiting for the event...\") event.wait() # Wait until the event is set print(\"Event occurred, continuing execution...\") # Create an Event object event = threading.Event() # Start a new thread that will wait for the event thread = threading.Thread(target=worker, args=(event,)) thread.start() # Simulate some time passing or other work import time time.sleep(2) # Set the event to signal all waiting threads event.set() ``` In this example, `worker` is a function that waits for an event using `event.wait()`. The main thread sets the event after a delay of 2 seconds, which signals the worker thread to continue execution."
     }
   ],
   "related_nodes": []

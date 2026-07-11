@@ -1,0 +1,21 @@
+{
+  "name": "韦达定理",
+  "node_id": "vieta_v4",
+  "parent_id": "algebra_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "代数",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "韦达定理",
+      "uri": "knowledge://vieta_v4",
+      "content_preview": "Vieta's Formulas: For the quadratic equation \\( ax^2 + bx + c = 0 \\), the roots \\( x_1 \\) and \\( x_2 \\) satisfy \\( x_1 + x_2 = -\\frac{b}{a} \\) and \\( x_1 \\cdot x_2 = \\frac{c}{a} \\). Here is a brief Py"
+    }
+  ],
+  "related_nodes": []
+}

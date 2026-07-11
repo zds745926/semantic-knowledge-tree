@@ -9,13 +9,17 @@
   "parent": "迭代器与生成器",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "迭代器协议: The `__iter__` method returns `self`, while the `__next__` method returns an element or raises `StopIteration`. Python code example: ```python class IteratorExample: def __init__(self, limit): self.limit = limit self.current = 0 def __iter__(self): return self def __next__(self): if self.current >= self.limit: raise StopIteration else: self.current += 1 return self.current - 1 # Usage example iterator = IteratorExample(5) for i in iterator: print(i) ``` In this example, the `IteratorExample` class defines both the `__iter__` and `__next__` methods to create a custom iterator that yields numbers from 0 up to but not including the limit."
+  },
   "data_pointers": [
     {
       "title": "迭代器协议",
       "uri": "knowledge://py_iterator_proto_v4",
-      "content_preview": "The `__iter__` method returns `self`, while the `__next__` method returns an element or raises `StopIteration`. Python code example: ```python class IteratorExample: def __init__(self, limit): self.li"
+      "content_preview": "迭代器协议: The `__iter__` method returns `self`, while the `__next__` method returns an element or raises `StopIteration`. Python code example: ```python class IteratorExample: def __init__(self, limit): self.limit = limit self.current = 0 def __iter__(self): return self def __next__(self): if self.current >= self.limit: raise StopIteration else: self.current += 1 return self.current - 1 # Usage example iterator = IteratorExample(5) for i in iterator: print(i) ``` In this example, the `IteratorExample` class defines both the `__iter__` and `__next__` methods to create a custom iterator that yields numbers from 0 up to but not including the limit."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_for_v4"
+  ]
 }

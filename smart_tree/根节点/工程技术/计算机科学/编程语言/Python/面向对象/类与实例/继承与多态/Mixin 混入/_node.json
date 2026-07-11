@@ -9,12 +9,14 @@
   "parent": "继承与多态",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Mixin 混入: Mixin provides specific functionalities as small base classes and can be combined through multiple inheritance. The naming convention typically ends with \"Mixin.\" Here's a brief Python code example to illustrate the concept: ```python class LoggingMixin: def log_action(self, action): print(f\"Action '{action}' logged.\") class User: def __init__(self, name): self.name = name # Using multiple inheritance to combine Mixin with another class class Admin(User, LoggingMixin): pass admin_user = Admin(\"John Doe\") admin_user.log_action(\"Login\") # Output: Action 'Login' logged. ``` In this example, `LoggingMixin` is a mixin that provides logging functionality. The `Admin` class inherits from both `User` and `LoggingMixin`, thus gaining the ability to log actions."
+  },
   "data_pointers": [
     {
       "title": "Mixin 混入",
       "uri": "knowledge://py_mixin_v4",
-      "content_preview": "Mixin provides specific functionalities as small base classes and can be combined through multiple inheritance. The naming convention typically ends with \"Mixin.\" Here's a brief Python code example to"
+      "content_preview": "Mixin 混入: Mixin provides specific functionalities as small base classes and can be combined through multiple inheritance. The naming convention typically ends with \"Mixin.\" Here's a brief Python code example to illustrate the concept: ```python class LoggingMixin: def log_action(self, action): print(f\"Action '{action}' logged.\") class User: def __init__(self, name): self.name = name # Using multiple inheritance to combine Mixin with another class class Admin(User, LoggingMixin): pass admin_user = Admin(\"John Doe\") admin_user.log_action(\"Login\") # Output: Action 'Login' logged. ``` In this example, `LoggingMixin` is a mixin that provides logging functionality. The `Admin` class inherits from both `User` and `LoggingMixin`, thus gaining the ability to log actions."
     }
   ],
   "related_nodes": []

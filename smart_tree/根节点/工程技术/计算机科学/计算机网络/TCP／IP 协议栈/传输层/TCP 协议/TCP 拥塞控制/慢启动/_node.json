@@ -9,13 +9,17 @@
   "parent": "TCP 拥塞控制",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "慢启动: The cwnd starts at 1 MSS and doubles with each received ACK (exponential growth). It switches to congestion avoidance when it reaches ssthresh. Here's a brief Python code example to illustrate the concept of exponential growth in cwnd: ```python def simulate_cwnd(start_mss, acks_received): cwnd = start_mss # Initial cwnd value for _ in range(acks_received): print(f\"ACK received. Current cwnd: {cwnd} MSS\") cwnd *= 2 # Exponential growth # Example usage: simulate_cwnd(1, 5) ``` This code simulates the increase of cwnd with each ACK received, showing exponential growth until a certain point (which would be analogous to reaching `ssthresh` in real TCP congestion control)."
+  },
   "data_pointers": [
     {
       "title": "慢启动",
       "uri": "knowledge://tcp_slow_start_v4",
-      "content_preview": "The cwnd starts at 1 MSS and doubles with each received ACK (exponential growth). It switches to congestion avoidance when it reaches ssthresh. Here's a brief Python code example to illustrate the con"
+      "content_preview": "慢启动: The cwnd starts at 1 MSS and doubles with each received ACK (exponential growth). It switches to congestion avoidance when it reaches ssthresh. Here's a brief Python code example to illustrate the concept of exponential growth in cwnd: ```python def simulate_cwnd(start_mss, acks_received): cwnd = start_mss # Initial cwnd value for _ in range(acks_received): print(f\"ACK received. Current cwnd: {cwnd} MSS\") cwnd *= 2 # Exponential growth # Example usage: simulate_cwnd(1, 5) ``` This code simulates the increase of cwnd with each ACK received, showing exponential growth until a certain point (which would be analogous to reaching `ssthresh` in real TCP congestion control)."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "tcp_congestion_avoid_v4"
+  ]
 }

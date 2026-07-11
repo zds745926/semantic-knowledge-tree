@@ -9,13 +9,17 @@
   "parent": "虚拟内存",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "分页机制: Logical Address → Page Number + Offset → Page Table → Physical Frame. TLB (Translation Lookaside Buffer) Acceleration. 4 KB Standard Page. Here is a brief Python code example to illustrate the concept of page tables and logical addresses: ```python class PageTable: def __init__(self): self.entries = {} # Dictionary to hold page table entries def map_logical_to_physical(self, logical_address): \"\"\" Map a logical address (page number + offset) to a physical frame. :param logical_address: A tuple containing the page number and offset :return: The corresponding physical frame or None if not found \"\"\" page_number, offset = logical_address # Simulate a simple mapping from page number to physical frame physical_frame = self.entries.get(page_number) return physical_frame + offset # Example usage: page_table = PageTable() # Assume we have some entries in the page table for demonstration purposes page_table.entries[0] = 128 # Page 0 maps to physical frame 128 page_table.entries[1] = 256 # Page 1 maps to physical frame 256 logical_address = (0, 1024) # Logical address: page number 0 and offset 1024 physical_frame = page_table.map_logical_to_physical(logical_address) print(f\"Physical Frame for logical address {logical_address}: {physical_frame}\") ``` This Python code defines a simple `PageTable` class to illustrate how logical addresses are mapped to physical frames using a page table. The `map_logical_to_physical` method simulates the mapping process, and an example usage is provided to demonstrate its functionality."
+  },
   "data_pointers": [
     {
       "title": "分页机制",
       "uri": "knowledge://paging_v4",
-      "content_preview": "Logical Address → Page Number + Offset → Page Table → Physical Frame. TLB (Translation Lookaside Buffer) Acceleration. 4 KB Standard Page. Here is a brief Python code example to illustrate the concept"
+      "content_preview": "分页机制: Logical Address → Page Number + Offset → Page Table → Physical Frame. TLB (Translation Lookaside Buffer) Acceleration. 4 KB Standard Page. Here is a brief Python code example to illustrate the concept of page tables and logical addresses: ```python class PageTable: def __init__(self): self.entries = {} # Dictionary to hold page table entries def map_logical_to_physical(self, logical_address): \"\"\" Map a logical address (page number + offset) to a physical frame. :param logical_address: A tuple containing the page number and offset :return: The corresponding physical frame or None if not found \"\"\" page_number, offset = logical_address # Simulate a simple mapping from page number to physical frame physical_frame = self.entries.get(page_number) return physical_frame + offset # Example usage: page_table = PageTable() # Assume we have some entries in the page table for demonstration purposes page_table.entries[0] = 128 # Page 0 maps to physical frame 128 page_table.entries[1] = 256 # Page 1 maps to physical frame 256 logical_address = (0, 1024) # Logical address: page number 0 and offset 1024 physical_frame = page_table.map_logical_to_physical(logical_address) print(f\"Physical Frame for logical address {logical_address}: {physical_frame}\") ``` This Python code defines a simple `PageTable` class to illustrate how logical addresses are mapped to physical frames using a page table. The `map_logical_to_physical` method simulates the mapping process, and an example usage is provided to demonstrate its functionality."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "page_replacement_v4"
+  ]
 }

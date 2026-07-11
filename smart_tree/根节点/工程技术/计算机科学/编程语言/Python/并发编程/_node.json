@@ -8,15 +8,15 @@
   "version": 1,
   "parent": "Python",
   "children": [
-    "concurrent.futures",
-    "queue 模块",
     "多线程",
     "多进程",
-    "异步编程"
+    "异步编程",
+    "concurrent.futures",
+    "queue 模块"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python supports three concurrency models: multi-threading, multiprocessing, and asynchronous programming, each with its own applicable scenarios. Here are brief examples for each: 1. **Multi-threading"
+    "description": "并发编程: Python supports three concurrency models: multi-threading, multiprocessing, and asynchronous programming, each with its own applicable scenarios. Here are brief examples for each: 1. **Multi-threading**: ```python import threading def print_numbers(): for i in range(5): print(i) thread = threading.Thread(target=print_numbers) thread.start() ``` 2. **Multiprocessing**: ```python from multiprocessing import Process def print_numbers(): for i in range(5): print(i) process = Process(target=print_numbers) process.start() ``` 3. **Asynchronous Programming (using `asyncio`)**: ```python import asyncio async def print_numbers(): for i in range(5): print(i) await asyncio.sleep(1) # Simulate I/O-bound task loop = asyncio.get_event_loop() loop.run_until_complete(print_numbers()) ``` These examples illustrate the basic usage of each concurrency model in Python."
   },
   "data_pointers": [],
   "related_nodes": []

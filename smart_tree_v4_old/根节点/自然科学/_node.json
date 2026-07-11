@@ -1,0 +1,19 @@
+{
+  "name": "自然科学",
+  "node_id": "natural_sciences",
+  "parent_id": "root",
+  "level": 1,
+  "is_leaf": false,
+  "absorption_rate": 0.035,
+  "version": 1,
+  "parent": "根节点",
+  "children": [
+    "数学"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Natural sciences are a group of disciplines that study natural phenomena and laws, including mathematics, physics, chemistry, biology, and earth sciences. By observing, experimenting, and theoreticall"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

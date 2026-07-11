@@ -9,12 +9,14 @@
   "parent": "鸭子类型",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "协议与鸭子类型: The `collections.abc` module defines abstract base classes like `Iterable` and `Sized` as the formal definitions of protocols. Here's a brief Python code example to illustrate using these abstract base classes: ```python from collections.abc import Iterable, Sized class MyCollection(Sized): def __init__(self, items): self.items = items def __len__(self): return len(self.items) # Check if an instance is iterable my_collection = MyCollection([1, 2, 3]) print(isinstance(my_collection, Iterable)) # Output: True # Check the size of the collection print(len(my_collection)) # Output: 3 ``` In this example, `MyCollection` class inherits from `Sized`, which requires it to implement the `__len__` method. The `Iterable` protocol is checked using `isinstance`."
+  },
   "data_pointers": [
     {
       "title": "协议与鸭子类型",
       "uri": "knowledge://py_duck_proto_v4",
-      "content_preview": "The `collections.abc` module defines abstract base classes like `Iterable` and `Sized` as the formal definitions of protocols. Here's a brief Python code example to illustrate using these abstract bas"
+      "content_preview": "协议与鸭子类型: The `collections.abc` module defines abstract base classes like `Iterable` and `Sized` as the formal definitions of protocols. Here's a brief Python code example to illustrate using these abstract base classes: ```python from collections.abc import Iterable, Sized class MyCollection(Sized): def __init__(self, items): self.items = items def __len__(self): return len(self.items) # Check if an instance is iterable my_collection = MyCollection([1, 2, 3]) print(isinstance(my_collection, Iterable)) # Output: True # Check the size of the collection print(len(my_collection)) # Output: 3 ``` In this example, `MyCollection` class inherits from `Sized`, which requires it to implement the `__len__` method. The `Iterable` protocol is checked using `isinstance`."
     }
   ],
   "related_nodes": []

@@ -1,0 +1,21 @@
+{
+  "name": "遍历实现",
+  "node_id": "bst_trav_detail_v4",
+  "parent_id": "bst_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "二叉搜索树 BST",
+  "children": [
+    "中序遍历实现",
+    "前序遍历实现",
+    "后序遍历实现"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "There are three depth-first traversal methods for binary trees, each with its own characteristics and applications. Here are brief descriptions of the three methods along with corresponding Python cod"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

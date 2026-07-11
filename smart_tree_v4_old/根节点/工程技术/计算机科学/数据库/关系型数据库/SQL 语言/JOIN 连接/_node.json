@@ -1,0 +1,21 @@
+{
+  "name": "JOIN 连接",
+  "node_id": "join_v4",
+  "parent_id": "sql_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "SQL 语言",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "JOIN 连接",
+      "uri": "knowledge://join_v4",
+      "content_preview": "INNER/LEFT/RIGHT/FULL OUTER/CROSS JOIN. These are types of SQL joins used in database management and query operations. Here’s a brief explanation along with Python code examples using the `pandas` lib"
+    }
+  ],
+  "related_nodes": []
+}

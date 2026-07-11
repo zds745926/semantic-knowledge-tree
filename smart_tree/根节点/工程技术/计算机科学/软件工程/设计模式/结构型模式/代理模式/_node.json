@@ -9,12 +9,14 @@
   "parent": "结构型模式",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "代理模式: Provide a proxy for controlling access to objects. Remote/virtual/protection proxies. AOP underlying layer. ### Explanation with Python Code Example In the context of programming, this could refer to using design patterns like Proxy to control object access. Here’s an example using Python: ```python class RealSubject: def operation(self): return \"RealSubject: Handling request.\" class Proxy: def __init__(self): self.real_subject = None def operation(self): if self.check_access(): print(\"Proxy: Access granted.\") self.real_subject.operation() print(\"Proxy: Logging out.\") else: print(\"Proxy: Access denied.\") def check_access(self): # Simulate access control logic return True # For simplicity, always allow access # Usage real_subject = RealSubject() proxy = Proxy() proxy.operation() # This should log in and handle the request ``` In this example: - `RealSubject` is the real object that performs some operation. - `Proxy` controls access to `RealSubject`. It checks if access is allowed before delegating the actual work to `RealSubject`. This demonstrates how a proxy can be used for remote, virtual, or protection purposes."
+  },
   "data_pointers": [
     {
       "title": "代理模式",
       "uri": "knowledge://proxy_v4",
-      "content_preview": "Provide a proxy for controlling access to objects. Remote/virtual/protection proxies. AOP underlying layer. ### Explanation with Python Code Example In the context of programming, this could refer to "
+      "content_preview": "代理模式: Provide a proxy for controlling access to objects. Remote/virtual/protection proxies. AOP underlying layer. ### Explanation with Python Code Example In the context of programming, this could refer to using design patterns like Proxy to control object access. Here’s an example using Python: ```python class RealSubject: def operation(self): return \"RealSubject: Handling request.\" class Proxy: def __init__(self): self.real_subject = None def operation(self): if self.check_access(): print(\"Proxy: Access granted.\") self.real_subject.operation() print(\"Proxy: Logging out.\") else: print(\"Proxy: Access denied.\") def check_access(self): # Simulate access control logic return True # For simplicity, always allow access # Usage real_subject = RealSubject() proxy = Proxy() proxy.operation() # This should log in and handle the request ``` In this example: - `RealSubject` is the real object that performs some operation. - `Proxy` controls access to `RealSubject`. It checks if access is allowed before delegating the actual work to `RealSubject`. This demonstrates how a proxy can be used for remote, virtual, or protection purposes."
     }
   ],
   "related_nodes": []

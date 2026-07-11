@@ -1,0 +1,21 @@
+{
+  "name": "进制转换",
+  "node_id": "py_int_bases_v4",
+  "parent_id": "py_int_sub_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "int 进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "进制转换",
+      "uri": "knowledge://py_int_bases_v4",
+      "content_preview": "Translation: `bin(x)` binary, `oct(x)` octal, `hex(x)` hexadecimal. `int('1010', 2)` string to integer. Python code example for conversion: ```python # Example of converting between different numeral "
+    }
+  ],
+  "related_nodes": []
+}

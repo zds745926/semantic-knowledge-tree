@@ -1,0 +1,21 @@
+{
+  "name": "Prometheus",
+  "node_id": "prometheus_v4",
+  "parent_id": "monitoring_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "可观测性",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Prometheus",
+      "uri": "knowledge://prometheus_v4",
+      "content_preview": "Time-series database + monitoring. Pull mode fetching. PromQL query. Alertmanager alert. Here is a brief explanation with a related Python code example for the pull mode fetching concept: Pull mode fe"
+    }
+  ],
+  "related_nodes": []
+}

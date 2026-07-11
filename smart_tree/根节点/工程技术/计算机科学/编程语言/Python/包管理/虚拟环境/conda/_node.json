@@ -9,13 +9,17 @@
   "parent": "虚拟环境",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "conda: Anaconda Package and Environment Manager. `conda create`, `conda env`, `conda activate`. Cross-language support (supports R/Python). Here's a brief explanation with Python code examples: - **Creating an environment**: You can use the `conda create` command to set up a new conda environment. ```python # Example: Create a new conda environment named 'myenv' with Python 3.8 and numpy conda create --name myenv python=3.8 numpy ``` - **Activating an environment**: Use the `conda activate` command to switch to the desired environment. ```python # Example: Activate the 'myenv' environment conda activate myenv ``` - **Deactivating an environment**: Use the `conda deactivate` command to return to the base environment. ```python # Example: Deactivate the current environment and switch back to the base environment conda deactivate ``` These commands are part of the Conda package manager, which is included in Anaconda. They allow you to manage different environments for your projects, ensuring that dependencies are isolated and consistent across languages like Python and R."
+  },
   "data_pointers": [
     {
       "title": "conda",
       "uri": "knowledge://py_conda_v4",
-      "content_preview": "Anaconda Package and Environment Manager. `conda create`, `conda env`, `conda activate`. Cross-language support (supports R/Python). Here's a brief explanation with Python code examples: - **Creating "
+      "content_preview": "conda: Anaconda Package and Environment Manager. `conda create`, `conda env`, `conda activate`. Cross-language support (supports R/Python). Here's a brief explanation with Python code examples: - **Creating an environment**: You can use the `conda create` command to set up a new conda environment. ```python # Example: Create a new conda environment named 'myenv' with Python 3.8 and numpy conda create --name myenv python=3.8 numpy ``` - **Activating an environment**: Use the `conda activate` command to switch to the desired environment. ```python # Example: Activate the 'myenv' environment conda activate myenv ``` - **Deactivating an environment**: Use the `conda deactivate` command to return to the base environment. ```python # Example: Deactivate the current environment and switch back to the base environment conda deactivate ``` These commands are part of the Conda package manager, which is included in Anaconda. They allow you to manage different environments for your projects, ensuring that dependencies are isolated and consistent across languages like Python and R."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_virtualenv_v4"
+  ]
 }

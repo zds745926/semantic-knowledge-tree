@@ -1,0 +1,21 @@
+{
+  "name": "持续集成 CI",
+  "node_id": "ci_basics_v4",
+  "parent_id": "cicd_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "CI/CD",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "持续集成 CI",
+      "uri": "knowledge://ci_basics_v4",
+      "content_preview": "Automatic build and test on every push. Jenkins/GitLab CI/GitHub Actions. For illustration purposes, here are some brief Python code examples for each of these continuous integration tools: ### Jenkin"
+    }
+  ],
+  "related_nodes": []
+}

@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "语言核心",
   "children": [
-    "变量作用域",
     "基本数据类型",
-    "类型系统特性"
+    "类型系统特性",
+    "变量作用域"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python is a dynamically typed language where variables are just labels for objects. The type system supports basic data types, type annotations, and duck typing. Understanding Python's type system is "
+    "description": "变量与类型系统: Python is a dynamically typed language where variables are just labels for objects. The type system supports basic data types, type annotations, and duck typing. Understanding Python's type system is foundational to writing robust code. Here’s an example of using type hints in Python: ```python def greet(name: str) -> None: \"\"\"Print a greeting with the provided name.\"\"\" print(f\"Hello, {name}!\") # Calling the function greet(\"World\") ``` In this example, `str` is used as a type hint for the `name` parameter and `None` indicates that the function does not return any value. This helps in understanding the expected input and output types, which can be particularly useful during code reviews or when using static type checkers like `mypy`."
   },
   "data_pointers": [],
   "related_nodes": []

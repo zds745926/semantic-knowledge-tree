@@ -1,0 +1,21 @@
+{
+  "name": "List 系列",
+  "node_id": "java_list_v4",
+  "parent_id": "java_col_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "集合框架",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "List 系列",
+      "uri": "knowledge://java_list_v4",
+      "content_preview": "ArrayList (Array) vs LinkedList (Linked List). Vector/Stack (Thread-Safe). In Java, both `ArrayList` and `LinkedList` are implementations of the `List` interface. The choice between them depends on th"
+    }
+  ],
+  "related_nodes": []
+}

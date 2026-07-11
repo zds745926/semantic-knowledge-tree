@@ -9,12 +9,14 @@
   "parent": "字典 dict",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "字典基础: {} creation. `d[key]` access, `d.get(key, default)` safe access. Preserves insertion order since Python 3.7. Here's a brief explanation with a Python code example: - **Creation**: This refers to the process of creating a dictionary in Python. - **Access**: - `d[key]`: Directly accesses the value associated with the key `key` in the dictionary `d`. If the key is not found, it will raise a `KeyError`. - `d.get(key, default)`: Safely accesses the value associated with the key `key` in the dictionary `d`. If the key is not found, it returns the specified `default` value instead of raising an error. - **Preserves Insertion Order**: Since Python 3.7, dictionaries maintain the insertion order of keys. ```python # Example usage: my_dict = {'apple': 1, 'banana': 2, 'cherry': 3} # Direct access (may raise KeyError if key is not found) print(my_dict['banana']) # Output: 2 # Safe access with default value print(my_dict.get('banana', 0)) # Output: 2 print(my_dict.get('orange', 0)) # Output: 0, 'orange' is not in the dictionary ``` This example demonstrates both direct and safe dictionary access methods."
+  },
   "data_pointers": [
     {
       "title": "字典基础",
       "uri": "knowledge://py_dict_basics_v4",
-      "content_preview": "{} creation. `d[key]` access, `d.get(key, default)` safe access. Preserves insertion order since Python 3.7. Here's a brief explanation with a Python code example: - **Creation**: This refers to the p"
+      "content_preview": "字典基础: {} creation. `d[key]` access, `d.get(key, default)` safe access. Preserves insertion order since Python 3.7. Here's a brief explanation with a Python code example: - **Creation**: This refers to the process of creating a dictionary in Python. - **Access**: - `d[key]`: Directly accesses the value associated with the key `key` in the dictionary `d`. If the key is not found, it will raise a `KeyError`. - `d.get(key, default)`: Safely accesses the value associated with the key `key` in the dictionary `d`. If the key is not found, it returns the specified `default` value instead of raising an error. - **Preserves Insertion Order**: Since Python 3.7, dictionaries maintain the insertion order of keys. ```python # Example usage: my_dict = {'apple': 1, 'banana': 2, 'cherry': 3} # Direct access (may raise KeyError if key is not found) print(my_dict['banana']) # Output: 2 # Safe access with default value print(my_dict.get('banana', 0)) # Output: 2 print(my_dict.get('orange', 0)) # Output: 0, 'orange' is not in the dictionary ``` This example demonstrates both direct and safe dictionary access methods."
     }
   ],
   "related_nodes": []

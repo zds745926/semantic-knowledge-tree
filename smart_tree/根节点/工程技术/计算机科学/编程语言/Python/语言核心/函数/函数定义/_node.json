@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "函数",
   "children": [
-    "函数定义基础",
     "参数传递深入",
+    "函数定义基础",
     "返回值"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The `def` statement defines a function, and `return` is used to return values. It supports various combinations of parameter types. Here's a brief Python code example: ```python def add_numbers(a, b):"
+    "description": "函数定义: The `def` statement defines a function, and `return` is used to return values. It supports various combinations of parameter types. Here's a brief Python code example: ```python def add_numbers(a, b): \"\"\" This function takes two numbers as input and returns their sum. :param a: First number (int or float) :param b: Second number (int or float) :return: Sum of the two numbers (int or float) \"\"\" return a + b # Example usage: result = add_numbers(5, 3.2) print(result) # Output: 8.2 ``` This example demonstrates defining a function `add_numbers` that takes two parameters and returns their sum."
   },
   "data_pointers": [],
   "related_nodes": []

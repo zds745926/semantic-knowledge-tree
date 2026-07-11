@@ -9,12 +9,14 @@
   "parent": "搜索算法",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "线性搜索: Traverse from start to end. O(n). The simplest but least efficient. Suitable for unordered data. Python example: ```python def traverse_unordered_data(data): for item in data: print(item) ``` This function iterates over a collection of unordered data, printing each item. While simple, it may not be the most efficient method if the data is large or needs to be processed multiple times, as it requires visiting each element exactly once."
+  },
   "data_pointers": [
     {
       "title": "线性搜索",
       "uri": "knowledge://linear_search_v4",
-      "content_preview": "Traverse from start to end. O(n). The simplest but least efficient. Suitable for unordered data. Python example: ```python def traverse_unordered_data(data): for item in data: print(item) ``` This fun"
+      "content_preview": "线性搜索: Traverse from start to end. O(n). The simplest but least efficient. Suitable for unordered data. Python example: ```python def traverse_unordered_data(data): for item in data: print(item) ``` This function iterates over a collection of unordered data, printing each item. While simple, it may not be the most efficient method if the data is large or needs to be processed multiple times, as it requires visiting each element exactly once."
     }
   ],
   "related_nodes": []

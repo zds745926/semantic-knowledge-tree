@@ -9,12 +9,14 @@
   "parent": "调度算法",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "时间片轮转 RR: Fixed-time slice cyclic execution. Responsive. Time slice selection is critical. ### Example in Python To illustrate the concept of fixed-time slice cyclic execution, consider a simple timer-based task scheduler where tasks are executed at regular intervals: ```python import time def task1(): print(\"Task 1 executed\") def task2(): print(\"Task 2 executed\") # Define the time slice (in seconds) time_slice = 0.5 while True: # Execute Task 1 task1() # Execute Task 2 task2() # Sleep for the remaining part of the time slice time.sleep(time_slice - 0.1) # Adjusting to ensure we don't exceed the time slice ``` In this example, `task1` and `task2` are executed in a cyclic manner with each iteration lasting for a fixed time slice (in this case, 0.5 seconds). The `time.sleep()` function is used to manage the timing accurately. Adjusting the sleep duration ensures that the total execution time does not exceed the defined time slice."
+  },
   "data_pointers": [
     {
       "title": "时间片轮转 RR",
       "uri": "knowledge://rr_v4",
-      "content_preview": "Fixed-time slice cyclic execution. Responsive. Time slice selection is critical. ### Example in Python To illustrate the concept of fixed-time slice cyclic execution, consider a simple timer-based tas"
+      "content_preview": "时间片轮转 RR: Fixed-time slice cyclic execution. Responsive. Time slice selection is critical. ### Example in Python To illustrate the concept of fixed-time slice cyclic execution, consider a simple timer-based task scheduler where tasks are executed at regular intervals: ```python import time def task1(): print(\"Task 1 executed\") def task2(): print(\"Task 2 executed\") # Define the time slice (in seconds) time_slice = 0.5 while True: # Execute Task 1 task1() # Execute Task 2 task2() # Sleep for the remaining part of the time slice time.sleep(time_slice - 0.1) # Adjusting to ensure we don't exceed the time slice ``` In this example, `task1` and `task2` are executed in a cyclic manner with each iteration lasting for a fixed time slice (in this case, 0.5 seconds). The `time.sleep()` function is used to manage the timing accurately. Adjusting the sleep duration ensures that the total execution time does not exceed the defined time slice."
     }
   ],
   "related_nodes": []

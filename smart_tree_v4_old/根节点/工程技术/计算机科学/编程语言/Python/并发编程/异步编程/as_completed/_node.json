@@ -1,0 +1,21 @@
+{
+  "name": "as_completed",
+  "node_id": "py_as_completed_v4",
+  "parent_id": "py_async_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "异步编程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "as_completed",
+      "uri": "knowledge://py_as_completed_v4",
+      "content_preview": "The `asyncio.as_completed(fs)` function yields futures in the order they complete. The first future to complete will be yielded first. Here is an example of how you might use this in Python: ```python"
+    }
+  ],
+  "related_nodes": []
+}

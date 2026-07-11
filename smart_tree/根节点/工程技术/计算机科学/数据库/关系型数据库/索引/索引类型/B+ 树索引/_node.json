@@ -9,13 +9,17 @@
   "parent": "索引类型",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "B+ 树索引: All data resides in the leaf nodes, with internal nodes containing only key-value pointers. A leaf-linked list. InnoDB Clustered Index. To provide a more detailed explanation and include a Python code example for a simple representation of this concept: ```python class Node: def __init__(self, key=None, value=None): self.key = key self.value = value self.next = None class LeafLinkedList: def __init__(self): self.head = None # The head of the leaf-linked list def insert(self, key, value): new_node = Node(key, value) if not self.head: self.head = new_node else: current = self.head while current.next: current = current.next current.next = new_node # Example usage leaf_list = LeafLinkedList() leaf_list.insert('key1', 'value1') leaf_list.insert('key2', 'value2') # This is a simplified representation and does not capture the full complexity of InnoDB's clustered index. ``` This Python code example demonstrates a basic leaf-linked list, which can be used to illustrate the concept of data residing in leaf nodes with key-value pointers. Note that this is a highly simplified version and does not fully represent the complexities of an InnoDB clustered index."
+  },
   "data_pointers": [
     {
       "title": "B+ 树索引",
       "uri": "knowledge://btree_index_v4",
-      "content_preview": "All data resides in the leaf nodes, with internal nodes containing only key-value pointers. A leaf-linked list. InnoDB Clustered Index. To provide a more detailed explanation and include a Python code"
+      "content_preview": "B+ 树索引: All data resides in the leaf nodes, with internal nodes containing only key-value pointers. A leaf-linked list. InnoDB Clustered Index. To provide a more detailed explanation and include a Python code example for a simple representation of this concept: ```python class Node: def __init__(self, key=None, value=None): self.key = key self.value = value self.next = None class LeafLinkedList: def __init__(self): self.head = None # The head of the leaf-linked list def insert(self, key, value): new_node = Node(key, value) if not self.head: self.head = new_node else: current = self.head while current.next: current = current.next current.next = new_node # Example usage leaf_list = LeafLinkedList() leaf_list.insert('key1', 'value1') leaf_list.insert('key2', 'value2') # This is a simplified representation and does not capture the full complexity of InnoDB's clustered index. ``` This Python code example demonstrates a basic leaf-linked list, which can be used to illustrate the concept of data residing in leaf nodes with key-value pointers. Note that this is a highly simplified version and does not fully represent the complexities of an InnoDB clustered index."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "hash_index_v4"
+  ]
 }

@@ -1,0 +1,21 @@
+{
+  "name": "Queue (FIFO)",
+  "node_id": "py_queue_fifo_v4",
+  "parent_id": "py_queue_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "queue 模块",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Queue (FIFO)",
+      "uri": "knowledge://py_queue_fifo_v4",
+      "content_preview": "The `queue.Queue(maxsize)` is a first-in-first-out (FIFO) data structure. It provides methods such as `put(blocking)` to enqueue an item and `get(blocking)` to dequeue and retrieve an item. Additional"
+    }
+  ],
+  "related_nodes": []
+}

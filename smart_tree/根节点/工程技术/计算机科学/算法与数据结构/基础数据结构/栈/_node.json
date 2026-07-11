@@ -9,12 +9,14 @@
   "parent": "基础数据结构",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "栈: Last In First Out (LIFO). Operations such as push, pop, and peek have a time complexity of O(1). Applications include function calls, bracket matching, and back navigation. Here is a brief Python code example for a LIFO stack: ```python class Stack: def __init__(self): self.items = [] def is_empty(self): return not bool(self.items) def push(self, item): self.items.append(item) def pop(self): return self.items.pop() def peek(self): return self.items[-1] def size(self): return len(self.items) # Example usage: stack = Stack() stack.push('A') stack.push('B') print(stack.peek()) # Output: B print(stack.pop()) # Output: B print(stack.size()) # Output: 1 ``` This Python class `Stack` implements the LIFO principle with methods for common stack operations."
+  },
   "data_pointers": [
     {
       "title": "栈",
       "uri": "knowledge://stack_v4",
-      "content_preview": "Last In First Out (LIFO). Operations such as push, pop, and peek have a time complexity of O(1). Applications include function calls, bracket matching, and back navigation. Here is a brief Python code"
+      "content_preview": "栈: Last In First Out (LIFO). Operations such as push, pop, and peek have a time complexity of O(1). Applications include function calls, bracket matching, and back navigation. Here is a brief Python code example for a LIFO stack: ```python class Stack: def __init__(self): self.items = [] def is_empty(self): return not bool(self.items) def push(self, item): self.items.append(item) def pop(self): return self.items.pop() def peek(self): return self.items[-1] def size(self): return len(self.items) # Example usage: stack = Stack() stack.push('A') stack.push('B') print(stack.peek()) # Output: B print(stack.pop()) # Output: B print(stack.size()) # Output: 1 ``` This Python class `Stack` implements the LIFO principle with methods for common stack operations."
     }
   ],
   "related_nodes": []

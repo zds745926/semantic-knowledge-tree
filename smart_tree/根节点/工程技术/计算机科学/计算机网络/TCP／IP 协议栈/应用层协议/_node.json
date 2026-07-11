@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "TCP/IP 协议栈",
   "children": [
-    "CDN",
+    "HTTP",
     "DNS",
-    "HTTP"
+    "CDN"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Application layer protocols provide network services for applications, including HTTP, DNS, and FTP. Python code examples: 1. **HTTP (using `requests` library)**: ```python import requests response = "
+    "description": "应用层协议: Application layer protocols provide network services for applications, including HTTP, DNS, and FTP. Python code examples: 1. **HTTP (using `requests` library)**: ```python import requests response = requests.get('https://www.example.com') print(response.status_code) ``` 2. **DNS (using built-in `socket` module)**: ```python import socket hostname = 'example.com' ip_address = socket.gethostbyname(hostname) print(ip_address) ``` 3. **FTP (using `ftplib` library)**: ```python from ftplib import FTP ftp = FTP('ftp.example.com') ftp.login(user='username', passwd='password') print(ftp.getwelcome()) ftp.quit() ``` These examples demonstrate basic interactions with HTTP, DNS, and FTP using Python."
   },
   "data_pointers": [],
   "related_nodes": []

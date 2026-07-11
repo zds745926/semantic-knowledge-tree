@@ -9,12 +9,14 @@
   "parent": "装饰器进阶",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "装饰器原理: `func = decorator(func)` captures the original function within a closure. `wraps` copies metadata. Python code example for `wraps` usage: ```python from functools import wraps def my_decorator(f): @wraps(f) def wrapper(*args, **kwargs): print(\"Something is happening before the function is called.\") f(*args, **kwargs) print(\"Something is happening after the function is called.\") return wrapper @my_decorator def say_hello(name): \"\"\"Print a greeting.\"\"\" print(f\"Hello {name}!\") say_hello('World') ``` In this example, `wraps` is used to preserve the metadata (such as the docstring and name) of the original function `say_hello`."
+  },
   "data_pointers": [
     {
       "title": "装饰器原理",
       "uri": "knowledge://py_deco_closure_v4",
-      "content_preview": "Translation: `func = decorator(func)` captures the original function within a closure. `wraps` copies metadata. Python code example for `wraps` usage: ```python from functools import wraps def my_deco"
+      "content_preview": "装饰器原理: `func = decorator(func)` captures the original function within a closure. `wraps` copies metadata. Python code example for `wraps` usage: ```python from functools import wraps def my_decorator(f): @wraps(f) def wrapper(*args, **kwargs): print(\"Something is happening before the function is called.\") f(*args, **kwargs) print(\"Something is happening after the function is called.\") return wrapper @my_decorator def say_hello(name): \"\"\"Print a greeting.\"\"\" print(f\"Hello {name}!\") say_hello('World') ``` In this example, `wraps` is used to preserve the metadata (such as the docstring and name) of the original function `say_hello`."
     }
   ],
   "related_nodes": []

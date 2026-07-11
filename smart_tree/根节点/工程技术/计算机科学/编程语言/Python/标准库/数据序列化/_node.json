@@ -8,15 +8,15 @@
   "version": 1,
   "parent": "标准库",
   "children": [
-    "configparser",
-    "csv",
     "json",
     "pickle",
-    "xml"
+    "csv",
+    "xml",
+    "configparser"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python supports multiple data serialization formats. json is cross-language and platform-independent; pickle is specific to Python; csv is used for tabular data; configparser is used for configuration"
+    "description": "数据序列化: Python supports multiple data serialization formats. json is cross-language and platform-independent; pickle is specific to Python; csv is used for tabular data; configparser is used for configuration files. Here are brief examples in Python for each: 1. **JSON (Cross-language, platform-independent)**: ```python import json data = {\"name\": \"John\", \"age\": 30, \"city\": \"New York\"} json_string = json.dumps(data) print(json_string) # Output: {\"name\": \"John\", \"age\": 30, \"city\": \"New York\"} ``` 2. **Pickle (Specific to Python)**: ```python import pickle data = {\"name\": \"John\", \"age\": 30, \"city\": \"New York\"} with open('data.pickle', 'wb') as f: pickle.dump(data, f) ``` 3. **CSV (Tabular Data)**: ```python import csv data = [[\"Name\", \"Age\", \"City\"], [\"John\", 30, \"New York\"]] with open('data.csv', 'w', newline='') as file: writer = csv.writer(file) writer.writerows(data) ``` 4. **ConfigParser (Configuration Files)**: ```python import configparser config = configparser.ConfigParser() config['DEFAULT'] = {'ServerAliveInterval': '45', 'Compression': 'yes', 'CompressionLevel': '9'} with open('example.ini', 'w') as configfile: config.write(configfile) ```"
   },
   "data_pointers": [],
   "related_nodes": []

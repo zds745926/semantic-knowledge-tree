@@ -9,12 +9,14 @@
   "parent": "遍历实现",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "中序遍历实现: Left → Root → Right. This is the in-order sequence of a BST (Binary Search Tree). It can be simulated using a stack. Here's a brief explanation and Python code example for simulating an in-order traversal of a binary search tree: ```python class TreeNode: def __init__(self, val=0, left=None, right=None): self.val = val self.left = left self.right = right def in_order_traversal(root): stack = [] current = root while True: if current is not None: stack.append(current) current = current.left else: if len(stack) == 0: break current = stack.pop() print(current.val, end=' ') current = current.right # Example usage: # Constructing a simple BST root = TreeNode(27) root.left = TreeNode(14) root.right = TreeNode(35) root.left.left = TreeNode(10) root.left.right = TreeNode(19) root.right.left = TreeNode(31) root.right.right = TreeNode(42) # Perform in-order traversal in_order_traversal(root) ``` This code defines a `TreeNode` class for the nodes of the binary search tree and an `in_order_traversal` function that uses a stack to simulate the in-order traversal. The example constructs a simple BST and performs the in-order traversal, printing out the values in sorted order: 10 14 19 27 31 35 42."
+  },
   "data_pointers": [
     {
       "title": "中序遍历实现",
       "uri": "knowledge://bst_inorder_v4",
-      "content_preview": "Left → Root → Right. This is the in-order sequence of a BST (Binary Search Tree). It can be simulated using a stack. Here's a brief explanation and Python code example for simulating an in-order trave"
+      "content_preview": "中序遍历实现: Left → Root → Right. This is the in-order sequence of a BST (Binary Search Tree). It can be simulated using a stack. Here's a brief explanation and Python code example for simulating an in-order traversal of a binary search tree: ```python class TreeNode: def __init__(self, val=0, left=None, right=None): self.val = val self.left = left self.right = right def in_order_traversal(root): stack = [] current = root while True: if current is not None: stack.append(current) current = current.left else: if len(stack) == 0: break current = stack.pop() print(current.val, end=' ') current = current.right # Example usage: # Constructing a simple BST root = TreeNode(27) root.left = TreeNode(14) root.right = TreeNode(35) root.left.left = TreeNode(10) root.left.right = TreeNode(19) root.right.left = TreeNode(31) root.right.right = TreeNode(42) # Perform in-order traversal in_order_traversal(root) ``` This code defines a `TreeNode` class for the nodes of the binary search tree and an `in_order_traversal` function that uses a stack to simulate the in-order traversal. The example constructs a simple BST and performs the in-order traversal, printing out the values in sorted order: 10 14 19 27 31 35 42."
     }
   ],
   "related_nodes": []

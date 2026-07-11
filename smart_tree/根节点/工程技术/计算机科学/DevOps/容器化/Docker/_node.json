@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "容器化",
   "children": [
+    "Docker 镜像",
     "Docker 容器",
-    "Docker 网络",
-    "Docker 镜像"
+    "Docker 网络"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Docker containerization platform. Image layering with UnionFS. Container isolation using namespaces and cgroups. Here are the corresponding technical terms explained briefly: - **Docker containerizati"
+    "description": "Docker: Docker containerization platform. Image layering with UnionFS. Container isolation using namespaces and cgroups. Here are the corresponding technical terms explained briefly: - **Docker containerization platform**: A platform that uses Docker to package, distribute, and run applications inside containers. - **Image layering with UnionFS**: Docker images are built as a stack of read-only layers on top of a writable layer. This is achieved using filesystem technologies like UnionFS. - **Container isolation using namespaces and cgroups**: - **Namespaces (namespace)**: Isolates the resources seen by processes inside the container, such as network interfaces, file systems, and process IDs. - **cgroups (control groups)**: Limits, accounts for, and prioritizes the resource usage of a collection of processes. Here is a brief Python code example to illustrate how namespaces can be used in Docker-like scenarios: ```python import os def create_network_namespace(): # Create a new network namespace using iproute2 tools os.system(\"ip netns add mynamespace\") def list_network_namespaces(): # List all existing network namespaces output = os.popen(\"ip netns\").read() print(output) # Example usage create_network_namespace() list_network_namespaces() ``` This Python script uses the `os` module to interact with the system's iproute2 tools, which are commonly used for managing network namespaces in Linux."
   },
   "data_pointers": [],
   "related_nodes": []

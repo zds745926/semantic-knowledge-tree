@@ -1,0 +1,21 @@
+{
+  "name": "as_completed",
+  "node_id": "py_futures_as_completed_v4",
+  "parent_id": "py_futures_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "concurrent.futures",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "as_completed",
+      "uri": "knowledge://py_futures_as_completed_v4",
+      "content_preview": "The `concurrent.futures.as_completed(fs)` function yields futures objects as they complete. The ones that finish first are yielded first. Here's a brief Python code example to illustrate this: ```pyth"
+    }
+  ],
+  "related_nodes": []
+}

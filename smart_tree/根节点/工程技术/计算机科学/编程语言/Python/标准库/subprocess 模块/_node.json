@@ -9,13 +9,17 @@
   "parent": "标准库",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "subprocess 模块: Running external commands: `subprocess.run()` is concise and provides higher-level functionality compared to `Popen`, which offers lower-level control. Using `shell=True` should be done with caution due to injection risks. Python code example for `subprocess.run()`: ```python import subprocess # Running a simple command without shell=True (recommended) result = subprocess.run(['ls', '-l'], capture_output=True, text=True) print(result.stdout) # Running a command with shell=True (use with caution) # result = subprocess.run('echo $SOME_VAR', shell=True, capture_output=True, text=True) # print(result.stdout) ``` Note: The commented-out code using `shell=True` is provided for illustration purposes but should be used carefully to avoid security risks."
+  },
   "data_pointers": [
     {
       "title": "subprocess 模块",
       "uri": "knowledge://py_subprocess_v4",
-      "content_preview": "Running external commands: `subprocess.run()` is concise and provides higher-level functionality compared to `Popen`, which offers lower-level control. Using `shell=True` should be done with caution d"
+      "content_preview": "subprocess 模块: Running external commands: `subprocess.run()` is concise and provides higher-level functionality compared to `Popen`, which offers lower-level control. Using `shell=True` should be done with caution due to injection risks. Python code example for `subprocess.run()`: ```python import subprocess # Running a simple command without shell=True (recommended) result = subprocess.run(['ls', '-l'], capture_output=True, text=True) print(result.stdout) # Running a command with shell=True (use with caution) # result = subprocess.run('echo $SOME_VAR', shell=True, capture_output=True, text=True) # print(result.stdout) ``` Note: The commented-out code using `shell=True` is provided for illustration purposes but should be used carefully to avoid security risks."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_os_module_v4"
+  ]
 }

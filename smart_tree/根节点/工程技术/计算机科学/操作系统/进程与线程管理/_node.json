@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "操作系统",
   "children": [
-    "同步与互斥",
     "进程调度",
-    "进程间通信 IPC"
+    "进程间通信 IPC",
+    "同步与互斥"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Processes are the basic units for resource allocation, while threads are the basic units for CPU scheduling. The operating system decides which process gets the CPU through a scheduling algorithm. Her"
+    "description": "进程与线程管理: Processes are the basic units for resource allocation, while threads are the basic units for CPU scheduling. The operating system decides which process gets the CPU through a scheduling algorithm. Here's a brief Python code example to illustrate thread creation and execution using the `threading` module: ```python import threading def thread_function(name): \"\"\"A simple function that runs in a separate thread.\"\"\" print(f\"Thread {name}: starting\") # Simulate some work being done by sleeping for 2 seconds import time time.sleep(2) print(f\"Thread {name}: finishing\") # Create threads threads = [] for i in range(5): thread = threading.Thread(target=thread_function, args=(i,)) threads.append(thread) thread.start() # Wait for all threads to complete for thread in threads: thread.join() print(\"All threads have finished execution.\") ``` This example demonstrates creating and managing multiple threads in Python."
   },
   "data_pointers": [],
   "related_nodes": []

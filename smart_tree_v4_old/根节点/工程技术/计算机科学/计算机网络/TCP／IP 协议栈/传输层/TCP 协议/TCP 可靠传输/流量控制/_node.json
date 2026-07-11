@@ -1,0 +1,21 @@
+{
+  "name": "流量控制",
+  "node_id": "tcp_flow_ctrl_v4",
+  "parent_id": "tcp_reliable_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "TCP 可靠传输",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "流量控制",
+      "uri": "knowledge://tcp_flow_ctrl_v4",
+      "content_preview": "The receive window (rwnd) informs the sender of the remaining buffer space. This prevents fast senders from overwhelming slow receivers. To illustrate this concept with a Python code example, we can s"
+    }
+  ],
+  "related_nodes": []
+}

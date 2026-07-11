@@ -1,0 +1,21 @@
+{
+  "name": "进程管理",
+  "node_id": "linux_proc_v4",
+  "parent_id": "linux_admin_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "系统管理",
+  "children": [
+    "kill/nice",
+    "ps/top",
+    "systemd"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Linux process management involves using tools like `ps` and `top` for monitoring, `kill` for termination, and `systemd` for service management. Here are brief explanations of each concept with Python "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,22 @@
+{
+  "name": "for 循环",
+  "node_id": "py_for_v4",
+  "parent_id": "py_loop_v4",
+  "level": 8,
+  "is_leaf": false,
+  "absorption_rate": 0.13999999999999999,
+  "version": 1,
+  "parent": "循环",
+  "children": [
+    "enumerate 详解",
+    "for 循环进阶",
+    "for 迭代原理",
+    "range 详解"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "The `for` loop iterates over iterable objects. The `range()` function generates an arithmetic sequence, while `enumerate()` is used to iterate over a sequence with index tracking. The iteration princi"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

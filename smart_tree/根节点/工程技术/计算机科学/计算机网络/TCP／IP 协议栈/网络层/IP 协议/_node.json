@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The IP protocol provides a connectionless datagram transmission service. IPv4 (32-bit) / IPv6 (128-bit). To provide a brief example of how these protocols might be referenced in Python code, consider "
+    "description": "IP 协议: The IP protocol provides a connectionless datagram transmission service. IPv4 (32-bit) / IPv6 (128-bit). To provide a brief example of how these protocols might be referenced in Python code, consider the following: For handling IPv4 addresses: ```python import ipaddress ipv4_address = ipaddress.IPv4Address('192.0.2.1') print(f\"IPv4 Address: {ipv4_address}\") ``` For handling IPv6 addresses: ```python import ipaddress ipv6_address = ipaddress.IPv6Address('2001:db8::1') print(f\"IPv6 Address: {ipv6_address}\") ``` These examples demonstrate how to work with IP addresses using the `ipaddress` module in Python, which is useful for understanding and manipulating IPv4 and IPv6 addresses programmatically."
   },
   "data_pointers": [],
   "related_nodes": []

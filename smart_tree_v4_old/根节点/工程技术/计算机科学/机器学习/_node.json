@@ -1,0 +1,22 @@
+{
+  "name": "机器学习",
+  "node_id": "ml_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "无监督学习",
+    "深度学习",
+    "监督学习",
+    "自然语言处理"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Machine learning enables computers to learn patterns from data without explicit programming. It is categorized into supervised learning, unsupervised learning, semi-supervised learning, and reinforcem"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

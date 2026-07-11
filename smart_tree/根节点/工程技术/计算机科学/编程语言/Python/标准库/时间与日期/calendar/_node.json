@@ -9,12 +9,14 @@
   "parent": "时间与日期",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "calendar: - `calendar.month/day`: Calendar textual representation of the month or day. - `isleap`: Determine if a year is a leap year. - `weekday`: Get the day of the week as an integer (where Monday is 0 and Sunday is 6). Python code example for `weekday`: ```python import calendar # Example: Get the weekday of January 1, 2023 year = 2023 month = 1 day = 1 weekday_index = calendar.weekday(year, month, day) print(f\"The weekday index for {day}/{month}/{year} is {weekday_index}.\") # Output will be the integer representing Monday (0) to Sunday (6) ``` Note: The `calendar` module in Python provides functions like `weekday`, which returns an integer indicating the day of the week."
+  },
   "data_pointers": [
     {
       "title": "calendar",
       "uri": "knowledge://py_calendar_v4",
-      "content_preview": "Translation: - `calendar.month/day`: Calendar textual representation of the month or day. - `isleap`: Determine if a year is a leap year. - `weekday`: Get the day of the week as an integer (where Mond"
+      "content_preview": "calendar: - `calendar.month/day`: Calendar textual representation of the month or day. - `isleap`: Determine if a year is a leap year. - `weekday`: Get the day of the week as an integer (where Monday is 0 and Sunday is 6). Python code example for `weekday`: ```python import calendar # Example: Get the weekday of January 1, 2023 year = 2023 month = 1 day = 1 weekday_index = calendar.weekday(year, month, day) print(f\"The weekday index for {day}/{month}/{year} is {weekday_index}.\") # Output will be the integer representing Monday (0) to Sunday (6) ``` Note: The `calendar` module in Python provides functions like `weekday`, which returns an integer indicating the day of the week."
     }
   ],
   "related_nodes": []

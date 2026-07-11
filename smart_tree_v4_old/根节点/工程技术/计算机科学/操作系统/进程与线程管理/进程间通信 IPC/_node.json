@@ -1,0 +1,20 @@
+{
+  "name": "进程间通信 IPC",
+  "node_id": "proc_comm_v4",
+  "parent_id": "proc_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "进程与线程管理",
+  "children": [
+    "共享内存",
+    "管道"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Process communication methods include pipes, shared memory, semaphores, message queues, and sockets. Here are brief descriptions of each method along with a Python code example for one of them: 1. **P"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

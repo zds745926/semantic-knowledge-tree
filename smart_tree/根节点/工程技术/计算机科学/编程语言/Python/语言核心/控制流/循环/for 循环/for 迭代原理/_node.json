@@ -9,12 +9,14 @@
   "parent": "for 循环",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "for 迭代原理: The given Chinese technical text translates to: \"For `x` in `iterable`: is equivalent to calling `iter()` → `__next__()` until `StopIteration`. Here's a brief Python code example to illustrate this concept: ```python # Define an iterable my_list = [1, 2, 3] # Using the for loop for x in my_list: print(x) # Equivalent manual iteration using iter() and __next__() it = iter(my_list) # Get the iterator object try: while True: # Continue until StopIteration is raised print(next(it)) # This is equivalent to x in for loop except StopIteration: pass # End of iterable, do nothing ``` In this example, both the `for` loop and the manual iteration using `iter()` and `next()` achieve the same result.\""
+  },
   "data_pointers": [
     {
       "title": "for 迭代原理",
       "uri": "knowledge://py_iter_for_v4",
-      "content_preview": "The given Chinese technical text translates to: \"For `x` in `iterable`: is equivalent to calling `iter()` → `__next__()` until `StopIteration`. Here's a brief Python code example to illustrate this co"
+      "content_preview": "for 迭代原理: The given Chinese technical text translates to: \"For `x` in `iterable`: is equivalent to calling `iter()` → `__next__()` until `StopIteration`. Here's a brief Python code example to illustrate this concept: ```python # Define an iterable my_list = [1, 2, 3] # Using the for loop for x in my_list: print(x) # Equivalent manual iteration using iter() and __next__() it = iter(my_list) # Get the iterator object try: while True: # Continue until StopIteration is raised print(next(it)) # This is equivalent to x in for loop except StopIteration: pass # End of iterable, do nothing ``` In this example, both the `for` loop and the manual iteration using `iter()` and `next()` achieve the same result.\""
     }
   ],
   "related_nodes": []

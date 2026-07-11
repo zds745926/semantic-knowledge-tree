@@ -9,12 +9,14 @@
   "parent": "TCP 可靠传输",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "滑动窗口: Windows where sent data is waiting for ACK. Move forward while waiting for the ACK. Cumulative acknowledgment. To provide a more context-specific translation and to include a brief Python code example related to this concept, let's assume we are dealing with a simple TCP/IP model scenario in networking. Here’s an example of how you might implement a basic mechanism for handling sent data and waiting for ACKs in Python: ```python class SimpleTCP: def __init__(self): self.sent_data = [] # List to hold the data that has been sent but not yet acknowledged def send_data(self, data): self.sent_data.append(data) print(f\"Sent: {data}\") def receive_ack(self, ack): if ack in [data for _, data in self.sent_data]: print(f\"Received ACK for: {ack}\") # Remove the corresponding sent data from the list self.sent_data = [(index, data) for index, (index, data) in enumerate(self.sent_data) if data != ack] else: print(\"ACK not found\") # Example usage tcp = SimpleTCP() tcp.send_data('Hello') tcp.receive_ack('Hello') # This should indicate that the ACK has been received ``` This Python code snippet demonstrates a simple mechanism for tracking sent data and acknowledging receipt of those data. The `SimpleTCP` class keeps track of sent data in a list, and when an acknowledgment (ACK) is received, it removes the corresponding entry from the list."
+  },
   "data_pointers": [
     {
       "title": "滑动窗口",
       "uri": "knowledge://tcp_sliding_window_v4",
-      "content_preview": "Windows where sent data is waiting for ACK. Move forward while waiting for the ACK. Cumulative acknowledgment. To provide a more context-specific translation and to include a brief Python code example"
+      "content_preview": "滑动窗口: Windows where sent data is waiting for ACK. Move forward while waiting for the ACK. Cumulative acknowledgment. To provide a more context-specific translation and to include a brief Python code example related to this concept, let's assume we are dealing with a simple TCP/IP model scenario in networking. Here’s an example of how you might implement a basic mechanism for handling sent data and waiting for ACKs in Python: ```python class SimpleTCP: def __init__(self): self.sent_data = [] # List to hold the data that has been sent but not yet acknowledged def send_data(self, data): self.sent_data.append(data) print(f\"Sent: {data}\") def receive_ack(self, ack): if ack in [data for _, data in self.sent_data]: print(f\"Received ACK for: {ack}\") # Remove the corresponding sent data from the list self.sent_data = [(index, data) for index, (index, data) in enumerate(self.sent_data) if data != ack] else: print(\"ACK not found\") # Example usage tcp = SimpleTCP() tcp.send_data('Hello') tcp.receive_ack('Hello') # This should indicate that the ACK has been received ``` This Python code snippet demonstrates a simple mechanism for tracking sent data and acknowledging receipt of those data. The `SimpleTCP` class keeps track of sent data in a list, and when an acknowledgment (ACK) is received, it removes the corresponding entry from the list."
     }
   ],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "框架生态",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "NumPy: Scientific computing foundation library. ndarray for efficient arrays. Vectorized operations are 10-100 times faster than Python. Here's a brief example of vectorized operation in Python using NumPy, which is the primary library that implements ndarray: ```python import numpy as np # Create two ndarrays arr1 = np.array([1, 2, 3]) arr2 = np.array([4, 5, 6]) # Vectorized addition (no explicit loop) result = arr1 + arr2 print(result) # Output: [5 7 9] ``` In this example, the `+` operator is used to add corresponding elements of `arr1` and `arr2`, demonstrating a vectorized operation that is efficient due to NumPy's optimized C backend."
+  },
   "data_pointers": [
     {
       "title": "NumPy",
       "uri": "knowledge://py_numpy_v4",
-      "content_preview": "Scientific computing foundation library. ndarray for efficient arrays. Vectorized operations are 10-100 times faster than Python. Here's a brief example of vectorized operation in Python using NumPy, "
+      "content_preview": "NumPy: Scientific computing foundation library. ndarray for efficient arrays. Vectorized operations are 10-100 times faster than Python. Here's a brief example of vectorized operation in Python using NumPy, which is the primary library that implements ndarray: ```python import numpy as np # Create two ndarrays arr1 = np.array([1, 2, 3]) arr2 = np.array([4, 5, 6]) # Vectorized addition (no explicit loop) result = arr1 + arr2 print(result) # Output: [5 7 9] ``` In this example, the `+` operator is used to add corresponding elements of `arr1` and `arr2`, demonstrating a vectorized operation that is efficient due to NumPy's optimized C backend."
     }
   ],
   "related_nodes": []

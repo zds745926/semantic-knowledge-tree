@@ -9,12 +9,14 @@
   "parent": "行为型模式",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "策略模式: Define a family of algorithms that can be used interchangeably. Eliminate if-else statements. Python code example: Suppose we have an algorithm to process different types of data, and instead of using if-else statements, we use a dictionary to map the type of data to the corresponding processing function. ```python def process_data(data_type): # Dictionary mapping data types to their respective processing functions processors = { 'text': process_text, 'image': process_image, # Add more data types and their corresponding functions as needed } # Get the appropriate processor based on the data type processor = processors.get(data_type) if processor is None: raise ValueError(f\"No processor found for data type: {data_type}\") # Call the processor function with the data return processor(data) def process_text(text): print(\"Processing text:\", text) def process_image(image): print(\"Processing image:\", image) # Example usage process_data('text') # Output: Processing text: <input text> process_data('image') # Output: Processing image: <input image> ``` In this example, the `processors` dictionary is used to replace if-else statements for selecting the appropriate processing function based on the data type."
+  },
   "data_pointers": [
     {
       "title": "策略模式",
       "uri": "knowledge://strategy_v4",
-      "content_preview": "Define a family of algorithms that can be used interchangeably. Eliminate if-else statements. Python code example: Suppose we have an algorithm to process different types of data, and instead of using"
+      "content_preview": "策略模式: Define a family of algorithms that can be used interchangeably. Eliminate if-else statements. Python code example: Suppose we have an algorithm to process different types of data, and instead of using if-else statements, we use a dictionary to map the type of data to the corresponding processing function. ```python def process_data(data_type): # Dictionary mapping data types to their respective processing functions processors = { 'text': process_text, 'image': process_image, # Add more data types and their corresponding functions as needed } # Get the appropriate processor based on the data type processor = processors.get(data_type) if processor is None: raise ValueError(f\"No processor found for data type: {data_type}\") # Call the processor function with the data return processor(data) def process_text(text): print(\"Processing text:\", text) def process_image(image): print(\"Processing image:\", image) # Example usage process_data('text') # Output: Processing text: <input text> process_data('image') # Output: Processing image: <input image> ``` In this example, the `processors` dictionary is used to replace if-else statements for selecting the appropriate processing function based on the data type."
     }
   ],
   "related_nodes": []

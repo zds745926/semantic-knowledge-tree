@@ -9,12 +9,14 @@
   "parent": "文本处理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "grep: Grep pattern search. Common options: - `-i` ignore case - `-r` recursive - `-n` line numbers - `-v` reverse match Here is a brief Python code example to demonstrate using the `re` module for similar functionality: ```python import re def grep_pattern_search(text, pattern, flags=0): \"\"\" A simple function to perform a grep-like search on text. :param text: The input text or file content as a string. :param pattern: The regex pattern to search for. :param flags: Regex flags (e.g., re.IGNORECASE). :return: A list of matches found in the text. \"\"\" matches = re.findall(pattern, text, flags) return matches # Example usage: text = \"Hello World\\nhello world\\nHELLO WORLD\" pattern = r\"hello\" matches = grep_pattern_search(text, pattern, re.IGNORECASE) print(matches) # Output: ['Hello', 'hello', 'HELLO'] ``` This Python function `grep_pattern_search` uses the `re.findall()` method to search for a pattern in a given text with optional flags. The example demonstrates case-insensitive searching similar to the `-i` option in grep."
+  },
   "data_pointers": [
     {
       "title": "grep",
       "uri": "knowledge://grep_v4",
-      "content_preview": "Grep pattern search. Common options: - `-i` ignore case - `-r` recursive - `-n` line numbers - `-v` reverse match Here is a brief Python code example to demonstrate using the `re` module for similar f"
+      "content_preview": "grep: Grep pattern search. Common options: - `-i` ignore case - `-r` recursive - `-n` line numbers - `-v` reverse match Here is a brief Python code example to demonstrate using the `re` module for similar functionality: ```python import re def grep_pattern_search(text, pattern, flags=0): \"\"\" A simple function to perform a grep-like search on text. :param text: The input text or file content as a string. :param pattern: The regex pattern to search for. :param flags: Regex flags (e.g., re.IGNORECASE). :return: A list of matches found in the text. \"\"\" matches = re.findall(pattern, text, flags) return matches # Example usage: text = \"Hello World\\nhello world\\nHELLO WORLD\" pattern = r\"hello\" matches = grep_pattern_search(text, pattern, re.IGNORECASE) print(matches) # Output: ['Hello', 'hello', 'HELLO'] ``` This Python function `grep_pattern_search` uses the `re.findall()` method to search for a pattern in a given text with optional flags. The example demonstrates case-insensitive searching similar to the `-i` option in grep."
     }
   ],
   "related_nodes": []

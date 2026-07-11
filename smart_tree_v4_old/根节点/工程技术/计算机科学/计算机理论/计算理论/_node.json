@@ -1,0 +1,21 @@
+{
+  "name": "计算理论",
+  "node_id": "comp_theory_v4",
+  "parent_id": "cb_theory_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "计算机理论",
+  "children": [
+    "P与NP问题",
+    "图灵机",
+    "有限自动机"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Computational theory studies the mathematical models and fundamental limitations of computation, including Turing machines, formal languages, and computational complexity. One of the most important un"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

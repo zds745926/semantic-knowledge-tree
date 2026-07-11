@@ -9,12 +9,14 @@
   "parent": "调度算法",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "短作业优先 SJF: Select the process with the shortest CPU burst time. This minimizes average waiting time. However, this cannot be predicted in advance. Python code example (using a simple simulation to illustrate the concept): ```python import heapq class Process: def __init__(self, pid, burst_time): self.pid = pid # Process ID self.burst_time = burst_time # Burst time def __lt__(self, other): return self.burst_time < other.burst_time def shortest_burst_time_scheduler(processes): heapq.heapify(processes) # Convert the list into a min-heap based on burst time while processes: current_process = heapq.heappop(processes) # Pop the process with the smallest burst time print(f\"Scheduling process {current_process.pid} with burst time {current_process.burst_time}\") # Example usage processes = [Process(1, 5), Process(2, 3), Process(3, 8)] shortest_burst_time_scheduler(processes) ``` This Python code defines a `Process` class and implements the shortest CPU burst time scheduling algorithm using a min-heap. The example demonstrates how to schedule processes based on their burst times."
+  },
   "data_pointers": [
     {
       "title": "短作业优先 SJF",
       "uri": "knowledge://sjf_v4",
-      "content_preview": "Select the process with the shortest CPU burst time. This minimizes average waiting time. However, this cannot be predicted in advance. Python code example (using a simple simulation to illustrate the"
+      "content_preview": "短作业优先 SJF: Select the process with the shortest CPU burst time. This minimizes average waiting time. However, this cannot be predicted in advance. Python code example (using a simple simulation to illustrate the concept): ```python import heapq class Process: def __init__(self, pid, burst_time): self.pid = pid # Process ID self.burst_time = burst_time # Burst time def __lt__(self, other): return self.burst_time < other.burst_time def shortest_burst_time_scheduler(processes): heapq.heapify(processes) # Convert the list into a min-heap based on burst time while processes: current_process = heapq.heappop(processes) # Pop the process with the smallest burst time print(f\"Scheduling process {current_process.pid} with burst time {current_process.burst_time}\") # Example usage processes = [Process(1, 5), Process(2, 3), Process(3, 8)] shortest_burst_time_scheduler(processes) ``` This Python code defines a `Process` class and implements the shortest CPU burst time scheduling algorithm using a min-heap. The example demonstrates how to schedule processes based on their burst times."
     }
   ],
   "related_nodes": []

@@ -1,0 +1,21 @@
+{
+  "name": "TCP BBR",
+  "node_id": "tcp_bbr_v4",
+  "parent_id": "tcp_congestion_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "TCP 拥塞控制",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "TCP BBR",
+      "uri": "knowledge://tcp_bbr_v4",
+      "content_preview": "Google proposed. Based on bandwidth and RTT modeling, without relying on packet loss. High throughput with low latency. To provide a more detailed explanation, this concept is often related to network"
+    }
+  ],
+  "related_nodes": []
+}

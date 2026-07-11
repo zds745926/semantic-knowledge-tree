@@ -9,12 +9,14 @@
   "parent": "数据序列化",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "configparser: Configuration file parsing in INI format. Sections and options. Type safety with `getint` and `getboolean`. Here is an example of how you might use these functions in Python: ```python import configparser # Create a ConfigParser object config = configparser.ConfigParser() # Read the configuration file config.read('example.ini') # Accessing integer values safely using getint database_port = config.getint('Database', 'Port') print(f\"Database port: {database_port}\") # Accessing boolean values safely using getboolean enable_logging = config.getboolean('Logging', 'Enable') print(f\"Enable logging: {enable_logging}\") ``` In this example, `example.ini` is a configuration file that contains sections like `Database` and `Logging`, with options such as `Port` and `Enable`. The `getint` and `getboolean` methods ensure type safety by converting the values to their appropriate types."
+  },
   "data_pointers": [
     {
       "title": "configparser",
       "uri": "knowledge://py_configparser_v4",
-      "content_preview": "Configuration file parsing in INI format. Sections and options. Type safety with `getint` and `getboolean`. Here is an example of how you might use these functions in Python: ```python import configpa"
+      "content_preview": "configparser: Configuration file parsing in INI format. Sections and options. Type safety with `getint` and `getboolean`. Here is an example of how you might use these functions in Python: ```python import configparser # Create a ConfigParser object config = configparser.ConfigParser() # Read the configuration file config.read('example.ini') # Accessing integer values safely using getint database_port = config.getint('Database', 'Port') print(f\"Database port: {database_port}\") # Accessing boolean values safely using getboolean enable_logging = config.getboolean('Logging', 'Enable') print(f\"Enable logging: {enable_logging}\") ``` In this example, `example.ini` is a configuration file that contains sections like `Database` and `Logging`, with options such as `Port` and `Enable`. The `getint` and `getboolean` methods ensure type safety by converting the values to their appropriate types."
     }
   ],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "时间与日期",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "datetime: Here is the English translation with added Python code examples for clarity: \"datetime.now() / timedelta / date / time / datetime.strftime formatting.\" Python code examples: ```python from datetime import datetime, timedelta # Get current datetime current_datetime = datetime.now() print(current_datetime) # Calculate a past date using timedelta past_date = current_datetime - timedelta(days=7) print(past_date) # Create a date object specific_date = datetime(year=2023, month=10, day=5).date() print(specific_date) # Extract time from datetime current_time = current_datetime.time() print(current_time) # Format datetime using strftime formatted_datetime = current_datetime.strftime('%Y-%m-%d %H:%M:%S') print(formatted_datetime) ``` This translation and the provided code examples cover the technical terms you mentioned, including `datetime.now()`, `timedelta`, `date`, `time`, and `strftime` formatting in Python."
+  },
   "data_pointers": [
     {
       "title": "datetime",
       "uri": "knowledge://py_datetime_lib_v4",
-      "content_preview": "Here is the English translation with added Python code examples for clarity: \"datetime.now() / timedelta / date / time / datetime.strftime formatting.\" Python code examples: ```python from datetime im"
+      "content_preview": "datetime: Here is the English translation with added Python code examples for clarity: \"datetime.now() / timedelta / date / time / datetime.strftime formatting.\" Python code examples: ```python from datetime import datetime, timedelta # Get current datetime current_datetime = datetime.now() print(current_datetime) # Calculate a past date using timedelta past_date = current_datetime - timedelta(days=7) print(past_date) # Create a date object specific_date = datetime(year=2023, month=10, day=5).date() print(specific_date) # Extract time from datetime current_time = current_datetime.time() print(current_time) # Format datetime using strftime formatted_datetime = current_datetime.strftime('%Y-%m-%d %H:%M:%S') print(formatted_datetime) ``` This translation and the provided code examples cover the technical terms you mentioned, including `datetime.now()`, `timedelta`, `date`, `time`, and `strftime` formatting in Python."
     }
   ],
   "related_nodes": []

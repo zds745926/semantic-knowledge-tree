@@ -9,12 +9,14 @@
   "parent": "queue 模块",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "PriorityQueue: queue.PriorityQueue is a priority queue implemented as a min-heap. `put((priority, item))`. Here's a brief Python code example to illustrate how you might use this: ```python import heapq # Initialize an empty list to simulate the PriorityQueue pq = [] def add_task(priority, task): # Use heapq.heappush to add elements to the heap in O(log N) time heapq.heappush(pq, (priority, task)) def get_next_task(): # Pop the smallest element from the heap in O(log N) time return heapq.heappop(pq) # Example usage: add_task(3, 'Task 1') add_task(2, 'Task 2') add_task(4, 'Task 3') print(get_next_task()) # Output: (2, 'Task 2') print(get_next_task()) # Output: (3, 'Task 1') ``` In this example, `heapq` is used to simulate the behavior of a `PriorityQueue`. The `heappush` function adds elements to the heap with their priority, and `heappop` retrieves the smallest element based on its priority."
+  },
   "data_pointers": [
     {
       "title": "PriorityQueue",
       "uri": "knowledge://py_priority_queue_v4",
-      "content_preview": "queue.PriorityQueue is a priority queue implemented as a min-heap. `put((priority, item))`. Here's a brief Python code example to illustrate how you might use this: ```python import heapq # Initialize"
+      "content_preview": "PriorityQueue: queue.PriorityQueue is a priority queue implemented as a min-heap. `put((priority, item))`. Here's a brief Python code example to illustrate how you might use this: ```python import heapq # Initialize an empty list to simulate the PriorityQueue pq = [] def add_task(priority, task): # Use heapq.heappush to add elements to the heap in O(log N) time heapq.heappush(pq, (priority, task)) def get_next_task(): # Pop the smallest element from the heap in O(log N) time return heapq.heappop(pq) # Example usage: add_task(3, 'Task 1') add_task(2, 'Task 2') add_task(4, 'Task 3') print(get_next_task()) # Output: (2, 'Task 2') print(get_next_task()) # Output: (3, 'Task 1') ``` In this example, `heapq` is used to simulate the behavior of a `PriorityQueue`. The `heappush` function adds elements to the heap with their priority, and `heappop` retrieves the smallest element based on its priority."
     }
   ],
   "related_nodes": []

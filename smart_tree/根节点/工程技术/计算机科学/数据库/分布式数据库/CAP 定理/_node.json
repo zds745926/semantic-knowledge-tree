@@ -9,13 +9,17 @@
   "parent": "分布式数据库",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "CAP 定理: Consistency, Availability, and Partition Tolerance cannot all be achieved simultaneously. In the context of distributed systems, this principle is often referred to as the CAP theorem. Here's a brief explanation with a Python code example illustrating how these concepts might be considered in a simple scenario: - **Consistency**: Every read receives the most recent write or an error. - **Availability**: Every request receives a response without unnecessary delays. - **Partition Tolerance**: The system continues to operate despite arbitrary message loss or failure of part of the system. ```python import time class SimpleDistributedSystem: def __init__(self): self.data = {} def write(self, key, value): # Simulate a delay due to network partition if not self.is_partitioned(): self.data[key] = value print(f\"Write successful: {key} -> {value}\") else: print(\"Partition detected. Write failed.\") def read(self, key): if not self.is_partitioned(): return self.data.get(key, \"Key not found\") else: return \"Read operation failed due to partition\" def is_partitioned(self): # Simulate a network partition time.sleep(1) # Simulating delay return True # Example usage system = SimpleDistributedSystem() system.write('key1', 'value1') print(system.read('key1')) ``` In this example, the `write` and `read` methods demonstrate how a simple distributed system might handle partition tolerance. The `is_partitioned` method simulates a network delay or failure that could cause the system to fail to write data consistently or return an error on read operations."
+  },
   "data_pointers": [
     {
       "title": "CAP 定理",
       "uri": "knowledge://cap_v4",
-      "content_preview": "Consistency, Availability, and Partition Tolerance cannot all be achieved simultaneously. In the context of distributed systems, this principle is often referred to as the CAP theorem. Here's a brief "
+      "content_preview": "CAP 定理: Consistency, Availability, and Partition Tolerance cannot all be achieved simultaneously. In the context of distributed systems, this principle is often referred to as the CAP theorem. Here's a brief explanation with a Python code example illustrating how these concepts might be considered in a simple scenario: - **Consistency**: Every read receives the most recent write or an error. - **Availability**: Every request receives a response without unnecessary delays. - **Partition Tolerance**: The system continues to operate despite arbitrary message loss or failure of part of the system. ```python import time class SimpleDistributedSystem: def __init__(self): self.data = {} def write(self, key, value): # Simulate a delay due to network partition if not self.is_partitioned(): self.data[key] = value print(f\"Write successful: {key} -> {value}\") else: print(\"Partition detected. Write failed.\") def read(self, key): if not self.is_partitioned(): return self.data.get(key, \"Key not found\") else: return \"Read operation failed due to partition\" def is_partitioned(self): # Simulate a network partition time.sleep(1) # Simulating delay return True # Example usage system = SimpleDistributedSystem() system.write('key1', 'value1') print(system.read('key1')) ``` In this example, the `write` and `read` methods demonstrate how a simple distributed system might handle partition tolerance. The `is_partitioned` method simulates a network delay or failure that could cause the system to fail to write data consistently or return an error on read operations."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "raft_v4"
+  ]
 }

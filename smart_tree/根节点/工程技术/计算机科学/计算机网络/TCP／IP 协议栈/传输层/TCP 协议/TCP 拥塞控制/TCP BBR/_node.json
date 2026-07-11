@@ -9,12 +9,14 @@
   "parent": "TCP 拥塞控制",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "TCP BBR: Google proposed. Based on bandwidth and RTT modeling, without relying on packet loss. High throughput with low latency. To provide a more detailed explanation, this concept is often related to network congestion control algorithms like BBR (Bottleneck Bandwidth and Round-trip propagation time). Here's a brief Python code example using the `bbr` module (hypothetical for illustration purposes): ```python from bbr import BBR # Initialize BBR with default parameters bbr = BBR() # Simulate sending data over a network connection for packet in range(100): # Send a packet and get the estimated bandwidth and latency bandwidth, latency = bbr.send_packet(packet_size=1500) print(f\"Packet {packet}: Bandwidth={bandwidth} Bps, Latency={latency} ms\") # Adjust parameters based on feedback bbr.update_parameters(bandwidth, latency) ``` Note: The `bbr` module is hypothetical and used here for illustrative purposes. In practice, you would use the actual implementation provided by your network stack or operating system."
+  },
   "data_pointers": [
     {
       "title": "TCP BBR",
       "uri": "knowledge://tcp_bbr_v4",
-      "content_preview": "Google proposed. Based on bandwidth and RTT modeling, without relying on packet loss. High throughput with low latency. To provide a more detailed explanation, this concept is often related to network"
+      "content_preview": "TCP BBR: Google proposed. Based on bandwidth and RTT modeling, without relying on packet loss. High throughput with low latency. To provide a more detailed explanation, this concept is often related to network congestion control algorithms like BBR (Bottleneck Bandwidth and Round-trip propagation time). Here's a brief Python code example using the `bbr` module (hypothetical for illustration purposes): ```python from bbr import BBR # Initialize BBR with default parameters bbr = BBR() # Simulate sending data over a network connection for packet in range(100): # Send a packet and get the estimated bandwidth and latency bandwidth, latency = bbr.send_packet(packet_size=1500) print(f\"Packet {packet}: Bandwidth={bandwidth} Bps, Latency={latency} ms\") # Adjust parameters based on feedback bbr.update_parameters(bandwidth, latency) ``` Note: The `bbr` module is hypothetical and used here for illustrative purposes. In practice, you would use the actual implementation provided by your network stack or operating system."
     }
   ],
   "related_nodes": []

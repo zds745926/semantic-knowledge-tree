@@ -1,0 +1,21 @@
+{
+  "name": "range 详解",
+  "node_id": "py_range_v4",
+  "parent_id": "py_for_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "for 循环",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "range 详解",
+      "uri": "knowledge://py_range_v4",
+      "content_preview": "The `range(stop)` / `range(start, stop)` / `range(start, stop, step)` functions. Lazy evaluation. Here's a brief explanation with Python code examples: - **`range(stop)`**: Generates a sequence of num"
+    }
+  ],
+  "related_nodes": []
+}

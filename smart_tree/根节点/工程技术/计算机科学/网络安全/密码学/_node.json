@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "网络安全",
   "children": [
-    "哈希函数",
     "对称加密",
-    "非对称加密"
+    "非对称加密",
+    "哈希函数"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Cryptography ensures the security of information through encryption. Symmetric and asymmetric encryption are the two main systems. Here's an example to illustrate symmetric encryption using Python wit"
+    "description": "密码学: Cryptography ensures the security of information through encryption. Symmetric and asymmetric encryption are the two main systems. Here's an example to illustrate symmetric encryption using Python with the `cryptography` library: ```python from cryptography.fernet import Fernet # Generate a key for symmetric encryption key = Fernet.generate_key() cipher_suite = Fernet(key) # Encrypt some data plaintext = b\"Sensitive information\" cipher_text = cipher_suite.encrypt(plaintext) print(\"Encrypted:\", cipher_text) # Decrypt the data deciphered_text = cipher_suite.decrypt(cipher_text) print(\"Decrypted:\", deciphered_text.decode()) ``` And here's an example to illustrate asymmetric encryption using Python with the `cryptography` library: ```python from cryptography.hazmat.primitives.asymmetric import rsa, padding from cryptography.hazmat.primitives import hashes # Generate a private and public key pair for asymmetric encryption private_key = rsa.generate_private_key(public_exponent=65537, key_size=2048) public_key = private_key.public_key() # Encrypt some data with the public key plaintext = b\"Confidential information\" cipher_text = public_key.encrypt( plaintext, padding.OAEP( mgf=padding.MGF1(algorithm=hashes.SHA256()), algorithm=hashes.SHA256(), label=None ) ) print(\"Encrypted:\", cipher_text) # Decrypt the data with the private key deciphered_text = private_key.decrypt( cipher_text, padding.OAEP( mgf=padding.MGF1(algorithm=hashes.SHA256()), algorithm=hashes.SHA256(), label=None ) ) print(\"Decrypted:\", deciphered_text.decode()) ``` These examples demonstrate basic usage of symmetric and asymmetric encryption in Python."
   },
   "data_pointers": [],
   "related_nodes": []

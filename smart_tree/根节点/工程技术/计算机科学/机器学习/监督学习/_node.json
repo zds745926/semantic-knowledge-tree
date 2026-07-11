@@ -8,14 +8,16 @@
   "version": 1,
   "parent": "机器学习",
   "children": [
-    "分类",
     "回归",
+    "分类",
     "集成学习"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Supervised learning uses labeled training data to learn the mapping from inputs to outputs. Python code example: ```python from sklearn.datasets import load_iris from sklearn.model_selection import tr"
+    "description": "监督学习: Supervised learning uses labeled training data to learn the mapping from inputs to outputs. Python code example: ```python from sklearn.datasets import load_iris from sklearn.model_selection import train_test_split from sklearn.tree import DecisionTreeClassifier # Load a sample dataset data = load_iris() X, y = data.data, data.target # Split the dataset into training and testing sets X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Create a decision tree classifier model model = DecisionTreeClassifier() # Train the model using the training data model.fit(X_train, y_train) # Now the model can predict the output for new input data based on what it learned from the labeled training data. ``` This example demonstrates supervised learning by training a decision tree classifier on the Iris dataset. The `fit` method is used to train the model with labeled data, and the trained model can then make predictions based on this mapping."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [
+    "unsupervised_v4"
+  ]
 }

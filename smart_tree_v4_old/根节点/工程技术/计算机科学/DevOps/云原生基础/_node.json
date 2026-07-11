@@ -1,0 +1,20 @@
+{
+  "name": "云原生基础",
+  "node_id": "cloud_v4",
+  "parent_id": "devops_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "DevOps",
+  "children": [
+    "AWS",
+    "Terraform"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Cloud-native technologies utilize cloud computing models to build and run applications. To provide a more detailed explanation, cloud-native technologies are designed to take full advantage of the cap"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

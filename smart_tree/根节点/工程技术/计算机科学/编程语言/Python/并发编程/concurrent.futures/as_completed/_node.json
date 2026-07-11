@@ -9,12 +9,14 @@
   "parent": "concurrent.futures",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "as_completed: The `concurrent.futures.as_completed(fs)` function yields futures objects as they complete. The ones that finish first are yielded first. Here's a brief Python code example to illustrate this: ```python import concurrent.futures import time def task(n): time.sleep(n) # Simulate a long-running task return f\"Task {n} completed\" # Create a list of futures for tasks with different durations with concurrent.futures.ThreadPoolExecutor() as executor: fs = [executor.submit(task, n) for n in range(1, 4)] for future in concurrent.futures.as_completed(fs): print(future.result()) # This will print the results in the order they complete ``` In this example, `as_completed` yields futures as their corresponding tasks finish, and we print the results in the order they are completed."
+  },
   "data_pointers": [
     {
       "title": "as_completed",
       "uri": "knowledge://py_futures_as_completed_v4",
-      "content_preview": "The `concurrent.futures.as_completed(fs)` function yields futures objects as they complete. The ones that finish first are yielded first. Here's a brief Python code example to illustrate this: ```pyth"
+      "content_preview": "as_completed: The `concurrent.futures.as_completed(fs)` function yields futures objects as they complete. The ones that finish first are yielded first. Here's a brief Python code example to illustrate this: ```python import concurrent.futures import time def task(n): time.sleep(n) # Simulate a long-running task return f\"Task {n} completed\" # Create a list of futures for tasks with different durations with concurrent.futures.ThreadPoolExecutor() as executor: fs = [executor.submit(task, n) for n in range(1, 4)] for future in concurrent.futures.as_completed(fs): print(future.result()) # This will print the results in the order they complete ``` In this example, `as_completed` yields futures as their corresponding tasks finish, and we print the results in the order they are completed."
     }
   ],
   "related_nodes": []

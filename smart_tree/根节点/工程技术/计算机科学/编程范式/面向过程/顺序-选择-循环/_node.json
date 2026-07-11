@@ -9,12 +9,14 @@
   "parent": "面向过程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "顺序-选择-循环: The three basic structures of procedural programming: sequential execution, conditional selection (if-else), and looping (while/for). Here are brief Python code examples for each: 1. **Sequential Execution**: ```python x = 5 y = 10 print(x + y) ``` 2. **Conditional Selection (if-else)**: ```python age = 20 if age >= 18: print(\"You are an adult.\") else: print(\"You are a minor.\") ``` 3. **Looping (while/for)**: - Using `while` loop: ```python count = 0 while count < 5: print(count) count += 1 ``` - Using `for` loop: ```python for i in range(5): print(i) ```"
+  },
   "data_pointers": [
     {
       "title": "顺序-选择-循环",
       "uri": "knowledge://sequence_selection_iteration_v4",
-      "content_preview": "The three basic structures of procedural programming: sequential execution, conditional selection (if-else), and looping (while/for). Here are brief Python code examples for each: 1. **Sequential Exec"
+      "content_preview": "顺序-选择-循环: The three basic structures of procedural programming: sequential execution, conditional selection (if-else), and looping (while/for). Here are brief Python code examples for each: 1. **Sequential Execution**: ```python x = 5 y = 10 print(x + y) ``` 2. **Conditional Selection (if-else)**: ```python age = 20 if age >= 18: print(\"You are an adult.\") else: print(\"You are a minor.\") ``` 3. **Looping (while/for)**: - Using `while` loop: ```python count = 0 while count < 5: print(count) count += 1 ``` - Using `for` loop: ```python for i in range(5): print(i) ```"
     }
   ],
   "related_nodes": []

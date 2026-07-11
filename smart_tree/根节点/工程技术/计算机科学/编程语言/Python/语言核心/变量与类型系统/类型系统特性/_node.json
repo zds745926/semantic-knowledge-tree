@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "变量与类型系统",
   "children": [
-    "类型注解",
-    "鸭子类型"
+    "鸭子类型",
+    "类型注解"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The advanced features of Python's type system include duck typing, type annotations, and scope rules for variables. Tools like mypy can check for type errors at compile time, thereby improving code qu"
+    "description": "类型系统特性: The advanced features of Python's type system include duck typing, type annotations, and scope rules for variables. Tools like mypy can check for type errors at compile time, thereby improving code quality. Python example: ```python # Duck Typing Example def greet(salutation, name): print(f\"{salutation} {name}\") greet(\"Hello\", \"World\") # This will work as long as the arguments support string concatenation # Type Annotations Example from typing import List def process_numbers(numbers: List[int]) -> None: for number in numbers: print(number) process_numbers([1, 2, 3]) # This will work; mypy can catch errors if non-integer values are passed ``` In the example above, `greet` demonstrates duck typing where the function accepts any arguments that support string concatenation. The `process_numbers` function uses type annotations to specify that it expects a list of integers and does not return anything (`None`). This kind of information can be checked by tools like mypy at compile time."
   },
   "data_pointers": [],
   "related_nodes": []

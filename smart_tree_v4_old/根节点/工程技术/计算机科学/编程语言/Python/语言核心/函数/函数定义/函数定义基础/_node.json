@@ -1,0 +1,21 @@
+{
+  "name": "函数定义基础",
+  "node_id": "py_def_basic_v4",
+  "parent_id": "py_func_def_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "函数定义",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "函数定义基础",
+      "uri": "knowledge://py_def_basic_v4",
+      "content_preview": "Translation: A function in Python is defined as `def function_name(parameters): function_body`. It can include positional arguments, default arguments, *args, and **kwargs. Example with brief explanat"
+    }
+  ],
+  "related_nodes": []
+}

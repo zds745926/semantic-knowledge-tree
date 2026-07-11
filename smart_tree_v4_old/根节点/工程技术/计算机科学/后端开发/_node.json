@@ -1,0 +1,22 @@
+{
+  "name": "后端开发",
+  "node_id": "be_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "GraphQL",
+    "REST API",
+    "gRPC",
+    "认证与授权"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Backend development handles server-side logic, API design, and data storage. Key technologies include REST, gRPC, GraphQL, and authentication/authorization. Here's a brief Python code example for impl"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

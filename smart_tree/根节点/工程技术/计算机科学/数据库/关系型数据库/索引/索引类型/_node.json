@@ -9,12 +9,12 @@
   "parent": "索引",
   "children": [
     "B+ 树索引",
-    "全文索引",
-    "哈希索引"
+    "哈希索引",
+    "全文索引"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Different index types are suitable for various query patterns. To illustrate with a simple Python code example using different indexing methods in databases (considering `pandas` DataFrame as an examp"
+    "description": "索引类型: Different index types are suitable for various query patterns. To illustrate with a simple Python code example using different indexing methods in databases (considering `pandas` DataFrame as an example): ```python import pandas as pd # Sample data data = {'Name': ['John', 'Anna', 'Peter', 'Linda'], 'Age': [28, 22, 35, 40], 'City': ['New York', 'Paris', 'Berlin', 'London']} df = pd.DataFrame(data) # Creating a DataFrame with an index df.set_index('Name', inplace=True) print(\"DataFrame with Index set to 'Name':\") print(df) # Using loc for label-based indexing print(\"\\nAccessing data using .loc:\") print(df.loc['Anna']) # Using iloc for integer position based indexing print(\"\\nAccessing data using .iloc:\") print(df.iloc[1]) # Reverting back to default index df.reset_index(inplace=True) ``` This example demonstrates how different types of indexing (`set_index`, `loc`, and `iloc`) can be used in a DataFrame, which is analogous to choosing the right type of index for database queries."
   },
   "data_pointers": [],
   "related_nodes": []

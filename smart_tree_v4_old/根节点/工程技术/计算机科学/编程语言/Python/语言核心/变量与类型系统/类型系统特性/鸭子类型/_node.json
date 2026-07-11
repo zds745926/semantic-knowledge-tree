@@ -1,0 +1,20 @@
+{
+  "name": "鸭子类型",
+  "node_id": "py_duck_typing_v4",
+  "parent_id": "py_type_system_v4",
+  "level": 8,
+  "is_leaf": false,
+  "absorption_rate": 0.13999999999999999,
+  "version": 1,
+  "parent": "类型系统特性",
+  "children": [
+    "协议与鸭子类型",
+    "鸭子类型定义"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Duck typing is a core design philosophy in Python: \"If it walks like a duck and quacks like a duck, then it is a duck.\" In Python, object types are not checked; instead, the presence of required metho"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

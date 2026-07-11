@@ -9,12 +9,14 @@
   "parent": "int 进阶",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "进制转换: `bin(x)` binary, `oct(x)` octal, `hex(x)` hexadecimal. `int('1010', 2)` string to integer. Python code example for conversion: ```python # Example of converting between different numeral systems # Binary to integer binary_str = '1010' integer_from_binary = int(binary_str, 2) print(f\"Binary {binary_str} as integer: {integer_from_binary}\") # Octal to integer octal_str = '12' integer_from_octal = int(octal_str, 8) print(f\"Octal {octal_str} as integer: {integer_from_octal}\") # Hexadecimal to integer hex_str = 'A' integer_from_hex = int(hex_str, 16) print(f\"Hexadecimal {hex_str} as integer: {integer_from_hex}\") ``` This code snippet demonstrates how to convert strings representing numbers in binary, octal, and hexadecimal formats into integers using Python's `int()` function."
+  },
   "data_pointers": [
     {
       "title": "进制转换",
       "uri": "knowledge://py_int_bases_v4",
-      "content_preview": "Translation: `bin(x)` binary, `oct(x)` octal, `hex(x)` hexadecimal. `int('1010', 2)` string to integer. Python code example for conversion: ```python # Example of converting between different numeral "
+      "content_preview": "进制转换: `bin(x)` binary, `oct(x)` octal, `hex(x)` hexadecimal. `int('1010', 2)` string to integer. Python code example for conversion: ```python # Example of converting between different numeral systems # Binary to integer binary_str = '1010' integer_from_binary = int(binary_str, 2) print(f\"Binary {binary_str} as integer: {integer_from_binary}\") # Octal to integer octal_str = '12' integer_from_octal = int(octal_str, 8) print(f\"Octal {octal_str} as integer: {integer_from_octal}\") # Hexadecimal to integer hex_str = 'A' integer_from_hex = int(hex_str, 16) print(f\"Hexadecimal {hex_str} as integer: {integer_from_hex}\") ``` This code snippet demonstrates how to convert strings representing numbers in binary, octal, and hexadecimal formats into integers using Python's `int()` function."
     }
   ],
   "related_nodes": []

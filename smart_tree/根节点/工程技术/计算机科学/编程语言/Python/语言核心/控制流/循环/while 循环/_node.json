@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "循环",
   "children": [
-    "while 典型用法",
-    "while 基础"
+    "while 基础",
+    "while 典型用法"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "While condition loop, often used in iteration scenarios with an uncertain number of iterations. Python code example: ```python # Example of a while loop for an uncertain number of iterations count = 0"
+    "description": "while 循环: While condition loop, often used in iteration scenarios with an uncertain number of iterations. Python code example: ```python # Example of a while loop for an uncertain number of iterations count = 0 while count < 5: print(f\"Count is {count}\") count += 1 ``` This Python code demonstrates a `while` loop that continues to execute as long as the condition (`count < 5`) remains true. Each iteration prints the current value of `count`, and then increments it by 1."
   },
   "data_pointers": [],
   "related_nodes": []

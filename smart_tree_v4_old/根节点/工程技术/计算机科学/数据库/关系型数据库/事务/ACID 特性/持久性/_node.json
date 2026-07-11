@@ -1,0 +1,21 @@
+{
+  "name": "持久性",
+  "node_id": "durability_v4",
+  "parent_id": "tx_ac_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "ACID 特性",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "持久性",
+      "uri": "knowledge://durability_v4",
+      "content_preview": "The committed results are permanently stored. Redo logs are used for replaying transactions. Here is a brief explanation of \"Redo logs\" with an associated Python code example to illustrate how they mi"
+    }
+  ],
+  "related_nodes": []
+}

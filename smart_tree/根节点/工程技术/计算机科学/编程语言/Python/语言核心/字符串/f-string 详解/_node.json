@@ -9,12 +9,14 @@
   "parent": "字符串",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "f-string 详解: The given Chinese text can be translated to English as follows: `f'...{expression}...' Embed variables. Format specifiers: {x:.2f} for retaining two decimal places, {x:>10} for right-aligning. Here is a brief Python code example demonstrating the use of these format specifiers: ```python value = 3.14159 # Using .2f to retain two decimal places formatted_value_1 = f'Value: {value:.2f}' print(formatted_value_1) # Output: Value: 3.14 # Using >10 for right-aligning formatted_value_2 = f'{value:>10.2f}' print(formatted_value_2) # Output: 3.14 ``` In this example, `:.2f` is used to format the floating-point number to retain two decimal places, and `:>10.2f` is used for right-aligning the formatted value within a field of width 10 characters."
+  },
   "data_pointers": [
     {
       "title": "f-string 详解",
       "uri": "knowledge://py_fstring_v4",
-      "content_preview": "The given Chinese text can be translated to English as follows: `f'...{expression}...' Embed variables. Format specifiers: {x:.2f} for retaining two decimal places, {x:>10} for right-aligning. Here is"
+      "content_preview": "f-string 详解: The given Chinese text can be translated to English as follows: `f'...{expression}...' Embed variables. Format specifiers: {x:.2f} for retaining two decimal places, {x:>10} for right-aligning. Here is a brief Python code example demonstrating the use of these format specifiers: ```python value = 3.14159 # Using .2f to retain two decimal places formatted_value_1 = f'Value: {value:.2f}' print(formatted_value_1) # Output: Value: 3.14 # Using >10 for right-aligning formatted_value_2 = f'{value:>10.2f}' print(formatted_value_2) # Output: 3.14 ``` In this example, `:.2f` is used to format the floating-point number to retain two decimal places, and `:>10.2f` is used for right-aligning the formatted value within a field of width 10 characters."
     }
   ],
   "related_nodes": []

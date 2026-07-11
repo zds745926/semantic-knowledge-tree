@@ -9,12 +9,14 @@
   "parent": "多进程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Pool 进程池: Pool.map/apply/starmap. Process reuse. map is unordered/apply is ordered. Here are brief explanations and corresponding Python code examples for each: 1. **`Pool.map()`**: - This function applies a given function to all items in an iterable argument, as if calling the function a pool of workers. - The results are returned in a list, but not necessarily in the order you might expect because it processes tasks concurrently. ```python from multiprocessing import Pool def f(x): return x * x with Pool(processes=4) as p: result = p.map(f, [1, 2, 3]) print(result) # Output: [1, 4, 9] or any other order ``` 2. **`Pool.apply()`**: - This function submits a task to the process pool and waits for the result. - The results are returned in the order they were submitted. ```python from multiprocessing import Pool def f(x): return x * x with Pool(processes=4) as p: result = p.apply(f, [2]) print(result) # Output: 4 ``` 3. **`Pool.starmap()`**: - This function is similar to `map()`, but it works on tuples of arguments. - It applies the function to each tuple in the iterable argument. ```python from multiprocessing import Pool def f(x, y): return x + y with Pool(processes=4) as p: result = p.starmap(f, [(1, 2), (3, 4)]) print(result) # Output: [3, 7] ``` These examples illustrate the differences in how `map`, `apply`, and `starmap` functions work with multiprocessing pools."
+  },
   "data_pointers": [
     {
       "title": "Pool 进程池",
       "uri": "knowledge://py_pool_v4",
-      "content_preview": "Pool.map/apply/starmap. Process reuse. map is unordered/apply is ordered. Here are brief explanations and corresponding Python code examples for each: 1. **`Pool.map()`**: - This function applies a gi"
+      "content_preview": "Pool 进程池: Pool.map/apply/starmap. Process reuse. map is unordered/apply is ordered. Here are brief explanations and corresponding Python code examples for each: 1. **`Pool.map()`**: - This function applies a given function to all items in an iterable argument, as if calling the function a pool of workers. - The results are returned in a list, but not necessarily in the order you might expect because it processes tasks concurrently. ```python from multiprocessing import Pool def f(x): return x * x with Pool(processes=4) as p: result = p.map(f, [1, 2, 3]) print(result) # Output: [1, 4, 9] or any other order ``` 2. **`Pool.apply()`**: - This function submits a task to the process pool and waits for the result. - The results are returned in the order they were submitted. ```python from multiprocessing import Pool def f(x): return x * x with Pool(processes=4) as p: result = p.apply(f, [2]) print(result) # Output: 4 ``` 3. **`Pool.starmap()`**: - This function is similar to `map()`, but it works on tuples of arguments. - It applies the function to each tuple in the iterable argument. ```python from multiprocessing import Pool def f(x, y): return x + y with Pool(processes=4) as p: result = p.starmap(f, [(1, 2), (3, 4)]) print(result) # Output: [3, 7] ``` These examples illustrate the differences in how `map`, `apply`, and `starmap` functions work with multiprocessing pools."
     }
   ],
   "related_nodes": []

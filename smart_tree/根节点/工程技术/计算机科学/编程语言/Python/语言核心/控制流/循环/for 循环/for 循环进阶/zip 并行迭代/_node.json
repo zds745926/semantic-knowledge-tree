@@ -9,12 +9,14 @@
   "parent": "for 循环进阶",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "zip 并行迭代: The `zip(iter1, iter2)` function parallelly iterates over multiple sequences and pairs elements from the same index positions. The `zip_longest` variant fills in missing values with a specified fill value until the longest sequence is exhausted. Here's an example using Python: ```python # Example of using zip to iterate over two lists list1 = [1, 2, 3] list2 = ['a', 'b', 'c'] for x, y in zip(list1, list2): print(x, y) # Output: # 1 a # 2 b # 3 c # Example of using zip_longest to handle sequences of different lengths from itertools import zip_longest list1 = [1, 2, 3] list2 = ['a', 'b'] for x, y in zip_longest(list1, list2, fillvalue='z'): print(x, y) # Output: # 1 a # 2 b # 3 z ``` In the examples above, `zip` pairs elements from `list1` and `list2` based on their index positions. When the sequences have different lengths, `zip_longest` continues to yield pairs until all input iterables are exhausted, filling in missing values with 'z'."
+  },
   "data_pointers": [
     {
       "title": "zip 并行迭代",
       "uri": "knowledge://py_for_zip_v4",
-      "content_preview": "The `zip(iter1, iter2)` function parallelly iterates over multiple sequences and pairs elements from the same index positions. The `zip_longest` variant fills in missing values with a specified fill v"
+      "content_preview": "zip 并行迭代: The `zip(iter1, iter2)` function parallelly iterates over multiple sequences and pairs elements from the same index positions. The `zip_longest` variant fills in missing values with a specified fill value until the longest sequence is exhausted. Here's an example using Python: ```python # Example of using zip to iterate over two lists list1 = [1, 2, 3] list2 = ['a', 'b', 'c'] for x, y in zip(list1, list2): print(x, y) # Output: # 1 a # 2 b # 3 c # Example of using zip_longest to handle sequences of different lengths from itertools import zip_longest list1 = [1, 2, 3] list2 = ['a', 'b'] for x, y in zip_longest(list1, list2, fillvalue='z'): print(x, y) # Output: # 1 a # 2 b # 3 z ``` In the examples above, `zip` pairs elements from `list1` and `list2` based on their index positions. When the sequences have different lengths, `zip_longest` continues to yield pairs until all input iterables are exhausted, filling in missing values with 'z'."
     }
   ],
   "related_nodes": []

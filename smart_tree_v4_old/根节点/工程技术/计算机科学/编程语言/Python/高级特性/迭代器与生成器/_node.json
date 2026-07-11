@@ -1,0 +1,22 @@
+{
+  "name": "迭代器与生成器",
+  "node_id": "py_iter_gen_v4",
+  "parent_id": "py_adv_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "高级特性",
+  "children": [
+    "yield from",
+    "生成器 yield",
+    "生成器表达式",
+    "迭代器协议"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "The iterator protocol and generators are the core mechanisms for lazy evaluation in Python, saving memory. To provide a more detailed explanation, let's delve into how these concepts work with some Py"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

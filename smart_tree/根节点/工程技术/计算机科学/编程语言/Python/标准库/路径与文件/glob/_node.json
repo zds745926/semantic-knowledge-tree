@@ -9,12 +9,14 @@
   "parent": "路径与文件",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "glob: The `glob.glob('**/*.py', recursive=True)` function performs file pattern matching. It is equivalent to using `Path.glob` from the `pathlib` module. ### Python Example: ```python from glob import glob # Using glob to find all .py files recursively matching_files = glob('**/*.py', recursive=True) print(matching_files) ``` This code will print a list of all `.py` files found in the current directory and its subdirectories."
+  },
   "data_pointers": [
     {
       "title": "glob",
       "uri": "knowledge://py_glob_v4",
-      "content_preview": "The `glob.glob('**/*.py', recursive=True)` function performs file pattern matching. It is equivalent to using `Path.glob` from the `pathlib` module. ### Python Example: ```python from glob import glob"
+      "content_preview": "glob: The `glob.glob('**/*.py', recursive=True)` function performs file pattern matching. It is equivalent to using `Path.glob` from the `pathlib` module. ### Python Example: ```python from glob import glob # Using glob to find all .py files recursively matching_files = glob('**/*.py', recursive=True) print(matching_files) ``` This code will print a list of all `.py` files found in the current directory and its subdirectories."
     }
   ],
   "related_nodes": []

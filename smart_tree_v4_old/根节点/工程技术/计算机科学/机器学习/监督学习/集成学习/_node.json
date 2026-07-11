@@ -1,0 +1,20 @@
+{
+  "name": "集成学习",
+  "node_id": "ensemble_v4",
+  "parent_id": "supervised_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "监督学习",
+  "children": [
+    "梯度提升树 GBDT",
+    "随机森林"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Ensemble learning combines multiple weak learners to enhance performance. Python code example: ```python from sklearn.ensemble import BaggingClassifier from sklearn.tree import DecisionTreeClassifier "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

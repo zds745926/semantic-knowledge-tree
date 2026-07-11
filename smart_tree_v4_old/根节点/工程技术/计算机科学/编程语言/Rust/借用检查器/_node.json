@@ -1,0 +1,21 @@
+{
+  "name": "借用检查器",
+  "node_id": "rust_borrow_checker_v4",
+  "parent_id": "rust_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Rust",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "借用检查器",
+      "uri": "knowledge://rust_borrow_checker_v4",
+      "content_preview": "Compile-time Analysis of References: A mutable reference or multiple immutable references cannot coexist simultaneously. To illustrate this with a simple Python code example, consider the following sc"
+    }
+  ],
+  "related_nodes": []
+}

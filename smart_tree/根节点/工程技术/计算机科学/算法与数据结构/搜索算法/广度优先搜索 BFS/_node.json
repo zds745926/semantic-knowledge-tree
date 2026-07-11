@@ -9,13 +9,17 @@
   "parent": "搜索算法",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "广度优先搜索 BFS: Breadth-first traversal using a queue to find the shortest path. Time complexity: O(V + E). Applications: mazes/social networks. Python code example for breadth-first search (BFS): ```python from collections import deque def bfs(graph, start): visited = set() queue = deque([start]) while queue: vertex = queue.popleft() if vertex not in visited: print(vertex) visited.add(vertex) # Add all the neighbors of the current node to the queue for neighbor in graph[vertex]: if neighbor not in visited: queue.append(neighbor) # Example graph represented as an adjacency list graph = { 'A': ['B', 'C'], 'B': ['A', 'D', 'E'], 'C': ['A', 'F'], 'D': ['B'], 'E': ['B', 'F'], 'F': ['C', 'E'] } bfs(graph, 'A') ``` This Python code defines a function `bfs` that performs a breadth-first search on a graph starting from a given node. The graph is represented as an adjacency list, and the BFS algorithm uses a queue to keep track of nodes to visit."
+  },
   "data_pointers": [
     {
       "title": "广度优先搜索 BFS",
       "uri": "knowledge://bfs_v4",
-      "content_preview": "Breadth-first traversal using a queue to find the shortest path. Time complexity: O(V + E). Applications: mazes/social networks. Python code example for breadth-first search (BFS): ```python from coll"
+      "content_preview": "广度优先搜索 BFS: Breadth-first traversal using a queue to find the shortest path. Time complexity: O(V + E). Applications: mazes/social networks. Python code example for breadth-first search (BFS): ```python from collections import deque def bfs(graph, start): visited = set() queue = deque([start]) while queue: vertex = queue.popleft() if vertex not in visited: print(vertex) visited.add(vertex) # Add all the neighbors of the current node to the queue for neighbor in graph[vertex]: if neighbor not in visited: queue.append(neighbor) # Example graph represented as an adjacency list graph = { 'A': ['B', 'C'], 'B': ['A', 'D', 'E'], 'C': ['A', 'F'], 'D': ['B'], 'E': ['B', 'F'], 'F': ['C', 'E'] } bfs(graph, 'A') ``` This Python code defines a function `bfs` that performs a breadth-first search on a graph starting from a given node. The graph is represented as an adjacency list, and the BFS algorithm uses a queue to keep track of nodes to visit."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "dfs_v4"
+  ]
 }

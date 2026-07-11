@@ -9,12 +9,14 @@
   "parent": "I/O 管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "DMA: The device directly reads and writes memory without occupying the CPU. Transmission completion triggers an interrupt notification. This is essential for high-speed devices. Python code example (to illustrate direct memory access, though actual hardware interaction would be done via system calls or specific library functions): ```python import mmap import os # Open a file in binary mode for memory mapping with open(\"example.txt\", \"r+b\") as f: # Map the file into memory mm = mmap.mmap(f.fileno(), 0) # Directly write to the mapped memory (simulating direct hardware access) mm[10:20] = b\"direct write\" # Flush changes to disk mm.flush() # Close the mapping mm.close() # This is a simplified example. Actual device interaction would require specific drivers or system calls. ``` Note: The above Python code uses memory-mapped files as an analogy for direct hardware access, but actual low-level device interactions typically involve operating system-specific APIs and drivers."
+  },
   "data_pointers": [
     {
       "title": "DMA",
       "uri": "knowledge://dma_v4",
-      "content_preview": "The device directly reads and writes memory without occupying the CPU. Transmission completion triggers an interrupt notification. This is essential for high-speed devices. Python code example (to ill"
+      "content_preview": "DMA: The device directly reads and writes memory without occupying the CPU. Transmission completion triggers an interrupt notification. This is essential for high-speed devices. Python code example (to illustrate direct memory access, though actual hardware interaction would be done via system calls or specific library functions): ```python import mmap import os # Open a file in binary mode for memory mapping with open(\"example.txt\", \"r+b\") as f: # Map the file into memory mm = mmap.mmap(f.fileno(), 0) # Directly write to the mapped memory (simulating direct hardware access) mm[10:20] = b\"direct write\" # Flush changes to disk mm.flush() # Close the mapping mm.close() # This is a simplified example. Actual device interaction would require specific drivers or system calls. ``` Note: The above Python code uses memory-mapped files as an analogy for direct hardware access, but actual low-level device interactions typically involve operating system-specific APIs and drivers."
     }
   ],
   "related_nodes": []

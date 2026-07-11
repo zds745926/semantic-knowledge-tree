@@ -9,13 +9,17 @@
   "parent": "多线程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Lock 与 RLock: Threading.Lock is an exclusive lock (non-reentrant). RLock is a reentrant lock, meaning the same thread can acquire it multiple times. Here are brief Python code examples for both: For `threading.Lock`: ```python import threading lock = threading.Lock() def worker(): with lock: print(\"Thread {} acquired the lock\".format(threading.current_thread().name)) # Critical section of code here ``` For `threading.RLock`: ```python import threading rlock = threading.RLock() def worker(): with rlock: print(\"Thread {} acquired the reentrant lock\".format(threading.current_thread().name)) # Critical section of code here with rlock: # This is allowed because it's a reentrant lock print(\"Thread {} acquired the reentrant lock again\".format(threading.current_thread().name)) ``` These examples demonstrate how to use both types of locks in Python."
+  },
   "data_pointers": [
     {
       "title": "Lock 与 RLock",
       "uri": "knowledge://py_lock_v4",
-      "content_preview": "Threading.Lock is an exclusive lock (non-reentrant). RLock is a reentrant lock, meaning the same thread can acquire it multiple times. Here are brief Python code examples for both: For `threading.Lock"
+      "content_preview": "Lock 与 RLock: Threading.Lock is an exclusive lock (non-reentrant). RLock is a reentrant lock, meaning the same thread can acquire it multiple times. Here are brief Python code examples for both: For `threading.Lock`: ```python import threading lock = threading.Lock() def worker(): with lock: print(\"Thread {} acquired the lock\".format(threading.current_thread().name)) # Critical section of code here ``` For `threading.RLock`: ```python import threading rlock = threading.RLock() def worker(): with rlock: print(\"Thread {} acquired the reentrant lock\".format(threading.current_thread().name)) # Critical section of code here with rlock: # This is allowed because it's a reentrant lock print(\"Thread {} acquired the reentrant lock again\".format(threading.current_thread().name)) ``` These examples demonstrate how to use both types of locks in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_thread_sync_v4"
+  ]
 }

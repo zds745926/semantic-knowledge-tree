@@ -9,13 +9,17 @@
   "parent": "HTTP 核心",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "HTTP 方法: GET/POST/PUT/DELETE/PATCH/HEAD/OPTIONS. These are HTTP methods used in web development to interact with resources on a server. Here's a brief explanation of each: - **GET**: Requests a representation of the specified resource. - **POST**: Submits an entity to the specified resource, often for handling forms or creating new resources. - **PUT**: Replaces all current representations of the target resource with the request payload. - **DELETE**: Deletes the specified resource. - **PATCH**: Applies partial modifications to a resource. - **HEAD**: Similar to GET but without the response body; used to check if a resource exists and get its metadata. - **OPTIONS**: Returns the HTTP methods that the server supports for the specified URL. Here's a Python code example using Flask, a popular web framework in Python: ```python from flask import Flask, request app = Flask(__name__) @app.route('/example', methods=['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS']) def handle_request(): if request.method == 'GET': return \"This is a GET request\" elif request.method == 'POST': # Handle POST data pass elif request.method == 'PUT': # Handle PUT data pass elif request.method == 'DELETE': # Handle DELETE operation pass elif request.method == 'PATCH': # Handle PATCH data pass elif request.method == 'HEAD': return \"\", 200, {'Content-Length': '0'} elif request.method == 'OPTIONS': # Return allowed methods return '', 200, { 'Allow': ', '.join(['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS']) } if __name__ == '__main__': app.run(debug=True) ``` This example sets up a Flask application that can handle all the mentioned HTTP methods."
+  },
   "data_pointers": [
     {
       "title": "HTTP 方法",
       "uri": "knowledge://http_methods_v4",
-      "content_preview": "GET/POST/PUT/DELETE/PATCH/HEAD/OPTIONS. These are HTTP methods used in web development to interact with resources on a server. Here's a brief explanation of each: - **GET**: Requests a representation "
+      "content_preview": "HTTP 方法: GET/POST/PUT/DELETE/PATCH/HEAD/OPTIONS. These are HTTP methods used in web development to interact with resources on a server. Here's a brief explanation of each: - **GET**: Requests a representation of the specified resource. - **POST**: Submits an entity to the specified resource, often for handling forms or creating new resources. - **PUT**: Replaces all current representations of the target resource with the request payload. - **DELETE**: Deletes the specified resource. - **PATCH**: Applies partial modifications to a resource. - **HEAD**: Similar to GET but without the response body; used to check if a resource exists and get its metadata. - **OPTIONS**: Returns the HTTP methods that the server supports for the specified URL. Here's a Python code example using Flask, a popular web framework in Python: ```python from flask import Flask, request app = Flask(__name__) @app.route('/example', methods=['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS']) def handle_request(): if request.method == 'GET': return \"This is a GET request\" elif request.method == 'POST': # Handle POST data pass elif request.method == 'PUT': # Handle PUT data pass elif request.method == 'DELETE': # Handle DELETE operation pass elif request.method == 'PATCH': # Handle PATCH data pass elif request.method == 'HEAD': return \"\", 200, {'Content-Length': '0'} elif request.method == 'OPTIONS': # Return allowed methods return '', 200, { 'Allow': ', '.join(['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS']) } if __name__ == '__main__': app.run(debug=True) ``` This example sets up a Flask application that can handle all the mentioned HTTP methods."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "http_status_v4"
+  ]
 }

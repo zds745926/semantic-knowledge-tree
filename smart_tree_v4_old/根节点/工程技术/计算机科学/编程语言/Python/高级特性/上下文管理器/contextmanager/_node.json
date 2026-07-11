@@ -1,0 +1,21 @@
+{
+  "name": "contextmanager",
+  "node_id": "py_contextlib_v4",
+  "parent_id": "py_context_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "上下文管理器",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "contextmanager",
+      "uri": "knowledge://py_contextlib_v4",
+      "content_preview": "The `@contextmanager` decorator function is used in Python for context management. The code within the function runs before the `yield` statement when entering the context, and any code after the `yie"
+    }
+  ],
+  "related_nodes": []
+}

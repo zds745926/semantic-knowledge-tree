@@ -9,12 +9,14 @@
   "parent": "路径与文件",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "fnmatch: `fnmatch.fnmatch('file.txt', '*.txt')`: Unix-style filename matching. `fnmatch.filter`. Python Code Example for `fnmatch.fnmatch`: ```python import fnmatch # Check if a file name matches the pattern matches = fnmatch.fnmatch('file.txt', '*.txt') print(matches) # Output: True ``` Explanation: The `fnmatch.fnmatch` function checks whether a filename (or pathname) matches a given shell-style wildcard pattern. In this example, it verifies that 'file.txt' matches the pattern '*.txt', which is true. Python Code Example for `fnmatch.filter`: ```python import fnmatch # Filter a list of filenames based on a pattern filenames = ['file1.txt', 'image.png', 'notes.txt', 'report.pdf'] matching_files = fnmatch.filter(filenames, '*.txt') print(matching_files) # Output: ['file1.txt', 'notes.txt'] ``` Explanation: The `fnmatch.filter` function returns a list of paths that match the given pattern. In this example, it filters out all filenames from the list that do not end with '.txt'."
+  },
   "data_pointers": [
     {
       "title": "fnmatch",
       "uri": "knowledge://py_fnmatch_v4",
-      "content_preview": "Translation: `fnmatch.fnmatch('file.txt', '*.txt')`: Unix-style filename matching. `fnmatch.filter`. Python Code Example for `fnmatch.fnmatch`: ```python import fnmatch # Check if a file name matches "
+      "content_preview": "fnmatch: `fnmatch.fnmatch('file.txt', '*.txt')`: Unix-style filename matching. `fnmatch.filter`. Python Code Example for `fnmatch.fnmatch`: ```python import fnmatch # Check if a file name matches the pattern matches = fnmatch.fnmatch('file.txt', '*.txt') print(matches) # Output: True ``` Explanation: The `fnmatch.fnmatch` function checks whether a filename (or pathname) matches a given shell-style wildcard pattern. In this example, it verifies that 'file.txt' matches the pattern '*.txt', which is true. Python Code Example for `fnmatch.filter`: ```python import fnmatch # Filter a list of filenames based on a pattern filenames = ['file1.txt', 'image.png', 'notes.txt', 'report.pdf'] matching_files = fnmatch.filter(filenames, '*.txt') print(matching_files) # Output: ['file1.txt', 'notes.txt'] ``` Explanation: The `fnmatch.filter` function returns a list of paths that match the given pattern. In this example, it filters out all filenames from the list that do not end with '.txt'."
     }
   ],
   "related_nodes": []

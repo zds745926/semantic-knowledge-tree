@@ -9,12 +9,14 @@
   "parent": "标准库",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "sys 模块: The `sys` module accesses interpreter variables and functions: `sys.argv` for command-line arguments, `sys.path` for module search paths, and `sys.exit` to exit. Here are brief Python code examples for each concept: 1. **Accessing Command-Line Arguments (`sys.argv`):** ```python import sys # Example usage print(\"Command line arguments:\", sys.argv) ``` 2. **Using Module Search Paths (`sys.path`):** ```python import sys # Print the current module search paths print(\"Module search paths:\", sys.path) ``` 3. **Exiting the Program (`sys.exit`):** ```python import sys # Example usage to exit the program with an error code 1 sys.exit(1) ``` These examples illustrate how to use `sys.argv`, `sys.path`, and `sys.exit` in Python."
+  },
   "data_pointers": [
     {
       "title": "sys 模块",
       "uri": "knowledge://py_sys_module_v4",
-      "content_preview": "The `sys` module accesses interpreter variables and functions: `sys.argv` for command-line arguments, `sys.path` for module search paths, and `sys.exit` to exit. Here are brief Python code examples fo"
+      "content_preview": "sys 模块: The `sys` module accesses interpreter variables and functions: `sys.argv` for command-line arguments, `sys.path` for module search paths, and `sys.exit` to exit. Here are brief Python code examples for each concept: 1. **Accessing Command-Line Arguments (`sys.argv`):** ```python import sys # Example usage print(\"Command line arguments:\", sys.argv) ``` 2. **Using Module Search Paths (`sys.path`):** ```python import sys # Print the current module search paths print(\"Module search paths:\", sys.path) ``` 3. **Exiting the Program (`sys.exit`):** ```python import sys # Example usage to exit the program with an error code 1 sys.exit(1) ``` These examples illustrate how to use `sys.argv`, `sys.path`, and `sys.exit` in Python."
     }
   ],
   "related_nodes": []

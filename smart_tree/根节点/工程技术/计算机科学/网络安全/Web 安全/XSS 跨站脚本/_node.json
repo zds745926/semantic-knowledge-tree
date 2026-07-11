@@ -9,13 +9,17 @@
   "parent": "Web 安全",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "XSS 跨站脚本: Reflection/Storage/DOM Type. CSP/HttpOnly Cookie Protection. ### Explanation: - **Reflection/Storage/DOM Type**: This refers to the different types of Cross-Site Scripting (XSS) attacks, where data is reflected back to the user, stored on the server or in a database, or manipulated within the Document Object Model (DOM). - **CSP/HttpOnly Cookie Protection**: These are security measures used to protect against certain types of web attacks. - **Content Security Policy (CSP)**: A header that helps mitigate some forms of malicious content being injected into a webpage. - **HttpOnly Cookie**: A flag added to cookies to prevent client-side scripts from accessing them, reducing the risk of theft via Cross-Site Scripting (XSS). ### Python Code Example for HttpOnly Cookie: ```python from flask import Flask, make_response app = Flask(__name__) @app.route('/set_cookie') def set_cookie(): response = make_response(\"Cookie has been set.\") # Setting an HttpOnly cookie response.set_cookie('username', 'testuser', httponly=True) return response if __name__ == '__main__': app.run(debug=True) ``` This example demonstrates setting a cookie with the `httponly` flag using Flask, a popular Python web framework."
+  },
   "data_pointers": [
     {
       "title": "XSS 跨站脚本",
       "uri": "knowledge://xss_v4",
-      "content_preview": "Reflection/Storage/DOM Type. CSP/HttpOnly Cookie Protection. ### Explanation: - **Reflection/Storage/DOM Type**: This refers to the different types of Cross-Site Scripting (XSS) attacks, where data is"
+      "content_preview": "XSS 跨站脚本: Reflection/Storage/DOM Type. CSP/HttpOnly Cookie Protection. ### Explanation: - **Reflection/Storage/DOM Type**: This refers to the different types of Cross-Site Scripting (XSS) attacks, where data is reflected back to the user, stored on the server or in a database, or manipulated within the Document Object Model (DOM). - **CSP/HttpOnly Cookie Protection**: These are security measures used to protect against certain types of web attacks. - **Content Security Policy (CSP)**: A header that helps mitigate some forms of malicious content being injected into a webpage. - **HttpOnly Cookie**: A flag added to cookies to prevent client-side scripts from accessing them, reducing the risk of theft via Cross-Site Scripting (XSS). ### Python Code Example for HttpOnly Cookie: ```python from flask import Flask, make_response app = Flask(__name__) @app.route('/set_cookie') def set_cookie(): response = make_response(\"Cookie has been set.\") # Setting an HttpOnly cookie response.set_cookie('username', 'testuser', httponly=True) return response if __name__ == '__main__': app.run(debug=True) ``` This example demonstrates setting a cookie with the `httponly` flag using Flask, a popular Python web framework."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "csrf_v4"
+  ]
 }

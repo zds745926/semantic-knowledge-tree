@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python comes with a rich set of built-in data structures: lists, dictionaries, sets, and tuples. These data structures are carefully optimized and form the foundation of Python programming. Here are b"
+    "description": "内置数据结构: Python comes with a rich set of built-in data structures: lists, dictionaries, sets, and tuples. These data structures are carefully optimized and form the foundation of Python programming. Here are brief examples in Python for each: - **List**: A collection of items that can be of different types. ```python my_list = [1, \"apple\", 3.14] ``` - **Dictionary**: An unordered collection of key-value pairs. ```python my_dict = {\"name\": \"Alice\", \"age\": 25} ``` - **Set**: A collection of unique elements. ```python my_set = {1, 2, 3, 4} ``` - **Tuple**: An immutable sequence of items. ```python my_tuple = (1, \"banana\", 3.14) ```"
   },
   "data_pointers": [],
   "related_nodes": []

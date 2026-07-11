@@ -9,12 +9,14 @@
   "parent": "多线程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "线程安全: Atomic operations (int/float assignments) are thread-safe. Lists and similar non-atomic structures are not. `threading.settrace` is used to set a trace function for all threads. Python code example: ```python import threading # Atomic operation - safe in multi-threaded environment x = 0 def increment(): global x x += 1 # This is an atomic operation in CPython due to the Global Interpreter Lock (GIL) # Non-atomic operation - unsafe in a multi-threaded environment without proper synchronization y = [0] def append_to_list(): y.append(1) # This is not thread-safe because multiple threads can interfere with each other # Using threading.settrace to trace all threads def my_tracefunc(frame, event, arg): if event == 'call': print(f\"Function {frame.f_code.co_name} called\") return my_tracefunc threading.settrace(my_tracefunc) ``` Note: The `x += 1` operation is generally considered atomic in CPython due to the Global Interpreter Lock (GIL), but it's important to understand that this doesn't apply universally across all Python implementations. For more complex operations, explicit synchronization mechanisms like locks are necessary."
+  },
   "data_pointers": [
     {
       "title": "线程安全",
       "uri": "knowledge://py_thread_safety_v4",
-      "content_preview": "Atomic operations (int/float assignments) are thread-safe. Lists and similar non-atomic structures are not. `threading.settrace` is used to set a trace function for all threads. Python code example: `"
+      "content_preview": "线程安全: Atomic operations (int/float assignments) are thread-safe. Lists and similar non-atomic structures are not. `threading.settrace` is used to set a trace function for all threads. Python code example: ```python import threading # Atomic operation - safe in multi-threaded environment x = 0 def increment(): global x x += 1 # This is an atomic operation in CPython due to the Global Interpreter Lock (GIL) # Non-atomic operation - unsafe in a multi-threaded environment without proper synchronization y = [0] def append_to_list(): y.append(1) # This is not thread-safe because multiple threads can interfere with each other # Using threading.settrace to trace all threads def my_tracefunc(frame, event, arg): if event == 'call': print(f\"Function {frame.f_code.co_name} called\") return my_tracefunc threading.settrace(my_tracefunc) ``` Note: The `x += 1` operation is generally considered atomic in CPython due to the Global Interpreter Lock (GIL), but it's important to understand that this doesn't apply universally across all Python implementations. For more complex operations, explicit synchronization mechanisms like locks are necessary."
     }
   ],
   "related_nodes": []

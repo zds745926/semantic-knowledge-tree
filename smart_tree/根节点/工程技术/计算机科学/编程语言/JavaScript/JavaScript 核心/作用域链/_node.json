@@ -9,12 +9,14 @@
   "parent": "JavaScript 核心",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "作用域链: Variable lookup traverses up the scope chain. `let` and `const` define block-level scope. Closures retain references to external variables. Here's a brief Python code example to illustrate these concepts: ```python def outer_function(): x = 10 # This is in the outer function's scope def inner_function(): print(x) # Accessing the variable from the outer scope inner_function() # This will print 10 outer_function() ``` In this example, `inner_function` has access to the variable `x` defined in the `outer_function`, demonstrating how closures retain references to external variables. Note that Python uses lexical scoping, which is similar to block-level scope with `let` and `const` in JavaScript."
+  },
   "data_pointers": [
     {
       "title": "作用域链",
       "uri": "knowledge://js_scope_chain_v4",
-      "content_preview": "Variable lookup traverses up the scope chain. `let` and `const` define block-level scope. Closures retain references to external variables. Here's a brief Python code example to illustrate these conce"
+      "content_preview": "作用域链: Variable lookup traverses up the scope chain. `let` and `const` define block-level scope. Closures retain references to external variables. Here's a brief Python code example to illustrate these concepts: ```python def outer_function(): x = 10 # This is in the outer function's scope def inner_function(): print(x) # Accessing the variable from the outer scope inner_function() # This will print 10 outer_function() ``` In this example, `inner_function` has access to the variable `x` defined in the `outer_function`, demonstrating how closures retain references to external variables. Note that Python uses lexical scoping, which is similar to block-level scope with `let` and `const` in JavaScript."
     }
   ],
   "related_nodes": []

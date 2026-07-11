@@ -1,0 +1,21 @@
+{
+  "name": "归并排序",
+  "node_id": "merge_sort_v4",
+  "parent_id": "sort_compare_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "比较排序",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "归并排序",
+      "uri": "knowledge://merge_sort_v4",
+      "content_preview": "Divide and Conquer: Split in half → Recursion → Merge. Stable O(n log n). Requires O(n) space. External sorting criterion. Here's a brief Python code example for the merge step of the divide and conqu"
+    }
+  ],
+  "related_nodes": []
+}

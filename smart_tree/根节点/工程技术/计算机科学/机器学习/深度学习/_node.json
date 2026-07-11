@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "机器学习",
   "children": [
+    "神经网络基础",
     "CNN",
-    "Transformer",
-    "神经网络基础"
+    "Transformer"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Deep learning uses multi-layer neural networks to learn complex patterns and representations. The core architectures include Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), and T"
+    "description": "深度学习: Deep learning uses multi-layer neural networks to learn complex patterns and representations. The core architectures include Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), and Transformers. Here are brief Python code examples for each: 1. **Convolutional Neural Network (CNN):** ```python from tensorflow.keras import layers, models def create_cnn(): model = models.Sequential() model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3))) model.add(layers.MaxPooling2D((2, 2))) model.add(layers.Conv2D(64, (3, 3), activation='relu')) model.add(layers.MaxPooling2D((2, 2))) model.add(layers.Flatten()) model.add(layers.Dense(64, activation='relu')) model.add(layers.Dense(10)) # Assuming a classification task with 10 classes return model cnn_model = create_cnn() ``` 2. **Recurrent Neural Network (RNN):** ```python from tensorflow.keras import layers, models def create_rnn(): model = models.Sequential() model.add(layers.SimpleRNN(50, input_shape=(100, 64))) model.add(layers.Dense(32, activation='relu')) model.add(layers.Dense(1)) # Assuming a regression task return model rnn_model = create_rnn() ``` 3. **Transformer:** ```python from transformers import TFAutoModelForSequenceClassification # Using Hugging Face's Transformers library for simplicity model = TFAutoModelForSequenceClassification.from_pretrained('bert-base-uncased') ``` These examples provide a basic structure to get started with each architecture in Python."
   },
   "data_pointers": [],
   "related_nodes": []

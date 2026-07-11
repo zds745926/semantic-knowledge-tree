@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "A dictionary is a key-value mapping structure where keys must be hashable. In Python 3.7+, dictionaries preserve the insertion order. Here's a brief example of using a dictionary in Python: ```python "
+    "description": "字典 dict: A dictionary is a key-value mapping structure where keys must be hashable. In Python 3.7+, dictionaries preserve the insertion order. Here's a brief example of using a dictionary in Python: ```python # Creating a dictionary with initial values my_dict = {'apple': 1, 'banana': 2, 'cherry': 3} # Accessing values by key print(my_dict['apple']) # Output: 1 # Adding a new key-value pair my_dict['date'] = 4 print(my_dict) # Output: {'apple': 1, 'banana': 2, 'cherry': 3, 'date': 4} # Iterating over keys and values for key, value in my_dict.items(): print(f\"{key}: {value}\") ``` This example demonstrates creating a dictionary, accessing its values, adding new entries, and iterating over the items."
   },
   "data_pointers": [],
   "related_nodes": []

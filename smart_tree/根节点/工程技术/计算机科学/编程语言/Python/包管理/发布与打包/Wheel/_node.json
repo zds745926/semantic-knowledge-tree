@@ -9,12 +9,14 @@
   "parent": "发布与打包",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Wheel: .whl Binary distribution format. pip install is faster than installing from source code. Pure Python/platform-specific wheel. Here's an explanation with a brief Python code example to illustrate the use of `.whl` files: ```python # Example of using pip to install a package in .whl format import subprocess def install_wheel(package_name): \"\"\" Install a package using pip in .whl format. :param package_name: Name of the package (e.g., \"numpy-1.21.0-cp39-cp39-linux_x86_64.whl\") \"\"\" try: # Use subprocess to run pip install command result = subprocess.run(['pip', 'install', package_name], check=True, stdout=subprocess.PIPE) print(result.stdout.decode()) except subprocess.CalledProcessError as e: print(f\"Failed to install {package_name}: {e}\") # Example usage install_wheel(\"numpy-1.21.0-cp39-cp39-linux_x86_64.whl\") ``` This code demonstrates how to use the `subprocess` module in Python to run a pip command that installs a package from a `.whl` file."
+  },
   "data_pointers": [
     {
       "title": "Wheel",
       "uri": "knowledge://py_wheel_v4",
-      "content_preview": ".whl Binary distribution format. pip install is faster than installing from source code. Pure Python/platform-specific wheel. Here's an explanation with a brief Python code example to illustrate the u"
+      "content_preview": "Wheel: .whl Binary distribution format. pip install is faster than installing from source code. Pure Python/platform-specific wheel. Here's an explanation with a brief Python code example to illustrate the use of `.whl` files: ```python # Example of using pip to install a package in .whl format import subprocess def install_wheel(package_name): \"\"\" Install a package using pip in .whl format. :param package_name: Name of the package (e.g., \"numpy-1.21.0-cp39-cp39-linux_x86_64.whl\") \"\"\" try: # Use subprocess to run pip install command result = subprocess.run(['pip', 'install', package_name], check=True, stdout=subprocess.PIPE) print(result.stdout.decode()) except subprocess.CalledProcessError as e: print(f\"Failed to install {package_name}: {e}\") # Example usage install_wheel(\"numpy-1.21.0-cp39-cp39-linux_x86_64.whl\") ``` This code demonstrates how to use the `subprocess` module in Python to run a pip command that installs a package from a `.whl` file."
     }
   ],
   "related_nodes": []

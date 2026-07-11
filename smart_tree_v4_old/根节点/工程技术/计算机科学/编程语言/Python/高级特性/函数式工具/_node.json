@@ -1,0 +1,20 @@
+{
+  "name": "函数式工具",
+  "node_id": "py_fp_v4",
+  "parent_id": "py_adv_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "高级特性",
+  "children": [
+    "map/filter/reduce",
+    "偏函数 partial"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python provides functional tools such as `map`, `filter`, and `reduce` (note that `reduce` is not built-in in Python 3, but can be imported from the `functools` module), partial functions, and the `it"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -9,13 +9,17 @@
   "parent": "TCP 连接管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "三次握手: SYN→SYN+ACK→ACK. Establishes the ability to send and receive confirmations. Synchronizes initial sequence numbers. Python code example (using socket programming to demonstrate a simple TCP three-way handshake): ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Bind the socket to the port server_address = ('localhost', 10000) sock.bind(server_address) # Listen for incoming connections sock.listen(1) print('Waiting for a connection...') connection, client_address = sock.accept() try: print(f'Connection from {client_address}') # Send SYN sock.sendto(b'SYN', client_address) # Receive SYN+ACK data, address = sock.recvfrom(4096) if b'SYN+ACK' in data: print('Received SYN+ACK') # Send ACK sock.sendto(b'ACK', client_address) print('Sent ACK') finally: connection.close() ``` Note: This example uses `sendto` and `recvfrom` for simplicity, but typically a TCP socket would use `send` and `recv`. The actual data sent in this example is not meant to represent real SYN, SYN+ACK, or ACK packets; it's just used to illustrate the sequence of messages."
+  },
   "data_pointers": [
     {
       "title": "三次握手",
       "uri": "knowledge://three_way_v4",
-      "content_preview": "Translation: SYN→SYN+ACK→ACK. Establishes the ability to send and receive confirmations. Synchronizes initial sequence numbers. Python code example (using socket programming to demonstrate a simple TC"
+      "content_preview": "三次握手: SYN→SYN+ACK→ACK. Establishes the ability to send and receive confirmations. Synchronizes initial sequence numbers. Python code example (using socket programming to demonstrate a simple TCP three-way handshake): ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Bind the socket to the port server_address = ('localhost', 10000) sock.bind(server_address) # Listen for incoming connections sock.listen(1) print('Waiting for a connection...') connection, client_address = sock.accept() try: print(f'Connection from {client_address}') # Send SYN sock.sendto(b'SYN', client_address) # Receive SYN+ACK data, address = sock.recvfrom(4096) if b'SYN+ACK' in data: print('Received SYN+ACK') # Send ACK sock.sendto(b'ACK', client_address) print('Sent ACK') finally: connection.close() ``` Note: This example uses `sendto` and `recvfrom` for simplicity, but typically a TCP socket would use `send` and `recv`. The actual data sent in this example is not meant to represent real SYN, SYN+ACK, or ACK packets; it's just used to illustrate the sequence of messages."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "four_way_v4"
+  ]
 }

@@ -9,12 +9,14 @@
   "parent": "数据序列化",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "json: `json.dumps` and `json.loads`. The parameter `ensure_ascii=False` in `json.dumps`. Writing/loading JSON files with `json.dump` and `json.load`. Here's a brief Python code example to illustrate these concepts: ```python import json # Example data structure data = { \"name\": \"张三\", \"age\": 30, \"city\": \"北京\" } # Using json.dumps to convert Python object into JSON string with ensure_ascii=False json_string = json.dumps(data, ensure_ascii=False) print(json_string) # Output: {\"name\": \"\\u5927\\u4e1c\", \"age\": 30, \"city\": \"\\u5317\\u4eac\"} # Writing the JSON string to a file with ensure_ascii=False with open('data.json', 'w', encoding='utf-8') as f: json.dump(data, f, ensure_ascii=False) # Reading from the file using json.load with open('data.json', 'r', encoding='utf-8') as f: loaded_data = json.load(f) print(loaded_data) # Output: {'name': '张三', 'age': 30, 'city': '北京'} ``` This example demonstrates how to use `json.dumps` and `json.loads`, including the `ensure_ascii=False` parameter for proper handling of non-ASCII characters. It also shows how to write and read JSON data from a file using these functions."
+  },
   "data_pointers": [
     {
       "title": "json",
       "uri": "knowledge://py_json_ser_v4",
-      "content_preview": "`json.dumps` and `json.loads`. The parameter `ensure_ascii=False` in `json.dumps`. Writing/loading JSON files with `json.dump` and `json.load`. Here's a brief Python code example to illustrate these c"
+      "content_preview": "json: `json.dumps` and `json.loads`. The parameter `ensure_ascii=False` in `json.dumps`. Writing/loading JSON files with `json.dump` and `json.load`. Here's a brief Python code example to illustrate these concepts: ```python import json # Example data structure data = { \"name\": \"张三\", \"age\": 30, \"city\": \"北京\" } # Using json.dumps to convert Python object into JSON string with ensure_ascii=False json_string = json.dumps(data, ensure_ascii=False) print(json_string) # Output: {\"name\": \"\\u5927\\u4e1c\", \"age\": 30, \"city\": \"\\u5317\\u4eac\"} # Writing the JSON string to a file with ensure_ascii=False with open('data.json', 'w', encoding='utf-8') as f: json.dump(data, f, ensure_ascii=False) # Reading from the file using json.load with open('data.json', 'r', encoding='utf-8') as f: loaded_data = json.load(f) print(loaded_data) # Output: {'name': '张三', 'age': 30, 'city': '北京'} ``` This example demonstrates how to use `json.dumps` and `json.loads`, including the `ensure_ascii=False` parameter for proper handling of non-ASCII characters. It also shows how to write and read JSON data from a file using these functions."
     }
   ],
   "related_nodes": []

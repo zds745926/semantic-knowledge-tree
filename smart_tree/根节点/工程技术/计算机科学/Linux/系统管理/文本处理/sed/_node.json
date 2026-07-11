@@ -9,12 +9,14 @@
   "parent": "文本处理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "sed: `sed 's/old/new/g'` substitution. `sed -n '1,10p'` to print a range. Python code example for the concepts mentioned: For `sed 's/old/new/g'`, you can use Python's `re` module to achieve similar functionality: ```python import re text = \"This is an old sentence that needs to be replaced with new.\" new_text = re.sub(r\"old\", \"new\", text, flags=re.IGNORECASE) print(new_text) ``` For `sed -n '1,10p'`, you can use Python's slicing and string methods: ```python text = \"\"\"Line 1 Line 2 Line 3 Line 4 Line 5 Line 6 Line 7 Line 8 Line 9 Line 10 Line 11\"\"\" lines = text.split('\\n') print('\\n'.join(lines[0:10])) ``` These examples demonstrate how to perform substitution and print a range of lines in Python, mirroring the functionality provided by `sed`."
+  },
   "data_pointers": [
     {
       "title": "sed",
       "uri": "knowledge://sed_v4",
-      "content_preview": "Translation: `sed 's/old/new/g'` substitution. `sed -n '1,10p'` to print a range. Python code example for the concepts mentioned: For `sed 's/old/new/g'`, you can use Python's `re` module to achieve s"
+      "content_preview": "sed: `sed 's/old/new/g'` substitution. `sed -n '1,10p'` to print a range. Python code example for the concepts mentioned: For `sed 's/old/new/g'`, you can use Python's `re` module to achieve similar functionality: ```python import re text = \"This is an old sentence that needs to be replaced with new.\" new_text = re.sub(r\"old\", \"new\", text, flags=re.IGNORECASE) print(new_text) ``` For `sed -n '1,10p'`, you can use Python's slicing and string methods: ```python text = \"\"\"Line 1 Line 2 Line 3 Line 4 Line 5 Line 6 Line 7 Line 8 Line 9 Line 10 Line 11\"\"\" lines = text.split('\\n') print('\\n'.join(lines[0:10])) ``` These examples demonstrate how to perform substitution and print a range of lines in Python, mirroring the functionality provided by `sed`."
     }
   ],
   "related_nodes": []

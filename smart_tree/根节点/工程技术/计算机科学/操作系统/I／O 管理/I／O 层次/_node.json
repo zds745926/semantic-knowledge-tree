@@ -9,12 +9,14 @@
   "parent": "I/O 管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "I/O 层次: Application → Library → System Call → VFS (Virtual File System) → Block Device → Driver → Hardware. Each layer abstracts and hides the details of the underlying layers. Here's a brief Python code example to illustrate the concept, focusing on how an application might interact with a file system through a library: ```python import os # Application code interacting with VFS (Virtual File System) def read_file(file_path): try: # This function abstracts away the details of how the file is accessed and managed by the operating system. content = open(file_path, 'r').read() print(\"File content:\", content) except FileNotFoundError: print(f\"Error: The file at {file_path} was not found.\") except Exception as e: print(f\"An error occurred: {e}\") # Example usage read_file(\"/path/to/your/file.txt\") ``` In this example, the `open` function abstracts the interaction with the VFS and underlying system calls to read a file. The application doesn't need to know about block devices or drivers; it simply uses the library to interact with files as if they were local variables."
+  },
   "data_pointers": [
     {
       "title": "I/O 层次",
       "uri": "knowledge://io_hierarchy_v4",
-      "content_preview": "Application → Library → System Call → VFS (Virtual File System) → Block Device → Driver → Hardware. Each layer abstracts and hides the details of the underlying layers. Here's a brief Python code exam"
+      "content_preview": "I/O 层次: Application → Library → System Call → VFS (Virtual File System) → Block Device → Driver → Hardware. Each layer abstracts and hides the details of the underlying layers. Here's a brief Python code example to illustrate the concept, focusing on how an application might interact with a file system through a library: ```python import os # Application code interacting with VFS (Virtual File System) def read_file(file_path): try: # This function abstracts away the details of how the file is accessed and managed by the operating system. content = open(file_path, 'r').read() print(\"File content:\", content) except FileNotFoundError: print(f\"Error: The file at {file_path} was not found.\") except Exception as e: print(f\"An error occurred: {e}\") # Example usage read_file(\"/path/to/your/file.txt\") ``` In this example, the `open` function abstracts the interaction with the VFS and underlying system calls to read a file. The application doesn't need to know about block devices or drivers; it simply uses the library to interact with files as if they were local variables."
     }
   ],
   "related_nodes": []

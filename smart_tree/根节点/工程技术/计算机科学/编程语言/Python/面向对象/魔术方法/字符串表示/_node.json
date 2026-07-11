@@ -9,12 +9,14 @@
   "parent": "魔术方法",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "字符串表示: Here is the translation with brief explanations and corresponding Python code examples for each term: 1. **`__str__` User String**: - This method returns a string that represents the object in a way that is easy for humans to read. ```python class Person: def __init__(self, name): self.name = name def __str__(self): return f\"Person: {self.name}\" person = Person(\"Alice\") print(person) # Output: Person: Alice ``` 2. **`__repr__` Development String**: - This method returns a string that represents the object in a way that is useful for debugging and development, often used to recreate the object. ```python class Person: def __init__(self, name): self.name = name def __repr__(self): return f\"Person(name='{self.name}')\" person = Person(\"Alice\") print(person) # Output: Person(name='Alice') ``` 3. **`__format__` Format**: - This method allows you to define how the object should be formatted when it is used in a string formatting context. ```python class Person: def __init__(self, name): self.name = name def __format__(self, format_spec): if format_spec == 'full': return f\"Full Name: {self.name}\" else: return super().__format__(format_spec) person = Person(\"Alice\") print(f\"{person:full}\") # Output: Full Name: Alice ``` These examples illustrate how each method can be implemented and used in Python."
+  },
   "data_pointers": [
     {
       "title": "字符串表示",
       "uri": "knowledge://py_magic_str_v4",
-      "content_preview": "Here is the translation with brief explanations and corresponding Python code examples for each term: 1. **`__str__` User String**: - This method returns a string that represents the object in a way t"
+      "content_preview": "字符串表示: Here is the translation with brief explanations and corresponding Python code examples for each term: 1. **`__str__` User String**: - This method returns a string that represents the object in a way that is easy for humans to read. ```python class Person: def __init__(self, name): self.name = name def __str__(self): return f\"Person: {self.name}\" person = Person(\"Alice\") print(person) # Output: Person: Alice ``` 2. **`__repr__` Development String**: - This method returns a string that represents the object in a way that is useful for debugging and development, often used to recreate the object. ```python class Person: def __init__(self, name): self.name = name def __repr__(self): return f\"Person(name='{self.name}')\" person = Person(\"Alice\") print(person) # Output: Person(name='Alice') ``` 3. **`__format__` Format**: - This method allows you to define how the object should be formatted when it is used in a string formatting context. ```python class Person: def __init__(self, name): self.name = name def __format__(self, format_spec): if format_spec == 'full': return f\"Full Name: {self.name}\" else: return super().__format__(format_spec) person = Person(\"Alice\") print(f\"{person:full}\") # Output: Full Name: Alice ``` These examples illustrate how each method can be implemented and used in Python."
     }
   ],
   "related_nodes": []

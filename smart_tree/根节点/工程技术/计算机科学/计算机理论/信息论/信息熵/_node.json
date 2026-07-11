@@ -9,12 +9,14 @@
   "parent": "信息论",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "信息熵: Information entropy H(X) = -∑p(x)log₂p(x) measures the uncertainty of a random variable, with units in bits. The higher the entropy, the greater the information content. Here's a brief Python code example to calculate the entropy of a probability distribution: ```python import math def calculate_entropy(probabilities): \"\"\" Calculate the Shannon entropy of a given probability distribution. :param probabilities: A list or tuple of probabilities for each event. :return: The calculated entropy value in bits. \"\"\" entropy = -sum(p * math.log2(p) for p in probabilities if p > 0) return entropy # Example usage: probabilities = [0.5, 0.3, 0.2] entropy_value = calculate_entropy(probabilities) print(f\"Entropy: {entropy_value} bits\") ``` This code defines a function `calculate_entropy` that computes the Shannon entropy of a given probability distribution and prints out the result for an example set of probabilities."
+  },
   "data_pointers": [
     {
       "title": "信息熵",
       "uri": "knowledge://entropy_v4",
-      "content_preview": "Information entropy H(X) = -∑p(x)log₂p(x) measures the uncertainty of a random variable, with units in bits. The higher the entropy, the greater the information content. Here's a brief Python code exa"
+      "content_preview": "信息熵: Information entropy H(X) = -∑p(x)log₂p(x) measures the uncertainty of a random variable, with units in bits. The higher the entropy, the greater the information content. Here's a brief Python code example to calculate the entropy of a probability distribution: ```python import math def calculate_entropy(probabilities): \"\"\" Calculate the Shannon entropy of a given probability distribution. :param probabilities: A list or tuple of probabilities for each event. :return: The calculated entropy value in bits. \"\"\" entropy = -sum(p * math.log2(p) for p in probabilities if p > 0) return entropy # Example usage: probabilities = [0.5, 0.3, 0.2] entropy_value = calculate_entropy(probabilities) print(f\"Entropy: {entropy_value} bits\") ``` This code defines a function `calculate_entropy` that computes the Shannon entropy of a given probability distribution and prints out the result for an example set of probabilities."
     }
   ],
   "related_nodes": []

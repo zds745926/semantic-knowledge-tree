@@ -9,12 +9,14 @@
   "parent": "面向对象",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "封装: Encapsulation binds data with the methods that operate on that data, achieving information hiding through access control (public/protected/private). Here is a brief Python code example to illustrate encapsulation: ```python class MyClass: def __init__(self): self.public_attribute = \"I'm public\" self._protected_attribute = \"I'm protected\" self.__private_attribute = \"I'm private\" def public_method(self): print(\"This is a public method.\") def _protected_method(self): print(\"This is a protected method.\") # Accessing the protected attribute print(self._protected_attribute) def __private_method(self): print(\"This is a private method.\") # Accessing the private attribute print(self.__private_attribute) ``` In this example, `public_attribute` and `public_method` are accessible from outside the class. `_protected_attribute` and `_protected_method` can be accessed within the class and its subclasses (though it's considered bad practice to access them directly). `__private_attribute` and `__private_method` are intended to be private and cannot be accessed directly from outside the class, demonstrating information hiding through Python's name mangling."
+  },
   "data_pointers": [
     {
       "title": "封装",
       "uri": "knowledge://encapsulation_v4",
-      "content_preview": "Encapsulation binds data with the methods that operate on that data, achieving information hiding through access control (public/protected/private). Here is a brief Python code example to illustrate e"
+      "content_preview": "封装: Encapsulation binds data with the methods that operate on that data, achieving information hiding through access control (public/protected/private). Here is a brief Python code example to illustrate encapsulation: ```python class MyClass: def __init__(self): self.public_attribute = \"I'm public\" self._protected_attribute = \"I'm protected\" self.__private_attribute = \"I'm private\" def public_method(self): print(\"This is a public method.\") def _protected_method(self): print(\"This is a protected method.\") # Accessing the protected attribute print(self._protected_attribute) def __private_method(self): print(\"This is a private method.\") # Accessing the private attribute print(self.__private_attribute) ``` In this example, `public_attribute` and `public_method` are accessible from outside the class. `_protected_attribute` and `_protected_method` can be accessed within the class and its subclasses (though it's considered bad practice to access them directly). `__private_attribute` and `__private_method` are intended to be private and cannot be accessed directly from outside the class, demonstrating information hiding through Python's name mangling."
     }
   ],
   "related_nodes": []

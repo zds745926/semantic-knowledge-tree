@@ -9,13 +9,17 @@
   "parent": "国际化",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "gettext: gettext.translation loads the .mo file. _('msgid') performs the translation. install() globally binds the translations. Here is a brief Python code example to illustrate these concepts: ```python import gettext # Load the translation files _ = gettext.translation('messages', localedir='path/to/locale/directory').gettext install = lambda: globals().update({'_': _}) # Example usage: install() # Globally bind the translations print(_('Hello, world!')) # Translates and prints \"Hello, world!\" based on the .mo file ``` In this example, `_('Hello, world!')` is used to translate a message. The `install()` function globally binds the translation function `_` to the global namespace."
+  },
   "data_pointers": [
     {
       "title": "gettext",
       "uri": "knowledge://py_gettext_v4",
-      "content_preview": "gettext.translation loads the .mo file. _('msgid') performs the translation. install() globally binds the translations. Here is a brief Python code example to illustrate these concepts: ```python impo"
+      "content_preview": "gettext: gettext.translation loads the .mo file. _('msgid') performs the translation. install() globally binds the translations. Here is a brief Python code example to illustrate these concepts: ```python import gettext # Load the translation files _ = gettext.translation('messages', localedir='path/to/locale/directory').gettext install = lambda: globals().update({'_': _}) # Example usage: install() # Globally bind the translations print(_('Hello, world!')) # Translates and prints \"Hello, world!\" based on the .mo file ``` In this example, `_('Hello, world!')` is used to translate a message. The `install()` function globally binds the translation function `_` to the global namespace."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_locale_v4"
+  ]
 }

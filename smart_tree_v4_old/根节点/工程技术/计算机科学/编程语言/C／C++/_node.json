@@ -1,0 +1,20 @@
+{
+  "name": "C/C++",
+  "node_id": "cpp_v4",
+  "parent_id": "languages_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "编程语言",
+  "children": [
+    "C 核心",
+    "C++ 核心"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "C is the foundational language for systems programming, providing direct control over hardware. C++ builds upon C by adding Object-Oriented Programming (OOP) and templates. Both are compiled languages"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

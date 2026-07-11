@@ -9,12 +9,14 @@
   "parent": "int 进阶",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "大整数运算: Python `int` automatically handles arbitrarily large integers, capable of computing values like 2**1000000, which are astronomical in scale. This feature is widely used in RSA cryptography. Here's a brief Python code example demonstrating the handling of such large integers: ```python # Example of using Python int to handle large numbers large_number = 2 ** 1000000 print(large_number) ``` This code snippet demonstrates how Python can easily manage and compute extremely large integer values, which is crucial for cryptographic applications like RSA."
+  },
   "data_pointers": [
     {
       "title": "大整数运算",
       "uri": "knowledge://py_int_bignum_v4",
-      "content_preview": "Python `int` automatically handles arbitrarily large integers, capable of computing values like 2**1000000, which are astronomical in scale. This feature is widely used in RSA cryptography. Here's a b"
+      "content_preview": "大整数运算: Python `int` automatically handles arbitrarily large integers, capable of computing values like 2**1000000, which are astronomical in scale. This feature is widely used in RSA cryptography. Here's a brief Python code example demonstrating the handling of such large integers: ```python # Example of using Python int to handle large numbers large_number = 2 ** 1000000 print(large_number) ``` This code snippet demonstrates how Python can easily manage and compute extremely large integer values, which is crucial for cryptographic applications like RSA."
     }
   ],
   "related_nodes": []

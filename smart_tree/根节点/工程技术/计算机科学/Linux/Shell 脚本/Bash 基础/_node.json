@@ -9,12 +9,14 @@
   "parent": "Shell 脚本",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Bash 基础: #!/bin/bash. Variable ${var}. $0/$1/$#/$. Command substitution: $(cmd). Here's an explanation with a brief Python code example for each concept: - `#!/bin/bash`: This is a shebang line indicating that the script should be run using the Bash shell. ```python #!/usr/bin/env python3 ``` - `Variable ${var}`: This refers to accessing or setting a variable in a shell script. ```python var = \"Hello, World!\" print(var) ``` - `$0/$1/$#/?$`: These are special parameters in Bash: - `$0` is the name of the script. - `$1` is the first argument passed to the script. - `$#` is the number of arguments passed to the script. - `$?` holds the exit status of the last command. ```python import sys print(f\"Script name: {sys.argv[0]}\") if len(sys.argv) > 1: print(f\"First argument: {sys.argv[1]}\") print(f\"Number of arguments: {len(sys.argv) - 1}\") ``` - `$(cmd)`: This is command substitution in Bash, which runs the command and replaces it with its output. ```python import subprocess result = subprocess.run(['ls'], capture_output=True, text=True) print(result.stdout) ``` Note that Python does not use `$` for variables or special parameters as shown above. The examples are provided to illustrate the concepts in a way familiar to Python programmers."
+  },
   "data_pointers": [
     {
       "title": "Bash 基础",
       "uri": "knowledge://bash_basics_v4",
-      "content_preview": "#!/bin/bash. Variable ${var}. $0/$1/$#/$. Command substitution: $(cmd). Here's an explanation with a brief Python code example for each concept: - `#!/bin/bash`: This is a shebang line indicating that"
+      "content_preview": "Bash 基础: #!/bin/bash. Variable ${var}. $0/$1/$#/$. Command substitution: $(cmd). Here's an explanation with a brief Python code example for each concept: - `#!/bin/bash`: This is a shebang line indicating that the script should be run using the Bash shell. ```python #!/usr/bin/env python3 ``` - `Variable ${var}`: This refers to accessing or setting a variable in a shell script. ```python var = \"Hello, World!\" print(var) ``` - `$0/$1/$#/?$`: These are special parameters in Bash: - `$0` is the name of the script. - `$1` is the first argument passed to the script. - `$#` is the number of arguments passed to the script. - `$?` holds the exit status of the last command. ```python import sys print(f\"Script name: {sys.argv[0]}\") if len(sys.argv) > 1: print(f\"First argument: {sys.argv[1]}\") print(f\"Number of arguments: {len(sys.argv) - 1}\") ``` - `$(cmd)`: This is command substitution in Bash, which runs the command and replaces it with its output. ```python import subprocess result = subprocess.run(['ls'], capture_output=True, text=True) print(result.stdout) ``` Note that Python does not use `$` for variables or special parameters as shown above. The examples are provided to illustrate the concepts in a way familiar to Python programmers."
     }
   ],
   "related_nodes": []

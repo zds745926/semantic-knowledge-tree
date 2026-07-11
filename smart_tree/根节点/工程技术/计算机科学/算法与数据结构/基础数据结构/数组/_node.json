@@ -9,12 +9,14 @@
   "parent": "基础数据结构",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "数组: Continuous memory linear structure. Random access O(1), insertion and deletion O(n). Cache-friendly. Here is an explanation with a brief Python code example for the concept of random access in a list, which has a time complexity of O(1): ```python # Example of random access in Python (list) data = [10, 20, 30, 40, 50] # A sample list def access_element(index): return data[index] # Accessing an element at index 2 (which is 30 in this case) print(access_element(2)) # Output: 30 ``` This example demonstrates how accessing an element by its index in a Python list is done in constant time, O(1). However, note that the overall complexity for insertion and deletion operations on a list in Python is not O(n) due to dynamic resizing; it's more complex but generally close to O(1) amortized. For simplicity, we consider it as O(n) here to match the given description."
+  },
   "data_pointers": [
     {
       "title": "数组",
       "uri": "knowledge://array_v4",
-      "content_preview": "Continuous memory linear structure. Random access O(1), insertion and deletion O(n). Cache-friendly. Here is an explanation with a brief Python code example for the concept of random access in a list,"
+      "content_preview": "数组: Continuous memory linear structure. Random access O(1), insertion and deletion O(n). Cache-friendly. Here is an explanation with a brief Python code example for the concept of random access in a list, which has a time complexity of O(1): ```python # Example of random access in Python (list) data = [10, 20, 30, 40, 50] # A sample list def access_element(index): return data[index] # Accessing an element at index 2 (which is 30 in this case) print(access_element(2)) # Output: 30 ``` This example demonstrates how accessing an element by its index in a Python list is done in constant time, O(1). However, note that the overall complexity for insertion and deletion operations on a list in Python is not O(n) due to dynamic resizing; it's more complex but generally close to O(1) amortized. For simplicity, we consider it as O(n) here to match the given description."
     }
   ],
   "related_nodes": []

@@ -9,13 +9,17 @@
   "parent": "测试",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "pytest: Python is the most popular testing framework. Assert statements are used for making assertions. Fixtures manage dependencies. Parameterized tests allow for flexible test cases. Conftest files share configuration. Here are brief Python code examples to illustrate these concepts: 1. **Assert Statements**: ```python def test_example(): assert 1 + 1 == 2, \"The addition is incorrect\" ``` 2. **Fixtures** (using `pytest`): ```python import pytest @pytest.fixture def sample_data(): return [1, 2, 3] def test_with_fixture(sample_data): assert sum(sample_data) == 6 ``` 3. **Parameterized Tests**: ```python import pytest @pytest.mark.parametrize(\"x, y, expected\", [(1, 1, 2), (2, 2, 4), (3, 3, 9)]) def test_multiplication(x, y, expected): assert x * y == expected ``` 4. **Conftest Files**: ```python import pytest @pytest.fixture(scope=\"session\") def shared_config(): return {\"key\": \"value\"} conftest.py content: ``` ```python pytest_plugins = [\"conftest_module\"] # If using a custom plugin, specify it here. ``` These examples should help illustrate the concepts in practice."
+  },
   "data_pointers": [
     {
       "title": "pytest",
       "uri": "knowledge://py_pytest_v4",
-      "content_preview": "Python is the most popular testing framework. Assert statements are used for making assertions. Fixtures manage dependencies. Parameterized tests allow for flexible test cases. Conftest files share co"
+      "content_preview": "pytest: Python is the most popular testing framework. Assert statements are used for making assertions. Fixtures manage dependencies. Parameterized tests allow for flexible test cases. Conftest files share configuration. Here are brief Python code examples to illustrate these concepts: 1. **Assert Statements**: ```python def test_example(): assert 1 + 1 == 2, \"The addition is incorrect\" ``` 2. **Fixtures** (using `pytest`): ```python import pytest @pytest.fixture def sample_data(): return [1, 2, 3] def test_with_fixture(sample_data): assert sum(sample_data) == 6 ``` 3. **Parameterized Tests**: ```python import pytest @pytest.mark.parametrize(\"x, y, expected\", [(1, 1, 2), (2, 2, 4), (3, 3, 9)]) def test_multiplication(x, y, expected): assert x * y == expected ``` 4. **Conftest Files**: ```python import pytest @pytest.fixture(scope=\"session\") def shared_config(): return {\"key\": \"value\"} conftest.py content: ``` ```python pytest_plugins = [\"conftest_module\"] # If using a custom plugin, specify it here. ``` These examples should help illustrate the concepts in practice."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_mock_v4"
+  ]
 }

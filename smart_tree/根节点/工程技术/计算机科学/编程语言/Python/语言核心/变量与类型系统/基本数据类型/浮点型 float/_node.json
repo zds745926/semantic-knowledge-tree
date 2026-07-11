@@ -9,12 +9,14 @@
   "parent": "基本数据类型",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "浮点型 float: Python's `float` is a double-precision 64-bit floating-point number (following the IEEE 754 standard). Floating-point operations can have precision errors, which is why `decimal.Decimal` provides precise calculations. Here’s an example to illustrate the difference between `float` and `Decimal` in Python: ```python # Using float x = 0.1 + 0.2 print(x) # Output: 0.30000000000000004 # Using Decimal for precise calculations from decimal import Decimal y = Decimal('0.1') + Decimal('0.2') print(y) # Output: 0.3 ``` In this example, using `float` results in a small precision error, while `Decimal` provides the correct result of `0.3`."
+  },
   "data_pointers": [
     {
       "title": "浮点型 float",
       "uri": "knowledge://py_float_v4",
-      "content_preview": "Python's `float` is a double-precision 64-bit floating-point number (following the IEEE 754 standard). Floating-point operations can have precision errors, which is why `decimal.Decimal` provides prec"
+      "content_preview": "浮点型 float: Python's `float` is a double-precision 64-bit floating-point number (following the IEEE 754 standard). Floating-point operations can have precision errors, which is why `decimal.Decimal` provides precise calculations. Here’s an example to illustrate the difference between `float` and `Decimal` in Python: ```python # Using float x = 0.1 + 0.2 print(x) # Output: 0.30000000000000004 # Using Decimal for precise calculations from decimal import Decimal y = Decimal('0.1') + Decimal('0.2') print(y) # Output: 0.3 ``` In this example, using `float` results in a small precision error, while `Decimal` provides the correct result of `0.3`."
     }
   ],
   "related_nodes": []

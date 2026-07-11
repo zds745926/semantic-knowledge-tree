@@ -9,12 +9,14 @@
   "parent": "分类",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "KNN: K-Nearest Neighbor Voting. Distance Metric. No training process. Python code example: ```python from sklearn.neighbors import KNeighborsClassifier import numpy as np # Sample data X = np.array([[1, 2], [3, 4], [5, 6], [7, 8]]) # Features y = np.array([0, 0, 1, 1]) # Labels # K-Nearest Neighbor classifier with k=3 knn = KNeighborsClassifier(n_neighbors=3) # No training process is involved as the model is directly fitted to the data knn.fit(X, y) # Predicting a new instance new_instance = np.array([[4, 5]]) prediction = knn.predict(new_instance) print(\"Prediction for the new instance:\", prediction) ``` This example demonstrates how to use the `KNeighborsClassifier` from scikit-learn to perform K-Nearest Neighbor voting without an explicit training process (the model is directly fitted to the data)."
+  },
   "data_pointers": [
     {
       "title": "KNN",
       "uri": "knowledge://knn_v4",
-      "content_preview": "K-Nearest Neighbor Voting. Distance Metric. No training process. Python code example: ```python from sklearn.neighbors import KNeighborsClassifier import numpy as np # Sample data X = np.array([[1, 2]"
+      "content_preview": "KNN: K-Nearest Neighbor Voting. Distance Metric. No training process. Python code example: ```python from sklearn.neighbors import KNeighborsClassifier import numpy as np # Sample data X = np.array([[1, 2], [3, 4], [5, 6], [7, 8]]) # Features y = np.array([0, 0, 1, 1]) # Labels # K-Nearest Neighbor classifier with k=3 knn = KNeighborsClassifier(n_neighbors=3) # No training process is involved as the model is directly fitted to the data knn.fit(X, y) # Predicting a new instance new_instance = np.array([[4, 5]]) prediction = knn.predict(new_instance) print(\"Prediction for the new instance:\", prediction) ``` This example demonstrates how to use the `KNeighborsClassifier` from scikit-learn to perform K-Nearest Neighbor voting without an explicit training process (the model is directly fitted to the data)."
     }
   ],
   "related_nodes": []

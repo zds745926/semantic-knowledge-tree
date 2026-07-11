@@ -9,13 +9,17 @@
   "parent": "搜索算法",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "二分搜索: The middle comparison is halved each time. O(log n). Requires the list to be sorted. Python `bisect` module. Here's a brief example of using the `bisect` module in Python: ```python import bisect # Example list, assumed to be sorted sorted_list = [1, 2, 4, 5, 6, 8, 9] # Insert position for value 3 index = bisect.bisect_left(sorted_list, 3) print(\"Insert position for 3:\", index) # Output: 2 # Insert value 7 into the list bisect.insort_left(sorted_list, 7) print(\"Updated sorted list:\", sorted_list) # Output: [1, 2, 4, 5, 6, 7, 8, 9] ``` In this example, `bisect.bisect_left` is used to find the insertion point for a specified value in a sorted list. The `bisect.insort_left` function inserts the given value at the correct position while maintaining the sorted order of the list."
+  },
   "data_pointers": [
     {
       "title": "二分搜索",
       "uri": "knowledge://binary_search_v4",
-      "content_preview": "The middle comparison is halved each time. O(log n). Requires the list to be sorted. Python `bisect` module. Here's a brief example of using the `bisect` module in Python: ```python import bisect # Ex"
+      "content_preview": "二分搜索: The middle comparison is halved each time. O(log n). Requires the list to be sorted. Python `bisect` module. Here's a brief example of using the `bisect` module in Python: ```python import bisect # Example list, assumed to be sorted sorted_list = [1, 2, 4, 5, 6, 8, 9] # Insert position for value 3 index = bisect.bisect_left(sorted_list, 3) print(\"Insert position for 3:\", index) # Output: 2 # Insert value 7 into the list bisect.insort_left(sorted_list, 7) print(\"Updated sorted list:\", sorted_list) # Output: [1, 2, 4, 5, 6, 7, 8, 9] ``` In this example, `bisect.bisect_left` is used to find the insertion point for a specified value in a sorted list. The `bisect.insort_left` function inserts the given value at the correct position while maintaining the sorted order of the list."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "bst_search_v4"
+  ]
 }

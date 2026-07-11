@@ -1,0 +1,20 @@
+{
+  "name": "Java",
+  "node_id": "java_v4",
+  "parent_id": "languages_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "编程语言",
+  "children": [
+    "Java 核心",
+    "集合框架"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Java is a statically typed, object-oriented compiled language that provides cross-platform capabilities via the JVM. It boasts a rich enterprise ecosystem (Spring/Hibernate), making it a common choice"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

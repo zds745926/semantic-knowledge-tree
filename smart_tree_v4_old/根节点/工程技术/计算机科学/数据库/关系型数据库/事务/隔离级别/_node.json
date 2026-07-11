@@ -1,0 +1,22 @@
+{
+  "name": "隔离级别",
+  "node_id": "isolation_v4",
+  "parent_id": "tx_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "事务",
+  "children": [
+    "可串行化",
+    "可重复读",
+    "读已提交",
+    "读未提交"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Four isolation levels control the visibility of concurrent transactions. To provide a more detailed explanation and an example related to this concept in Python using the `sqlite3` library (which supp"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

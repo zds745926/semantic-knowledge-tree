@@ -1,0 +1,22 @@
+{
+  "name": "包管理",
+  "node_id": "py_pkg_v4",
+  "parent_id": "python_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "Python",
+  "children": [
+    "pip 包管理器",
+    "依赖管理",
+    "发布与打包",
+    "虚拟环境"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "The Python package management toolchain includes pip for dependency installation, venv for environment isolation, and pyproject.toml for project specifications. Modern tools like PDM and Poetry furthe"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

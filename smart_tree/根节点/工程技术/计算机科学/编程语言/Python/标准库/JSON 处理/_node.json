@@ -9,12 +9,14 @@
   "parent": "标准库",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "JSON 处理: `json.dumps(obj, ensure_ascii=False)` serializes an object to a JSON formatted str. `json.loads(str)` deserializes a JSON formatted string back into a Python object. Python code examples: Serializing with `ensure_ascii=False`: ```python import json data = {\"name\": \"张三\", \"age\": 30} # A dictionary containing non-ASCII characters json_str = json.dumps(data, ensure_ascii=False) print(json_str) # Output: {\"name\": \"\\u5927\\u4e09\", \"age\": 30} ``` Deserializing: ```python import json json_str = '{\"name\": \"\\u5927\\u4e09\", \"age\": 30}' # A JSON string data = json.loads(json_str) print(data) # Output: {'name': '张三', 'age': 30} ```"
+  },
   "data_pointers": [
     {
       "title": "JSON 处理",
       "uri": "knowledge://py_json_v4",
-      "content_preview": "Translation: `json.dumps(obj, ensure_ascii=False)` serializes an object to a JSON formatted str. `json.loads(str)` deserializes a JSON formatted string back into a Python object. Python code examples:"
+      "content_preview": "JSON 处理: `json.dumps(obj, ensure_ascii=False)` serializes an object to a JSON formatted str. `json.loads(str)` deserializes a JSON formatted string back into a Python object. Python code examples: Serializing with `ensure_ascii=False`: ```python import json data = {\"name\": \"张三\", \"age\": 30} # A dictionary containing non-ASCII characters json_str = json.dumps(data, ensure_ascii=False) print(json_str) # Output: {\"name\": \"\\u5927\\u4e09\", \"age\": 30} ``` Deserializing: ```python import json json_str = '{\"name\": \"\\u5927\\u4e09\", \"age\": 30}' # A JSON string data = json.loads(json_str) print(data) # Output: {'name': '张三', 'age': 30} ```"
     }
   ],
   "related_nodes": []

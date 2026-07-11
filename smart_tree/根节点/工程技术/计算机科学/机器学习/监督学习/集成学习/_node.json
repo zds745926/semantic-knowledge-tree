@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "监督学习",
   "children": [
-    "梯度提升树 GBDT",
-    "随机森林"
+    "随机森林",
+    "梯度提升树 GBDT"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Ensemble learning combines multiple weak learners to enhance performance. Python code example: ```python from sklearn.ensemble import BaggingClassifier from sklearn.tree import DecisionTreeClassifier "
+    "description": "集成学习: Ensemble learning combines multiple weak learners to enhance performance. Python code example: ```python from sklearn.ensemble import BaggingClassifier from sklearn.tree import DecisionTreeClassifier # Assuming X_train and y_train are already defined base_estimator = DecisionTreeClassifier(max_depth=1) # A weak learner, e.g., a decision tree with small depth bagging_classifier = BaggingClassifier(base_estimator=base_estimator, n_estimators=100) # Fit the model bagging_classifier.fit(X_train, y_train) ``` In this example, `BaggingClassifier` is used to combine multiple weak learners (in this case, decision trees with a maximum depth of 1). The `n_estimators` parameter specifies the number of base estimators in the ensemble."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -9,13 +9,13 @@
   "parent": "算法与数据结构",
   "children": [
     "DP 基础",
+    "背包问题",
     "最长公共子序列 LCS",
-    "最长递增子序列 LIS",
-    "背包问题"
+    "最长递增子序列 LIS"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Dynamic programming breaks down problems into overlapping subproblems. Core components: - State definition → Transition equation → Boundary conditions → Iteration order. Here's a brief explanation wit"
+    "description": "动态规划: Dynamic programming breaks down problems into overlapping subproblems. Core components: - State definition → Transition equation → Boundary conditions → Iteration order. Here's a brief explanation with a Python code example for clarity: In dynamic programming, you define the state of your problem (often denoted as `dp[i]`), formulate a transition equation that relates one state to another, specify boundary conditions, and determine an appropriate iteration or recursion order. For instance, consider the classic Fibonacci sequence problem using dynamic programming: ```python def fibonacci(n): # State definition: dp[i] stores the i-th Fibonacci number dp = [0] * (n + 1) # Boundary conditions dp[0], dp[1] = 0, 1 # Transition equation and iteration order for i in range(2, n + 1): dp[i] = dp[i - 1] + dp[i - 2] return dp[n] # Example usage: print(fibonacci(10)) # Output: 55 ``` In this example, `dp` is the state array where each element represents a Fibonacci number. The transition equation updates each element based on its predecessors, and we iterate from 2 to `n` to fill in the array."
   },
   "data_pointers": [],
   "related_nodes": []

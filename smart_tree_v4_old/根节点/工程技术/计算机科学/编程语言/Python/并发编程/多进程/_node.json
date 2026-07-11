@@ -1,0 +1,26 @@
+{
+  "name": "多进程",
+  "node_id": "py_process_v4",
+  "parent_id": "py_conc_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "并发编程",
+  "children": [
+    "Manager",
+    "Pool 进程池",
+    "Process 类",
+    "multiprocessing",
+    "共享内存",
+    "进程同步",
+    "进程间 Queue",
+    "进程间通信 IPC"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Multiprocessing bypasses the Global Interpreter Lock (GIL), leveraging multi-core CPUs. Python code example: ```python import multiprocessing def worker(num): \"\"\"worker function\"\"\" print(f'Worker {num"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

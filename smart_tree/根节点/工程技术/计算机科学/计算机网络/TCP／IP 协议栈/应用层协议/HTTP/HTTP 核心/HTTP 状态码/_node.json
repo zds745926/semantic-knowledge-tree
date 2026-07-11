@@ -9,12 +9,14 @@
   "parent": "HTTP 核心",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "HTTP 状态码: HTTP status codes are categorized into four classes: - 2xx Success - 3xx Redirection - 4xx Client Error - 5xx Server Error Python code example for checking HTTP response status: ```python import requests response = requests.get('https://api.example.com/data') status_code = response.status_code if 200 <= status_code < 300: print(f\"Success: {status_code}\") elif 300 <= status_code < 400: print(f\"Redirection: {status_code}\") elif 400 <= status_code < 500: print(f\"Client Error: {status_code}\") else: print(f\"Server Error: {status_code}\") ``` This Python script uses the `requests` library to send a GET request and checks the response's status code, categorizing it according to the HTTP status classes."
+  },
   "data_pointers": [
     {
       "title": "HTTP 状态码",
       "uri": "knowledge://http_status_v4",
-      "content_preview": "Translation: HTTP status codes are categorized into four classes: - 2xx Success - 3xx Redirection - 4xx Client Error - 5xx Server Error Python code example for checking HTTP response status: ```python"
+      "content_preview": "HTTP 状态码: HTTP status codes are categorized into four classes: - 2xx Success - 3xx Redirection - 4xx Client Error - 5xx Server Error Python code example for checking HTTP response status: ```python import requests response = requests.get('https://api.example.com/data') status_code = response.status_code if 200 <= status_code < 300: print(f\"Success: {status_code}\") elif 300 <= status_code < 400: print(f\"Redirection: {status_code}\") elif 400 <= status_code < 500: print(f\"Client Error: {status_code}\") else: print(f\"Server Error: {status_code}\") ``` This Python script uses the `requests` library to send a GET request and checks the response's status code, categorizing it according to the HTTP status classes."
     }
   ],
   "related_nodes": []

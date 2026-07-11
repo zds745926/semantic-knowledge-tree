@@ -9,12 +9,14 @@
   "parent": "密码学",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "哈希函数: SHA-256/3. Non-reversible and collision-resistant. bcrypt/argon2 password hashing. For the coding/programming concepts, here are brief Python code examples: 1. **SHA-256**: ```python import hashlib def sha256_hash(input_string): hash_object = hashlib.sha256() hash_object.update(input_string.encode()) return hash_object.hexdigest() # Example usage print(sha256_hash(\"Hello, World!\")) ``` 2. **bcrypt**: ```python import bcrypt def bcrypt_hash(password): salt = bcrypt.gensalt() hashed_password = bcrypt.hashpw(password.encode(), salt) return hashed_password.decode() # Example usage print(bcrypt_hash(\"password123\")) ``` 3. **argon2**: ```python from argon2 import PasswordHasher def argon2_hash(password): ph = PasswordHasher() hashed_password = ph.hash(password) return hashed_password # Example usage print(argon2_hash(\"password123\")) ``` These examples provide a basic understanding of how to use SHA-256, bcrypt, and argon2 for hashing in Python."
+  },
   "data_pointers": [
     {
       "title": "哈希函数",
       "uri": "knowledge://hash_v4",
-      "content_preview": "SHA-256/3. Non-reversible and collision-resistant. bcrypt/argon2 password hashing. For the coding/programming concepts, here are brief Python code examples: 1. **SHA-256**: ```python import hashlib de"
+      "content_preview": "哈希函数: SHA-256/3. Non-reversible and collision-resistant. bcrypt/argon2 password hashing. For the coding/programming concepts, here are brief Python code examples: 1. **SHA-256**: ```python import hashlib def sha256_hash(input_string): hash_object = hashlib.sha256() hash_object.update(input_string.encode()) return hash_object.hexdigest() # Example usage print(sha256_hash(\"Hello, World!\")) ``` 2. **bcrypt**: ```python import bcrypt def bcrypt_hash(password): salt = bcrypt.gensalt() hashed_password = bcrypt.hashpw(password.encode(), salt) return hashed_password.decode() # Example usage print(bcrypt_hash(\"password123\")) ``` 3. **argon2**: ```python from argon2 import PasswordHasher def argon2_hash(password): ph = PasswordHasher() hashed_password = ph.hash(password) return hashed_password # Example usage print(argon2_hash(\"password123\")) ``` These examples provide a basic understanding of how to use SHA-256, bcrypt, and argon2 for hashing in Python."
     }
   ],
   "related_nodes": []

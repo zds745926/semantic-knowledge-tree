@@ -9,12 +9,14 @@
   "parent": "queue 模块",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "LifoQueue: queue.LifoQueue is a Last-In-First-Out (LIFO) data structure, similar to a stack. It supports put and get methods. This data structure is suitable for Depth-First Search (DFS) traversal. Here's a brief Python code example using LifoQueue for DFS: ```python from queue import LifoQueue def dfs(graph, start): stack = LifoQueue() visited = set() stack.put(start) while not stack.empty(): vertex = stack.get() if vertex not in visited: print(vertex) # Process the node (e.g., print it) visited.add(vertex) for neighbor in graph[vertex]: stack.put(neighbor) # Example usage graph = { 'A': ['B', 'C'], 'B': ['D', 'E'], 'C': ['F'], 'D': [], 'E': ['F'], 'F': [] } dfs(graph, 'A') ``` This code defines a depth-first search (DFS) function using `LifoQueue` to manage the traversal order."
+  },
   "data_pointers": [
     {
       "title": "LifoQueue",
       "uri": "knowledge://py_lifo_queue_v4",
-      "content_preview": "queue.LifoQueue is a Last-In-First-Out (LIFO) data structure, similar to a stack. It supports put and get methods. This data structure is suitable for Depth-First Search (DFS) traversal. Here's a brie"
+      "content_preview": "LifoQueue: queue.LifoQueue is a Last-In-First-Out (LIFO) data structure, similar to a stack. It supports put and get methods. This data structure is suitable for Depth-First Search (DFS) traversal. Here's a brief Python code example using LifoQueue for DFS: ```python from queue import LifoQueue def dfs(graph, start): stack = LifoQueue() visited = set() stack.put(start) while not stack.empty(): vertex = stack.get() if vertex not in visited: print(vertex) # Process the node (e.g., print it) visited.add(vertex) for neighbor in graph[vertex]: stack.put(neighbor) # Example usage graph = { 'A': ['B', 'C'], 'B': ['D', 'E'], 'C': ['F'], 'D': [], 'E': ['F'], 'F': [] } dfs(graph, 'A') ``` This code defines a depth-first search (DFS) function using `LifoQueue` to manage the traversal order."
     }
   ],
   "related_nodes": []

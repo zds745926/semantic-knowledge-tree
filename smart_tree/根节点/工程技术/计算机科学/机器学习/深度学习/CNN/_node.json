@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Convolutional neural networks extract local features using convolutional kernels and are suitable for image processing. Here is a brief Python code example using TensorFlow to create a simple convolut"
+    "description": "CNN: Convolutional neural networks extract local features using convolutional kernels and are suitable for image processing. Here is a brief Python code example using TensorFlow to create a simple convolutional layer: ```python import tensorflow as tf # Define the input shape (assuming 28x28 grayscale images) input_shape = (None, 28, 28, 1) # Create a simple Conv2D layer with 32 filters of size 3x3 conv_layer = tf.keras.layers.Conv2D(32, kernel_size=3, activation='relu', input_shape=input_shape) # Example input tensor (batch size of 1 for simplicity) input_tensor = tf.random.normal((1, 28, 28, 1)) # Apply the convolutional layer to the input output_tensor = conv_layer(input_tensor) print(output_tensor.shape) # Output shape will be (1, 26, 26, 32) ``` This code snippet demonstrates creating a basic Conv2D layer and applying it to an input tensor."
   },
   "data_pointers": [],
   "related_nodes": []

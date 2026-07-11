@@ -1,0 +1,21 @@
+{
+  "name": "property 装饰器",
+  "node_id": "py_property_v4",
+  "parent_id": "py_class_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "类与实例",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "property 装饰器",
+      "uri": "knowledge://py_property_v4",
+      "content_preview": "The `@property` decorator allows methods to be accessed like attributes, providing a way to define getters and setters for class attributes. The `setter` and `deleter` control assignment and deletion "
+    }
+  ],
+  "related_nodes": []
+}

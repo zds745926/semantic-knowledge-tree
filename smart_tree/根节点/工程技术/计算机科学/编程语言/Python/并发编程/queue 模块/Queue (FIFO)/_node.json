@@ -9,12 +9,14 @@
   "parent": "queue 模块",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Queue (FIFO): The `queue.Queue(maxsize)` is a first-in-first-out (FIFO) data structure. It provides methods such as `put(blocking)` to enqueue an item and `get(blocking)` to dequeue and retrieve an item. Additionally, there are `task_done()` and `join()` methods for signaling the completion of tasks and waiting until all tasks are done. Here is a brief Python code example: ```python import queue import threading def worker(q): while True: item = q.get() # Get an item from the queue if item is None: # Signal to stop break print(f\"Processing {item}\") q.task_done() # Indicate that a formerly enqueued task is complete q = queue.Queue(maxsize=10) # Create a queue with max size of 10 # Start worker threads for i in range(5): threading.Thread(target=worker, args=(q,), daemon=True).start() # Enqueue items for item in range(20): q.put(item) # Wait until all tasks are done q.join() ``` In this example: - `put(blocking)` is used to enqueue items. - `get(blocking)` retrieves an item from the queue. - `task_done()` signals that a task has been completed. - `join()` waits for all items in the queue to be processed."
+  },
   "data_pointers": [
     {
       "title": "Queue (FIFO)",
       "uri": "knowledge://py_queue_fifo_v4",
-      "content_preview": "The `queue.Queue(maxsize)` is a first-in-first-out (FIFO) data structure. It provides methods such as `put(blocking)` to enqueue an item and `get(blocking)` to dequeue and retrieve an item. Additional"
+      "content_preview": "Queue (FIFO): The `queue.Queue(maxsize)` is a first-in-first-out (FIFO) data structure. It provides methods such as `put(blocking)` to enqueue an item and `get(blocking)` to dequeue and retrieve an item. Additionally, there are `task_done()` and `join()` methods for signaling the completion of tasks and waiting until all tasks are done. Here is a brief Python code example: ```python import queue import threading def worker(q): while True: item = q.get() # Get an item from the queue if item is None: # Signal to stop break print(f\"Processing {item}\") q.task_done() # Indicate that a formerly enqueued task is complete q = queue.Queue(maxsize=10) # Create a queue with max size of 10 # Start worker threads for i in range(5): threading.Thread(target=worker, args=(q,), daemon=True).start() # Enqueue items for item in range(20): q.put(item) # Wait until all tasks are done q.join() ``` In this example: - `put(blocking)` is used to enqueue items. - `get(blocking)` retrieves an item from the queue. - `task_done()` signals that a task has been completed. - `join()` waits for all items in the queue to be processed."
     }
   ],
   "related_nodes": []

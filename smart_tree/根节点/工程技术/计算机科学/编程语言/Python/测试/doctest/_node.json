@@ -9,12 +9,14 @@
   "parent": "测试",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "doctest: Test cases in docstrings. `python -m doctest module.py`. Documentation as tests. Here is an example to illustrate this concept with a simple Python function: ```python def add(a, b): \"\"\" Add two numbers and return the result. >>> add(2, 3) 5 >>> add(-1, 1) 0 \"\"\" return a + b ``` To run these tests, you would use: ```sh python -m doctest module.py ```"
+  },
   "data_pointers": [
     {
       "title": "doctest",
       "uri": "knowledge://py_doctest_v4",
-      "content_preview": "Test cases in docstrings. `python -m doctest module.py`. Documentation as tests. Here is an example to illustrate this concept with a simple Python function: ```python def add(a, b): \"\"\" Add two numbe"
+      "content_preview": "doctest: Test cases in docstrings. `python -m doctest module.py`. Documentation as tests. Here is an example to illustrate this concept with a simple Python function: ```python def add(a, b): \"\"\" Add two numbers and return the result. >>> add(2, 3) 5 >>> add(-1, 1) 0 \"\"\" return a + b ``` To run these tests, you would use: ```sh python -m doctest module.py ```"
     }
   ],
   "related_nodes": []

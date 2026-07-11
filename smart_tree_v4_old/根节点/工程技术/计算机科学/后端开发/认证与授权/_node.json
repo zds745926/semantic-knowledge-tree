@@ -1,0 +1,21 @@
+{
+  "name": "认证与授权",
+  "node_id": "auth_v4",
+  "parent_id": "be_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "后端开发",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "认证与授权",
+      "uri": "knowledge://auth_v4",
+      "content_preview": "JWT Stateless / OAuth2.0 Authorization / Session-Cookie Stateful / RBAC Permissions. ### Explanation: - **JWT (JSON Web Token) Stateless**: - A JSON web token is a compact, URL-safe means of represent"
+    }
+  ],
+  "related_nodes": []
+}

@@ -9,12 +9,14 @@
   "parent": "上下文管理器",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "contextmanager: The `@contextmanager` decorator function is used in Python for context management. The code within the function runs before the `yield` statement when entering the context, and any code after the `yield` statement runs when exiting the context. Here's a brief example: ```python from contextlib import contextmanager @contextmanager def simple_context_manager(resource): print(\"Entering the context\") # Perform setup here (e.g., acquire resource) try: yield resource # This is where the code within the `with` block runs finally: print(\"Exiting the context\") # Perform cleanup here (e.g., release resource) # Usage example with simple_context_manager(\"Resource\") as res: print(f\"Using {res}\") ``` In this example, when you use the `simple_context_manager` in a `with` statement, it will print \"Entering the context\", then execute the code within the `with` block (which prints the resource), and finally print \"Exiting the context\"."
+  },
   "data_pointers": [
     {
       "title": "contextmanager",
       "uri": "knowledge://py_contextlib_v4",
-      "content_preview": "The `@contextmanager` decorator function is used in Python for context management. The code within the function runs before the `yield` statement when entering the context, and any code after the `yie"
+      "content_preview": "contextmanager: The `@contextmanager` decorator function is used in Python for context management. The code within the function runs before the `yield` statement when entering the context, and any code after the `yield` statement runs when exiting the context. Here's a brief example: ```python from contextlib import contextmanager @contextmanager def simple_context_manager(resource): print(\"Entering the context\") # Perform setup here (e.g., acquire resource) try: yield resource # This is where the code within the `with` block runs finally: print(\"Exiting the context\") # Perform cleanup here (e.g., release resource) # Usage example with simple_context_manager(\"Resource\") as res: print(f\"Using {res}\") ``` In this example, when you use the `simple_context_manager` in a `with` statement, it will print \"Entering the context\", then execute the code within the `with` block (which prints the resource), and finally print \"Exiting the context\"."
     }
   ],
   "related_nodes": []

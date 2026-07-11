@@ -9,12 +9,14 @@
   "parent": "隔离级别",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "读未提交: The lowest level allows reading uncommitted data (dirty reads), which is almost never used. In the context of database transactions and concurrency control, here's a brief explanation with a Python code example using the `sqlite3` library to illustrate dirty reads: ```python import sqlite3 # Connect to SQLite database (or create it if it doesn't exist) conn = sqlite3.connect('example.db') cursor = conn.cursor() # Start a transaction without setting isolation level explicitly # By default, SQLite uses autocommit mode for simplicity # But we can start a manual transaction to demonstrate dirty reads try: # Begin the transaction cursor.execute(\"BEGIN\") # Insert a row of data (but don't commit yet) cursor.execute(\"INSERT INTO my_table (data) VALUES ('dirty_data')\") # Read the uncommitted data (dirty read) cursor.execute(\"SELECT * FROM my_table\") print(cursor.fetchall()) finally: # Rollback the transaction to clean up conn.rollback() conn.close() # Note: In a real-world scenario, you should always commit or rollback transactions properly. ``` In this example, `BEGIN` starts a transaction. The `INSERT` statement adds data without committing it. The subsequent `SELECT` query reads the uncommitted data, demonstrating a dirty read. However, in practice, such behavior is generally undesirable and should be avoided to maintain data integrity."
+  },
   "data_pointers": [
     {
       "title": "读未提交",
       "uri": "knowledge://read_uncommitted_v4",
-      "content_preview": "The lowest level allows reading uncommitted data (dirty reads), which is almost never used. In the context of database transactions and concurrency control, here's a brief explanation with a Python co"
+      "content_preview": "读未提交: The lowest level allows reading uncommitted data (dirty reads), which is almost never used. In the context of database transactions and concurrency control, here's a brief explanation with a Python code example using the `sqlite3` library to illustrate dirty reads: ```python import sqlite3 # Connect to SQLite database (or create it if it doesn't exist) conn = sqlite3.connect('example.db') cursor = conn.cursor() # Start a transaction without setting isolation level explicitly # By default, SQLite uses autocommit mode for simplicity # But we can start a manual transaction to demonstrate dirty reads try: # Begin the transaction cursor.execute(\"BEGIN\") # Insert a row of data (but don't commit yet) cursor.execute(\"INSERT INTO my_table (data) VALUES ('dirty_data')\") # Read the uncommitted data (dirty read) cursor.execute(\"SELECT * FROM my_table\") print(cursor.fetchall()) finally: # Rollback the transaction to clean up conn.rollback() conn.close() # Note: In a real-world scenario, you should always commit or rollback transactions properly. ``` In this example, `BEGIN` starts a transaction. The `INSERT` statement adds data without committing it. The subsequent `SELECT` query reads the uncommitted data, demonstrating a dirty read. However, in practice, such behavior is generally undesirable and should be avoided to maintain data integrity."
     }
   ],
   "related_nodes": []

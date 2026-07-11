@@ -12,7 +12,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python variable resolution follows the LEGB rule: Local → Enclosing → Global → Built-in. To provide a brief Python code example that illustrates this concept: ```python # Define a global variable glob"
+    "description": "变量作用域: Python variable resolution follows the LEGB rule: Local → Enclosing → Global → Built-in. To provide a brief Python code example that illustrates this concept: ```python # Define a global variable global_var = \"I am global\" def outer_function(): # Define an enclosing (non-local) variable enclosing_var = \"I am enclosing\" def inner_function(): # Define a local variable local_var = \"I am local\" print(local_var) print(enclosing_var) print(global_var) inner_function() outer_function() ``` In this example: - `local_var` is a local variable within the `inner_function`. - `enclosing_var` is an enclosing (non-local) variable in relation to `inner_function`. - `global_var` is a global variable that can be accessed from any function. When you run this code, it will output: ``` I am local I am enclosing I am global ```"
   },
   "data_pointers": [],
   "related_nodes": []

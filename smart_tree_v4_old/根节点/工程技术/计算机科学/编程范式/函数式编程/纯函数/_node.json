@@ -1,0 +1,21 @@
+{
+  "name": "纯函数",
+  "node_id": "pure_functions_v4",
+  "parent_id": "functional_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "函数式编程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "纯函数",
+      "uri": "knowledge://pure_functions_v4",
+      "content_preview": "Pure functions always return the same output for the same input and have no side effects. Benefits: they can be cached, tested, and executed in parallel. Python code example to illustrate a pure funct"
+    }
+  ],
+  "related_nodes": []
+}

@@ -9,12 +9,14 @@
   "parent": "数字逻辑",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "布尔代数: Boolean Algebra Basic Operations: AND, OR, NOT. De Morgan's Laws allow the conversion between AND and OR operations. Here are brief Python code examples for these Boolean operations: ```python # Define variables a = True b = False # AND operation and_result = a and b # Output will be False # OR operation or_result = a or b # Output will be True # NOT operation not_a = not a # Output will be False ``` De Morgan's Laws can be demonstrated as follows: ```python # De Morgan's Law: NOT (a and b) is equivalent to (NOT a) or (NOT b) left_side = not (a and b) # Output will be True right_side = (not a) or (not b) # Output will be True print(left_side == right_side) # This should print True ``` These examples illustrate the basic Boolean operations and De Morgan's Laws in Python."
+  },
   "data_pointers": [
     {
       "title": "布尔代数",
       "uri": "knowledge://boolean_algebra_v4",
-      "content_preview": "Boolean Algebra Basic Operations: AND, OR, NOT. De Morgan's Laws allow the conversion between AND and OR operations. Here are brief Python code examples for these Boolean operations: ```python # Defin"
+      "content_preview": "布尔代数: Boolean Algebra Basic Operations: AND, OR, NOT. De Morgan's Laws allow the conversion between AND and OR operations. Here are brief Python code examples for these Boolean operations: ```python # Define variables a = True b = False # AND operation and_result = a and b # Output will be False # OR operation or_result = a or b # Output will be True # NOT operation not_a = not a # Output will be False ``` De Morgan's Laws can be demonstrated as follows: ```python # De Morgan's Law: NOT (a and b) is equivalent to (NOT a) or (NOT b) left_side = not (a and b) # Output will be True right_side = (not a) or (not b) # Output will be True print(left_side == right_side) # This should print True ``` These examples illustrate the basic Boolean operations and De Morgan's Laws in Python."
     }
   ],
   "related_nodes": []

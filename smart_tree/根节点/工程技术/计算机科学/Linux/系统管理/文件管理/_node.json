@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "系统管理",
   "children": [
+    "ls/cd/pwd",
     "cp/mv/rm",
     "find/locate",
-    "ls/cd/pwd",
     "tar/gzip"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The Linux file management commands include core tools such as `ls`, `cd`, `cp`, `mv`, `rm`, and `find`. Here are brief descriptions of these commands along with Python code examples where applicable: "
+    "description": "文件管理: The Linux file management commands include core tools such as `ls`, `cd`, `cp`, `mv`, `rm`, and `find`. Here are brief descriptions of these commands along with Python code examples where applicable: - **`ls`**: Lists files and directories in the current directory. ```python import os print(os.listdir('.')) # Equivalent to 'ls' command ``` - **`cd`**: Changes the current working directory. ```python import os os.chdir('/path/to/directory') # Equivalent to 'cd /path/to/directory' ``` - **`cp`**: Copies files or directories. ```python import shutil shutil.copy('source_file', 'destination_file') # Equivalent to 'cp source_file destination_file' ``` - **`mv`**: Moves or renames files and directories. ```python import os os.rename('old_name', 'new_name') # Equivalent to 'mv old_name new_name' ``` - **`rm`**: Removes files or directories (use with caution). ```python import os os.remove('file_to_delete') # Equivalent to 'rm file_to_delete' ``` - **`find`**: Searches for files in a directory hierarchy. ```python import glob matching_files = glob.glob('/path/to/search/**/*', recursive=True) # Similar functionality to 'find /path/to/search -type f' print(matching_files) ``` These examples provide a basic mapping of common Linux commands to Python functions, though the exact usage and behavior may differ slightly."
   },
   "data_pointers": [],
   "related_nodes": []

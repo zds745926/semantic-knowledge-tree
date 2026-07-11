@@ -9,12 +9,14 @@
   "parent": "基本数据类型",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "整型 int: Python's `int` is an arbitrary-precision integer (large integers are automatically extended). It supports literal values in binary (0b), octal (0o), and hexadecimal (0x) formats. Here’s a brief Python code example to illustrate: ```python # Binary, Octal, Hexadecimal literals binary_number = 0b1010 # 10 in decimal octal_number = 0o12 # 10 in decimal hexadecimal_number = 0xA # 10 in decimal print(binary_number) # Output: 10 print(octal_number) # Output: 10 print(hexadecimal_number) # Output: 10 ``` This example demonstrates how to use binary, octal, and hexadecimal number literals in Python."
+  },
   "data_pointers": [
     {
       "title": "整型 int",
       "uri": "knowledge://py_int_v4",
-      "content_preview": "Python's `int` is an arbitrary-precision integer (large integers are automatically extended). It supports literal values in binary (0b), octal (0o), and hexadecimal (0x) formats. Here’s a brief Python"
+      "content_preview": "整型 int: Python's `int` is an arbitrary-precision integer (large integers are automatically extended). It supports literal values in binary (0b), octal (0o), and hexadecimal (0x) formats. Here’s a brief Python code example to illustrate: ```python # Binary, Octal, Hexadecimal literals binary_number = 0b1010 # 10 in decimal octal_number = 0o12 # 10 in decimal hexadecimal_number = 0xA # 10 in decimal print(binary_number) # Output: 10 print(octal_number) # Output: 10 print(hexadecimal_number) # Output: 10 ``` This example demonstrates how to use binary, octal, and hexadecimal number literals in Python."
     }
   ],
   "related_nodes": []

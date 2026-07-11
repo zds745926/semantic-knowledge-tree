@@ -8,15 +8,15 @@
   "version": 1,
   "parent": "Python",
   "children": [
-    "Mock 模拟",
-    "doctest",
-    "pdb 调试器",
     "pytest",
-    "unittest"
+    "unittest",
+    "Mock 模拟",
+    "pdb 调试器",
+    "doctest"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python has an extensive suite of testing tools. Unit tests ensure the correctness of the code, with pytest providing a concise testing syntax and unittest.mock for mocking external dependencies. TDD i"
+    "description": "测试: Python has an extensive suite of testing tools. Unit tests ensure the correctness of the code, with pytest providing a concise testing syntax and unittest.mock for mocking external dependencies. TDD is recommended practice in the Python community. Here's a brief example using pytest and unittest.mock: ```python import requests def test_example(): # Using unittest.mock to mock the response from requests.get from unittest.mock import patch @patch('requests.get') def test_get_request(mock_get): # Configure the mock to return a specific response mock_get.return_value.status_code = 200 mock_get.return_value.json.return_value = {'key': 'value'} # Call the function that uses requests.get result = get_data() # Assert the expected behavior assert result == {'key': 'value'} def get_data(): response = requests.get('https://api.example.com/data') return response.json() # Note: In a real-world scenario, you would replace this with an actual API call. ``` In this example, `pytest` is used to write a unit test for the function `get_data()`. The `unittest.mock.patch` context manager is used to mock the `requests.get` method, allowing us to control its behavior and verify that our code works as expected without making real HTTP requests."
   },
   "data_pointers": [],
   "related_nodes": []

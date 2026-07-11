@@ -9,12 +9,14 @@
   "parent": "云原生基础",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Terraform: IaC (HCL language). Plan/Apply/Destroy. State file. Multi-provider. Here's a brief explanation with a related Python code example for context, even though the original text is about Infrastructure as Code using HashiCorp Configuration Language (HCL): Infrastructure as Code (using HCL language). Plan, Apply, Destroy operations. State file management. Support for multiple providers. Python code example (related to IaC but not directly translating the given Chinese text): ```python import os class TerraformManager: def __init__(self, working_dir): self.working_dir = working_dir def plan(self): \"\"\"Plan the infrastructure changes.\"\"\" command = f\"terraform plan -out={os.path.join(self.working_dir, 'plan_file.tfplan')}\" os.system(command) def apply(self): \"\"\"Apply the planned infrastructure changes.\"\"\" command = \"terraform apply @plan_file.tfplan\" os.system(command) def destroy(self): \"\"\"Destroy the infrastructure.\"\"\" command = \"terraform destroy -auto-approve\" os.system(command) # Example usage manager = TerraformManager(working_dir=\"/path/to/your/project\") manager.plan() manager.apply() manager.destroy() ``` This Python class provides a simple interface to manage Terraform operations, which is often used in IaC workflows. Note that this example assumes you have the `terraform` command-line tool installed and available in your system's PATH."
+  },
   "data_pointers": [
     {
       "title": "Terraform",
       "uri": "knowledge://terraform_v4",
-      "content_preview": "IaC (HCL language). Plan/Apply/Destroy. State file. Multi-provider. Here's a brief explanation with a related Python code example for context, even though the original text is about Infrastructure as "
+      "content_preview": "Terraform: IaC (HCL language). Plan/Apply/Destroy. State file. Multi-provider. Here's a brief explanation with a related Python code example for context, even though the original text is about Infrastructure as Code using HashiCorp Configuration Language (HCL): Infrastructure as Code (using HCL language). Plan, Apply, Destroy operations. State file management. Support for multiple providers. Python code example (related to IaC but not directly translating the given Chinese text): ```python import os class TerraformManager: def __init__(self, working_dir): self.working_dir = working_dir def plan(self): \"\"\"Plan the infrastructure changes.\"\"\" command = f\"terraform plan -out={os.path.join(self.working_dir, 'plan_file.tfplan')}\" os.system(command) def apply(self): \"\"\"Apply the planned infrastructure changes.\"\"\" command = \"terraform apply @plan_file.tfplan\" os.system(command) def destroy(self): \"\"\"Destroy the infrastructure.\"\"\" command = \"terraform destroy -auto-approve\" os.system(command) # Example usage manager = TerraformManager(working_dir=\"/path/to/your/project\") manager.plan() manager.apply() manager.destroy() ``` This Python class provides a simple interface to manage Terraform operations, which is often used in IaC workflows. Note that this example assumes you have the `terraform` command-line tool installed and available in your system's PATH."
     }
   ],
   "related_nodes": []

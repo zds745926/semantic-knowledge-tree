@@ -1,0 +1,21 @@
+{
+  "name": "微服务",
+  "node_id": "microservices_v4",
+  "parent_id": "arch_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "架构模式",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "微服务",
+      "uri": "knowledge://microservices_v4",
+      "content_preview": "Independent services with independent deployment. Lightweight API communication between services. DB per service. For the technical terms and to provide a brief Python code example for the coding/prog"
+    }
+  ],
+  "related_nodes": []
+}

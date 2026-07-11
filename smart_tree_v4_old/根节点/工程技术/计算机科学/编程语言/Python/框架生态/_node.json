@@ -1,0 +1,28 @@
+{
+  "name": "框架生态",
+  "node_id": "py_fw_v4",
+  "parent_id": "python_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "Python",
+  "children": [
+    "Django",
+    "FastAPI",
+    "Flask",
+    "Matplotlib",
+    "NumPy",
+    "Pandas",
+    "PyTorch",
+    "SQLAlchemy",
+    "SciPy",
+    "scikit-learn"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python boasts a rich framework ecosystem that covers web development, data science, machine learning, and more. Here are some brief examples to illustrate coding/programming concepts in these areas: 1"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

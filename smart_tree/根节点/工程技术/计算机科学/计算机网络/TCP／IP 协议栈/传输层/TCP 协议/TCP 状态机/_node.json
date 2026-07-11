@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "TCP 协议",
   "children": [
-    "TIME_WAIT 详解",
-    "状态转移详解"
+    "状态转移详解",
+    "TIME_WAIT 详解"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "TCP connection goes through 11 states, established via three-way handshaking and terminated with four-way finishing (or挥手 in Chinese, which literally means waving hands). Here are the detailed states:"
+    "description": "TCP 状态机: TCP connection goes through 11 states, established via three-way handshaking and terminated with four-way finishing (or挥手 in Chinese, which literally means waving hands). Here are the detailed states: 1. **CLOSED**: No connection. 2. **LISTEN**: Listening for a connection request from a client. 3. **SYN-SENT**: Initiated a connection attempt by sending a SYN segment. 4. **SYN-RECEIVED**: Received a SYN segment and sent a SYN-ACK in response. 5. **ESTABLISHED**: Connection is established, data transfer can occur. 6. **FIN-WAIT-1**: Sent a FIN to shut down the sender side of the connection. 7. **FIN-WAIT-2**: Waiting for an ACK of the shutdown of the receiver side. 8. **TIMED-WAIT (CLOSING)**: Waiting for enough time to pass to be sure that the final ACK arrived at the other end. 9. **LAST-ACK**: Received the last ACK from the remote and is waiting to close. 10. **CLOSE-WAIT**: Waiting for data from the receiver side before closing. 11. **LAST- CLOSE**: The connection has been closed by both sides. Here's a brief Python code example using `socket` to simulate a simple TCP client that connects, sends data, and then closes the connection: ```python import socket def tcp_client(): # Create a socket object s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Define server address and port server_address = ('localhost', 10000) try: # Connect to the server s.connect(server_address) print(\"Connected to\", server_address) # Send data message = 'Hello, Server!' s.sendall(message.encode('utf-8')) print(f\"Sent: {message}\") # Receive response amount_received = 0 amount_expected = len(message) while amount_received < amount_expected: data = s.recv(16) amount_received += len(data) print(f\"Received: {data.decode('utf-8')}\") finally: # Close the connection s.close() print(\"Connection closed\") tcp_client() ``` This code demonstrates a simple TCP client that connects to a server, sends a message, and then closes the connection."
   },
   "data_pointers": [],
   "related_nodes": []

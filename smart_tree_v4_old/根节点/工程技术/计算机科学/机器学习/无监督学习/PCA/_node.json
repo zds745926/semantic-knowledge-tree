@@ -1,0 +1,21 @@
+{
+  "name": "PCA",
+  "node_id": "pca_v4",
+  "parent_id": "unsupervised_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "无监督学习",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "PCA",
+      "uri": "knowledge://pca_v4",
+      "content_preview": "Principal Component Analysis (PCA) dimensionality reduction. Uncorrelated noise removal. Maximizing variance retention. Python code example for PCA: ```python from sklearn.decomposition import PCA imp"
+    }
+  ],
+  "related_nodes": []
+}

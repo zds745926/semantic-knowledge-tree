@@ -9,12 +9,14 @@
   "parent": "进程间通信 IPC",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "共享内存: Fastest Inter-Process Communication (IPC). Multiple processes map the same physical memory. Synchronization is required using semaphores. Here's a brief Python code example to illustrate how semaphores can be used for synchronization in this context: ```python import multiprocessing import time # Semaphore to control access to shared memory semaphore = multiprocessing.Semaphore(1) def process_function(shared_memory): with semaphore: # Critical section: Accessing the shared memory print(f\"Process {multiprocessing.current_process().name} accessing shared memory\") time.sleep(1) # Simulate some work print(f\"Process {multiprocessing.current_process().name} finished accessing shared memory\") if __name__ == \"__main__\": # Shared memory (for illustration, using a simple list) shared_memory = [0] * 10 processes = [] for i in range(5): p = multiprocessing.Process(target=process_function, args=(shared_memory,)) processes.append(p) p.start() for p in processes: p.join() ``` In this example, a semaphore with an initial value of 1 is used to ensure that only one process can access the shared memory at any given time. This helps prevent race conditions and ensures proper synchronization between processes accessing the same physical memory region."
+  },
   "data_pointers": [
     {
       "title": "共享内存",
       "uri": "knowledge://shm_v4",
-      "content_preview": "Fastest Inter-Process Communication (IPC). Multiple processes map the same physical memory. Synchronization is required using semaphores. Here's a brief Python code example to illustrate how semaphore"
+      "content_preview": "共享内存: Fastest Inter-Process Communication (IPC). Multiple processes map the same physical memory. Synchronization is required using semaphores. Here's a brief Python code example to illustrate how semaphores can be used for synchronization in this context: ```python import multiprocessing import time # Semaphore to control access to shared memory semaphore = multiprocessing.Semaphore(1) def process_function(shared_memory): with semaphore: # Critical section: Accessing the shared memory print(f\"Process {multiprocessing.current_process().name} accessing shared memory\") time.sleep(1) # Simulate some work print(f\"Process {multiprocessing.current_process().name} finished accessing shared memory\") if __name__ == \"__main__\": # Shared memory (for illustration, using a simple list) shared_memory = [0] * 10 processes = [] for i in range(5): p = multiprocessing.Process(target=process_function, args=(shared_memory,)) processes.append(p) p.start() for p in processes: p.join() ``` In this example, a semaphore with an initial value of 1 is used to ensure that only one process can access the shared memory at any given time. This helps prevent race conditions and ensures proper synchronization between processes accessing the same physical memory region."
     }
   ],
   "related_nodes": []

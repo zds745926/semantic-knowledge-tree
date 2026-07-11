@@ -1,0 +1,21 @@
+{
+  "name": "Transformer",
+  "node_id": "transformer_v4",
+  "parent_id": "dl_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "深度学习",
+  "children": [
+    "Transformer 架构",
+    "自注意力",
+    "预训练+微调"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Transformers utilize self-attention mechanisms to process sequences and form the foundational architecture of large models like BERT and GPT. Python code example (a simple self-attention mechanism imp"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

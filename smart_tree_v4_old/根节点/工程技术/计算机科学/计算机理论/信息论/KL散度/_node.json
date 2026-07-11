@@ -1,0 +1,21 @@
+{
+  "name": "KL散度",
+  "node_id": "kl_divergence_v4",
+  "parent_id": "info_theory_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "信息论",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "KL散度",
+      "uri": "knowledge://kl_divergence_v4",
+      "content_preview": "KL Divergence (Kullback-Leibler Divergence): \\(D_{KL}(P \\parallel Q) = \\sum P(x) \\log \\left(\\frac{P(x)}{Q(x)}\\right)\\) This measures the difference between two probability distributions, and it is not"
+    }
+  ],
+  "related_nodes": []
+}

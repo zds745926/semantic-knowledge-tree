@@ -1,0 +1,19 @@
+{
+  "name": "进程调度",
+  "node_id": "proc_sched_v4",
+  "parent_id": "proc_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "进程与线程管理",
+  "children": [
+    "调度算法"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Process scheduling determines which process from the ready queue gets access to the CPU. Common algorithms include FCFS (First-Come, First-Served), SJF (Shortest Job First), RR (Round Robin), and MLFQ"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

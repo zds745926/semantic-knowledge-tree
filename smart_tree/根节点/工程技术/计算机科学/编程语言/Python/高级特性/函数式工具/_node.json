@@ -9,11 +9,12 @@
   "parent": "高级特性",
   "children": [
     "map/filter/reduce",
-    "偏函数 partial"
+    "偏函数 partial",
+    "itertools 模块"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python provides functional tools such as `map`, `filter`, and `reduce` (note that `reduce` is not built-in in Python 3, but can be imported from the `functools` module), partial functions, and the `it"
+    "description": "函数式工具: Python provides functional tools such as `map`, `filter`, and `reduce` (note that `reduce` is not built-in in Python 3, but can be imported from the `functools` module), partial functions, and the `itertools` module. Here are brief explanations with Python code examples: - **Map**: Applies a function to all items of an iterable. ```python def square(x): return x * x numbers = [1, 2, 3, 4] squared_numbers = list(map(square, numbers)) print(squared_numbers) # Output: [1, 4, 9, 16] ``` - **Filter**: Filters items from an iterable based on a function. ```python def is_even(x): return x % 2 == 0 numbers = [1, 2, 3, 4, 5, 6] even_numbers = list(filter(is_even, numbers)) print(even_numbers) # Output: [2, 4, 6] ``` - **Reduce**: Applies a function of two arguments cumulatively to the items of an iterable (not built-in in Python 3; use `functools.reduce`). ```python from functools import reduce def multiply(x, y): return x * y numbers = [1, 2, 3, 4] product = reduce(multiply, numbers) print(product) # Output: 24 ``` - **Partial Functions**: Creates a new function with some arguments pre-filled. ```python from functools import partial def power(x, n): return x ** n square = partial(power, n=2) print(square(3)) # Output: 9 ``` - **itertools Module**: Provides various functions that work on iterators to produce complex iterators. ```python import itertools # Cycle through a list indefinitely numbers = [1, 2, 3] cycled_numbers = itertools.cycle(numbers) for _ in range(5): print(next(cycled_numbers)) # Output: 1, 2, 3, 1, 2 ``` These examples should give you a good understanding of how these functional tools can be used in Python."
   },
   "data_pointers": [],
   "related_nodes": []

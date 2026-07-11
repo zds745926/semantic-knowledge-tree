@@ -1,0 +1,21 @@
+{
+  "name": "OSPF",
+  "node_id": "ospf_v4",
+  "parent_id": "routing_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "路由协议",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "OSPF",
+      "uri": "knowledge://ospf_v4",
+      "content_preview": "Link-state routing. Dijkstra's SPF algorithm calculates paths. Area hierarchy. Fast convergence. Here is a brief explanation with a related Python code example for the Dijkstra's SPF algorithm: ```pyt"
+    }
+  ],
+  "related_nodes": []
+}

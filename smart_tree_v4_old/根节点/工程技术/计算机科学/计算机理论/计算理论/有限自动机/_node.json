@@ -1,0 +1,21 @@
+{
+  "name": "有限自动机",
+  "node_id": "finite_automata_v4",
+  "parent_id": "comp_theory_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "计算理论",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "有限自动机",
+      "uri": "knowledge://finite_automata_v4",
+      "content_preview": "Finite automata are abstract computational models with only a finite number of states, and they come in two types: Deterministic Finite Automata (DFA) and Non-deterministic Finite Automata (NFA). Regu"
+    }
+  ],
+  "related_nodes": []
+}

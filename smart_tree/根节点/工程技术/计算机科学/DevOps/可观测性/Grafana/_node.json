@@ -9,12 +9,14 @@
   "parent": "可观测性",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Grafana: Visualization dashboard. Multi-data source support. Alarm rules. Rich panel types. Here is an expanded version with a brief Python code example for creating a simple visualization using the `matplotlib` library: Visualization dashboard. This feature allows users to create and customize dashboards that can display data from multiple sources in various visual formats, such as charts, graphs, and tables. Multi-data source support. The system supports integrating data from different sources, enabling comprehensive data analysis and monitoring across various systems or departments. Alarm rules. Users can define custom alarm rules based on specific conditions to receive notifications when certain thresholds are exceeded. For example, an email alert could be triggered if CPU usage exceeds 80%. Rich panel types. A variety of pre-defined panels are available for users to choose from, including line charts, bar graphs, pie charts, and more. Python code example using `matplotlib`: ```python import matplotlib.pyplot as plt # Sample data months = ['Jan', 'Feb', 'Mar', 'Apr', 'May'] sales = [200, 350, 400, 600, 800] # Create a bar chart plt.bar(months, sales) # Add title and labels plt.title('Monthly Sales Data') plt.xlabel('Month') plt.ylabel('Sales') # Show the plot plt.show() ``` This code creates a simple bar chart to visualize monthly sales data."
+  },
   "data_pointers": [
     {
       "title": "Grafana",
       "uri": "knowledge://grafana_v4",
-      "content_preview": "Visualization dashboard. Multi-data source support. Alarm rules. Rich panel types. Here is an expanded version with a brief Python code example for creating a simple visualization using the `matplotli"
+      "content_preview": "Grafana: Visualization dashboard. Multi-data source support. Alarm rules. Rich panel types. Here is an expanded version with a brief Python code example for creating a simple visualization using the `matplotlib` library: Visualization dashboard. This feature allows users to create and customize dashboards that can display data from multiple sources in various visual formats, such as charts, graphs, and tables. Multi-data source support. The system supports integrating data from different sources, enabling comprehensive data analysis and monitoring across various systems or departments. Alarm rules. Users can define custom alarm rules based on specific conditions to receive notifications when certain thresholds are exceeded. For example, an email alert could be triggered if CPU usage exceeds 80%. Rich panel types. A variety of pre-defined panels are available for users to choose from, including line charts, bar graphs, pie charts, and more. Python code example using `matplotlib`: ```python import matplotlib.pyplot as plt # Sample data months = ['Jan', 'Feb', 'Mar', 'Apr', 'May'] sales = [200, 350, 400, 600, 800] # Create a bar chart plt.bar(months, sales) # Add title and labels plt.title('Monthly Sales Data') plt.xlabel('Month') plt.ylabel('Sales') # Show the plot plt.show() ``` This code creates a simple bar chart to visualize monthly sales data."
     }
   ],
   "related_nodes": []

@@ -1,0 +1,21 @@
+{
+  "name": "应用层协议",
+  "node_id": "app_layer_v4",
+  "parent_id": "tcpip_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "TCP/IP 协议栈",
+  "children": [
+    "CDN",
+    "DNS",
+    "HTTP"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Application layer protocols provide network services for applications, including HTTP, DNS, and FTP. Python code examples: 1. **HTTP (using `requests` library)**: ```python import requests response = "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

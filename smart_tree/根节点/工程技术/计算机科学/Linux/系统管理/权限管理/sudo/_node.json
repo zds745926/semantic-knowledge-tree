@@ -9,12 +9,14 @@
   "parent": "权限管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "sudo: Ordinary users execute with root privileges. Use `visudo` to edit the configuration. NOPASSWD allows passwordless execution. Here's a brief explanation and an example of how this might be implemented in Python, although it's important to note that Python itself doesn't directly control system permissions or sudo configurations: ```python # This is just an illustrative code snippet for understanding the context. import os def execute_command_with_sudo(command): \"\"\" Execute a command with sudo privileges. Note: This function assumes NOPASSWD is configured in /etc/sudoers. :param command: The command to be executed as a string or list of strings. \"\"\" try: # Using subprocess to run the command import subprocess result = subprocess.run(command, shell=True, check=True, text=True) print(\"Command executed successfully:\", result.stdout) except subprocess.CalledProcessError as e: print(f\"Failed to execute command: {e}\") # Example usage (replace 'command_to_run' with your actual command): execute_command_with_sudo('command_to_run') ``` This Python function `execute_command_with_sudo` demonstrates how a command might be executed using sudo, assuming NOPASSWD is configured in the `/etc/sudoers` file. However, this example does not cover the configuration of sudo or the use of `visudo`."
+  },
   "data_pointers": [
     {
       "title": "sudo",
       "uri": "knowledge://sudo_v4",
-      "content_preview": "Ordinary users execute with root privileges. Use `visudo` to edit the configuration. NOPASSWD allows passwordless execution. Here's a brief explanation and an example of how this might be implemented "
+      "content_preview": "sudo: Ordinary users execute with root privileges. Use `visudo` to edit the configuration. NOPASSWD allows passwordless execution. Here's a brief explanation and an example of how this might be implemented in Python, although it's important to note that Python itself doesn't directly control system permissions or sudo configurations: ```python # This is just an illustrative code snippet for understanding the context. import os def execute_command_with_sudo(command): \"\"\" Execute a command with sudo privileges. Note: This function assumes NOPASSWD is configured in /etc/sudoers. :param command: The command to be executed as a string or list of strings. \"\"\" try: # Using subprocess to run the command import subprocess result = subprocess.run(command, shell=True, check=True, text=True) print(\"Command executed successfully:\", result.stdout) except subprocess.CalledProcessError as e: print(f\"Failed to execute command: {e}\") # Example usage (replace 'command_to_run' with your actual command): execute_command_with_sudo('command_to_run') ``` This Python function `execute_command_with_sudo` demonstrates how a command might be executed using sudo, assuming NOPASSWD is configured in the `/etc/sudoers` file. However, this example does not cover the configuration of sudo or the use of `visudo`."
     }
   ],
   "related_nodes": []

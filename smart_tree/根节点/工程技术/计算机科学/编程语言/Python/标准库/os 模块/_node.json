@@ -9,12 +9,14 @@
   "parent": "标准库",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "os 模块: The `os` module provides operating system interfaces: file operations (e.g., `os.remove()`, `os.rename()`), directory traversal (`os.walk()`), and environment variables (`os.environ`). Here are brief Python code examples for each: 1. **File Operations**: - Deleting a file: ```python import os try: os.remove(\"example.txt\") except FileNotFoundError: print(\"The file does not exist.\") ``` - Renaming a file: ```python import os os.rename(\"old_name.txt\", \"new_name.txt\") ``` 2. **Directory Traversal**: - Listing files in a directory and its subdirectories: ```python import os for root, dirs, files in os.walk(\"/path/to/directory\"): for file in files: print(os.path.join(root, file)) ``` 3. **Environment Variables**: - Accessing an environment variable: ```python import os print(os.environ.get(\"PATH\")) ``` These examples illustrate how to use the `os` module functions in Python for common tasks related to file and directory management."
+  },
   "data_pointers": [
     {
       "title": "os 模块",
       "uri": "knowledge://py_os_module_v4",
-      "content_preview": "The `os` module provides operating system interfaces: file operations (e.g., `os.remove()`, `os.rename()`), directory traversal (`os.walk()`), and environment variables (`os.environ`). Here are brief "
+      "content_preview": "os 模块: The `os` module provides operating system interfaces: file operations (e.g., `os.remove()`, `os.rename()`), directory traversal (`os.walk()`), and environment variables (`os.environ`). Here are brief Python code examples for each: 1. **File Operations**: - Deleting a file: ```python import os try: os.remove(\"example.txt\") except FileNotFoundError: print(\"The file does not exist.\") ``` - Renaming a file: ```python import os os.rename(\"old_name.txt\", \"new_name.txt\") ``` 2. **Directory Traversal**: - Listing files in a directory and its subdirectories: ```python import os for root, dirs, files in os.walk(\"/path/to/directory\"): for file in files: print(os.path.join(root, file)) ``` 3. **Environment Variables**: - Accessing an environment variable: ```python import os print(os.environ.get(\"PATH\")) ``` These examples illustrate how to use the `os` module functions in Python for common tasks related to file and directory management."
     }
   ],
   "related_nodes": []

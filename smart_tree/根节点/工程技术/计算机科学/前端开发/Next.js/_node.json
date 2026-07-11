@@ -9,12 +9,14 @@
   "parent": "前端开发",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Next.js: React Full-Stack Framework. SSR/SSG/ISR. App Router. Server Components. Here are brief explanations and corresponding Python code examples for some of the concepts: 1. **SSR (Server-Side Rendering) / SSG (Static Site Generation) / ISR (Incremental Static Regeneration)**: - **SSR**: Render content on the server side, sending a fully rendered HTML page to the client. - **SSG**: Generate static files at build time and serve them directly from the filesystem or CDN. - **ISR**: Re-generate static pages periodically based on user interactions. 2. **App Router**: - A new routing system in React that allows for more complex routing scenarios, including server-side rendering and API routes. 3. **Server Components**: - Server components are React components that can be rendered on the server side, allowing for better SEO and improved performance by reducing client-side JavaScript execution. Here's a simple Python code example to illustrate SSR using Flask: ```python from flask import Flask, render_template_string app = Flask(__name__) @app.route('/') def home(): # Server-side rendering with Jinja2 template engine return render_template_string('Hello, World!') if __name__ == '__main__': app.run() ``` This example uses Flask to create a simple server that renders a static HTML page on the server side."
+  },
   "data_pointers": [
     {
       "title": "Next.js",
       "uri": "knowledge://nextjs_v4",
-      "content_preview": "React Full-Stack Framework. SSR/SSG/ISR. App Router. Server Components. Here are brief explanations and corresponding Python code examples for some of the concepts: 1. **SSR (Server-Side Rendering) / "
+      "content_preview": "Next.js: React Full-Stack Framework. SSR/SSG/ISR. App Router. Server Components. Here are brief explanations and corresponding Python code examples for some of the concepts: 1. **SSR (Server-Side Rendering) / SSG (Static Site Generation) / ISR (Incremental Static Regeneration)**: - **SSR**: Render content on the server side, sending a fully rendered HTML page to the client. - **SSG**: Generate static files at build time and serve them directly from the filesystem or CDN. - **ISR**: Re-generate static pages periodically based on user interactions. 2. **App Router**: - A new routing system in React that allows for more complex routing scenarios, including server-side rendering and API routes. 3. **Server Components**: - Server components are React components that can be rendered on the server side, allowing for better SEO and improved performance by reducing client-side JavaScript execution. Here's a simple Python code example to illustrate SSR using Flask: ```python from flask import Flask, render_template_string app = Flask(__name__) @app.route('/') def home(): # Server-side rendering with Jinja2 template engine return render_template_string('Hello, World!') if __name__ == '__main__': app.run() ``` This example uses Flask to create a simple server that renders a static HTML page on the server side."
     }
   ],
   "related_nodes": []

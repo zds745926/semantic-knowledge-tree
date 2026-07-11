@@ -1,0 +1,22 @@
+{
+  "name": "软件工程",
+  "node_id": "se_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "CI/CD",
+    "架构模式",
+    "版本控制",
+    "设计模式"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Software engineering is an engineering discipline that uses systematic methods to guide the development, operation, and maintenance of software. It encompasses design patterns, version control, CI/CD "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

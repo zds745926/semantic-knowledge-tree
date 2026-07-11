@@ -9,12 +9,14 @@
   "parent": "迭代器与生成器",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "yield from: yield from sub_gen is a delegation of sub-generator. It simplifies nested generator patterns. Here’s an example to illustrate this in Python: ```python def parent_generator(): print(\"Parent generator starts\") try: while True: received = yield print(f\"Received: {received}\") # Delegate the processing to a sub-generator for value in child_generator(received): yield value except GeneratorExit: print(\"Parent generator is being closed\") def child_generator(input_value): print(f\"Child generator starts with input: {input_value}\") try: while True: received = yield f\"Processed: {input_value}\" except GeneratorExit: print(\"Child generator is being closed\") # Usage parent_gen = parent_generator() next(parent_gen) # Prime the parent generator for i in range(3): parent_gen.send(i) ``` In this example, `yield from` is not explicitly used because Python 3.3+ automatically handles delegation between generators using the `yield from` syntax. However, the concept of delegating to a sub-generator (`child_generator`) within the `parent_generator` is demonstrated."
+  },
   "data_pointers": [
     {
       "title": "yield from",
       "uri": "knowledge://py_yield_from_v4",
-      "content_preview": "yield from sub_gen is a delegation of sub-generator. It simplifies nested generator patterns. Here’s an example to illustrate this in Python: ```python def parent_generator(): print(\"Parent generator "
+      "content_preview": "yield from: yield from sub_gen is a delegation of sub-generator. It simplifies nested generator patterns. Here’s an example to illustrate this in Python: ```python def parent_generator(): print(\"Parent generator starts\") try: while True: received = yield print(f\"Received: {received}\") # Delegate the processing to a sub-generator for value in child_generator(received): yield value except GeneratorExit: print(\"Parent generator is being closed\") def child_generator(input_value): print(f\"Child generator starts with input: {input_value}\") try: while True: received = yield f\"Processed: {input_value}\" except GeneratorExit: print(\"Child generator is being closed\") # Usage parent_gen = parent_generator() next(parent_gen) # Prime the parent generator for i in range(3): parent_gen.send(i) ``` In this example, `yield from` is not explicitly used because Python 3.3+ automatically handles delegation between generators using the `yield from` syntax. However, the concept of delegating to a sub-generator (`child_generator`) within the `parent_generator` is demonstrated."
     }
   ],
   "related_nodes": []

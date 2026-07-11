@@ -1,0 +1,21 @@
+{
+  "name": "导数",
+  "node_id": "derivative_v4",
+  "parent_id": "calc_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "微积分",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "导数",
+      "uri": "knowledge://derivative_v4",
+      "content_preview": "The derivative \\( f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\) represents the instantaneous rate of change of a function at a particular point. Here is a brief Python code example using the sympy"
+    }
+  ],
+  "related_nodes": []
+}

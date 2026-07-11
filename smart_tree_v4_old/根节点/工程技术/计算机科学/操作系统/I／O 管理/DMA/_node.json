@@ -1,0 +1,21 @@
+{
+  "name": "DMA",
+  "node_id": "dma_v4",
+  "parent_id": "io_sys_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "I/O 管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "DMA",
+      "uri": "knowledge://dma_v4",
+      "content_preview": "The device directly reads and writes memory without occupying the CPU. Transmission completion triggers an interrupt notification. This is essential for high-speed devices. Python code example (to ill"
+    }
+  ],
+  "related_nodes": []
+}

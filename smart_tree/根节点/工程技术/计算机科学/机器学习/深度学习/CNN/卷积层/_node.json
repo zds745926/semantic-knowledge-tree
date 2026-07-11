@@ -9,12 +9,14 @@
   "parent": "CNN",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "卷积层: Convolutional kernels slide over the input to extract features. Parameter sharing occurs. Padding and stride are applied. Here is a brief explanation with a Python code example using TensorFlow/Keras: ```python import tensorflow as tf # Define a simple convolution layer model = tf.keras.models.Sequential([ tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3)) ]) # The Conv2D layer applies the convolution operation with a kernel size of 3x3 and 32 filters # Parameter sharing means that each filter is applied to the entire input volume # Padding example: 'same' padding keeps the output dimensions the same as the input model = tf.keras.models.Sequential([ tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3), padding='same') ]) # Stride example: a stride of 2 reduces the spatial dimensions by half model = tf.keras.models.Sequential([ tf.keras.layers.Conv2D(32, (3, 3), strides=2, activation='relu', input_shape=(64, 64, 3)) ]) ``` In this example: - `Conv2D` is used to apply a convolution operation. - The `padding` parameter can be set to 'same' or 'valid'. - The `strides` parameter controls the step size of the kernel during its sliding process."
+  },
   "data_pointers": [
     {
       "title": "卷积层",
       "uri": "knowledge://conv_layer_v4",
-      "content_preview": "Convolutional kernels slide over the input to extract features. Parameter sharing occurs. Padding and stride are applied. Here is a brief explanation with a Python code example using TensorFlow/Keras:"
+      "content_preview": "卷积层: Convolutional kernels slide over the input to extract features. Parameter sharing occurs. Padding and stride are applied. Here is a brief explanation with a Python code example using TensorFlow/Keras: ```python import tensorflow as tf # Define a simple convolution layer model = tf.keras.models.Sequential([ tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3)) ]) # The Conv2D layer applies the convolution operation with a kernel size of 3x3 and 32 filters # Parameter sharing means that each filter is applied to the entire input volume # Padding example: 'same' padding keeps the output dimensions the same as the input model = tf.keras.models.Sequential([ tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3), padding='same') ]) # Stride example: a stride of 2 reduces the spatial dimensions by half model = tf.keras.models.Sequential([ tf.keras.layers.Conv2D(32, (3, 3), strides=2, activation='relu', input_shape=(64, 64, 3)) ]) ``` In this example: - `Conv2D` is used to apply a convolution operation. - The `padding` parameter can be set to 'same' or 'valid'. - The `strides` parameter controls the step size of the kernel during its sliding process."
     }
   ],
   "related_nodes": []

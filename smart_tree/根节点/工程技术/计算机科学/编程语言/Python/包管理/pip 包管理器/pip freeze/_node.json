@@ -9,12 +9,14 @@
   "parent": "pip 包管理器",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "pip freeze: The command `pip freeze > requirements.txt` exports the current environment package list. The command `pip list` lists installed packages. Here is a brief Python code example to demonstrate how you might use these commands in a script: ```python import subprocess # Export current environment package list to requirements.txt subprocess.run([\"pip\", \"freeze\"], stdout=open(\"requirements.txt\", \"w\")) # List all installed packages installed_packages = subprocess.check_output([\"pip\", \"list\"]) print(installed_packages.decode()) ``` This Python script uses the `subprocess` module to run the `pip freeze` and `pip list` commands. The first command exports the package list to a file named `requirements.txt`, while the second command lists all installed packages, which are then printed out."
+  },
   "data_pointers": [
     {
       "title": "pip freeze",
       "uri": "knowledge://py_pip_freeze_v4",
-      "content_preview": "The command `pip freeze > requirements.txt` exports the current environment package list. The command `pip list` lists installed packages. Here is a brief Python code example to demonstrate how you mi"
+      "content_preview": "pip freeze: The command `pip freeze > requirements.txt` exports the current environment package list. The command `pip list` lists installed packages. Here is a brief Python code example to demonstrate how you might use these commands in a script: ```python import subprocess # Export current environment package list to requirements.txt subprocess.run([\"pip\", \"freeze\"], stdout=open(\"requirements.txt\", \"w\")) # List all installed packages installed_packages = subprocess.check_output([\"pip\", \"list\"]) print(installed_packages.decode()) ``` This Python script uses the `subprocess` module to run the `pip freeze` and `pip list` commands. The first command exports the package list to a file named `requirements.txt`, while the second command lists all installed packages, which are then printed out."
     }
   ],
   "related_nodes": []

@@ -1,0 +1,21 @@
+{
+  "name": "原型链",
+  "node_id": "js_prototype_v4",
+  "parent_id": "js_core_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "JavaScript 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "原型链",
+      "uri": "knowledge://js_prototype_v4",
+      "content_preview": "JavaScript Inheritance Mechanism. `__proto__` points to the prototype. Property lookup traverses up the prototype chain. Here's a brief explanation with a Python code example to illustrate: In JavaScr"
+    }
+  ],
+  "related_nodes": []
+}

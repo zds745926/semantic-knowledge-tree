@@ -9,12 +9,14 @@
   "parent": "JavaScript 核心",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "执行上下文: Execution context includes variable environment, lexical environment, and this binding. Execution stack management. To provide a more detailed explanation with a Python code example for the concept of `this` binding: In JavaScript, the `this` keyword refers to the object that the function is called on. However, in Python, there isn't an exact equivalent of `this`, but we can demonstrate similar behavior using methods and self. Here's a simple Python class with a method that demonstrates how attributes are accessed within the context of an instance: ```python class Person: def __init__(self, name): self.name = name # 'name' is an attribute bound to the instance def greet(self): return f\"Hello, my name is {self.name}\" # 'self' acts like 'this' in JavaScript # Create an instance of Person person = Person(\"Alice\") # Call the method on the instance print(person.greet()) # Output: Hello, my name is Alice ``` In this example: - `self` is similar to `this` in that it refers to the current object (instance) when a method is called. - The `greet` method uses `self.name` to access an attribute of the instance."
+  },
   "data_pointers": [
     {
       "title": "执行上下文",
       "uri": "knowledge://js_exec_ctx_v4",
-      "content_preview": "Execution context includes variable environment, lexical environment, and this binding. Execution stack management. To provide a more detailed explanation with a Python code example for the concept of"
+      "content_preview": "执行上下文: Execution context includes variable environment, lexical environment, and this binding. Execution stack management. To provide a more detailed explanation with a Python code example for the concept of `this` binding: In JavaScript, the `this` keyword refers to the object that the function is called on. However, in Python, there isn't an exact equivalent of `this`, but we can demonstrate similar behavior using methods and self. Here's a simple Python class with a method that demonstrates how attributes are accessed within the context of an instance: ```python class Person: def __init__(self, name): self.name = name # 'name' is an attribute bound to the instance def greet(self): return f\"Hello, my name is {self.name}\" # 'self' acts like 'this' in JavaScript # Create an instance of Person person = Person(\"Alice\") # Call the method on the instance print(person.greet()) # Output: Hello, my name is Alice ``` In this example: - `self` is similar to `this` in that it refers to the current object (instance) when a method is called. - The `greet` method uses `self.name` to access an attribute of the instance."
     }
   ],
   "related_nodes": []

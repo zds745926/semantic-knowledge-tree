@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Message queues decouple services by providing asynchronous communication, smoothing out peaks and valleys in traffic, and enabling traffic control. Python code example for asynchronous communication u"
+    "description": "消息队列: Message queues decouple services by providing asynchronous communication, smoothing out peaks and valleys in traffic, and enabling traffic control. Python code example for asynchronous communication using a message queue (using the `pika` library as an example): ```python import pika def callback(ch, method, properties, body): print(\"Received message: %r\" % body) connection = pika.BlockingConnection(pika.ConnectionParameters('localhost')) channel = connection.channel() channel.queue_declare(queue='task_queue', durable=True) channel.basic_consume(callback, queue='task_queue') print('Waiting for messages. To exit press CTRL+C') channel.start_consuming() ``` This code sets up a basic message consumer that listens to a queue named `task_queue`. When a message is received, it prints the message body. The `pika` library is used here as an example of how one might implement asynchronous communication using a message queue in Python."
   },
   "data_pointers": [],
   "related_nodes": []

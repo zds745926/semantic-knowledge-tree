@@ -1,0 +1,21 @@
+{
+  "name": "multiprocessing",
+  "node_id": "py_multiprocessing_v4",
+  "parent_id": "py_process_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多进程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "multiprocessing",
+      "uri": "knowledge://py_multiprocessing_v4",
+      "content_preview": "Process/Pool.map/Queue/Pipe. Not constrained by GIL, suitable for CPU-intensive tasks. Here are brief explanations and corresponding Python code examples: 1. **Process**: A process is a program in exe"
+    }
+  ],
+  "related_nodes": []
+}

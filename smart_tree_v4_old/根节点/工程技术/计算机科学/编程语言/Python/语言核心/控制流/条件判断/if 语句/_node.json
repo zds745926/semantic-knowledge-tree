@@ -1,0 +1,21 @@
+{
+  "name": "if 语句",
+  "node_id": "py_if_statement_v4",
+  "parent_id": "py_cond_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "条件判断",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "if 语句",
+      "uri": "knowledge://py_if_statement_v4",
+      "content_preview": "Translation: ```python if condition:  # Conditional check. statement  # If the condition is true, execute this block of code. elif other_condition:  # Additional conditional branches. statement  # If "
+    }
+  ],
+  "related_nodes": []
+}

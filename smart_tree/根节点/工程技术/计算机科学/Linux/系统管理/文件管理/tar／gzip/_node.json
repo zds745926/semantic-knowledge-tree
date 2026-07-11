@@ -9,12 +9,14 @@
   "parent": "文件管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "tar/gzip: English translation: `tar -czf` is used to create and compress a tarball. `tar -xzf` is used to extract a tarball. The file extensions `.gz`, `.bz2`, and `.xz` indicate the compression format. Example of creating a compressed tarball using gzip: ```python import subprocess def create_tar_gz(file_paths, output_filename): command = ['tar', '-czf', output_filename] + file_paths process = subprocess.Popen(command) process.wait() # Example usage create_tar_gz(['/path/to/file1', '/path/to/file2'], 'output.tar.gz') ``` Example of extracting a tarball with gzip: ```python import subprocess def extract_tar_gz(input_filename): command = ['tar', '-xzf', input_filename] process = subprocess.Popen(command) process.wait() # Example usage extract_tar_gz('output.tar.gz') ``` Note: The above Python code uses the `subprocess` module to run shell commands, which is a common approach for interacting with system utilities in Python."
+  },
   "data_pointers": [
     {
       "title": "tar/gzip",
       "uri": "knowledge://tar_gzip_v4",
-      "content_preview": "English translation: `tar -czf` is used to create and compress a tarball. `tar -xzf` is used to extract a tarball. The file extensions `.gz`, `.bz2`, and `.xz` indicate the compression format. Example"
+      "content_preview": "tar/gzip: English translation: `tar -czf` is used to create and compress a tarball. `tar -xzf` is used to extract a tarball. The file extensions `.gz`, `.bz2`, and `.xz` indicate the compression format. Example of creating a compressed tarball using gzip: ```python import subprocess def create_tar_gz(file_paths, output_filename): command = ['tar', '-czf', output_filename] + file_paths process = subprocess.Popen(command) process.wait() # Example usage create_tar_gz(['/path/to/file1', '/path/to/file2'], 'output.tar.gz') ``` Example of extracting a tarball with gzip: ```python import subprocess def extract_tar_gz(input_filename): command = ['tar', '-xzf', input_filename] process = subprocess.Popen(command) process.wait() # Example usage extract_tar_gz('output.tar.gz') ``` Note: The above Python code uses the `subprocess` module to run shell commands, which is a common approach for interacting with system utilities in Python."
     }
   ],
   "related_nodes": []

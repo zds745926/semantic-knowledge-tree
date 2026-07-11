@@ -1,0 +1,21 @@
+{
+  "name": "中序遍历实现",
+  "node_id": "bst_inorder_v4",
+  "parent_id": "bst_trav_detail_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "遍历实现",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "中序遍历实现",
+      "uri": "knowledge://bst_inorder_v4",
+      "content_preview": "Left → Root → Right. This is the in-order sequence of a BST (Binary Search Tree). It can be simulated using a stack. Here's a brief explanation and Python code example for simulating an in-order trave"
+    }
+  ],
+  "related_nodes": []
+}

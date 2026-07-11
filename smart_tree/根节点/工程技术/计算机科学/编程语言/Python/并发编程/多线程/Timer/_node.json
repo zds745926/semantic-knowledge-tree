@@ -9,12 +9,14 @@
   "parent": "多线程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Timer: Threading Timer. Executes the `function` after a specified `interval`. The `cancel` method can be used to cancel the timer. Here is an example of how you might use it in Python: ```python import threading def my_function(): print(\"Function executed at\", threading.current_thread().name) # Create a Timer that will call my_function after 5 seconds timer = threading.Timer(5.0, my_function) timer.start() print(\"Timer started...\") # Cancel the timer before it finishes its interval timer.cancel() ``` In this example, `my_function` is scheduled to run after 5 seconds using a `threading.Timer`. The `start()` method starts the timer, and `cancel()` stops it from executing if called before the interval ends."
+  },
   "data_pointers": [
     {
       "title": "Timer",
       "uri": "knowledge://py_timer_v4",
-      "content_preview": "Threading Timer. Executes the `function` after a specified `interval`. The `cancel` method can be used to cancel the timer. Here is an example of how you might use it in Python: ```python import threa"
+      "content_preview": "Timer: Threading Timer. Executes the `function` after a specified `interval`. The `cancel` method can be used to cancel the timer. Here is an example of how you might use it in Python: ```python import threading def my_function(): print(\"Function executed at\", threading.current_thread().name) # Create a Timer that will call my_function after 5 seconds timer = threading.Timer(5.0, my_function) timer.start() print(\"Timer started...\") # Cancel the timer before it finishes its interval timer.cancel() ``` In this example, `my_function` is scheduled to run after 5 seconds using a `threading.Timer`. The `start()` method starts the timer, and `cancel()` stops it from executing if called before the interval ends."
     }
   ],
   "related_nodes": []

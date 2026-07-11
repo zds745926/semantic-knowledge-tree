@@ -1,0 +1,19 @@
+{
+  "name": "根节点",
+  "node_id": "root",
+  "parent_id": null,
+  "level": 0,
+  "is_leaf": false,
+  "absorption_rate": 0.01,
+  "version": 1,
+  "parent": null,
+  "children": [
+    "人文社科",
+    "工程技术",
+    "自然科学"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [],
+  "related_nodes": []
+}

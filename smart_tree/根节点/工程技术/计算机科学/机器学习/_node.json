@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
+    "监督学习",
     "无监督学习",
     "深度学习",
-    "监督学习",
     "自然语言处理"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Machine learning enables computers to learn patterns from data without explicit programming. It is categorized into supervised learning, unsupervised learning, semi-supervised learning, and reinforcem"
+    "description": "机器学习: Machine learning enables computers to learn patterns from data without explicit programming. It is categorized into supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning. Deep learning is an important branch of machine learning. Python code examples: 1. **Supervised Learning (Linear Regression)**: ```python import numpy as np from sklearn.linear_model import LinearRegression # Example data: x are input features, y is the target variable X = np.array([[1], [2], [3], [4]]) y = np.array([2, 3, 5, 7]) model = LinearRegression() model.fit(X, y) print(\"Coefficients:\", model.coef_) ``` 2. **Unsupervised Learning (K-means Clustering)**: ```python from sklearn.cluster import KMeans # Example data: X is the input dataset X = np.array([[1, 2], [1, 4], [1, 0], [10, 2], [10, 4], [10, 0]]) kmeans = KMeans(n_clusters=2) kmeans.fit(X) print(\"Cluster centers:\", kmeans.cluster_centers_) ``` 3. **Semi-supervised Learning (Label Propagation)**: ```python from sklearn.semi_supervised import LabelSpreading # Example data: X are the input features, y are the labels with some missing values X = np.array([[1], [2], [3], [4]]) y = np.array([-1, -1, 0, 1]) # -1 indicates unlabeled data label_spread = LabelSpreading(kernel='knn', alpha=0.8) label_spread.fit(X, y) print(\"Predicted labels:\", label_spread.labels_) ``` 4. **Reinforcement Learning (Simple Q-learning)**: ```python import numpy as np # Example environment: a simple grid world with 4 states and 2 actions per state states = ['A', 'B', 'C', 'D'] actions = {'left': -1, 'right': 1} rewards = { ('A', 'left'): -1, ('A', 'right'): +1, ('B', 'left'): +1, ('B', 'right'): -1, ('C', 'left'): -1, ('C', 'right'): +1, ('D', 'left'): +1, ('D', 'right'): -1 } def q_learning(state, action): next_state = state + actions[action] reward = rewards.get((state, action), 0) return (reward, next_state) # Example of a single step in Q-learning current_state = 'A' action = 'right' # Choose an action based on some policy reward, next_state = q_learning(current_state, action) print(\"Reward:\", reward, \"Next state:\", next_state) ``` These examples provide basic implementations of the mentioned machine learning techniques."
   },
   "data_pointers": [],
   "related_nodes": []

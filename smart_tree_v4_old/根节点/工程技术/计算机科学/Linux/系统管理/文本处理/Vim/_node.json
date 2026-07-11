@@ -1,0 +1,21 @@
+{
+  "name": "Vim",
+  "node_id": "vim_basics_v4",
+  "parent_id": "linux_text_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "文本处理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Vim",
+      "uri": "knowledge://vim_basics_v4",
+      "content_preview": "Three modes.:wq to save :q! not to save dd/yy/p. In the context of Vim text editor, here are the translations with brief Python code examples for related concepts: 1. **Save (\":wq\")**: - In Vim, `:wq`"
+    }
+  ],
+  "related_nodes": []
+}

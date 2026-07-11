@@ -1,0 +1,21 @@
+{
+  "name": "grep",
+  "node_id": "grep_v4",
+  "parent_id": "linux_text_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "文本处理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "grep",
+      "uri": "knowledge://grep_v4",
+      "content_preview": "Grep pattern search. Common options: - `-i` ignore case - `-r` recursive - `-n` line numbers - `-v` reverse match Here is a brief Python code example to demonstrate using the `re` module for similar f"
+    }
+  ],
+  "related_nodes": []
+}

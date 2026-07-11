@@ -1,0 +1,21 @@
+{
+  "name": "最长递增子序列 LIS",
+  "node_id": "lis_v4",
+  "parent_id": "dp_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "动态规划",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "最长递增子序列 LIS",
+      "uri": "knowledge://lis_v4",
+      "content_preview": "O(n²) DP. Binary search optimization to O(n log n). Singing team formation / Stock analysis. ### Explanation and Example 1. **O(n²) DP (Dynamic Programming):** - This refers to a dynamic programming s"
+    }
+  ],
+  "related_nodes": []
+}

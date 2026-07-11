@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "云原生基础",
+    "容器化",
     "可观测性",
-    "容器化"
+    "云原生基础"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "DevOps leverages automation tools and cultural practices to facilitate collaboration between development and operations. Key components include containerization, Kubernetes, and observability. Here's "
+    "description": "DevOps: DevOps leverages automation tools and cultural practices to facilitate collaboration between development and operations. Key components include containerization, Kubernetes, and observability. Here's a brief Python code example for containerization using Docker: ```python import docker client = docker.from_env() # Pull an image from Docker Hub image = client.images.pull('nginx:latest') # Run a container based on the pulled image container = client.containers.run(image, detach=True) print(f\"Container ID: {container.id}\") ``` This Python script uses the `docker` library to interact with Docker. It pulls the latest Nginx image from Docker Hub and runs a container based on that image. For Kubernetes integration, you might use libraries like `kubernetes` in Python: ```python from kubernetes import client, config # Load kubeconfig file (usually located at ~/.kube/config) config.load_kube_config() v1 = client.CoreV1Api() pods = v1.list_pod_for_all_namespaces(watch=False) for pod in pods.items: print(f\"Pod Name: {pod.metadata.name}, Namespace: {pod.metadata.namespace}\") ``` This script loads the Kubernetes configuration and lists all pods across namespaces."
   },
   "data_pointers": [],
   "related_nodes": []

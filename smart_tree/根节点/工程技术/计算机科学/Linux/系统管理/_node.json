@@ -10,13 +10,13 @@
   "children": [
     "文件管理",
     "文本处理",
+    "进程管理",
     "权限管理",
-    "网络配置",
-    "进程管理"
+    "网络配置"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Linux system management includes file operations, text processing, process management, and permission control—essential daily operational skills. For a more detailed explanation, here are some brief P"
+    "description": "系统管理: Linux system management includes file operations, text processing, process management, and permission control—essential daily operational skills. For a more detailed explanation, here are some brief Python code examples for each concept: 1. **File Operations**: ```python # Example of reading from and writing to a file in Python with open('example.txt', 'w') as f: f.write(\"Hello, world!\") with open('example.txt', 'r') as f: content = f.read() print(content) ``` 2. **Text Processing**: ```python # Example of using regular expressions to find patterns in text import re text = \"The quick brown fox jumps over the lazy dog\" pattern = r\"fox\" matches = re.findall(pattern, text) print(matches) # Output: ['fox'] ``` 3. **Process Management**: ```python # Example of using subprocess to run a command and capture its output import subprocess result = subprocess.run(['ls', '-l'], stdout=subprocess.PIPE) print(result.stdout.decode()) ``` 4. **Permission Control**: While Python itself does not directly control file permissions, you can use the `os` module to check them. ```python # Example of checking if a file is writable using os module import os path = 'example.txt' if os.access(path, os.W_OK): print(f\"{path} is writable.\") else: print(f\"{path} is not writable.\") ``` These examples provide a basic understanding and practical application of these concepts in Python."
   },
   "data_pointers": [],
   "related_nodes": []

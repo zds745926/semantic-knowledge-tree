@@ -9,12 +9,14 @@
   "parent": "float 进阶",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "浮点精度问题: 0.1 + 0.2 ≠ 0.3 because binary cannot precisely represent certain decimal fractions. Use `decimal.Decimal` or `math.isclose`. Python code example using `decimal.Decimal`: ```python from decimal import Decimal # Using Decimal to avoid precision issues result = Decimal('0.1') + Decimal('0.2') print(result) # Output: 0.30000000000000004 ``` Note that while the output shows a value slightly different from 0.3 due to the nature of floating-point arithmetic, using `Decimal` helps in managing such precision issues more effectively. Alternatively, you can use `math.isclose` to check if two values are close enough: ```python import math # Using isclose to compare values a = 0.1 + 0.2 b = 0.3 print(math.isclose(a, b)) # Output: True ``` This approach acknowledges the inherent imprecision in floating-point arithmetic and provides a way to handle it gracefully."
+  },
   "data_pointers": [
     {
       "title": "浮点精度问题",
       "uri": "knowledge://py_float_precision_v4",
-      "content_preview": "0.1 + 0.2 ≠ 0.3 because binary cannot precisely represent certain decimal fractions. Use `decimal.Decimal` or `math.isclose`. Python code example using `decimal.Decimal`: ```python from decimal import"
+      "content_preview": "浮点精度问题: 0.1 + 0.2 ≠ 0.3 because binary cannot precisely represent certain decimal fractions. Use `decimal.Decimal` or `math.isclose`. Python code example using `decimal.Decimal`: ```python from decimal import Decimal # Using Decimal to avoid precision issues result = Decimal('0.1') + Decimal('0.2') print(result) # Output: 0.30000000000000004 ``` Note that while the output shows a value slightly different from 0.3 due to the nature of floating-point arithmetic, using `Decimal` helps in managing such precision issues more effectively. Alternatively, you can use `math.isclose` to check if two values are close enough: ```python import math # Using isclose to compare values a = 0.1 + 0.2 b = 0.3 print(math.isclose(a, b)) # Output: True ``` This approach acknowledges the inherent imprecision in floating-point arithmetic and provides a way to handle it gracefully."
     }
   ],
   "related_nodes": []

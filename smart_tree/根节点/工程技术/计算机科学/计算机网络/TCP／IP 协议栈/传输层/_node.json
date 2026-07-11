@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The transport layer provides end-to-end communication and mainly includes two protocols: TCP (reliable) and UDP (unreliable). Python code examples: For TCP: ```python import socket # Create a TCP/IP s"
+    "description": "传输层: The transport layer provides end-to-end communication and mainly includes two protocols: TCP (reliable) and UDP (unreliable). Python code examples: For TCP: ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) print(f'connecting to {server_address[0]} port {server_address[1]}') sock.connect(server_address) try: # Send data message = 'This is the message. It will be repeated.' print(f'sending \"{message}\"') sock.sendall(message.encode()) finally: print('closing socket') sock.close() ``` For UDP: ```python import socket # Create a UDP socket sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) server_address = ('localhost', 10000) print(f'sending to {server_address[0]} port {server_address[1]}') message = 'This is the message. It will be repeated.' try: # Send data sent = sock.sendto(message.encode(), server_address) finally: print('closing socket') sock.close() ```"
   },
   "data_pointers": [],
   "related_nodes": []

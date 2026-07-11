@@ -1,0 +1,21 @@
+{
+  "name": "基数排序",
+  "node_id": "radix_sort_v4",
+  "parent_id": "sort_linear_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "线性排序",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "基数排序",
+      "uri": "knowledge://radix_sort_v4",
+      "content_preview": "Bitwise sort from low to high (bit stable sort). O(d·n). Applicable for integers/fixed-length strings. Here is a brief Python code example using a bit-stable sorting algorithm, such as radix sort: ```"
+    }
+  ],
+  "related_nodes": []
+}

@@ -9,12 +9,14 @@
   "parent": "UDP 协议",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "UDP vs TCP: UDP is fast but does not retransmit lost packets. TCP is reliable but has higher latency. TCP header is 20 bytes compared to UDP's 8 bytes. Python code example for understanding the difference (not for actual implementation): For **TCP**: ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) sock.connect(server_address) try: # Send data message = b'This is the message. It will be repeated.' sock.sendall(message) finally: print('Closing socket') sock.close() ``` For **UDP**: ```python import socket # Create a UDP socket sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # Bind the socket to the port server_address = ('localhost', 10000) sock.bind(server_address) try: # Send data message = b'This is the message. It will be repeated.' sock.sendto(message, server_address) finally: print('Closing socket') sock.close() ``` These examples illustrate the basic usage of TCP and UDP sockets in Python, highlighting their differences in terms of reliability and latency."
+  },
   "data_pointers": [
     {
       "title": "UDP vs TCP",
       "uri": "knowledge://udp_vs_tcp_v4",
-      "content_preview": "UDP is fast but does not retransmit lost packets. TCP is reliable but has higher latency. TCP header is 20 bytes compared to UDP's 8 bytes. Python code example for understanding the difference (not fo"
+      "content_preview": "UDP vs TCP: UDP is fast but does not retransmit lost packets. TCP is reliable but has higher latency. TCP header is 20 bytes compared to UDP's 8 bytes. Python code example for understanding the difference (not for actual implementation): For **TCP**: ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) sock.connect(server_address) try: # Send data message = b'This is the message. It will be repeated.' sock.sendall(message) finally: print('Closing socket') sock.close() ``` For **UDP**: ```python import socket # Create a UDP socket sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # Bind the socket to the port server_address = ('localhost', 10000) sock.bind(server_address) try: # Send data message = b'This is the message. It will be repeated.' sock.sendto(message, server_address) finally: print('Closing socket') sock.close() ``` These examples illustrate the basic usage of TCP and UDP sockets in Python, highlighting their differences in terms of reliability and latency."
     }
   ],
   "related_nodes": []

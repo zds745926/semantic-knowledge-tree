@@ -9,12 +9,14 @@
   "parent": "for 循环进阶",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "for-else 子句: The `else` clause of the `for` loop is executed when the loop terminates normally (i.e., not due to a `break`). It is commonly used for fallback handling when a search does not find any results. Python code example: ```python # Example of using the else clause in a for loop numbers = [1, 2, 3, 4, 5] found = False for number in numbers: if number > 3: found = True break else: # This `else` is associated with the `for` loop print(\"No number greater than 3 was found.\") if not found: print(\"A number greater than 3 was not found.\") ``` In this example, if a number greater than 3 is found in the list, the `break` statement will exit the loop prematurely. Otherwise, the `else` clause of the `for` loop will execute, printing that no such number was found."
+  },
   "data_pointers": [
     {
       "title": "for-else 子句",
       "uri": "knowledge://py_for_else_v4",
-      "content_preview": "The `else` clause of the `for` loop is executed when the loop terminates normally (i.e., not due to a `break`). It is commonly used for fallback handling when a search does not find any results. Pytho"
+      "content_preview": "for-else 子句: The `else` clause of the `for` loop is executed when the loop terminates normally (i.e., not due to a `break`). It is commonly used for fallback handling when a search does not find any results. Python code example: ```python # Example of using the else clause in a for loop numbers = [1, 2, 3, 4, 5] found = False for number in numbers: if number > 3: found = True break else: # This `else` is associated with the `for` loop print(\"No number greater than 3 was found.\") if not found: print(\"A number greater than 3 was not found.\") ``` In this example, if a number greater than 3 is found in the list, the `break` statement will exit the loop prematurely. Otherwise, the `else` clause of the `for` loop will execute, printing that no such number was found."
     }
   ],
   "related_nodes": []

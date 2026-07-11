@@ -1,0 +1,21 @@
+{
+  "name": "awk",
+  "node_id": "awk_v4",
+  "parent_id": "linux_text_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "文本处理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "awk",
+      "uri": "knowledge://awk_v4",
+      "content_preview": "Translation: \"awk '{print $1,$NF}' field processing. Conditional statistics and reports.\" Explanation of the technical term with a Python code example: The `awk` command in the original text is used f"
+    }
+  ],
+  "related_nodes": []
+}

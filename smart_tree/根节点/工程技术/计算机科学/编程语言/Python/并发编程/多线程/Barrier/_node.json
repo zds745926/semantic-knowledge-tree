@@ -9,12 +9,14 @@
   "parent": "多线程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Barrier: Threading Barrier. All n threads wait until they reach the barrier point and then proceed simultaneously. This allows for phased parallelism. Here's a brief Python code example using `threading.Barrier`: ```python import threading def worker(id, barrier): print(f\"Worker {id} is starting.\") # Simulate some work import time time.sleep(1) # Wait at the barrier print(f\"Worker {id} waiting at the barrier.\") barrier.wait() print(f\"All workers have reached the barrier. Continuing...\") # Create a barrier for 3 threads barrier = threading.Barrier(3) # Start worker threads threads = [threading.Thread(target=worker, args=(i, barrier)) for i in range(3)] for t in threads: t.start() for t in threads: t.join() ``` In this example, three worker threads are created and each waits at the barrier. Once all threads have reached the barrier point, they proceed simultaneously as indicated by the print statements."
+  },
   "data_pointers": [
     {
       "title": "Barrier",
       "uri": "knowledge://py_barrier_v4",
-      "content_preview": "Threading Barrier. All n threads wait until they reach the barrier point and then proceed simultaneously. This allows for phased parallelism. Here's a brief Python code example using `threading.Barrie"
+      "content_preview": "Barrier: Threading Barrier. All n threads wait until they reach the barrier point and then proceed simultaneously. This allows for phased parallelism. Here's a brief Python code example using `threading.Barrier`: ```python import threading def worker(id, barrier): print(f\"Worker {id} is starting.\") # Simulate some work import time time.sleep(1) # Wait at the barrier print(f\"Worker {id} waiting at the barrier.\") barrier.wait() print(f\"All workers have reached the barrier. Continuing...\") # Create a barrier for 3 threads barrier = threading.Barrier(3) # Start worker threads threads = [threading.Thread(target=worker, args=(i, barrier)) for i in range(3)] for t in threads: t.start() for t in threads: t.join() ``` In this example, three worker threads are created and each waits at the barrier. Once all threads have reached the barrier point, they proceed simultaneously as indicated by the print statements."
     }
   ],
   "related_nodes": []

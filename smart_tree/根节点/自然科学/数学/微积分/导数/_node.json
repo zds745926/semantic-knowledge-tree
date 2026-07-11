@@ -9,12 +9,14 @@
   "parent": "微积分",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "导数: The derivative \\( f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\) represents the instantaneous rate of change of a function at a particular point. Here is a brief Python code example using the sympy library to calculate the derivative of a simple function: ```python import sympy as sp # Define the variable and function x = sp.symbols('x') f = x**2 + 3*x - 4 # Example function: f(x) = x^2 + 3x - 4 # Calculate the derivative of the function f_prime = sp.diff(f, x) print(\"The derivative of the function is:\", f_prime) ``` This code defines a symbolic variable `x` and a function \\( f(x) = x^2 + 3x - 4 \\), then calculates its derivative using sympy's `diff` function."
+  },
   "data_pointers": [
     {
       "title": "导数",
       "uri": "knowledge://derivative_v4",
-      "content_preview": "The derivative \\( f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\) represents the instantaneous rate of change of a function at a particular point. Here is a brief Python code example using the sympy"
+      "content_preview": "导数: The derivative \\( f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\) represents the instantaneous rate of change of a function at a particular point. Here is a brief Python code example using the sympy library to calculate the derivative of a simple function: ```python import sympy as sp # Define the variable and function x = sp.symbols('x') f = x**2 + 3*x - 4 # Example function: f(x) = x^2 + 3x - 4 # Calculate the derivative of the function f_prime = sp.diff(f, x) print(\"The derivative of the function is:\", f_prime) ``` This code defines a symbolic variable `x` and a function \\( f(x) = x^2 + 3x - 4 \\), then calculates its derivative using sympy's `diff` function."
     }
   ],
   "related_nodes": []

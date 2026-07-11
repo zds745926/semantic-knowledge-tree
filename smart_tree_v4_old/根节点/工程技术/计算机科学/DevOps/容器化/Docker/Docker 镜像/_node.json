@@ -1,0 +1,21 @@
+{
+  "name": "Docker 镜像",
+  "node_id": "docker_image_v4",
+  "parent_id": "docker_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Docker",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Docker 镜像",
+      "uri": "knowledge://docker_image_v4",
+      "content_preview": "Read-only template layer construction. Dockerfile defines the steps. Image layer caching accelerates the process. Here's a brief explanation with a related Python code example, assuming you're referri"
+    }
+  ],
+  "related_nodes": []
+}

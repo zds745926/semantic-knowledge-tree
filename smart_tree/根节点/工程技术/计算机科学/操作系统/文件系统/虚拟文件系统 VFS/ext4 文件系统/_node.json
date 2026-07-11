@@ -9,12 +9,14 @@
   "parent": "虚拟文件系统 VFS",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "ext4 文件系统: Linux default. 16TB file/1 EB volume. Log ensures consistency. Extents reduce metadata overhead. Here is the explanation with a brief Python code example for one of the concepts: - **Log ensures consistency**: In the context of file systems, logs are used to maintain transactional integrity and ensure that operations are recorded in a consistent manner. For instance, in a simple logging mechanism, you might want to log changes to a file system. ```python import os def log_change(file_path, message): # Define the log file path log_file = \"system_log.txt\" # Append the message to the log file with open(log_file, 'a') as f: f.write(f\"{message} - {os.path.getmtime(file_path)}\\n\") # Example usage: Log a change in a file system log_change(\"/path/to/file\", \"File modified\") ``` This Python function `log_change` appends a message to a log file along with the timestamp of when the operation was performed, ensuring that changes are recorded consistently."
+  },
   "data_pointers": [
     {
       "title": "ext4 文件系统",
       "uri": "knowledge://ext4_v4",
-      "content_preview": "Linux default. 16TB file/1 EB volume. Log ensures consistency. Extents reduce metadata overhead. Here is the explanation with a brief Python code example for one of the concepts: - **Log ensures consi"
+      "content_preview": "ext4 文件系统: Linux default. 16TB file/1 EB volume. Log ensures consistency. Extents reduce metadata overhead. Here is the explanation with a brief Python code example for one of the concepts: - **Log ensures consistency**: In the context of file systems, logs are used to maintain transactional integrity and ensure that operations are recorded in a consistent manner. For instance, in a simple logging mechanism, you might want to log changes to a file system. ```python import os def log_change(file_path, message): # Define the log file path log_file = \"system_log.txt\" # Append the message to the log file with open(log_file, 'a') as f: f.write(f\"{message} - {os.path.getmtime(file_path)}\\n\") # Example usage: Log a change in a file system log_change(\"/path/to/file\", \"File modified\") ``` This Python function `log_change` appends a message to a log file along with the timestamp of when the operation was performed, ensuring that changes are recorded consistently."
     }
   ],
   "related_nodes": []

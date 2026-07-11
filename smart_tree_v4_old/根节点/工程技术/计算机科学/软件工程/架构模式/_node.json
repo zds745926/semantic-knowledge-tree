@@ -1,0 +1,20 @@
+{
+  "name": "架构模式",
+  "node_id": "arch_v4",
+  "parent_id": "se_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "软件工程",
+  "children": [
+    "事件驱动架构",
+    "微服务"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Architectural patterns serve as the blueprint for the top-level design of software systems. To provide a more comprehensive explanation and include a relevant Python code example, let's consider an ar"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -8,25 +8,25 @@
   "version": 1,
   "parent": "工程技术",
   "children": [
-    "DevOps",
-    "Linux",
-    "前端开发",
-    "后端开发",
-    "操作系统",
-    "数据库",
-    "机器学习",
-    "算法与数据结构",
-    "系统设计",
+    "计算机理论",
     "编程范式",
     "编程语言",
-    "网络安全",
-    "计算机理论",
+    "算法与数据结构",
+    "操作系统",
     "计算机网络",
-    "软件工程"
+    "数据库",
+    "Linux",
+    "软件工程",
+    "机器学习",
+    "前端开发",
+    "后端开发",
+    "系统设计",
+    "网络安全",
+    "DevOps"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Computer science researches the principles, methods, and applications of information processing and computation. It encompasses subfields such as theoretical computer science, programming languages, a"
+    "description": "计算机科学: Computer science researches the principles, methods, and applications of information processing and computation. It encompasses subfields such as theoretical computer science, programming languages, algorithms and data structures, operating systems, computer networks, databases, software engineering, artificial intelligence, machine learning, and security. Computer science is at the core of modern information technology. Here's a brief Python code example for an algorithm: ```python # Example: A simple function to find the maximum element in a list def find_max(numbers): if not numbers: return None # Return None if the list is empty max_num = numbers[0] # Assume the first number is the largest initially for num in numbers: if num > max_num: max_num = num # Update max_num if a larger number is found return max_num # Example usage numbers_list = [3, 5, 2, 8, 1] print(\"The maximum number is:\", find_max(numbers_list)) ``` This code defines a function `find_max` that takes a list of numbers and returns the largest number in the list."
   },
   "data_pointers": [],
   "related_nodes": []

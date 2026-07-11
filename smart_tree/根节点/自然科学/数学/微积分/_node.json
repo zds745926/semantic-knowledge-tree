@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Calculus studies the rates of change and cumulative effects of functions, including limits, derivatives, integrals, and differential equations. Newton and Leibniz independently developed calculus, one"
+    "description": "微积分: Calculus studies the rates of change and cumulative effects of functions, including limits, derivatives, integrals, and differential equations. Newton and Leibniz independently developed calculus, one of the greatest achievements in modern mathematics. Here is a brief Python code example to illustrate the concept of derivatives using SymPy: ```python from sympy import symbols, diff # Define the variable and function x = symbols('x') f = x**3 - 2*x + 1 # Calculate the derivative of the function f_prime = diff(f, x) print(\"The derivative of f(x) =\", f, \"is\", f_prime) ``` This code defines a function `f(x) = x^3 - 2x + 1` and calculates its derivative using SymPy's `diff` function."
   },
   "data_pointers": [],
   "related_nodes": []

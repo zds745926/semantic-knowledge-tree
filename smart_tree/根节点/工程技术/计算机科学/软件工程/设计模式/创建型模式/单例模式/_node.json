@@ -9,13 +9,17 @@
   "parent": "创建型模式",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "单例模式: Ensure that only one instance of the class exists. Hungry/Lazy Initialization. Spring Beans are default singletons. Here are brief explanations for each concept: 1. **Hungry Initialization (Eager Initialization):** - In this approach, the object is instantiated at the time of class loading. - Example in Python: ```python class Singleton: _instance = None def __new__(cls): if cls._instance is None: cls._instance = super().__new__(cls) return cls._instance def some_business_logic(self): pass # Some business logic here ``` 2. **Lazy Initialization:** - The object is instantiated only when it is first needed. - Example in Python: ```python class Singleton: _instance = None @classmethod def get_instance(cls): if cls._instance is None: cls._instance = cls() return cls._instance def some_business_logic(self): pass # Some business logic here ``` 3. **Spring Beans Default Singleton:** - In Spring, beans are by default singletons unless explicitly configured otherwise. - Example in XML configuration (Spring): ```xml <bean id=\"myBean\" class=\"com.example.MyClass\" scope=\"singleton\"/> ``` - Or using annotations: ```java @Component public class MyClass { // Class implementation } ``` These examples illustrate the concepts in Python, which is a common language for such discussions."
+  },
   "data_pointers": [
     {
       "title": "单例模式",
       "uri": "knowledge://singleton_v4",
-      "content_preview": "Ensure that only one instance of the class exists. Hungry/Lazy Initialization. Spring Beans are default singletons. Here are brief explanations for each concept: 1. **Hungry Initialization (Eager Init"
+      "content_preview": "单例模式: Ensure that only one instance of the class exists. Hungry/Lazy Initialization. Spring Beans are default singletons. Here are brief explanations for each concept: 1. **Hungry Initialization (Eager Initialization):** - In this approach, the object is instantiated at the time of class loading. - Example in Python: ```python class Singleton: _instance = None def __new__(cls): if cls._instance is None: cls._instance = super().__new__(cls) return cls._instance def some_business_logic(self): pass # Some business logic here ``` 2. **Lazy Initialization:** - The object is instantiated only when it is first needed. - Example in Python: ```python class Singleton: _instance = None @classmethod def get_instance(cls): if cls._instance is None: cls._instance = cls() return cls._instance def some_business_logic(self): pass # Some business logic here ``` 3. **Spring Beans Default Singleton:** - In Spring, beans are by default singletons unless explicitly configured otherwise. - Example in XML configuration (Spring): ```xml <bean id=\"myBean\" class=\"com.example.MyClass\" scope=\"singleton\"/> ``` - Or using annotations: ```java @Component public class MyClass { // Class implementation } ``` These examples illustrate the concepts in Python, which is a common language for such discussions."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "proxy_v4"
+  ]
 }

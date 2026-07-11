@@ -9,12 +9,14 @@
   "parent": "文件管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "find/locate: Find by name/type/large. locate is fast but not real-time. To provide a more detailed explanation and include a relevant Python code snippet for the \"find\" concept, we can say: Find by name/type/large. This operation is efficient (locate) but does not support real-time updates or monitoring. Here's an example of how you might implement such a function in Python using a dictionary to store and retrieve items based on their names. ```python class ItemFinder: def __init__(self): self.items = {} def add_item(self, name, item_type, large): # Add or update an item by its name self.items[name] = {'type': item_type, 'large': large} def find_by_name(self, name): # Find an item by its name return self.items.get(name) # Example usage: finder = ItemFinder() finder.add_item('apple', 'fruit', True) finder.add_item('banana', 'fruit', False) print(finder.find_by_name('apple')) # Output: {'type': 'fruit', 'large': True} ``` In this example, `ItemFinder` is a simple class that allows adding and finding items by name. The `find_by_name` method retrieves an item based on its name from the dictionary stored in `self.items`."
+  },
   "data_pointers": [
     {
       "title": "find/locate",
       "uri": "knowledge://find_locate_v4",
-      "content_preview": "Find by name/type/large. locate is fast but not real-time. To provide a more detailed explanation and include a relevant Python code snippet for the \"find\" concept, we can say: Find by name/type/large"
+      "content_preview": "find/locate: Find by name/type/large. locate is fast but not real-time. To provide a more detailed explanation and include a relevant Python code snippet for the \"find\" concept, we can say: Find by name/type/large. This operation is efficient (locate) but does not support real-time updates or monitoring. Here's an example of how you might implement such a function in Python using a dictionary to store and retrieve items based on their names. ```python class ItemFinder: def __init__(self): self.items = {} def add_item(self, name, item_type, large): # Add or update an item by its name self.items[name] = {'type': item_type, 'large': large} def find_by_name(self, name): # Find an item by its name return self.items.get(name) # Example usage: finder = ItemFinder() finder.add_item('apple', 'fruit', True) finder.add_item('banana', 'fruit', False) print(finder.find_by_name('apple')) # Output: {'type': 'fruit', 'large': True} ``` In this example, `ItemFinder` is a simple class that allows adding and finding items by name. The `find_by_name` method retrieves an item based on its name from the dictionary stored in `self.items`."
     }
   ],
   "related_nodes": []

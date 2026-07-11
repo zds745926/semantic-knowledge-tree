@@ -1,0 +1,21 @@
+{
+  "name": "HTTP 状态码",
+  "node_id": "http_status_v4",
+  "parent_id": "http_core_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "HTTP 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "HTTP 状态码",
+      "uri": "knowledge://http_status_v4",
+      "content_preview": "Translation: HTTP status codes are categorized into four classes: - 2xx Success - 3xx Redirection - 4xx Client Error - 5xx Server Error Python code example for checking HTTP response status: ```python"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "多路复用",
+  "node_id": "http2_multiplex_v4",
+  "parent_id": "http2_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "HTTP/2",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "多路复用",
+      "uri": "knowledge://http2_multiplex_v4",
+      "content_preview": "Multiple streams can be concurrently transmitted over a single TCP connection. This addresses the HTTP/1.1 head-of-line blocking issue. To illustrate this concept with a Python code example, consider "
+    }
+  ],
+  "related_nodes": []
+}

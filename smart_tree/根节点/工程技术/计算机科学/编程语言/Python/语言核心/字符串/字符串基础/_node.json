@@ -9,12 +9,14 @@
   "parent": "字符串",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "字符串基础: String is an immutable sequence. ' and \" are used to define strings. f-string is the best format for string interpolation: `f'value: {x}'`. Here's a brief Python code example using f-strings: ```python x = 42 print(f'value: {x}') # Output: value: 42 ``` This example demonstrates how to use an f-string to embed expressions inside string literals, which are replaced with their values."
+  },
   "data_pointers": [
     {
       "title": "字符串基础",
       "uri": "knowledge://py_str_basic_v4",
-      "content_preview": "String is an immutable sequence. ' and \" are used to define strings. f-string is the best format for string interpolation: `f'value: {x}'`. Here's a brief Python code example using f-strings: ```pytho"
+      "content_preview": "字符串基础: String is an immutable sequence. ' and \" are used to define strings. f-string is the best format for string interpolation: `f'value: {x}'`. Here's a brief Python code example using f-strings: ```python x = 42 print(f'value: {x}') # Output: value: 42 ``` This example demonstrates how to use an f-string to embed expressions inside string literals, which are replaced with their values."
     }
   ],
   "related_nodes": []

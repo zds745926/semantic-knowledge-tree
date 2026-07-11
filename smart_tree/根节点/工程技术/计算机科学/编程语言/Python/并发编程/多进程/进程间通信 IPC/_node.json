@@ -9,12 +9,14 @@
   "parent": "多进程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "进程间通信 IPC: Pipe (Bidirectional Pipeline) / Queue / Shared Memory. Value/Array Sharing via ctypes. Here is an example of how you might use `ctypes` in Python to share a simple value between processes: ```python import multiprocessing as mp # Define the shared value using ctypes shared_value = mp.Value('i', 0) def worker(shared_val): # Increment the shared value with shared_val.get_lock(): shared_val.value += 1 print(f\"Value incremented to {shared_val.value}\") if __name__ == \"__main__\": processes = [] # Create a process that increments the shared value p = mp.Process(target=worker, args=(shared_value,)) processes.append(p) p.start() processes.append(p) # Wait for all processes to complete for p in processes: p.join() print(f\"Final value: {shared_value.value}\") ``` In this example, `mp.Value` is used to create a shared integer value that can be safely modified by multiple processes. The `get_lock()` method ensures thread safety when accessing the shared variable."
+  },
   "data_pointers": [
     {
       "title": "进程间通信 IPC",
       "uri": "knowledge://py_ipc_v4",
-      "content_preview": "Pipe (Bidirectional Pipeline) / Queue / Shared Memory. Value/Array Sharing via ctypes. Here is an example of how you might use `ctypes` in Python to share a simple value between processes: ```python i"
+      "content_preview": "进程间通信 IPC: Pipe (Bidirectional Pipeline) / Queue / Shared Memory. Value/Array Sharing via ctypes. Here is an example of how you might use `ctypes` in Python to share a simple value between processes: ```python import multiprocessing as mp # Define the shared value using ctypes shared_value = mp.Value('i', 0) def worker(shared_val): # Increment the shared value with shared_val.get_lock(): shared_val.value += 1 print(f\"Value incremented to {shared_val.value}\") if __name__ == \"__main__\": processes = [] # Create a process that increments the shared value p = mp.Process(target=worker, args=(shared_value,)) processes.append(p) p.start() processes.append(p) # Wait for all processes to complete for p in processes: p.join() print(f\"Final value: {shared_value.value}\") ``` In this example, `mp.Value` is used to create a shared integer value that can be safely modified by multiple processes. The `get_lock()` method ensures thread safety when accessing the shared variable."
     }
   ],
   "related_nodes": []

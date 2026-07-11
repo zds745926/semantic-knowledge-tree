@@ -9,12 +9,14 @@
   "parent": "C 核心",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "指针: Pointer storage of addresses. Dereferencing/* and address-of/& operations. Function pointers. Pointer arithmetic is a core capability of C. Here are brief Python code examples to illustrate some of these concepts: 1. **Dereferencing**: ```python value = 42 pointer = id(value) # Get the memory address of `value` print(pointer) dereferenced_value = ctypes.cast(pointer, ctypes.py_object).value # Dereference to get the actual value print(dereferenced_value) ``` 2. **Address-of**: ```python x = 10 addr_of_x = id(x) # Get the memory address of `x` print(addr_of_x) ``` 3. **Function pointers** (Python doesn't have explicit function pointers, but we can simulate them): ```python def func1(): return \"Hello from func1\" def func2(): return \"Hello from func2\" # Simulating a function pointer func_ptr = func1 # Assigning a function to a variable print(func_ptr()) # Call the function through the pointer ``` 4. **Pointer arithmetic** (Python doesn't support direct pointer arithmetic, but we can simulate it with lists): ```python arr = [0, 1, 2, 3, 4] ptr = 2 # Pointer to index 2 print(arr[ptr]) # Access the element at the pointed index ``` These examples provide a basic understanding of how these concepts can be simulated or implemented in Python."
+  },
   "data_pointers": [
     {
       "title": "指针",
       "uri": "knowledge://c_pointers_v4",
-      "content_preview": "Pointer storage of addresses. Dereferencing/* and address-of/& operations. Function pointers. Pointer arithmetic is a core capability of C. Here are brief Python code examples to illustrate some of th"
+      "content_preview": "指针: Pointer storage of addresses. Dereferencing/* and address-of/& operations. Function pointers. Pointer arithmetic is a core capability of C. Here are brief Python code examples to illustrate some of these concepts: 1. **Dereferencing**: ```python value = 42 pointer = id(value) # Get the memory address of `value` print(pointer) dereferenced_value = ctypes.cast(pointer, ctypes.py_object).value # Dereference to get the actual value print(dereferenced_value) ``` 2. **Address-of**: ```python x = 10 addr_of_x = id(x) # Get the memory address of `x` print(addr_of_x) ``` 3. **Function pointers** (Python doesn't have explicit function pointers, but we can simulate them): ```python def func1(): return \"Hello from func1\" def func2(): return \"Hello from func2\" # Simulating a function pointer func_ptr = func1 # Assigning a function to a variable print(func_ptr()) # Call the function through the pointer ``` 4. **Pointer arithmetic** (Python doesn't support direct pointer arithmetic, but we can simulate it with lists): ```python arr = [0, 1, 2, 3, 4] ptr = 2 # Pointer to index 2 print(arr[ptr]) # Access the element at the pointed index ``` These examples provide a basic understanding of how these concepts can be simulated or implemented in Python."
     }
   ],
   "related_nodes": []

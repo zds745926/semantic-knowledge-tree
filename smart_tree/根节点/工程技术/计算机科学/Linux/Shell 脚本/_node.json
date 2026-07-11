@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Bash scripts are the core tools for automation in Linux, supporting variables, control flow, pipelines, and redirection. Here's a brief explanation with a corresponding Python code example to illustra"
+    "description": "Shell 脚本: Bash scripts are the core tools for automation in Linux, supporting variables, control flow, pipelines, and redirection. Here's a brief explanation with a corresponding Python code example to illustrate some of these concepts: - **Variables**: In Bash, you can define variables like this: ```bash # Bash variable definition username=\"JohnDoe\" echo $username ``` - **Control Flow**: You can use conditional statements in Bash as follows: ```bash # Bash control flow example with if statement age=25 if [ $age -ge 18 ]; then echo \"You are an adult.\" else echo \"You are a minor.\" fi ``` - **Pipelines**: Pipelines in Bash allow you to chain commands together: ```bash # Example of using pipelines in Bash ls -l | grep \"txt\" ``` - **Redirection**: Redirection allows you to redirect input and output: ```bash # Redirecting output to a file in Bash echo \"Hello, world!\" > hello.txt ``` These examples should give you an idea of how these concepts are implemented in both Bash and Python."
   },
   "data_pointers": [],
   "related_nodes": []

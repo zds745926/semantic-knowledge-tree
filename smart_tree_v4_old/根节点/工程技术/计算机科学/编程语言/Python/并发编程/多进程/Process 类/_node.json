@@ -1,0 +1,21 @@
+{
+  "name": "Process 类",
+  "node_id": "py_process_class_v4",
+  "parent_id": "py_process_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多进程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Process 类",
+      "uri": "knowledge://py_process_class_v4",
+      "content_preview": "multiprocessing.Process. target/args. start()/join()/terminate(). Here are the explanations and corresponding Python code examples: 1. **multiprocessing.Process**: This is a class in Python's `multipr"
+    }
+  ],
+  "related_nodes": []
+}

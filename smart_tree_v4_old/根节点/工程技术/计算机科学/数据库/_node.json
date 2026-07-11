@@ -1,0 +1,21 @@
+{
+  "name": "数据库",
+  "node_id": "db_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "NoSQL",
+    "关系型数据库",
+    "分布式数据库"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Database systems systematically store and manage data. The two most commonly used types are relational databases (SQL) and non-relational databases (NoSQL). Key concepts include SQL, indexing, transac"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

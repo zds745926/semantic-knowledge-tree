@@ -1,0 +1,21 @@
+{
+  "name": "enum 枚举",
+  "node_id": "py_enum_v4",
+  "parent_id": "py_class_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "类与实例",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "enum 枚举",
+      "uri": "knowledge://py_enum_v4",
+      "content_preview": "Translation: ```python from enum import Enum, IntEnum, Flag class Color(Enum): RED = 0 GREEN = 1 BLUE = 2 print(Color.RED.name)  # Output: RED print(Color.RED.value)  # Output: 0 # Using IntEnum for i"
+    }
+  ],
+  "related_nodes": []
+}

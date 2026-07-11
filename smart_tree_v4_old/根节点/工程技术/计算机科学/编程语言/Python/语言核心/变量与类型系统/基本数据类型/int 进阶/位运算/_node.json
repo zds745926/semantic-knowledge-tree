@@ -1,0 +1,21 @@
+{
+  "name": "位运算",
+  "node_id": "py_int_bitops_v4",
+  "parent_id": "py_int_sub_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "int 进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "位运算",
+      "uri": "knowledge://py_int_bitops_v4",
+      "content_preview": "Bitwise AND (&), Bitwise OR (|), Bitwise XOR (^), Left Shift (<<), Right Shift (>>). These operations are faster than arithmetic operations and are commonly used for permission marking and low-level o"
+    }
+  ],
+  "related_nodes": []
+}

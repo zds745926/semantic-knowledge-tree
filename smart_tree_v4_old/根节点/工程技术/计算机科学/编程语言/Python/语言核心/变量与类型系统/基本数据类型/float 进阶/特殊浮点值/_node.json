@@ -1,0 +1,21 @@
+{
+  "name": "特殊浮点值",
+  "node_id": "py_float_special_v4",
+  "parent_id": "py_float_sub_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "float 进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "特殊浮点值",
+      "uri": "knowledge://py_float_special_v4",
+      "content_preview": "Infinite values and NaN (Not a Number) are represented as `float('inf')` and `float('nan')`, respectively. The `math.isinf()` and `math.isnan()` functions can be used to determine whether a value is i"
+    }
+  ],
+  "related_nodes": []
+}

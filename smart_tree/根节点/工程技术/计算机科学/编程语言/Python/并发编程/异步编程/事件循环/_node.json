@@ -9,13 +9,18 @@
   "parent": "异步编程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "事件循环: The `asyncio.run()` function creates an event loop and runs the given coroutine until it completes. It is equivalent to using `loop = asyncio.get_event_loop(); loop.run_until_complete(coroutine)`. Here's a brief Python code example: ```python import asyncio async def my_coroutine(): print(\"Coroutine started\") await asyncio.sleep(1) # Simulate some async operation print(\"Coroutine finished\") # Using asyncio.run() asyncio.run(my_coroutine()) ``` In this example, `my_coroutine` is an asynchronous function that prints a message, waits for 1 second (simulating an async operation), and then prints another message. The `asyncio.run()` function is used to run this coroutine within the event loop until it completes."
+  },
   "data_pointers": [
     {
       "title": "事件循环",
       "uri": "knowledge://py_event_loop_v4",
-      "content_preview": "The `asyncio.run()` function creates an event loop and runs the given coroutine until it completes. It is equivalent to using `loop = asyncio.get_event_loop(); loop.run_until_complete(coroutine)`. Her"
+      "content_preview": "事件循环: The `asyncio.run()` function creates an event loop and runs the given coroutine until it completes. It is equivalent to using `loop = asyncio.get_event_loop(); loop.run_until_complete(coroutine)`. Here's a brief Python code example: ```python import asyncio async def my_coroutine(): print(\"Coroutine started\") await asyncio.sleep(1) # Simulate some async operation print(\"Coroutine finished\") # Using asyncio.run() asyncio.run(my_coroutine()) ``` In this example, `my_coroutine` is an asynchronous function that prints a message, waits for 1 second (simulating an async operation), and then prints another message. The `asyncio.run()` function is used to run this coroutine within the event loop until it completes."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_asyncio_task_v4",
+    "py_coroutine_v4"
+  ]
 }

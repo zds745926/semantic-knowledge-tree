@@ -1,0 +1,21 @@
+{
+  "name": "collections 模块",
+  "node_id": "py_collections_module_v4",
+  "parent_id": "py_stdlib_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "标准库",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "collections 模块",
+      "uri": "knowledge://py_collections_module_v4",
+      "content_preview": "Special Containers: - defaultdict with automatic default values - Counter for counting elements - deque for double-ended queue operations with O(1) time complexity at both ends - namedtuple for named "
+    }
+  ],
+  "related_nodes": []
+}

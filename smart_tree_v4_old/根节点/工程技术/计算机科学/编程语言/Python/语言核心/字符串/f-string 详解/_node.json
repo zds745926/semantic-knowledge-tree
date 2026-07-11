@@ -1,0 +1,21 @@
+{
+  "name": "f-string 详解",
+  "node_id": "py_fstring_v4",
+  "parent_id": "py_str_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "字符串",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "f-string 详解",
+      "uri": "knowledge://py_fstring_v4",
+      "content_preview": "The given Chinese text can be translated to English as follows: `f'...{expression}...' Embed variables. Format specifiers: {x:.2f} for retaining two decimal places, {x:>10} for right-aligning. Here is"
+    }
+  ],
+  "related_nodes": []
+}

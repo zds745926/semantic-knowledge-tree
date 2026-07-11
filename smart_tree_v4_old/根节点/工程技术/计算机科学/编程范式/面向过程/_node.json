@@ -1,0 +1,21 @@
+{
+  "name": "面向过程",
+  "node_id": "procedural_v4",
+  "parent_id": "paradigms_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "编程范式",
+  "children": [
+    "模块化编程",
+    "自顶向下设计",
+    "顺序-选择-循环"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Process-oriented programming organizes code around functions or procedures and emphasizes the use of three fundamental structures: sequence, selection, and iteration. C is a typical example of process"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

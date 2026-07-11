@@ -9,12 +9,14 @@
   "parent": "数字逻辑",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "逻辑门电路: Basic logic gates: AND gate, OR gate, NOT gate, NAND gate. The NAND gate is a universal gate. Here are brief Python code examples for each of these gates: 1. **NOT Gate**: ```python def not_gate(input_bit): return not input_bit # Example usage print(not_gate(True)) # Output: False ``` 2. **AND Gate**: ```python def and_gate(a, b): return a and b # Example usage print(and_gate(True, True)) # Output: True ``` 3. **OR Gate**: ```python def or_gate(a, b): return a or b # Example usage print(or_gate(False, True)) # Output: True ``` 4. **NAND Gate**: ```python def nand_gate(a, b): return not (a and b) # Example usage print(nand_gate(True, False)) # Output: True ``` These examples demonstrate how to implement the basic logic gates in Python."
+  },
   "data_pointers": [
     {
       "title": "逻辑门电路",
       "uri": "knowledge://gate_circuits_v4",
-      "content_preview": "Basic logic gates: AND gate, OR gate, NOT gate, NAND gate. The NAND gate is a universal gate. Here are brief Python code examples for each of these gates: 1. **NOT Gate**: ```python def not_gate(input"
+      "content_preview": "逻辑门电路: Basic logic gates: AND gate, OR gate, NOT gate, NAND gate. The NAND gate is a universal gate. Here are brief Python code examples for each of these gates: 1. **NOT Gate**: ```python def not_gate(input_bit): return not input_bit # Example usage print(not_gate(True)) # Output: False ``` 2. **AND Gate**: ```python def and_gate(a, b): return a and b # Example usage print(and_gate(True, True)) # Output: True ``` 3. **OR Gate**: ```python def or_gate(a, b): return a or b # Example usage print(or_gate(False, True)) # Output: True ``` 4. **NAND Gate**: ```python def nand_gate(a, b): return not (a and b) # Example usage print(nand_gate(True, False)) # Output: True ``` These examples demonstrate how to implement the basic logic gates in Python."
     }
   ],
   "related_nodes": []

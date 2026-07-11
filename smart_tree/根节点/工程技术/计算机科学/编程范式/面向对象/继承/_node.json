@@ -9,12 +9,14 @@
   "parent": "面向对象",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "继承: Inheritance allows subclasses to reuse the attributes and methods of their parent classes. Single inheritance (in Java) vs multiple inheritance (in C++). Here are brief Python code examples for both concepts: Single Inheritance in Python: ```python class ParentClass: def __init__(self, name): self.name = name def display_name(self): print(f\"Name: {self.name}\") class ChildClass(ParentClass): pass # Example usage child_instance = ChildClass(\"Child\") child_instance.display_name() # Output: Name: Child ``` Multiple Inheritance in Python (Note: Python does not support multiple inheritance natively, but it can be simulated using a comma-separated list of base classes.): ```python class BaseClass1: def method_from_base1(self): print(\"Method from BaseClass1\") class BaseClass2: def method_from_base2(self): print(\"Method from BaseClass2\") class DerivedClass(BaseClass1, BaseClass2): pass # Example usage derived_instance = DerivedClass() derived_instance.method_from_base1() # Output: Method from BaseClass1 derived_instance.method_from_base2() # Output: Method from BaseClass2 ``` These examples illustrate how single and multiple inheritance work in Python, even though Python primarily supports only single inheritance."
+  },
   "data_pointers": [
     {
       "title": "继承",
       "uri": "knowledge://inheritance_v4",
-      "content_preview": "Inheritance allows subclasses to reuse the attributes and methods of their parent classes. Single inheritance (in Java) vs multiple inheritance (in C++). Here are brief Python code examples for both c"
+      "content_preview": "继承: Inheritance allows subclasses to reuse the attributes and methods of their parent classes. Single inheritance (in Java) vs multiple inheritance (in C++). Here are brief Python code examples for both concepts: Single Inheritance in Python: ```python class ParentClass: def __init__(self, name): self.name = name def display_name(self): print(f\"Name: {self.name}\") class ChildClass(ParentClass): pass # Example usage child_instance = ChildClass(\"Child\") child_instance.display_name() # Output: Name: Child ``` Multiple Inheritance in Python (Note: Python does not support multiple inheritance natively, but it can be simulated using a comma-separated list of base classes.): ```python class BaseClass1: def method_from_base1(self): print(\"Method from BaseClass1\") class BaseClass2: def method_from_base2(self): print(\"Method from BaseClass2\") class DerivedClass(BaseClass1, BaseClass2): pass # Example usage derived_instance = DerivedClass() derived_instance.method_from_base1() # Output: Method from BaseClass1 derived_instance.method_from_base2() # Output: Method from BaseClass2 ``` These examples illustrate how single and multiple inheritance work in Python, even though Python primarily supports only single inheritance."
     }
   ],
   "related_nodes": []

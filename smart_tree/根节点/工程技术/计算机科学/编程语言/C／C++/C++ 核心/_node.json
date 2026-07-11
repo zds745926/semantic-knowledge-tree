@@ -9,13 +9,13 @@
   "parent": "C/C++",
   "children": [
     "C++ OOP",
+    "模板",
     "STL 标准库",
-    "智能指针",
-    "模板"
+    "智能指针"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The core of C++ includes OOP (Object-Oriented Programming), templates, and STL (Standard Template Library). Smart pointers using RAII manage resources. Here are brief Python code examples for some rel"
+    "description": "C++ 核心: The core of C++ includes OOP (Object-Oriented Programming), templates, and STL (Standard Template Library). Smart pointers using RAII manage resources. Here are brief Python code examples for some related concepts: 1. **OOP in Python**: ```python class Dog: def __init__(self, name): self.name = name def bark(self): return f\"{self.name} says Woof!\" my_dog = Dog(\"Buddy\") print(my_dog.bark()) # Output: Buddy says Woof! ``` 2. **Using Python's `contextlib` for RAII-like behavior**: ```python from contextlib import contextmanager @contextmanager def managed_resource(resource): try: yield resource finally: print(f\"Releasing {resource}\") with managed_resource(\"Database connection\"): # Code that uses the database connection pass # Placeholder for actual code ``` 3. **Python's `collections` module for STL-like functionality**: ```python from collections import deque dq = deque([1, 2, 3]) dq.append(4) print(dq) # Output: deque([1, 2, 3, 4], maxlen=4) ``` These examples illustrate key concepts in C++ and their Python equivalents."
   },
   "data_pointers": [],
   "related_nodes": []

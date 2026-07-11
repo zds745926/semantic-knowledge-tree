@@ -9,12 +9,14 @@
   "parent": "TCP 状态机",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "状态转移详解: 11 States: CLOSED, LISTEN, SYN_SENT, SYN_RCVD, ESTABLISHED, etc. Transitions between states are triggered by packets. Here's a brief Python code example using the `socket` library to illustrate how these states might be managed in a simple TCP server: ```python import socket class SimpleTCPServer: def __init__(self): self.state = 'CLOSED' def handle_packet(self, packet): if self.state == 'CLOSED': # Handle connection request (SYN) if 'SYN' in packet: self.state = 'SYN_SENT' response = 'SYN-ACK' else: return elif self.state == 'SYN_SENT': # Handle ACK for SYN if 'ACK' in packet and 'SYN' in packet: self.state = 'ESTABLISHED' print(\"Connection established\") else: return elif self.state == 'ESTABLISHED': # Handle data transfer pass # Implement data handling logic here # Example usage server = SimpleTCPServer() packet = {'SYN': True} # Simulate a packet with SYN flag set server.handle_packet(packet) ``` This example demonstrates how the state transitions might be managed in response to packets, though it's simplified for illustrative purposes."
+  },
   "data_pointers": [
     {
       "title": "状态转移详解",
       "uri": "knowledge://tcp_state_trans_v4",
-      "content_preview": "11 States: CLOSED, LISTEN, SYN_SENT, SYN_RCVD, ESTABLISHED, etc. Transitions between states are triggered by packets. Here's a brief Python code example using the `socket` library to illustrate how th"
+      "content_preview": "状态转移详解: 11 States: CLOSED, LISTEN, SYN_SENT, SYN_RCVD, ESTABLISHED, etc. Transitions between states are triggered by packets. Here's a brief Python code example using the `socket` library to illustrate how these states might be managed in a simple TCP server: ```python import socket class SimpleTCPServer: def __init__(self): self.state = 'CLOSED' def handle_packet(self, packet): if self.state == 'CLOSED': # Handle connection request (SYN) if 'SYN' in packet: self.state = 'SYN_SENT' response = 'SYN-ACK' else: return elif self.state == 'SYN_SENT': # Handle ACK for SYN if 'ACK' in packet and 'SYN' in packet: self.state = 'ESTABLISHED' print(\"Connection established\") else: return elif self.state == 'ESTABLISHED': # Handle data transfer pass # Implement data handling logic here # Example usage server = SimpleTCPServer() packet = {'SYN': True} # Simulate a packet with SYN flag set server.handle_packet(packet) ``` This example demonstrates how the state transitions might be managed in response to packets, though it's simplified for illustrative purposes."
     }
   ],
   "related_nodes": []

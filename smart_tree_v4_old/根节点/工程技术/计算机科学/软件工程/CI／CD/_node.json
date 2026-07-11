@@ -1,0 +1,20 @@
+{
+  "name": "CI/CD",
+  "node_id": "cicd_v4",
+  "parent_id": "se_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "软件工程",
+  "children": [
+    "持续部署 CD",
+    "持续集成 CI"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Continuous Integration (CI) and Continuous Deployment (CD) enable automated code building, testing, and deployment. Here's a brief explanation with a Python code example for a simple CI/CD pipeline us"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

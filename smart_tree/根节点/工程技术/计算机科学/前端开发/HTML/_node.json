@@ -9,12 +9,14 @@
   "parent": "前端开发",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "HTML: The tag structure is <html><head><body>. Semantic headers include <header>, <nav>, <main>, <section>, <article>, and <footer>. Python code example (using BeautifulSoup to demonstrate the use of semantic HTML tags): ```python from bs4 import BeautifulSoup # Create a simple HTML document with semantic tags html_doc = \"\"\" <html> <head><title>Example Page</title></head> <body> <header> <h1>Welcome to My Website</h1> <nav> <ul> <li><a href=\"#home\">Home</a></li> <li><a href=\"#about\">About</a></li> <li><a href=\"#contact\">Contact</a></li> </ul> </nav> </header> <main> <section> <article> <h2>Article Title</h2> <p>This is the content of the article.</p> </article> </section> </main> <footer> <p>&copy; 2023 My Website. All rights reserved.</p> </footer> </body> </html> \"\"\" # Parse the HTML document soup = BeautifulSoup(html_doc, 'html.parser') # Print the parsed HTML (for demonstration purposes) print(soup.prettify()) ``` This Python code uses BeautifulSoup to create and parse an HTML document that includes semantic tags such as `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, and `<footer>`."
+  },
   "data_pointers": [
     {
       "title": "HTML",
       "uri": "knowledge://html_basics_v4",
-      "content_preview": "Translation: The tag structure is <html><head><body>. Semantic headers include <header>, <nav>, <main>, <section>, <article>, and <footer>. Python code example (using BeautifulSoup to demonstrate the "
+      "content_preview": "HTML: The tag structure is <html><head><body>. Semantic headers include <header>, <nav>, <main>, <section>, <article>, and <footer>. Python code example (using BeautifulSoup to demonstrate the use of semantic HTML tags): ```python from bs4 import BeautifulSoup # Create a simple HTML document with semantic tags html_doc = \"\"\" <html> <head><title>Example Page</title></head> <body> <header> <h1>Welcome to My Website</h1> <nav> <ul> <li><a href=\"#home\">Home</a></li> <li><a href=\"#about\">About</a></li> <li><a href=\"#contact\">Contact</a></li> </ul> </nav> </header> <main> <section> <article> <h2>Article Title</h2> <p>This is the content of the article.</p> </article> </section> </main> <footer> <p>&copy; 2023 My Website. All rights reserved.</p> </footer> </body> </html> \"\"\" # Parse the HTML document soup = BeautifulSoup(html_doc, 'html.parser') # Print the parsed HTML (for demonstration purposes) print(soup.prettify()) ``` This Python code uses BeautifulSoup to create and parse an HTML document that includes semantic tags such as `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, and `<footer>`."
     }
   ],
   "related_nodes": []

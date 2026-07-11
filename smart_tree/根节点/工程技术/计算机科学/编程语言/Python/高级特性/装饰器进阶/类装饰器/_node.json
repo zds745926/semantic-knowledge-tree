@@ -9,12 +9,14 @@
   "parent": "装饰器进阶",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "类装饰器: Implementing the `__call__` method as a decorator allows for scenarios where persistent state is needed. Here’s an example to illustrate this concept: In Python, you can define a class that acts both as a regular object and as a callable (decorator) by implementing the `__call__` method. This is particularly useful when you need to maintain some state across multiple calls. ```python class PersistentDecorator: def __init__(self): self.state = 0 def __call__(self, func): def wrapper(*args, **kwargs): nonlocal self print(f\"State before function call: {self.state}\") result = func(*args, **kwargs) self.state += 1 print(f\"State after function call: {self.state}\") return result return wrapper @PersistentDecorator() def sample_function(x): print(f\"Function called with argument: {x}\") # Using the decorator sample_function(5) sample_function(10) ``` In this example, `PersistentDecorator` maintains a state (`self.state`) that persists across multiple calls to `sample_function`. Each time `sample_function` is called through the decorator, it prints the current state and increments it."
+  },
   "data_pointers": [
     {
       "title": "类装饰器",
       "uri": "knowledge://py_deco_class_v4",
-      "content_preview": "Implementing the `__call__` method as a decorator allows for scenarios where persistent state is needed. Here’s an example to illustrate this concept: In Python, you can define a class that acts both "
+      "content_preview": "类装饰器: Implementing the `__call__` method as a decorator allows for scenarios where persistent state is needed. Here’s an example to illustrate this concept: In Python, you can define a class that acts both as a regular object and as a callable (decorator) by implementing the `__call__` method. This is particularly useful when you need to maintain some state across multiple calls. ```python class PersistentDecorator: def __init__(self): self.state = 0 def __call__(self, func): def wrapper(*args, **kwargs): nonlocal self print(f\"State before function call: {self.state}\") result = func(*args, **kwargs) self.state += 1 print(f\"State after function call: {self.state}\") return result return wrapper @PersistentDecorator() def sample_function(x): print(f\"Function called with argument: {x}\") # Using the decorator sample_function(5) sample_function(10) ``` In this example, `PersistentDecorator` maintains a state (`self.state`) that persists across multiple calls to `sample_function`. Each time `sample_function` is called through the decorator, it prints the current state and increments it."
     }
   ],
   "related_nodes": []

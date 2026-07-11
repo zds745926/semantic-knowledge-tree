@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "并发编程",
   "children": [
+    "Queue (FIFO)",
     "LifoQueue",
     "PriorityQueue",
-    "Queue (FIFO)",
     "SimpleQueue"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The `queue` module provides thread-safe queue implementations. It supports FIFO, LIFO (stack), and priority queues. A core component of the producer-consumer pattern, it enables safe data transfer in "
+    "description": "queue 模块: The `queue` module provides thread-safe queue implementations. It supports FIFO, LIFO (stack), and priority queues. A core component of the producer-consumer pattern, it enables safe data transfer in multi-threaded programming. Here's a brief Python code example demonstrating the use of the `queue` module for a simple producer-consumer scenario: ```python import queue import threading import time # Define a function for producers to add items to the queue def producer(q): for i in range(5): item = f'item_{i}' q.put(item) print(f'Produced {item}') time.sleep(1) # Define a function for consumers to consume items from the queue def consumer(q): while True: item = q.get() if item is None: # Sentinel value to indicate end of production break print(f'Consumed {item}') q.task_done() # Indicate that a formerly enqueued task is complete # Create a queue and start the producer and consumer threads q = queue.Queue() producer_thread = threading.Thread(target=producer, args=(q,)) consumer_thread = threading.Thread(target=consumer, args=(q,)) producer_thread.start() consumer_thread.start() # Wait for all items to be processed by consumers q.join() # Signal the end of production to the consumer for _ in range(2): # Send two sentinel values q.put(None) ``` This example demonstrates a basic producer-consumer model using Python's `queue` module, where producers add items to the queue and consumers remove them."
   },
   "data_pointers": [],
   "related_nodes": []

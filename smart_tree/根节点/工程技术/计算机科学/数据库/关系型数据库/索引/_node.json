@@ -12,7 +12,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Index is an auxiliary data structure used to accelerate data queries, with core types including B+ trees and hash indexes. Python code examples: For a B+ tree index: ```python from btree import BTree "
+    "description": "索引: Index is an auxiliary data structure used to accelerate data queries, with core types including B+ trees and hash indexes. Python code examples: For a B+ tree index: ```python from btree import BTree # Initialize a B+ tree b_plus_tree = BTree(order=5) # Insert some data b_plus_tree[1] = 'one' b_plus_tree[2] = 'two' b_plus_tree[3] = 'three' # Query the index print(b_plus_tree[2]) # Output: two ``` For a hash index: ```python from collections import defaultdict # Initialize a hash index (using a dictionary) hash_index = defaultdict(list) # Insert some data hash_index['one'].append(1) hash_index['two'].append(2) hash_index['three'].append(3) # Query the index print(hash_index['two']) # Output: [2] ``` Note: The `btree` module used in the B+ tree example is a fictional module for demonstration purposes. In actual Python programming, you would typically use database-specific libraries or third-party packages that provide B+ tree implementations."
   },
   "data_pointers": [],
   "related_nodes": []

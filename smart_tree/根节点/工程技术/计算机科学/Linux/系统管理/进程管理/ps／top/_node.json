@@ -9,12 +9,14 @@
   "parent": "进程管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "ps/top: ps aux for all processes. top for real-time view. htop for enhanced interactive view. Here are the corresponding Python code examples for each command: 1. **`ps aux`**: This command lists all running processes. ```python import subprocess # Run ps aux and capture the output result = subprocess.run(['ps', 'aux'], stdout=subprocess.PIPE) print(result.stdout.decode()) ``` 2. **`top`**: This command provides a dynamic real-time view of a running system, showing system summary information (such as load averages, memory, swap) and a list of processes. ```python import subprocess # Run top and capture the output result = subprocess.run(['top', '-b', '-n', '1'], stdout=subprocess.PIPE) print(result.stdout.decode()) ``` 3. **`htop`**: This command provides an interactive process viewer with a more user-friendly interface compared to `top`. ```python import subprocess # Run htop and capture the output (Note: htop might not be available in all environments, especially non-GUI ones) try: result = subprocess.run(['htop'], stdout=subprocess.PIPE) print(result.stdout.decode()) except FileNotFoundError: print(\"htop is not installed or not available in this environment.\") ``` These examples use Python's `subprocess` module to run the commands and capture their output."
+  },
   "data_pointers": [
     {
       "title": "ps/top",
       "uri": "knowledge://ps_top_v4",
-      "content_preview": "ps aux for all processes. top for real-time view. htop for enhanced interactive view. Here are the corresponding Python code examples for each command: 1. **`ps aux`**: This command lists all running "
+      "content_preview": "ps/top: ps aux for all processes. top for real-time view. htop for enhanced interactive view. Here are the corresponding Python code examples for each command: 1. **`ps aux`**: This command lists all running processes. ```python import subprocess # Run ps aux and capture the output result = subprocess.run(['ps', 'aux'], stdout=subprocess.PIPE) print(result.stdout.decode()) ``` 2. **`top`**: This command provides a dynamic real-time view of a running system, showing system summary information (such as load averages, memory, swap) and a list of processes. ```python import subprocess # Run top and capture the output result = subprocess.run(['top', '-b', '-n', '1'], stdout=subprocess.PIPE) print(result.stdout.decode()) ``` 3. **`htop`**: This command provides an interactive process viewer with a more user-friendly interface compared to `top`. ```python import subprocess # Run htop and capture the output (Note: htop might not be available in all environments, especially non-GUI ones) try: result = subprocess.run(['htop'], stdout=subprocess.PIPE) print(result.stdout.decode()) except FileNotFoundError: print(\"htop is not installed or not available in this environment.\") ``` These examples use Python's `subprocess` module to run the commands and capture their output."
     }
   ],
   "related_nodes": []

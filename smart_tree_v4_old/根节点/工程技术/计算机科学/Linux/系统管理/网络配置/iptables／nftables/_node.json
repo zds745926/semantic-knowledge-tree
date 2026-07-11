@@ -1,0 +1,21 @@
+{
+  "name": "iptables/nftables",
+  "node_id": "iptables_v4",
+  "parent_id": "linux_net_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "网络配置",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "iptables/nftables",
+      "uri": "knowledge://iptables_v4",
+      "content_preview": "Filter table INPUT/FORWARD/OUTPUT. Rule match actions. Here are some brief explanations for each part: - **Filter Table**: In Linux networking, the `filter` table is one of the built-in tables used by"
+    }
+  ],
+  "related_nodes": []
+}

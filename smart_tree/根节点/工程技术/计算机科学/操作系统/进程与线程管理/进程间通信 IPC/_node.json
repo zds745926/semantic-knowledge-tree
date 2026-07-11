@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "进程与线程管理",
   "children": [
-    "共享内存",
-    "管道"
+    "管道",
+    "共享内存"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Process communication methods include pipes, shared memory, semaphores, message queues, and sockets. Here are brief descriptions of each method along with a Python code example for one of them: 1. **P"
+    "description": "进程间通信 IPC: Process communication methods include pipes, shared memory, semaphores, message queues, and sockets. Here are brief descriptions of each method along with a Python code example for one of them: 1. **Pipes**: Used to connect the standard output (stdout) of one process to the standard input (stdin) of another. ```python import os # Create a pipe r, w = os.pipe() # Write to the write end of the pipe os.write(w, b'Hello') # Close the write end os.close(w) # Read from the read end of the pipe data = os.read(r, 1024) print(data.decode('utf-8')) ``` 2. **Shared Memory**: Allows multiple processes to share a block of memory. ```python import mmap import os # Create a shared memory object fd = os.open(\"/tmp/my_shm\", os.O_RDWR | os.O_CREAT, 0o600) size = 1024 mm = mmap.mmap(fd, size) # Write to the shared memory mm.write(b'Hello') # Close and flush the shared memory mm.close() os.close(fd) ``` 3. **Semaphores**: Used for controlling access to a resource by multiple processes. ```python import threading semaphore = threading.Semaphore(2) # Allow up to 2 processes at a time def worker(): with semaphore: print(f\"Process {os.getpid()} is working\") threads = [threading.Thread(target=worker) for _ in range(5)] for t in threads: t.start() for t in threads: t.join() ``` 4. **Message Queues**: Used to send messages between processes. ```python import multiprocessing def sender(queue): queue.put(\"Hello from the sender\") def receiver(queue): print(f\"Received: {queue.get()}\") # Create a message queue q = multiprocessing.Queue() p1 = multiprocessing.Process(target=sender, args=(q,)) p2 = multiprocessing.Process(target=receiver, args=(q,)) p1.start() p2.start() p1.join() p2.join() ``` 5. **Sockets**: Used for network communication between processes. ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) sock.connect(server_address) try: # Send data message = b'Hello, world' sock.sendall(message) # Look for the response amount_received = 0 amount_expected = len(message) while amount_received < amount_expected: data = sock.recv(16) amount_received += len(data) print(f\"Received: {data.decode('utf-8')}\") finally: sock.close() ```"
   },
   "data_pointers": [],
   "related_nodes": []

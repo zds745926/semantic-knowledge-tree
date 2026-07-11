@@ -1,0 +1,21 @@
+{
+  "name": "内存管理",
+  "node_id": "c_memory_v4",
+  "parent_id": "c_core_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "C 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "内存管理",
+      "uri": "knowledge://c_memory_v4",
+      "content_preview": "malloc/calloc/realloc/free. Stack memory is automatically reclaimed. Valgrind detects memory errors. Here are brief explanations of the terms and an example using Python to illustrate `realloc`: - **m"
+    }
+  ],
+  "related_nodes": []
+}

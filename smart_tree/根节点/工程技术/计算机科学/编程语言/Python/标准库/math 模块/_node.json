@@ -9,13 +9,17 @@
   "parent": "标准库",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "math 模块: Math functions: `math.floor`, `math.ceil`, `math.round`, `math.sqrt`, `math.log`, `math.sin`, `math.cos`. Constants: `math.pi`, `math.e`. The `cmath` module supports complex numbers. Python code examples: ```python import math # Using floor, ceil, and round functions print(math.floor(2.9)) # Output: 2 print(math.ceil(2.1)) # Output: 3 print(round(2.5)) # Output: 2 (Note: round() rounds to the nearest even number) # Using sqrt and log functions print(math.sqrt(16)) # Output: 4.0 print(math.log(100, 10))# Output: 2.0 # Using sin and cos functions import math angle_in_radians = math.pi / 4 # 45 degrees print(math.sin(angle_in_radians), math.cos(angle_in_radians)) # Output: (0.7071067811865475, 0.7071067811865476) import cmath # Using cmath for complex numbers z = complex(3, 4) print(cmath.sqrt(z)) # Output: (2+1j) ``` Note that the `round` function in Python rounds to the nearest even number when the number is exactly halfway between two integers."
+  },
   "data_pointers": [
     {
       "title": "math 模块",
       "uri": "knowledge://py_math_module_v4",
-      "content_preview": "Math functions: `math.floor`, `math.ceil`, `math.round`, `math.sqrt`, `math.log`, `math.sin`, `math.cos`. Constants: `math.pi`, `math.e`. The `cmath` module supports complex numbers. Python code examp"
+      "content_preview": "math 模块: Math functions: `math.floor`, `math.ceil`, `math.round`, `math.sqrt`, `math.log`, `math.sin`, `math.cos`. Constants: `math.pi`, `math.e`. The `cmath` module supports complex numbers. Python code examples: ```python import math # Using floor, ceil, and round functions print(math.floor(2.9)) # Output: 2 print(math.ceil(2.1)) # Output: 3 print(round(2.5)) # Output: 2 (Note: round() rounds to the nearest even number) # Using sqrt and log functions print(math.sqrt(16)) # Output: 4.0 print(math.log(100, 10))# Output: 2.0 # Using sin and cos functions import math angle_in_radians = math.pi / 4 # 45 degrees print(math.sin(angle_in_radians), math.cos(angle_in_radians)) # Output: (0.7071067811865475, 0.7071067811865476) import cmath # Using cmath for complex numbers z = complex(3, 4) print(cmath.sqrt(z)) # Output: (2+1j) ``` Note that the `round` function in Python rounds to the nearest even number when the number is exactly halfway between two integers."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_random_v4"
+  ]
 }

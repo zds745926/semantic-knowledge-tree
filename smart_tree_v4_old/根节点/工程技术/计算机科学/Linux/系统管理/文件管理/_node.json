@@ -1,0 +1,22 @@
+{
+  "name": "文件管理",
+  "node_id": "linux_fs_v4",
+  "parent_id": "linux_admin_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "系统管理",
+  "children": [
+    "cp/mv/rm",
+    "find/locate",
+    "ls/cd/pwd",
+    "tar/gzip"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "The Linux file management commands include core tools such as `ls`, `cd`, `cp`, `mv`, `rm`, and `find`. Here are brief descriptions of these commands along with Python code examples where applicable: "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

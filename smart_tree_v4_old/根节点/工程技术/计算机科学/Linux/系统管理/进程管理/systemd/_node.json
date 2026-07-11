@@ -1,0 +1,21 @@
+{
+  "name": "systemd",
+  "node_id": "systemd_v4",
+  "parent_id": "linux_proc_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "进程管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "systemd",
+      "uri": "knowledge://systemd_v4",
+      "content_preview": "System and service management. `systemctl`, `unit`, `journalctl`. Here are brief explanations with related Python code examples where applicable: - **`systemctl`**: This is a command-line tool used to"
+    }
+  ],
+  "related_nodes": []
+}

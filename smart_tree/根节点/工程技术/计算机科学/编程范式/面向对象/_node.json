@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "编程范式",
   "children": [
-    "多态",
     "封装",
-    "继承"
+    "继承",
+    "多态"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Object-oriented programming (OOP) is organized around the concepts of classes and objects, with core features including encapsulation, inheritance, and polymorphism. Java and C++ are typical represent"
+    "description": "面向对象: Object-oriented programming (OOP) is organized around the concepts of classes and objects, with core features including encapsulation, inheritance, and polymorphism. Java and C++ are typical representatives of OOP and are widely used in the development of large-scale software systems. Here's a brief Python code example to illustrate some of these concepts: ```python # Example of a simple class definition class Animal: def __init__(self, name): self.name = name # Encapsulation: attributes are defined within the class def speak(self): raise NotImplementedError(\"Subclasses must implement this method\") # Polymorphism: defining an abstract method # Inheritance example class Dog(Animal): def speak(self): return f\"{self.name} says Woof!\" # Overriding the speak method from the parent class # Creating objects and using methods my_dog = Dog(\"Buddy\") print(my_dog.speak()) # Output: Buddy says Woof! ``` In this example, `Animal` is a base class with an `__init__` method for initialization (encapsulation) and a `speak` method that is meant to be overridden by subclasses. The `Dog` class inherits from `Animal`, overriding the `speak` method to provide specific behavior (polymorphism)."
   },
   "data_pointers": [],
   "related_nodes": []

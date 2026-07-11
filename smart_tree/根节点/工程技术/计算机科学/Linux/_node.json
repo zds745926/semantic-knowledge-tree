@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "Shell 脚本",
-    "系统管理"
+    "系统管理",
+    "Shell 脚本"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Linux is a free and open-source operating system kernel that is widely used in servers, embedded systems, and cloud computing. Known for its stability, security, and flexibility, it serves as the core"
+    "description": "Linux: Linux is a free and open-source operating system kernel that is widely used in servers, embedded systems, and cloud computing. Known for its stability, security, and flexibility, it serves as the core of internet infrastructure. Here's an example Python code snippet to illustrate working with Linux commands using the `subprocess` module: ```python import subprocess def run_command(command): \"\"\"Run a command in the shell and return the output.\"\"\" process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True) stdout, stderr = process.communicate() if stderr: print(f\"Error: {stderr.decode('utf-8')}\") else: print(stdout.decode('utf-8')) # Example usage run_command(\"ls -l\") ``` This code defines a function `run_command` that takes a command as input, runs it in the shell using `subprocess.Popen`, and prints the output or any error messages."
   },
   "data_pointers": [],
   "related_nodes": []

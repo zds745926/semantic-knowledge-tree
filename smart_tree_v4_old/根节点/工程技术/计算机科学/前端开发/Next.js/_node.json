@@ -1,0 +1,21 @@
+{
+  "name": "Next.js",
+  "node_id": "nextjs_v4",
+  "parent_id": "fe_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "前端开发",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Next.js",
+      "uri": "knowledge://nextjs_v4",
+      "content_preview": "React Full-Stack Framework. SSR/SSG/ISR. App Router. Server Components. Here are brief explanations and corresponding Python code examples for some of the concepts: 1. **SSR (Server-Side Rendering) / "
+    }
+  ],
+  "related_nodes": []
+}

@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "类型系统特性",
   "children": [
-    "协议与鸭子类型",
-    "鸭子类型定义"
+    "鸭子类型定义",
+    "协议与鸭子类型"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Duck typing is a core design philosophy in Python: \"If it walks like a duck and quacks like a duck, then it is a duck.\" In Python, object types are not checked; instead, the presence of required metho"
+    "description": "鸭子类型: Duck typing is a core design philosophy in Python: \"If it walks like a duck and quacks like a duck, then it is a duck.\" In Python, object types are not checked; instead, the presence of required methods is verified. This approach is flexible but may lead to runtime errors if necessary methods are missing. Here's an example using Python code: ```python class Duck: def quack(self): print(\"Quack!\") class Person: def quack(self): print(\"I'm quacking like a duck!\") def test_quack(obj): obj.quack() # Both instances can be passed to the function due to duck typing. duck = Duck() person = Person() test_quack(duck) # Output: Quack! test_quack(person) # Output: I'm quacking like a duck! ``` In this example, both `Duck` and `Person` classes have a `quack` method. The function `test_quack` can accept any object that has a `quack` method, demonstrating the flexibility of duck typing."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "发布与打包",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "PyPI 上传: ```python # Command for uploading to PyPI twine upload dist/* # Test the upload on TestPyPI first twine upload --repository-url https://test.pypi.org/legacy/ dist/* # API token authentication is required for both commands above ``` Explanation: - `twine upload dist/*`: This command uploads the distribution files (usually created by tools like `python setup.py sdist bdist_wheel`) to the Python Package Index (PyPI). - `twine upload --repository-url https://test.pypi.org/legacy/ dist/*`: This is used to test the upload process on TestPyPI, which is a testing environment for PyPI. - API token authentication: Both commands require an API token for authentication. You can obtain this by registering on PyPI and generating a personal access token from your account settings. Note that `twine` is a command-line utility used to upload Python packages to PyPI or other package indexes, and it handles the necessary authentication and metadata validation."
+  },
   "data_pointers": [
     {
       "title": "PyPI 上传",
       "uri": "knowledge://py_pypi_upload_v4",
-      "content_preview": "Translation: ```python # Command for uploading to PyPI twine upload dist/* # Test the upload on TestPyPI first twine upload --repository-url https://test.pypi.org/legacy/ dist/* # API token authentica"
+      "content_preview": "PyPI 上传: ```python # Command for uploading to PyPI twine upload dist/* # Test the upload on TestPyPI first twine upload --repository-url https://test.pypi.org/legacy/ dist/* # API token authentication is required for both commands above ``` Explanation: - `twine upload dist/*`: This command uploads the distribution files (usually created by tools like `python setup.py sdist bdist_wheel`) to the Python Package Index (PyPI). - `twine upload --repository-url https://test.pypi.org/legacy/ dist/*`: This is used to test the upload process on TestPyPI, which is a testing environment for PyPI. - API token authentication: Both commands require an API token for authentication. You can obtain this by registering on PyPI and generating a personal access token from your account settings. Note that `twine` is a command-line utility used to upload Python packages to PyPI or other package indexes, and it handles the necessary authentication and metadata validation."
     }
   ],
   "related_nodes": []

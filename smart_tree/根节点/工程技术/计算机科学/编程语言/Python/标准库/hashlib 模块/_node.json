@@ -9,12 +9,14 @@
   "parent": "标准库",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "hashlib 模块: hashlib.md5/sha1/sha256. The `update()` method accumulates data. The `hexdigest()` method produces a hexadecimal digest. Password hashing uses bcrypt. Here are brief Python code examples for each: ```python import hashlib # Example using md5 md5_hash = hashlib.md5() md5_hash.update(b\"Hello World\") print(md5_hash.hexdigest()) # Example using sha1 sha1_hash = hashlib.sha1() sha1_hash.update(b\"Hello World\") print(sha1_hash.hexdigest()) # Example using sha256 sha256_hash = hashlib.sha256() sha256_hash.update(b\"Hello World\") print(sha256_hash.hexdigest()) ``` For bcrypt, you would typically use a library like `bcrypt`: ```python import bcrypt password = b\"supersecret\" # Generate a salt and hash the password hashed_password = bcrypt.hashpw(password, bcrypt.gensalt()) print(hashed_password) ```"
+  },
   "data_pointers": [
     {
       "title": "hashlib 模块",
       "uri": "knowledge://py_hashlib_v4",
-      "content_preview": "hashlib.md5/sha1/sha256. The `update()` method accumulates data. The `hexdigest()` method produces a hexadecimal digest. Password hashing uses bcrypt. Here are brief Python code examples for each: ```"
+      "content_preview": "hashlib 模块: hashlib.md5/sha1/sha256. The `update()` method accumulates data. The `hexdigest()` method produces a hexadecimal digest. Password hashing uses bcrypt. Here are brief Python code examples for each: ```python import hashlib # Example using md5 md5_hash = hashlib.md5() md5_hash.update(b\"Hello World\") print(md5_hash.hexdigest()) # Example using sha1 sha1_hash = hashlib.sha1() sha1_hash.update(b\"Hello World\") print(sha1_hash.hexdigest()) # Example using sha256 sha256_hash = hashlib.sha256() sha256_hash.update(b\"Hello World\") print(sha256_hash.hexdigest()) ``` For bcrypt, you would typically use a library like `bcrypt`: ```python import bcrypt password = b\"supersecret\" # Generate a salt and hash the password hashed_password = bcrypt.hashpw(password, bcrypt.gensalt()) print(hashed_password) ```"
     }
   ],
   "related_nodes": []

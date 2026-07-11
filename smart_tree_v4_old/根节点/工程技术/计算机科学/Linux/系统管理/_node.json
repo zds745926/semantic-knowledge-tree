@@ -1,0 +1,23 @@
+{
+  "name": "系统管理",
+  "node_id": "linux_admin_v4",
+  "parent_id": "linux_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "Linux",
+  "children": [
+    "文件管理",
+    "文本处理",
+    "权限管理",
+    "网络配置",
+    "进程管理"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Linux system management includes file operations, text processing, process management, and permission control—essential daily operational skills. For a more detailed explanation, here are some brief P"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

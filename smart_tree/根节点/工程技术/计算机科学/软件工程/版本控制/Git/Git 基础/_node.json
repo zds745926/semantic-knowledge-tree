@@ -9,12 +9,14 @@
   "parent": "Git",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Git 基础: Init/Clone/Add/Commit/Push/Pull. Staging Area Workflow. Explanation: These are common Git commands used in version control systems for software development. Here's a brief explanation and an example using Python to demonstrate the concept: - **Init**: Initializes a new Git repository. ```python import git repo = git.Repo.init('path/to/repo') ``` - **Clone**: Clones an existing remote repository into a local directory. ```python repo = git.Repo.clone_from('https://github.com/user/repo.git', 'local/path') ``` - **Add**: Adds changes from the working tree to the staging area (index). ```python with open('file.txt', 'a') as f: f.write(\"New content\") repo.index.add(['file.txt']) ``` - **Commit**: Commits the staged changes along with a commit message. ```python repo.git.commit('-m', 'Add new content to file') ``` - **Push**: Pushes committed changes to a remote repository. ```python origin = repo.remote(name='origin') origin.push() ``` - **Pull**: Pulls the latest changes from a remote repository and merges them into the local branch. ```python origin.pull() ``` These commands form the basic workflow for managing code changes in Git."
+  },
   "data_pointers": [
     {
       "title": "Git 基础",
       "uri": "knowledge://git_basics_v4",
-      "content_preview": "Translation: Init/Clone/Add/Commit/Push/Pull. Staging Area Workflow. Explanation: These are common Git commands used in version control systems for software development. Here's a brief explanation and"
+      "content_preview": "Git 基础: Init/Clone/Add/Commit/Push/Pull. Staging Area Workflow. Explanation: These are common Git commands used in version control systems for software development. Here's a brief explanation and an example using Python to demonstrate the concept: - **Init**: Initializes a new Git repository. ```python import git repo = git.Repo.init('path/to/repo') ``` - **Clone**: Clones an existing remote repository into a local directory. ```python repo = git.Repo.clone_from('https://github.com/user/repo.git', 'local/path') ``` - **Add**: Adds changes from the working tree to the staging area (index). ```python with open('file.txt', 'a') as f: f.write(\"New content\") repo.index.add(['file.txt']) ``` - **Commit**: Commits the staged changes along with a commit message. ```python repo.git.commit('-m', 'Add new content to file') ``` - **Push**: Pushes committed changes to a remote repository. ```python origin = repo.remote(name='origin') origin.push() ``` - **Pull**: Pulls the latest changes from a remote repository and merges them into the local branch. ```python origin.pull() ``` These commands form the basic workflow for managing code changes in Git."
     }
   ],
   "related_nodes": []

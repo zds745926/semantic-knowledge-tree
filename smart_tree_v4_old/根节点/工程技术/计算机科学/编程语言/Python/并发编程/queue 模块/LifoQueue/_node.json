@@ -1,0 +1,21 @@
+{
+  "name": "LifoQueue",
+  "node_id": "py_lifo_queue_v4",
+  "parent_id": "py_queue_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "queue 模块",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "LifoQueue",
+      "uri": "knowledge://py_lifo_queue_v4",
+      "content_preview": "queue.LifoQueue is a Last-In-First-Out (LIFO) data structure, similar to a stack. It supports put and get methods. This data structure is suitable for Depth-First Search (DFS) traversal. Here's a brie"
+    }
+  ],
+  "related_nodes": []
+}

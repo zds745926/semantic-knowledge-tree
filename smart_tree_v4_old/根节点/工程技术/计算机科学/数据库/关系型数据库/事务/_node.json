@@ -1,0 +1,20 @@
+{
+  "name": "事务",
+  "node_id": "tx_v4",
+  "parent_id": "rdb_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "关系型数据库",
+  "children": [
+    "ACID 特性",
+    "隔离级别"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "A transaction is the basic unit of database operations and has ACID properties. To provide a more comprehensive explanation, let's break down what ACID stands for: - Atomicity: A transaction must be t"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -9,12 +9,14 @@
   "parent": "多进程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "共享内存: `multiprocessing.shared_memory` (3.8+). `ShareableList`. Multiple processes can directly read and write to the same memory block. Python code example: ```python import multiprocessing def worker(shm): # Accessing shared memory print(\"Initial value:\", shm[:]) # Modifying shared memory for i in range(len(shm)): shm[i] = i * 2 if __name__ == \"__main__\": # Creating a shared memory block with size 10 shm = multiprocessing.shared_memory.ShareableList(range(10)) # Starting processes that will access and modify the shared memory p1 = multiprocessing.Process(target=worker, args=(shm,)) p2 = multiprocessing.Process(target=worker, args=(shm,)) p1.start() p2.start() p1.join() p2.join() print(\"Final value:\", shm[:]) ``` This example demonstrates the use of `ShareableList` from the `multiprocessing.shared_memory` module. Two processes modify and read a shared list, showcasing direct memory access between processes."
+  },
   "data_pointers": [
     {
       "title": "共享内存",
       "uri": "knowledge://py_shared_memory_v4",
-      "content_preview": "`multiprocessing.shared_memory` (3.8+). `ShareableList`. Multiple processes can directly read and write to the same memory block. Python code example: ```python import multiprocessing def worker(shm):"
+      "content_preview": "共享内存: `multiprocessing.shared_memory` (3.8+). `ShareableList`. Multiple processes can directly read and write to the same memory block. Python code example: ```python import multiprocessing def worker(shm): # Accessing shared memory print(\"Initial value:\", shm[:]) # Modifying shared memory for i in range(len(shm)): shm[i] = i * 2 if __name__ == \"__main__\": # Creating a shared memory block with size 10 shm = multiprocessing.shared_memory.ShareableList(range(10)) # Starting processes that will access and modify the shared memory p1 = multiprocessing.Process(target=worker, args=(shm,)) p2 = multiprocessing.Process(target=worker, args=(shm,)) p1.start() p2.start() p1.join() p2.join() print(\"Final value:\", shm[:]) ``` This example demonstrates the use of `ShareableList` from the `multiprocessing.shared_memory` module. Two processes modify and read a shared list, showcasing direct memory access between processes."
     }
   ],
   "related_nodes": []

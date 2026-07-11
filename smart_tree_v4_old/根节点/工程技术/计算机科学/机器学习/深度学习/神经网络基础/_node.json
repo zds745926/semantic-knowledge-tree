@@ -1,0 +1,22 @@
+{
+  "name": "神经网络基础",
+  "node_id": "nn_basics_v4",
+  "parent_id": "dl_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "深度学习",
+  "children": [
+    "优化器",
+    "反向传播",
+    "感知机",
+    "激活函数"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Neural networks are composed of layers of neurons that learn through backpropagation. Here is a brief Python code example using the popular `keras` library to illustrate a simple neural network with o"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

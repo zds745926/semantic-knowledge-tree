@@ -1,0 +1,21 @@
+{
+  "name": "字符串正则进阶",
+  "node_id": "py_str_regex_v4",
+  "parent_id": "py_str_adv_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "字符串进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "字符串正则进阶",
+      "uri": "knowledge://py_str_regex_v4",
+      "content_preview": "re.match/re.search/re.findall/re.sub. Capturing groups () and non-capturing groups (?:). In regular expressions used in programming, `re.match`, `re.search`, `re.findall`, and `re.sub` are commonly us"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "滑动窗口",
+  "node_id": "tcp_sliding_window_v4",
+  "parent_id": "tcp_reliable_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "TCP 可靠传输",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "滑动窗口",
+      "uri": "knowledge://tcp_sliding_window_v4",
+      "content_preview": "Windows where sent data is waiting for ACK. Move forward while waiting for the ACK. Cumulative acknowledgment. To provide a more context-specific translation and to include a brief Python code example"
+    }
+  ],
+  "related_nodes": []
+}

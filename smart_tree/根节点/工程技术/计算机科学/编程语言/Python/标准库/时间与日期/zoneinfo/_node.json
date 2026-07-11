@@ -9,12 +9,14 @@
   "parent": "时间与日期",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "zoneinfo: zoneinfo.ZoneInfo(3.9+) IANA Time Zone. datetime.replace(tzinfo=). Here is an example of how you might use `ZoneInfo` and `replace` in Python: ```python from datetime import datetime import zoneinfo # Get the current date and time with a specific timezone current_time = datetime.now() target_timezone = \"America/New_York\" # Example IANA Time Zone ID local_time = current_time.astimezone(zoneinfo.ZoneInfo(target_timezone)) # Replace the timezone information in an existing datetime object existing_time = datetime(2023, 10, 1, 12, 0) # Example date and time new_time_with_tz = existing_time.replace(tzinfo=zoneinfo.ZoneInfo(target_timezone)) print(\"Local Time:\", local_time) print(\"New Time with TZ:\", new_time_with_tz) ``` This example demonstrates how to use `ZoneInfo` from the `zoneinfo` module to handle time zones in Python, and shows how to replace the timezone information in a `datetime` object."
+  },
   "data_pointers": [
     {
       "title": "zoneinfo",
       "uri": "knowledge://py_zoneinfo_v4",
-      "content_preview": "zoneinfo.ZoneInfo(3.9+) IANA Time Zone. datetime.replace(tzinfo=). Here is an example of how you might use `ZoneInfo` and `replace` in Python: ```python from datetime import datetime import zoneinfo #"
+      "content_preview": "zoneinfo: zoneinfo.ZoneInfo(3.9+) IANA Time Zone. datetime.replace(tzinfo=). Here is an example of how you might use `ZoneInfo` and `replace` in Python: ```python from datetime import datetime import zoneinfo # Get the current date and time with a specific timezone current_time = datetime.now() target_timezone = \"America/New_York\" # Example IANA Time Zone ID local_time = current_time.astimezone(zoneinfo.ZoneInfo(target_timezone)) # Replace the timezone information in an existing datetime object existing_time = datetime(2023, 10, 1, 12, 0) # Example date and time new_time_with_tz = existing_time.replace(tzinfo=zoneinfo.ZoneInfo(target_timezone)) print(\"Local Time:\", local_time) print(\"New Time with TZ:\", new_time_with_tz) ``` This example demonstrates how to use `ZoneInfo` from the `zoneinfo` module to handle time zones in Python, and shows how to replace the timezone information in a `datetime` object."
     }
   ],
   "related_nodes": []

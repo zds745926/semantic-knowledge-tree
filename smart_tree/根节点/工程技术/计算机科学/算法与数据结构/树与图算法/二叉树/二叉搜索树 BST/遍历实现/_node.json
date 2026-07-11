@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "二叉搜索树 BST",
   "children": [
-    "中序遍历实现",
     "前序遍历实现",
+    "中序遍历实现",
     "后序遍历实现"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "There are three depth-first traversal methods for binary trees, each with its own characteristics and applications. Here are brief descriptions of the three methods along with corresponding Python cod"
+    "description": "遍历实现: There are three depth-first traversal methods for binary trees, each with its own characteristics and applications. Here are brief descriptions of the three methods along with corresponding Python code examples: 1. **Pre-order Traversal (先序遍历)**: - This method visits the root node first, then traverses the left subtree, and finally the right subtree. ```python def pre_order_traversal(root): if root is None: return [] result = [root.val] result += pre_order_traversal(root.left) result += pre_order_traversal(root.right) return result ``` 2. **In-order Traversal (中序遍历)**: - This method traverses the left subtree first, then visits the root node, and finally traverses the right subtree. ```python def in_order_traversal(root): if root is None: return [] result = in_order_traversal(root.left) result.append(root.val) result += in_order_traversal(root.right) return result ``` 3. **Post-order Traversal (后序遍历)**: - This method traverses the left subtree first, then the right subtree, and finally visits the root node. ```python def post_order_traversal(root): if root is None: return [] result = post_order_traversal(root.left) result += post_order_traversal(root.right) result.append(root.val) return result ``` These methods are fundamental in tree traversal and have various applications in algorithms and data structures."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -1,0 +1,21 @@
+{
+  "name": "for 迭代原理",
+  "node_id": "py_iter_for_v4",
+  "parent_id": "py_for_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "for 循环",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "for 迭代原理",
+      "uri": "knowledge://py_iter_for_v4",
+      "content_preview": "The given Chinese technical text translates to: \"For `x` in `iterable`: is equivalent to calling `iter()` → `__next__()` until `StopIteration`. Here's a brief Python code example to illustrate this co"
+    }
+  ],
+  "related_nodes": []
+}

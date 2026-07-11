@@ -1,0 +1,21 @@
+{
+  "name": "编程范式",
+  "node_id": "paradigms_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "函数式编程",
+    "面向对象",
+    "面向过程"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Programming paradigms are the fundamental styles and methodologies in programming, including procedural, object-oriented, functional, and declarative approaches. Each paradigm offers different ways of"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

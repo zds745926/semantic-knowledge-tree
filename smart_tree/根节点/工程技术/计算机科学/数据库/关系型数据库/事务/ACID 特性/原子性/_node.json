@@ -9,13 +9,17 @@
   "parent": "ACID 特性",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "原子性: All transactions either succeed completely or fail entirely. This is achieved through the Write-Ahead Log (WAL) mechanism, which ensures atomicity. Python code example: ```python import os class DatabaseTransaction: def __init__(self, db_path): self.db_path = db_path self.changes = [] def write(self, key, value): # Record the change to be written later self.changes.append((key, value)) def commit(self): # Write all changes to disk using WAL with open(self.db_path, 'a') as file: for key, value in self.changes: file.write(f\"{key}:{value}\\n\") self.changes.clear() def rollback(self): # No-op in this simple example; actual implementation would revert changes pass # Example usage db = DatabaseTransaction('example.db') db.write('name', 'Alice') db.write('age', 30) db.commit() ``` In this example, the `DatabaseTransaction` class simulates a transactional database using a write-ahead log (WAL) approach. The `write` method records changes to be applied later, and the `commit` method writes all recorded changes to disk. The `rollback` method is left as a placeholder for actual implementation where changes would be reverted if necessary."
+  },
   "data_pointers": [
     {
       "title": "原子性",
       "uri": "knowledge://atomicity_v4",
-      "content_preview": "All transactions either succeed completely or fail entirely. This is achieved through the Write-Ahead Log (WAL) mechanism, which ensures atomicity. Python code example: ```python import os class Datab"
+      "content_preview": "原子性: All transactions either succeed completely or fail entirely. This is achieved through the Write-Ahead Log (WAL) mechanism, which ensures atomicity. Python code example: ```python import os class DatabaseTransaction: def __init__(self, db_path): self.db_path = db_path self.changes = [] def write(self, key, value): # Record the change to be written later self.changes.append((key, value)) def commit(self): # Write all changes to disk using WAL with open(self.db_path, 'a') as file: for key, value in self.changes: file.write(f\"{key}:{value}\\n\") self.changes.clear() def rollback(self): # No-op in this simple example; actual implementation would revert changes pass # Example usage db = DatabaseTransaction('example.db') db.write('name', 'Alice') db.write('age', 30) db.commit() ``` In this example, the `DatabaseTransaction` class simulates a transactional database using a write-ahead log (WAL) approach. The `write` method records changes to be applied later, and the `commit` method writes all recorded changes to disk. The `rollback` method is left as a placeholder for actual implementation where changes would be reverted if necessary."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "isolation_v4"
+  ]
 }

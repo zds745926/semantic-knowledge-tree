@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python loops include `for` loops (iterating over iterable objects) and `while` loops (driven by conditions). The `break` and `continue` statements control the flow of the loop, while an `else` clause "
+    "description": "循环: Python loops include `for` loops (iterating over iterable objects) and `while` loops (driven by conditions). The `break` and `continue` statements control the flow of the loop, while an `else` clause is executed when the loop terminates normally. Here are brief examples to illustrate these concepts: For loop example: ```python # Iterate over a list of numbers numbers = [1, 2, 3, 4, 5] for number in numbers: if number == 3: break # Exit the loop when number is 3 print(number) else: # This block runs only if the loop exits normally (not via a break statement) print(\"Loop completed without breaking\") ``` While loop example: ```python # A simple counter that stops after reaching 5 count = 0 while count < 5: count += 1 if count == 3: continue # Skip the rest of this iteration and go back to the condition check print(\"Loop completed\") ``` These examples demonstrate how `break` and `continue` can be used within loops, as well as the use of an `else` clause with a loop."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -9,13 +9,18 @@
   "parent": "比较排序",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "快速排序: Divide and Conquer: Selecting a pivot to partition. Average O(n log n), worst-case O(n²). In-place but unstable. Python code example: ```python def quicksort(arr): if len(arr) <= 1: return arr else: pivot = arr[len(arr) // 2] left = [x for x in arr if x < pivot] middle = [x for x in arr if x == pivot] right = [x for x in arr if x > pivot] return quicksort(left) + middle + quicksort(right) # Example usage: arr = [3, 6, 8, 10, 1, 2, 1] print(quicksort(arr)) # Output: [1, 1, 2, 3, 6, 8, 10] ``` This example demonstrates the quicksort algorithm using a divide and conquer approach. The `quicksort` function recursively partitions the array around a pivot element and sorts the subarrays."
+  },
   "data_pointers": [
     {
       "title": "快速排序",
       "uri": "knowledge://quick_sort_v4",
-      "content_preview": "Divide and Conquer: Selecting a pivot to partition. Average O(n log n), worst-case O(n²). In-place but unstable. Python code example: ```python def quicksort(arr): if len(arr) <= 1: return arr else: p"
+      "content_preview": "快速排序: Divide and Conquer: Selecting a pivot to partition. Average O(n log n), worst-case O(n²). In-place but unstable. Python code example: ```python def quicksort(arr): if len(arr) <= 1: return arr else: pivot = arr[len(arr) // 2] left = [x for x in arr if x < pivot] middle = [x for x in arr if x == pivot] right = [x for x in arr if x > pivot] return quicksort(left) + middle + quicksort(right) # Example usage: arr = [3, 6, 8, 10, 1, 2, 1] print(quicksort(arr)) # Output: [1, 1, 2, 3, 6, 8, 10] ``` This example demonstrates the quicksort algorithm using a divide and conquer approach. The `quicksort` function recursively partitions the array around a pivot element and sorts the subarrays."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "merge_sort_v4",
+    "heap_sort_v4"
+  ]
 }

@@ -9,12 +9,14 @@
   "parent": "异常处理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "常见异常类型: ValueError/TypeError/KeyError/IndexError/FileNotFoundError/AttributeError. Python code examples: 1. `ValueError`: ```python try: int(\"abc\") except ValueError as e: print(e) ``` 2. `TypeError`: ```python try: 5 + \"3\" except TypeError as e: print(e) ``` 3. `KeyError`: ```python try: d = {\"name\": \"Alice\"} print(d[\"age\"]) except KeyError as e: print(e) ``` 4. `IndexError`: ```python try: lst = [1, 2, 3] print(lst[5]) except IndexError as e: print(e) ``` 5. `FileNotFoundError`: ```python try: with open(\"non_existent_file.txt\"): pass except FileNotFoundError as e: print(e) ``` 6. `AttributeError`: ```python try: 5.length except AttributeError as e: print(e) ```"
+  },
   "data_pointers": [
     {
       "title": "常见异常类型",
       "uri": "knowledge://py_common_except_v4",
-      "content_preview": "Translation: ValueError/TypeError/KeyError/IndexError/FileNotFoundError/AttributeError. Python code examples: 1. `ValueError`: ```python try: int(\"abc\") except ValueError as e: print(e) ``` 2. `TypeEr"
+      "content_preview": "常见异常类型: ValueError/TypeError/KeyError/IndexError/FileNotFoundError/AttributeError. Python code examples: 1. `ValueError`: ```python try: int(\"abc\") except ValueError as e: print(e) ``` 2. `TypeError`: ```python try: 5 + \"3\" except TypeError as e: print(e) ``` 3. `KeyError`: ```python try: d = {\"name\": \"Alice\"} print(d[\"age\"]) except KeyError as e: print(e) ``` 4. `IndexError`: ```python try: lst = [1, 2, 3] print(lst[5]) except IndexError as e: print(e) ``` 5. `FileNotFoundError`: ```python try: with open(\"non_existent_file.txt\"): pass except FileNotFoundError as e: print(e) ``` 6. `AttributeError`: ```python try: 5.length except AttributeError as e: print(e) ```"
     }
   ],
   "related_nodes": []

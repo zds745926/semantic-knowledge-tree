@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "系统管理",
   "children": [
-    "Vim",
-    "awk",
     "grep",
-    "sed"
+    "sed",
+    "awk",
+    "Vim"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Linux Text Processing Triad: grep/sed/awk. In the context of Linux text processing, `grep`, `sed`, and `awk` are three essential tools. Here's a brief explanation of each along with Python code exampl"
+    "description": "文本处理: Linux Text Processing Triad: grep/sed/awk. In the context of Linux text processing, `grep`, `sed`, and `awk` are three essential tools. Here's a brief explanation of each along with Python code examples to illustrate their usage: 1. **grep (Global Regular Expression Print)**: - `grep` is used for searching plain-text data sets for lines that match a regular expression. ```python import re # Example: Find all lines containing the word \"example\" text = \"\"\"This is an example line. Another line without the keyword. This line also contains the example.\"\"\" matches = [line for line in text.split('\\n') if re.search(r'\\bexample\\b', line)] print(matches) ``` 2. **sed (Stream Editor)**: - `sed` is a stream editor that filters or transforms text. ```python import subprocess # Example: Replace \"example\" with \"sample\" input_text = \"\"\"This is an example line. Another line without the keyword. This line also contains the example.\"\"\" output = subprocess.check_output(['echo', input_text], stderr=subprocess.STDOUT) modified_text = subprocess.check_output(['sed', 's/example/sample/g'], input=output.decode()) print(modified_text.decode()) ``` 3. **awk**: - `awk` is a programming language designed for text processing and typically used as a data extraction and reporting tool. ```python import re # Example: Sum the numbers in a line input_line = \"10 20 30\" sum_of_numbers = sum(map(int, re.findall(r'\\d+', input_line))) print(sum_of_numbers) ``` These examples should give you an idea of how these tools can be used in Python to achieve similar functionality."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "Shell 脚本",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "管道与重定向: Pipes. Redirections. 2>&1 Merge errors. Tee split. Here are the technical terms translated with brief explanations and a Python code example for the `tee` command: - **Pipes**: Used to connect the output of one process to the input of another. ```python import subprocess # Example: Using pipes to pass output from one command to another result = subprocess.run(['ls', '|', 'grep', 'test'], shell=True, capture_output=True, text=True) print(result.stdout) ``` - **Redirections**: Used to change the input or output of a command. ```python # Example: Redirecting stdout and stderr to files with open('stdout.txt', 'w') as f: result = subprocess.run(['ls', '/nonexistent'], stdout=f, stderr=subprocess.STDOUT) ``` - **2>&1 Merge errors**: Merges standard error (stderr) with standard output (stdout). ```python # Example: Merging stdout and stderr result = subprocess.run(['ls', '/nonexistent'], capture_output=True, text=True) print(result.stdout + result.stderr) ``` - **Tee split**: The `tee` command writes its input to both the standard output and one or more files. ```python # Example: Using tee to write output to a file and stdout with open('output.txt', 'w') as f: result = subprocess.run(['ls'], stdout=f, stderr=subprocess.STDOUT) ``` These examples provide a basic understanding of how these concepts can be implemented in Python."
+  },
   "data_pointers": [
     {
       "title": "管道与重定向",
       "uri": "knowledge://bash_pipe_v4",
-      "content_preview": "Pipes. Redirections. 2>&1 Merge errors. Tee split. Here are the technical terms translated with brief explanations and a Python code example for the `tee` command: - **Pipes**: Used to connect the out"
+      "content_preview": "管道与重定向: Pipes. Redirections. 2>&1 Merge errors. Tee split. Here are the technical terms translated with brief explanations and a Python code example for the `tee` command: - **Pipes**: Used to connect the output of one process to the input of another. ```python import subprocess # Example: Using pipes to pass output from one command to another result = subprocess.run(['ls', '|', 'grep', 'test'], shell=True, capture_output=True, text=True) print(result.stdout) ``` - **Redirections**: Used to change the input or output of a command. ```python # Example: Redirecting stdout and stderr to files with open('stdout.txt', 'w') as f: result = subprocess.run(['ls', '/nonexistent'], stdout=f, stderr=subprocess.STDOUT) ``` - **2>&1 Merge errors**: Merges standard error (stderr) with standard output (stdout). ```python # Example: Merging stdout and stderr result = subprocess.run(['ls', '/nonexistent'], capture_output=True, text=True) print(result.stdout + result.stderr) ``` - **Tee split**: The `tee` command writes its input to both the standard output and one or more files. ```python # Example: Using tee to write output to a file and stdout with open('output.txt', 'w') as f: result = subprocess.run(['ls'], stdout=f, stderr=subprocess.STDOUT) ``` These examples provide a basic understanding of how these concepts can be implemented in Python."
     }
   ],
   "related_nodes": []

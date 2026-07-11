@@ -9,12 +9,14 @@
   "parent": "参数传递深入",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "参数传递机制: Python parameter passing is 'pass by object reference'. Mutable objects can be modified, while immutable objects cannot be changed. To illustrate this concept with a brief Python code example: ```python # Example of pass by object reference in Python def modify_list(lst): lst.append(4) # Modifying the mutable list def modify_number(n): n = 10 # This does not change the original immutable number my_list = [1, 2, 3] my_number = 5 modify_list(my_list) modify_number(my_number) print(my_list) # Output: [1, 2, 3, 4] print(my_number) # Output: 5 ``` In this example: - `my_list` is a mutable object (list), and modifying it inside the function changes its state outside the function. - `my_number` is an immutable object (integer), and assigning a new value to `n` inside the function does not affect the original `my_number`."
+  },
   "data_pointers": [
     {
       "title": "参数传递机制",
       "uri": "knowledge://py_param_passing_v4",
-      "content_preview": "Python parameter passing is 'pass by object reference'. Mutable objects can be modified, while immutable objects cannot be changed. To illustrate this concept with a brief Python code example: ```pyth"
+      "content_preview": "参数传递机制: Python parameter passing is 'pass by object reference'. Mutable objects can be modified, while immutable objects cannot be changed. To illustrate this concept with a brief Python code example: ```python # Example of pass by object reference in Python def modify_list(lst): lst.append(4) # Modifying the mutable list def modify_number(n): n = 10 # This does not change the original immutable number my_list = [1, 2, 3] my_number = 5 modify_list(my_list) modify_number(my_number) print(my_list) # Output: [1, 2, 3, 4] print(my_number) # Output: 5 ``` In this example: - `my_list` is a mutable object (list), and modifying it inside the function changes its state outside the function. - `my_number` is an immutable object (integer), and assigning a new value to `n` inside the function does not affect the original `my_number`."
     }
   ],
   "related_nodes": []

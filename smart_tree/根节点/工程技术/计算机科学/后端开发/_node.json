@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "GraphQL",
     "REST API",
     "gRPC",
+    "GraphQL",
     "认证与授权"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Backend development handles server-side logic, API design, and data storage. Key technologies include REST, gRPC, GraphQL, and authentication/authorization. Here's a brief Python code example for impl"
+    "description": "后端开发: Backend development handles server-side logic, API design, and data storage. Key technologies include REST, gRPC, GraphQL, and authentication/authorization. Here's a brief Python code example for implementing basic authentication in Flask: ```python from flask import Flask, request, jsonify app = Flask(__name__) # Dummy user credentials (for demonstration purposes only) users = { \"admin\": \"password123\" } @app.route('/api/resource', methods=['GET']) def get_resource(): auth_header = request.headers.get('Authorization') if not auth_header: return jsonify({\"error\": \"Missing authorization header\"}), 401 token = auth_header.split(\" \")[1] if token in users.values(): return jsonify({\"message\": \"Resource accessed successfully\"}) else: return jsonify({\"error\": \"Invalid credentials\"}), 403 if __name__ == '__main__': app.run(debug=True) ``` This example demonstrates a simple Flask application that requires an authorization header for accessing a protected resource."
   },
   "data_pointers": [],
   "related_nodes": []

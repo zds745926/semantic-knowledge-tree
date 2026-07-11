@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "CI/CD",
-    "架构模式",
+    "设计模式",
     "版本控制",
-    "设计模式"
+    "CI/CD",
+    "架构模式"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Software engineering is an engineering discipline that uses systematic methods to guide the development, operation, and maintenance of software. It encompasses design patterns, version control, CI/CD "
+    "description": "软件工程: Software engineering is an engineering discipline that uses systematic methods to guide the development, operation, and maintenance of software. It encompasses design patterns, version control, CI/CD (Continuous Integration/Continuous Deployment), architectural patterns, and project management. Here's a brief Python code example for Continuous Integration using a simple function: ```python import pytest def add(a, b): return a + b # Example test case to ensure the add function works as expected def test_add(): assert add(1, 2) == 3 assert add('a', 'b') == 'ab' if __name__ == \"__main__\": pytest.main() ``` This example demonstrates a simple integration test using Python's `pytest` framework to ensure that the `add` function works correctly. Continuous Integration would involve running such tests automatically whenever changes are pushed to a version control system."
   },
   "data_pointers": [],
   "related_nodes": []

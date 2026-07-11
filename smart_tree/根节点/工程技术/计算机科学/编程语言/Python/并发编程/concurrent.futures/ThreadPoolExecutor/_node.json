@@ -9,12 +9,14 @@
   "parent": "concurrent.futures",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "ThreadPoolExecutor: Thread pool executor. `max_workers` controls the number of threads. `submit` returns a Future object. Suitable for I/O-bound tasks. Here's an example using Python's `concurrent.futures` module: ```python import concurrent.futures def task(n): return n * n with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor: future = executor.submit(task, 3) result = future.result() print(result) # Output: 9 ``` In this example, `ThreadPoolExecutor` is used with a maximum of 5 worker threads. The `submit` method is called to schedule the `task` function for execution, and it returns a `Future` object that can be used to retrieve the result later."
+  },
   "data_pointers": [
     {
       "title": "ThreadPoolExecutor",
       "uri": "knowledge://py_thread_pool_executor_v4",
-      "content_preview": "Thread pool executor. `max_workers` controls the number of threads. `submit` returns a Future object. Suitable for I/O-bound tasks. Here's an example using Python's `concurrent.futures` module: ```pyt"
+      "content_preview": "ThreadPoolExecutor: Thread pool executor. `max_workers` controls the number of threads. `submit` returns a Future object. Suitable for I/O-bound tasks. Here's an example using Python's `concurrent.futures` module: ```python import concurrent.futures def task(n): return n * n with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor: future = executor.submit(task, 3) result = future.result() print(result) # Output: 9 ``` In this example, `ThreadPoolExecutor` is used with a maximum of 5 worker threads. The `submit` method is called to schedule the `task` function for execution, and it returns a `Future` object that can be used to retrieve the result later."
     }
   ],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "多线程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "daemon 线程: Daemon thread, which automatically terminates when the main thread exits without blocking the program's exit. Python code example: ```python import threading def worker(): while True: print(\"Working...\") # Create a daemon thread daemon_thread = threading.Thread(target=worker, daemon=True) daemon_thread.start() print(\"Main thread continues to run...\") ``` In this example, `daemon=True` is used when creating a thread. The main thread will exit without waiting for the daemon thread to complete its execution."
+  },
   "data_pointers": [
     {
       "title": "daemon 线程",
       "uri": "knowledge://py_daemon_thread_v4",
-      "content_preview": "Daemon thread, which automatically terminates when the main thread exits without blocking the program's exit. Python code example: ```python import threading def worker(): while True: print(\"Working.."
+      "content_preview": "daemon 线程: Daemon thread, which automatically terminates when the main thread exits without blocking the program's exit. Python code example: ```python import threading def worker(): while True: print(\"Working...\") # Create a daemon thread daemon_thread = threading.Thread(target=worker, daemon=True) daemon_thread.start() print(\"Main thread continues to run...\") ``` In this example, `daemon=True` is used when creating a thread. The main thread will exit without waiting for the daemon thread to complete its execution."
     }
   ],
   "related_nodes": []

@@ -9,13 +9,17 @@
   "parent": "分类",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "决策树: Tree-based decision. Information gain/Gini split. Strong interpretability. Here is a brief explanation with a related Python code example using the `scikit-learn` library: In machine learning, tree-based models are used to make decisions based on a series of if-else conditions. The process can be visualized as a tree where each internal node represents a decision based on a feature, and each branch represents the outcome of that decision. For example, using information gain for splitting nodes in a decision tree: ```python from sklearn.datasets import load_iris from sklearn.tree import DecisionTreeClassifier # Load iris dataset data = load_iris() X, y = data.data, data.target # Create a decision tree classifier and fit it to the data clf = DecisionTreeClassifier(criterion='entropy') # Using information gain (entropy) clf.fit(X, y) # Print the feature importances print(\"Feature importances:\", clf.feature_importances_) ``` In this example, we use the `DecisionTreeClassifier` from `scikit-learn`, specifying 'entropy' as the criterion to calculate information gain. The `feature_importances_` attribute provides a measure of how important each feature is in the decision-making process, which contributes to the strong interpretability of the model."
+  },
   "data_pointers": [
     {
       "title": "决策树",
       "uri": "knowledge://decision_tree_v4",
-      "content_preview": "Tree-based decision. Information gain/Gini split. Strong interpretability. Here is a brief explanation with a related Python code example using the `scikit-learn` library: In machine learning, tree-ba"
+      "content_preview": "决策树: Tree-based decision. Information gain/Gini split. Strong interpretability. Here is a brief explanation with a related Python code example using the `scikit-learn` library: In machine learning, tree-based models are used to make decisions based on a series of if-else conditions. The process can be visualized as a tree where each internal node represents a decision based on a feature, and each branch represents the outcome of that decision. For example, using information gain for splitting nodes in a decision tree: ```python from sklearn.datasets import load_iris from sklearn.tree import DecisionTreeClassifier # Load iris dataset data = load_iris() X, y = data.data, data.target # Create a decision tree classifier and fit it to the data clf = DecisionTreeClassifier(criterion='entropy') # Using information gain (entropy) clf.fit(X, y) # Print the feature importances print(\"Feature importances:\", clf.feature_importances_) ``` In this example, we use the `DecisionTreeClassifier` from `scikit-learn`, specifying 'entropy' as the criterion to calculate information gain. The `feature_importances_` attribute provides a measure of how important each feature is in the decision-making process, which contributes to the strong interpretability of the model."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "random_forest_v4"
+  ]
 }

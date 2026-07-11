@@ -9,12 +9,14 @@
   "parent": "基本数据类型",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "布尔与 None: In this context, `bool` is a subclass of `int`, with `True` and `False` values corresponding to `1` and `0`. `None` represents a null value. In conditions, `False`, `0`, `''` (empty string), `[]` (empty list), and `{}` (empty dictionary) are all considered false. Here is a brief Python code example that demonstrates these concepts: ```python # Example of bool being a subclass of int class MyInt(int): def __new__(cls, value): return super().__new__(cls, value) my_bool = MyInt(1) print(type(my_bool)) # <class '__main__.MyInt'> print(bool(my_bool)) # True # Example of None representing a null value x = None if x is None: print(\"x is None\") # Output: x is None # Example of conditions being evaluated as false conditions = [False, 0, '', [], {}] for condition in conditions: if not condition: print(f\"{condition} is considered False\") ``` This code creates a custom integer class to illustrate that `bool` can be derived from `int`, checks for `None`, and evaluates various falsy values."
+  },
   "data_pointers": [
     {
       "title": "布尔与 None",
       "uri": "knowledge://py_bool_none_v4",
-      "content_preview": "In this context, `bool` is a subclass of `int`, with `True` and `False` values corresponding to `1` and `0`. `None` represents a null value. In conditions, `False`, `0`, `''` (empty string), `[]` (emp"
+      "content_preview": "布尔与 None: In this context, `bool` is a subclass of `int`, with `True` and `False` values corresponding to `1` and `0`. `None` represents a null value. In conditions, `False`, `0`, `''` (empty string), `[]` (empty list), and `{}` (empty dictionary) are all considered false. Here is a brief Python code example that demonstrates these concepts: ```python # Example of bool being a subclass of int class MyInt(int): def __new__(cls, value): return super().__new__(cls, value) my_bool = MyInt(1) print(type(my_bool)) # <class '__main__.MyInt'> print(bool(my_bool)) # True # Example of None representing a null value x = None if x is None: print(\"x is None\") # Output: x is None # Example of conditions being evaluated as false conditions = [False, 0, '', [], {}] for condition in conditions: if not condition: print(f\"{condition} is considered False\") ``` This code creates a custom integer class to illustrate that `bool` can be derived from `int`, checks for `None`, and evaluates various falsy values."
     }
   ],
   "related_nodes": []

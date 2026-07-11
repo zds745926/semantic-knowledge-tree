@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "编程范式",
   "children": [
+    "顺序-选择-循环",
     "模块化编程",
-    "自顶向下设计",
-    "顺序-选择-循环"
+    "自顶向下设计"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Process-oriented programming organizes code around functions or procedures and emphasizes the use of three fundamental structures: sequence, selection, and iteration. C is a typical example of process"
+    "description": "面向过程: Process-oriented programming organizes code around functions or procedures and emphasizes the use of three fundamental structures: sequence, selection, and iteration. C is a typical example of process-oriented programming, making it suitable for system-level programming and performance-sensitive scenarios. Here's a brief Python code example to illustrate the concept: ```python def calculate_area(length, width): # Function to calculate area using sequence (order of operations) return length * width # Example usage with selection (if statement) length = 10 width = 5 area = calculate_area(length, width) if area > 40: print(\"The area is large.\") else: print(\"The area is small.\") # Example usage with iteration (for loop) for i in range(3): print(f\"Area calculation {i+1}: {calculate_area(length, width)}\") ``` This example demonstrates the use of functions and basic control structures like if statements and for loops."
   },
   "data_pointers": [],
   "related_nodes": []

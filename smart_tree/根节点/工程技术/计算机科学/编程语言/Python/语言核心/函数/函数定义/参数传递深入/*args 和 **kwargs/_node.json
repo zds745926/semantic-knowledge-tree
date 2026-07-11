@@ -9,12 +9,14 @@
   "parent": "参数传递深入",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "*args 和 **kwargs: `*args` collects extra positional arguments as a tuple, and `**kwargs` collects extra keyword arguments as a dictionary. The unpacking operator is used in function calls. Here's an example to illustrate this concept: ```python def print_info(*args, **kwargs): # Print positional arguments (as a tuple) print(\"Positional arguments:\", args) # Print keyword arguments (as a dictionary) print(\"Keyword arguments:\", kwargs) # Example call with *args and **kwargs print_info(1, 2, 3, name=\"Alice\", age=25) ``` In this example: - `*args` collects the positional arguments `(1, 2, 3)` into a tuple. - `**kwargs` collects the keyword arguments `{'name': 'Alice', 'age': 25}` into a dictionary."
+  },
   "data_pointers": [
     {
       "title": "*args 和 **kwargs",
       "uri": "knowledge://py_args_kwargs_v4",
-      "content_preview": "`*args` collects extra positional arguments as a tuple, and `**kwargs` collects extra keyword arguments as a dictionary. The unpacking operator is used in function calls. Here's an example to illustra"
+      "content_preview": "*args 和 **kwargs: `*args` collects extra positional arguments as a tuple, and `**kwargs` collects extra keyword arguments as a dictionary. The unpacking operator is used in function calls. Here's an example to illustrate this concept: ```python def print_info(*args, **kwargs): # Print positional arguments (as a tuple) print(\"Positional arguments:\", args) # Print keyword arguments (as a dictionary) print(\"Keyword arguments:\", kwargs) # Example call with *args and **kwargs print_info(1, 2, 3, name=\"Alice\", age=25) ``` In this example: - `*args` collects the positional arguments `(1, 2, 3)` into a tuple. - `**kwargs` collects the keyword arguments `{'name': 'Alice', 'age': 25}` into a dictionary."
     }
   ],
   "related_nodes": []

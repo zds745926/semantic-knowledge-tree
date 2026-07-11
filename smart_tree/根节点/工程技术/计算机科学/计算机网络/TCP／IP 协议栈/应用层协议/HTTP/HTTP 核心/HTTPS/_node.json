@@ -9,12 +9,14 @@
   "parent": "HTTP 核心",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "HTTPS: HTTP over SSL/TLS. TLS handshake encryption and certificate validation. TLS 1.3 requires only one round trip time (RTT). Python code example for establishing a secure HTTPS connection using Python's `requests` library: ```python import requests response = requests.get('https://example.com') print(response.status_code) ``` In this example, the `requests.get()` function is used to send an HTTP GET request over a secure (TLS/SSL) connection to 'https://example.com'. The response from the server is stored in the `response` variable, and the status code of the response is printed."
+  },
   "data_pointers": [
     {
       "title": "HTTPS",
       "uri": "knowledge://https_v4",
-      "content_preview": "HTTP over SSL/TLS. TLS handshake encryption and certificate validation. TLS 1.3 requires only one round trip time (RTT). Python code example for establishing a secure HTTPS connection using Python's `"
+      "content_preview": "HTTPS: HTTP over SSL/TLS. TLS handshake encryption and certificate validation. TLS 1.3 requires only one round trip time (RTT). Python code example for establishing a secure HTTPS connection using Python's `requests` library: ```python import requests response = requests.get('https://example.com') print(response.status_code) ``` In this example, the `requests.get()` function is used to send an HTTP GET request over a secure (TLS/SSL) connection to 'https://example.com'. The response from the server is stored in the `response` variable, and the status code of the response is printed."
     }
   ],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "类型注解",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "高级类型注解: Generic TypeVar, Union or |, Callable, Literal. Static type checking with mypy. Here are brief explanations and corresponding Python code examples for each term: 1. **TypeVar**: - A way to define generic types in Python. ```python from typing import TypeVar T = TypeVar('T') # Define a generic type variable 'T' def identity(x: T) -> T: return x ``` 2. **Union or |**: - Represents multiple possible types for a single variable. ```python from typing import Union def print_length(s: Union[str, list]) -> None: print(len(s)) ``` 3. **Callable**: - Used to specify that a function should accept certain parameters and return a specific type. ```python from typing import Callable def apply_function(func: Callable[[int], int], x: int) -> int: return func(x) ``` 4. **Literal**: - Represents values exactly as they are written in the source code, useful for specifying exact types of constants. ```python from typing import Literal def greet(greeting: Literal['hello', 'hi']) -> None: print(greeting + ', world!') ``` 5. **mypy Static Type Checking**: - A static type checker that can be used to verify the correctness of Python code. ```python # Example mypy command to check a script # mypy example.py ``` These examples should help illustrate how these concepts are used in Python with the `typing` module and how they can be checked using `mypy`."
+  },
   "data_pointers": [
     {
       "title": "高级类型注解",
       "uri": "knowledge://py_hint_adv_v4",
-      "content_preview": "Generic TypeVar, Union or |, Callable, Literal. Static type checking with mypy. Here are brief explanations and corresponding Python code examples for each term: 1. **TypeVar**: - A way to define gene"
+      "content_preview": "高级类型注解: Generic TypeVar, Union or |, Callable, Literal. Static type checking with mypy. Here are brief explanations and corresponding Python code examples for each term: 1. **TypeVar**: - A way to define generic types in Python. ```python from typing import TypeVar T = TypeVar('T') # Define a generic type variable 'T' def identity(x: T) -> T: return x ``` 2. **Union or |**: - Represents multiple possible types for a single variable. ```python from typing import Union def print_length(s: Union[str, list]) -> None: print(len(s)) ``` 3. **Callable**: - Used to specify that a function should accept certain parameters and return a specific type. ```python from typing import Callable def apply_function(func: Callable[[int], int], x: int) -> int: return func(x) ``` 4. **Literal**: - Represents values exactly as they are written in the source code, useful for specifying exact types of constants. ```python from typing import Literal def greet(greeting: Literal['hello', 'hi']) -> None: print(greeting + ', world!') ``` 5. **mypy Static Type Checking**: - A static type checker that can be used to verify the correctness of Python code. ```python # Example mypy command to check a script # mypy example.py ``` These examples should help illustrate how these concepts are used in Python with the `typing` module and how they can be checked using `mypy`."
     }
   ],
   "related_nodes": []

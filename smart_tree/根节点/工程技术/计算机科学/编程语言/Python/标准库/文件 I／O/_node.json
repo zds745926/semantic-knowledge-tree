@@ -9,12 +9,14 @@
   "parent": "标准库",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "文件 I/O: Built-in `open()` function. Modes like 'r', 'w', 'a', 'b', and 't'. The `with` statement automatically closes the file. Classes like `TextIOWrapper` and `BufferedReader` for low-level I/O operations. Python code example: ```python # Using open() with a context manager (the 'with' statement) with open('example.txt', 'r') as file: content = file.read() print(content) # Example of using TextIOWrapper import io text_stream = io.TextIOWrapper(open('example.txt', 'r'), encoding='utf-8') print(text_stream.readline()) ``` This example demonstrates opening a file in read mode with the `with` statement, which ensures the file is properly closed after its suite finishes. It also shows how to use `TextIOWrapper` for handling text streams with specified encoding."
+  },
   "data_pointers": [
     {
       "title": "文件 I/O",
       "uri": "knowledge://py_fileio_module_v4",
-      "content_preview": "Built-in `open()` function. Modes like 'r', 'w', 'a', 'b', and 't'. The `with` statement automatically closes the file. Classes like `TextIOWrapper` and `BufferedReader` for low-level I/O operations. "
+      "content_preview": "文件 I/O: Built-in `open()` function. Modes like 'r', 'w', 'a', 'b', and 't'. The `with` statement automatically closes the file. Classes like `TextIOWrapper` and `BufferedReader` for low-level I/O operations. Python code example: ```python # Using open() with a context manager (the 'with' statement) with open('example.txt', 'r') as file: content = file.read() print(content) # Example of using TextIOWrapper import io text_stream = io.TextIOWrapper(open('example.txt', 'r'), encoding='utf-8') print(text_stream.readline()) ``` This example demonstrates opening a file in read mode with the `with` statement, which ensures the file is properly closed after its suite finishes. It also shows how to use `TextIOWrapper` for handling text streams with specified encoding."
     }
   ],
   "related_nodes": []

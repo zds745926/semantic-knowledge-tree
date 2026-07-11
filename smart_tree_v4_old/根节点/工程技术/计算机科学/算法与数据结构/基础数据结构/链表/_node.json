@@ -1,0 +1,21 @@
+{
+  "name": "链表",
+  "node_id": "linked_list_v4",
+  "parent_id": "ds_basics_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "基础数据结构",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "链表",
+      "uri": "knowledge://linked_list_v4",
+      "content_preview": "Nodes contain data and pointers. Singly linked list / doubly linked list / circular linked list. Insertion/deletion O(1). Here's a brief explanation with Python code examples for the concepts mentione"
+    }
+  ],
+  "related_nodes": []
+}

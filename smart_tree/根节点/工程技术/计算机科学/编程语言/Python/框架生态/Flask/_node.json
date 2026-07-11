@@ -9,12 +9,14 @@
   "parent": "框架生态",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Flask: Microframeworks: Lightweight and flexible. Jinja2 template engine/Werkzeug WSGI. Blueprint for modularization. Here is a brief Python code example to illustrate the use of Flask (a popular microframework that uses Jinja2 templates and Werkzeug): ```python from flask import Flask, render_template app = Flask(__name__) @app.route('/') def home(): # Example data passed to template return render_template('index.html', message=\"Hello, World!\") if __name__ == '__main__': app.run(debug=True) ``` In this example: - `Flask` is the microframework. - `render_template` is a function from Flask that uses Jinja2 templates to render HTML pages."
+  },
   "data_pointers": [
     {
       "title": "Flask",
       "uri": "knowledge://py_flask_v4",
-      "content_preview": "Microframeworks: Lightweight and flexible. Jinja2 template engine/Werkzeug WSGI. Blueprint for modularization. Here is a brief Python code example to illustrate the use of Flask (a popular microframew"
+      "content_preview": "Flask: Microframeworks: Lightweight and flexible. Jinja2 template engine/Werkzeug WSGI. Blueprint for modularization. Here is a brief Python code example to illustrate the use of Flask (a popular microframework that uses Jinja2 templates and Werkzeug): ```python from flask import Flask, render_template app = Flask(__name__) @app.route('/') def home(): # Example data passed to template return render_template('index.html', message=\"Hello, World!\") if __name__ == '__main__': app.run(debug=True) ``` In this example: - `Flask` is the microframework. - `render_template` is a function from Flask that uses Jinja2 templates to render HTML pages."
     }
   ],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "queue 模块",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "SimpleQueue: queue.SimpleQueue(3.8+) Lightweight FIFO (First-In-First-Out) queue. No task door/join required, faster. Python code example: ```python import queue # Create a SimpleQueue with Python's built-in queue module simple_queue = queue.SimpleQueue() # Example usage: putting and getting items from the queue simple_queue.put(1) simple_queue.put(2) while not simple_queue.empty(): print(simple_queue.get(), end=' ') ``` Note: The `queue.SimpleQueue` class is available in Python 3.8+. This example demonstrates how to use it for basic operations like putting and getting items from the queue."
+  },
   "data_pointers": [
     {
       "title": "SimpleQueue",
       "uri": "knowledge://py_simple_queue_v4",
-      "content_preview": "queue.SimpleQueue(3.8+) Lightweight FIFO (First-In-First-Out) queue. No task door/join required, faster. Python code example: ```python import queue # Create a SimpleQueue with Python's built-in queue"
+      "content_preview": "SimpleQueue: queue.SimpleQueue(3.8+) Lightweight FIFO (First-In-First-Out) queue. No task door/join required, faster. Python code example: ```python import queue # Create a SimpleQueue with Python's built-in queue module simple_queue = queue.SimpleQueue() # Example usage: putting and getting items from the queue simple_queue.put(1) simple_queue.put(2) while not simple_queue.empty(): print(simple_queue.get(), end=' ') ``` Note: The `queue.SimpleQueue` class is available in Python 3.8+. This example demonstrates how to use it for basic operations like putting and getting items from the queue."
     }
   ],
   "related_nodes": []

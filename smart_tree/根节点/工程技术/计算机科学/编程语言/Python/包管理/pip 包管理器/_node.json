@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "包管理",
   "children": [
-    "pip freeze",
     "pip install",
     "pip uninstall",
+    "pip freeze",
     "requirements.txt"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "pip is the official package manager for Python. It installs third-party packages from PyPI (Python Package Index) and supports dependency resolution and virtual environments. Here's a brief example of"
+    "description": "pip 包管理器: pip is the official package manager for Python. It installs third-party packages from PyPI (Python Package Index) and supports dependency resolution and virtual environments. Here's a brief example of using pip to install a package and create a virtual environment in Python: ```python # Install a package, e.g., requests !pip install requests # Create a virtual environment named 'myenv' !pip install virtualenv !virtualenv myenv # Activate the virtual environment (example for Unix-based systems) import os os.system(\"source myenv/bin/activate\") ``` Note: The `!` before commands in Jupyter Notebook or similar environments indicates that these are shell commands, not Python code. In a standard Python script, you would run these commands directly in your terminal or command prompt."
   },
   "data_pointers": [],
   "related_nodes": []

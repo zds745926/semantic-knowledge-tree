@@ -1,0 +1,22 @@
+{
+  "name": "发布与打包",
+  "node_id": "py_deploy_v4",
+  "parent_id": "py_pkg_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "包管理",
+  "children": [
+    "PyPI 上传",
+    "Wheel",
+    "pyproject.toml",
+    "setup.py"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "The Python package release process includes source code packaging, Wheel building, and PyPI upload. `setuptools` is the traditional method, while modern tools like `flit` and `hatchling` simplify this"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -9,12 +9,14 @@
   "parent": "人文社科",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "历史: History studies human past through the examination of historical records. It encompasses various branches such as political history, economic history, cultural history, and scientific history. Sima Qian's \"Records of the Grand Historian\" is considered China's first comprehensive chronological history. Here’s a brief Python code example to illustrate how one might programmatically access and process historical data: ```python import json # Example JSON data representing historical records historical_data = ''' { \"year\": 2023, \"events\": [ {\"event\": \"Python 3.11 released\", \"details\": \"New features include improved performance and new modules.\"}, {\"event\": \"Historical event: Sima Qian's Records of the Grand Historian completed\", \"details\": \"A monumental work in Chinese historiography\"} ] } ''' # Load JSON data data = json.loads(historical_data) # Print historical events for event in data['events']: print(f\"{event['event']} - {event['details']}\") ``` This Python script demonstrates how to parse and display historical records stored in a JSON format."
+  },
   "data_pointers": [
     {
       "title": "历史",
       "uri": "knowledge://hum_history",
-      "content_preview": "History studies human past through the examination of historical records. It encompasses various branches such as political history, economic history, cultural history, and scientific history. Sima Qi"
+      "content_preview": "历史: History studies human past through the examination of historical records. It encompasses various branches such as political history, economic history, cultural history, and scientific history. Sima Qian's \"Records of the Grand Historian\" is considered China's first comprehensive chronological history. Here’s a brief Python code example to illustrate how one might programmatically access and process historical data: ```python import json # Example JSON data representing historical records historical_data = ''' { \"year\": 2023, \"events\": [ {\"event\": \"Python 3.11 released\", \"details\": \"New features include improved performance and new modules.\"}, {\"event\": \"Historical event: Sima Qian's Records of the Grand Historian completed\", \"details\": \"A monumental work in Chinese historiography\"} ] } ''' # Load JSON data data = json.loads(historical_data) # Print historical events for event in data['events']: print(f\"{event['event']} - {event['details']}\") ``` This Python script demonstrates how to parse and display historical records stored in a JSON format."
     }
   ],
   "related_nodes": []

@@ -1,0 +1,21 @@
+{
+  "name": "UDP 基础",
+  "node_id": "udp_basics_v4",
+  "parent_id": "udp_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "UDP 协议",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "UDP 基础",
+      "uri": "knowledge://udp_basics_v4",
+      "content_preview": "Translation: Connectionless, unreliable, no congestion control. 8-byte header. Supports broadcast/multicast. DNS/QUIC/video stream. Python code example (for illustration of an 8-byte header in a simpl"
+    }
+  ],
+  "related_nodes": []
+}

@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "循环",
   "children": [
+    "range 详解",
     "enumerate 详解",
-    "for 循环进阶",
     "for 迭代原理",
-    "range 详解"
+    "for 循环进阶"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The `for` loop iterates over iterable objects. The `range()` function generates an arithmetic sequence, while `enumerate()` is used to iterate over a sequence with index tracking. The iteration princi"
+    "description": "for 循环: The `for` loop iterates over iterable objects. The `range()` function generates an arithmetic sequence, while `enumerate()` is used to iterate over a sequence with index tracking. The iteration principle of the `for` loop is based on the iterator protocol. Here are brief Python code examples for each concept: 1. **Iterating over an iterable object:** ```python my_list = [1, 2, 3] for item in my_list: print(item) ``` 2. **Generating an arithmetic sequence with `range()`:** ```python for i in range(5): print(i) # This will print numbers from 0 to 4 ``` 3. **Using `enumerate()` to iterate over a sequence with index tracking:** ```python my_list = ['apple', 'banana', 'cherry'] for index, value in enumerate(my_list): print(f\"Index {index}: {value}\") ``` These examples illustrate the basic usage of these concepts in Python."
   },
   "data_pointers": [],
   "related_nodes": []

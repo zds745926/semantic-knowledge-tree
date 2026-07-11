@@ -1,0 +1,21 @@
+{
+  "name": "触发器和寄存器",
+  "node_id": "flip_flops_v4",
+  "parent_id": "digi_logic_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "数字逻辑",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "触发器和寄存器",
+      "uri": "knowledge://flip_flops_v4",
+      "content_preview": "Triggers are the basic units that store 1-bit information. Multiple D triggers connected in parallel form a register, which is the foundation of CPU registers. To provide a more detailed explanation a"
+    }
+  ],
+  "related_nodes": []
+}

@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "系统设计",
   "children": [
-    "分布式缓存",
-    "缓存策略"
+    "缓存策略",
+    "分布式缓存"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Caching enhances system performance. Key strategies include Cache Aside and distributed caching. Here are brief explanations for each strategy with corresponding Python code examples: 1. **Cache Aside"
+    "description": "缓存: Caching enhances system performance. Key strategies include Cache Aside and distributed caching. Here are brief explanations for each strategy with corresponding Python code examples: 1. **Cache Aside (Pessimistic Caching):** This approach involves fetching data from the cache first, and if it's not available, then fetching it from the database or other persistent storage. ```python import time def get_data_from_db(key): # Simulate a slow database operation time.sleep(2) return f\"Data for {key} fetched from DB\" def cache_aside(key): cache = {} # In practice, this would be a more sophisticated caching mechanism like Redis or Memcached if key in cache: print(\"Cache Hit\") return cache[key] else: print(\"Cache Miss - Fetching from DB\") data = get_data_from_db(key) cache[key] = data return data # Example usage result1 = cache_aside('key1') time.sleep(0.5) # Simulate a short delay to show the cache hit/miss behavior result2 = cache_aside('key1') # Should be faster due to cache hit ``` 2. **Distributed Caching:** This strategy involves using multiple nodes or servers to store and manage cached data, ensuring that the cache is available across a network. ```python from redis import Redis # Initialize a Redis client (assuming it's running on localhost) cache = Redis(host='localhost', port=6379) def get_data_from_db(key): time.sleep(2) return f\"Data for {key} fetched from DB\" def distributed_caching(key): if cache.exists(key): # Check if the key exists in the cache print(\"Cache Hit\") return cache.get(key).decode('utf-8') else: print(\"Cache Miss - Fetching from DB\") data = get_data_from_db(key) cache.setex(key, 3600, data) # Set the key with an expiration time of 1 hour return data # Example usage result1 = distributed_caching('key2') time.sleep(0.5) # Simulate a short delay to show the cache hit/miss behavior result2 = distributed_caching('key2') # Should be faster due to cache hit ``` These examples illustrate how caching can be implemented in Python, with `Cache Aside` focusing on local caching and `Distributed Caching` leveraging a distributed cache like Redis."
   },
   "data_pointers": [],
   "related_nodes": []

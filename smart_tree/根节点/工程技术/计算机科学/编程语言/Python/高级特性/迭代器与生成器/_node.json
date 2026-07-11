@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "高级特性",
   "children": [
-    "yield from",
+    "迭代器协议",
     "生成器 yield",
-    "生成器表达式",
-    "迭代器协议"
+    "yield from",
+    "生成器表达式"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The iterator protocol and generators are the core mechanisms for lazy evaluation in Python, saving memory. To provide a more detailed explanation, let's delve into how these concepts work with some Py"
+    "description": "迭代器与生成器: The iterator protocol and generators are the core mechanisms for lazy evaluation in Python, saving memory. To provide a more detailed explanation, let's delve into how these concepts work with some Python code examples: 1. **Iterator Protocol**: An iterator is an object that implements the iterator protocol, which consists of two methods: `__iter__()` and `__next__()`. The `__iter__()` method returns the iterator object itself (which is usually the same object). The `__next__()` method returns the next value in the sequence. If there are no more items to return, it raises a `StopIteration` exception. ```python class MyIterator: def __init__(self, limit): self.limit = limit self.current = 0 def __iter__(self): return self def __next__(self): if self.current < self.limit: result = self.current self.current += 1 return result else: raise StopIteration # Usage iterator = MyIterator(5) for i in iterator: print(i) # Output: 0, 1, 2, 3, 4 ``` 2. **Generators**: Generators are a simple and powerful way to create iterators without having to define classes. A generator function is defined like a regular function but uses the `yield` statement instead of `return`. When a generator function is called, it returns an iterator. ```python def my_generator(limit): current = 0 while current < limit: yield current current += 1 # Usage for i in my_generator(5): print(i) # Output: 0, 1, 2, 3, 4 ``` These examples illustrate how the iterator protocol and generators enable lazy evaluation, which is crucial for handling large datasets efficiently without consuming excessive memory."
   },
   "data_pointers": [],
   "related_nodes": []

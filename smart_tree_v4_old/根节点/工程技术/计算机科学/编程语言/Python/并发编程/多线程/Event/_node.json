@@ -1,0 +1,21 @@
+{
+  "name": "Event",
+  "node_id": "py_event_v4",
+  "parent_id": "py_thread_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多线程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Event",
+      "uri": "knowledge://py_event_v4",
+      "content_preview": "Threading Event flag. Methods include `set()`, `clear()`, and `wait()`. Used for multiple threads to wait for a specific event to occur. Here's a brief Python code example using threading.Event: ```py"
+    }
+  ],
+  "related_nodes": []
+}

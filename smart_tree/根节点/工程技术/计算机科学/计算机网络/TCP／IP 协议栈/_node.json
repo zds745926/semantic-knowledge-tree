@@ -9,12 +9,12 @@
   "parent": "计算机网络",
   "children": [
     "传输层",
-    "应用层协议",
-    "网络层"
+    "网络层",
+    "应用层协议"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "TCP/IP Four-Layer Model: Network Interface → Internet Layer → Transport Layer → Application Layer. This is the communication foundation of the internet. Here's a brief explanation with Python code exa"
+    "description": "TCP/IP 协议栈: TCP/IP Four-Layer Model: Network Interface → Internet Layer → Transport Layer → Application Layer. This is the communication foundation of the internet. Here's a brief explanation with Python code examples for some concepts: 1. **Network Interface Layer**: This layer deals with hardware interfaces and physical transmission. - Example: Using sockets to send data over a network. ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) sock.connect(server_address) ``` 2. **Internet Layer**: This layer handles IP addressing and routing. - Example: Using `ipaddress` module for handling IP addresses. ```python import ipaddress # Create an IPv4 address object ip = ipaddress.IPv4Address('192.168.0.1') print(ip) ``` 3. **Transport Layer**: This layer is responsible for end-to-end communication and error recovery. - Example: Using TCP to send a message. ```python import socket # Send data message = 'This is the message. It will be repeated.' sock.sendall(message.encode()) ``` 4. **Application Layer**: This layer provides services for applications, such as HTTP or FTP. - Example: Using `requests` to make an HTTP request. ```python import requests # Make a GET request to fetch data from a web server response = requests.get('http://example.com') print(response.text) ``` These examples illustrate key concepts at each layer of the TCP/IP model."
   },
   "data_pointers": [],
   "related_nodes": []

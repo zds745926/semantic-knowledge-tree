@@ -1,0 +1,20 @@
+{
+  "name": "微积分",
+  "node_id": "calc_v4",
+  "parent_id": "math_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "数学",
+  "children": [
+    "导数",
+    "积分"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Calculus studies the rates of change and cumulative effects of functions, including limits, derivatives, integrals, and differential equations. Newton and Leibniz independently developed calculus, one"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

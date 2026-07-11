@@ -1,0 +1,21 @@
+{
+  "name": "继承",
+  "node_id": "inheritance_v4",
+  "parent_id": "oop_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "面向对象",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "继承",
+      "uri": "knowledge://inheritance_v4",
+      "content_preview": "Inheritance allows subclasses to reuse the attributes and methods of their parent classes. Single inheritance (in Java) vs multiple inheritance (in C++). Here are brief Python code examples for both c"
+    }
+  ],
+  "related_nodes": []
+}

@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "TCP 协议",
   "children": [
-    "TCP BBR",
     "慢启动",
-    "拥塞避免"
+    "拥塞避免",
+    "TCP BBR"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Congestion control prevents network overload, including slow start, congestion avoidance, and fast recovery. Here are brief explanations of these concepts along with corresponding Python code examples"
+    "description": "TCP 拥塞控制: Congestion control prevents network overload, including slow start, congestion avoidance, and fast recovery. Here are brief explanations of these concepts along with corresponding Python code examples: 1. **Slow Start**: During the initial phase of a TCP connection, the sender increases its sending rate gradually to avoid overwhelming the network. This is controlled by an initial congestion window (cwnd) that starts at 1 MSS (Maximum Segment Size). ```python def slow_start(cwnd): if cwnd <= 1: return 1 # Initial value of cwnd else: return min(2 * cwnd, max_mss) # Increase cwnd by a factor of 2 or up to max_mss ``` 2. **Congestion Avoidance**: Once the network starts accepting more data without dropping packets, the sender increases its sending rate linearly with time. This is done by incrementing the congestion window (cwnd) by one MSS for each received acknowledgment. ```python def congestion_avoidance(cwnd): return cwnd + 1 # Increment cwnd by 1 MSS per ACK ``` 3. **Fast Recovery**: When a TCP connection experiences packet loss, it enters fast recovery mode to quickly resume normal operation. This involves halving the congestion window and then incrementing it linearly until it reaches its previous value. ```python def fast_recovery(cwnd): return max(1, cwnd // 2) # Halve the cwnd ``` These examples provide a simplified view of how these concepts are implemented in Python for educational purposes. In real-world applications, additional factors and optimizations would be considered."
   },
   "data_pointers": [],
   "related_nodes": []

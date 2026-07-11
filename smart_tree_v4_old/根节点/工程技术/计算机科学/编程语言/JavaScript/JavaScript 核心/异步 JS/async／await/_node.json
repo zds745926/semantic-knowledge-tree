@@ -1,0 +1,21 @@
+{
+  "name": "async/await",
+  "node_id": "js_async_await_v4",
+  "parent_id": "js_async_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "异步 JS",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "async/await",
+      "uri": "knowledge://js_async_await_v4",
+      "content_preview": "The `async function` returns a Promise. The `await` keyword pauses execution until the Promise resolves. Here is an example to illustrate this in Python-like pseudocode: ```python # Define an asynchro"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "异步 JS",
+  "node_id": "js_async_v4",
+  "parent_id": "js_core_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "JavaScript 核心",
+  "children": [
+    "Promise",
+    "async/await",
+    "事件循环"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "The JavaScript asynchronous model has evolved from callbacks to Promises and then to async/await. To provide a more detailed explanation along with a Python code example for the `async/await` concept,"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

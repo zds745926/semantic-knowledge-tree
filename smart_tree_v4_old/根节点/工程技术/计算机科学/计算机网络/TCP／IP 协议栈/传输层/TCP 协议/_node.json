@@ -1,0 +1,22 @@
+{
+  "name": "TCP 协议",
+  "node_id": "tcp_v4",
+  "parent_id": "transport_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "传输层",
+  "children": [
+    "TCP 可靠传输",
+    "TCP 拥塞控制",
+    "TCP 状态机",
+    "TCP 连接管理"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "TCP (Transmission Control Protocol) provides a reliable byte stream service over a connection. Header size is 20 bytes. Python code example: ```python import socket # Create a TCP/IP socket sock = soc"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

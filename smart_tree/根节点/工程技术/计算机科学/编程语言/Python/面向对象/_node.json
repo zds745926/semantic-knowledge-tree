@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "Python",
   "children": [
-    "异常处理",
     "类与实例",
-    "魔术方法"
+    "魔术方法",
+    "异常处理"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python supports object-oriented programming (OOP), including class definition, inheritance, polymorphism, and magic methods. Python's OOP is flexible and powerful, with decorators like `@property`, `@"
+    "description": "面向对象: Python supports object-oriented programming (OOP), including class definition, inheritance, polymorphism, and magic methods. Python's OOP is flexible and powerful, with decorators like `@property`, `@classmethod`, and `@staticmethod` enriching the functionality of classes. Here are brief examples for each concept: 1. **Class Definition**: ```python class Dog: def __init__(self, name): self.name = name def bark(self): return f\"{self.name} says Woof!\" ``` 2. **Inheritance**: ```python class Puppy(Dog): def __init__(self, name, age): super().__init__(name) self.age = age def play(self): return f\"{self.name} is playing at {self.age} years old.\" ``` 3. **Polymorphism**: ```python class Cat: def __init__(self, name): self.name = name def meow(self): return f\"{self.name} says Meow!\" ``` 4. **Magic Methods** (e.g., `__str__` for custom string representation): ```python class Person: def __init__(self, name, age): self.name = name self.age = age def __str__(self): return f\"Person: {self.name}, Age: {self.age}\" ``` 5. **Decorators** (e.g., `@property` for attribute access): ```python class Person: def __init__(self, name, age): self._name = name self._age = age @property def age(self): return self._age @age.setter def age(self, value): if 0 < value <= 120: # Assuming a valid age range self._age = value else: raise ValueError(\"Age must be between 0 and 120.\") ``` These examples illustrate how Python's OOP features can be utilized effectively."
   },
   "data_pointers": [],
   "related_nodes": []

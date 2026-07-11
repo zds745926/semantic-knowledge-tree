@@ -9,12 +9,14 @@
   "parent": "函数式编程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "不可变性: Data created is immutable; update operations return new objects. This avoids side effects and simplifies concurrent operations. Python code example: ```python class ImmutableData: def __init__(self, value): self._value = value @property def value(self): return self._value # Creating an immutable object data = ImmutableData(10) # Trying to update the data directly will raise an error or be ignored if not properly implemented try: data.value = 20 # This would fail as it's supposed to be read-only except AttributeError as e: print(f\"Error: {e}\") # To \"update\", a new object is created instead new_data = ImmutableData(data.value + 1) print(\"Original:\", data.value) # Output: Original: 10 print(\"Updated:\", new_data.value) # Output: Updated: 11 ``` This example demonstrates the immutability of objects and how updates result in new instances, avoiding side effects."
+  },
   "data_pointers": [
     {
       "title": "不可变性",
       "uri": "knowledge://immutability_v4",
-      "content_preview": "Data created is immutable; update operations return new objects. This avoids side effects and simplifies concurrent operations. Python code example: ```python class ImmutableData: def __init__(self, v"
+      "content_preview": "不可变性: Data created is immutable; update operations return new objects. This avoids side effects and simplifies concurrent operations. Python code example: ```python class ImmutableData: def __init__(self, value): self._value = value @property def value(self): return self._value # Creating an immutable object data = ImmutableData(10) # Trying to update the data directly will raise an error or be ignored if not properly implemented try: data.value = 20 # This would fail as it's supposed to be read-only except AttributeError as e: print(f\"Error: {e}\") # To \"update\", a new object is created instead new_data = ImmutableData(data.value + 1) print(\"Original:\", data.value) # Output: Original: 10 print(\"Updated:\", new_data.value) # Output: Updated: 11 ``` This example demonstrates the immutability of objects and how updates result in new instances, avoiding side effects."
     }
   ],
   "related_nodes": []

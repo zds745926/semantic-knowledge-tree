@@ -9,12 +9,14 @@
   "parent": "函数式编程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "高阶函数: Higher-order functions accept functions as parameters or return functions. `map`, `filter`, and `reduce` are typical examples. Here's a brief explanation of each with Python code examples: 1. **Map**: Applies a function to all items in an input list. ```python def square(x): return x * x numbers = [1, 2, 3, 4] squared_numbers = map(square, numbers) print(list(squared_numbers)) # Output: [1, 4, 9, 16] ``` 2. **Filter**: Filters items from an input list based on a function that tests each element in the list. ```python def is_even(x): return x % 2 == 0 numbers = [1, 2, 3, 4, 5, 6] even_numbers = filter(is_even, numbers) print(list(even_numbers)) # Output: [2, 4, 6] ``` 3. **Reduce**: Continuously applies a function to the items of an iterable and returns a single value. ```python from functools import reduce def add(x, y): return x + y numbers = [1, 2, 3, 4] sum_of_numbers = reduce(add, numbers) print(sum_of_numbers) # Output: 10 ``` These examples illustrate how higher-order functions can be used to process collections of data in a concise and readable manner."
+  },
   "data_pointers": [
     {
       "title": "高阶函数",
       "uri": "knowledge://higher_order_v4",
-      "content_preview": "Higher-order functions accept functions as parameters or return functions. `map`, `filter`, and `reduce` are typical examples. Here's a brief explanation of each with Python code examples: 1. **Map**:"
+      "content_preview": "高阶函数: Higher-order functions accept functions as parameters or return functions. `map`, `filter`, and `reduce` are typical examples. Here's a brief explanation of each with Python code examples: 1. **Map**: Applies a function to all items in an input list. ```python def square(x): return x * x numbers = [1, 2, 3, 4] squared_numbers = map(square, numbers) print(list(squared_numbers)) # Output: [1, 4, 9, 16] ``` 2. **Filter**: Filters items from an input list based on a function that tests each element in the list. ```python def is_even(x): return x % 2 == 0 numbers = [1, 2, 3, 4, 5, 6] even_numbers = filter(is_even, numbers) print(list(even_numbers)) # Output: [2, 4, 6] ``` 3. **Reduce**: Continuously applies a function to the items of an iterable and returns a single value. ```python from functools import reduce def add(x, y): return x + y numbers = [1, 2, 3, 4] sum_of_numbers = reduce(add, numbers) print(sum_of_numbers) # Output: 10 ``` These examples illustrate how higher-order functions can be used to process collections of data in a concise and readable manner."
     }
   ],
   "related_nodes": []

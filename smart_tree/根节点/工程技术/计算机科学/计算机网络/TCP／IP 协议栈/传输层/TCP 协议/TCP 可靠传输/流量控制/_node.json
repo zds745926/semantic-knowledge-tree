@@ -9,12 +9,14 @@
   "parent": "TCP 可靠传输",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "流量控制: The receive window (rwnd) informs the sender of the remaining buffer space. This prevents fast senders from overwhelming slow receivers. To illustrate this concept with a Python code example, we can simulate a simple scenario where a receiver adjusts its advertised window based on available buffer space: ```python class Receiver: def __init__(self, buffer_size): self.buffer_size = buffer_size # Total buffer size self.used_space = 0 # Current used space in the buffer def update_window(self): \"\"\"Update the advertised receive window based on current buffer usage.\"\"\" available_space = self.buffer_size - self.used_space return max(available_space, 0) # Ensure at least a minimum window size of 0 # Example usage: receiver = Receiver(buffer_size=1024) print(\"Initial window:\", receiver.update_window()) # Initial window is the full buffer size receiver.used_space += 512 print(\"Window after using half the buffer:\", receiver.update_window()) # Window should be halved receiver.used_space += 384 print(\"Window after further usage:\", receiver.update_window()) # Window should now be smaller, reflecting remaining space ``` In this example, `Receiver` class simulates a network receiver that adjusts its advertised window based on the current buffer usage. The `update_window` method calculates and returns the available buffer space as the receive window."
+  },
   "data_pointers": [
     {
       "title": "流量控制",
       "uri": "knowledge://tcp_flow_ctrl_v4",
-      "content_preview": "The receive window (rwnd) informs the sender of the remaining buffer space. This prevents fast senders from overwhelming slow receivers. To illustrate this concept with a Python code example, we can s"
+      "content_preview": "流量控制: The receive window (rwnd) informs the sender of the remaining buffer space. This prevents fast senders from overwhelming slow receivers. To illustrate this concept with a Python code example, we can simulate a simple scenario where a receiver adjusts its advertised window based on available buffer space: ```python class Receiver: def __init__(self, buffer_size): self.buffer_size = buffer_size # Total buffer size self.used_space = 0 # Current used space in the buffer def update_window(self): \"\"\"Update the advertised receive window based on current buffer usage.\"\"\" available_space = self.buffer_size - self.used_space return max(available_space, 0) # Ensure at least a minimum window size of 0 # Example usage: receiver = Receiver(buffer_size=1024) print(\"Initial window:\", receiver.update_window()) # Initial window is the full buffer size receiver.used_space += 512 print(\"Window after using half the buffer:\", receiver.update_window()) # Window should be halved receiver.used_space += 384 print(\"Window after further usage:\", receiver.update_window()) # Window should now be smaller, reflecting remaining space ``` In this example, `Receiver` class simulates a network receiver that adjusts its advertised window based on the current buffer usage. The `update_window` method calculates and returns the available buffer space as the receive window."
     }
   ],
   "related_nodes": []

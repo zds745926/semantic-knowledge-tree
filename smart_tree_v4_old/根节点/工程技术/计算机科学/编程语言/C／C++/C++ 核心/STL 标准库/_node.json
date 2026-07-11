@@ -1,0 +1,21 @@
+{
+  "name": "STL 标准库",
+  "node_id": "cpp_stl_v4",
+  "parent_id": "cpp_core_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "C++ 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "STL 标准库",
+      "uri": "knowledge://cpp_stl_v4",
+      "content_preview": "Translation: Vectors/lists/maps. Sort/find. Iterators. Function objects and lambda. Python code examples: 1. Vectors/lists/maps: ```python # Using list as an example for vectors/lists, and a dictionar"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "ext4 文件系统",
+  "node_id": "ext4_v4",
+  "parent_id": "vfs_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "虚拟文件系统 VFS",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "ext4 文件系统",
+      "uri": "knowledge://ext4_v4",
+      "content_preview": "Linux default. 16TB file/1 EB volume. Log ensures consistency. Extents reduce metadata overhead. Here is the explanation with a brief Python code example for one of the concepts: - **Log ensures consi"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "pytest",
+  "node_id": "py_pytest_v4",
+  "parent_id": "py_testing_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "测试",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "pytest",
+      "uri": "knowledge://py_pytest_v4",
+      "content_preview": "Python is the most popular testing framework. Assert statements are used for making assertions. Fixtures manage dependencies. Parameterized tests allow for flexible test cases. Conftest files share co"
+    }
+  ],
+  "related_nodes": []
+}

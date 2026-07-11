@@ -1,0 +1,21 @@
+{
+  "name": "编码与 bytes",
+  "node_id": "py_str_bytes_encode_v4",
+  "parent_id": "py_str_adv_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "字符串进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "编码与 bytes",
+      "uri": "knowledge://py_str_bytes_encode_v4",
+      "content_preview": "The translation is as follows: `str.encode('utf-8') -> bytes`, `b'hello'.decode('utf-8') -> str`. Unicode is a character set, while UTF-8 is an encoding. Here's a brief Python code example to illustra"
+    }
+  ],
+  "related_nodes": []
+}

@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "软件工程",
   "children": [
-    "事件驱动架构",
-    "微服务"
+    "微服务",
+    "事件驱动架构"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Architectural patterns serve as the blueprint for the top-level design of software systems. To provide a more comprehensive explanation and include a relevant Python code example, let's consider an ar"
+    "description": "架构模式: Architectural patterns serve as the blueprint for the top-level design of software systems. To provide a more comprehensive explanation and include a relevant Python code example, let's consider an architectural pattern such as the Singleton pattern. The Singleton pattern ensures that a class has only one instance, and provides a global point of access to it. Here is a brief Python implementation of the Singleton pattern: ```python class Singleton: _instance = None @staticmethod def getInstance(): \"\"\" Static method to fetch the current instance.\"\"\" if Singleton._instance == None: Singleton() return Singleton._instance def __init__(self): \"\"\" Virtually private constructor. \"\"\" if Singleton._instance != None: raise Exception(\"This class is a singleton!\") else: Singleton._instance = self # Usage if __name__==\"__main__\": # Attempting to create multiple instances will fail try: s1 = Singleton() except Exception as e: print(e) s2 = Singleton.getInstance() print(s2 is s1) # This should output True, indicating that both references point to the same instance. ``` This code demonstrates how the Singleton pattern can be implemented in Python to ensure that only one instance of a class exists and provide a global access point."
   },
   "data_pointers": [],
   "related_nodes": []

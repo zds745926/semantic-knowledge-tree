@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Magic methods are at the core of the Python object model, named with double underscores (e.g., `__xxx__`), and are used to overload operators and implement protocols. Here's a brief example in Python "
+    "description": "魔术方法: Magic methods are at the core of the Python object model, named with double underscores (e.g., `__xxx__`), and are used to overload operators and implement protocols. Here's a brief example in Python demonstrating how you might use a magic method for operator overloading: ```python class Vector: def __init__(self, x, y): self.x = x self.y = y # Overload the addition operator (+) def __add__(self, other): return Vector(self.x + other.x, self.y + other.y) # Create two vector objects v1 = Vector(10, 20) v2 = Vector(30, 40) # Use the overloaded addition operator result = v1 + v2 print(result.x, result.y) # Output: 40 60 ``` In this example, the `__add__` magic method is used to define how vector objects should be added together."
   },
   "data_pointers": [],
   "related_nodes": []

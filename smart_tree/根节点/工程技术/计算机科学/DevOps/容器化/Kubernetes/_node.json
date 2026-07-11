@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "容器化",
   "children": [
-    "Deployment",
     "Pod",
+    "Deployment",
     "Service"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Kubernetes container orchestration platform. Manage the deployment, scaling, and operations of containerized applications. Here is a brief Python code example to demonstrate how you might interact wit"
+    "description": "Kubernetes: Kubernetes container orchestration platform. Manage the deployment, scaling, and operations of containerized applications. Here is a brief Python code example to demonstrate how you might interact with Kubernetes using the `kubernetes` Python client library: ```python from kubernetes import client, config # Load kubeconfig file (usually located at ~/.kube/config) config.load_kube_config() # Create an instance of the API class v1 = client.AppsV1Api() # List all deployments in the default namespace deployments = v1.list_namespaced_deployment(namespace=\"default\") for deployment in deployments.items: print(f\"Deployment: {deployment.metadata.name}\") ``` This code snippet loads the Kubernetes configuration, creates an API instance for managing applications (deployments), and lists all deployments in the default namespace."
   },
   "data_pointers": [],
   "related_nodes": []

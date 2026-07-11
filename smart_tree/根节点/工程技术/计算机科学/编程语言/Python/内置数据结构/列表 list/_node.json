@@ -9,12 +9,12 @@
   "parent": "内置数据结构",
   "children": [
     "列表基础",
-    "列表推导式",
-    "列表方法"
+    "列表方法",
+    "列表推导式"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Lists are mutable ordered sequences that support indexing, slicing, and method operations. List comprehensions are a distinctive syntax of Python. Here's an example to illustrate the use of list compr"
+    "description": "列表 list: Lists are mutable ordered sequences that support indexing, slicing, and method operations. List comprehensions are a distinctive syntax of Python. Here's an example to illustrate the use of list comprehensions in Python: ```python # Example 1: Creating a list with list comprehension numbers = [x for x in range(5)] print(numbers) # Output: [0, 1, 2, 3, 4] # Example 2: Applying a condition within the list comprehension even_numbers = [x for x in range(10) if x % 2 == 0] print(even_numbers) # Output: [0, 2, 4, 6, 8] ``` These examples demonstrate how to create lists using list comprehensions and apply conditions within them."
   },
   "data_pointers": [],
   "related_nodes": []

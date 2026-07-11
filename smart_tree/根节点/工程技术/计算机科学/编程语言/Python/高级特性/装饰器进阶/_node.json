@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "高级特性",
   "children": [
+    "装饰器原理",
     "带参数装饰器",
-    "类装饰器",
-    "装饰器原理"
+    "类装饰器"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The essence of a decorator is a closure, and mastering its principles allows you to write flexible decorators. Here's an explanation with a brief Python code example: In Python, a decorator is a funct"
+    "description": "装饰器进阶: The essence of a decorator is a closure, and mastering its principles allows you to write flexible decorators. Here's an explanation with a brief Python code example: In Python, a decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it. This is achieved through closures, which allow data to be remembered from the scope in which the closure was created. ```python def my_decorator(func): def wrapper(): print(\"Something is happening before the function is called.\") func() print(\"Something is happening after the function is called.\") return wrapper @my_decorator def say_hello(): print(\"Hello!\") say_hello() ``` In this example, `my_decorator` is a decorator that adds some functionality (printing messages) around the call to the `say_hello` function. When you run `say_hello()`, it behaves as if you had written: ```python def say_hello(): print(\"Hello!\") say_hello = my_decorator(say_hello) ``` This shows how decorators can be used to modify or extend the behavior of functions in a flexible and clean way."
   },
   "data_pointers": [],
   "related_nodes": []

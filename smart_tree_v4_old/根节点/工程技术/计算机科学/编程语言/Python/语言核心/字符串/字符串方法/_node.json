@@ -1,0 +1,21 @@
+{
+  "name": "字符串方法",
+  "node_id": "py_str_methods_v4",
+  "parent_id": "py_str_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "字符串",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "字符串方法",
+      "uri": "knowledge://py_str_methods_v4",
+      "content_preview": "Translation: - join: This function concatenates sequences (such as strings) into one string with a specified separator. Example in Python: ```python parts = ['Hello', 'World'] separator = ' ' result ="
+    }
+  ],
+  "related_nodes": []
+}

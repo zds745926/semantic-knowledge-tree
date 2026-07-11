@@ -1,0 +1,21 @@
+{
+  "name": "CSS 布局",
+  "node_id": "css_layout_v4",
+  "parent_id": "fe_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "前端开发",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "CSS 布局",
+      "uri": "knowledge://css_layout_v4",
+      "content_preview": "Flexbox for one-dimensional layout / Grid for two-dimensional layout. Media queries for responsive design. Here are the corresponding technical terms and examples in Python (assuming you want to provi"
+    }
+  ],
+  "related_nodes": []
+}

@@ -14,7 +14,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Synchronization mechanisms ensure the correctness of concurrent execution and data consistency. To illustrate a synchronization mechanism in Python, let's consider an example using threading where we "
+    "description": "同步与互斥: Synchronization mechanisms ensure the correctness of concurrent execution and data consistency. To illustrate a synchronization mechanism in Python, let's consider an example using threading where we use a lock to ensure that only one thread can access a shared resource at a time: ```python import threading # Shared resource shared_resource = 0 # Lock object lock = threading.Lock() def worker(id): global shared_resource for _ in range(100000): # Acquire the lock before accessing the shared resource with lock: current_value = shared_resource # Perform some operation on the shared resource shared_resource = current_value + 1 # Create threads threads = [threading.Thread(target=worker, args=(i,)) for i in range(5)] # Start all threads for thread in threads: thread.start() # Wait for all threads to complete for thread in threads: thread.join() print(\"Final value of shared resource:\", shared_resource) ``` In this example, the `Lock` object ensures that only one thread can execute the block of code inside the `with lock:` statement at a time, preventing race conditions and ensuring data consistency."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "文件管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "ls/cd/pwd: `ls -l` detailed view - `-a` show hidden files - `-h` human-readable file sizes. `cd ~` go home. `pwd` print working directory. Python code example for `ls -l` with `-a` and `-h` (Note that Python does not have direct commands like `ls`, but we can simulate the behavior using os and pathlib modules): ```python import os from pathlib import Path # Simulate 'ls -la' command def list_files(detailed=True, hidden=False): for entry in Path('.').iterdir(): if detailed: mode = '-l' else: mode = '' if hidden and entry.is_file() or not hidden and (entry.is_file() or entry.is_dir()): print(f\"{mode} {entry.name}\") # Simulate 'ls -lh' command def list_files_human_readable(detailed=True, hidden=False): for entry in Path('.').iterdir(): if detailed: mode = '-l' else: mode = '' if hidden and entry.is_file() or not hidden and (entry.is_file() or entry.is_dir()): print(f\"{mode} {entry.stat().st_size}B {entry.name}\") # Example usage list_files(detailed=True, hidden=True) print(\"\\n\") list_files_human_readable(detailed=True, hidden=True) ``` This Python script simulates the behavior of `ls -la` and `ls -lh` commands by listing files in the current directory with detailed information and human-readable file sizes."
+  },
   "data_pointers": [
     {
       "title": "ls/cd/pwd",
       "uri": "knowledge://ls_cd_pwd_v4",
-      "content_preview": "Translation: `ls -l` detailed view - `-a` show hidden files - `-h` human-readable file sizes. `cd ~` go home. `pwd` print working directory. Python code example for `ls -l` with `-a` and `-h` (Note th"
+      "content_preview": "ls/cd/pwd: `ls -l` detailed view - `-a` show hidden files - `-h` human-readable file sizes. `cd ~` go home. `pwd` print working directory. Python code example for `ls -l` with `-a` and `-h` (Note that Python does not have direct commands like `ls`, but we can simulate the behavior using os and pathlib modules): ```python import os from pathlib import Path # Simulate 'ls -la' command def list_files(detailed=True, hidden=False): for entry in Path('.').iterdir(): if detailed: mode = '-l' else: mode = '' if hidden and entry.is_file() or not hidden and (entry.is_file() or entry.is_dir()): print(f\"{mode} {entry.name}\") # Simulate 'ls -lh' command def list_files_human_readable(detailed=True, hidden=False): for entry in Path('.').iterdir(): if detailed: mode = '-l' else: mode = '' if hidden and entry.is_file() or not hidden and (entry.is_file() or entry.is_dir()): print(f\"{mode} {entry.stat().st_size}B {entry.name}\") # Example usage list_files(detailed=True, hidden=True) print(\"\\n\") list_files_human_readable(detailed=True, hidden=True) ``` This Python script simulates the behavior of `ls -la` and `ls -lh` commands by listing files in the current directory with detailed information and human-readable file sizes."
     }
   ],
   "related_nodes": []

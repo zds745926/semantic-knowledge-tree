@@ -9,12 +9,14 @@
   "parent": "UDP 协议",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "UDP 基础: Connectionless, unreliable, no congestion control. 8-byte header. Supports broadcast/multicast. DNS/QUIC/video stream. Python code example (for illustration of an 8-byte header in a simple packet structure): ```python import struct # Example data payload data = b\"example\" # Create an 8-byte header with some dummy values header = struct.pack(\"!Q\", 1234567890) # !Q means big-endian unsigned long long (8 bytes) # Combine the header and the data payload packet = header + data print(f\"Header: {header}\") print(f\"Data: {data}\") print(f\"Packet: {packet}\") ``` This example demonstrates how an 8-byte header might be constructed using Python's `struct` module, which is a common way to pack and unpack binary data. The `!Q` format string specifies a big-endian unsigned long long (which is 8 bytes)."
+  },
   "data_pointers": [
     {
       "title": "UDP 基础",
       "uri": "knowledge://udp_basics_v4",
-      "content_preview": "Translation: Connectionless, unreliable, no congestion control. 8-byte header. Supports broadcast/multicast. DNS/QUIC/video stream. Python code example (for illustration of an 8-byte header in a simpl"
+      "content_preview": "UDP 基础: Connectionless, unreliable, no congestion control. 8-byte header. Supports broadcast/multicast. DNS/QUIC/video stream. Python code example (for illustration of an 8-byte header in a simple packet structure): ```python import struct # Example data payload data = b\"example\" # Create an 8-byte header with some dummy values header = struct.pack(\"!Q\", 1234567890) # !Q means big-endian unsigned long long (8 bytes) # Combine the header and the data payload packet = header + data print(f\"Header: {header}\") print(f\"Data: {data}\") print(f\"Packet: {packet}\") ``` This example demonstrates how an 8-byte header might be constructed using Python's `struct` module, which is a common way to pack and unpack binary data. The `!Q` format string specifies a big-endian unsigned long long (which is 8 bytes)."
     }
   ],
   "related_nodes": []

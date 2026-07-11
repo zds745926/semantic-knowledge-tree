@@ -1,0 +1,21 @@
+{
+  "name": "DML 数据操作",
+  "node_id": "dml_v4",
+  "parent_id": "sql_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "SQL 语言",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "DML 数据操作",
+      "uri": "knowledge://dml_v4",
+      "content_preview": "SELECT/INSERT/UPDATE/DELETE. WHERE/ORDER BY/LIMIT. In the context of SQL (Structured Query Language), these are fundamental commands used for managing data in relational databases. Here's a brief expl"
+    }
+  ],
+  "related_nodes": []
+}

@@ -9,12 +9,14 @@
   "parent": "面向对象",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "多态: Polymorphism refers to the ability of an operation to exhibit different behaviors in different object types. There are two main forms of polymorphism: compile-time polymorphism (overloading) and run-time polymorphism (overriding). Here’s a brief explanation with Python code examples: 1. **Compile-Time Polymorphism (Overloading)**: This occurs when functions or operators have the same name but differ in their parameters. ```python class Calculator: def add(self, a: int, b: int) -> int: return a + b def add(self, a: str, b: str) -> str: return f\"{a} {b}\" calc = Calculator() print(calc.add(5, 3)) # Output: 8 print(calc.add(\"Hello\", \"World\")) # Output: Hello World ``` 2. **Run-Time Polymorphism (Overriding)**: This happens when a subclass provides its own implementation of a method that is already defined in its superclass. ```python class Animal: def sound(self): pass class Dog(Animal): def sound(self): return \"Woof!\" class Cat(Animal): def sound(self): return \"Meow!\" def make_sound(animal: Animal): print(animal.sound()) dog = Dog() cat = Cat() make_sound(dog) # Output: Woof! make_sound(cat) # Output: Meow! ``` These examples illustrate how polymorphism works in Python, showcasing both overloading and overriding."
+  },
   "data_pointers": [
     {
       "title": "多态",
       "uri": "knowledge://polymorphism_v4",
-      "content_preview": "Polymorphism refers to the ability of an operation to exhibit different behaviors in different object types. There are two main forms of polymorphism: compile-time polymorphism (overloading) and run-t"
+      "content_preview": "多态: Polymorphism refers to the ability of an operation to exhibit different behaviors in different object types. There are two main forms of polymorphism: compile-time polymorphism (overloading) and run-time polymorphism (overriding). Here’s a brief explanation with Python code examples: 1. **Compile-Time Polymorphism (Overloading)**: This occurs when functions or operators have the same name but differ in their parameters. ```python class Calculator: def add(self, a: int, b: int) -> int: return a + b def add(self, a: str, b: str) -> str: return f\"{a} {b}\" calc = Calculator() print(calc.add(5, 3)) # Output: 8 print(calc.add(\"Hello\", \"World\")) # Output: Hello World ``` 2. **Run-Time Polymorphism (Overriding)**: This happens when a subclass provides its own implementation of a method that is already defined in its superclass. ```python class Animal: def sound(self): pass class Dog(Animal): def sound(self): return \"Woof!\" class Cat(Animal): def sound(self): return \"Meow!\" def make_sound(animal: Animal): print(animal.sound()) dog = Dog() cat = Cat() make_sound(dog) # Output: Woof! make_sound(cat) # Output: Meow! ``` These examples illustrate how polymorphism works in Python, showcasing both overloading and overriding."
     }
   ],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "concurrent.futures",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "map 方法: The `executor.map(func, iterable)` function batches the submissions and returns an iterator of results. The order of the results corresponds to the input. Here's a brief Python code example using the `concurrent.futures` module: ```python from concurrent.futures import ThreadPoolExecutor def func(x): return x * x # Example function that squares the input numbers = [1, 2, 3, 4, 5] with ThreadPoolExecutor() as executor: results = list(executor.map(func, numbers)) print(results) # Output: [1, 4, 9, 16, 25] ``` In this example, `executor.map` is used to apply the `func` function to each element in the `numbers` list. The results are returned in an iterator and converted to a list for printing."
+  },
   "data_pointers": [
     {
       "title": "map 方法",
       "uri": "knowledge://py_futures_map_v4",
-      "content_preview": "The `executor.map(func, iterable)` function batches the submissions and returns an iterator of results. The order of the results corresponds to the input. Here's a brief Python code example using the "
+      "content_preview": "map 方法: The `executor.map(func, iterable)` function batches the submissions and returns an iterator of results. The order of the results corresponds to the input. Here's a brief Python code example using the `concurrent.futures` module: ```python from concurrent.futures import ThreadPoolExecutor def func(x): return x * x # Example function that squares the input numbers = [1, 2, 3, 4, 5] with ThreadPoolExecutor() as executor: results = list(executor.map(func, numbers)) print(results) # Output: [1, 4, 9, 16, 25] ``` In this example, `executor.map` is used to apply the `func` function to each element in the `numbers` list. The results are returned in an iterator and converted to a list for printing."
     }
   ],
   "related_nodes": []

@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Java is a statically typed, object-oriented compiled language that provides cross-platform capabilities via the JVM. It boasts a rich enterprise ecosystem (Spring/Hibernate), making it a common choice"
+    "description": "Java: Java is a statically typed, object-oriented compiled language that provides cross-platform capabilities via the JVM. It boasts a rich enterprise ecosystem (Spring/Hibernate), making it a common choice for large-scale systems. Here's a brief Python code example to illustrate a simple concept often used in Java, such as creating a class: ```python class Person: def __init__(self, name, age): self.name = name self.age = age def introduce(self): print(f\"Hello, my name is {self.name} and I am {self.age} years old.\") # Creating an instance of the Person class person1 = Person(\"Alice\", 30) person1.introduce() # Output: Hello, my name is Alice and I am 30 years old. ``` This Python code defines a `Person` class with attributes `name` and `age`, and a method `introduce`. It demonstrates the concept of object-oriented programming similar to what you might find in Java."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -9,13 +9,17 @@
   "parent": "迭代器与生成器",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "生成器 yield: The `yield` keyword defines a generator function. It produces a sequence of values on the fly, which is memory-efficient. Example of using `yield` in Python: ```python def simple_generator(): yield 1 yield 2 yield 3 # Using the generator for value in simple_generator(): print(value) ``` This example demonstrates a simple generator that yields the numbers 1, 2, and 3 one at a time. Each `yield` statement pauses the function and sends a value back to the caller, but retains enough state to enable the function to resume where it left off. When resumed, the function continues execution immediately after the last `yield` statement, with the state of the generator (including local variables and the instruction pointer) intact."
+  },
   "data_pointers": [
     {
       "title": "生成器 yield",
       "uri": "knowledge://py_generator_v4",
-      "content_preview": "The `yield` keyword defines a generator function. It produces a sequence of values on the fly, which is memory-efficient. Example of using `yield` in Python: ```python def simple_generator(): yield 1 "
+      "content_preview": "生成器 yield: The `yield` keyword defines a generator function. It produces a sequence of values on the fly, which is memory-efficient. Example of using `yield` in Python: ```python def simple_generator(): yield 1 yield 2 yield 3 # Using the generator for value in simple_generator(): print(value) ``` This example demonstrates a simple generator that yields the numbers 1, 2, and 3 one at a time. Each `yield` statement pauses the function and sends a value back to the caller, but retains enough state to enable the function to resume where it left off. When resumed, the function continues execution immediately after the last `yield` statement, with the state of the generator (including local variables and the instruction pointer) intact."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_async_await_v4"
+  ]
 }

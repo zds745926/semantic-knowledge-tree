@@ -9,12 +9,14 @@
   "parent": "函数定义",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "返回值: `return` returns the result. If there is no `return`, it returns `None`. Returning multiple values essentially means returning a tuple. Python code example for returning multiple values: ```python def sample_function(x, y): return x + y, x - y # Returns a tuple containing the sum and difference of x and y result1, result2 = sample_function(10, 5) print(result1) # Output: 15 print(result2) # Output: 5 ``` In this example, `sample_function` returns a tuple with two elements: the sum and the difference of the inputs `x` and `y`. The returned tuple is then unpacked into `result1` and `result2`, which can be used separately."
+  },
   "data_pointers": [
     {
       "title": "返回值",
       "uri": "knowledge://py_return_v4",
-      "content_preview": "Translation: `return` returns the result. If there is no `return`, it returns `None`. Returning multiple values essentially means returning a tuple. Python code example for returning multiple values: "
+      "content_preview": "返回值: `return` returns the result. If there is no `return`, it returns `None`. Returning multiple values essentially means returning a tuple. Python code example for returning multiple values: ```python def sample_function(x, y): return x + y, x - y # Returns a tuple containing the sum and difference of x and y result1, result2 = sample_function(10, 5) print(result1) # Output: 15 print(result2) # Output: 5 ``` In this example, `sample_function` returns a tuple with two elements: the sum and the difference of the inputs `x` and `y`. The returned tuple is then unpacked into `result1` and `result2`, which can be used separately."
     }
   ],
   "related_nodes": []

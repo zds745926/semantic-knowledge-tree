@@ -1,0 +1,21 @@
+{
+  "name": "数字逻辑",
+  "node_id": "digi_logic_v4",
+  "parent_id": "cb_theory_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "计算机理论",
+  "children": [
+    "布尔代数",
+    "触发器和寄存器",
+    "逻辑门电路"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Digital logic studies the principles of implementing Boolean operations using electronic circuits, including Boolean algebra, logic gates, and flip-flops. Digital logic forms the foundation of compute"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "列表 list",
+  "node_id": "py_list_v4",
+  "parent_id": "py_ds_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "内置数据结构",
+  "children": [
+    "列表基础",
+    "列表推导式",
+    "列表方法"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Lists are mutable ordered sequences that support indexing, slicing, and method operations. List comprehensions are a distinctive syntax of Python. Here's an example to illustrate the use of list compr"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

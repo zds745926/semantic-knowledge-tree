@@ -9,12 +9,14 @@
   "parent": "集成学习",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "随机森林: Bagging with feature randomness. Multiple tree voting. Less prone to overfitting. Python code example: ```python from sklearn.ensemble import BaggingClassifier from sklearn.tree import DecisionTreeClassifier # Example dataset X, y = ..., ... # Replace with actual data # Define the base estimator (a decision tree) base_estimator = DecisionTreeClassifier(max_depth=3) # Create a Bagging classifier with feature randomness and multiple trees bagging_clf = BaggingClassifier(base_estimator=base_estimator, n_estimators=100, # Number of trees max_samples=0.8, # Fraction of samples to use for each tree bootstrap_features=True) # Feature randomness # Train the model bagging_clf.fit(X, y) # Predict using the trained model predictions = bagging_clf.predict(X) ``` In this example, `BaggingClassifier` is used with a decision tree as the base estimator. The `bootstrap_features=True` parameter enables feature randomness, and `n_estimators=100` specifies that 100 trees will be used in the ensemble."
+  },
   "data_pointers": [
     {
       "title": "随机森林",
       "uri": "knowledge://random_forest_v4",
-      "content_preview": "Bagging with feature randomness. Multiple tree voting. Less prone to overfitting. Python code example: ```python from sklearn.ensemble import BaggingClassifier from sklearn.tree import DecisionTreeCla"
+      "content_preview": "随机森林: Bagging with feature randomness. Multiple tree voting. Less prone to overfitting. Python code example: ```python from sklearn.ensemble import BaggingClassifier from sklearn.tree import DecisionTreeClassifier # Example dataset X, y = ..., ... # Replace with actual data # Define the base estimator (a decision tree) base_estimator = DecisionTreeClassifier(max_depth=3) # Create a Bagging classifier with feature randomness and multiple trees bagging_clf = BaggingClassifier(base_estimator=base_estimator, n_estimators=100, # Number of trees max_samples=0.8, # Fraction of samples to use for each tree bootstrap_features=True) # Feature randomness # Train the model bagging_clf.fit(X, y) # Predict using the trained model predictions = bagging_clf.predict(X) ``` In this example, `BaggingClassifier` is used with a decision tree as the base estimator. The `bootstrap_features=True` parameter enables feature randomness, and `n_estimators=100` specifies that 100 trees will be used in the ensemble."
     }
   ],
   "related_nodes": []

@@ -1,0 +1,21 @@
+{
+  "name": "asyncio Lock",
+  "node_id": "py_asyncio_lock_v4",
+  "parent_id": "py_async_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "异步编程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "asyncio Lock",
+      "uri": "knowledge://py_asyncio_lock_v4",
+      "content_preview": "Asynchronous Lock in asyncio. `async with lock:`. Semaphore and BoundedSemaphore. Here are the corresponding Python code examples: ```python import asyncio # Example of using an asyncio Lock async def"
+    }
+  ],
+  "related_nodes": []
+}

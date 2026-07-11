@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "基本数据类型",
   "children": [
-    "位运算",
     "大整数运算",
+    "位运算",
     "进制转换"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Advanced knowledge of Python `int` includes large integer arithmetic, bitwise operations, and base conversion. Bitwise operations are generally faster than arithmetic operations and are suitable for l"
+    "description": "int 进阶: Advanced knowledge of Python `int` includes large integer arithmetic, bitwise operations, and base conversion. Bitwise operations are generally faster than arithmetic operations and are suitable for low-level optimization. Here's a brief example in Python to illustrate some of these concepts: ```python # Large integer arithmetic large_number = 12345678901234567890 print(f\"Large number: {large_number}\") # Bitwise operations a = 0b1010 # Binary representation of 10 b = 0b1100 # Binary representation of 12 # Bitwise AND result_and = a & b print(f\"Bitwise AND (10 & 12): {bin(result_and)}\") # Bitwise OR result_or = a | b print(f\"Bitwise OR (10 | 12): {bin(result_or)}\") # Bitwise XOR result_xor = a ^ b print(f\"Bitwise XOR (10 ^ 12): {bin(result_xor)}\") # Base conversion hex_value = int('A1', 16) # Convert hexadecimal to integer print(f\"Hexadecimal 'A1' to decimal: {hex_value}\") octal_value = int('145', 8) # Convert octal to integer print(f\"Octal '145' to decimal: {octal_value}\") ``` This code demonstrates large integer handling, bitwise operations (AND, OR, XOR), and base conversion in Python."
   },
   "data_pointers": [],
   "related_nodes": []

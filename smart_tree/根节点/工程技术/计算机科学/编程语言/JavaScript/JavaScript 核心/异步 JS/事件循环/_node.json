@@ -9,12 +9,14 @@
   "parent": "异步 JS",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "事件循环: JS is single-threaded. It manages tasks through macrotasks (e.g., `setTimeout`) and microtasks (e.g., `Promise`). The execution order of these tasks is controlled by the JavaScript event loop. Here's a brief explanation with Python code examples to illustrate: In JavaScript: - Macrotasks are executed in the order they are added, but only after all microtasks have been processed. - Microtasks are processed immediately after each JavaScript call stack finishes executing. Python doesn't have exactly the same concurrency model as JavaScript due to its Global Interpreter Lock (GIL), but we can simulate a similar behavior using threads or asynchronous programming with libraries like `asyncio`. ### Python Example ```python import asyncio # Simulating microtasks and macrotasks def process_microtask(): print(\"Microtask processing\") async def main(): # Microtasks are processed immediately after the async function finishes await asyncio.gather( asyncio.to_thread(process_microtask), # Simulate a microtask asyncio.sleep(1) # Simulate a macrotask ) # Run the event loop to process tasks asyncio.run(main()) ``` In this Python example, `process_microtask` simulates a microtask that is processed immediately after the async function finishes. The `asyncio.gather` function waits for both a simulated microtask and a macrotask (simulated by `asyncio.sleep(1)`)."
+  },
   "data_pointers": [
     {
       "title": "事件循环",
       "uri": "knowledge://js_event_loop_v4",
-      "content_preview": "JS is single-threaded. It manages tasks through macrotasks (e.g., `setTimeout`) and microtasks (e.g., `Promise`). The execution order of these tasks is controlled by the JavaScript event loop. Here's "
+      "content_preview": "事件循环: JS is single-threaded. It manages tasks through macrotasks (e.g., `setTimeout`) and microtasks (e.g., `Promise`). The execution order of these tasks is controlled by the JavaScript event loop. Here's a brief explanation with Python code examples to illustrate: In JavaScript: - Macrotasks are executed in the order they are added, but only after all microtasks have been processed. - Microtasks are processed immediately after each JavaScript call stack finishes executing. Python doesn't have exactly the same concurrency model as JavaScript due to its Global Interpreter Lock (GIL), but we can simulate a similar behavior using threads or asynchronous programming with libraries like `asyncio`. ### Python Example ```python import asyncio # Simulating microtasks and macrotasks def process_microtask(): print(\"Microtask processing\") async def main(): # Microtasks are processed immediately after the async function finishes await asyncio.gather( asyncio.to_thread(process_microtask), # Simulate a microtask asyncio.sleep(1) # Simulate a macrotask ) # Run the event loop to process tasks asyncio.run(main()) ``` In this Python example, `process_microtask` simulates a microtask that is processed immediately after the async function finishes. The `asyncio.gather` function waits for both a simulated microtask and a macrotask (simulated by `asyncio.sleep(1)`)."
     }
   ],
   "related_nodes": []

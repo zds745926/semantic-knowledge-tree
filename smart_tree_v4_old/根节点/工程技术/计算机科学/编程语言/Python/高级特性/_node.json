@@ -1,0 +1,22 @@
+{
+  "name": "高级特性",
+  "node_id": "py_adv_v4",
+  "parent_id": "python_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "Python",
+  "children": [
+    "上下文管理器",
+    "函数式工具",
+    "装饰器进阶",
+    "迭代器与生成器"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "The advanced features of Python include decorator advancements, iterator generators, context managers, and functional tools. These features make Python code more elegant and efficient. Here are brief "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

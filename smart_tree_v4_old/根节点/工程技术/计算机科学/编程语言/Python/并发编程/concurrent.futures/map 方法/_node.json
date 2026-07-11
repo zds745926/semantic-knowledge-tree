@@ -1,0 +1,21 @@
+{
+  "name": "map 方法",
+  "node_id": "py_futures_map_v4",
+  "parent_id": "py_futures_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "concurrent.futures",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "map 方法",
+      "uri": "knowledge://py_futures_map_v4",
+      "content_preview": "The `executor.map(func, iterable)` function batches the submissions and returns an iterator of results. The order of the results corresponds to the input. Here's a brief Python code example using the "
+    }
+  ],
+  "related_nodes": []
+}

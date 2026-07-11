@@ -1,0 +1,20 @@
+{
+  "name": "类型注解",
+  "node_id": "py_type_hints_v4",
+  "parent_id": "py_type_system_v4",
+  "level": 8,
+  "is_leaf": false,
+  "absorption_rate": 0.13999999999999999,
+  "version": 1,
+  "parent": "类型系统特性",
+  "children": [
+    "基本类型注解",
+    "高级类型注解"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Type annotations add type information to Python variables and function parameters, enhancing code readability and IDE support. Example: ```python def greet(name: str) -> None: print(f\"Hello, {name}!\")"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

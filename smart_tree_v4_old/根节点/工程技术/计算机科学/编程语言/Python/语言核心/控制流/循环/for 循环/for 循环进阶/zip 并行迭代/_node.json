@@ -1,0 +1,21 @@
+{
+  "name": "zip 并行迭代",
+  "node_id": "py_for_zip_v4",
+  "parent_id": "py_for_detail_v4",
+  "level": 10,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "for 循环进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "zip 并行迭代",
+      "uri": "knowledge://py_for_zip_v4",
+      "content_preview": "The `zip(iter1, iter2)` function parallelly iterates over multiple sequences and pairs elements from the same index positions. The `zip_longest` variant fills in missing values with a specified fill v"
+    }
+  ],
+  "related_nodes": []
+}

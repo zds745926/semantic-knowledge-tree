@@ -9,12 +9,14 @@
   "parent": "C 核心",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "内存管理: malloc/calloc/realloc/free. Stack memory is automatically reclaimed. Valgrind detects memory errors. Here are brief explanations of the terms and an example using Python to illustrate `realloc`: - **malloc**: Allocates a block of memory. - **calloc**: Allocates a block of memory and initializes it to zero. - **realloc**: Resizes an existing memory block. - **free**: Frees allocated memory. Python does not have direct equivalents for these functions, but you can simulate `realloc` using the following example: ```python import ctypes def realloc_example(): # Allocate initial memory original_memory = (ctypes.c_char * 10)() print(\"Initial allocation:\", original_memory) # Resize the allocated memory to a new size resized_memory = ctypes.realloc(original_memory, 20) if resized_memory: print(\"Resized allocation:\", resized_memory) else: print(\"Failed to resize allocation\") realloc_example() ``` In this example, `ctypes` is used to simulate the behavior of `realloc`. Note that Python's memory management handles most cases automatically, and explicit use of such functions like `malloc`, `calloc`, or `free` is not common in Python."
+  },
   "data_pointers": [
     {
       "title": "内存管理",
       "uri": "knowledge://c_memory_v4",
-      "content_preview": "malloc/calloc/realloc/free. Stack memory is automatically reclaimed. Valgrind detects memory errors. Here are brief explanations of the terms and an example using Python to illustrate `realloc`: - **m"
+      "content_preview": "内存管理: malloc/calloc/realloc/free. Stack memory is automatically reclaimed. Valgrind detects memory errors. Here are brief explanations of the terms and an example using Python to illustrate `realloc`: - **malloc**: Allocates a block of memory. - **calloc**: Allocates a block of memory and initializes it to zero. - **realloc**: Resizes an existing memory block. - **free**: Frees allocated memory. Python does not have direct equivalents for these functions, but you can simulate `realloc` using the following example: ```python import ctypes def realloc_example(): # Allocate initial memory original_memory = (ctypes.c_char * 10)() print(\"Initial allocation:\", original_memory) # Resize the allocated memory to a new size resized_memory = ctypes.realloc(original_memory, 20) if resized_memory: print(\"Resized allocation:\", resized_memory) else: print(\"Failed to resize allocation\") realloc_example() ``` In this example, `ctypes` is used to simulate the behavior of `realloc`. Note that Python's memory management handles most cases automatically, and explicit use of such functions like `malloc`, `calloc`, or `free` is not common in Python."
     }
   ],
   "related_nodes": []

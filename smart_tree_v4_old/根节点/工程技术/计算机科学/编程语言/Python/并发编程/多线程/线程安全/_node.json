@@ -1,0 +1,21 @@
+{
+  "name": "线程安全",
+  "node_id": "py_thread_safety_v4",
+  "parent_id": "py_thread_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多线程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "线程安全",
+      "uri": "knowledge://py_thread_safety_v4",
+      "content_preview": "Atomic operations (int/float assignments) are thread-safe. Lists and similar non-atomic structures are not. `threading.settrace` is used to set a trace function for all threads. Python code example: `"
+    }
+  ],
+  "related_nodes": []
+}

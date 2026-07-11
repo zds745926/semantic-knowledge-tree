@@ -9,12 +9,14 @@
   "parent": "IP 协议",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "IPv6: 128-bit address in colon-separated hexadecimal notation. No NAT, no checksum. Plug-and-play SLAAC. Here's a brief explanation of the terms: - **128-bit address**: This refers to an IPv6 address. - **Colon-separated hexadecimal notation**: This is the standard format for writing IPv6 addresses, where each 4-bit segment (hex digit) is separated by colons. - **No NAT**: No Network Address Translation, meaning devices will use their full IP addresses directly on the network. - **No checksum**: The address does not include a checksum or error detection mechanism. - **Plug-and-play SLAAC**: Stateless Address Autoconfiguration with Automatic Private IP Addressing. This is an IPv6 addressing method where devices automatically configure their own IP addresses based on the local network's prefix. Here’s a Python code example to illustrate how you might represent and print such an address: ```python # Example of representing a 128-bit (IPv6) address in colon-separated hexadecimal notation ipv6_address = \"2001:db8::1\" def print_ipv6_address(address): print(f\"IPv6 Address: {address}\") print_ipv6_address(ipv6_address) ``` This code defines an IPv6 address and prints it in the standard format."
+  },
   "data_pointers": [
     {
       "title": "IPv6",
       "uri": "knowledge://ipv6_v4",
-      "content_preview": "128-bit address in colon-separated hexadecimal notation. No NAT, no checksum. Plug-and-play SLAAC. Here's a brief explanation of the terms: - **128-bit address**: This refers to an IPv6 address. - **C"
+      "content_preview": "IPv6: 128-bit address in colon-separated hexadecimal notation. No NAT, no checksum. Plug-and-play SLAAC. Here's a brief explanation of the terms: - **128-bit address**: This refers to an IPv6 address. - **Colon-separated hexadecimal notation**: This is the standard format for writing IPv6 addresses, where each 4-bit segment (hex digit) is separated by colons. - **No NAT**: No Network Address Translation, meaning devices will use their full IP addresses directly on the network. - **No checksum**: The address does not include a checksum or error detection mechanism. - **Plug-and-play SLAAC**: Stateless Address Autoconfiguration with Automatic Private IP Addressing. This is an IPv6 addressing method where devices automatically configure their own IP addresses based on the local network's prefix. Here’s a Python code example to illustrate how you might represent and print such an address: ```python # Example of representing a 128-bit (IPv6) address in colon-separated hexadecimal notation ipv6_address = \"2001:db8::1\" def print_ipv6_address(address): print(f\"IPv6 Address: {address}\") print_ipv6_address(ipv6_address) ``` This code defines an IPv6 address and prints it in the standard format."
     }
   ],
   "related_nodes": []

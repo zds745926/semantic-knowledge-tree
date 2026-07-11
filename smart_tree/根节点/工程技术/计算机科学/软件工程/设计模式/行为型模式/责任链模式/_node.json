@@ -9,12 +9,14 @@
   "parent": "行为型模式",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "责任链模式: Multiple processors are chained together. Requests are passed along the chain until they are processed. This is similar to Filter/Interceptor in programming. Here's an example using Python with a simple request handling chain: ```python class Processor: def __init__(self, next_processor=None): self.next_processor = next_processor def process(self, request): # Process the request print(f\"Processing {request} by {self.__class__.__name__}\") # Pass to the next processor in the chain if available if self.next_processor: self.next_processor.process(request) # Example usage if __name__ == \"__main__\": p1 = Processor() p2 = Processor() p3 = Processor() # Chain processors together p1.next_processor = p2 p2.next_processor = p3 # Simulate a request being passed through the chain p1.process(\"Request 1\") ``` In this example, `Processor` objects are chained together to form a processing pipeline. Each processor handles the request and then passes it on to the next one in the chain if available."
+  },
   "data_pointers": [
     {
       "title": "责任链模式",
       "uri": "knowledge://chain_v4",
-      "content_preview": "Multiple processors are chained together. Requests are passed along the chain until they are processed. This is similar to Filter/Interceptor in programming. Here's an example using Python with a simp"
+      "content_preview": "责任链模式: Multiple processors are chained together. Requests are passed along the chain until they are processed. This is similar to Filter/Interceptor in programming. Here's an example using Python with a simple request handling chain: ```python class Processor: def __init__(self, next_processor=None): self.next_processor = next_processor def process(self, request): # Process the request print(f\"Processing {request} by {self.__class__.__name__}\") # Pass to the next processor in the chain if available if self.next_processor: self.next_processor.process(request) # Example usage if __name__ == \"__main__\": p1 = Processor() p2 = Processor() p3 = Processor() # Chain processors together p1.next_processor = p2 p2.next_processor = p3 # Simulate a request being passed through the chain p1.process(\"Request 1\") ``` In this example, `Processor` objects are chained together to form a processing pipeline. Each processor handles the request and then passes it on to the next one in the chain if available."
     }
   ],
   "related_nodes": []

@@ -9,13 +9,13 @@
   "parent": "算法与数据结构",
   "children": [
     "数组",
-    "栈",
     "链表",
+    "栈",
     "队列"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Basic data structures include arrays, linked lists, stacks, and queues, which form the basis for more complex structures. Python examples: 1. Array (using Python's built-in list): ```python # Creating"
+    "description": "基础数据结构: Basic data structures include arrays, linked lists, stacks, and queues, which form the basis for more complex structures. Python examples: 1. Array (using Python's built-in list): ```python # Creating an array (list) arr = [1, 2, 3, 4] print(arr) # Output: [1, 2, 3, 4] ``` 2. Linked List: ```python class Node: def __init__(self, value): self.value = value self.next = None # Creating a linked list node head = Node(1) second = Node(2) third = Node(3) head.next = second second.next = third ``` 3. Stack (using Python's built-in list as a stack): ```python stack = [] stack.append(1) # Push operation stack.append(2) print(stack) # Output: [1, 2] stack.pop() # Pop operation print(stack) # Output: [1] ``` 4. Queue (using Python's collections.deque for efficient appends and pops): ```python from collections import deque queue = deque() queue.append(1) # Enqueue operation queue.append(2) print(queue) # Output: deque([1, 2]) queue.popleft() # Dequeue operation print(queue) # Output: deque([2]) ``` These examples provide a basic understanding of how these data structures can be implemented in Python."
   },
   "data_pointers": [],
   "related_nodes": []

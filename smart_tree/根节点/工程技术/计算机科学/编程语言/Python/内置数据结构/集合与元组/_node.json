@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "内置数据结构",
   "children": [
-    "元组 tuple",
-    "集合 set"
+    "集合 set",
+    "元组 tuple"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Sets are unordered and do not allow duplicates, supporting set operations. Tuples are immutable and ordered, and can be used as dictionary keys. Python code examples: For sets: ```python # Creating a "
+    "description": "集合与元组: Sets are unordered and do not allow duplicates, supporting set operations. Tuples are immutable and ordered, and can be used as dictionary keys. Python code examples: For sets: ```python # Creating a set my_set = {1, 2, 3} print(my_set) # Output will vary since sets are unordered # Adding elements to a set my_set.add(4) print(my_set) # Performing set operations (union and intersection) set1 = {1, 2, 3} set2 = {3, 4, 5} union_set = set1.union(set2) intersection_set = set1.intersection(set2) print(\"Union:\", union_set) # Output: Union: {1, 2, 3, 4, 5} print(\"Intersection:\", intersection_set) # Output: Intersection: {3} ``` For tuples: ```python # Creating a tuple my_tuple = (1, 2, 3) print(my_tuple) # Attempting to modify a tuple (will raise an error) try: my_tuple[0] = 4 except TypeError as e: print(e) # Output: 'tuple' object does not support item assignment # Using a tuple as a dictionary key my_dict = {(1, 2): \"value\"} print(my_dict[(1, 2)]) # Output: value ```"
   },
   "data_pointers": [],
   "related_nodes": []

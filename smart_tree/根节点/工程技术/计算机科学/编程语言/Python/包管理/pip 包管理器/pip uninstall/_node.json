@@ -9,12 +9,14 @@
   "parent": "pip 包管理器",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "pip uninstall: Uninstalling a package using pip involves the command `pip uninstall package`. For automatic confirmation, you can use `pip uninstall -y`. Here is a brief explanation and an example of how this might be used in Python: ```python # Uninstall a package using pip with automatic confirmation !pip uninstall -y some_package_name # Note: The above line should be run in a shell or terminal, not directly in the Python interpreter. ``` In this example, `some_package_name` should be replaced with the actual name of the package you wish to uninstall. The `-y` flag automatically confirms the operation without requiring user input."
+  },
   "data_pointers": [
     {
       "title": "pip uninstall",
       "uri": "knowledge://py_pip_uninstall_v4",
-      "content_preview": "Uninstalling a package using pip involves the command `pip uninstall package`. For automatic confirmation, you can use `pip uninstall -y`. Here is a brief explanation and an example of how this might "
+      "content_preview": "pip uninstall: Uninstalling a package using pip involves the command `pip uninstall package`. For automatic confirmation, you can use `pip uninstall -y`. Here is a brief explanation and an example of how this might be used in Python: ```python # Uninstall a package using pip with automatic confirmation !pip uninstall -y some_package_name # Note: The above line should be run in a shell or terminal, not directly in the Python interpreter. ``` In this example, `some_package_name` should be replaced with the actual name of the package you wish to uninstall. The `-y` flag automatically confirms the operation without requiring user input."
     }
   ],
   "related_nodes": []

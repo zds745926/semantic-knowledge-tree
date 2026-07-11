@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "系统管理",
   "children": [
-    "kill/nice",
     "ps/top",
-    "systemd"
+    "systemd",
+    "kill/nice"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Linux process management involves using tools like `ps` and `top` for monitoring, `kill` for termination, and `systemd` for service management. Here are brief explanations of each concept with Python "
+    "description": "进程管理: Linux process management involves using tools like `ps` and `top` for monitoring, `kill` for termination, and `systemd` for service management. Here are brief explanations of each concept with Python code examples where applicable: 1. **Using `ps` and `top` to Monitor Processes:** - The `ps` command is used to display information about active processes. - The `top` command provides a dynamic real-time view of a running system, showing the top resource-consuming processes. ```python # Example Python code to run ps command using subprocess module import subprocess def get_process_info(): result = subprocess.run(['ps', 'aux'], capture_output=True, text=True) print(result.stdout) get_process_info() ``` 2. **Using `kill` for Process Termination:** - The `kill` command is used to send a signal to a process to terminate it gracefully or forcefully. ```python # Example Python code to simulate sending a kill signal using subprocess module import subprocess def terminate_process(pid): result = subprocess.run(['kill', str(pid)], capture_output=True, text=True) print(result.stdout) terminate_process(1234) # Replace 1234 with the actual process ID ``` 3. **Using `systemd` for Service Management:** - `systemd` is a system and service manager that controls services and processes on Linux systems. ```python # Example Python code to manage systemd services using subprocess module import subprocess def start_service(service_name): result = subprocess.run(['systemctl', 'start', service_name], capture_output=True, text=True) print(result.stdout) def stop_service(service_name): result = subprocess.run(['systemctl', 'stop', service_name], capture_output=True, text=True) print(result.stdout) start_service('nginx') # Replace with the actual service name stop_service('nginx') # Replace with the actual service name ``` These examples provide a basic understanding of how to interact with Linux process management tools using Python."
   },
   "data_pointers": [],
   "related_nodes": []

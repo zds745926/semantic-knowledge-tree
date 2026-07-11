@@ -9,12 +9,14 @@
   "parent": "路径与文件",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "tempfile: Here is the English translation with brief Python code examples for each: 1. tempfile.TemporaryFile(auto-delete) Python example: ```python import tempfile # Create a temporary file that will be deleted when closed or garbage collected with tempfile.TemporaryFile() as temp: temp.write(b'Some data') ``` 2. NamedTemporaryFile Python example: ```python import tempfile # Create a named temporary file with a specific name and delete it on close temp_file = tempfile.NamedTemporaryFile(delete=True, suffix='.txt', prefix='my_temp_') print(temp_file.name) # Print the filename of the created temporary file ``` 3. mkdtemp Python example: ```python import tempfile # Create a named directory (folder) for temporary files and delete it on close temp_dir = tempfile.mkdtemp(dir='/tmp', prefix='my_temp_') print(temp_dir) # Print the path of the created temporary directory ``` Note: The term \"安全临时文件\" is translated as \"safe temporary file,\" but in context, it seems to refer more to the safe handling and deletion of these files rather than a specific feature."
+  },
   "data_pointers": [
     {
       "title": "tempfile",
       "uri": "knowledge://py_tempfile_v4",
-      "content_preview": "Here is the English translation with brief Python code examples for each: 1. tempfile.TemporaryFile(auto-delete) Python example: ```python import tempfile # Create a temporary file that will be delete"
+      "content_preview": "tempfile: Here is the English translation with brief Python code examples for each: 1. tempfile.TemporaryFile(auto-delete) Python example: ```python import tempfile # Create a temporary file that will be deleted when closed or garbage collected with tempfile.TemporaryFile() as temp: temp.write(b'Some data') ``` 2. NamedTemporaryFile Python example: ```python import tempfile # Create a named temporary file with a specific name and delete it on close temp_file = tempfile.NamedTemporaryFile(delete=True, suffix='.txt', prefix='my_temp_') print(temp_file.name) # Print the filename of the created temporary file ``` 3. mkdtemp Python example: ```python import tempfile # Create a named directory (folder) for temporary files and delete it on close temp_dir = tempfile.mkdtemp(dir='/tmp', prefix='my_temp_') print(temp_dir) # Print the path of the created temporary directory ``` Note: The term \"安全临时文件\" is translated as \"safe temporary file,\" but in context, it seems to refer more to the safe handling and deletion of these files rather than a specific feature."
     }
   ],
   "related_nodes": []

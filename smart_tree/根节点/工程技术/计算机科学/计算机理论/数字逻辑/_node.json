@@ -9,12 +9,12 @@
   "parent": "计算机理论",
   "children": [
     "布尔代数",
-    "触发器和寄存器",
-    "逻辑门电路"
+    "逻辑门电路",
+    "触发器和寄存器"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Digital logic studies the principles of implementing Boolean operations using electronic circuits, including Boolean algebra, logic gates, and flip-flops. Digital logic forms the foundation of compute"
+    "description": "数字逻辑: Digital logic studies the principles of implementing Boolean operations using electronic circuits, including Boolean algebra, logic gates, and flip-flops. Digital logic forms the foundation of computer hardware, ranging from simple logic gates to complex CPUs, which are engineering realizations of digital logic. Python code example for a basic logic gate (NOT gate): ```python def not_gate(input_bit): \"\"\" Implement a NOT gate. :param input_bit: The input bit (0 or 1) :return: The output bit after applying the NOT operation \"\"\" return not input_bit # Example usage: input_bit = 1 output_bit = not_gate(input_bit) print(f\"Input: {input_bit}, Output: {output_bit}\") ``` This code defines a simple function to simulate a NOT gate, which inverts the input bit."
   },
   "data_pointers": [],
   "related_nodes": []

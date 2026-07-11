@@ -12,7 +12,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Computer networks study the protocols and technologies for data transmission between different devices. At its core, the TCP/IP protocol stack is fundamental, encompassing layers such as the transport"
+    "description": "计算机网络: Computer networks study the protocols and technologies for data transmission between different devices. At its core, the TCP/IP protocol stack is fundamental, encompassing layers such as the transport layer (TCP/UDP), the network layer (IP/routing), and the application layer (HTTP/DNS). Here's a brief Python code example to illustrate how data might be sent over a TCP connection using sockets: ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) print(f'Connecting to {server_address[0]} on port {server_address[1]}') sock.connect(server_address) try: # Send data message = 'This is the message. It will be repeated.' print(f'Sending: \"{message}\"') sock.sendall(message.encode()) finally: print('Closing socket') sock.close() ``` This example demonstrates creating a TCP socket, connecting to a server, sending a message, and then closing the connection."
   },
   "data_pointers": [],
   "related_nodes": []

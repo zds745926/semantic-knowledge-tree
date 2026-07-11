@@ -47,3 +47,6 @@ stk.*
 # Agent / tooling
 .reasonix/
 data/database_export.json
+smart_tree_v4_old/
+smart_tree_v4_bad/
+data/swe_repos/

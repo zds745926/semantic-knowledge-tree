@@ -9,12 +9,14 @@
   "parent": "参数传递深入",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "仅关键字参数: The subsequent parameters must be passed using name=value, enhancing code readability. For a coding/programming context, if you want to demonstrate passing parameters in Python with the `name=value` format, here is an example: ```python def display_info(name=\"John\", age=30): print(f\"Name: {name}, Age: {age}\") # Example of calling the function with name=value parameters display_info(age=25, name=\"Jane\") ``` This Python code defines a function `display_info` that takes parameters using the `name=value` format. When calling the function, you can specify the parameters by their names to improve readability and maintainability."
+  },
   "data_pointers": [
     {
       "title": "仅关键字参数",
       "uri": "knowledge://py_keyword_only_v4",
-      "content_preview": "The subsequent parameters must be passed using name=value, enhancing code readability. For a coding/programming context, if you want to demonstrate passing parameters in Python with the `name=value` f"
+      "content_preview": "仅关键字参数: The subsequent parameters must be passed using name=value, enhancing code readability. For a coding/programming context, if you want to demonstrate passing parameters in Python with the `name=value` format, here is an example: ```python def display_info(name=\"John\", age=30): print(f\"Name: {name}, Age: {age}\") # Example of calling the function with name=value parameters display_info(age=25, name=\"Jane\") ``` This Python code defines a function `display_info` that takes parameters using the `name=value` format. When calling the function, you can specify the parameters by their names to improve readability and maintainability."
     }
   ],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "异步编程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "as_completed: The `asyncio.as_completed(fs)` function yields futures in the order they complete. The first future to complete will be yielded first. Here is an example of how you might use this in Python: ```python import asyncio # Define some asynchronous tasks async def task1(): await asyncio.sleep(1) return 'Task 1 completed' async def task2(): await asyncio.sleep(2) return 'Task 2 completed' async def main(): # Create a list of futures representing the tasks fs = [task1(), task2()] # Use as_completed to run and yield results in the order they complete for coro in asyncio.as_completed(fs): result = await coro print(result) # Run the main function asyncio.run(main()) ``` In this example, `task1` completes before `task2`, so \"Task 1 completed\" will be printed first."
+  },
   "data_pointers": [
     {
       "title": "as_completed",
       "uri": "knowledge://py_as_completed_v4",
-      "content_preview": "The `asyncio.as_completed(fs)` function yields futures in the order they complete. The first future to complete will be yielded first. Here is an example of how you might use this in Python: ```python"
+      "content_preview": "as_completed: The `asyncio.as_completed(fs)` function yields futures in the order they complete. The first future to complete will be yielded first. Here is an example of how you might use this in Python: ```python import asyncio # Define some asynchronous tasks async def task1(): await asyncio.sleep(1) return 'Task 1 completed' async def task2(): await asyncio.sleep(2) return 'Task 2 completed' async def main(): # Create a list of futures representing the tasks fs = [task1(), task2()] # Use as_completed to run and yield results in the order they complete for coro in asyncio.as_completed(fs): result = await coro print(result) # Run the main function asyncio.run(main()) ``` In this example, `task1` completes before `task2`, so \"Task 1 completed\" will be printed first."
     }
   ],
   "related_nodes": []

@@ -1,0 +1,21 @@
+{
+  "name": "生成器表达式",
+  "node_id": "py_gen_expression_v4",
+  "parent_id": "py_iter_gen_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "迭代器与生成器",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "生成器表达式",
+      "uri": "knowledge://py_gen_expression_v4",
+      "content_preview": "The given Chinese text translates to: \"This is a lazy evaluation, which saves memory compared to list comprehension. For example, in Python: ```python gen = (x**2 for x in range(10)) ``` This generato"
+    }
+  ],
+  "related_nodes": []
+}

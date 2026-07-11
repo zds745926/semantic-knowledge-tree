@@ -9,12 +9,14 @@
   "parent": "密码学",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "对称加密: AES/Rijndael. GCM mode is recommended. Key distribution issues. Python code example for using AES in GCM mode: ```python from Crypto.Cipher import AES from Crypto.Random import get_random_bytes from Crypto.Protocol.KDF import scrypt # Generate a random 32-byte key (for AES-256) key = get_random_bytes(32) # Derive the key using scrypt for better security derived_key = scrypt(password=b\"password\", salt=b\"salt\", N=2**14, r=8, p=1, key_len=32, dpapi=False) cipher = AES.new(derived_key, AES.MODE_GCM) data = b\"Hello, World!\" ciphertext, tag = cipher.encrypt_and_digest(data) # The ciphertext and tag can now be sent over the network print(\"Ciphertext:\", ciphertext) print(\"Tag:\", tag) # To decrypt: decipher = AES.new(derived_key, AES.MODE_GCM, nonce=cipher.nonce) plaintext = decipher.decrypt(ciphertext) if decipher.tag_valid(tag): print(\"Decrypted data:\", plaintext.decode()) else: print(\"Invalid tag\") ``` Note: This example uses the `pycryptodome` library. You can install it via pip with `pip install pycryptodome`."
+  },
   "data_pointers": [
     {
       "title": "对称加密",
       "uri": "knowledge://symmetric_enc_v4",
-      "content_preview": "AES/Rijndael. GCM mode is recommended. Key distribution issues. Python code example for using AES in GCM mode: ```python from Crypto.Cipher import AES from Crypto.Random import get_random_bytes from C"
+      "content_preview": "对称加密: AES/Rijndael. GCM mode is recommended. Key distribution issues. Python code example for using AES in GCM mode: ```python from Crypto.Cipher import AES from Crypto.Random import get_random_bytes from Crypto.Protocol.KDF import scrypt # Generate a random 32-byte key (for AES-256) key = get_random_bytes(32) # Derive the key using scrypt for better security derived_key = scrypt(password=b\"password\", salt=b\"salt\", N=2**14, r=8, p=1, key_len=32, dpapi=False) cipher = AES.new(derived_key, AES.MODE_GCM) data = b\"Hello, World!\" ciphertext, tag = cipher.encrypt_and_digest(data) # The ciphertext and tag can now be sent over the network print(\"Ciphertext:\", ciphertext) print(\"Tag:\", tag) # To decrypt: decipher = AES.new(derived_key, AES.MODE_GCM, nonce=cipher.nonce) plaintext = decipher.decrypt(ciphertext) if decipher.tag_valid(tag): print(\"Decrypted data:\", plaintext.decode()) else: print(\"Invalid tag\") ``` Note: This example uses the `pycryptodome` library. You can install it via pip with `pip install pycryptodome`."
     }
   ],
   "related_nodes": []

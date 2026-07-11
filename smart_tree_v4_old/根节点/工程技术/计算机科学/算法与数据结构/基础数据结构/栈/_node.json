@@ -1,0 +1,21 @@
+{
+  "name": "栈",
+  "node_id": "stack_v4",
+  "parent_id": "ds_basics_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "基础数据结构",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "栈",
+      "uri": "knowledge://stack_v4",
+      "content_preview": "Last In First Out (LIFO). Operations such as push, pop, and peek have a time complexity of O(1). Applications include function calls, bracket matching, and back navigation. Here is a brief Python code"
+    }
+  ],
+  "related_nodes": []
+}

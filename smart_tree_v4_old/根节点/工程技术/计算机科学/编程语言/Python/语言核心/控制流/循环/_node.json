@@ -1,0 +1,20 @@
+{
+  "name": "循环",
+  "node_id": "py_loop_v4",
+  "parent_id": "py_flow_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "控制流",
+  "children": [
+    "for 循环",
+    "while 循环"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python loops include `for` loops (iterating over iterable objects) and `while` loops (driven by conditions). The `break` and `continue` statements control the flow of the loop, while an `else` clause "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

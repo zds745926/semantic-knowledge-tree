@@ -9,12 +9,14 @@
   "parent": "缓存",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "分布式缓存: Redis Cluster / Consistent Hashing / Virtual Nodes. Multi-level Cache L1 + L2. Explanation: - **Redis Cluster**: A distributed key-value store that allows you to scale out your Redis instances. - **Consistent Hashing**: An algorithm used in computer science and networking for distributing keys across a cluster of nodes, ensuring that the distribution is balanced and that adding or removing nodes minimally impacts the overall system. - **Virtual Nodes**: In Redis Cluster, virtual nodes are additional replicas of the data stored on each node. This helps to improve fault tolerance and load balancing. Python code example (for illustration purposes): ```python import redis # Initialize a Redis connection r = redis.Redis(host='localhost', port=6379, db=0) # Example of adding a key-value pair in Redis Cluster with virtual nodes r.set('key1', 'value1') # Example of getting the value from Redis print(r.get('key1')) ``` This example demonstrates basic operations using Redis. In a real-world scenario, you would need to configure and connect to a Redis Cluster properly, which involves setting up multiple Redis instances with virtual nodes configured."
+  },
   "data_pointers": [
     {
       "title": "分布式缓存",
       "uri": "knowledge://distributed_cache_v4",
-      "content_preview": "Translation: Redis Cluster / Consistent Hashing / Virtual Nodes. Multi-level Cache L1 + L2. Explanation: - **Redis Cluster**: A distributed key-value store that allows you to scale out your Redis inst"
+      "content_preview": "分布式缓存: Redis Cluster / Consistent Hashing / Virtual Nodes. Multi-level Cache L1 + L2. Explanation: - **Redis Cluster**: A distributed key-value store that allows you to scale out your Redis instances. - **Consistent Hashing**: An algorithm used in computer science and networking for distributing keys across a cluster of nodes, ensuring that the distribution is balanced and that adding or removing nodes minimally impacts the overall system. - **Virtual Nodes**: In Redis Cluster, virtual nodes are additional replicas of the data stored on each node. This helps to improve fault tolerance and load balancing. Python code example (for illustration purposes): ```python import redis # Initialize a Redis connection r = redis.Redis(host='localhost', port=6379, db=0) # Example of adding a key-value pair in Redis Cluster with virtual nodes r.set('key1', 'value1') # Example of getting the value from Redis print(r.get('key1')) ``` This example demonstrates basic operations using Redis. In a real-world scenario, you would need to configure and connect to a Redis Cluster properly, which involves setting up multiple Redis instances with virtual nodes configured."
     }
   ],
   "related_nodes": []

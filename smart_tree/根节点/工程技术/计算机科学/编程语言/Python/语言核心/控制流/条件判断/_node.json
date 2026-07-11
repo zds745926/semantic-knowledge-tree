@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Condition judgment is implemented through branch logic using the `if`, `elif`, and `else` keywords in Python. There is no built-in `switch/case` statement. Here's a brief example of how to use these k"
+    "description": "条件判断: Condition judgment is implemented through branch logic using the `if`, `elif`, and `else` keywords in Python. There is no built-in `switch/case` statement. Here's a brief example of how to use these keywords in Python: ```python # Example condition judgment with if, elif, else temperature = 25 if temperature > 30: print(\"It's too hot!\") elif temperature > 20: print(\"The weather is nice.\") else: print(\"It's a bit cold.\") print(\"End of program\") ``` This code checks the `temperature` variable and prints different messages based on its value."
   },
   "data_pointers": [],
   "related_nodes": []

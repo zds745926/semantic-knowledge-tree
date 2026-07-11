@@ -9,12 +9,14 @@
   "parent": "多进程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Manager: `multiprocessing.Manager` shared object proxies. `list`, `dict`, `Queue`, `Namespace`. Explanation of terms and a brief Python code example: - **`multiprocessing.Manager`**: This is a class in the `multiprocessing` module that allows you to create objects in a shared memory space, which can be accessed by multiple processes. - **Shared Object Proxies**: These are proxy objects created by `Manager` that allow multiple processes to access and modify the same data. Here's a brief Python code example: ```python from multiprocessing import Process, Manager def worker(data): # Modify the shared list data.append('new item') if __name__ == '__main__': with Manager() as manager: # Create a shared list shared_list = manager.list(['item1', 'item2']) # Start processes that modify the shared list processes = [Process(target=worker, args=(shared_list,)) for _ in range(5)] for p in processes: p.start() for p in processes: p.join() print('Final state of shared_list:', shared_list) ``` In this example, multiple processes can modify the same `list` object created by `Manager`, demonstrating how shared objects work in multiprocessing."
+  },
   "data_pointers": [
     {
       "title": "Manager",
       "uri": "knowledge://py_manager_v4",
-      "content_preview": "Translation: `multiprocessing.Manager` shared object proxies. `list`, `dict`, `Queue`, `Namespace`. Explanation of terms and a brief Python code example: - **`multiprocessing.Manager`**: This is a cla"
+      "content_preview": "Manager: `multiprocessing.Manager` shared object proxies. `list`, `dict`, `Queue`, `Namespace`. Explanation of terms and a brief Python code example: - **`multiprocessing.Manager`**: This is a class in the `multiprocessing` module that allows you to create objects in a shared memory space, which can be accessed by multiple processes. - **Shared Object Proxies**: These are proxy objects created by `Manager` that allow multiple processes to access and modify the same data. Here's a brief Python code example: ```python from multiprocessing import Process, Manager def worker(data): # Modify the shared list data.append('new item') if __name__ == '__main__': with Manager() as manager: # Create a shared list shared_list = manager.list(['item1', 'item2']) # Start processes that modify the shared list processes = [Process(target=worker, args=(shared_list,)) for _ in range(5)] for p in processes: p.start() for p in processes: p.join() print('Final state of shared_list:', shared_list) ``` In this example, multiple processes can modify the same `list` object created by `Manager`, demonstrating how shared objects work in multiprocessing."
     }
   ],
   "related_nodes": []

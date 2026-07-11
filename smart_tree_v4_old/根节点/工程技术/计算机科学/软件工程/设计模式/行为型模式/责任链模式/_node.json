@@ -1,0 +1,21 @@
+{
+  "name": "责任链模式",
+  "node_id": "chain_v4",
+  "parent_id": "behavioral_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "行为型模式",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "责任链模式",
+      "uri": "knowledge://chain_v4",
+      "content_preview": "Multiple processors are chained together. Requests are passed along the chain until they are processed. This is similar to Filter/Interceptor in programming. Here's an example using Python with a simp"
+    }
+  ],
+  "related_nodes": []
+}

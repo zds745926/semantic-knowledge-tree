@@ -11,17 +11,17 @@
     "Django",
     "FastAPI",
     "Flask",
-    "Matplotlib",
     "NumPy",
     "Pandas",
-    "PyTorch",
-    "SQLAlchemy",
+    "Matplotlib",
     "SciPy",
-    "scikit-learn"
+    "scikit-learn",
+    "SQLAlchemy",
+    "PyTorch"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python boasts a rich framework ecosystem that covers web development, data science, machine learning, and more. Here are some brief examples to illustrate coding/programming concepts in these areas: 1"
+    "description": "框架生态: Python boasts a rich framework ecosystem that covers web development, data science, machine learning, and more. Here are some brief examples to illustrate coding/programming concepts in these areas: 1. **Web Development**: ```python from flask import Flask app = Flask(__name__) @app.route('/') def home(): return \"Hello, World!\" if __name__ == '__main__': app.run() ``` 2. **Data Science**: ```python import pandas as pd # Load a sample dataset df = pd.read_csv('data.csv') # Display the first few rows of the dataframe print(df.head()) ``` 3. **Machine Learning**: ```python from sklearn.datasets import load_iris from sklearn.model_selection import train_test_split from sklearn.neighbors import KNeighborsClassifier # Load iris dataset iris = load_iris() X, y = iris.data, iris.target # Split the data into training and testing sets X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Train a K-Nearest Neighbors classifier knn = KNeighborsClassifier(n_neighbors=3) knn.fit(X_train, y_train) # Make predictions on the testing set predictions = knn.predict(X_test) ``` These examples provide a glimpse into how Python can be used in various technical domains."
   },
   "data_pointers": [],
   "related_nodes": []

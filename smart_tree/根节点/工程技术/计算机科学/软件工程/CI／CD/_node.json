@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "软件工程",
   "children": [
-    "持续部署 CD",
-    "持续集成 CI"
+    "持续集成 CI",
+    "持续部署 CD"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Continuous Integration (CI) and Continuous Deployment (CD) enable automated code building, testing, and deployment. Here's a brief explanation with a Python code example for a simple CI/CD pipeline us"
+    "description": "CI/CD: Continuous Integration (CI) and Continuous Deployment (CD) enable automated code building, testing, and deployment. Here's a brief explanation with a Python code example for a simple CI/CD pipeline using a hypothetical function `calculate_sum`: ```python # Example function to be tested and deployed def calculate_sum(a, b): return a + b # Test case def test_calculate_sum(): assert calculate_sum(1, 2) == 3, \"Test failed: sum of 1 and 2 should be 3\" assert calculate_sum(-1, -1) == -2, \"Test failed: sum of -1 and -1 should be -2\" # Example of a simple CI/CD step using Python's built-in functions def run_tests(): test_calculate_sum() print(\"All tests passed!\") run_tests() ``` In this example, `calculate_sum` is the function that would typically be part of your codebase. The `test_calculate_sum` function contains assertions to verify its correctness. A simple CI/CD step (`run_tests`) runs these tests and prints a success message if all tests pass."
   },
   "data_pointers": [],
   "related_nodes": []

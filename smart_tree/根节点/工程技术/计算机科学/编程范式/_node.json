@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "函数式编程",
+    "面向过程",
     "面向对象",
-    "面向过程"
+    "函数式编程"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Programming paradigms are the fundamental styles and methodologies in programming, including procedural, object-oriented, functional, and declarative approaches. Each paradigm offers different ways of"
+    "description": "编程范式: Programming paradigms are the fundamental styles and methodologies in programming, including procedural, object-oriented, functional, and declarative approaches. Each paradigm offers different ways of abstraction and thought models. Understanding multiple paradigms can help write better code. Here is a brief example for each paradigm using Python: 1. **Procedural Programming**: This paradigm focuses on procedures or routines to solve problems. ```python def calculate_area(length, width): return length * width area = calculate_area(5, 3) print(area) # Output: 15 ``` 2. **Object-Oriented Programming (OOP)**: This paradigm revolves around objects that have properties and methods. ```python class Rectangle: def __init__(self, length, width): self.length = length self.width = width def area(self): return self.length * self.width rect = Rectangle(5, 3) print(rect.area()) # Output: 15 ``` 3. **Functional Programming**: This paradigm treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. ```python def area(length, width): return length * width from functools import partial calculate_area = partial(area, width=3) print(calculate_area(5)) # Output: 15 ``` 4. **Declarative Programming**: This paradigm focuses on what the program should accomplish rather than how it accomplishes it. ```python from math import sqrt def find_roots(a, b, c): discriminant = sqrt(b**2 - 4*a*c) root1 = (-b + discriminant) / (2 * a) root2 = (-b - discriminant) / (2 * a) return root1, root2 roots = find_roots(1, -3, 2) print(roots) # Output: (2.0, 1.0) ``` These examples illustrate the basic structure and differences between these programming paradigms in Python."
   },
   "data_pointers": [],
   "related_nodes": []

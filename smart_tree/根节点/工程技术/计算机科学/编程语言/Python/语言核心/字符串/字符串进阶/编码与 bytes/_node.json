@@ -9,12 +9,14 @@
   "parent": "字符串进阶",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "编码与 bytes: The translation is as follows: `str.encode('utf-8') -> bytes`, `b'hello'.decode('utf-8') -> str`. Unicode is a character set, while UTF-8 is an encoding. Here's a brief Python code example to illustrate these concepts: ```python # Encoding a string to bytes using UTF-8 original_string = \"hello\" encoded_bytes = original_string.encode('utf-8') print(encoded_bytes) # Output: b'hello' # Decoding bytes back to a string using UTF-8 decoded_string = encoded_bytes.decode('utf-8') print(decoded_string) # Output: hello # Unicode is the character set, and UTF-8 is one of its encodings. ``` This code demonstrates encoding a simple string into bytes using UTF-8 and then decoding those bytes back to a string."
+  },
   "data_pointers": [
     {
       "title": "编码与 bytes",
       "uri": "knowledge://py_str_bytes_encode_v4",
-      "content_preview": "The translation is as follows: `str.encode('utf-8') -> bytes`, `b'hello'.decode('utf-8') -> str`. Unicode is a character set, while UTF-8 is an encoding. Here's a brief Python code example to illustra"
+      "content_preview": "编码与 bytes: The translation is as follows: `str.encode('utf-8') -> bytes`, `b'hello'.decode('utf-8') -> str`. Unicode is a character set, while UTF-8 is an encoding. Here's a brief Python code example to illustrate these concepts: ```python # Encoding a string to bytes using UTF-8 original_string = \"hello\" encoded_bytes = original_string.encode('utf-8') print(encoded_bytes) # Output: b'hello' # Decoding bytes back to a string using UTF-8 decoded_string = encoded_bytes.decode('utf-8') print(decoded_string) # Output: hello # Unicode is the character set, and UTF-8 is one of its encodings. ``` This code demonstrates encoding a simple string into bytes using UTF-8 and then decoding those bytes back to a string."
     }
   ],
   "related_nodes": []

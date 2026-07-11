@@ -1,0 +1,21 @@
+{
+  "name": "模块化编程",
+  "node_id": "modular_programming_v4",
+  "parent_id": "procedural_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "面向过程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "模块化编程",
+      "uri": "knowledge://modular_programming_v4",
+      "content_preview": "Modular programming decomposes the program into independent modules or functions, separating interfaces from implementations to reduce coupling. Python code example: ```python # Define a module with a"
+    }
+  ],
+  "related_nodes": []
+}

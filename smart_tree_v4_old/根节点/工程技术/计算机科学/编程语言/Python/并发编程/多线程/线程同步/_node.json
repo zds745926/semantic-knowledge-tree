@@ -1,0 +1,21 @@
+{
+  "name": "线程同步",
+  "node_id": "py_thread_sync_v4",
+  "parent_id": "py_thread_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多线程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "线程同步",
+      "uri": "knowledge://py_thread_sync_v4",
+      "content_preview": "Translation: Lock/RLock/Semaphore/Event/Condition. In the context of concurrent programming and threading in Python, these are synchronization primitives used to control access to shared resources. He"
+    }
+  ],
+  "related_nodes": []
+}

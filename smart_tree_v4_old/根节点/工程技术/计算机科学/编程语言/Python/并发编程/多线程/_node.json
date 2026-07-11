@@ -1,0 +1,28 @@
+{
+  "name": "多线程",
+  "node_id": "py_thread_v4",
+  "parent_id": "py_conc_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "并发编程",
+  "children": [
+    "Barrier",
+    "Condition",
+    "Event",
+    "Lock 与 RLock",
+    "Timer",
+    "daemon 线程",
+    "threading 基础",
+    "线程同步",
+    "线程安全",
+    "线程局部存储 TLS"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "The `threading` module creates threads. GIL limits CPU parallelism, making it suitable for I/O-bound tasks. Here's a brief explanation of the concepts with a Python code example: - **Threading Module*"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,20 @@
+{
+  "name": "排序算法",
+  "node_id": "sorting_v4",
+  "parent_id": "algo_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "算法与数据结构",
+  "children": [
+    "比较排序",
+    "线性排序"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Sorting is one of the most fundamental and important algorithms in computer science, divided into comparison sorting and non-comparison sorting categories. Here are brief examples for both types: 1. *"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

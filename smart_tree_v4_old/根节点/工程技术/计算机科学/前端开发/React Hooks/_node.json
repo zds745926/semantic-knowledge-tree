@@ -1,0 +1,21 @@
+{
+  "name": "React Hooks",
+  "node_id": "react_hooks_v4",
+  "parent_id": "fe_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "前端开发",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "React Hooks",
+      "uri": "knowledge://react_hooks_v4",
+      "content_preview": "Translation: - `useState` - `useEffect` - `useRef` - `useContext` - `useMemo` - `useCallback` Brief explanations and examples in Python (where applicable): 1. **`useState`**: This hook allows you to a"
+    }
+  ],
+  "related_nodes": []
+}

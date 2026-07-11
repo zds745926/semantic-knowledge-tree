@@ -9,12 +9,14 @@
   "parent": "比较排序",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "归并排序: Divide and Conquer: Split in half → Recursion → Merge. Stable O(n log n). Requires O(n) space. External sorting criterion. Here's a brief Python code example for the merge step of the divide and conquer algorithm, which is commonly used in merge sort: ```python def merge(left, right): result = [] i, j = 0, 0 # Merge the two lists together while maintaining order while i < len(left) and j < len(right): if left[i] <= right[j]: result.append(left[i]) i += 1 else: result.append(right[j]) j += 1 # If there are remaining elements in either list, add them to the result result.extend(left[i:]) result.extend(right[j:]) return result ``` This function merges two sorted lists into one sorted list. It's a key part of the merge sort algorithm, which is an example of divide and conquer strategy."
+  },
   "data_pointers": [
     {
       "title": "归并排序",
       "uri": "knowledge://merge_sort_v4",
-      "content_preview": "Divide and Conquer: Split in half → Recursion → Merge. Stable O(n log n). Requires O(n) space. External sorting criterion. Here's a brief Python code example for the merge step of the divide and conqu"
+      "content_preview": "归并排序: Divide and Conquer: Split in half → Recursion → Merge. Stable O(n log n). Requires O(n) space. External sorting criterion. Here's a brief Python code example for the merge step of the divide and conquer algorithm, which is commonly used in merge sort: ```python def merge(left, right): result = [] i, j = 0, 0 # Merge the two lists together while maintaining order while i < len(left) and j < len(right): if left[i] <= right[j]: result.append(left[i]) i += 1 else: result.append(right[j]) j += 1 # If there are remaining elements in either list, add them to the result result.extend(left[i:]) result.extend(right[j:]) return result ``` This function merges two sorted lists into one sorted list. It's a key part of the merge sort algorithm, which is an example of divide and conquer strategy."
     }
   ],
   "related_nodes": []

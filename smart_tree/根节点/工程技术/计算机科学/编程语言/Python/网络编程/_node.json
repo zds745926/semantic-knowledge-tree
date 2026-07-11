@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python network programming encompasses the built-in libraries urllib and third-party libraries such as requests and aiohttp. Here are brief examples for each: 1. **Using `urllib`**: ```python import u"
+    "description": "网络编程: Python network programming encompasses the built-in libraries urllib and third-party libraries such as requests and aiohttp. Here are brief examples for each: 1. **Using `urllib`**: ```python import urllib.request # Fetching a web page content with urllib.request.urlopen('https://www.example.com') as response: html = response.read() print(html) ``` 2. **Using `requests`**: ```python import requests # Sending a GET request to fetch data from an API response = requests.get('https://api.example.com/data') if response.status_code == 200: data = response.json() print(data) ``` 3. **Using `aiohttp` for asynchronous operations**: ```python import aiohttp async def fetch(session, url): async with session.get(url) as response: return await response.text() async def main(): async with aiohttp.ClientSession() as session: html = await fetch(session, 'https://www.example.com') print(html) # Running the asynchronous function import asyncio asyncio.run(main()) ``` These examples illustrate basic usage of each library for network operations in Python."
   },
   "data_pointers": [],
   "related_nodes": []

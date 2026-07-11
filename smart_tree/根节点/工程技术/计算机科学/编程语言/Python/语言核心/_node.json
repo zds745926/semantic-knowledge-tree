@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "Python",
   "children": [
-    "函数",
     "变量与类型系统",
-    "字符串",
-    "控制流"
+    "控制流",
+    "函数",
+    "字符串"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The core of the Python language includes basic syntax elements such as variable and type systems, control flow, function definitions, string operations, etc. The design philosophy of Python emphasizes"
+    "description": "语言核心: The core of the Python language includes basic syntax elements such as variable and type systems, control flow, function definitions, string operations, etc. The design philosophy of Python emphasizes simplicity and readability; 'Pythonic' refers to high-quality code styles that conform to the language's conventions. Here is a brief example in Python to illustrate some of these concepts: ```python # Example demonstrating variables, types, control flow, functions, and strings def greet(name: str) -> None: \"\"\"Prints a greeting message.\"\"\" print(f\"Hello, {name}!\") greet(\"World\") # Output: Hello, World! # Control flow example using if-else statement age = 20 if age >= 18: print(\"You are an adult.\") else: print(\"You are a minor.\") # String operations text = \"Python is fun!\" print(text.upper()) # Output: PYTHON IS FUN! ``` This code snippet includes function definitions, type annotations, string manipulation methods (`upper()`), and basic control flow structures (`if-else`)."
   },
   "data_pointers": [],
   "related_nodes": []

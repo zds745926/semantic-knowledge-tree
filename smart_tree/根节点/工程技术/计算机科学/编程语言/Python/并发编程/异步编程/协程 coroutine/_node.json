@@ -9,12 +9,14 @@
   "parent": "异步编程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "协程 coroutine: English translation: ```python async def coroutine_function(): await suspended_wait # Await is used to suspend the function until awaited object is resolved. # Example usage: import asyncio async def main(): await coroutine_function() asyncio.run(main()) ``` Explanation: - `async def` defines an asynchronous function in Python, which can be used for writing asynchronous code that can run concurrently with other tasks. - `await` is a keyword used within an async function to wait for the result of another coroutine or task. It suspends the execution of the current coroutine until the awaited object (like a future) is resolved. - The example shows how you might define and use such a coroutine in a simple program using asyncio, which is Python's library for writing concurrent code using coroutines. Note: In this translation, I've provided an English version that includes the concept of async/await with a brief Python code example."
+  },
   "data_pointers": [
     {
       "title": "协程 coroutine",
       "uri": "knowledge://py_coroutine_v4",
-      "content_preview": "English translation: ```python async def coroutine_function(): await suspended_wait  # Await is used to suspend the function until awaited object is resolved. # Example usage: import asyncio async def"
+      "content_preview": "协程 coroutine: English translation: ```python async def coroutine_function(): await suspended_wait # Await is used to suspend the function until awaited object is resolved. # Example usage: import asyncio async def main(): await coroutine_function() asyncio.run(main()) ``` Explanation: - `async def` defines an asynchronous function in Python, which can be used for writing asynchronous code that can run concurrently with other tasks. - `await` is a keyword used within an async function to wait for the result of another coroutine or task. It suspends the execution of the current coroutine until the awaited object (like a future) is resolved. - The example shows how you might define and use such a coroutine in a simple program using asyncio, which is Python's library for writing concurrent code using coroutines. Note: In this translation, I've provided an English version that includes the concept of async/await with a brief Python code example."
     }
   ],
   "related_nodes": []

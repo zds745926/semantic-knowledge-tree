@@ -1,0 +1,21 @@
+{
+  "name": "共享内存",
+  "node_id": "shm_v4",
+  "parent_id": "proc_comm_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "进程间通信 IPC",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "共享内存",
+      "uri": "knowledge://shm_v4",
+      "content_preview": "Fastest Inter-Process Communication (IPC). Multiple processes map the same physical memory. Synchronization is required using semaphores. Here's a brief Python code example to illustrate how semaphore"
+    }
+  ],
+  "related_nodes": []
+}

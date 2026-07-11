@@ -9,12 +9,14 @@
   "parent": "while 循环",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "while 典型用法: The `while True` loop combined with the `break` statement is often used for implementing validation or queue-based producer-consumer scenarios using `input()` in Python. In a validation context, this pattern might look like: ```python user_input = \"\" while True: user_input = input(\"Please enter 'exit' to quit: \") if user_input == \"exit\": break ``` For a producer-consumer scenario with a queue, it could be implemented as follows: ```python from collections import deque queue = deque() def producer(): while True: item = input(\"Enter an item (or 'stop' to quit): \") if item == \"stop\": break queue.append(item) def consumer(): while True: if not queue: # Check if the queue is empty continue item = queue.popleft() print(f\"Processing {item}\") # Example usage (in a real scenario, you would run these in separate threads or processes) producer_thread = threading.Thread(target=producer) consumer_thread = threading.Thread(target=consumer) producer_thread.start() consumer_thread.start() producer_thread.join() consumer_thread.join() ``` Note: The above example uses Python's `threading` module to simulate a producer-consumer scenario. In practice, you might use more sophisticated queue implementations or inter-thread communication mechanisms depending on your specific requirements."
+  },
   "data_pointers": [
     {
       "title": "while 典型用法",
       "uri": "knowledge://py_while_usage_v4",
-      "content_preview": "The `while True` loop combined with the `break` statement is often used for implementing validation or queue-based producer-consumer scenarios using `input()` in Python. In a validation context, this "
+      "content_preview": "while 典型用法: The `while True` loop combined with the `break` statement is often used for implementing validation or queue-based producer-consumer scenarios using `input()` in Python. In a validation context, this pattern might look like: ```python user_input = \"\" while True: user_input = input(\"Please enter 'exit' to quit: \") if user_input == \"exit\": break ``` For a producer-consumer scenario with a queue, it could be implemented as follows: ```python from collections import deque queue = deque() def producer(): while True: item = input(\"Enter an item (or 'stop' to quit): \") if item == \"stop\": break queue.append(item) def consumer(): while True: if not queue: # Check if the queue is empty continue item = queue.popleft() print(f\"Processing {item}\") # Example usage (in a real scenario, you would run these in separate threads or processes) producer_thread = threading.Thread(target=producer) consumer_thread = threading.Thread(target=consumer) producer_thread.start() consumer_thread.start() producer_thread.join() consumer_thread.join() ``` Note: The above example uses Python's `threading` module to simulate a producer-consumer scenario. In practice, you might use more sophisticated queue implementations or inter-thread communication mechanisms depending on your specific requirements."
     }
   ],
   "related_nodes": []

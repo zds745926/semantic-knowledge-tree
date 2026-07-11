@@ -9,12 +9,14 @@
   "parent": "变量作用域",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "LEGB 规则: Python variable lookup follows the order Local → Enclosing → Global → Built-in. To illustrate this with a simple Python code example: ```python # Define a global variable global_var = \"I am global\" def outer_function(): # Define an enclosing (non-local) variable enclosing_var = \"I am enclosing\" def inner_function(): # Try to use the local, enclosing, global variables print(local_var) # This will raise a NameError as local_var is not defined here print(enclosing_var) print(global_var) inner_function() outer_function() ``` In this example: - `local_var` would cause a `NameError` because it's not defined in any of the scopes. - `enclosing_var` and `global_var` are accessible within their respective scopes, demonstrating the lookup order."
+  },
   "data_pointers": [
     {
       "title": "LEGB 规则",
       "uri": "knowledge://py_scope_legb_v4",
-      "content_preview": "Python variable lookup follows the order Local → Enclosing → Global → Built-in. To illustrate this with a simple Python code example: ```python # Define a global variable global_var = \"I am global\" de"
+      "content_preview": "LEGB 规则: Python variable lookup follows the order Local → Enclosing → Global → Built-in. To illustrate this with a simple Python code example: ```python # Define a global variable global_var = \"I am global\" def outer_function(): # Define an enclosing (non-local) variable enclosing_var = \"I am enclosing\" def inner_function(): # Try to use the local, enclosing, global variables print(local_var) # This will raise a NameError as local_var is not defined here print(enclosing_var) print(global_var) inner_function() outer_function() ``` In this example: - `local_var` would cause a `NameError` because it's not defined in any of the scopes. - `enclosing_var` and `global_var` are accessible within their respective scopes, demonstrating the lookup order."
     }
   ],
   "related_nodes": []

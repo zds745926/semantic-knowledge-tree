@@ -9,12 +9,14 @@
   "parent": "架构模式",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "事件驱动架构: Components communicate through events, achieving loose coupling and high scalability. Kafka/RabbitMQ. Here is an example of how components might use RabbitMQ for communication in a Python application: ```python import pika # Establishing the connection to RabbitMQ server connection = pika.BlockingConnection(pika.ConnectionParameters('localhost')) channel = connection.channel() # Declaring the queue where messages will be sent and received channel.queue_declare(queue='component_queue') def callback(ch, method, properties, body): print(f\"Received message: {body}\") # Setting up a consumer to listen for messages on the declared queue channel.basic_consume(queue='component_queue', on_message_callback=callback, auto_ack=True) print('Waiting for messages. To exit press CTRL+C') channel.start_consuming() ``` This example demonstrates how components can use RabbitMQ as an event bus for communication in a Python application."
+  },
   "data_pointers": [
     {
       "title": "事件驱动架构",
       "uri": "knowledge://event_driven_v4",
-      "content_preview": "Components communicate through events, achieving loose coupling and high scalability. Kafka/RabbitMQ. Here is an example of how components might use RabbitMQ for communication in a Python application:"
+      "content_preview": "事件驱动架构: Components communicate through events, achieving loose coupling and high scalability. Kafka/RabbitMQ. Here is an example of how components might use RabbitMQ for communication in a Python application: ```python import pika # Establishing the connection to RabbitMQ server connection = pika.BlockingConnection(pika.ConnectionParameters('localhost')) channel = connection.channel() # Declaring the queue where messages will be sent and received channel.queue_declare(queue='component_queue') def callback(ch, method, properties, body): print(f\"Received message: {body}\") # Setting up a consumer to listen for messages on the declared queue channel.basic_consume(queue='component_queue', on_message_callback=callback, auto_ack=True) print('Waiting for messages. To exit press CTRL+C') channel.start_consuming() ``` This example demonstrates how components can use RabbitMQ as an event bus for communication in a Python application."
     }
   ],
   "related_nodes": []

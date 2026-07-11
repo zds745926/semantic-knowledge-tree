@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "包管理",
   "children": [
-    "PyPI 上传",
-    "Wheel",
+    "setup.py",
     "pyproject.toml",
-    "setup.py"
+    "Wheel",
+    "PyPI 上传"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The Python package release process includes source code packaging, Wheel building, and PyPI upload. `setuptools` is the traditional method, while modern tools like `flit` and `hatchling` simplify this"
+    "description": "发布与打包: The Python package release process includes source code packaging, Wheel building, and PyPI upload. `setuptools` is the traditional method, while modern tools like `flit` and `hatchling` simplify this process. Here are brief examples using these tools: ### Using setuptools: ```python # In your setup.py file from setuptools import setup setup( name='example_package', version='0.1', packages=['example_package'], ) ``` To package the code, run: ```bash python setup.py sdist bdist_wheel ``` Then upload to PyPI using `twine`: ```bash twine upload dist/* ``` ### Using flit: First, install flit if you haven't already: ```bash pip install flit ``` Create a `pyproject.toml` file with the following content: ```toml [tool.flit.metadata] module = \"example_package\" name = \"example_package\" version = \"0.1\" [tool.flit.build-system] requires = [\"flit_core >=3.2,<4\"] build-backend = \"flit_core.buildapi\" ``` To package the code, run: ```bash flit build ``` Then upload to PyPI using `twine`: ```bash twine upload dist/* ``` ### Using hatchling: First, install hatchling if you haven't already: ```bash pip install hatchling ``` Create a `pyproject.toml` file with the following content: ```toml [tool.hatch.version] path = \"example_package/__init__.py\" [build-system] requires = [\"hatchling\"] build-backend = \"hatchling.build\" ``` To package the code, run: ```bash hatch build ``` Then upload to PyPI using `twine`: ```bash twine upload dist/* ``` These examples demonstrate how different tools can be used to streamline the process of packaging and uploading Python packages."
   },
   "data_pointers": [],
   "related_nodes": []

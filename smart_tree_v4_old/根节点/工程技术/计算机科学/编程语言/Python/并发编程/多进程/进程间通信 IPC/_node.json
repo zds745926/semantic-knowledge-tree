@@ -1,0 +1,21 @@
+{
+  "name": "进程间通信 IPC",
+  "node_id": "py_ipc_v4",
+  "parent_id": "py_process_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多进程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "进程间通信 IPC",
+      "uri": "knowledge://py_ipc_v4",
+      "content_preview": "Pipe (Bidirectional Pipeline) / Queue / Shared Memory. Value/Array Sharing via ctypes. Here is an example of how you might use `ctypes` in Python to share a simple value between processes: ```python i"
+    }
+  ],
+  "related_nodes": []
+}

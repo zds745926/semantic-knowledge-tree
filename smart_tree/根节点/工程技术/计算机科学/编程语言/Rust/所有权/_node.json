@@ -9,12 +9,14 @@
   "parent": "Rust",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "所有权: Each value has a unique owner. Ownership is transferred (move) versus borrowing (&/&mut). Compile-time memory safety. Here's a brief explanation with a Python code example to illustrate the concept of ownership and borrowing: In Rust, which is known for its strong ownership rules, this can be illustrated as follows: ```rust // Example in Rust fn main() { let s1 = String::from(\"hello\"); // s1 is owned by the local scope let s2 = s1; // Ownership of s1 is moved to s2, making s1 invalid println!(\"{}\", s2); // s2 is valid and prints \"hello\" // The following line would cause a compile-time error because s1 is no longer valid: // println!(\"{}\", s1); } ``` In Python, which does not have explicit ownership rules like Rust, you can simulate borrowing with context managers or by using references: ```python class Resource: def __init__(self, name): self.name = name def borrow_resource(resource): print(f\"Borrowing {resource.name}\") # Simulating a borrowed resource with Resource(\"Resource1\") as r: borrow_resource(r) # The resource is automatically released after the block ``` This Python example uses a `with` statement to simulate borrowing, but it's important to note that Python does not enforce ownership in the same way Rust does."
+  },
   "data_pointers": [
     {
       "title": "所有权",
       "uri": "knowledge://rust_ownership_v4",
-      "content_preview": "Each value has a unique owner. Ownership is transferred (move) versus borrowing (&/&mut). Compile-time memory safety. Here's a brief explanation with a Python code example to illustrate the concept of"
+      "content_preview": "所有权: Each value has a unique owner. Ownership is transferred (move) versus borrowing (&/&mut). Compile-time memory safety. Here's a brief explanation with a Python code example to illustrate the concept of ownership and borrowing: In Rust, which is known for its strong ownership rules, this can be illustrated as follows: ```rust // Example in Rust fn main() { let s1 = String::from(\"hello\"); // s1 is owned by the local scope let s2 = s1; // Ownership of s1 is moved to s2, making s1 invalid println!(\"{}\", s2); // s2 is valid and prints \"hello\" // The following line would cause a compile-time error because s1 is no longer valid: // println!(\"{}\", s1); } ``` In Python, which does not have explicit ownership rules like Rust, you can simulate borrowing with context managers or by using references: ```python class Resource: def __init__(self, name): self.name = name def borrow_resource(resource): print(f\"Borrowing {resource.name}\") # Simulating a borrowed resource with Resource(\"Resource1\") as r: borrow_resource(r) # The resource is automatically released after the block ``` This Python example uses a `with` statement to simulate borrowing, but it's important to note that Python does not enforce ownership in the same way Rust does."
     }
   ],
   "related_nodes": []

@@ -1,0 +1,19 @@
+{
+  "name": "索引",
+  "node_id": "index_db_v4",
+  "parent_id": "rdb_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "关系型数据库",
+  "children": [
+    "索引类型"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Index is an auxiliary data structure used to accelerate data queries, with core types including B+ trees and hash indexes. Python code examples: For a B+ tree index: ```python from btree import BTree "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

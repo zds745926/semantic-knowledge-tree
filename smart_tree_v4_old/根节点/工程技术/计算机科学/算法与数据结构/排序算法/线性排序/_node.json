@@ -1,0 +1,20 @@
+{
+  "name": "线性排序",
+  "node_id": "sort_linear_v4",
+  "parent_id": "sorting_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "排序算法",
+  "children": [
+    "基数排序",
+    "计数排序"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Linear sorting does not rely on comparisons but leverages the characteristics of the data to achieve O(n) time complexity. Here's an example using counting sort, a linear sorting algorithm that works "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

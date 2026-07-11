@@ -9,13 +9,17 @@
   "parent": "函数高级特性",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "装饰器: Decorator syntax sugar. A decorator is a higher-order function that accepts a function and returns another function. The `functools.wraps` method preserves metadata. Here's an example of how you might use a decorator in Python: ```python import functools def my_decorator(func): @functools.wraps(func) def wrapper(*args, **kwargs): print(\"Something is happening before the function is called.\") result = func(*args, **kwargs) print(\"Something is happening after the function is called.\") return result return wrapper @my_decorator def say_hello(name): \"\"\"Print a greeting to the name provided.\"\"\" print(f\"Hello {name}!\") # Calling the decorated function say_hello(\"Alice\") # Output: # Something is happening before the function is called. # Hello Alice! # Something is happening after the function is called. ``` In this example, `my_decorator` is a higher-order function that takes another function (`func`) as an argument and returns a new function (`wrapper`). The `functools.wraps` decorator is used to preserve the metadata of the original function (`say_hello`), such as its name and docstring."
+  },
   "data_pointers": [
     {
       "title": "装饰器",
       "uri": "knowledge://py_decorator_v4",
-      "content_preview": "Decorator syntax sugar. A decorator is a higher-order function that accepts a function and returns another function. The `functools.wraps` method preserves metadata. Here's an example of how you might"
+      "content_preview": "装饰器: Decorator syntax sugar. A decorator is a higher-order function that accepts a function and returns another function. The `functools.wraps` method preserves metadata. Here's an example of how you might use a decorator in Python: ```python import functools def my_decorator(func): @functools.wraps(func) def wrapper(*args, **kwargs): print(\"Something is happening before the function is called.\") result = func(*args, **kwargs) print(\"Something is happening after the function is called.\") return result return wrapper @my_decorator def say_hello(name): \"\"\"Print a greeting to the name provided.\"\"\" print(f\"Hello {name}!\") # Calling the decorated function say_hello(\"Alice\") # Output: # Something is happening before the function is called. # Hello Alice! # Something is happening after the function is called. ``` In this example, `my_decorator` is a higher-order function that takes another function (`func`) as an argument and returns a new function (`wrapper`). The `functools.wraps` decorator is used to preserve the metadata of the original function (`say_hello`), such as its name and docstring."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_adv_deco_v4"
+  ]
 }

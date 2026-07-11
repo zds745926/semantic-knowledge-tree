@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Algebra is a core branch of mathematics that focuses on the study of operation rules and structures, including equation solving, linear algebra, and abstract algebra. The quadratic formula for finding"
+    "description": "代数: Algebra is a core branch of mathematics that focuses on the study of operation rules and structures, including equation solving, linear algebra, and abstract algebra. The quadratic formula for finding roots of a quadratic equation and Vieta's formulas are fundamental achievements in algebra, widely applied in mathematical modeling and engineering calculations. Python code example (quadratic formula): ```python import cmath def solve_quadratic(a, b, c): # Calculate the discriminant discriminant = cmath.sqrt(b**2 - 4*a*c) # Find two solutions sol1 = (-b - discriminant) / (2 * a) sol2 = (-b + discriminant) / (2 * a) return sol1, sol2 # Example usage: a = 1 b = 5 c = 6 solutions = solve_quadratic(a, b, c) print(\"The solutions are {0} and {1}\".format(solutions[0], solutions[1])) ``` This Python function `solve_quadratic` demonstrates the application of the quadratic formula to find the roots of a given quadratic equation. The `cmath` module is used to handle complex numbers in case the discriminant is negative, ensuring that the function works for all real and imaginary coefficients."
   },
   "data_pointers": [],
   "related_nodes": []

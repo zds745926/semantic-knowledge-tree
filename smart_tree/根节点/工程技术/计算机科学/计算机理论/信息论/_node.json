@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "计算机理论",
   "children": [
-    "KL散度",
+    "信息熵",
     "互信息",
-    "信息熵"
+    "KL散度"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Information theory was founded by Claude Shannon and studies the measurement, storage, and communication of information. Core concepts include information entropy, mutual information, and Kullback-Lei"
+    "description": "信息论: Information theory was founded by Claude Shannon and studies the measurement, storage, and communication of information. Core concepts include information entropy, mutual information, and Kullback-Leibler (KL) divergence. Information theory provides a theoretical foundation for data compression, communication coding, and machine learning. Python code example for calculating Shannon's entropy: ```python import numpy as np def shannon_entropy(probabilities): \"\"\" Calculate the Shannon entropy of a probability distribution. :param probabilities: A list or array of probabilities summing to 1. :return: The Shannon entropy in bits. \"\"\" # Ensure all values are positive and avoid log(0) probabilities = np.array(probabilities, dtype=float) probabilities[probabilities <= 0] = np.nextafter(0, 1) entropy = -np.sum(probabilities * np.log2(probabilities)) return entropy # Example usage p = [0.5, 0.5] print(\"Shannon Entropy:\", shannon_entropy(p)) # Output: Shannon Entropy: 1.0 ``` Python code example for calculating mutual information: ```python import numpy as np def mutual_information(x, y, bins=10): \"\"\" Calculate the mutual information between two discrete random variables. :param x: A list or array of values for variable X. :param y: A list or array of values for variable Y. :param bins: Number of bins to use for discretization (default is 10). :return: The mutual information in bits. \"\"\" # Create a joint histogram H, xedges, yedges = np.histogram2d(x, y, bins=bins) # Calculate marginal histograms Hx, _ = np.histogram(x, bins=bins) Hy, _ = np.histogram(y, bins=bins) # Normalize the joint and marginal histograms to get probabilities px = Hx / np.sum(Hx) py = Hy / np.sum(Hy) pxy = H / np.sum(H) # Calculate mutual information mi = 0.0 for i in range(bins): for j in range(bins): if pxy[i, j] > 0: mi += pxy[i, j] * np.log2(pxy[i, j] / (px[i] * py[j])) return mi # Example usage x = [1, 2, 3, 4, 5] y = [2, 3, 4, 5, 6] print(\"Mutual Information:\", mutual_information(x, y)) # Output will vary based on the data ``` Python code example for calculating Kullback-Leibler (KL) divergence: ```python import numpy as np def kl_divergence(p, q): \"\"\" Calculate the Kullback-Leibler (KL) divergence between two probability distributions. :param p: A list or array of probabilities summing to 1 for distribution P. :param q: A list or array of probabilities summing to 1 for distribution Q. :return: The KL divergence from P to Q. \"\"\" # Ensure all values are positive and avoid log(0) p = np.array(p, dtype=float) q = np.array(q, dtype=float) kl = np.sum(np.where(p != 0, p * np.log2(p / q), 0)) return kl # Example usage p = [0.5, 0.5] q = [0.4, 0.6] print(\"KL Divergence:\", kl_divergence(p, q)) # Output: KL Divergence: 0.17328679513998595 ``` These examples provide a basic implementation of key concepts in information theory using Python."
   },
   "data_pointers": [],
   "related_nodes": []

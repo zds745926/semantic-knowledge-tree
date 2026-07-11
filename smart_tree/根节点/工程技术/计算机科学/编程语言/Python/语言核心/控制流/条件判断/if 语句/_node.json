@@ -9,12 +9,14 @@
   "parent": "条件判断",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "if 语句: ```python if condition: # Conditional check. statement # If the condition is true, execute this block of code. elif other_condition: # Additional conditional branches. statement # If the first condition is false and this one is true, execute this block of code. else: # Fallback option. statement # Executed if all previous conditions are false. # Ternary expression: x if cond else y # Equivalent to using an if-else statement but in a single line. For example: result = \"even\" if number % 2 == 0 else \"odd\" # Checks if 'number' is even or odd. ``` Explanation: - `if condition:`: This checks whether the given condition is true and executes the corresponding block of code if it is. - `elif other_condition:`: This provides additional conditions to check. If the initial `if` condition fails, Python will evaluate this one next. - `else:`: This part of the statement is executed only if all preceding `if` or `elif` conditions are false. - The ternary expression `x if cond else y`: This is a shorthand for an `if-else` statement. It evaluates `cond`, and if it's true, returns `x`; otherwise, it returns `y`. In the example provided, `result` will be set to `\"even\"` if `number % 2 == 0` (i.e., if `number` is even), or `\"odd\"` otherwise."
+  },
   "data_pointers": [
     {
       "title": "if 语句",
       "uri": "knowledge://py_if_statement_v4",
-      "content_preview": "Translation: ```python if condition:  # Conditional check. statement  # If the condition is true, execute this block of code. elif other_condition:  # Additional conditional branches. statement  # If "
+      "content_preview": "if 语句: ```python if condition: # Conditional check. statement # If the condition is true, execute this block of code. elif other_condition: # Additional conditional branches. statement # If the first condition is false and this one is true, execute this block of code. else: # Fallback option. statement # Executed if all previous conditions are false. # Ternary expression: x if cond else y # Equivalent to using an if-else statement but in a single line. For example: result = \"even\" if number % 2 == 0 else \"odd\" # Checks if 'number' is even or odd. ``` Explanation: - `if condition:`: This checks whether the given condition is true and executes the corresponding block of code if it is. - `elif other_condition:`: This provides additional conditions to check. If the initial `if` condition fails, Python will evaluate this one next. - `else:`: This part of the statement is executed only if all preceding `if` or `elif` conditions are false. - The ternary expression `x if cond else y`: This is a shorthand for an `if-else` statement. It evaluates `cond`, and if it's true, returns `x`; otherwise, it returns `y`. In the example provided, `result` will be set to `\"even\"` if `number % 2 == 0` (i.e., if `number` is even), or `\"odd\"` otherwise."
     }
   ],
   "related_nodes": []

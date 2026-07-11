@@ -9,12 +9,14 @@
   "parent": "框架生态",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "PyTorch: Deep learning framework. Dynamic computational graph/automatic differentiation. Tensor core data structure. torch.nn for building neural networks. Python code examples: 1. **Dynamic Computational Graph/Automatic Differentiation**: ```python import torch x = torch.tensor([2.0], requires_grad=True) y = x ** 2 y.backward() # This computes the gradient of `y` with respect to `x` print(x.grad) # Output: tensor([4.]) ``` 2. **Tensor Core Data Structure**: ```python import torch a = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32) b = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32) c = a + b # Element-wise addition print(c) # Output: tensor([[ 6., 8.], # [10., 12.]]) ``` 3. **torch.nn for Building Neural Networks**: ```python import torch import torch.nn as nn class SimpleNN(nn.Module): def __init__(self): super(SimpleNN, self).__init__() self.linear = nn.Linear(2, 1) # A simple linear layer def forward(self, x): return self.linear(x) model = SimpleNN() input_data = torch.tensor([[1.0, 2.0]]) output = model(input_data) print(output) # Output: tensor([[-3.]]) ``` These examples illustrate key concepts in the deep learning framework using Python and PyTorch."
+  },
   "data_pointers": [
     {
       "title": "PyTorch",
       "uri": "knowledge://py_torch_v4",
-      "content_preview": "Deep learning framework. Dynamic computational graph/automatic differentiation. Tensor core data structure. torch.nn for building neural networks. Python code examples: 1. **Dynamic Computational Grap"
+      "content_preview": "PyTorch: Deep learning framework. Dynamic computational graph/automatic differentiation. Tensor core data structure. torch.nn for building neural networks. Python code examples: 1. **Dynamic Computational Graph/Automatic Differentiation**: ```python import torch x = torch.tensor([2.0], requires_grad=True) y = x ** 2 y.backward() # This computes the gradient of `y` with respect to `x` print(x.grad) # Output: tensor([4.]) ``` 2. **Tensor Core Data Structure**: ```python import torch a = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32) b = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32) c = a + b # Element-wise addition print(c) # Output: tensor([[ 6., 8.], # [10., 12.]]) ``` 3. **torch.nn for Building Neural Networks**: ```python import torch import torch.nn as nn class SimpleNN(nn.Module): def __init__(self): super(SimpleNN, self).__init__() self.linear = nn.Linear(2, 1) # A simple linear layer def forward(self, x): return self.linear(x) model = SimpleNN() input_data = torch.tensor([[1.0, 2.0]]) output = model(input_data) print(output) # Output: tensor([[-3.]]) ``` These examples illustrate key concepts in the deep learning framework using Python and PyTorch."
     }
   ],
   "related_nodes": []

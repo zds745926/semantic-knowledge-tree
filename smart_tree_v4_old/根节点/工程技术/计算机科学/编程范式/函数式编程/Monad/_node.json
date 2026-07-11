@@ -1,0 +1,21 @@
+{
+  "name": "Monad",
+  "node_id": "monad_v4",
+  "parent_id": "functional_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "函数式编程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Monad",
+      "uri": "knowledge://monad_v4",
+      "content_preview": "Monads encapsulate computational contexts. `Maybe` handles null values, `Either` handles errors, and `IO` deals with side effects. Here are brief Python code examples for each concept: 1. **Monad (usi"
+    }
+  ],
+  "related_nodes": []
+}

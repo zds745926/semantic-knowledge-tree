@@ -9,12 +9,14 @@
   "parent": "异步编程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "asyncio Lock: Asynchronous Lock in asyncio. `async with lock:`. Semaphore and BoundedSemaphore. Here are the corresponding Python code examples: ```python import asyncio # Example of using an asyncio Lock async def example_lock(): lock = asyncio.Lock() async with lock: print(\"Critical section 1\") async with lock: # This will block until the first async with block is done print(\"Critical section 2\") # Example of using a Semaphore semaphore = asyncio.Semaphore(3) # Allows up to 3 concurrent tasks async def example_semaphore(): async with semaphore: print(f\"Semaphore acquired, {semaphore._value} permits left\") # Example of using a BoundedSemaphore (bounded version of Semaphore) bounded_semaphore = asyncio.BoundedSemaphore(5) # Allows up to 5 concurrent tasks async def example_bounded_semaphore(): async with bounded_semaphore: print(f\"Bounded semaphore acquired, {bounded_semaphore._value} permits left\") ``` Note: The `_value` attribute is used here for illustrative purposes. In practice, you should not rely on or modify these attributes directly as they are implementation details and may change in future versions of Python."
+  },
   "data_pointers": [
     {
       "title": "asyncio Lock",
       "uri": "knowledge://py_asyncio_lock_v4",
-      "content_preview": "Asynchronous Lock in asyncio. `async with lock:`. Semaphore and BoundedSemaphore. Here are the corresponding Python code examples: ```python import asyncio # Example of using an asyncio Lock async def"
+      "content_preview": "asyncio Lock: Asynchronous Lock in asyncio. `async with lock:`. Semaphore and BoundedSemaphore. Here are the corresponding Python code examples: ```python import asyncio # Example of using an asyncio Lock async def example_lock(): lock = asyncio.Lock() async with lock: print(\"Critical section 1\") async with lock: # This will block until the first async with block is done print(\"Critical section 2\") # Example of using a Semaphore semaphore = asyncio.Semaphore(3) # Allows up to 3 concurrent tasks async def example_semaphore(): async with semaphore: print(f\"Semaphore acquired, {semaphore._value} permits left\") # Example of using a BoundedSemaphore (bounded version of Semaphore) bounded_semaphore = asyncio.BoundedSemaphore(5) # Allows up to 5 concurrent tasks async def example_bounded_semaphore(): async with bounded_semaphore: print(f\"Bounded semaphore acquired, {bounded_semaphore._value} permits left\") ``` Note: The `_value` attribute is used here for illustrative purposes. In practice, you should not rely on or modify these attributes directly as they are implementation details and may change in future versions of Python."
     }
   ],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "框架生态",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Matplotlib: Python standard visualization library. The pyplot interface supports line, scatter, bar, and heatmap plots. Object-oriented plotting API. Here's a brief example for each type of plot using the `matplotlib.pyplot` interface: 1. **Line Plot**: ```python import matplotlib.pyplot as plt x = [1, 2, 3, 4] y = [10, 15, 7, 8] plt.plot(x, y) plt.show() ``` 2. **Scatter Plot**: ```python import matplotlib.pyplot as plt x = [1, 2, 3, 4] y = [10, 15, 7, 8] plt.scatter(x, y) plt.show() ``` 3. **Bar Plot**: ```python import matplotlib.pyplot as plt x = ['A', 'B', 'C', 'D'] y = [10, 15, 7, 8] plt.bar(x, y) plt.show() ``` 4. **Heatmap Plot**: ```python import matplotlib.pyplot as plt import numpy as np data = np.random.rand(10, 10) # Generate random data for the heatmap plt.imshow(data, cmap='hot', interpolation='nearest') plt.colorbar() plt.show() ``` These examples demonstrate how to use `matplotlib.pyplot` to create different types of plots."
+  },
   "data_pointers": [
     {
       "title": "Matplotlib",
       "uri": "knowledge://py_matplotlib_v4",
-      "content_preview": "Python standard visualization library. The pyplot interface supports line, scatter, bar, and heatmap plots. Object-oriented plotting API. Here's a brief example for each type of plot using the `matplo"
+      "content_preview": "Matplotlib: Python standard visualization library. The pyplot interface supports line, scatter, bar, and heatmap plots. Object-oriented plotting API. Here's a brief example for each type of plot using the `matplotlib.pyplot` interface: 1. **Line Plot**: ```python import matplotlib.pyplot as plt x = [1, 2, 3, 4] y = [10, 15, 7, 8] plt.plot(x, y) plt.show() ``` 2. **Scatter Plot**: ```python import matplotlib.pyplot as plt x = [1, 2, 3, 4] y = [10, 15, 7, 8] plt.scatter(x, y) plt.show() ``` 3. **Bar Plot**: ```python import matplotlib.pyplot as plt x = ['A', 'B', 'C', 'D'] y = [10, 15, 7, 8] plt.bar(x, y) plt.show() ``` 4. **Heatmap Plot**: ```python import matplotlib.pyplot as plt import numpy as np data = np.random.rand(10, 10) # Generate random data for the heatmap plt.imshow(data, cmap='hot', interpolation='nearest') plt.colorbar() plt.show() ``` These examples demonstrate how to use `matplotlib.pyplot` to create different types of plots."
     }
   ],
   "related_nodes": []

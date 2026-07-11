@@ -9,12 +9,14 @@
   "parent": "函数式编程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "纯函数: Pure functions always return the same output for the same input and have no side effects. Benefits: they can be cached, tested, and executed in parallel. Python code example to illustrate a pure function: ```python def add(a, b): return a + b # Example usage: result1 = add(2, 3) # result1 will always be 5 result2 = add(2, 3) # result2 will also be 5 print(result1 == result2) # This will print True ``` In this example, the `add` function is a pure function because it takes two inputs and returns the same output every time without any side effects."
+  },
   "data_pointers": [
     {
       "title": "纯函数",
       "uri": "knowledge://pure_functions_v4",
-      "content_preview": "Pure functions always return the same output for the same input and have no side effects. Benefits: they can be cached, tested, and executed in parallel. Python code example to illustrate a pure funct"
+      "content_preview": "纯函数: Pure functions always return the same output for the same input and have no side effects. Benefits: they can be cached, tested, and executed in parallel. Python code example to illustrate a pure function: ```python def add(a, b): return a + b # Example usage: result1 = add(2, 3) # result1 will always be 5 result2 = add(2, 3) # result2 will also be 5 print(result1 == result2) # This will print True ``` In this example, the `add` function is a pure function because it takes two inputs and returns the same output every time without any side effects."
     }
   ],
   "related_nodes": []

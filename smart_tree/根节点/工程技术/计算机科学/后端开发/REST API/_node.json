@@ -9,12 +9,14 @@
   "parent": "后端开发",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "REST API: Resource-oriented. GET/POST/PUT/DELETE. Stateless. OpenAPI documentation. Here is an additional explanation with a brief Python code example for the `GET` method, which is commonly used in resource-oriented APIs: Resource-oriented. This architectural style focuses on resources and their representations. Each resource can be identified by a unique URI (Uniform Resource Identifier). Stateless. The server does not store any session state or client context between requests. OpenAPI documentation. This is an API description format that allows for the definition of RESTful web services, including GET/POST/PUT/DELETE methods and their parameters. Python code example for a simple `GET` method using Flask: ```python from flask import Flask, jsonify app = Flask(__name__) # Define a resource @app.route('/resource', methods=['GET']) def get_resource(): # Example data data = { 'id': 1, 'name': 'Example Resource' } return jsonify(data) if __name__ == '__main__': app.run(debug=True) ``` This example demonstrates a simple Flask application that defines a resource at the `/resource` endpoint and responds to `GET` requests with JSON data."
+  },
   "data_pointers": [
     {
       "title": "REST API",
       "uri": "knowledge://rest_api_v4",
-      "content_preview": "Resource-oriented. GET/POST/PUT/DELETE. Stateless. OpenAPI documentation. Here is an additional explanation with a brief Python code example for the `GET` method, which is commonly used in resource-or"
+      "content_preview": "REST API: Resource-oriented. GET/POST/PUT/DELETE. Stateless. OpenAPI documentation. Here is an additional explanation with a brief Python code example for the `GET` method, which is commonly used in resource-oriented APIs: Resource-oriented. This architectural style focuses on resources and their representations. Each resource can be identified by a unique URI (Uniform Resource Identifier). Stateless. The server does not store any session state or client context between requests. OpenAPI documentation. This is an API description format that allows for the definition of RESTful web services, including GET/POST/PUT/DELETE methods and their parameters. Python code example for a simple `GET` method using Flask: ```python from flask import Flask, jsonify app = Flask(__name__) # Define a resource @app.route('/resource', methods=['GET']) def get_resource(): # Example data data = { 'id': 1, 'name': 'Example Resource' } return jsonify(data) if __name__ == '__main__': app.run(debug=True) ``` This example demonstrates a simple Flask application that defines a resource at the `/resource` endpoint and responds to `GET` requests with JSON data."
     }
   ],
   "related_nodes": []

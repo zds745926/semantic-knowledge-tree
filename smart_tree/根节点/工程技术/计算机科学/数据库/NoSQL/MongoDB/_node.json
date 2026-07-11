@@ -9,12 +9,14 @@
   "parent": "NoSQL",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "MongoDB: Document Database (BSON). Schema-less. Replica Set + Sharding for Horizontal Scaling. Here is an additional explanation with a brief Python code example to illustrate the concept of a document database using PyMongo, a popular Python driver for MongoDB: ```python from pymongo import MongoClient # Connect to the MongoDB server client = MongoClient('mongodb://localhost:27017/') # Select the database and collection db = client['mydatabase'] collection = db['mycollection'] # Insert a document into the collection (schema-less) document = {\"name\": \"John Doe\", \"age\": 30, \"email\": \"johndoe@example.com\"} result = collection.insert_one(document) print(f\"Inserted document with ID: {result.inserted_id}\") # Query documents from the collection documents = collection.find({\"age\": 30}) for doc in documents: print(doc) ``` This Python code snippet demonstrates connecting to a MongoDB server, inserting a document into a collection (which is schema-less), and querying documents based on a specific field."
+  },
   "data_pointers": [
     {
       "title": "MongoDB",
       "uri": "knowledge://mongodb_v4",
-      "content_preview": "Document Database (BSON). Schema-less. Replica Set + Sharding for Horizontal Scaling. Here is an additional explanation with a brief Python code example to illustrate the concept of a document databas"
+      "content_preview": "MongoDB: Document Database (BSON). Schema-less. Replica Set + Sharding for Horizontal Scaling. Here is an additional explanation with a brief Python code example to illustrate the concept of a document database using PyMongo, a popular Python driver for MongoDB: ```python from pymongo import MongoClient # Connect to the MongoDB server client = MongoClient('mongodb://localhost:27017/') # Select the database and collection db = client['mydatabase'] collection = db['mycollection'] # Insert a document into the collection (schema-less) document = {\"name\": \"John Doe\", \"age\": 30, \"email\": \"johndoe@example.com\"} result = collection.insert_one(document) print(f\"Inserted document with ID: {result.inserted_id}\") # Query documents from the collection documents = collection.find({\"age\": 30}) for doc in documents: print(doc) ``` This Python code snippet demonstrates connecting to a MongoDB server, inserting a document into a collection (which is schema-less), and querying documents based on a specific field."
     }
   ],
   "related_nodes": []

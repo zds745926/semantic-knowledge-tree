@@ -1,0 +1,20 @@
+{
+  "name": "Git",
+  "node_id": "git_v4",
+  "parent_id": "vcs_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "版本控制",
+  "children": [
+    "Git 基础",
+    "分支与合并"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Git is a distributed version control system, with core concepts including commits, branches, merges, and remotes. Here are brief explanations for each of these concepts along with corresponding Python"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

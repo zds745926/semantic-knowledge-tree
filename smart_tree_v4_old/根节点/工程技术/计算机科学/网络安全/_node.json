@@ -1,0 +1,20 @@
+{
+  "name": "网络安全",
+  "node_id": "sec_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "Web 安全",
+    "密码学"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Network security protection systems safeguard networks and data from attacks. Key areas include cryptography, web security, and network offense-defense. Here are brief Python code examples for some of"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

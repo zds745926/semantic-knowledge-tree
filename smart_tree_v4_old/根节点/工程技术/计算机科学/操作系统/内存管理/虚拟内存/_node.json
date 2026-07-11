@@ -1,0 +1,20 @@
+{
+  "name": "虚拟内存",
+  "node_id": "mem_virt_v4",
+  "parent_id": "mem_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "内存管理",
+  "children": [
+    "分页机制",
+    "页面置换算法"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Virtual memory maps a process's logical addresses to physical memory, providing isolation and expansion. To illustrate the concept of virtual memory mapping in Python, consider the following simple ex"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -9,12 +9,14 @@
   "parent": "TCP 拥塞控制",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "拥塞避免: When cwnd≥ssthresh, increase cwnd by 1 MSS per RTT (linear growth). AIMD principle. Here's a brief explanation of the terms: - **cwnd**: Congestion Window is the number of bytes that can be sent before receiving an acknowledgment. - **ssthresh**: Slow Start Threshold. When congestion occurs, this threshold determines when to switch from slow start to congestion avoidance. - **RTT**: Round-Trip Time, which is the time it takes for a packet to travel from the sender to the receiver and back. Here's a simple Python code example to illustrate the linear growth of cwnd: ```python def update_cwnd(cwnd, ssthresh, rtts_passed): if cwnd < ssthresh: # Slow start phase: double cwnd each RTT until it reaches ssthresh cwnd = min(2 * cwnd, ssthresh) else: # Congestion avoidance phase: increase cwnd by 1 MSS per RTT cwnd += 1 return cwnd # Example usage cwnd = 10 # Initial congestion window size in MSS ssthresh = 50 # Slow start threshold in MSS rtts_passed = 30 # Number of RTTs that have passed since the last congestion event new_cwnd = update_cwnd(cwnd, ssthresh, rtts_passed) print(f\"Updated cwnd: {new_cwnd} MSS\") ``` In this example: - If `cwnd` is less than `ssthresh`, it doubles with each RTT during the slow start phase. - Once `cwnd` reaches or exceeds `ssthresh`, it increases by 1 MSS per RTT in the congestion avoidance phase."
+  },
   "data_pointers": [
     {
       "title": "拥塞避免",
       "uri": "knowledge://tcp_congestion_avoid_v4",
-      "content_preview": "When cwnd≥ssthresh, increase cwnd by 1 MSS per RTT (linear growth). AIMD principle. Here's a brief explanation of the terms: - **cwnd**: Congestion Window is the number of bytes that can be sent befor"
+      "content_preview": "拥塞避免: When cwnd≥ssthresh, increase cwnd by 1 MSS per RTT (linear growth). AIMD principle. Here's a brief explanation of the terms: - **cwnd**: Congestion Window is the number of bytes that can be sent before receiving an acknowledgment. - **ssthresh**: Slow Start Threshold. When congestion occurs, this threshold determines when to switch from slow start to congestion avoidance. - **RTT**: Round-Trip Time, which is the time it takes for a packet to travel from the sender to the receiver and back. Here's a simple Python code example to illustrate the linear growth of cwnd: ```python def update_cwnd(cwnd, ssthresh, rtts_passed): if cwnd < ssthresh: # Slow start phase: double cwnd each RTT until it reaches ssthresh cwnd = min(2 * cwnd, ssthresh) else: # Congestion avoidance phase: increase cwnd by 1 MSS per RTT cwnd += 1 return cwnd # Example usage cwnd = 10 # Initial congestion window size in MSS ssthresh = 50 # Slow start threshold in MSS rtts_passed = 30 # Number of RTTs that have passed since the last congestion event new_cwnd = update_cwnd(cwnd, ssthresh, rtts_passed) print(f\"Updated cwnd: {new_cwnd} MSS\") ``` In this example: - If `cwnd` is less than `ssthresh`, it doubles with each RTT during the slow start phase. - Once `cwnd` reaches or exceeds `ssthresh`, it increases by 1 MSS per RTT in the congestion avoidance phase."
     }
   ],
   "related_nodes": []

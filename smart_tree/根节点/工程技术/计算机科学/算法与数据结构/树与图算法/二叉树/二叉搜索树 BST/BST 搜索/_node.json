@@ -9,12 +9,14 @@
   "parent": "二叉搜索树 BST",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "BST 搜索: Starting from the root, go left if the node is smaller than the root and go right if it is larger. The average time complexity is O(log n), while the worst-case scenario is O(n). Python code example for a binary search tree (BST) insertion, which follows this principle: ```python class TreeNode: def __init__(self, key): self.left = None self.right = None self.val = key def insert(root, key): if root is None: return TreeNode(key) else: if root.val < key: root.right = insert(root.right, key) else: root.left = insert(root.left, key) return root ``` This code defines a simple binary search tree and demonstrates the principle of going left or right based on the comparison with the root node."
+  },
   "data_pointers": [
     {
       "title": "BST 搜索",
       "uri": "knowledge://bst_search_v4",
-      "content_preview": "Starting from the root, go left if the node is smaller than the root and go right if it is larger. The average time complexity is O(log n), while the worst-case scenario is O(n). Python code example f"
+      "content_preview": "BST 搜索: Starting from the root, go left if the node is smaller than the root and go right if it is larger. The average time complexity is O(log n), while the worst-case scenario is O(n). Python code example for a binary search tree (BST) insertion, which follows this principle: ```python class TreeNode: def __init__(self, key): self.left = None self.right = None self.val = key def insert(root, key): if root is None: return TreeNode(key) else: if root.val < key: root.right = insert(root.right, key) else: root.left = insert(root.left, key) return root ``` This code defines a simple binary search tree and demonstrates the principle of going left or right based on the comparison with the root node."
     }
   ],
   "related_nodes": []

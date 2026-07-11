@@ -9,13 +9,17 @@
   "parent": "Kubernetes",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Pod: Minimum Scheduling Unit. One or more containers share network/storage resources. Sidecar Pattern. Python code example for the Sidecar pattern (assuming a simple logging sidecar container): ```python import logging class SidecarLogger: def __init__(self, target_logger): self.target_logger = target_logger def log(self, message, level=logging.INFO): self.target_logger.log(level, f\"Sidecar: {message}\") # Example usage if __name__ == \"__main__\": main_logger = logging.getLogger('MainApp') sidecar_logger = SidecarLogger(main_logger) # Simulate logs from a sidecar container sidecar_logger.log(\"This is an informational message.\") ``` In this example, the `SidecarLogger` class acts as a sidecar component that logs messages to the main application's logger. This demonstrates how a sidecar pattern can be implemented in Python for logging purposes."
+  },
   "data_pointers": [
     {
       "title": "Pod",
       "uri": "knowledge://k8s_pod_v4",
-      "content_preview": "Minimum Scheduling Unit. One or more containers share network/storage resources. Sidecar Pattern. Python code example for the Sidecar pattern (assuming a simple logging sidecar container): ```python i"
+      "content_preview": "Pod: Minimum Scheduling Unit. One or more containers share network/storage resources. Sidecar Pattern. Python code example for the Sidecar pattern (assuming a simple logging sidecar container): ```python import logging class SidecarLogger: def __init__(self, target_logger): self.target_logger = target_logger def log(self, message, level=logging.INFO): self.target_logger.log(level, f\"Sidecar: {message}\") # Example usage if __name__ == \"__main__\": main_logger = logging.getLogger('MainApp') sidecar_logger = SidecarLogger(main_logger) # Simulate logs from a sidecar container sidecar_logger.log(\"This is an informational message.\") ``` In this example, the `SidecarLogger` class acts as a sidecar component that logs messages to the main application's logger. This demonstrates how a sidecar pattern can be implemented in Python for logging purposes."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "k8s_deploy_v4"
+  ]
 }

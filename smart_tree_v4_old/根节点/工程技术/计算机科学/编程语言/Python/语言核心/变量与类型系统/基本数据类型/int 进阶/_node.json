@@ -1,0 +1,21 @@
+{
+  "name": "int 进阶",
+  "node_id": "py_int_sub_v4",
+  "parent_id": "py_basic_types_v4",
+  "level": 8,
+  "is_leaf": false,
+  "absorption_rate": 0.13999999999999999,
+  "version": 1,
+  "parent": "基本数据类型",
+  "children": [
+    "位运算",
+    "大整数运算",
+    "进制转换"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Advanced knowledge of Python `int` includes large integer arithmetic, bitwise operations, and base conversion. Bitwise operations are generally faster than arithmetic operations and are suitable for l"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "JVM 基础",
+  "node_id": "java_vm_basics_v4",
+  "parent_id": "java_core_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "Java 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "JVM 基础",
+      "uri": "knowledge://java_vm_basics_v4",
+      "content_preview": "JVM executes bytecode. Class loading mechanism. Memory areas: heap/stack/method area. GC automatically recycles memory. Here is a brief explanation with Python code examples for some of the concepts: "
+    }
+  ],
+  "related_nodes": []
+}

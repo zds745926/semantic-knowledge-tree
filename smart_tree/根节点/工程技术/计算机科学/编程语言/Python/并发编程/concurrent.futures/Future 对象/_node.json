@@ -9,12 +9,14 @@
   "parent": "concurrent.futures",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Future 对象: The `Future.result()` method blocks until the result is available and then retrieves it. The `done()` and `cancelled()` methods check if the future has completed or been cancelled, respectively. The `add_done_callback` method adds a callback function to be called when the future completes. Here's an example using Python's `concurrent.futures` module: ```python import concurrent.futures def worker(n): return n * n with concurrent.futures.ThreadPoolExecutor() as executor: future = executor.submit(worker, 3) # Blocking call to retrieve the result print(\"Result:\", future.result()) # Check if the future is done or cancelled print(\"Is done:\", future.done()) print(\"Cancelled:\", future.cancelled()) # Add a callback function to be called when the future completes def on_complete(f): print(\"Callback: Future completed with result\", f.result()) future.add_done_callback(on_complete) ``` In this example, `future.result()` blocks until the worker function has completed and prints the result. The `done()` and `cancelled()` methods are used to check the status of the future. A callback function is added using `add_done_callback` which will be called when the future completes."
+  },
   "data_pointers": [
     {
       "title": "Future 对象",
       "uri": "knowledge://py_future_object_v4",
-      "content_preview": "The `Future.result()` method blocks until the result is available and then retrieves it. The `done()` and `cancelled()` methods check if the future has completed or been cancelled, respectively. The `"
+      "content_preview": "Future 对象: The `Future.result()` method blocks until the result is available and then retrieves it. The `done()` and `cancelled()` methods check if the future has completed or been cancelled, respectively. The `add_done_callback` method adds a callback function to be called when the future completes. Here's an example using Python's `concurrent.futures` module: ```python import concurrent.futures def worker(n): return n * n with concurrent.futures.ThreadPoolExecutor() as executor: future = executor.submit(worker, 3) # Blocking call to retrieve the result print(\"Result:\", future.result()) # Check if the future is done or cancelled print(\"Is done:\", future.done()) print(\"Cancelled:\", future.cancelled()) # Add a callback function to be called when the future completes def on_complete(f): print(\"Callback: Future completed with result\", f.result()) future.add_done_callback(on_complete) ``` In this example, `future.result()` blocks until the worker function has completed and prints the result. The `done()` and `cancelled()` methods are used to check the status of the future. A callback function is added using `add_done_callback` which will be called when the future completes."
     }
   ],
   "related_nodes": []

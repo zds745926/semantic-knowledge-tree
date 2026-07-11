@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "TCP achieves reliable transmission through sequence numbers, acknowledgment, retransmission timeout, and sliding window mechanism. Python code example for understanding the sliding window concept (thi"
+    "description": "TCP 可靠传输: TCP achieves reliable transmission through sequence numbers, acknowledgment, retransmission timeout, and sliding window mechanism. Python code example for understanding the sliding window concept (this is a simplified representation): ```python class SlidingWindow: def __init__(self, window_size): self.window_size = window_size self.buffer = [] def send_data(self, data): # Simulate sending data print(f\"Sending: {data}\") self.buffer.append(data) if len(self.buffer) > self.window_size: self.buffer.pop(0) def receive_ack(self, sequence_number): # Simulate receiving an acknowledgment print(f\"Received ACK for sequence number: {sequence_number}\") self.buffer = [item for item in self.buffer if item != sequence_number] # Example usage sw = SlidingWindow(window_size=3) sw.send_data(10) sw.send_data(20) sw.send_data(30) sw.receive_ack(20) # Acknowledgment for data with sequence number 20 ``` This code provides a basic simulation of the sliding window mechanism, where data is sent and acknowledgments are received to manage the transmission buffer."
   },
   "data_pointers": [],
   "related_nodes": []

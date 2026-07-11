@@ -1,0 +1,21 @@
+{
+  "name": "迭代器协议",
+  "node_id": "py_iterator_proto_v4",
+  "parent_id": "py_iter_gen_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "迭代器与生成器",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "迭代器协议",
+      "uri": "knowledge://py_iterator_proto_v4",
+      "content_preview": "The `__iter__` method returns `self`, while the `__next__` method returns an element or raises `StopIteration`. Python code example: ```python class IteratorExample: def __init__(self, limit): self.li"
+    }
+  ],
+  "related_nodes": []
+}

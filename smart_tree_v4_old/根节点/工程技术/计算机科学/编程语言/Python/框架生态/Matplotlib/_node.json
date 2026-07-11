@@ -1,0 +1,21 @@
+{
+  "name": "Matplotlib",
+  "node_id": "py_matplotlib_v4",
+  "parent_id": "py_fw_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "框架生态",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Matplotlib",
+      "uri": "knowledge://py_matplotlib_v4",
+      "content_preview": "Python standard visualization library. The pyplot interface supports line, scatter, bar, and heatmap plots. Object-oriented plotting API. Here's a brief example for each type of plot using the `matplo"
+    }
+  ],
+  "related_nodes": []
+}

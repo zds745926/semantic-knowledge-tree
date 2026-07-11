@@ -1,0 +1,20 @@
+{
+  "name": "条件判断",
+  "node_id": "py_cond_v4",
+  "parent_id": "py_flow_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "控制流",
+  "children": [
+    "if 语句",
+    "模式匹配 (match)"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Condition judgment is implemented through branch logic using the `if`, `elif`, and `else` keywords in Python. There is no built-in `switch/case` statement. Here's a brief example of how to use these k"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

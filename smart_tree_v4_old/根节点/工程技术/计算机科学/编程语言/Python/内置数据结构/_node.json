@@ -1,0 +1,21 @@
+{
+  "name": "内置数据结构",
+  "node_id": "py_ds_v4",
+  "parent_id": "python_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "Python",
+  "children": [
+    "列表 list",
+    "字典 dict",
+    "集合与元组"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python comes with a rich set of built-in data structures: lists, dictionaries, sets, and tuples. These data structures are carefully optimized and form the foundation of Python programming. Here are b"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

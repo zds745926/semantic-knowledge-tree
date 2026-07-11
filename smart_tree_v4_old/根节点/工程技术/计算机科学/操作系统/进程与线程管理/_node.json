@@ -1,0 +1,21 @@
+{
+  "name": "进程与线程管理",
+  "node_id": "proc_v4",
+  "parent_id": "os_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "操作系统",
+  "children": [
+    "同步与互斥",
+    "进程调度",
+    "进程间通信 IPC"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Processes are the basic units for resource allocation, while threads are the basic units for CPU scheduling. The operating system decides which process gets the CPU through a scheduling algorithm. Her"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

@@ -9,12 +9,14 @@
   "parent": "Rust",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "借用检查器: Compile-time Analysis of References: A mutable reference or multiple immutable references cannot coexist simultaneously. To illustrate this with a simple Python code example, consider the following scenario where attempting to have both a mutable and an immutable reference to the same variable at the same time would result in a runtime error: ```python def test_references(): x = 10 # An immutable integer def try_to_mutate(): # This will raise a TypeError because you cannot modify an immutable object x += 1 def use_reference(): # This is fine as it just uses the reference without modifying it print(x) # Trying to mutate 'x' directly would fail, but this example shows the concept try_to_mutate() use_reference() # test_references() # Uncommenting this line will raise a TypeError if supported by your Python version ``` In this example, `x` is an immutable integer. Attempting to modify it within the `try_to_mutate()` function would result in a runtime error (`TypeError`). The `use_reference()` function simply prints the value of `x`, demonstrating the use of an immutable reference without modification."
+  },
   "data_pointers": [
     {
       "title": "借用检查器",
       "uri": "knowledge://rust_borrow_checker_v4",
-      "content_preview": "Compile-time Analysis of References: A mutable reference or multiple immutable references cannot coexist simultaneously. To illustrate this with a simple Python code example, consider the following sc"
+      "content_preview": "借用检查器: Compile-time Analysis of References: A mutable reference or multiple immutable references cannot coexist simultaneously. To illustrate this with a simple Python code example, consider the following scenario where attempting to have both a mutable and an immutable reference to the same variable at the same time would result in a runtime error: ```python def test_references(): x = 10 # An immutable integer def try_to_mutate(): # This will raise a TypeError because you cannot modify an immutable object x += 1 def use_reference(): # This is fine as it just uses the reference without modifying it print(x) # Trying to mutate 'x' directly would fail, but this example shows the concept try_to_mutate() use_reference() # test_references() # Uncommenting this line will raise a TypeError if supported by your Python version ``` In this example, `x` is an immutable integer. Attempting to modify it within the `try_to_mutate()` function would result in a runtime error (`TypeError`). The `use_reference()` function simply prints the value of `x`, demonstrating the use of an immutable reference without modification."
     }
   ],
   "related_nodes": []

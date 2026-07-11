@@ -1,0 +1,22 @@
+{
+  "name": "文本处理",
+  "node_id": "linux_text_v4",
+  "parent_id": "linux_admin_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "系统管理",
+  "children": [
+    "Vim",
+    "awk",
+    "grep",
+    "sed"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Linux Text Processing Triad: grep/sed/awk. In the context of Linux text processing, `grep`, `sed`, and `awk` are three essential tools. Here's a brief explanation of each along with Python code exampl"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

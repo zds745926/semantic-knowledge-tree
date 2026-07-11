@@ -1,0 +1,20 @@
+{
+  "name": "二叉树",
+  "node_id": "binary_tree_v4",
+  "parent_id": "tree_algo_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "树与图算法",
+  "children": [
+    "二叉搜索树 BST",
+    "平衡树"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "A binary tree has at most two children for each node. A binary search tree (BST) follows the property that for any given node, all values in its left subtree are smaller and all values in its right su"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

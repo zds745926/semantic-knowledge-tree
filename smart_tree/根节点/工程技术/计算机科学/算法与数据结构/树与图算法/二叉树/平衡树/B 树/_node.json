@@ -9,13 +9,17 @@
   "parent": "平衡树",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "B 树: Multi-way balanced tree. High fan-out to reduce I/O. Forms the basis of B+ tree indexes in databases. Python code example for a simple B+ tree node structure: ```python class BPlusTreeNode: def __init__(self, leaf=False): self.keys = [] # Store keys self.children = [] # Pointers to child nodes self.leaf = leaf # True if it's a leaf node def insert(self, key, value=None): # Insert logic here (simplified for brevity) pass def split_child(self, i): # Splitting logic when the node is full (simplified for brevity) pass ``` This example provides a basic structure of a B+ tree node in Python. The `insert` and `split_child` methods are placeholders where you would implement the actual insertion and splitting logic based on the specific requirements of your B+ tree implementation."
+  },
   "data_pointers": [
     {
       "title": "B 树",
       "uri": "knowledge://b_tree_v4",
-      "content_preview": "Multi-way balanced tree. High fan-out to reduce I/O. Forms the basis of B+ tree indexes in databases. Python code example for a simple B+ tree node structure: ```python class BPlusTreeNode: def __init"
+      "content_preview": "B 树: Multi-way balanced tree. High fan-out to reduce I/O. Forms the basis of B+ tree indexes in databases. Python code example for a simple B+ tree node structure: ```python class BPlusTreeNode: def __init__(self, leaf=False): self.keys = [] # Store keys self.children = [] # Pointers to child nodes self.leaf = leaf # True if it's a leaf node def insert(self, key, value=None): # Insert logic here (simplified for brevity) pass def split_child(self, i): # Splitting logic when the node is full (simplified for brevity) pass ``` This example provides a basic structure of a B+ tree node in Python. The `insert` and `split_child` methods are placeholders where you would implement the actual insertion and splitting logic based on the specific requirements of your B+ tree implementation."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "btree_index_v4"
+  ]
 }

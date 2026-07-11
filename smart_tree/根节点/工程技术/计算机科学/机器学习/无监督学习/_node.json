@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Unsupervised learning discovers structure from unlabeled data. Here is a brief Python code example using the KMeans clustering algorithm from the `sklearn` library to demonstrate unsupervised learning"
+    "description": "无监督学习: Unsupervised learning discovers structure from unlabeled data. Here is a brief Python code example using the KMeans clustering algorithm from the `sklearn` library to demonstrate unsupervised learning: ```python from sklearn.cluster import KMeans import numpy as np # Example dataset (2D points) data = np.array([[1, 2], [1, 4], [1, 0], [10, 2], [10, 4], [10, 0]]) # Create a KMeans instance with 2 clusters kmeans = KMeans(n_clusters=2) # Fit the model to the data kmeans.fit(data) # Predict the cluster for each sample labels = kmeans.predict(data) print(\"Cluster labels:\", labels) # Get the coordinates of the centroids centroids = kmeans.cluster_centers_ print(\"Centroids:\", centroids) ``` This example demonstrates how KMeans, an unsupervised learning algorithm, can discover structure (in this case, clusters) in unlabeled data."
   },
   "data_pointers": [],
   "related_nodes": []

@@ -1,0 +1,21 @@
+{
+  "name": "daemon 线程",
+  "node_id": "py_daemon_thread_v4",
+  "parent_id": "py_thread_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多线程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "daemon 线程",
+      "uri": "knowledge://py_daemon_thread_v4",
+      "content_preview": "Daemon thread, which automatically terminates when the main thread exits without blocking the program's exit. Python code example: ```python import threading def worker(): while True: print(\"Working.."
+    }
+  ],
+  "related_nodes": []
+}

@@ -9,12 +9,14 @@
   "parent": "神经网络基础",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "感知机: y = σ(w · x + b). A multilayer perceptron (MLP) can fit any function. Python code example for a simple MLP concept: ```python import numpy as np # Sigmoid activation function def sigmoid(z): return 1 / (1 + np.exp(-z)) # Weights and bias initialization w = np.random.rand() # Random weight b = np.random.rand() # Random bias # Input value x = 2.5 # Example input # Compute the output using the MLP formula y = sigmoid(w * x + b) print(f\"Output: {y}\") ``` This code snippet demonstrates a simple implementation of an MLP with one neuron, where `w` and `b` are randomly initialized weights and bias, respectively. The `sigmoid` function is used as the activation function to compute the output `y`."
+  },
   "data_pointers": [
     {
       "title": "感知机",
       "uri": "knowledge://perceptron_v4",
-      "content_preview": "Translation: y = σ(w · x + b). A multilayer perceptron (MLP) can fit any function. Python code example for a simple MLP concept: ```python import numpy as np # Sigmoid activation function def sigmoid("
+      "content_preview": "感知机: y = σ(w · x + b). A multilayer perceptron (MLP) can fit any function. Python code example for a simple MLP concept: ```python import numpy as np # Sigmoid activation function def sigmoid(z): return 1 / (1 + np.exp(-z)) # Weights and bias initialization w = np.random.rand() # Random weight b = np.random.rand() # Random bias # Input value x = 2.5 # Example input # Compute the output using the MLP formula y = sigmoid(w * x + b) print(f\"Output: {y}\") ``` This code snippet demonstrates a simple implementation of an MLP with one neuron, where `w` and `b` are randomly initialized weights and bias, respectively. The `sigmoid` function is used as the activation function to compute the output `y`."
     }
   ],
   "related_nodes": []

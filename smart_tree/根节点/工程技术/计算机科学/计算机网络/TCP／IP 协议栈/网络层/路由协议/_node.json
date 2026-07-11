@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "网络层",
   "children": [
-    "BGP",
-    "OSPF"
+    "OSPF",
+    "BGP"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Routing protocols determine the best path for packets from source to destination. To provide a more detailed explanation and an example related to routing in Python, we can use the `netmiko` library t"
+    "description": "路由协议: Routing protocols determine the best path for packets from source to destination. To provide a more detailed explanation and an example related to routing in Python, we can use the `netmiko` library to interact with network devices. Below is a simple example of how you might configure a static route on a router using Python: ```python from netmiko import ConnectHandler # Define device connection parameters device = { 'device_type': 'cisco_ios', # Specify the type of network device 'ip': '192.168.1.1', # IP address of the device 'username': 'admin', # Username to log in with 'password': 'password', # Password for login } # Connect to the device connection = ConnectHandler(**device) # Define the command to configure a static route command = \"ip route 192.168.2.0 255.255.255.0 GigabitEthernet0/1\" # Send the command to the device and get output output = connection.send_command(command) print(output) # Print the output of the command # Close the connection connection.disconnect() ``` This script uses `netmiko` to connect to a Cisco router, configure a static route, and then print the output. Note that you need to install the `netmiko` library if you haven't already: ```bash pip install netmiko ``` Make sure to replace the device parameters with actual values for your network setup."
   },
   "data_pointers": [],
   "related_nodes": []

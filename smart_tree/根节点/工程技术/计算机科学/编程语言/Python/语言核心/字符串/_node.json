@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "语言核心",
   "children": [
-    "f-string 详解",
     "字符串基础",
     "字符串方法",
+    "f-string 详解",
     "字符串进阶"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python strings (str) are immutable sequences of Unicode characters. They support indexing, slicing, formatting, and a rich set of string methods. Here's a brief Python code example demonstrating some "
+    "description": "字符串: Python strings (str) are immutable sequences of Unicode characters. They support indexing, slicing, formatting, and a rich set of string methods. Here's a brief Python code example demonstrating some of these features: ```python # Creating a string my_string = \"Hello, World!\" # Indexing print(my_string[0]) # Output: H # Slicing print(my_string[7:]) # Output: World! # String formatting using f-strings name = \"Alice\" greeting = f\"Hello, {name}!\" print(greeting) # Output: Hello, Alice! ``` This example shows how to create a string, access characters by index, slice substrings, and format strings using f-strings."
   },
   "data_pointers": [],
   "related_nodes": []

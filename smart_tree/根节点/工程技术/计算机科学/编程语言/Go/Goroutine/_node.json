@@ -9,12 +9,14 @@
   "parent": "Go",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Goroutine: The `go` function启动s lightweight goroutines. Handling millions of concurrent requests is effortless. The stack size starts small and can dynamically expand. Here's a brief Python code example to illustrate the concept, although note that Python does not have built-in support for goroutines like Go: ```python import threading def worker(): print(\"Worker thread started\") # Simulate some work import time time.sleep(2) print(\"Worker thread finished\") # Start a new thread (lightweight concurrent execution) thread = threading.Thread(target=worker) thread.start() print(\"Main program continues to run\") ``` In this example, `threading.Thread` is used to start a new thread in Python, which is similar to starting a lightweight goroutine in Go. However, the underlying implementation and behavior differ significantly between the two languages."
+  },
   "data_pointers": [
     {
       "title": "Goroutine",
       "uri": "knowledge://go_goroutine_v4",
-      "content_preview": "The `go` function启动s lightweight goroutines. Handling millions of concurrent requests is effortless. The stack size starts small and can dynamically expand. Here's a brief Python code example to illus"
+      "content_preview": "Goroutine: The `go` function启动s lightweight goroutines. Handling millions of concurrent requests is effortless. The stack size starts small and can dynamically expand. Here's a brief Python code example to illustrate the concept, although note that Python does not have built-in support for goroutines like Go: ```python import threading def worker(): print(\"Worker thread started\") # Simulate some work import time time.sleep(2) print(\"Worker thread finished\") # Start a new thread (lightweight concurrent execution) thread = threading.Thread(target=worker) thread.start() print(\"Main program continues to run\") ``` In this example, `threading.Thread` is used to start a new thread in Python, which is similar to starting a lightweight goroutine in Go. However, the underlying implementation and behavior differ significantly between the two languages."
     }
   ],
   "related_nodes": []

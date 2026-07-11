@@ -9,12 +9,14 @@
   "parent": "面向过程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "自顶向下设计: Top-down design breaks down complex problems into simpler sub-problems layer by layer, progressively refining each module. Here's a brief Python code example to illustrate the top-down approach in solving a problem of calculating factorial: ```python def factorial(n): # Base case: if n is 0 or 1, return 1 if n == 0 or n == 1: return 1 else: # Recursive call: n * factorial(n-1) return n * factorial(n - 1) # Example usage print(factorial(5)) # Output should be 120 ``` In this example, the problem of calculating the factorial is broken down into simpler sub-problems (calculating the factorial of a smaller number) until reaching the base case."
+  },
   "data_pointers": [
     {
       "title": "自顶向下设计",
       "uri": "knowledge://top_down_design_v4",
-      "content_preview": "Top-down design breaks down complex problems into simpler sub-problems layer by layer, progressively refining each module. Here's a brief Python code example to illustrate the top-down approach in sol"
+      "content_preview": "自顶向下设计: Top-down design breaks down complex problems into simpler sub-problems layer by layer, progressively refining each module. Here's a brief Python code example to illustrate the top-down approach in solving a problem of calculating factorial: ```python def factorial(n): # Base case: if n is 0 or 1, return 1 if n == 0 or n == 1: return 1 else: # Recursive call: n * factorial(n-1) return n * factorial(n - 1) # Example usage print(factorial(5)) # Output should be 120 ``` In this example, the problem of calculating the factorial is broken down into simpler sub-problems (calculating the factorial of a smaller number) until reaching the base case."
     }
   ],
   "related_nodes": []

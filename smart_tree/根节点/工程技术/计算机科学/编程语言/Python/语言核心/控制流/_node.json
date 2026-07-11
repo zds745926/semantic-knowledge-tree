@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "语言核心",
   "children": [
-    "循环",
-    "条件判断"
+    "条件判断",
+    "循环"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python control flow includes conditional judgments (if-elif-else) and looping structures (for/while). Python 3.10+ also introduces the match/case pattern matching syntax. Here are brief examples for e"
+    "description": "控制流: Python control flow includes conditional judgments (if-elif-else) and looping structures (for/while). Python 3.10+ also introduces the match/case pattern matching syntax. Here are brief examples for each: ### Conditional Judgments (if-elif-else) ```python x = 10 if x > 20: print(\"x is greater than 20\") elif x > 10: print(\"x is between 11 and 20\") else: print(\"x is less than or equal to 10\") ``` ### Looping Structures (for/while) ```python # For loop example fruits = [\"apple\", \"banana\", \"cherry\"] for fruit in fruits: print(fruit) # While loop example count = 0 while count < 5: print(count) count += 1 ``` ### Pattern Matching (match/case) - Python 3.10+ ```python value = 42 match value: case 42: print(\"The answer to life, the universe, and everything\") case _: print(\"Not the answer we were looking for\") ``` These examples should give you a clear idea of how these control flow structures work in Python."
   },
   "data_pointers": [],
   "related_nodes": []

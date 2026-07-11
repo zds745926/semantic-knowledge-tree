@@ -9,13 +9,17 @@
   "parent": "调度算法",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "先来先服务 FCFS: First-In-First-Out (FIFO). Non-preemptive. Long average waiting time due to the convoy effect. Batch system. Here is a brief Python code example to illustrate a simple FIFO queue, which can be used in batch processing scenarios: ```python from collections import deque class SimpleBatchSystem: def __init__(self): self.queue = deque() def enqueue(self, item): \"\"\"Add an item to the end of the queue.\"\"\" self.queue.append(item) def dequeue(self): \"\"\"Remove and return the first item in the queue. If the queue is empty, raise an error.\"\"\" if not self.is_empty(): return self.queue.popleft() else: raise IndexError(\"dequeue from an empty queue\") def is_empty(self): \"\"\"Check if the queue is empty.\"\"\" return len(self.queue) == 0 # Example usage batch_system = SimpleBatchSystem() batch_system.enqueue('Task1') batch_system.enqueue('Task2') print(batch_system.dequeue()) # Output: Task1 print(batch_system.dequeue()) # Output: Task2 ``` This example demonstrates a basic FIFO queue implementation, which can be used to simulate the behavior of a batch system where tasks are processed in the order they arrive."
+  },
   "data_pointers": [
     {
       "title": "先来先服务 FCFS",
       "uri": "knowledge://fcfs_v4",
-      "content_preview": "First-In-First-Out (FIFO). Non-preemptive. Long average waiting time due to the convoy effect. Batch system. Here is a brief Python code example to illustrate a simple FIFO queue, which can be used in"
+      "content_preview": "先来先服务 FCFS: First-In-First-Out (FIFO). Non-preemptive. Long average waiting time due to the convoy effect. Batch system. Here is a brief Python code example to illustrate a simple FIFO queue, which can be used in batch processing scenarios: ```python from collections import deque class SimpleBatchSystem: def __init__(self): self.queue = deque() def enqueue(self, item): \"\"\"Add an item to the end of the queue.\"\"\" self.queue.append(item) def dequeue(self): \"\"\"Remove and return the first item in the queue. If the queue is empty, raise an error.\"\"\" if not self.is_empty(): return self.queue.popleft() else: raise IndexError(\"dequeue from an empty queue\") def is_empty(self): \"\"\"Check if the queue is empty.\"\"\" return len(self.queue) == 0 # Example usage batch_system = SimpleBatchSystem() batch_system.enqueue('Task1') batch_system.enqueue('Task2') print(batch_system.dequeue()) # Output: Task1 print(batch_system.dequeue()) # Output: Task2 ``` This example demonstrates a basic FIFO queue implementation, which can be used to simulate the behavior of a batch system where tasks are processed in the order they arrive."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "rr_v4"
+  ]
 }

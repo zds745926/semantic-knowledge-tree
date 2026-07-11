@@ -1,0 +1,21 @@
+{
+  "name": "二叉搜索树 BST",
+  "node_id": "bst_v4",
+  "parent_id": "binary_tree_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "二叉树",
+  "children": [
+    "BST 插入",
+    "BST 搜索",
+    "遍历实现"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "BST is the most commonly used variant of binary trees. The left subtree < root < right subtree, and an in-order traversal yields a sorted sequence. Here's a brief Python code example to demonstrate an"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

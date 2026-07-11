@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "C/C++",
   "children": [
-    "内存管理",
-    "指针"
+    "指针",
+    "内存管理"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The core of C includes pointers, memory management, structures, and preprocessing. To provide more context and include a brief Python code example for each concept: 1. **Pointers**: In C, pointers are"
+    "description": "C 核心: The core of C includes pointers, memory management, structures, and preprocessing. To provide more context and include a brief Python code example for each concept: 1. **Pointers**: In C, pointers are variables that store memory addresses. ```python # Example in Python (Note: Python does not have native pointer support like C) address = id(\"example\") # Using the id() function to get the memory address of a string print(f\"Memory address: {address}\") ``` 2. **Memory Management**: Memory management involves allocating and deallocating memory. ```python # Example in Python (using list as an example for dynamic array) arr = [1, 2, 3] # Dynamically allocated array del arr # Deallocate the array ``` 3. **Structures**: Structures allow grouping related data together. ```python # Example in Python (using a class to simulate C structures) class Person: def __init__(self, name, age): self.name = name self.age = age person = Person(\"Alice\", 30) # Creating an instance of the structure print(f\"Name: {person.name}, Age: {person.age}\") ``` 4. **Preprocessing**: Preprocessing involves macros and conditional compilation. ```python # Example in Python (using a simple if-else statement to simulate preprocessing) def preprocess(value): if value > 10: return \"Greater than 10\" else: return \"Less than or equal to 10\" result = preprocess(20) print(result) # Output: Greater than 10 ```"
   },
   "data_pointers": [],
   "related_nodes": []

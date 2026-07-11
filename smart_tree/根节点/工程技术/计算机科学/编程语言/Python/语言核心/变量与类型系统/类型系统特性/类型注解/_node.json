@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Type annotations add type information to Python variables and function parameters, enhancing code readability and IDE support. Example: ```python def greet(name: str) -> None: print(f\"Hello, {name}!\")"
+    "description": "类型注解: Type annotations add type information to Python variables and function parameters, enhancing code readability and IDE support. Example: ```python def greet(name: str) -> None: print(f\"Hello, {name}!\") greet(\"World\") # This will work as expected # If you try to pass an integer where a string is expected, the type checker will raise an error. # greet(123) # This would cause a type error in a static type checker ``` In this example, `name: str` indicates that the `greet` function expects a string as its parameter. The `-> None` specifies that the function does not return any value. Type annotations like these help improve code clarity and can be used by IDEs to provide better autocompletion and error checking."
   },
   "data_pointers": [],
   "related_nodes": []

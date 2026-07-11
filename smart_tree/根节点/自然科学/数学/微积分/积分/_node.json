@@ -9,12 +9,14 @@
   "parent": "微积分",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "积分: Integration is the inverse operation of differentiation. A definite integral ∫ₐᵇ f(x)dx represents the area between the curve and the x-axis. Here's a brief Python code example using the `scipy` library to compute a definite integral: ```python from scipy.integrate import quad import math # Define the function to integrate def integrand(x): return math.sin(x) # Compute the definite integral from 0 to pi result, error = quad(integrand, 0, math.pi) print(f\"The area under the curve is approximately {result} with an estimated error of {error}\") ``` This code calculates the definite integral of `sin(x)` from 0 to π, which corresponds to the area under the sine curve in that interval."
+  },
   "data_pointers": [
     {
       "title": "积分",
       "uri": "knowledge://integral_v4",
-      "content_preview": "Integration is the inverse operation of differentiation. A definite integral ∫ₐᵇ f(x)dx represents the area between the curve and the x-axis. Here's a brief Python code example using the `scipy` libra"
+      "content_preview": "积分: Integration is the inverse operation of differentiation. A definite integral ∫ₐᵇ f(x)dx represents the area between the curve and the x-axis. Here's a brief Python code example using the `scipy` library to compute a definite integral: ```python from scipy.integrate import quad import math # Define the function to integrate def integrand(x): return math.sin(x) # Compute the definite integral from 0 to pi result, error = quad(integrand, 0, math.pi) print(f\"The area under the curve is approximately {result} with an estimated error of {error}\") ``` This code calculates the definite integral of `sin(x)` from 0 to π, which corresponds to the area under the sine curve in that interval."
     }
   ],
   "related_nodes": []

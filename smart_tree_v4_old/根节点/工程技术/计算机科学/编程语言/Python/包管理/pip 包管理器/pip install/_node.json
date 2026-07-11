@@ -1,0 +1,21 @@
+{
+  "name": "pip install",
+  "node_id": "py_pip_install_v4",
+  "parent_id": "py_pip_branch_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "pip 包管理器",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "pip install",
+      "uri": "knowledge://py_pip_install_v4",
+      "content_preview": "English translation: ``` pip install package. This installs a specific package. pip install -r requirements.txt. This command installs all packages listed in the 'requirements.txt' file. -U upgrades t"
+    }
+  ],
+  "related_nodes": []
+}

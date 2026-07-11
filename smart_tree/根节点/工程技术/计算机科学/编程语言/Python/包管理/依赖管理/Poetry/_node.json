@@ -9,13 +9,17 @@
   "parent": "依赖管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Poetry: Managing dependencies with `pyproject.toml`. Locking versions with `poetry.lock`. Commands for adding/removing/installing packages using Poetry: ```python # Example of using poetry commands in a Python script (not executable, illustrative purposes only) import subprocess def manage_dependencies(action): if action == \"add\": package_name = input(\"Enter the package name to add: \") result = subprocess.run([\"poetry\", \"add\", package_name], capture_output=True, text=True) print(result.stdout) elif action == \"remove\": package_name = input(\"Enter the package name to remove: \") result = subprocess.run([\"poetry\", \"remove\", package_name], capture_output=True, text=True) print(result.stdout) elif action == \"install\": result = subprocess.run([\"poetry\", \"install\"], capture_output=True, text=True) print(result.stdout) # Example usage manage_dependencies(\"add\") # User would be prompted to enter a package name ``` This script demonstrates how you might interact with Poetry commands from within a Python script using the `subprocess` module. Note that this is for illustrative purposes and assumes you have Poetry installed and configured in your environment."
+  },
   "data_pointers": [
     {
       "title": "Poetry",
       "uri": "knowledge://py_poetry_v4",
-      "content_preview": "Managing dependencies with `pyproject.toml`. Locking versions with `poetry.lock`. Commands for adding/removing/installing packages using Poetry: ```python # Example of using poetry commands in a Pytho"
+      "content_preview": "Poetry: Managing dependencies with `pyproject.toml`. Locking versions with `poetry.lock`. Commands for adding/removing/installing packages using Poetry: ```python # Example of using poetry commands in a Python script (not executable, illustrative purposes only) import subprocess def manage_dependencies(action): if action == \"add\": package_name = input(\"Enter the package name to add: \") result = subprocess.run([\"poetry\", \"add\", package_name], capture_output=True, text=True) print(result.stdout) elif action == \"remove\": package_name = input(\"Enter the package name to remove: \") result = subprocess.run([\"poetry\", \"remove\", package_name], capture_output=True, text=True) print(result.stdout) elif action == \"install\": result = subprocess.run([\"poetry\", \"install\"], capture_output=True, text=True) print(result.stdout) # Example usage manage_dependencies(\"add\") # User would be prompted to enter a package name ``` This script demonstrates how you might interact with Poetry commands from within a Python script using the `subprocess` module. Note that this is for illustrative purposes and assumes you have Poetry installed and configured in your environment."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "py_pdm_v4"
+  ]
 }

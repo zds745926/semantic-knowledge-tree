@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "编程语言",
   "children": [
-    "Trait 系统",
+    "所有权",
     "借用检查器",
-    "所有权"
+    "Trait 系统"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Rust is a systems-level language developed by Mozilla, known for its zero-cost abstractions and memory safety. The ownership system and borrow checker ensure memory safety at compile time, eliminating"
+    "description": "Rust: Rust is a systems-level language developed by Mozilla, known for its zero-cost abstractions and memory safety. The ownership system and borrow checker ensure memory safety at compile time, eliminating the need for garbage collection (GC). Here's a brief Python code example to illustrate a concept related to Rust's ownership model: In Python, you can simulate Rust's ownership with context managers or by using classes to manage resource lifetimes. However, note that Python does not have explicit ownership semantics like Rust. ```python class Resource: def __init__(self): self.is_active = True def use(self): if self.is_active: print(\"Resource is being used.\") else: raise ValueError(\"Resource is inactive.\") def with_resource(func): def wrapper(): resource = Resource() try: func(resource) finally: resource.is_active = False return wrapper @with_resource def process_resource(resource): resource.use() # Usage process_resource() # Output: \"Resource is being used.\" ``` In this example, `Resource` simulates the concept of ownership by managing its active state. The `with_resource` decorator ensures that the resource's lifecycle is managed properly, similar to how Rust's borrow checker enforces borrowing rules at compile time."
   },
   "data_pointers": [],
   "related_nodes": []

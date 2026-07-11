@@ -9,13 +9,17 @@
   "parent": "集合框架",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Map 系列: English translation: HashMap (Hash)/TreeMap (Red-Black Tree)/LinkedHashMap (Linked Order)/ConcurrentHashMap (Concurrency). Here are brief Python code examples for each concept to provide a better understanding of their usage: 1. **HashMap (Hash)**: ```python from collections import defaultdict # Using defaultdict as an example of hash map behavior in Python hash_map = defaultdict(int) hash_map['apple'] += 1 print(hash_map) # Output: defaultdict(<class 'int'>, {'apple': 1}) ``` 2. **TreeMap (Red-Black Tree)**: Red-Black Trees are not directly available in Python's standard library, but you can implement a similar behavior using sorted lists or other data structures. ```python # Example of maintaining order with a sorted list ordered_list = [] def insert(item): bisect.insort(ordered_list, item) insert('banana') print(ordered_list) # Output: ['banana'] ``` 3. **LinkedHashMap (Linked Order)**: ```python from collections import OrderedDict linked_order_map = OrderedDict() linked_order_map['cherry'] = 'fruit' linked_order_map.move_to_end('cherry') print(linked_order_map) # Output: OrderedDict([('cherry', 'fruit')]) ``` 4. **ConcurrentHashMap (Concurrency)**: Python does not have a built-in `ConcurrentHashMap`, but you can use threading and locks to achieve similar functionality. ```python import threading class ConcurrentMap: def __init__(self): self.lock = threading.Lock() self.data = {} def put(self, key, value): with self.lock: self.data[key] = value def get(self, key): with self.lock: return self.data.get(key) concurrent_map = ConcurrentMap() concurrent_map.put('date', 'fruit') print(concurrent_map.get('date')) # Output: fruit ``` These examples should give you a good idea of how these data structures and concepts can be implemented or simulated in Python."
+  },
   "data_pointers": [
     {
       "title": "Map 系列",
       "uri": "knowledge://java_map_v4",
-      "content_preview": "English translation: HashMap (Hash)/TreeMap (Red-Black Tree)/LinkedHashMap (Linked Order)/ConcurrentHashMap (Concurrency). Here are brief Python code examples for each concept to provide a better unde"
+      "content_preview": "Map 系列: English translation: HashMap (Hash)/TreeMap (Red-Black Tree)/LinkedHashMap (Linked Order)/ConcurrentHashMap (Concurrency). Here are brief Python code examples for each concept to provide a better understanding of their usage: 1. **HashMap (Hash)**: ```python from collections import defaultdict # Using defaultdict as an example of hash map behavior in Python hash_map = defaultdict(int) hash_map['apple'] += 1 print(hash_map) # Output: defaultdict(<class 'int'>, {'apple': 1}) ``` 2. **TreeMap (Red-Black Tree)**: Red-Black Trees are not directly available in Python's standard library, but you can implement a similar behavior using sorted lists or other data structures. ```python # Example of maintaining order with a sorted list ordered_list = [] def insert(item): bisect.insort(ordered_list, item) insert('banana') print(ordered_list) # Output: ['banana'] ``` 3. **LinkedHashMap (Linked Order)**: ```python from collections import OrderedDict linked_order_map = OrderedDict() linked_order_map['cherry'] = 'fruit' linked_order_map.move_to_end('cherry') print(linked_order_map) # Output: OrderedDict([('cherry', 'fruit')]) ``` 4. **ConcurrentHashMap (Concurrency)**: Python does not have a built-in `ConcurrentHashMap`, but you can use threading and locks to achieve similar functionality. ```python import threading class ConcurrentMap: def __init__(self): self.lock = threading.Lock() self.data = {} def put(self, key, value): with self.lock: self.data[key] = value def get(self, key): with self.lock: return self.data.get(key) concurrent_map = ConcurrentMap() concurrent_map.put('date', 'fruit') print(concurrent_map.get('date')) # Output: fruit ``` These examples should give you a good idea of how these data structures and concepts can be implemented or simulated in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "red_black_tree_v4"
+  ]
 }

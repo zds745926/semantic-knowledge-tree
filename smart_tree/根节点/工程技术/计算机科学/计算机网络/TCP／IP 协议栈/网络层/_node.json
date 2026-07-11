@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The network layer is responsible for packet routing and forwarding, with the core protocol being the IP (Internet Protocol). Python code example to illustrate basic IP addressing and routing concepts:"
+    "description": "网络层: The network layer is responsible for packet routing and forwarding, with the core protocol being the IP (Internet Protocol). Python code example to illustrate basic IP addressing and routing concepts: ```python import ipaddress # Define an IPv4 address ip = ipaddress.IPv4Address('192.0.2.1') print(f\"IPv4 Address: {ip}\") # Define a network using the same prefix network = ipaddress.IPv4Network('192.0.2.0/24', strict=False) print(f\"Network: {network}\") print(f\"First IP in Network: {network.network_address}\") print(f\"Last IP in Network: {network.broadcast_address}\") # Check if an address is within the network test_ip = ipaddress.IPv4Address('192.0.2.5') if test_ip in network: print(f\"{test_ip} is part of the network {network}.\") else: print(f\"{test_ip} is not part of the network {network}.\") ``` This code snippet demonstrates basic operations with IP addresses and networks, which are fundamental concepts in understanding how the network layer functions."
   },
   "data_pointers": [],
   "related_nodes": []

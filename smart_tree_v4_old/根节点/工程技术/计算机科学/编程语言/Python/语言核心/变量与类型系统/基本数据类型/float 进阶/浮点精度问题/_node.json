@@ -1,0 +1,21 @@
+{
+  "name": "浮点精度问题",
+  "node_id": "py_float_precision_v4",
+  "parent_id": "py_float_sub_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "float 进阶",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "浮点精度问题",
+      "uri": "knowledge://py_float_precision_v4",
+      "content_preview": "0.1 + 0.2 ≠ 0.3 because binary cannot precisely represent certain decimal fractions. Use `decimal.Decimal` or `math.isclose`. Python code example using `decimal.Decimal`: ```python from decimal import"
+    }
+  ],
+  "related_nodes": []
+}

@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "算法与数据结构",
   "children": [
-    "字典树 Trie",
-    "布隆过滤器",
     "并查集",
-    "线段树"
+    "线段树",
+    "字典树 Trie",
+    "布隆过滤器"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Advanced data structures solve specific scenario problems, including disjoint-set (union-find), segment trees, tries, and Bloom filters. Here are brief Python code examples for each: 1. **Disjoint-Set"
+    "description": "高级数据结构: Advanced data structures solve specific scenario problems, including disjoint-set (union-find), segment trees, tries, and Bloom filters. Here are brief Python code examples for each: 1. **Disjoint-Set (Union-Find):** ```python class UnionFind: def __init__(self, n): self.parent = list(range(n)) def find(self, x): if self.parent[x] != x: self.parent[x] = self.find(self.parent[x]) return self.parent[x] def union(self, x, y): rootX = self.find(x) rootY = self.find(y) if rootX != rootY: self.parent[rootY] = rootX ``` 2. **Segment Tree:** ```python class SegmentTree: def __init__(self, arr): self.n = len(arr) self.st = [0] * (4 * self.n) self.build(arr, 0, 0, self.n - 1) def build(self, arr, node, start, end): if start == end: self.st[node] = arr[start] else: mid = (start + end) // 2 self.build(arr, 2 * node + 1, start, mid) self.build(arr, 2 * node + 2, mid + 1, end) self.st[node] = self.st[2 * node + 1] + self.st[2 * node + 2] ``` 3. **Trie (Prefix Tree):** ```python class TrieNode: def __init__(self): self.children = {} self.is_end_of_word = False class Trie: def __init__(self): self.root = TrieNode() def insert(self, word): node = self.root for char in word: if char not in node.children: node.children[char] = TrieNode() node = node.children[char] node.is_end_of_word = True def search(self, word): node = self.root for char in word: if char not in node.children: return False node = node.children[char] return node.is_end_of_word ``` 4. **Bloom Filter:** ```python import mmh3 from bitarray import bitarray class BloomFilter: def __init__(self, size, hash_count): self.size = size self.hash_count = hash_count self.bit_array = bitarray(size) self.bit_array.setall(0) def add(self, item): for seed in range(self.hash_count): index = mmh3.hash(item, seed) % self.size self.bit_array[index] = 1 def query(self, item): for seed in range(self.hash_count): index = mmh3.hash(item, seed) % self.size if self.bit_array[index] == 0: return False return True ``` These examples provide a basic implementation of each data structure."
   },
   "data_pointers": [],
   "related_nodes": []

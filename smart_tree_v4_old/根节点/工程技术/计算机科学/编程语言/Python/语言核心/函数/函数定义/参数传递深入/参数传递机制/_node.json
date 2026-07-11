@@ -1,0 +1,21 @@
+{
+  "name": "参数传递机制",
+  "node_id": "py_param_passing_v4",
+  "parent_id": "py_func_params_v4",
+  "level": 9,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "参数传递深入",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "参数传递机制",
+      "uri": "knowledge://py_param_passing_v4",
+      "content_preview": "Python parameter passing is 'pass by object reference'. Mutable objects can be modified, while immutable objects cannot be changed. To illustrate this concept with a brief Python code example: ```pyth"
+    }
+  ],
+  "related_nodes": []
+}

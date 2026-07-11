@@ -9,12 +9,14 @@
   "parent": "结构型模式",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "装饰器模式: Dynamic addition of responsibilities to objects. More flexible than inheritance. IO stream BufferedInputStream. In the context of programming, adding responsibilities dynamically to objects is often achieved through design patterns such as Decorator or Strategy. Here’s a brief example using Python with the `io` module and `BufferedInputStream` concept: ```python import io class DataStream: def __init__(self, data): self.data = data def read(self): return self.data # Using BufferedInputStream concept dynamically class BufferedDataStream(io.BufferedIOBase): def __init__(self, stream): super().__init__() self.stream = stream def readable(self): return True def readinto(self, b): data = self.stream.read() b[:len(data)] = data return len(data) # Example usage data_stream = DataStream(\"Hello, World!\") buffered_data_stream = BufferedDataStream(data_stream) print(buffered_data_stream.read()) # Output: Hello, World! ``` In this example: - `DataStream` is a simple class that represents an input stream. - `BufferedDataStream` is a custom buffer class that wraps around the original data stream to provide buffering functionality. This demonstrates how you can dynamically add responsibilities (like buffering) to an existing object without modifying its core structure, which is more flexible than inheritance."
+  },
   "data_pointers": [
     {
       "title": "装饰器模式",
       "uri": "knowledge://decorator_v4",
-      "content_preview": "Dynamic addition of responsibilities to objects. More flexible than inheritance. IO stream BufferedInputStream. In the context of programming, adding responsibilities dynamically to objects is often a"
+      "content_preview": "装饰器模式: Dynamic addition of responsibilities to objects. More flexible than inheritance. IO stream BufferedInputStream. In the context of programming, adding responsibilities dynamically to objects is often achieved through design patterns such as Decorator or Strategy. Here’s a brief example using Python with the `io` module and `BufferedInputStream` concept: ```python import io class DataStream: def __init__(self, data): self.data = data def read(self): return self.data # Using BufferedInputStream concept dynamically class BufferedDataStream(io.BufferedIOBase): def __init__(self, stream): super().__init__() self.stream = stream def readable(self): return True def readinto(self, b): data = self.stream.read() b[:len(data)] = data return len(data) # Example usage data_stream = DataStream(\"Hello, World!\") buffered_data_stream = BufferedDataStream(data_stream) print(buffered_data_stream.read()) # Output: Hello, World! ``` In this example: - `DataStream` is a simple class that represents an input stream. - `BufferedDataStream` is a custom buffer class that wraps around the original data stream to provide buffering functionality. This demonstrates how you can dynamically add responsibilities (like buffering) to an existing object without modifying its core structure, which is more flexible than inheritance."
     }
   ],
   "related_nodes": []

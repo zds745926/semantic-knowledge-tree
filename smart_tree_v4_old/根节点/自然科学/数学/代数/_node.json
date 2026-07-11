@@ -1,0 +1,20 @@
+{
+  "name": "代数",
+  "node_id": "algebra_v4",
+  "parent_id": "math_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "数学",
+  "children": [
+    "一元二次方程求根公式",
+    "韦达定理"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Algebra is a core branch of mathematics that focuses on the study of operation rules and structures, including equation solving, linear algebra, and abstract algebra. The quadratic formula for finding"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

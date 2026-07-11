@@ -1,0 +1,21 @@
+{
+  "name": "哲学",
+  "node_id": "hum_philo",
+  "parent_id": "humanities",
+  "level": 2,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "人文社科",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "哲学",
+      "uri": "knowledge://hum_philo",
+      "content_preview": "Philosophy explores fundamental issues such as existence, knowledge, value, and reason. The main branches are metaphysics, epistemology, ethics, and aesthetics. Here is a brief Python code example rel"
+    }
+  ],
+  "related_nodes": []
+}

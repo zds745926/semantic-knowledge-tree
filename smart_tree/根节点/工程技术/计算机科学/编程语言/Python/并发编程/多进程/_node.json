@@ -8,18 +8,18 @@
   "version": 1,
   "parent": "并发编程",
   "children": [
-    "Manager",
-    "Pool 进程池",
-    "Process 类",
     "multiprocessing",
-    "共享内存",
-    "进程同步",
+    "Process 类",
+    "Pool 进程池",
+    "Manager",
     "进程间 Queue",
-    "进程间通信 IPC"
+    "进程间通信 IPC",
+    "共享内存",
+    "进程同步"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Multiprocessing bypasses the Global Interpreter Lock (GIL), leveraging multi-core CPUs. Python code example: ```python import multiprocessing def worker(num): \"\"\"worker function\"\"\" print(f'Worker {num"
+    "description": "多进程: Multiprocessing bypasses the Global Interpreter Lock (GIL), leveraging multi-core CPUs. Python code example: ```python import multiprocessing def worker(num): \"\"\"worker function\"\"\" print(f'Worker {num}') if __name__ == '__main__': jobs = [] for i in range(5): # Create and start 5 processes p = multiprocessing.Process(target=worker, args=(i,)) jobs.append(p) p.start() ``` This example demonstrates creating multiple processes using Python's `multiprocessing` module to bypass the GIL. Each process runs the `worker` function with a unique argument."
   },
   "data_pointers": [],
   "related_nodes": []

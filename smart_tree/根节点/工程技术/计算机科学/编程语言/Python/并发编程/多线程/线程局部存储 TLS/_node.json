@@ -9,12 +9,14 @@
   "parent": "多线程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "线程局部存储 TLS: The `threading.local()` object provides thread-local data in each thread. Thread-local data is isolated among threads. Here's an example to illustrate this concept using Python: ```python import threading # Create a local object local_data = threading.local() def process_data(): # Each thread gets its own instance of 'value' local_data.value = 100 print(f\"Thread {threading.current_thread().name}: value is {local_data.value}\") # Create threads threads = [] for i in range(3): t = threading.Thread(target=process_data, name=f'Thread-{i+1}') threads.append(t) t.start() # Wait for all threads to complete for t in threads: t.join() ``` In this example, each thread has its own `value` attribute stored independently of the others."
+  },
   "data_pointers": [
     {
       "title": "线程局部存储 TLS",
       "uri": "knowledge://py_tls_v4",
-      "content_preview": "The `threading.local()` object provides thread-local data in each thread. Thread-local data is isolated among threads. Here's an example to illustrate this concept using Python: ```python import threa"
+      "content_preview": "线程局部存储 TLS: The `threading.local()` object provides thread-local data in each thread. Thread-local data is isolated among threads. Here's an example to illustrate this concept using Python: ```python import threading # Create a local object local_data = threading.local() def process_data(): # Each thread gets its own instance of 'value' local_data.value = 100 print(f\"Thread {threading.current_thread().name}: value is {local_data.value}\") # Create threads threads = [] for i in range(3): t = threading.Thread(target=process_data, name=f'Thread-{i+1}') threads.append(t) t.start() # Wait for all threads to complete for t in threads: t.join() ``` In this example, each thread has its own `value` attribute stored independently of the others."
     }
   ],
   "related_nodes": []

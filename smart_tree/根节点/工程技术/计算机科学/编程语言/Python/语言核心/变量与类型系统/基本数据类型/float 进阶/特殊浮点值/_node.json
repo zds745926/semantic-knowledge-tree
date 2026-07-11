@@ -9,12 +9,14 @@
   "parent": "float 进阶",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "特殊浮点值: Infinite values and NaN (Not a Number) are represented as `float('inf')` and `float('nan')`, respectively. The `math.isinf()` and `math.isnan()` functions can be used to determine whether a value is infinite or not-a-number. For NaN, any comparison will return False. Python code examples: ```python import math # Example of checking for infinity value = float('inf') if math.isinf(value): print(f\"{value} is positive infinity\") value = -float('inf') if math.isinf(value): print(f\"{value} is negative infinity\") # Example of checking for NaN nan_value = float('nan') if math.isnan(nan_value): print(f\"{nan_value} is not a number\") ``` This code demonstrates how to use the `math.isinf()` and `math.isnan()` functions to check for infinite values and NaN, respectively."
+  },
   "data_pointers": [
     {
       "title": "特殊浮点值",
       "uri": "knowledge://py_float_special_v4",
-      "content_preview": "Infinite values and NaN (Not a Number) are represented as `float('inf')` and `float('nan')`, respectively. The `math.isinf()` and `math.isnan()` functions can be used to determine whether a value is i"
+      "content_preview": "特殊浮点值: Infinite values and NaN (Not a Number) are represented as `float('inf')` and `float('nan')`, respectively. The `math.isinf()` and `math.isnan()` functions can be used to determine whether a value is infinite or not-a-number. For NaN, any comparison will return False. Python code examples: ```python import math # Example of checking for infinity value = float('inf') if math.isinf(value): print(f\"{value} is positive infinity\") value = -float('inf') if math.isinf(value): print(f\"{value} is negative infinity\") # Example of checking for NaN nan_value = float('nan') if math.isnan(nan_value): print(f\"{nan_value} is not a number\") ``` This code demonstrates how to use the `math.isinf()` and `math.isnan()` functions to check for infinite values and NaN, respectively."
     }
   ],
   "related_nodes": []

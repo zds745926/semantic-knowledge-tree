@@ -9,13 +9,17 @@
   "parent": "动态规划",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "DP 基础: Optimal Substructure + Overlapping Subproblems. Top-down (Memoization) vs Bottom-up (Tabulation). Here's a brief explanation with Python code examples for each approach: ### Optimal Substructure + Overlapping Subproblems These two concepts are fundamental in dynamic programming. #### Top-down (Memoization) In the top-down approach, we start by solving the problem at the highest level of abstraction and break it down into subproblems. We use a cache to store the results of these subproblems so that we don't recompute them every time they occur. ```python def fibonacci(n, memo={}): if n in memo: return memo[n] if n <= 1: return n memo[n] = fibonacci(n-1) + fibonacci(n-2) return memo[n] # Example usage print(fibonacci(10)) # Output: 55 ``` #### Bottom-up (Tabulation) In the bottom-up approach, we start by solving the smallest subproblems and build up to the solution of the original problem. We use a table or array to store the results of these subproblems. ```python def fibonacci(n): if n <= 1: return n dp = [0] * (n + 1) dp[1] = 1 for i in range(2, n + 1): dp[i] = dp[i - 1] + dp[i - 2] return dp[n] # Example usage print(fibonacci(10)) # Output: 55 ``` These examples illustrate how the top-down approach uses recursion with memoization to avoid redundant calculations, while the bottom-up approach uses an iterative table to achieve the same result."
+  },
   "data_pointers": [
     {
       "title": "DP 基础",
       "uri": "knowledge://dp_basics_v4",
-      "content_preview": "Optimal Substructure + Overlapping Subproblems. Top-down (Memoization) vs Bottom-up (Tabulation). Here's a brief explanation with Python code examples for each approach: ### Optimal Substructure + Ove"
+      "content_preview": "DP 基础: Optimal Substructure + Overlapping Subproblems. Top-down (Memoization) vs Bottom-up (Tabulation). Here's a brief explanation with Python code examples for each approach: ### Optimal Substructure + Overlapping Subproblems These two concepts are fundamental in dynamic programming. #### Top-down (Memoization) In the top-down approach, we start by solving the problem at the highest level of abstraction and break it down into subproblems. We use a cache to store the results of these subproblems so that we don't recompute them every time they occur. ```python def fibonacci(n, memo={}): if n in memo: return memo[n] if n <= 1: return n memo[n] = fibonacci(n-1) + fibonacci(n-2) return memo[n] # Example usage print(fibonacci(10)) # Output: 55 ``` #### Bottom-up (Tabulation) In the bottom-up approach, we start by solving the smallest subproblems and build up to the solution of the original problem. We use a table or array to store the results of these subproblems. ```python def fibonacci(n): if n <= 1: return n dp = [0] * (n + 1) dp[1] = 1 for i in range(2, n + 1): dp[i] = dp[i - 1] + dp[i - 2] return dp[n] # Example usage print(fibonacci(10)) # Output: 55 ``` These examples illustrate how the top-down approach uses recursion with memoization to avoid redundant calculations, while the bottom-up approach uses an iterative table to achieve the same result."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "knapsack_v4"
+  ]
 }

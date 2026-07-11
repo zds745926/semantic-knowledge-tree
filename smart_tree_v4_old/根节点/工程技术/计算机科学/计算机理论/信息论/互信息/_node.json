@@ -1,0 +1,21 @@
+{
+  "name": "互信息",
+  "node_id": "mutual_info_v4",
+  "parent_id": "info_theory_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "信息论",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "互信息",
+      "uri": "knowledge://mutual_info_v4",
+      "content_preview": "Mutual Information I(X;Y) = H(X) - H(X|Y) measures the amount of information that two random variables share. It is widely applied in feature selection. Here's a brief Python code example using the `s"
+    }
+  ],
+  "related_nodes": []
+}

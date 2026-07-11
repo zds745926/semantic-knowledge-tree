@@ -9,12 +9,14 @@
   "parent": "依赖管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "PDM: PEP 582 does not provide a virtual environment solution. It supports `pdm add`, `pdm install`, and `pdm lock`. This tool also supports multiple Python versions. Here is an example of how you might use `pdm` to manage dependencies in a Python project: ```python # Example usage of pdm to add a dependency import subprocess def add_dependency(package_name): try: result = subprocess.run(['pdm', 'add', package_name], check=True, text=True) print(result.stdout) except subprocess.CalledProcessError as e: print(f\"An error occurred: {e}\") # Example usage of pdm to install dependencies def install_dependencies(): try: result = subprocess.run(['pdm', 'install'], check=True, text=True) print(result.stdout) except subprocess.CalledProcessError as e: print(f\"An error occurred: {e}\") # Example usage of pdm to lock the dependencies def lock_dependencies(): try: result = subprocess.run(['pdm', 'lock'], check=True, text=True) print(result.stdout) except subprocess.CalledProcessError as e: print(f\"An error occurred: {e}\") ``` This Python script demonstrates how you can use the `subprocess` module to interact with `pdm` commands for adding, installing, and locking dependencies in a project."
+  },
   "data_pointers": [
     {
       "title": "PDM",
       "uri": "knowledge://py_pdm_v4",
-      "content_preview": "PEP 582 does not provide a virtual environment solution. It supports `pdm add`, `pdm install`, and `pdm lock`. This tool also supports multiple Python versions. Here is an example of how you might use"
+      "content_preview": "PDM: PEP 582 does not provide a virtual environment solution. It supports `pdm add`, `pdm install`, and `pdm lock`. This tool also supports multiple Python versions. Here is an example of how you might use `pdm` to manage dependencies in a Python project: ```python # Example usage of pdm to add a dependency import subprocess def add_dependency(package_name): try: result = subprocess.run(['pdm', 'add', package_name], check=True, text=True) print(result.stdout) except subprocess.CalledProcessError as e: print(f\"An error occurred: {e}\") # Example usage of pdm to install dependencies def install_dependencies(): try: result = subprocess.run(['pdm', 'install'], check=True, text=True) print(result.stdout) except subprocess.CalledProcessError as e: print(f\"An error occurred: {e}\") # Example usage of pdm to lock the dependencies def lock_dependencies(): try: result = subprocess.run(['pdm', 'lock'], check=True, text=True) print(result.stdout) except subprocess.CalledProcessError as e: print(f\"An error occurred: {e}\") ``` This Python script demonstrates how you can use the `subprocess` module to interact with `pdm` commands for adding, installing, and locking dependencies in a project."
     }
   ],
   "related_nodes": []

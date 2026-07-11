@@ -1,0 +1,21 @@
+{
+  "name": "梯度提升树 GBDT",
+  "node_id": "gbdt_v4",
+  "parent_id": "ensemble_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "集成学习",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "梯度提升树 GBDT",
+      "uri": "knowledge://gbdt_v4",
+      "content_preview": "Gradually adding residual fitting. XGBoost/LightGBM. Optimal table data. For context, let's assume you want to provide a brief Python code example for using XGBoost or LightGBM with residual fitting i"
+    }
+  ],
+  "related_nodes": []
+}

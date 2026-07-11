@@ -12,7 +12,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "JavaScript is the core programming language for web development, characterized by being single-threaded and non-blocking, with an event-driven model. ES6+ introduced classes, arrow functions, and Prom"
+    "description": "JavaScript: JavaScript is the core programming language for web development, characterized by being single-threaded and non-blocking, with an event-driven model. ES6+ introduced classes, arrow functions, and Promises. Here are brief Python code examples to illustrate these concepts: 1. **Classes (ES6+ in JavaScript)** ```python class Person: def __init__(self, name, age): self.name = name self.age = age def introduce(self): print(f\"Hello, my name is {self.name} and I am {self.age} years old.\") ``` 2. **Arrow Functions (ES6+ in JavaScript)** ```python # Python does not have arrow functions, but you can use lambda for similar functionality greet = lambda name: f\"Hello, {name}\" print(greet(\"World\")) ``` 3. **Promises (ES6+ in JavaScript)** ```python import asyncio async def fetch_data(): await asyncio.sleep(1) return \"Data fetched\" async def main(): result = await fetch_data() print(result) # Run the asynchronous function asyncio.run(main()) ``` These examples provide a basic understanding of how these concepts are implemented in Python, though some differences exist due to language-specific features."
   },
   "data_pointers": [],
   "related_nodes": []

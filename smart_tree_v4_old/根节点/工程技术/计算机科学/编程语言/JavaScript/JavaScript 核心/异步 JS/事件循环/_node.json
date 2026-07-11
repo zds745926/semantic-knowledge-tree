@@ -1,0 +1,21 @@
+{
+  "name": "事件循环",
+  "node_id": "js_event_loop_v4",
+  "parent_id": "js_async_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "异步 JS",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "事件循环",
+      "uri": "knowledge://js_event_loop_v4",
+      "content_preview": "JS is single-threaded. It manages tasks through macrotasks (e.g., `setTimeout`) and microtasks (e.g., `Promise`). The execution order of these tasks is controlled by the JavaScript event loop. Here's "
+    }
+  ],
+  "related_nodes": []
+}

@@ -9,12 +9,14 @@
   "parent": "时间与日期",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "time: - `time.time()` timestamp. - `time.sleep()` pause. - `time.localtime`, `time.mktime`, `time.strptime`. Python code examples: ```python import time # Example of using time.time() to get the current timestamp current_timestamp = time.time() print(\"Current Timestamp:\", current_timestamp) # Example of using time.sleep() to pause execution for 5 seconds print(\"Pausing for 5 seconds...\") time.sleep(5) print(\"Resume execution\") # Example of converting a string to a struct_time object and back timestamp = time.time() struct_time_obj = time.localtime(timestamp) print(\"Local Time:\", struct_time_obj) string_time = \"2023-10-04 12:00:00\" time_struct = time.strptime(string_time, \"%Y-%m-%d %H:%M:%S\") print(\"Time Struct:\", time_struct) ``` These examples demonstrate the usage of `time.time()`, `time.sleep()`, and conversions between string and struct_time using `time.strptime()` and `time.localtime()`."
+  },
   "data_pointers": [
     {
       "title": "time",
       "uri": "knowledge://py_time_lib_v4",
-      "content_preview": "Translation: - `time.time()` timestamp. - `time.sleep()` pause. - `time.localtime`, `time.mktime`, `time.strptime`. Python code examples: ```python import time # Example of using time.time() to get th"
+      "content_preview": "time: - `time.time()` timestamp. - `time.sleep()` pause. - `time.localtime`, `time.mktime`, `time.strptime`. Python code examples: ```python import time # Example of using time.time() to get the current timestamp current_timestamp = time.time() print(\"Current Timestamp:\", current_timestamp) # Example of using time.sleep() to pause execution for 5 seconds print(\"Pausing for 5 seconds...\") time.sleep(5) print(\"Resume execution\") # Example of converting a string to a struct_time object and back timestamp = time.time() struct_time_obj = time.localtime(timestamp) print(\"Local Time:\", struct_time_obj) string_time = \"2023-10-04 12:00:00\" time_struct = time.strptime(string_time, \"%Y-%m-%d %H:%M:%S\") print(\"Time Struct:\", time_struct) ``` These examples demonstrate the usage of `time.time()`, `time.sleep()`, and conversions between string and struct_time using `time.strptime()` and `time.localtime()`."
     }
   ],
   "related_nodes": []

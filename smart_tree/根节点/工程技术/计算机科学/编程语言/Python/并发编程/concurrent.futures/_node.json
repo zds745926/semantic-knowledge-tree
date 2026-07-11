@@ -8,16 +8,19 @@
   "version": 1,
   "parent": "并发编程",
   "children": [
-    "Future 对象",
-    "ProcessPoolExecutor",
     "ThreadPoolExecutor",
+    "ProcessPoolExecutor",
+    "Future 对象",
     "as_completed",
     "map 方法"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The `concurrent.futures` module provides a high-level interface for asynchronously executing callables. It supports two types of executors: `ThreadPoolExecutor` and `ProcessPoolExecutor`. The `submit("
+    "description": "concurrent.futures: The `concurrent.futures` module provides a high-level interface for asynchronously executing callables. It supports two types of executors: `ThreadPoolExecutor` and `ProcessPoolExecutor`. The `submit()` method submits a task and returns a `Future` object, while `as_completed()` and `wait()` are used to manage the lifecycle of tasks. Here is a brief Python code example using `ThreadPoolExecutor`: ```python from concurrent.futures import ThreadPoolExecutor def task(n): return n * n with ThreadPoolExecutor(max_workers=4) as executor: future_to_number = {executor.submit(task, i): i for i in range(5)} for future in concurrent.futures.as_completed(future_to_number): number = future_to_number[future] try: result = future.result() print(f\"Task for {number} completed with result: {result}\") except Exception as exc: print(f\"Task for {number} generated an exception: {exc}\") ``` This example demonstrates submitting tasks to a `ThreadPoolExecutor` and managing the futures returned by those submissions."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [
+    "py_thread_pool_executor_v4",
+    "py_process_pool_executor_v4"
+  ]
 }

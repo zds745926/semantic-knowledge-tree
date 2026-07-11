@@ -9,12 +9,14 @@
   "parent": "文本处理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "awk: \"awk '{print $1,$NF}' field processing. Conditional statistics and reports.\" Explanation of the technical term with a Python code example: The `awk` command in the original text is used for parsing and transforming structured data, particularly in text files. The provided `awk` script `{print $1,$NF}` prints the first field (`$1`) and the last field (`$NF`, where `N` is the number of fields) of each line. In Python, a similar functionality can be achieved using the `csv` module or regular expressions. Here's an example: ```python import csv # Sample data as a list of lists (rows) data = [ [\"Name\", \"Age\", \"City\"], [\"Alice\", \"30\", \"New York\"], [\"Bob\", \"25\", \"Los Angeles\"] ] # Process each row and print the first and last column values for row in data[1:]: # Skip header row print(row[0], row[-1]) # Output: # Alice New York # Bob Los Angeles ``` This Python code processes a list of lists (similar to rows in an `awk` script) and prints the first and last elements of each sublist, which corresponds to the functionality of the provided `awk` command."
+  },
   "data_pointers": [
     {
       "title": "awk",
       "uri": "knowledge://awk_v4",
-      "content_preview": "Translation: \"awk '{print $1,$NF}' field processing. Conditional statistics and reports.\" Explanation of the technical term with a Python code example: The `awk` command in the original text is used f"
+      "content_preview": "awk: \"awk '{print $1,$NF}' field processing. Conditional statistics and reports.\" Explanation of the technical term with a Python code example: The `awk` command in the original text is used for parsing and transforming structured data, particularly in text files. The provided `awk` script `{print $1,$NF}` prints the first field (`$1`) and the last field (`$NF`, where `N` is the number of fields) of each line. In Python, a similar functionality can be achieved using the `csv` module or regular expressions. Here's an example: ```python import csv # Sample data as a list of lists (rows) data = [ [\"Name\", \"Age\", \"City\"], [\"Alice\", \"30\", \"New York\"], [\"Bob\", \"25\", \"Los Angeles\"] ] # Process each row and print the first and last column values for row in data[1:]: # Skip header row print(row[0], row[-1]) # Output: # Alice New York # Bob Los Angeles ``` This Python code processes a list of lists (similar to rows in an `awk` script) and prints the first and last elements of each sublist, which corresponds to the functionality of the provided `awk` command."
     }
   ],
   "related_nodes": []

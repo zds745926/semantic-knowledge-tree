@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "类与实例",
   "children": [
-    "Mixin 混入",
-    "单继承"
+    "单继承",
+    "Mixin 混入"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Python supports single inheritance and multiple inheritance (using Mixin). The `super()` function is used to call the parent class. Method Resolution Order (MRO) determines the method search sequence."
+    "description": "继承与多态: Python supports single inheritance and multiple inheritance (using Mixin). The `super()` function is used to call the parent class. Method Resolution Order (MRO) determines the method search sequence. Here's a brief explanation with Python code examples: - **Single Inheritance**: ```python class Parent: def __init__(self): print(\"Parent constructor\") class Child(Parent): def __init__(self): super().__init__() print(\"Child constructor\") ``` - **Multiple Inheritance (using Mixin)**: ```python class LoggingMixin: def log(self, message): print(f\"Logging: {message}\") class NetworkDevice(LoggingMixin): def __init__(self): super().__init__() self.ip_address = \"192.168.0.1\" def connect(self): self.log(\"Connecting to network\") # Simulate connection logic ``` - **Method Resolution Order (MRO)**: ```python class A: def foo(self): print(\"A.foo\") class B(A): def foo(self): super().foo() print(\"B.foo\") class C(A): def foo(self): super().foo() print(\"C.foo\") class D(B, C): pass d = D() d.foo() # Output: A.foo B.foo C.foo ``` In the MRO example, `D` inherits from both `B` and `C`, which in turn inherit from `A`. The output shows how Python resolves methods using the C3 linearization algorithm."
   },
   "data_pointers": [],
   "related_nodes": []

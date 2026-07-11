@@ -1,0 +1,21 @@
+{
+  "name": "SVM",
+  "node_id": "svm_v4",
+  "parent_id": "classification_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "分类",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "SVM",
+      "uri": "knowledge://svm_v4",
+      "content_preview": "Maximum Margin Hyperplane. Radial Basis Function (RBF) Kernel. Suitable for small-scale high-dimensional data. Here is an explanation with a brief Python code example using the concepts mentioned: - *"
+    }
+  ],
+  "related_nodes": []
+}

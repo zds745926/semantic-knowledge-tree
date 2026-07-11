@@ -1,0 +1,21 @@
+{
+  "name": "PDM",
+  "node_id": "py_pdm_v4",
+  "parent_id": "py_dep_mgmt_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "依赖管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "PDM",
+      "uri": "knowledge://py_pdm_v4",
+      "content_preview": "PEP 582 does not provide a virtual environment solution. It supports `pdm add`, `pdm install`, and `pdm lock`. This tool also supports multiple Python versions. Here is an example of how you might use"
+    }
+  ],
+  "related_nodes": []
+}

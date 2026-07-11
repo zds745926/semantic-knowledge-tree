@@ -9,12 +9,14 @@
   "parent": "标准库",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "collections 模块: Special Containers: - defaultdict with automatic default values - Counter for counting elements - deque for double-ended queue operations with O(1) time complexity at both ends - namedtuple for named tuples Python code examples: ```python from collections import defaultdict, Counter, deque, namedtuple # Example of defaultdict def example_defaultdict(): d = defaultdict(int) # Default value is 0 (integer) d['a'] += 1 print(d) # Output: defaultdict(<class 'int'>, {'a': 1}) # Example of Counter def example_counter(): c = Counter(['a', 'b', 'c', 'a', 'b', 'b']) print(c) # Output: Counter({'b': 3, 'a': 2, 'c': 1}) # Example of deque def example_deque(): d = deque([1, 2, 3]) d.append(4) d.appendleft(0) print(d) # Output: deque([0, 1, 2, 3, 4]) # Example of namedtuple def example_namedtuple(): Point = namedtuple('Point', ['x', 'y']) p = Point(x=1.0, y=2.0) print(p.x, p.y) # Output: 1.0 2.0 example_defaultdict() example_counter() example_deque() example_namedtuple() ``` These examples demonstrate the basic usage of each special container in Python."
+  },
   "data_pointers": [
     {
       "title": "collections 模块",
       "uri": "knowledge://py_collections_module_v4",
-      "content_preview": "Special Containers: - defaultdict with automatic default values - Counter for counting elements - deque for double-ended queue operations with O(1) time complexity at both ends - namedtuple for named "
+      "content_preview": "collections 模块: Special Containers: - defaultdict with automatic default values - Counter for counting elements - deque for double-ended queue operations with O(1) time complexity at both ends - namedtuple for named tuples Python code examples: ```python from collections import defaultdict, Counter, deque, namedtuple # Example of defaultdict def example_defaultdict(): d = defaultdict(int) # Default value is 0 (integer) d['a'] += 1 print(d) # Output: defaultdict(<class 'int'>, {'a': 1}) # Example of Counter def example_counter(): c = Counter(['a', 'b', 'c', 'a', 'b', 'b']) print(c) # Output: Counter({'b': 3, 'a': 2, 'c': 1}) # Example of deque def example_deque(): d = deque([1, 2, 3]) d.append(4) d.appendleft(0) print(d) # Output: deque([0, 1, 2, 3, 4]) # Example of namedtuple def example_namedtuple(): Point = namedtuple('Point', ['x', 'y']) p = Point(x=1.0, y=2.0) print(p.x, p.y) # Output: 1.0 2.0 example_defaultdict() example_counter() example_deque() example_namedtuple() ``` These examples demonstrate the basic usage of each special container in Python."
     }
   ],
   "related_nodes": []

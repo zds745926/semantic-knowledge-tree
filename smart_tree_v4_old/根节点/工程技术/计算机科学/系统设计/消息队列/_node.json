@@ -1,0 +1,20 @@
+{
+  "name": "消息队列",
+  "node_id": "mq_v4",
+  "parent_id": "sd_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "系统设计",
+  "children": [
+    "Kafka",
+    "RabbitMQ"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Message queues decouple services by providing asynchronous communication, smoothing out peaks and valleys in traffic, and enabling traffic control. Python code example for asynchronous communication u"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

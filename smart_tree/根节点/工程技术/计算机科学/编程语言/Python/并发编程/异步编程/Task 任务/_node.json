@@ -9,12 +9,14 @@
   "parent": "异步编程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Task 任务: The `asyncio.create_task()` function creates a task. The `task.cancel()` method cancels the task. The `task.result()` method retrieves the result of the task. Here are brief Python code examples for each: 1. **Creating a Task with `asyncio.create_task()`**: ```python import asyncio async def my_coroutine(): print(\"Coroutine is running\") # Create and run a task task = asyncio.create_task(my_coroutine()) await task # Wait for the task to complete ``` 2. **Cancelling a Task with `task.cancel()`**: ```python import asyncio async def my_coroutine(): print(\"Coroutine is running\") await asyncio.sleep(10) # Simulate long-running operation # Create and run a task task = asyncio.create_task(my_coroutine()) await asyncio.sleep(2) # Wait for some time before cancelling task.cancel() # Cancel the task try: await task # This will raise a CancelledError except asyncio.CancelledError: print(\"Task was cancelled\") ``` 3. **Getting the Result of a Task with `task.result()`**: ```python import asyncio async def my_coroutine(): return \"Coroutine result\" # Create and run a task task = asyncio.create_task(my_coroutine()) await task # Ensure the task completes before getting its result print(task.result()) # Output: Coroutine result ```"
+  },
   "data_pointers": [
     {
       "title": "Task 任务",
       "uri": "knowledge://py_asyncio_task_v4",
-      "content_preview": "The `asyncio.create_task()` function creates a task. The `task.cancel()` method cancels the task. The `task.result()` method retrieves the result of the task. Here are brief Python code examples for e"
+      "content_preview": "Task 任务: The `asyncio.create_task()` function creates a task. The `task.cancel()` method cancels the task. The `task.result()` method retrieves the result of the task. Here are brief Python code examples for each: 1. **Creating a Task with `asyncio.create_task()`**: ```python import asyncio async def my_coroutine(): print(\"Coroutine is running\") # Create and run a task task = asyncio.create_task(my_coroutine()) await task # Wait for the task to complete ``` 2. **Cancelling a Task with `task.cancel()`**: ```python import asyncio async def my_coroutine(): print(\"Coroutine is running\") await asyncio.sleep(10) # Simulate long-running operation # Create and run a task task = asyncio.create_task(my_coroutine()) await asyncio.sleep(2) # Wait for some time before cancelling task.cancel() # Cancel the task try: await task # This will raise a CancelledError except asyncio.CancelledError: print(\"Task was cancelled\") ``` 3. **Getting the Result of a Task with `task.result()`**: ```python import asyncio async def my_coroutine(): return \"Coroutine result\" # Create and run a task task = asyncio.create_task(my_coroutine()) await task # Ensure the task completes before getting its result print(task.result()) # Output: Coroutine result ```"
     }
   ],
   "related_nodes": []

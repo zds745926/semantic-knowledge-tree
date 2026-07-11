@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Git is a distributed version control system, with core concepts including commits, branches, merges, and remotes. Here are brief explanations for each of these concepts along with corresponding Python"
+    "description": "Git: Git is a distributed version control system, with core concepts including commits, branches, merges, and remotes. Here are brief explanations for each of these concepts along with corresponding Python code examples (using the GitPython library): 1. **Commits**: Commits represent changes to the project's files over time. ```python import git repo = git.Repo('path/to/repo') # Create a new commit index = repo.index index.add(['file.txt']) index.commit('Initial commit message') ``` 2. **Branches**: Branches allow you to work on different versions of the project simultaneously. ```python import git repo = git.Repo('path/to/repo') # Create a new branch origin_branch = repo.create_head('new-branch', force=True) ``` 3. **Merges**: Merging combines changes from one branch into another. ```python import git repo = git.Repo('path/to/repo') # Merge 'feature' branch into the current branch origin_branch.checkout() repo.git.merge('feature') ``` 4. **Remotes**: Remotes are used to interact with other repositories, such as those on GitHub or GitLab. ```python import git repo = git.Repo('path/to/repo') # Add a remote repository origin = repo.create_remote('origin', 'https://github.com/user/repo.git') ``` These examples provide a basic understanding of how to work with these core Git concepts using Python."
   },
   "data_pointers": [],
   "related_nodes": []

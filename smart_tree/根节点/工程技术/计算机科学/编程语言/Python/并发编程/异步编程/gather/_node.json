@@ -9,12 +9,14 @@
   "parent": "异步编程",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "gather: `asyncio.gather(task1, task2)` runs multiple coroutines concurrently. It returns a list of results. If an exception occurs in any of the tasks, it will be included in the result list unless `return_exceptions` is set to `False`. Python code example: ```python import asyncio async def my_coroutine(i): await asyncio.sleep(1) # Simulate some async operation return i * 2 # Run two coroutines concurrently tasks = [my_coroutine(i) for i in range(3)] try: results = asyncio.gather(*tasks) done, pending = await results print(done) # Output: [0, 2, 4] except Exception as e: print(f\"An exception occurred: {e}\") ``` In this example, `asyncio.gather` is used to run three coroutines concurrently. The results are collected in a list and printed out."
+  },
   "data_pointers": [
     {
       "title": "gather",
       "uri": "knowledge://py_gather_v4",
-      "content_preview": "`asyncio.gather(task1, task2)` runs multiple coroutines concurrently. It returns a list of results. If an exception occurs in any of the tasks, it will be included in the result list unless `return_ex"
+      "content_preview": "gather: `asyncio.gather(task1, task2)` runs multiple coroutines concurrently. It returns a list of results. If an exception occurs in any of the tasks, it will be included in the result list unless `return_exceptions` is set to `False`. Python code example: ```python import asyncio async def my_coroutine(i): await asyncio.sleep(1) # Simulate some async operation return i * 2 # Run two coroutines concurrently tasks = [my_coroutine(i) for i in range(3)] try: results = asyncio.gather(*tasks) done, pending = await results print(done) # Output: [0, 2, 4] except Exception as e: print(f\"An exception occurred: {e}\") ``` In this example, `asyncio.gather` is used to run three coroutines concurrently. The results are collected in a list and printed out."
     }
   ],
   "related_nodes": []

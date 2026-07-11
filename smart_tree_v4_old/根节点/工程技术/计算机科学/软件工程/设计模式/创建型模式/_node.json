@@ -1,0 +1,21 @@
+{
+  "name": "创建型模式",
+  "node_id": "creational_v4",
+  "parent_id": "design_patterns_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "设计模式",
+  "children": [
+    "单例模式",
+    "工厂模式",
+    "建造者模式"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Creation patterns abstract the instantiation process of objects, making the system independent of how objects are created. To provide a more concrete example, let's consider the Factory Method pattern"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

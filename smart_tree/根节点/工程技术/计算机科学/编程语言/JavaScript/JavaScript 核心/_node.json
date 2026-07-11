@@ -8,15 +8,15 @@
   "version": 1,
   "parent": "JavaScript",
   "children": [
-    "作用域链",
-    "原型链",
-    "异步 JS",
     "执行上下文",
-    "闭包"
+    "作用域链",
+    "闭包",
+    "原型链",
+    "异步 JS"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The core of JavaScript includes execution context, scope chain, closure, prototype chain, and asynchronous programming. - **Execution Context**: This refers to the environment in which a piece of code"
+    "description": "JavaScript 核心: The core of JavaScript includes execution context, scope chain, closure, prototype chain, and asynchronous programming. - **Execution Context**: This refers to the environment in which a piece of code is executed. It contains variables, this keyword, and other properties that are relevant to the current state of execution. ```python # Example: Creating an execution context with a simple function def greet(name): message = f\"Hello, {name}!\" print(message) greet(\"World\") # Output: Hello, World! ``` - **Scope Chain**: This is the mechanism by which JavaScript determines where to look for variables and functions. It's essentially a chain of scopes that starts from the innermost scope and moves outward. ```python # Example: Scope chain in Python (similar concept) x = 10 def outer(): y = 20 def inner(): z = 30 print(z, y, x) # Output will depend on the scope resolution rules of Python inner() outer() ``` - **Closure**: A closure is a function that has access to its own scope, the global scope, and the scope chain of the function it was created in. This allows for private variables and functions. ```python # Example: Closure in Python (using nonlocal keyword) def outer(): x = \"local\" def inner(): nonlocal x x = \"nonlocal\" print(\"inner:\", x) inner() print(\"outer:\", x) outer() # Output: # inner: nonlocal # outer: nonlocal ``` - **Prototype Chain**: In JavaScript, objects inherit properties and methods from other objects through the prototype chain. This is a key feature of how inheritance works in JavaScript. ```python # Example: Prototype chain in Python (using class inheritance) class Animal: def sound(self): return \"Some sound\" class Dog(Animal): def sound(self): return \"Woof!\" dog = Dog() print(dog.sound()) # Output: Woof! ``` - **Asynchronous Programming**: This refers to the ability of a program to execute or continue executing instructions while waiting for an external event, such as a network request or file I/O operation. ```python # Example: Asynchronous programming in Python using asyncio import asyncio async def fetch_data(): print(\"Start fetching\") await asyncio.sleep(2) # Simulate I/O operation print(\"Data fetched\") async def main(): task = asyncio.create_task(fetch_data()) await task asyncio.run(main()) # Output: # Start fetching # Data fetched ``` These examples provide a basic understanding of these concepts in the context of Python, which can help bridge the gap between JavaScript and other programming languages."
   },
   "data_pointers": [],
   "related_nodes": []

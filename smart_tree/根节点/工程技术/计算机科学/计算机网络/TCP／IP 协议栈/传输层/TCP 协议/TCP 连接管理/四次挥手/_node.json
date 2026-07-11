@@ -9,12 +9,14 @@
   "parent": "TCP 连接管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "四次挥手: FIN→ACK→FIN→ACK. Full-duplex closure (requires 4 steps). TIME_WAIT waits for 2MSL. Python code example to illustrate the concept of a full-duplex closure in TCP: ```python import socket def simulate_tcp_close(): # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) sock.connect(server_address) try: # Send data message = b\"Hello, world\" print(f\"sending {message}\") sock.sendall(message) # Wait for a response amount_received = 0 amount_expected = len(message) while amount_received < amount_expected: data = sock.recv(16) amount_received += len(data) print(f\"received {data}\") # Simulate sending FIN and receiving ACK sock.shutdown(socket.SHUT_WR) # Send FIN print(\"sent shutdown (FIN)\") # Receive the final ACK while True: data = sock.recv(16) if not data: break print(f\"received {data}\") finally: # Simulate receiving FIN and sending ACK, then sending FIN again to close fully sock.close() print(\"socket closed\") simulate_tcp_close() ``` This Python code simulates a TCP connection and demonstrates the full-duplex closure process, including the four-way handshake for closing the connection. Note that this is a simplified simulation and does not include actual network communication or the TIME_WAIT state."
+  },
   "data_pointers": [
     {
       "title": "四次挥手",
       "uri": "knowledge://four_way_v4",
-      "content_preview": "Translation: FIN→ACK→FIN→ACK. Full-duplex closure (requires 4 steps). TIME_WAIT waits for 2MSL. Python code example to illustrate the concept of a full-duplex closure in TCP: ```python import socket d"
+      "content_preview": "四次挥手: FIN→ACK→FIN→ACK. Full-duplex closure (requires 4 steps). TIME_WAIT waits for 2MSL. Python code example to illustrate the concept of a full-duplex closure in TCP: ```python import socket def simulate_tcp_close(): # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) sock.connect(server_address) try: # Send data message = b\"Hello, world\" print(f\"sending {message}\") sock.sendall(message) # Wait for a response amount_received = 0 amount_expected = len(message) while amount_received < amount_expected: data = sock.recv(16) amount_received += len(data) print(f\"received {data}\") # Simulate sending FIN and receiving ACK sock.shutdown(socket.SHUT_WR) # Send FIN print(\"sent shutdown (FIN)\") # Receive the final ACK while True: data = sock.recv(16) if not data: break print(f\"received {data}\") finally: # Simulate receiving FIN and sending ACK, then sending FIN again to close fully sock.close() print(\"socket closed\") simulate_tcp_close() ``` This Python code simulates a TCP connection and demonstrates the full-duplex closure process, including the four-way handshake for closing the connection. Note that this is a simplified simulation and does not include actual network communication or the TIME_WAIT state."
     }
   ],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "框架生态",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "scikit-learn: Classic machine learning library. Classification/regression/clustering/dimensionality reduction. Unified fit/predict API. Seamless integration with NumPy/Pandas. Here's a brief Python code example that demonstrates the use of such a library, specifically scikit-learn, for a classification task: ```python from sklearn.datasets import load_iris from sklearn.model_selection import train_test_split from sklearn.preprocessing import StandardScaler from sklearn.neighbors import KNeighborsClassifier # Load dataset data = load_iris() X, y = data.data, data.target # Split the dataset into training and testing sets X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Feature scaling scaler = StandardScaler() X_train_scaled = scaler.fit_transform(X_train) X_test_scaled = scaler.transform(X_test) # Train a KNN classifier knn = KNeighborsClassifier(n_neighbors=3) knn.fit(X_train_scaled, y_train) # Predict on the test set predictions = knn.predict(X_test_scaled) print(predictions) ``` This example uses scikit-learn to perform classification using k-nearest neighbors (KNN). It demonstrates loading a dataset, splitting it into training and testing sets, scaling features, fitting a model, and making predictions."
+  },
   "data_pointers": [
     {
       "title": "scikit-learn",
       "uri": "knowledge://py_sklearn_v4",
-      "content_preview": "Classic machine learning library. Classification/regression/clustering/dimensionality reduction. Unified fit/predict API. Seamless integration with NumPy/Pandas. Here's a brief Python code example tha"
+      "content_preview": "scikit-learn: Classic machine learning library. Classification/regression/clustering/dimensionality reduction. Unified fit/predict API. Seamless integration with NumPy/Pandas. Here's a brief Python code example that demonstrates the use of such a library, specifically scikit-learn, for a classification task: ```python from sklearn.datasets import load_iris from sklearn.model_selection import train_test_split from sklearn.preprocessing import StandardScaler from sklearn.neighbors import KNeighborsClassifier # Load dataset data = load_iris() X, y = data.data, data.target # Split the dataset into training and testing sets X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Feature scaling scaler = StandardScaler() X_train_scaled = scaler.fit_transform(X_train) X_test_scaled = scaler.transform(X_test) # Train a KNN classifier knn = KNeighborsClassifier(n_neighbors=3) knn.fit(X_train_scaled, y_train) # Predict on the test set predictions = knn.predict(X_test_scaled) print(predictions) ``` This example uses scikit-learn to perform classification using k-nearest neighbors (KNN). It demonstrates loading a dataset, splitting it into training and testing sets, scaling features, fitting a model, and making predictions."
     }
   ],
   "related_nodes": []

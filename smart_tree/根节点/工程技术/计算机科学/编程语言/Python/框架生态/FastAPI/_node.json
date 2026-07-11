@@ -9,12 +9,14 @@
   "parent": "框架生态",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "FastAPI: Modern asynchronous web framework. Automatic OpenAPI documentation. Pydantic validation. Type annotation-driven. Python code example for type annotation and Pydantic validation: ```python from pydantic import BaseModel, Field class Item(BaseModel): name: str = Field(..., title=\"The name of the item\", description=\"A brief description of the item\") price: float = Field(..., gt=0, title=\"The price of the item\") # Example usage: item_data = {\"name\": \"Apple\", \"price\": 1.2} item = Item(**item_data) print(item.name) # Output: Apple ``` This example demonstrates a simple Pydantic model with type annotations and validation constraints."
+  },
   "data_pointers": [
     {
       "title": "FastAPI",
       "uri": "knowledge://py_fastapi_v4",
-      "content_preview": "Modern asynchronous web framework. Automatic OpenAPI documentation. Pydantic validation. Type annotation-driven. Python code example for type annotation and Pydantic validation: ```python from pydanti"
+      "content_preview": "FastAPI: Modern asynchronous web framework. Automatic OpenAPI documentation. Pydantic validation. Type annotation-driven. Python code example for type annotation and Pydantic validation: ```python from pydantic import BaseModel, Field class Item(BaseModel): name: str = Field(..., title=\"The name of the item\", description=\"A brief description of the item\") price: float = Field(..., gt=0, title=\"The price of the item\") # Example usage: item_data = {\"name\": \"Apple\", \"price\": 1.2} item = Item(**item_data) print(item.name) # Output: Apple ``` This example demonstrates a simple Pydantic model with type annotations and validation constraints."
     }
   ],
   "related_nodes": []

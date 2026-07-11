@@ -1,0 +1,21 @@
+{
+  "name": "Barrier",
+  "node_id": "py_barrier_v4",
+  "parent_id": "py_thread_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "多线程",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Barrier",
+      "uri": "knowledge://py_barrier_v4",
+      "content_preview": "Threading Barrier. All n threads wait until they reach the barrier point and then proceed simultaneously. This allows for phased parallelism. Here's a brief Python code example using `threading.Barrie"
+    }
+  ],
+  "related_nodes": []
+}

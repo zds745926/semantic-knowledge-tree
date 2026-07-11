@@ -1,0 +1,21 @@
+{
+  "name": "Terraform",
+  "node_id": "terraform_v4",
+  "parent_id": "cloud_v4",
+  "level": 5,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "云原生基础",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Terraform",
+      "uri": "knowledge://terraform_v4",
+      "content_preview": "IaC (HCL language). Plan/Apply/Destroy. State file. Multi-provider. Here's a brief explanation with a related Python code example for context, even though the original text is about Infrastructure as "
+    }
+  ],
+  "related_nodes": []
+}

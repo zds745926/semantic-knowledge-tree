@@ -1,0 +1,21 @@
+{
+  "name": "LEGB 规则",
+  "node_id": "py_scope_legb_v4",
+  "parent_id": "py_scopes_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "变量作用域",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "LEGB 规则",
+      "uri": "knowledge://py_scope_legb_v4",
+      "content_preview": "Python variable lookup follows the order Local → Enclosing → Global → Built-in. To illustrate this with a simple Python code example: ```python # Define a global variable global_var = \"I am global\" de"
+    }
+  ],
+  "related_nodes": []
+}

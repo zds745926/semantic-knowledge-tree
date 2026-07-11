@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "网络安全",
   "children": [
+    "XSS 跨站脚本",
     "CSRF",
-    "SQL注入",
-    "XSS 跨站脚本"
+    "SQL注入"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Common web security defenses against attacks. Translation of the provided Chinese text: Common web security defenses include measures to protect against various types of attacks. Here are some key con"
+    "description": "Web 安全: Common web security defenses against attacks. Translation of the provided Chinese text: Common web security defenses include measures to protect against various types of attacks. Here are some key concepts and corresponding Python code examples for illustration: 1. **SQL Injection**: SQL injection is a common attack where an attacker inserts malicious SQL statements into input fields to manipulate or steal data from a database. ```python # Example of vulnerable code (do not use in production) user_input = request.form['username'] query = \"SELECT * FROM users WHERE username = '\" + user_input + \"'\" # Corrected and secure version using parameterized queries import sqlite3 conn = sqlite3.connect('example.db') cursor = conn.cursor() user_input = 'admin' # Assume this is the input from a user query = \"SELECT * FROM users WHERE username = ?\" cursor.execute(query, (user_input,)) results = cursor.fetchall() ``` 2. **Cross-Site Scripting (XSS)**: XSS attacks involve injecting malicious scripts into web pages viewed by other users. ```python # Example of a simple Flask application with potential XSS vulnerability from flask import Flask, request app = Flask(__name__) @app.route('/') def index(): user_input = request.args.get('user') return f'Hello, {user_input}!' # Secure version using escape function to prevent script injection from flask import escape @app.route('/') def secure_index(): user_input = request.args.get('user', '') safe_output = escape(user_input) return f'Hello, {safe_output}!' ``` 3. **Cross-Site Request Forgery (CSRF)**: CSRF attacks trick users into performing actions on a web application without their knowledge. ```python # Example of a simple Flask application with potential CSRF vulnerability from flask import Flask, request app = Flask(__name__) @app.route('/transfer', methods=['POST']) def transfer(): amount = request.form['amount'] to_account = request.form['to_account'] # Perform the transfer logic here... # Secure version using CSRF tokens from flask_wtf.csrf import CSRFProtect app.config['SECRET_KEY'] = 'your_secret_key' csrf = CSRFProtect(app) @app.route('/transfer', methods=['POST']) def secure_transfer(): if not csrf.validate_on_submit(): return \"CSRF token missing\", 403 amount = request.form['amount'] to_account = request.form['to_account'] # Perform the transfer logic here... ``` These examples illustrate basic security practices and techniques that can be implemented in Python applications."
   },
   "data_pointers": [],
   "related_nodes": []

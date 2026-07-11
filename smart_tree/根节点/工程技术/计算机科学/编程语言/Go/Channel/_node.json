@@ -9,12 +9,14 @@
   "parent": "Go",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Channel: `ch := make(chan int)` creates an integer channel. `ch <- val` sends a value `<-ch` receives a value. `select` is used for multiplexing. Python code example (using similar concepts): ```python import threading # Create a thread-safe queue using Python's threading module queue = [] def producer(val): # Simulate sending a value to the channel print(f\"Producing: {val}\") queue.append(val) def consumer(): # Simulate receiving a value from the channel if queue: val = queue.pop(0) print(f\"Consuming: {val}\") # Example usage producer(42) # Produces: Producing: 42 consumer() # Consumes: Consuming: 42 # Using select-like behavior with threading def multiplex(): events = [threading.Event(), threading.Event()] def producer_event(val): print(f\"Producing event for {val}\") events[val].set() def consumer_event(): val = next((i for i, e in enumerate(events) if e.is_set()), None) if val is not None: print(f\"Consuming event for {val}\") events[val].clear() producer_event(0) # Produces: Producing event for 0 consumer_event() # Consumes: Consuming event for 0 multiplex() ``` Note that Python does not have built-in channels like Go, but we can simulate similar behavior using lists and threading events. The `select` concept is approximated here with the use of multiple events to handle multiplexing between different threads or processes."
+  },
   "data_pointers": [
     {
       "title": "Channel",
       "uri": "knowledge://go_channel_v4",
-      "content_preview": "Translation: `ch := make(chan int)` creates an integer channel. `ch <- val` sends a value `<-ch` receives a value. `select` is used for multiplexing. Python code example (using similar concepts): ```p"
+      "content_preview": "Channel: `ch := make(chan int)` creates an integer channel. `ch <- val` sends a value `<-ch` receives a value. `select` is used for multiplexing. Python code example (using similar concepts): ```python import threading # Create a thread-safe queue using Python's threading module queue = [] def producer(val): # Simulate sending a value to the channel print(f\"Producing: {val}\") queue.append(val) def consumer(): # Simulate receiving a value from the channel if queue: val = queue.pop(0) print(f\"Consuming: {val}\") # Example usage producer(42) # Produces: Producing: 42 consumer() # Consumes: Consuming: 42 # Using select-like behavior with threading def multiplex(): events = [threading.Event(), threading.Event()] def producer_event(val): print(f\"Producing event for {val}\") events[val].set() def consumer_event(): val = next((i for i, e in enumerate(events) if e.is_set()), None) if val is not None: print(f\"Consuming event for {val}\") events[val].clear() producer_event(0) # Produces: Producing event for 0 consumer_event() # Consumes: Consuming event for 0 multiplex() ``` Note that Python does not have built-in channels like Go, but we can simulate similar behavior using lists and threading events. The `select` concept is approximated here with the use of multiple events to handle multiplexing between different threads or processes."
     }
   ],
   "related_nodes": []

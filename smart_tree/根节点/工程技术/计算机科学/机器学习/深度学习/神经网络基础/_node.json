@@ -8,15 +8,17 @@
   "version": 1,
   "parent": "深度学习",
   "children": [
-    "优化器",
-    "反向传播",
     "感知机",
-    "激活函数"
+    "激活函数",
+    "反向传播",
+    "优化器"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Neural networks are composed of layers of neurons that learn through backpropagation. Here is a brief Python code example using the popular `keras` library to illustrate a simple neural network with o"
+    "description": "神经网络基础: Neural networks are composed of layers of neurons that learn through backpropagation. Here is a brief Python code example using the popular `keras` library to illustrate a simple neural network with one hidden layer: ```python from keras.models import Sequential from keras.layers import Dense # Define a sequential model model = Sequential() # Add a densely connected layer with 10 units and input shape (8,) model.add(Dense(10, input_dim=8, activation='relu')) # Add an output layer for binary classification model.add(Dense(1, activation='sigmoid')) # Compile the model specifying loss function and optimizer model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']) # Example of training the model with some data (X_train, y_train) # model.fit(X_train, y_train, epochs=50, batch_size=10) ``` This example demonstrates a simple neural network architecture using Keras. The `Sequential` model is defined and two dense layers are added: one hidden layer with 10 units and ReLU activation, followed by an output layer for binary classification with sigmoid activation."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [
+    "cnn_v4"
+  ]
 }

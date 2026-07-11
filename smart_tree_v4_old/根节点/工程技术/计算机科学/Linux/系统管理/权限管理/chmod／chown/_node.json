@@ -1,0 +1,21 @@
+{
+  "name": "chmod/chown",
+  "node_id": "chmod_chown_v4",
+  "parent_id": "linux_perm_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "权限管理",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "chmod/chown",
+      "uri": "knowledge://chmod_chown_v4",
+      "content_preview": "chmod 755 (rwxr-xr-x). chown user:group. SUID/SGID/sticky bit. Here are brief explanations and Python code examples for the concepts mentioned: 1. **chmod 755**: This sets file permissions to read, wr"
+    }
+  ],
+  "related_nodes": []
+}

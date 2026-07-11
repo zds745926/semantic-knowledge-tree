@@ -9,12 +9,14 @@
   "parent": "代数",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "一元二次方程求根公式: The root formula for a quadratic equation \\(ax^2 + bx + c = 0\\) (where \\(a \\neq 0\\)) is given by \\(x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\). The discriminant, denoted as \\(\\Delta\\), is \\(b^2 - 4ac\\). Here's a brief Python code example to solve the quadratic equation: ```python import math def solve_quadratic(a, b, c): # Calculate the discriminant delta = b**2 - 4*a*c # Check if the discriminant is non-negative if delta >= 0: # Two real roots root1 = (-b + math.sqrt(delta)) / (2 * a) root2 = (-b - math.sqrt(delta)) / (2 * a) return root1, root2 else: # Complex roots real_part = -b / (2 * a) imaginary_part = math.sqrt(-delta) / (2 * a) return complex(real_part, imaginary_part), complex(real_part, -imaginary_part) # Example usage a, b, c = 1, -3, 2 roots = solve_quadratic(a, b, c) print(\"The roots are:\", roots) ``` This code defines a function `solve_quadratic` that calculates the roots of a quadratic equation based on the provided coefficients \\(a\\), \\(b\\), and \\(c\\). It handles both real and complex roots."
+  },
   "data_pointers": [
     {
       "title": "一元二次方程求根公式",
       "uri": "knowledge://quad_formula_v4",
-      "content_preview": "The root formula for a quadratic equation \\(ax^2 + bx + c = 0\\) (where \\(a \\neq 0\\)) is given by \\(x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\). The discriminant, denoted as \\(\\Delta\\), is \\(b^2 - 4ac\\). He"
+      "content_preview": "一元二次方程求根公式: The root formula for a quadratic equation \\(ax^2 + bx + c = 0\\) (where \\(a \\neq 0\\)) is given by \\(x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\). The discriminant, denoted as \\(\\Delta\\), is \\(b^2 - 4ac\\). Here's a brief Python code example to solve the quadratic equation: ```python import math def solve_quadratic(a, b, c): # Calculate the discriminant delta = b**2 - 4*a*c # Check if the discriminant is non-negative if delta >= 0: # Two real roots root1 = (-b + math.sqrt(delta)) / (2 * a) root2 = (-b - math.sqrt(delta)) / (2 * a) return root1, root2 else: # Complex roots real_part = -b / (2 * a) imaginary_part = math.sqrt(-delta) / (2 * a) return complex(real_part, imaginary_part), complex(real_part, -imaginary_part) # Example usage a, b, c = 1, -3, 2 roots = solve_quadratic(a, b, c) print(\"The roots are:\", roots) ``` This code defines a function `solve_quadratic` that calculates the roots of a quadratic equation based on the provided coefficients \\(a\\), \\(b\\), and \\(c\\). It handles both real and complex roots."
     }
   ],
   "related_nodes": []

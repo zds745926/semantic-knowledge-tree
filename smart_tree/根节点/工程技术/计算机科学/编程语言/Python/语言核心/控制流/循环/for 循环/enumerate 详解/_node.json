@@ -9,12 +9,14 @@
   "parent": "for 循环",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "enumerate 详解: The `enumerate(iterable, start=0)` function returns a sequence of tuples (index, value), replacing C-style index loops. Here's an example to illustrate how it works in Python: ```python # Example usage of enumerate fruits = ['apple', 'banana', 'cherry'] for i, fruit in enumerate(fruits, start=1): print(f\"Index {i}: {fruit}\") ``` This will output: ``` Index 1: apple Index 2: banana Index 3: cherry ```"
+  },
   "data_pointers": [
     {
       "title": "enumerate 详解",
       "uri": "knowledge://py_enumerate_v4",
-      "content_preview": "The `enumerate(iterable, start=0)` function returns a sequence of tuples (index, value), replacing C-style index loops. Here's an example to illustrate how it works in Python: ```python # Example usag"
+      "content_preview": "enumerate 详解: The `enumerate(iterable, start=0)` function returns a sequence of tuples (index, value), replacing C-style index loops. Here's an example to illustrate how it works in Python: ```python # Example usage of enumerate fruits = ['apple', 'banana', 'cherry'] for i, fruit in enumerate(fruits, start=1): print(f\"Index {i}: {fruit}\") ``` This will output: ``` Index 1: apple Index 2: banana Index 3: cherry ```"
     }
   ],
   "related_nodes": []

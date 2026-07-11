@@ -8,17 +8,17 @@
   "version": 1,
   "parent": "面向对象",
   "children": [
-    "ABC 抽象基类",
     "class 定义",
+    "类高级功能",
+    "继承与多态",
+    "property 装饰器",
     "dataclasses 数据类",
     "enum 枚举",
-    "property 装饰器",
-    "类高级功能",
-    "继承与多态"
+    "ABC 抽象基类"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Translation: A class defines a class, and __init__ is the constructor. self is an instance reference. classmethod, staticmethod, property. Python code examples: 1. Defining a class with an `__init__` "
+    "description": "类与实例: A class defines a class, and __init__ is the constructor. self is an instance reference. classmethod, staticmethod, property. Python code examples: 1. Defining a class with an `__init__` method: ```python class ExampleClass: def __init__(self, value): self.value = value # self refers to the instance of the class example_instance = ExampleClass(10) print(example_instance.value) # Output: 10 ``` 2. Using `classmethod`: ```python class ExampleClass: @classmethod def example_class_method(cls): print(f\"Called with class: {cls}\") ExampleClass.example_class_method() # Output: Called with class: <class '__main__.ExampleClass'> ``` 3. Using `staticmethod`: ```python class ExampleClass: @staticmethod def example_static_method(): print(\"This is a static method\") ExampleClass.example_static_method() # Output: This is a static method ``` 4. Using `property`: ```python class ExampleClass: def __init__(self, value): self._value = value @property def value(self): return self._value example_instance = ExampleClass(20) print(example_instance.value) # Output: 20 ``` These examples illustrate the use of class methods, static methods, and properties in Python."
   },
   "data_pointers": [],
   "related_nodes": []

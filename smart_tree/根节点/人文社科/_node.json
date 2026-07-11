@@ -9,12 +9,12 @@
   "parent": "根节点",
   "children": [
     "历史",
-    "哲学",
-    "文学"
+    "文学",
+    "哲学"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Humanities and social sciences study human society, culture, and spiritual phenomena, including history, literature, philosophy, sociology, psychology, political science, etc. They explore the evoluti"
+    "description": "人文社科: Humanities and social sciences study human society, culture, and spiritual phenomena, including history, literature, philosophy, sociology, psychology, political science, etc. They explore the evolution of human civilization, the development of thought, and the laws governing societal operation, fostering critical thinking and a humanities-based素养 (literature-based). To provide a more accurate translation while keeping technical terms precise, I'll use \"humanities-based\" for \"人文素养,\" which is often used in academic contexts to refer to the overall cultural and intellectual education derived from studying humanities subjects. Here's an added Python code example related to data analysis, which could be relevant if we are discussing methods of exploring societal phenomena: ```python import pandas as pd # Example DataFrame representing a simple dataset about historical events data = { 'Year': [1492, 1789, 1914, 1945], 'Event': ['Columbus discovers America', 'French Revolution begins', 'World War I starts', 'End of World War II'] } df = pd.DataFrame(data) # Analyzing the data to explore historical events def analyze_events(df): # Counting the number of events per year event_counts = df['Year'].value_counts() print(\"Number of events per year:\") print(event_counts) # Finding the earliest and latest years with events earliest_year = df['Year'].min() latest_year = df['Year'].max() print(f\"\\nEarliest event: {earliest_year}\") print(f\"Latest event: {latest_year}\") analyze_events(df) ``` This Python code example demonstrates how to analyze a simple dataset related to historical events, which could be part of the exploration of human civilization's evolution."
   },
   "data_pointers": [],
   "related_nodes": []

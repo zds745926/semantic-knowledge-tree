@@ -9,12 +9,14 @@
   "parent": "路径与文件",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "pathlib: Path object. Path.cwd(), home(), mkdir(), glob(), read_text. / operator concatenation. Here is an explanation with corresponding Python code examples: - `Path.cwd()`: Returns the current working directory. ```python from pathlib import Path current_directory = Path.cwd() print(current_directory) ``` - `home()`: Returns the user's home directory. ```python from pathlib import Path home_directory = Path.home() print(home_directory) ``` - `mkdir()`: Creates a new directory. If the parent directories do not exist, they will be created as well. ```python from pathlib import Path path = Path(\"new_folder\") path.mkdir(parents=True, exist_ok=True) ``` - `glob()`: Finds all the file names in the current working directory that match a specified pattern. ```python from pathlib import Path matching_files = Path.cwd().glob('*.py') for file_path in matching_files: print(file_path) ``` - `read_text()`: Reads the contents of a text file and returns it as a string. ```python from pathlib import Path content = Path(\"example.txt\").read_text() print(content) ``` - `/` operator: Used to concatenate paths. ```python from pathlib import Path full_path = Path(\"/home/user\") / \"new_folder\" print(full_path) ```"
+  },
   "data_pointers": [
     {
       "title": "pathlib",
       "uri": "knowledge://py_pathlib_std_v4",
-      "content_preview": "Path object. Path.cwd(), home(), mkdir(), glob(), read_text. / operator concatenation. Here is an explanation with corresponding Python code examples: - `Path.cwd()`: Returns the current working direc"
+      "content_preview": "pathlib: Path object. Path.cwd(), home(), mkdir(), glob(), read_text. / operator concatenation. Here is an explanation with corresponding Python code examples: - `Path.cwd()`: Returns the current working directory. ```python from pathlib import Path current_directory = Path.cwd() print(current_directory) ``` - `home()`: Returns the user's home directory. ```python from pathlib import Path home_directory = Path.home() print(home_directory) ``` - `mkdir()`: Creates a new directory. If the parent directories do not exist, they will be created as well. ```python from pathlib import Path path = Path(\"new_folder\") path.mkdir(parents=True, exist_ok=True) ``` - `glob()`: Finds all the file names in the current working directory that match a specified pattern. ```python from pathlib import Path matching_files = Path.cwd().glob('*.py') for file_path in matching_files: print(file_path) ``` - `read_text()`: Reads the contents of a text file and returns it as a string. ```python from pathlib import Path content = Path(\"example.txt\").read_text() print(content) ``` - `/` operator: Used to concatenate paths. ```python from pathlib import Path full_path = Path(\"/home/user\") / \"new_folder\" print(full_path) ```"
     }
   ],
   "related_nodes": []

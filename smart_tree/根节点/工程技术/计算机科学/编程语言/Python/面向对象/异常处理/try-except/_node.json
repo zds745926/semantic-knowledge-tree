@@ -9,12 +9,14 @@
   "parent": "异常处理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "try-except: `try-except-else-finally`. The `except ValueError as e:` block captures a specific exception. Python code example: ```python def safe_conversion(input_str): try: # Attempt to convert the input string to an integer return int(input_str) except ValueError as e: # Handle the case where conversion fails due to non-integer input print(f\"Conversion error: {e}\") else: # This block executes if no exceptions were raised in the try block print(\"Conversion successful!\") finally: # This block always executes, regardless of whether an exception was raised or not print(\"Attempted conversion.\") # Example usage safe_conversion(\"123\") # Should work fine safe_conversion(\"abc\") # Should trigger the except block ``` This example demonstrates how to use `try`, `except`, `else`, and `finally` blocks in Python. The `try` block attempts to convert a string to an integer, the `except` block handles the case where this conversion fails due to non-integer input, the `else` block runs if no exceptions occur, and the `finally` block always executes, indicating that the attempt to convert was made."
+  },
   "data_pointers": [
     {
       "title": "try-except",
       "uri": "knowledge://py_try_except_v4",
-      "content_preview": "Translation: `try-except-else-finally`. The `except ValueError as e:` block captures a specific exception. Python code example: ```python def safe_conversion(input_str): try: # Attempt to convert the "
+      "content_preview": "try-except: `try-except-else-finally`. The `except ValueError as e:` block captures a specific exception. Python code example: ```python def safe_conversion(input_str): try: # Attempt to convert the input string to an integer return int(input_str) except ValueError as e: # Handle the case where conversion fails due to non-integer input print(f\"Conversion error: {e}\") else: # This block executes if no exceptions were raised in the try block print(\"Conversion successful!\") finally: # This block always executes, regardless of whether an exception was raised or not print(\"Attempted conversion.\") # Example usage safe_conversion(\"123\") # Should work fine safe_conversion(\"abc\") # Should trigger the except block ``` This example demonstrates how to use `try`, `except`, `else`, and `finally` blocks in Python. The `try` block attempts to convert a string to an integer, the `except` block handles the case where this conversion fails due to non-integer input, the `else` block runs if no exceptions occur, and the `finally` block always executes, indicating that the attempt to convert was made."
     }
   ],
   "related_nodes": []

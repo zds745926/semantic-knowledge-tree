@@ -1,0 +1,21 @@
+{
+  "name": "TCP 拥塞控制",
+  "node_id": "tcp_congestion_v4",
+  "parent_id": "tcp_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "TCP 协议",
+  "children": [
+    "TCP BBR",
+    "慢启动",
+    "拥塞避免"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Congestion control prevents network overload, including slow start, congestion avoidance, and fast recovery. Here are brief explanations of these concepts along with corresponding Python code examples"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

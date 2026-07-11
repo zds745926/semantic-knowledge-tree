@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "A binary tree has at most two children for each node. A binary search tree (BST) follows the property that for any given node, all values in its left subtree are smaller and all values in its right su"
+    "description": "二叉树: A binary tree has at most two children for each node. A binary search tree (BST) follows the property that for any given node, all values in its left subtree are smaller and all values in its right subtree are larger. In-order traversal of a BST yields an ordered sequence. Here is a brief Python code example to demonstrate in-order traversal of a BST: ```python class TreeNode: def __init__(self, value=0, left=None, right=None): self.value = value self.left = left self.right = right def in_order_traversal(root): if root is None: return [] result = [] stack = [] current = root while True: if current is not None: stack.append(current) current = current.left elif stack: current = stack.pop() result.append(current.value) current = current.right else: break return result # Example usage: # Constructing a simple BST root = TreeNode(10) root.left = TreeNode(5) root.right = TreeNode(15) root.left.left = TreeNode(3) root.left.right = TreeNode(7) print(in_order_traversal(root)) # Output: [3, 5, 7, 10, 15] ``` This code defines a `TreeNode` class for the nodes of the BST and an `in_order_traversal` function to perform in-order traversal. The example constructs a simple BST and prints its elements in sorted order using in-order traversal."
   },
   "data_pointers": [],
   "related_nodes": []

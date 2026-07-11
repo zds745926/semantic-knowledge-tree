@@ -1,0 +1,23 @@
+{
+  "name": "函数式编程",
+  "node_id": "functional_v4",
+  "parent_id": "paradigms_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "编程范式",
+  "children": [
+    "Monad",
+    "不可变性",
+    "柯里化",
+    "纯函数",
+    "高阶函数"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Functional programming centers around pure functions, emphasizing immutability and side-effect-free operations. Key concepts include pure functions, higher-order functions, currying, and monads. Langu"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

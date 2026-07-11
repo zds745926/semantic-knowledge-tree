@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "DevOps",
   "children": [
-    "Grafana",
-    "Prometheus"
+    "Prometheus",
+    "Grafana"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Observability encompasses three main pillars: Metrics, Tracing, and Logging. Here are brief explanations for each term: 1. **Metrics**: This refers to the collection of numerical data that provides in"
+    "description": "可观测性: Observability encompasses three main pillars: Metrics, Tracing, and Logging. Here are brief explanations for each term: 1. **Metrics**: This refers to the collection of numerical data that provides insight into system performance over time. In Python, you can use libraries like `psutil` or `prometheus_client` to collect metrics. ```python import psutil # Example: Collecting CPU usage percentage cpu_usage = psutil.cpu_percent(interval=1) print(f\"CPU Usage: {cpu_usage}%\") ``` 2. **Tracing**: This involves tracking the flow of requests through a system, often used in distributed systems to understand how different services interact with each other. The `opentracing` library can be used for this purpose. ```python from opentracing import Tracer # Example: Starting a span (a unit of work) tracer = Tracer() with tracer.start_active_span('process_request'): print(\"Request processed\") ``` 3. **Logging**: This is the practice of recording information about the operations within an application, which can be used for debugging and monitoring. Python’s built-in `logging` module is commonly used. ```python import logging # Example: Logging a message logging.basicConfig(level=logging.INFO) logging.info(\"This is an info message\") ``` These examples provide a basic understanding of how these concepts can be implemented in Python, though the actual implementation may vary based on specific use cases and requirements."
   },
   "data_pointers": [],
   "related_nodes": []

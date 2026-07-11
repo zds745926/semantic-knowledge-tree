@@ -9,12 +9,14 @@
   "parent": "比较排序",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "堆排序: Heapify → Swap the root → Adjust. O(n log n) in-place. Unstable. No worst-case degeneration. Here's a brief Python code example for heapifying an array and then swapping the root with the last element, followed by adjusting the heap: ```python import heapq def heapify(arr): # Convert list to heap in-place, in linear time. heapq.heapify(arr) # Swap the root (smallest element) with the last element arr[0], arr[-1] = arr[-1], arr[0] # Adjust the heap by calling _siftup from the heapq module heapq._siftup(arr, 0) # Example usage: arr = [3, 2, 1, 7, 8, 4, 10, 16, 12] heapify(arr) print(\"After heapifying and swapping root:\", arr) ``` This example demonstrates the process of heapifying an array using Python's `heapq` module, then swapping the root element with the last element in the array, and finally adjusting the heap to maintain its properties."
+  },
   "data_pointers": [
     {
       "title": "堆排序",
       "uri": "knowledge://heap_sort_v4",
-      "content_preview": "Heapify → Swap the root → Adjust. O(n log n) in-place. Unstable. No worst-case degeneration. Here's a brief Python code example for heapifying an array and then swapping the root with the last element"
+      "content_preview": "堆排序: Heapify → Swap the root → Adjust. O(n log n) in-place. Unstable. No worst-case degeneration. Here's a brief Python code example for heapifying an array and then swapping the root with the last element, followed by adjusting the heap: ```python import heapq def heapify(arr): # Convert list to heap in-place, in linear time. heapq.heapify(arr) # Swap the root (smallest element) with the last element arr[0], arr[-1] = arr[-1], arr[0] # Adjust the heap by calling _siftup from the heapq module heapq._siftup(arr, 0) # Example usage: arr = [3, 2, 1, 7, 8, 4, 10, 16, 12] heapify(arr) print(\"After heapifying and swapping root:\", arr) ``` This example demonstrates the process of heapifying an array using Python's `heapq` module, then swapping the root element with the last element in the array, and finally adjusting the heap to maintain its properties."
     }
   ],
   "related_nodes": []

@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "I/O 管理",
+    "进程与线程管理",
     "内存管理",
     "文件系统",
-    "进程与线程管理"
+    "I/O 管理"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The operating system is a system software that manages computer hardware and software resources. Core functionalities include process management, memory management, file systems, and I/O management. T"
+    "description": "操作系统: The operating system is a system software that manages computer hardware and software resources. Core functionalities include process management, memory management, file systems, and I/O management. The operating system serves as a bridge between users and hardware; common examples include Linux, Windows, and macOS. Here's a brief Python code example to illustrate process management (creating a new process): ```python import os # Create a new process pid = os.fork() if pid == 0: # This is the child process print(\"Child process ID:\", os.getpid()) else: # This is the parent process print(\"Parent process ID:\", os.getpid(), \"and child process ID:\", pid) ``` This example uses Python's `os.fork()` to create a new process. The parent and child processes can then be distinguished based on their process IDs (PIDs)."
   },
   "data_pointers": [],
   "related_nodes": []

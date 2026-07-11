@@ -9,13 +9,17 @@
   "parent": "可观测性",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Prometheus: Time-series database + monitoring. Pull mode fetching. PromQL query. Alertmanager alert. Here is a brief explanation with a related Python code example for the pull mode fetching concept: Pull mode fetching involves actively requesting data from a server or endpoint at regular intervals. This can be useful in scenarios where you want to ensure that your system has control over when and how often it fetches data. Python Example: ```python import requests import time def fetch_data_from_server(url, interval=60): while True: response = requests.get(url) if response.status_code == 200: print(\"Data fetched successfully:\", response.json()) else: print(f\"Failed to fetch data. Status code: {response.status_code}\") time.sleep(interval) # Example usage fetch_data_from_server('http://example.com/api/data', interval=30) ``` This Python script demonstrates a simple pull mechanism where the system periodically requests data from an API endpoint using the `requests` library, with a specified interval between fetches."
+  },
   "data_pointers": [
     {
       "title": "Prometheus",
       "uri": "knowledge://prometheus_v4",
-      "content_preview": "Time-series database + monitoring. Pull mode fetching. PromQL query. Alertmanager alert. Here is a brief explanation with a related Python code example for the pull mode fetching concept: Pull mode fe"
+      "content_preview": "Prometheus: Time-series database + monitoring. Pull mode fetching. PromQL query. Alertmanager alert. Here is a brief explanation with a related Python code example for the pull mode fetching concept: Pull mode fetching involves actively requesting data from a server or endpoint at regular intervals. This can be useful in scenarios where you want to ensure that your system has control over when and how often it fetches data. Python Example: ```python import requests import time def fetch_data_from_server(url, interval=60): while True: response = requests.get(url) if response.status_code == 200: print(\"Data fetched successfully:\", response.json()) else: print(f\"Failed to fetch data. Status code: {response.status_code}\") time.sleep(interval) # Example usage fetch_data_from_server('http://example.com/api/data', interval=30) ``` This Python script demonstrates a simple pull mechanism where the system periodically requests data from an API endpoint using the `requests` library, with a specified interval between fetches."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "grafana_v4"
+  ]
 }

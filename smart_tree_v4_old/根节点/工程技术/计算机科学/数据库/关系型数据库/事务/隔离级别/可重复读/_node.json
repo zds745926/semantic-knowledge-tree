@@ -1,0 +1,21 @@
+{
+  "name": "可重复读",
+  "node_id": "repeatable_read_v4",
+  "parent_id": "isolation_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "隔离级别",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "可重复读",
+      "uri": "knowledge://repeatable_read_v4",
+      "content_preview": "The result of reading the same record multiple times is consistent. This is InnoDB's default behavior. MVCC snapshot reads are used to achieve this. To illustrate the concept with a brief Python code "
+    }
+  ],
+  "related_nodes": []
+}

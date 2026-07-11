@@ -1,0 +1,21 @@
+{
+  "name": "Inode",
+  "node_id": "inode_v4",
+  "parent_id": "vfs_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "虚拟文件系统 VFS",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Inode",
+      "uri": "knowledge://inode_v4",
+      "content_preview": "Store file metadata. Do not store filenames. Hard link count manages the lifecycle. Python code example for managing hard links: ```python import os def create_hard_link(original_file, new_link_name):"
+    }
+  ],
+  "related_nodes": []
+}

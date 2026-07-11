@@ -9,12 +9,14 @@
   "parent": "文件管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "cp/mv/rm: `cp -r` recursively copies directories. `mv` moves and renames files or directories. `rm -rf` is dangerous to use and should be used with caution. Python code example for `cp -r` (directory copying): ```python import shutil # Example: Copying a directory named 'source_dir' to 'destination_dir' shutil.copytree('source_dir', 'destination_dir') ``` Python code example for `mv` (file or directory moving and renaming): ```python import os # Example: Moving and renaming a file from 'old_path' to 'new_path' os.rename('old_path', 'new_path') ``` Python code example for `rm -rf` (directory removal, use with caution!): ```python import shutil # Example: Removing a directory named 'dir_to_remove' and its contents shutil.rmtree('dir_to_remove') ``` Note: The `rm -rf` equivalent in Python is `shutil.rmtree`, which forcefully removes directories and their contents. Use this function carefully to avoid accidental data loss."
+  },
   "data_pointers": [
     {
       "title": "cp/mv/rm",
       "uri": "knowledge://cp_mv_rm_v4",
-      "content_preview": "Translation: `cp -r` recursively copies directories. `mv` moves and renames files or directories. `rm -rf` is dangerous to use and should be used with caution. Python code example for `cp -r` (directo"
+      "content_preview": "cp/mv/rm: `cp -r` recursively copies directories. `mv` moves and renames files or directories. `rm -rf` is dangerous to use and should be used with caution. Python code example for `cp -r` (directory copying): ```python import shutil # Example: Copying a directory named 'source_dir' to 'destination_dir' shutil.copytree('source_dir', 'destination_dir') ``` Python code example for `mv` (file or directory moving and renaming): ```python import os # Example: Moving and renaming a file from 'old_path' to 'new_path' os.rename('old_path', 'new_path') ``` Python code example for `rm -rf` (directory removal, use with caution!): ```python import shutil # Example: Removing a directory named 'dir_to_remove' and its contents shutil.rmtree('dir_to_remove') ``` Note: The `rm -rf` equivalent in Python is `shutil.rmtree`, which forcefully removes directories and their contents. Use this function carefully to avoid accidental data loss."
     }
   ],
   "related_nodes": []

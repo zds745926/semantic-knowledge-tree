@@ -9,12 +9,12 @@
   "parent": "计算机科学",
   "children": [
     "信息论",
-    "数字逻辑",
-    "计算理论"
+    "计算理论",
+    "数字逻辑"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Theoretical computer science investigates the essence, limits, and possibilities of computation, including information theory, computational theory, and digital logic. It provides a formal foundation "
+    "description": "计算机理论: Theoretical computer science investigates the essence, limits, and possibilities of computation, including information theory, computational theory, and digital logic. It provides a formal foundation for all areas of computer science, revealing the boundaries of computability and the fundamental measures of information. Here is a brief Python code example to illustrate a simple concept in computational theory: determining whether a number is even or odd: ```python def is_even(number): \"\"\" Check if a given number is even. :param number: The integer to check. :return: True if the number is even, False otherwise. \"\"\" return number % 2 == 0 # Example usage: print(is_even(4)) # Output: True print(is_even(7)) # Output: False ``` This example demonstrates a basic computational concept and how it can be implemented in Python."
   },
   "data_pointers": [],
   "related_nodes": []

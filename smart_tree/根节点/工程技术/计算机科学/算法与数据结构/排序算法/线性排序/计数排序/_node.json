@@ -9,12 +9,14 @@
   "parent": "线性排序",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "计数排序: Count occurrences → accumulate → output. O(n+k), limited to integers with not too large a range. Python code example: ```python from collections import Counter def count_and_accumulate(numbers): # Count occurrences of each number counts = Counter(numbers) # Accumulate the counts (for simplicity, just summing up here as an example) accumulated_counts = sum(counts.values()) return accumulated_counts # Example usage: numbers = [1, 2, 2, 3, 3, 3] result = count_and_accumulate(numbers) print(result) # Output: 6 ``` This Python code uses the `Counter` class from the `collections` module to count occurrences of each number in a list. It then accumulates these counts by summing them up. The time complexity is O(n+k), where n is the number of elements and k is the range of numbers, which matches the description provided."
+  },
   "data_pointers": [
     {
       "title": "计数排序",
       "uri": "knowledge://counting_sort_v4",
-      "content_preview": "Count occurrences → accumulate → output. O(n+k), limited to integers with not too large a range. Python code example: ```python from collections import Counter def count_and_accumulate(numbers): # Cou"
+      "content_preview": "计数排序: Count occurrences → accumulate → output. O(n+k), limited to integers with not too large a range. Python code example: ```python from collections import Counter def count_and_accumulate(numbers): # Count occurrences of each number counts = Counter(numbers) # Accumulate the counts (for simplicity, just summing up here as an example) accumulated_counts = sum(counts.values()) return accumulated_counts # Example usage: numbers = [1, 2, 2, 3, 3, 3] result = count_and_accumulate(numbers) print(result) # Output: 6 ``` This Python code uses the `Counter` class from the `collections` module to count occurrences of each number in a list. It then accumulates these counts by summing them up. The time complexity is O(n+k), where n is the number of elements and k is the range of numbers, which matches the description provided."
     }
   ],
   "related_nodes": []

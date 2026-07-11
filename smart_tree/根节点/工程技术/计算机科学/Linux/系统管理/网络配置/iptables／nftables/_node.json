@@ -9,12 +9,14 @@
   "parent": "网络配置",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "iptables/nftables: Filter table INPUT/FORWARD/OUTPUT. Rule match actions. Here are some brief explanations for each part: - **Filter Table**: In Linux networking, the `filter` table is one of the built-in tables used by the Netfilter framework to manage packet filtering rules. - **INPUT Chain**: This chain processes packets destined for the local host (i.e., packets that arrive on the network interface). - **FORWARD Chain**: This chain processes packets that are being routed through the system (i.e., packets not destined for the local host but intended for another host). - **OUTPUT Chain**: This chain processes packets originating from the local host (i.e., packets sent out by the machine). Here is a brief Python code example using `iptables` to illustrate how you might set up rules in these chains: ```python import subprocess def add_filter_rule(chain, rule): \"\"\" Add a rule to the specified chain. :param chain: The chain name (INPUT, FORWARD, OUTPUT) :param rule: The rule string to be added \"\"\" command = f\"iptables -A {chain} -j {rule}\" subprocess.run(command.split(), check=True) # Example usage: add_filter_rule(\"INPUT\", \"ACCEPT\") add_filter_rule(\"FORWARD\", \"DROP\") add_filter_rule(\"OUTPUT\", \"LOG --log-prefix 'OUTPUT: '\") print(\"Rules added successfully.\") ``` This Python script uses the `subprocess` module to run `iptables` commands, adding rules to the specified chains."
+  },
   "data_pointers": [
     {
       "title": "iptables/nftables",
       "uri": "knowledge://iptables_v4",
-      "content_preview": "Filter table INPUT/FORWARD/OUTPUT. Rule match actions. Here are some brief explanations for each part: - **Filter Table**: In Linux networking, the `filter` table is one of the built-in tables used by"
+      "content_preview": "iptables/nftables: Filter table INPUT/FORWARD/OUTPUT. Rule match actions. Here are some brief explanations for each part: - **Filter Table**: In Linux networking, the `filter` table is one of the built-in tables used by the Netfilter framework to manage packet filtering rules. - **INPUT Chain**: This chain processes packets destined for the local host (i.e., packets that arrive on the network interface). - **FORWARD Chain**: This chain processes packets that are being routed through the system (i.e., packets not destined for the local host but intended for another host). - **OUTPUT Chain**: This chain processes packets originating from the local host (i.e., packets sent out by the machine). Here is a brief Python code example using `iptables` to illustrate how you might set up rules in these chains: ```python import subprocess def add_filter_rule(chain, rule): \"\"\" Add a rule to the specified chain. :param chain: The chain name (INPUT, FORWARD, OUTPUT) :param rule: The rule string to be added \"\"\" command = f\"iptables -A {chain} -j {rule}\" subprocess.run(command.split(), check=True) # Example usage: add_filter_rule(\"INPUT\", \"ACCEPT\") add_filter_rule(\"FORWARD\", \"DROP\") add_filter_rule(\"OUTPUT\", \"LOG --log-prefix 'OUTPUT: '\") print(\"Rules added successfully.\") ``` This Python script uses the `subprocess` module to run `iptables` commands, adding rules to the specified chains."
     }
   ],
   "related_nodes": []

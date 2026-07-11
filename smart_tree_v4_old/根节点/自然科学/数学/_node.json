@@ -1,0 +1,20 @@
+{
+  "name": "数学",
+  "node_id": "math_v4",
+  "parent_id": "natural_sciences",
+  "level": 2,
+  "is_leaf": false,
+  "absorption_rate": 0.05,
+  "version": 1,
+  "parent": "自然科学",
+  "children": [
+    "代数",
+    "微积分"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Mathematics is a discipline that studies quantities, structures, changes, and spaces, encompassing branches such as algebra, geometry, calculus, probability statistics, and discrete mathematics. It se"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

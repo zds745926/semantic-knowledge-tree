@@ -1,0 +1,21 @@
+{
+  "name": "执行上下文",
+  "node_id": "js_exec_ctx_v4",
+  "parent_id": "js_core_v4",
+  "level": 6,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "JavaScript 核心",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "执行上下文",
+      "uri": "knowledge://js_exec_ctx_v4",
+      "content_preview": "Execution context includes variable environment, lexical environment, and this binding. Execution stack management. To provide a more detailed explanation with a Python code example for the concept of"
+    }
+  ],
+  "related_nodes": []
+}

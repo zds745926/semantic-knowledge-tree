@@ -9,12 +9,14 @@
   "parent": "while 循环",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "while 基础: While the condition is true, the loop will repeatedly execute. The `break` statement exits the loop entirely, whereas the `continue` statement skips the rest of the current iteration and moves on to the next one. Python code example: ```python # Example using while loop with break and continue i = 0 while i < 5: i += 1 if i == 3: continue # Skip the rest of this iteration since i is 3 print(i) # This will only print 1, 2, 4, 5 print(\"\\nUsing break:\") i = 0 while i < 5: i += 1 if i == 3: break # Exit the loop entirely since i is 3 print(i) # This will only print 1 and 2 ``` This example demonstrates how `continue` skips to the next iteration of the loop, while `break` exits the loop altogether."
+  },
   "data_pointers": [
     {
       "title": "while 基础",
       "uri": "knowledge://py_while_basic_v4",
-      "content_preview": "Translation: While the condition is true, the loop will repeatedly execute. The `break` statement exits the loop entirely, whereas the `continue` statement skips the rest of the current iteration and "
+      "content_preview": "while 基础: While the condition is true, the loop will repeatedly execute. The `break` statement exits the loop entirely, whereas the `continue` statement skips the rest of the current iteration and moves on to the next one. Python code example: ```python # Example using while loop with break and continue i = 0 while i < 5: i += 1 if i == 3: continue # Skip the rest of this iteration since i is 3 print(i) # This will only print 1, 2, 4, 5 print(\"\\nUsing break:\") i = 0 while i < 5: i += 1 if i == 3: break # Exit the loop entirely since i is 3 print(i) # This will only print 1 and 2 ``` This example demonstrates how `continue` skips to the next iteration of the loop, while `break` exits the loop altogether."
     }
   ],
   "related_nodes": []

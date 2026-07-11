@@ -1,0 +1,21 @@
+{
+  "name": "短作业优先 SJF",
+  "node_id": "sjf_v4",
+  "parent_id": "sched_algo_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "调度算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "短作业优先 SJF",
+      "uri": "knowledge://sjf_v4",
+      "content_preview": "Select the process with the shortest CPU burst time. This minimizes average waiting time. However, this cannot be predicted in advance. Python code example (using a simple simulation to illustrate the"
+    }
+  ],
+  "related_nodes": []
+}

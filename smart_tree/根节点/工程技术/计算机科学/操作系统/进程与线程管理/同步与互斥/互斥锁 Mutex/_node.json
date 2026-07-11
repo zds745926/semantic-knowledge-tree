@@ -9,13 +9,18 @@
   "parent": "同步与互斥",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "互斥锁 Mutex: Ensure that only one thread accesses the critical section at any given time. P/V operations (also known as semaphore operations). Here's a brief explanation of P/V operations in the context of Python, using threading and semaphores: In Python, you can use the `threading` module along with `Semaphore` to control access to a critical section. A semaphore is an integer value that acts as a counter for the number of threads allowed to enter the critical section. ```python import threading # Create a semaphore allowing only one thread at a time semaphore = threading.Semaphore(1) def critical_section(): # Acquire the semaphore before entering the critical section semaphore.acquire() try: # Critical section code here print(\"Thread\", threading.current_thread().name, \"is in the critical section\") finally: # Release the semaphore after exiting the critical section semaphore.release() # Example usage with multiple threads threads = [] for _ in range(5): thread = threading.Thread(target=critical_section) threads.append(thread) thread.start() for thread in threads: thread.join() ``` In this example, only one thread can execute the `critical_section` function at a time due to the semaphore. The `acquire()` method is used before entering the critical section, and `release()` ensures that the semaphore is properly managed when exiting the section."
+  },
   "data_pointers": [
     {
       "title": "互斥锁 Mutex",
       "uri": "knowledge://mutex_lock_v4",
-      "content_preview": "Ensure that only one thread accesses the critical section at any given time. P/V operations (also known as semaphore operations). Here's a brief explanation of P/V operations in the context of Python,"
+      "content_preview": "互斥锁 Mutex: Ensure that only one thread accesses the critical section at any given time. P/V operations (also known as semaphore operations). Here's a brief explanation of P/V operations in the context of Python, using threading and semaphores: In Python, you can use the `threading` module along with `Semaphore` to control access to a critical section. A semaphore is an integer value that acts as a counter for the number of threads allowed to enter the critical section. ```python import threading # Create a semaphore allowing only one thread at a time semaphore = threading.Semaphore(1) def critical_section(): # Acquire the semaphore before entering the critical section semaphore.acquire() try: # Critical section code here print(\"Thread\", threading.current_thread().name, \"is in the critical section\") finally: # Release the semaphore after exiting the critical section semaphore.release() # Example usage with multiple threads threads = [] for _ in range(5): thread = threading.Thread(target=critical_section) threads.append(thread) thread.start() for thread in threads: thread.join() ``` In this example, only one thread can execute the `critical_section` function at a time due to the semaphore. The `acquire()` method is used before entering the critical section, and `release()` ensures that the semaphore is properly managed when exiting the section."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    "semaphore_v4",
+    "deadlock_v4"
+  ]
 }

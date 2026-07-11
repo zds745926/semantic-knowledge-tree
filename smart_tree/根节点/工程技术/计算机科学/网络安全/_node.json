@@ -8,12 +8,12 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "Web 安全",
-    "密码学"
+    "密码学",
+    "Web 安全"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Network security protection systems safeguard networks and data from attacks. Key areas include cryptography, web security, and network offense-defense. Here are brief Python code examples for some of"
+    "description": "网络安全: Network security protection systems safeguard networks and data from attacks. Key areas include cryptography, web security, and network offense-defense. Here are brief Python code examples for some of the mentioned concepts: 1. **Cryptography**: - Simple encryption using Caesar Cipher: ```python def caesar_cipher_encrypt(text, shift): encrypted_text = \"\" for char in text: if char.isalpha(): shifted_char = chr(((ord(char) + shift - 65) % 26) + 65) encrypted_text += shifted_char.upper() else: encrypted_text += char return encrypted_text # Example usage print(caesar_cipher_encrypt(\"Hello, World!\", 3)) # Output: Khoor, Zruog! ``` 2. **Web Security**: - Basic example of validating user input to prevent SQL injection: ```python import re def validate_sql_input(input_str): if re.match(r\"^[a-zA-Z0-9_]*$\", input_str): return True else: raise ValueError(\"Invalid input: contains special characters\") # Example usage try: print(validate_sql_input(\"user123\")) # Valid print(validate_sql_input(\"user@123\")) # Invalid, will raise an error except ValueError as e: print(e) ``` 3. **Network Offense-Defense**: - Simple example of a basic network scanner using Python's `socket` library to check if a port is open: ```python import socket def is_port_open(host, port): sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) sock.settimeout(1) # Set timeout for the connection attempt try: result = sock.connect_ex((host, port)) if result == 0: return True else: return False except socket.error as e: print(f\"Socket error: {e}\") return False finally: sock.close() # Example usage host = \"127.0.0.1\" port = 80 if is_port_open(host, port): print(f\"Port {port} on {host} is open.\") else: print(f\"Port {port} on {host} is closed or filtered.\") ``` These examples provide a basic understanding of the concepts mentioned in the Chinese text."
   },
   "data_pointers": [],
   "related_nodes": []

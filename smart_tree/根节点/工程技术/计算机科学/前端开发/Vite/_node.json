@@ -9,12 +9,14 @@
   "parent": "前端开发",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Vite: A build tool based on ESM (ECMAScript Modules). Millisecond HMR (Hot Module Replacement). Rollup bundling. Trending away from Webpack. Python code example for HMR using a simple Flask application: ```python from flask import Flask, render_template_string app = Flask(__name__) @app.route('/') def index(): return render_template_string(\"\"\" <h1>Hello, World!</h1> <script src=\"{{ url_for('static', filename='dynamic.js') }}\"></script> \"\"\") if __name__ == '__main__': app.run(debug=True) ``` In this example, `debug=True` enables HMR in a Flask application. When you make changes to the JavaScript file (`dynamic.js`), the browser will automatically reload without needing to restart the server. Note: For actual HMR implementation with Rollup or other build tools, you would typically use a configuration file and a plugin like `rollup-plugin-hot-reload`."
+  },
   "data_pointers": [
     {
       "title": "Vite",
       "uri": "knowledge://vite_v4",
-      "content_preview": "Translation: A build tool based on ESM (ECMAScript Modules). Millisecond HMR (Hot Module Replacement). Rollup bundling. Trending away from Webpack. Python code example for HMR using a simple Flask app"
+      "content_preview": "Vite: A build tool based on ESM (ECMAScript Modules). Millisecond HMR (Hot Module Replacement). Rollup bundling. Trending away from Webpack. Python code example for HMR using a simple Flask application: ```python from flask import Flask, render_template_string app = Flask(__name__) @app.route('/') def index(): return render_template_string(\"\"\" <h1>Hello, World!</h1> <script src=\"{{ url_for('static', filename='dynamic.js') }}\"></script> \"\"\") if __name__ == '__main__': app.run(debug=True) ``` In this example, `debug=True` enables HMR in a Flask application. When you make changes to the JavaScript file (`dynamic.js`), the browser will automatically reload without needing to restart the server. Note: For actual HMR implementation with Rollup or other build tools, you would typically use a configuration file and a plugin like `rollup-plugin-hot-reload`."
     }
   ],
   "related_nodes": []

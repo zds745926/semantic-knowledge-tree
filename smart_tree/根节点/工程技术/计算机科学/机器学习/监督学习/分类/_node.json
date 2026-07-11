@@ -8,13 +8,13 @@
   "version": 1,
   "parent": "监督学习",
   "children": [
-    "KNN",
+    "决策树",
     "SVM",
-    "决策树"
+    "KNN"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Classification for predicting discrete category labels. For a brief illustration using Python, consider the following example where we use scikit-learn to perform classification: ```python from sklear"
+    "description": "分类: Classification for predicting discrete category labels. For a brief illustration using Python, consider the following example where we use scikit-learn to perform classification: ```python from sklearn.datasets import load_iris from sklearn.model_selection import train_test_split from sklearn.preprocessing import LabelEncoder from sklearn.tree import DecisionTreeClassifier # Load dataset data = load_iris() X = data.data y = data.target # Convert labels to discrete categories (if not already) label_encoder = LabelEncoder() y = label_encoder.fit_transform(y) # Split the dataset into training and testing sets X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Create a decision tree classifier model model = DecisionTreeClassifier() # Train the model using the training sets model.fit(X_train, y_train) # Predict the response for test dataset predictions = model.predict(X_test) ``` This example demonstrates loading data, encoding labels, splitting the dataset, training a classification model (in this case, a decision tree), and making predictions."
   },
   "data_pointers": [],
   "related_nodes": []

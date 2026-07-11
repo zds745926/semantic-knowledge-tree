@@ -1,0 +1,23 @@
+{
+  "name": "JavaScript 核心",
+  "node_id": "js_core_v4",
+  "parent_id": "js_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "JavaScript",
+  "children": [
+    "作用域链",
+    "原型链",
+    "异步 JS",
+    "执行上下文",
+    "闭包"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "The core of JavaScript includes execution context, scope chain, closure, prototype chain, and asynchronous programming. - **Execution Context**: This refers to the environment in which a piece of code"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

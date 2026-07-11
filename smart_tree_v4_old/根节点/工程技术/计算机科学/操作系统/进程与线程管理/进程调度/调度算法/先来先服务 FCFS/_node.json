@@ -1,0 +1,21 @@
+{
+  "name": "先来先服务 FCFS",
+  "node_id": "fcfs_v4",
+  "parent_id": "sched_algo_v4",
+  "level": 7,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "调度算法",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "先来先服务 FCFS",
+      "uri": "knowledge://fcfs_v4",
+      "content_preview": "First-In-First-Out (FIFO). Non-preemptive. Long average waiting time due to the convoy effect. Batch system. Here is a brief Python code example to illustrate a simple FIFO queue, which can be used in"
+    }
+  ],
+  "related_nodes": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Mixin 混入",
+  "node_id": "py_mixin_v4",
+  "parent_id": "py_inherit_v4",
+  "level": 8,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "继承与多态",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "Mixin 混入",
+      "uri": "knowledge://py_mixin_v4",
+      "content_preview": "Mixin provides specific functionalities as small base classes and can be combined through multiple inheritance. The naming convention typically ends with \"Mixin.\" Here's a brief Python code example to"
+    }
+  ],
+  "related_nodes": []
+}

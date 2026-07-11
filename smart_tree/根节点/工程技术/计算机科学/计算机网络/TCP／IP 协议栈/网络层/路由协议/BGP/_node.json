@@ -9,12 +9,14 @@
   "parent": "路由协议",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "BGP: The glue that holds the internet together. Path Vector Protocol. iBGP (within AS)/eBGP (between AS). To provide a bit more context, BGP (Border Gateway Protocol) is used to exchange routing information between different autonomous systems (AS). Here are brief explanations of iBGP and eBGP: - **iBGP**: Interior BGP is used within the same autonomous system. It ensures that all routers in an AS have consistent routing information. - **eBGP**: Exterior BGP is used to exchange routes between different autonomous systems. Here's a simple Python code example using `netmiko` to interact with a router and configure BGP: ```python from netmiko import ConnectHandler def configure_bgp(router_ip, username, password): # Define the device connection parameters device = { 'device_type': 'cisco_ios', # or other supported types like 'juniper_junos' 'ip': router_ip, 'username': username, 'password': password, } # Connect to the device with ConnectHandler(**device) as net_connect: output = net_connect.send_config_set([ \"router bgp 65001\", # Replace 65001 with your AS number \"neighbor 192.168.1.2 remote-as 65002\", # Example neighbor IP and AS ]) print(output) # Example usage configure_bgp(\"192.168.1.1\", \"admin\", \"password\") ``` This script connects to a router, configures BGP with an example AS number and neighbor, and prints the output of the configuration commands."
+  },
   "data_pointers": [
     {
       "title": "BGP",
       "uri": "knowledge://bgp_v4",
-      "content_preview": "The glue that holds the internet together. Path Vector Protocol. iBGP (within AS)/eBGP (between AS). To provide a bit more context, BGP (Border Gateway Protocol) is used to exchange routing informatio"
+      "content_preview": "BGP: The glue that holds the internet together. Path Vector Protocol. iBGP (within AS)/eBGP (between AS). To provide a bit more context, BGP (Border Gateway Protocol) is used to exchange routing information between different autonomous systems (AS). Here are brief explanations of iBGP and eBGP: - **iBGP**: Interior BGP is used within the same autonomous system. It ensures that all routers in an AS have consistent routing information. - **eBGP**: Exterior BGP is used to exchange routes between different autonomous systems. Here's a simple Python code example using `netmiko` to interact with a router and configure BGP: ```python from netmiko import ConnectHandler def configure_bgp(router_ip, username, password): # Define the device connection parameters device = { 'device_type': 'cisco_ios', # or other supported types like 'juniper_junos' 'ip': router_ip, 'username': username, 'password': password, } # Connect to the device with ConnectHandler(**device) as net_connect: output = net_connect.send_config_set([ \"router bgp 65001\", # Replace 65001 with your AS number \"neighbor 192.168.1.2 remote-as 65002\", # Example neighbor IP and AS ]) print(output) # Example usage configure_bgp(\"192.168.1.1\", \"admin\", \"password\") ``` This script connects to a router, configures BGP with an example AS number and neighbor, and prints the output of the configuration commands."
     }
   ],
   "related_nodes": []

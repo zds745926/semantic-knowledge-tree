@@ -9,12 +9,14 @@
   "parent": "隔离级别",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "可重复读: The result of reading the same record multiple times is consistent. This is InnoDB's default behavior. MVCC snapshot reads are used to achieve this. To illustrate the concept with a brief Python code example, we can simulate a simple read operation using a dictionary (which could represent a database record) and demonstrate consistency across multiple reads: ```python # Simulate a database record as a dictionary record = {'id': 1, 'name': 'John Doe', 'age': 30} def read_record(record_id): # Simulate reading the record from \"database\" if record_id == record['id']: return record else: raise ValueError(\"Record not found\") # Multiple reads of the same record should yield consistent results try: print(read_record(1)) # Expected output: {'id': 1, 'name': 'John Doe', 'age': 30} print(read_record(1)) # Consistent result with the first read except ValueError as e: print(e) ``` This example demonstrates that reading the same record multiple times (`read_record(1)`) yields consistent results. In a real-world scenario, this consistency is maintained by MVCC in databases like InnoDB."
+  },
   "data_pointers": [
     {
       "title": "可重复读",
       "uri": "knowledge://repeatable_read_v4",
-      "content_preview": "The result of reading the same record multiple times is consistent. This is InnoDB's default behavior. MVCC snapshot reads are used to achieve this. To illustrate the concept with a brief Python code "
+      "content_preview": "可重复读: The result of reading the same record multiple times is consistent. This is InnoDB's default behavior. MVCC snapshot reads are used to achieve this. To illustrate the concept with a brief Python code example, we can simulate a simple read operation using a dictionary (which could represent a database record) and demonstrate consistency across multiple reads: ```python # Simulate a database record as a dictionary record = {'id': 1, 'name': 'John Doe', 'age': 30} def read_record(record_id): # Simulate reading the record from \"database\" if record_id == record['id']: return record else: raise ValueError(\"Record not found\") # Multiple reads of the same record should yield consistent results try: print(read_record(1)) # Expected output: {'id': 1, 'name': 'John Doe', 'age': 30} print(read_record(1)) # Consistent result with the first read except ValueError as e: print(e) ``` This example demonstrates that reading the same record multiple times (`read_record(1)`) yields consistent results. In a real-world scenario, this consistency is maintained by MVCC in databases like InnoDB."
     }
   ],
   "related_nodes": []

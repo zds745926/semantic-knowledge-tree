@@ -9,12 +9,14 @@
   "parent": "类与实例",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "enum 枚举: ```python from enum import Enum, IntEnum, Flag class Color(Enum): RED = 0 GREEN = 1 BLUE = 2 print(Color.RED.name) # Output: RED print(Color.RED.value) # Output: 0 # Using IntEnum for integer-based enums class Priority(IntEnum): HIGH = 1 MEDIUM = 2 LOW = 3 print(Priority.HIGH.value) # Output: 1 # Using Flag to represent bit flags class ColorFlag(Flag): RED = 0b001 GREEN = 0b010 BLUE = 0b100 print(ColorFlag.RED | ColorFlag.GREEN) # Output: <ColorFlag.GREEN|RED: 3> ``` Explanation: - `Enum`: A base class for creating enumerations. - `IntEnum`: An enumeration where members are also integers, allowing them to be used in arithmetic operations. - `Flag`: An enumeration that represents a bit flag. Members can be combined using bitwise OR (`|`) and other logical operators. This translation maintains the technical accuracy of the original text while providing examples in Python for clarity."
+  },
   "data_pointers": [
     {
       "title": "enum 枚举",
       "uri": "knowledge://py_enum_v4",
-      "content_preview": "Translation: ```python from enum import Enum, IntEnum, Flag class Color(Enum): RED = 0 GREEN = 1 BLUE = 2 print(Color.RED.name)  # Output: RED print(Color.RED.value)  # Output: 0 # Using IntEnum for i"
+      "content_preview": "enum 枚举: ```python from enum import Enum, IntEnum, Flag class Color(Enum): RED = 0 GREEN = 1 BLUE = 2 print(Color.RED.name) # Output: RED print(Color.RED.value) # Output: 0 # Using IntEnum for integer-based enums class Priority(IntEnum): HIGH = 1 MEDIUM = 2 LOW = 3 print(Priority.HIGH.value) # Output: 1 # Using Flag to represent bit flags class ColorFlag(Flag): RED = 0b001 GREEN = 0b010 BLUE = 0b100 print(ColorFlag.RED | ColorFlag.GREEN) # Output: <ColorFlag.GREEN|RED: 3> ``` Explanation: - `Enum`: A base class for creating enumerations. - `IntEnum`: An enumeration where members are also integers, allowing them to be used in arithmetic operations. - `Flag`: An enumeration that represents a bit flag. Members can be combined using bitwise OR (`|`) and other logical operators. This translation maintains the technical accuracy of the original text while providing examples in Python for clarity."
     }
   ],
   "related_nodes": []

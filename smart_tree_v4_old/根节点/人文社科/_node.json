@@ -1,0 +1,21 @@
+{
+  "name": "人文社科",
+  "node_id": "humanities",
+  "parent_id": "root",
+  "level": 1,
+  "is_leaf": false,
+  "absorption_rate": 0.035,
+  "version": 1,
+  "parent": "根节点",
+  "children": [
+    "历史",
+    "哲学",
+    "文学"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Humanities and social sciences study human society, culture, and spiritual phenomena, including history, literature, philosophy, sociology, psychology, political science, etc. They explore the evoluti"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

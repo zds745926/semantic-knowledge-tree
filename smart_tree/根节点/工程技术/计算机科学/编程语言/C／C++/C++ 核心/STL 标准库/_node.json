@@ -9,12 +9,14 @@
   "parent": "C++ 核心",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "STL 标准库: Vectors/lists/maps. Sort/find. Iterators. Function objects and lambda. Python code examples: 1. Vectors/lists/maps: ```python # Using list as an example for vectors/lists, and a dictionary for maps data_list = [3, 1, 4, 1, 5] data_map = {'a': 1, 'b': 2, 'c': 3} print(\"List:\", data_list) print(\"Map:\", data_map) ``` 2. Sort/find: ```python # Sorting a list and finding an element numbers = [3, 1, 4, 1, 5] sorted_numbers = sorted(numbers) # or numbers.sort() to sort in place target = 4 found = target in numbers # Check if the target is in the list print(\"Sorted List:\", sorted_numbers) print(\"Target found:\", found) ``` 3. Iterators: ```python # Using an iterator over a range of numbers numbers = iter(range(5)) # Create an iterator for numbers 0 to 4 for number in numbers: print(number, end=' ') ``` 4. Function objects and lambda: ```python # Using a function object and a lambda def square(x): return x * x lambda_square = lambda x: x * x print(\"Square using function:\", square(3)) print(\"Square using lambda:\", lambda_square(3)) ```"
+  },
   "data_pointers": [
     {
       "title": "STL 标准库",
       "uri": "knowledge://cpp_stl_v4",
-      "content_preview": "Translation: Vectors/lists/maps. Sort/find. Iterators. Function objects and lambda. Python code examples: 1. Vectors/lists/maps: ```python # Using list as an example for vectors/lists, and a dictionar"
+      "content_preview": "STL 标准库: Vectors/lists/maps. Sort/find. Iterators. Function objects and lambda. Python code examples: 1. Vectors/lists/maps: ```python # Using list as an example for vectors/lists, and a dictionary for maps data_list = [3, 1, 4, 1, 5] data_map = {'a': 1, 'b': 2, 'c': 3} print(\"List:\", data_list) print(\"Map:\", data_map) ``` 2. Sort/find: ```python # Sorting a list and finding an element numbers = [3, 1, 4, 1, 5] sorted_numbers = sorted(numbers) # or numbers.sort() to sort in place target = 4 found = target in numbers # Check if the target is in the list print(\"Sorted List:\", sorted_numbers) print(\"Target found:\", found) ``` 3. Iterators: ```python # Using an iterator over a range of numbers numbers = iter(range(5)) # Create an iterator for numbers 0 to 4 for number in numbers: print(number, end=' ') ``` 4. Function objects and lambda: ```python # Using a function object and a lambda def square(x): return x * x lambda_square = lambda x: x * x print(\"Square using function:\", square(3)) print(\"Square using lambda:\", lambda_square(3)) ```"
     }
   ],
   "related_nodes": []

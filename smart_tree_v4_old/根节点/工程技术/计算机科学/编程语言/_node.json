@@ -1,0 +1,24 @@
+{
+  "name": "编程语言",
+  "node_id": "languages_v4",
+  "parent_id": "cs_v4",
+  "level": 3,
+  "is_leaf": false,
+  "absorption_rate": 0.065,
+  "version": 1,
+  "parent": "计算机科学",
+  "children": [
+    "C/C++",
+    "Go",
+    "Java",
+    "JavaScript",
+    "Python",
+    "Rust"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Programming languages are formal languages for communication between humans and computers. Each language has its design philosophy, type system, and applicable scenarios. Mainstream programming langua"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

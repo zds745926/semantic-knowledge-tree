@@ -9,12 +9,12 @@
   "parent": "for 循环",
   "children": [
     "for-else 子句",
-    "reversed/sorted 迭代",
-    "zip 并行迭代"
+    "zip 并行迭代",
+    "reversed/sorted 迭代"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "The advanced usage of the `for` loop includes the `for-else` clause, parallel iteration with `zip`, and reverse or sorted iteration using `reversed` and `sorted`. Here are brief examples in Python for"
+    "description": "for 循环进阶: The advanced usage of the `for` loop includes the `for-else` clause, parallel iteration with `zip`, and reverse or sorted iteration using `reversed` and `sorted`. Here are brief examples in Python for each: 1. **For-Elses Clause**: This structure allows you to execute a block of code after the `for` loop has finished executing, provided that the loop did not encounter a `break` statement. ```python numbers = [2, 3, 5] found = False for number in numbers: if number > 4: print(f\"Found a number greater than 4: {number}\") found = True break else: # This block runs only if the loop completes without a break statement. print(\"No number was greater than 4.\") ``` 2. **Parallel Iteration with `zip`**: The `zip` function can be used to iterate over multiple lists in parallel. ```python names = [\"Alice\", \"Bob\", \"Charlie\"] ages = [25, 30, 35] for name, age in zip(names, ages): print(f\"{name} is {age} years old.\") ``` 3. **Reverse or Sorted Iteration**: You can use `reversed` to iterate over a sequence in reverse order and `sorted` to sort elements before iterating. ```python # Reverse iteration numbers = [1, 2, 3, 4] for number in reversed(numbers): print(number) # Sorted iteration scores = [85, 90, 78, 92] for score in sorted(scores, reverse=True): # Sort in descending order print(score) ``` These examples illustrate how to use these advanced `for` loop features effectively."
   },
   "data_pointers": [],
   "related_nodes": []

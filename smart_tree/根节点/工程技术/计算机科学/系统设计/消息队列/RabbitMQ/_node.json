@@ -9,12 +9,14 @@
   "parent": "消息队列",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "RabbitMQ: AMQP. Exchange (Topic/Direct/Fanout). Message Acknowledgment (ACK). Here is a brief explanation with a related Python code example using the `pika` library, which is commonly used for working with AMQP: ```python import pika # Establish a connection to the RabbitMQ server connection = pika.BlockingConnection(pika.ConnectionParameters('localhost')) channel = connection.channel() # Declare an exchange of type 'direct' channel.exchange_declare(exchange='logs', exchange_type='direct') # Define a callback function for handling messages def callback(ch, method, properties, body): print(f\"Received {body}\") # Acknowledge the message to the server ch.basic_ack(delivery_tag=method.delivery_tag) # Set up a queue and bind it to the exchange with routing key 'info' channel.queue_declare(queue='info') channel.queue_bind(exchange='logs', queue='info', routing_key='info') # Start consuming messages from the queue channel.basic_consume(queue='info', on_message_callback=callback) print('Waiting for logs. To exit press CTRL+C') channel.start_consuming() connection.close() ``` This example demonstrates setting up a direct exchange and handling message acknowledgments in Python using the `pika` library."
+  },
   "data_pointers": [
     {
       "title": "RabbitMQ",
       "uri": "knowledge://rabbitmq_v4",
-      "content_preview": "AMQP. Exchange (Topic/Direct/Fanout). Message Acknowledgment (ACK). Here is a brief explanation with a related Python code example using the `pika` library, which is commonly used for working with AMQ"
+      "content_preview": "RabbitMQ: AMQP. Exchange (Topic/Direct/Fanout). Message Acknowledgment (ACK). Here is a brief explanation with a related Python code example using the `pika` library, which is commonly used for working with AMQP: ```python import pika # Establish a connection to the RabbitMQ server connection = pika.BlockingConnection(pika.ConnectionParameters('localhost')) channel = connection.channel() # Declare an exchange of type 'direct' channel.exchange_declare(exchange='logs', exchange_type='direct') # Define a callback function for handling messages def callback(ch, method, properties, body): print(f\"Received {body}\") # Acknowledge the message to the server ch.basic_ack(delivery_tag=method.delivery_tag) # Set up a queue and bind it to the exchange with routing key 'info' channel.queue_declare(queue='info') channel.queue_bind(exchange='logs', queue='info', routing_key='info') # Start consuming messages from the queue channel.basic_consume(queue='info', on_message_callback=callback) print('Waiting for logs. To exit press CTRL+C') channel.start_consuming() connection.close() ``` This example demonstrates setting up a direct exchange and handling message acknowledgments in Python using the `pika` library."
     }
   ],
   "related_nodes": []

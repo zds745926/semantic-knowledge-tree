@@ -8,16 +8,16 @@
   "version": 1,
   "parent": "计算机科学",
   "children": [
-    "C/C++",
-    "Go",
+    "Python",
     "Java",
     "JavaScript",
-    "Python",
+    "C/C++",
+    "Go",
     "Rust"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Programming languages are formal languages for communication between humans and computers. Each language has its design philosophy, type system, and applicable scenarios. Mainstream programming langua"
+    "description": "编程语言: Programming languages are formal languages for communication between humans and computers. Each language has its design philosophy, type system, and applicable scenarios. Mainstream programming languages include Python, Java, JavaScript, C/C++, Go, Rust, etc. Here is a brief example of Python code to illustrate a simple concept: ```python # A simple Python function that adds two numbers def add_numbers(a, b): return a + b # Example usage: result = add_numbers(5, 3) print(\"The result is:\", result) # Output: The result is: 8 ``` This example demonstrates the basic structure of a Python function and how to call it."
   },
   "data_pointers": [],
   "related_nodes": []

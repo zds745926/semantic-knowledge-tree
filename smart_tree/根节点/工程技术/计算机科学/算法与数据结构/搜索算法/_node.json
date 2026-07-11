@@ -8,14 +8,14 @@
   "version": 1,
   "parent": "算法与数据结构",
   "children": [
+    "线性搜索",
     "二分搜索",
     "广度优先搜索 BFS",
-    "深度优先搜索 DFS",
-    "线性搜索"
+    "深度优先搜索 DFS"
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Search algorithms are used to find target elements in data, including linear search, binary search, and graph search. - **Linear Search**: This is a simple search algorithm that checks each element in"
+    "description": "搜索算法: Search algorithms are used to find target elements in data, including linear search, binary search, and graph search. - **Linear Search**: This is a simple search algorithm that checks each element in the list one by one until it finds the target or reaches the end of the list. ```python def linear_search(arr, target): for i in range(len(arr)): if arr[i] == target: return i return -1 # Example usage: arr = [3, 7, 9, 12, 15] target = 9 result = linear_search(arr, target) print(\"Index of\", target, \"is:\", result) # Output: Index of 9 is: 2 ``` - **Binary Search**: This algorithm works on sorted lists and repeatedly divides the search interval in half. It starts by comparing the middle element of the list with the target value and then narrows down the search to the upper or lower half depending on whether the target is less than or greater than the middle element. ```python def binary_search(arr, target): low, high = 0, len(arr) - 1 while low <= high: mid = (low + high) // 2 if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1 return -1 # Example usage: arr = [3, 7, 9, 12, 15] target = 9 result = binary_search(arr, target) print(\"Index of\", target, \"is:\", result) # Output: Index of 9 is: 2 ``` - **Graph Search**: This involves traversing or searching through nodes in a graph. Common algorithms include Depth-First Search (DFS) and Breadth-First Search (BFS). ```python from collections import deque def bfs(graph, start): visited = set() queue = deque([start]) while queue: vertex = queue.popleft() if vertex not in visited: print(vertex) visited.add(vertex) for neighbor in graph[vertex]: queue.append(neighbor) # Example usage with a simple graph represented as an adjacency list graph = { 'A': ['B', 'C'], 'B': ['D', 'E'], 'C': ['F'], 'D': [], 'E': ['F'], 'F': [] } bfs(graph, 'A') # Output: A B C D E F ``` These examples provide a basic understanding of how these search algorithms can be implemented in Python."
   },
   "data_pointers": [],
   "related_nodes": []

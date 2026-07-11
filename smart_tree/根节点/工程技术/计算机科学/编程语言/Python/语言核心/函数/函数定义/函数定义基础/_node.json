@@ -9,12 +9,14 @@
   "parent": "函数定义",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "函数定义基础: A function in Python is defined as `def function_name(parameters): function_body`. It can include positional arguments, default arguments, *args, and **kwargs. Example with brief explanations: 1. Positional Arguments: ```python def add(a, b): return a + b print(add(5, 3)) # Output: 8 ``` 2. Default Arguments: ```python def greet(name, msg=\"Hello\"): print(f\"{msg}, {name}!\") greet(\"Alice\") # Output: Hello, Alice! greet(\"Bob\", \"Hi\") # Output: Hi, Bob! ``` 3. *args (Variable-length non-keyword arguments): ```python def sum_all(*args): return sum(args) print(sum_all(1, 2, 3, 4)) # Output: 10 ``` 4. **kwargs (Variable-length keyword arguments): ```python def print_info(**kwargs): for key, value in kwargs.items(): print(f\"{key}: {value}\") print_info(name=\"Alice\", age=30) # Output: # name: Alice # age: 30 ``` These examples illustrate the different ways to define and use parameters in Python functions."
+  },
   "data_pointers": [
     {
       "title": "函数定义基础",
       "uri": "knowledge://py_def_basic_v4",
-      "content_preview": "Translation: A function in Python is defined as `def function_name(parameters): function_body`. It can include positional arguments, default arguments, *args, and **kwargs. Example with brief explanat"
+      "content_preview": "函数定义基础: A function in Python is defined as `def function_name(parameters): function_body`. It can include positional arguments, default arguments, *args, and **kwargs. Example with brief explanations: 1. Positional Arguments: ```python def add(a, b): return a + b print(add(5, 3)) # Output: 8 ``` 2. Default Arguments: ```python def greet(name, msg=\"Hello\"): print(f\"{msg}, {name}!\") greet(\"Alice\") # Output: Hello, Alice! greet(\"Bob\", \"Hi\") # Output: Hi, Bob! ``` 3. *args (Variable-length non-keyword arguments): ```python def sum_all(*args): return sum(args) print(sum_all(1, 2, 3, 4)) # Output: 10 ``` 4. **kwargs (Variable-length keyword arguments): ```python def print_info(**kwargs): for key, value in kwargs.items(): print(f\"{key}: {value}\") print_info(name=\"Alice\", age=30) # Output: # name: Alice # age: 30 ``` These examples illustrate the different ways to define and use parameters in Python functions."
     }
   ],
   "related_nodes": []

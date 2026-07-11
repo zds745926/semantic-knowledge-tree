@@ -9,12 +9,14 @@
   "parent": "JavaScript 核心",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "原型链: JavaScript Inheritance Mechanism. `__proto__` points to the prototype. Property lookup traverses up the prototype chain. Here's a brief explanation with a Python code example to illustrate: In JavaScript, objects inherit properties and methods from their prototypes through a prototype chain. The `__proto__` property allows you to access an object's prototype directly. ```python # Example in Python (Note: Python uses a different inheritance model but can still demonstrate the concept) class Animal: def __init__(self, name): self.name = name def sound(self): return \"Some sound\" class Dog(Animal): def __init__(self, name): super().__init__(name) # Python uses `super()` to call the parent class constructor def sound(self): return \"Woof!\" # Creating an instance of Dog dog = Dog(\"Buddy\") print(dog.name) # Output: Buddy print(dog.sound()) # Output: Woof! # In JavaScript, you could do something similar with prototypes: class Animal: pass class Dog(Animal): pass Dog.prototype = Object.create(Animal.prototype) Dog.prototype.constructor = Dog dog = new Dog() ``` In the Python example, `Dog` inherits from `Animal`, and we can see how methods are passed down through inheritance. While Python uses a different mechanism (new-style classes with `super()`), it still demonstrates the concept of method overriding and property inheritance."
+  },
   "data_pointers": [
     {
       "title": "原型链",
       "uri": "knowledge://js_prototype_v4",
-      "content_preview": "JavaScript Inheritance Mechanism. `__proto__` points to the prototype. Property lookup traverses up the prototype chain. Here's a brief explanation with a Python code example to illustrate: In JavaScr"
+      "content_preview": "原型链: JavaScript Inheritance Mechanism. `__proto__` points to the prototype. Property lookup traverses up the prototype chain. Here's a brief explanation with a Python code example to illustrate: In JavaScript, objects inherit properties and methods from their prototypes through a prototype chain. The `__proto__` property allows you to access an object's prototype directly. ```python # Example in Python (Note: Python uses a different inheritance model but can still demonstrate the concept) class Animal: def __init__(self, name): self.name = name def sound(self): return \"Some sound\" class Dog(Animal): def __init__(self, name): super().__init__(name) # Python uses `super()` to call the parent class constructor def sound(self): return \"Woof!\" # Creating an instance of Dog dog = Dog(\"Buddy\") print(dog.name) # Output: Buddy print(dog.sound()) # Output: Woof! # In JavaScript, you could do something similar with prototypes: class Animal: pass class Dog(Animal): pass Dog.prototype = Object.create(Animal.prototype) Dog.prototype.constructor = Dog dog = new Dog() ``` In the Python example, `Dog` inherits from `Animal`, and we can see how methods are passed down through inheritance. While Python uses a different mechanism (new-style classes with `super()`), it still demonstrates the concept of method overriding and property inheritance."
     }
   ],
   "related_nodes": []

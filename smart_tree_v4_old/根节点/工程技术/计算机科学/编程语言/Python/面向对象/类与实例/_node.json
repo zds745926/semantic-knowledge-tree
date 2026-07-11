@@ -1,0 +1,25 @@
+{
+  "name": "类与实例",
+  "node_id": "py_class_v4",
+  "parent_id": "py_oop_v4",
+  "level": 6,
+  "is_leaf": false,
+  "absorption_rate": 0.11,
+  "version": 1,
+  "parent": "面向对象",
+  "children": [
+    "ABC 抽象基类",
+    "class 定义",
+    "dataclasses 数据类",
+    "enum 枚举",
+    "property 装饰器",
+    "类高级功能",
+    "继承与多态"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Translation: A class defines a class, and __init__ is the constructor. self is an instance reference. classmethod, staticmethod, property. Python code examples: 1. Defining a class with an `__init__` "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

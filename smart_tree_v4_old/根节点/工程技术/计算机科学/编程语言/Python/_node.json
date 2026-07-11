@@ -1,0 +1,28 @@
+{
+  "name": "Python",
+  "node_id": "python_v4",
+  "parent_id": "languages_v4",
+  "level": 4,
+  "is_leaf": false,
+  "absorption_rate": 0.08,
+  "version": 1,
+  "parent": "编程语言",
+  "children": [
+    "内置数据结构",
+    "包管理",
+    "并发编程",
+    "标准库",
+    "框架生态",
+    "测试",
+    "网络编程",
+    "语言核心",
+    "面向对象",
+    "高级特性"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Python is an interpreted, object-oriented, high-level programming language with a dynamic type system. It was invented by Guido van Rossum at the end of 1989 and its first public release was in 1991. "
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

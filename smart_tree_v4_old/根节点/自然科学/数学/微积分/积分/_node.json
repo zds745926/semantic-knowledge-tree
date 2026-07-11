@@ -1,0 +1,21 @@
+{
+  "name": "积分",
+  "node_id": "integral_v4",
+  "parent_id": "calc_v4",
+  "level": 4,
+  "is_leaf": true,
+  "absorption_rate": 0.2,
+  "version": 1,
+  "parent": "微积分",
+  "children": [],
+  "vector_file": "vector.txt",
+  "metadata": {},
+  "data_pointers": [
+    {
+      "title": "积分",
+      "uri": "knowledge://integral_v4",
+      "content_preview": "Integration is the inverse operation of differentiation. A definite integral ∫ₐᵇ f(x)dx represents the area between the curve and the x-axis. Here's a brief Python code example using the `scipy` libra"
+    }
+  ],
+  "related_nodes": []
+}

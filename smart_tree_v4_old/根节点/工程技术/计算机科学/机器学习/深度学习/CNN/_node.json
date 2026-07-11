@@ -1,0 +1,21 @@
+{
+  "name": "CNN",
+  "node_id": "cnn_v4",
+  "parent_id": "dl_v4",
+  "level": 5,
+  "is_leaf": false,
+  "absorption_rate": 0.095,
+  "version": 1,
+  "parent": "深度学习",
+  "children": [
+    "卷积层",
+    "池化层",
+    "经典 CNN 架构"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "Convolutional neural networks extract local features using convolutional kernels and are suitable for image processing. Here is a brief Python code example using TensorFlow to create a simple convolut"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

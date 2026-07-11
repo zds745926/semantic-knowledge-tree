@@ -9,12 +9,14 @@
   "parent": "函数式工具",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "map/filter/reduce: The `map(func, iter)` function applies a given function `func` to each item of an iterable `iter` and returns a map object (an iterator). The `filter(func, iter)` function filters items from an iterable `iter` based on the output of the function `func`, which should return a boolean value. The `reduce(func, iter)` function applies a rolling computation to sequential pairs of values in an iterable `iter`. Here are brief Python code examples for each: ```python # Example of map() numbers = [1, 2, 3, 4] squared = list(map(lambda x: x**2, numbers)) print(squared) # Output: [1, 4, 9, 16] # Example of filter() even_numbers = list(filter(lambda x: x % 2 == 0, numbers)) print(even_numbers) # Output: [2, 4] # Example of reduce() - Note: This requires the functools module from functools import reduce product = reduce(lambda x, y: x * y, numbers) print(product) # Output: 24 ``` These examples illustrate how to use `map`, `filter`, and `reduce` in Python."
+  },
   "data_pointers": [
     {
       "title": "map/filter/reduce",
       "uri": "knowledge://py_map_filter_reduce_v4",
-      "content_preview": "The `map(func, iter)` function applies a given function `func` to each item of an iterable `iter` and returns a map object (an iterator). The `filter(func, iter)` function filters items from an iterab"
+      "content_preview": "map/filter/reduce: The `map(func, iter)` function applies a given function `func` to each item of an iterable `iter` and returns a map object (an iterator). The `filter(func, iter)` function filters items from an iterable `iter` based on the output of the function `func`, which should return a boolean value. The `reduce(func, iter)` function applies a rolling computation to sequential pairs of values in an iterable `iter`. Here are brief Python code examples for each: ```python # Example of map() numbers = [1, 2, 3, 4] squared = list(map(lambda x: x**2, numbers)) print(squared) # Output: [1, 4, 9, 16] # Example of filter() even_numbers = list(filter(lambda x: x % 2 == 0, numbers)) print(even_numbers) # Output: [2, 4] # Example of reduce() - Note: This requires the functools module from functools import reduce product = reduce(lambda x, y: x * y, numbers) print(product) # Output: 24 ``` These examples illustrate how to use `map`, `filter`, and `reduce` in Python."
     }
   ],
   "related_nodes": []

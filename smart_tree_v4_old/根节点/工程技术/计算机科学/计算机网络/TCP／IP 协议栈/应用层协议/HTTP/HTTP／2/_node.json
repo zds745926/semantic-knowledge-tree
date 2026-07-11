@@ -1,0 +1,19 @@
+{
+  "name": "HTTP/2",
+  "node_id": "http2_v4",
+  "parent_id": "http_v4",
+  "level": 7,
+  "is_leaf": false,
+  "absorption_rate": 0.125,
+  "version": 1,
+  "parent": "HTTP",
+  "children": [
+    "多路复用"
+  ],
+  "vector_file": "vector.txt",
+  "metadata": {
+    "description": "HTTP/2 binary framing, multiplexing. Header compression (HPACK). Server push. Here are some brief explanations and corresponding Python code examples for the concepts mentioned: 1. **Binary Framing**:"
+  },
+  "data_pointers": [],
+  "related_nodes": []
+}

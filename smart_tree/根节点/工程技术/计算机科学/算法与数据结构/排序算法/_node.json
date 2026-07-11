@@ -13,7 +13,7 @@
   ],
   "vector_file": "vector.txt",
   "metadata": {
-    "description": "Sorting is one of the most fundamental and important algorithms in computer science, divided into comparison sorting and non-comparison sorting categories. Here are brief examples for both types: 1. *"
+    "description": "排序算法: Sorting is one of the most fundamental and important algorithms in computer science, divided into comparison sorting and non-comparison sorting categories. Here are brief examples for both types: 1. **Comparison Sorting** (e.g., QuickSort): ```python def quicksort(arr): if len(arr) <= 1: return arr pivot = arr[len(arr) // 2] left = [x for x in arr if x < pivot] middle = [x for x in arr if x == pivot] right = [x for x in arr if x > pivot] return quicksort(left) + middle + quicksort(right) ``` 2. **Non-Comparison Sorting** (e.g., Counting Sort): ```python def counting_sort(arr, max_val=None): if not arr: return [] if max_val is None: max_val = max(arr) count = [0] * (max_val + 1) for num in arr: count[num] += 1 sorted_arr = [] for i, cnt in enumerate(count): sorted_arr.extend([i] * cnt) return sorted_arr ``` These examples illustrate the basic implementation of QuickSort and Counting Sort."
   },
   "data_pointers": [],
   "related_nodes": []

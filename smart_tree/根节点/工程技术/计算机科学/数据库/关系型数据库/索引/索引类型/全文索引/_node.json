@@ -9,12 +9,14 @@
   "parent": "索引类型",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "全文索引: Inverted Index: Word → Document List. MATCH AGAINST. Here is an explanation with a brief Python code example for creating and using an inverted index: An inverted index is a data structure used in information retrieval to map words to the documents that contain them. This allows for efficient searching of documents based on keywords. Python Example: ```python class InvertedIndex: def __init__(self): self.index = {} def add_document(self, doc_id, content): words = content.split() for word in set(words): # Use a set to avoid duplicate entries per document if word not in self.index: self.index[word] = [] self.index[word].append(doc_id) def search(self, query): results = [] for word in query.split(): if word in self.index: results.extend(self.index[word]) return list(set(results)) # Remove duplicates # Example usage ii = InvertedIndex() ii.add_document(1, \"This is the first document.\") ii.add_document(2, \"This document is the second document.\") print(ii.search(\"document\")) # Output: [1, 2] ``` In this example, we define a simple `InvertedIndex` class that can add documents and search for words. The `add_document` method splits the content into words and adds each unique word to the index with its corresponding document ID. The `search` method takes a query string, splits it into words, and returns a list of document IDs containing any of those words."
+  },
   "data_pointers": [
     {
       "title": "全文索引",
       "uri": "knowledge://fulltext_index_v4",
-      "content_preview": "Inverted Index: Word → Document List. MATCH AGAINST. Here is an explanation with a brief Python code example for creating and using an inverted index: An inverted index is a data structure used in inf"
+      "content_preview": "全文索引: Inverted Index: Word → Document List. MATCH AGAINST. Here is an explanation with a brief Python code example for creating and using an inverted index: An inverted index is a data structure used in information retrieval to map words to the documents that contain them. This allows for efficient searching of documents based on keywords. Python Example: ```python class InvertedIndex: def __init__(self): self.index = {} def add_document(self, doc_id, content): words = content.split() for word in set(words): # Use a set to avoid duplicate entries per document if word not in self.index: self.index[word] = [] self.index[word].append(doc_id) def search(self, query): results = [] for word in query.split(): if word in self.index: results.extend(self.index[word]) return list(set(results)) # Remove duplicates # Example usage ii = InvertedIndex() ii.add_document(1, \"This is the first document.\") ii.add_document(2, \"This document is the second document.\") print(ii.search(\"document\")) # Output: [1, 2] ``` In this example, we define a simple `InvertedIndex` class that can add documents and search for words. The `add_document` method splits the content into words and adds each unique word to the index with its corresponding document ID. The `search` method takes a query string, splits it into words, and returns a list of document IDs containing any of those words."
     }
   ],
   "related_nodes": []

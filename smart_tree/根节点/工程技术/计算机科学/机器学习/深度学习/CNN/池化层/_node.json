@@ -9,12 +9,14 @@
   "parent": "CNN",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "池化层: Max Pooling/Average Pooling. Downsampling. Translation Invariance. Here are the translations with added Python code examples for max pooling and average pooling: Max Pooling: ```python import torch from torchvision import transforms # Example input tensor input_tensor = torch.randn(1, 1, 4, 4) # Batch size 1, 1 channel, 4x4 spatial dimensions # Define a max pool operation with kernel size 2 and stride 2 max_pool = transforms.Compose([ transforms.Lambda(lambda x: x.unsqueeze(0)), # Add batch dimension if needed transforms.MaxPool2d(kernel_size=2, stride=2) ]) # Apply the max pooling operation output_tensor = max_pool(input_tensor) print(output_tensor) ``` Average Pooling: ```python import torch from torchvision import transforms # Example input tensor input_tensor = torch.randn(1, 1, 4, 4) # Batch size 1, 1 channel, 4x4 spatial dimensions # Define an average pool operation with kernel size 2 and stride 2 avg_pool = transforms.Compose([ transforms.Lambda(lambda x: x.unsqueeze(0)), # Add batch dimension if needed transforms.AvgPool2d(kernel_size=2, stride=2) ]) # Apply the average pooling operation output_tensor = avg_pool(input_tensor) print(output_tensor) ``` Note that in these examples, we use `torchvision.transforms` to apply max and average pooling operations. The `Lambda` function is used to ensure the input tensor has a batch dimension if it's not already present."
+  },
   "data_pointers": [
     {
       "title": "池化层",
       "uri": "knowledge://pooling_v4",
-      "content_preview": "Max Pooling/Average Pooling. Downsampling. Translation Invariance. Here are the translations with added Python code examples for max pooling and average pooling: Max Pooling: ```python import torch fr"
+      "content_preview": "池化层: Max Pooling/Average Pooling. Downsampling. Translation Invariance. Here are the translations with added Python code examples for max pooling and average pooling: Max Pooling: ```python import torch from torchvision import transforms # Example input tensor input_tensor = torch.randn(1, 1, 4, 4) # Batch size 1, 1 channel, 4x4 spatial dimensions # Define a max pool operation with kernel size 2 and stride 2 max_pool = transforms.Compose([ transforms.Lambda(lambda x: x.unsqueeze(0)), # Add batch dimension if needed transforms.MaxPool2d(kernel_size=2, stride=2) ]) # Apply the max pooling operation output_tensor = max_pool(input_tensor) print(output_tensor) ``` Average Pooling: ```python import torch from torchvision import transforms # Example input tensor input_tensor = torch.randn(1, 1, 4, 4) # Batch size 1, 1 channel, 4x4 spatial dimensions # Define an average pool operation with kernel size 2 and stride 2 avg_pool = transforms.Compose([ transforms.Lambda(lambda x: x.unsqueeze(0)), # Add batch dimension if needed transforms.AvgPool2d(kernel_size=2, stride=2) ]) # Apply the average pooling operation output_tensor = avg_pool(input_tensor) print(output_tensor) ``` Note that in these examples, we use `torchvision.transforms` to apply max and average pooling operations. The `Lambda` function is used to ensure the input tensor has a batch dimension if it's not already present."
     }
   ],
   "related_nodes": []

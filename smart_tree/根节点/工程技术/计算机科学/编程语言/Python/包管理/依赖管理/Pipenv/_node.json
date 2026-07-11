@@ -9,12 +9,14 @@
   "parent": "依赖管理",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "Pipenv: Pipfile and Pipfile.lock. Automatically creates a virtual environment. pipenv install/run/shell. Here are the translations with added Python code examples for clarity: - **Pipfile**: A file that contains all of your project's dependencies, including their versions. ```python # Example Pipfile content [packages] requests = \"*\" ``` - **Pipfile.lock**: This is an automatically generated file that records the exact versions of each dependency and its sub-dependencies installed in a virtual environment. It ensures reproducibility. ```python # Example Pipfile.lock snippet { \"default\": { \"requests\": { \"version\": \"==2.25.1\" } }, \"develop\": {} } ``` - **Automatically creates a virtual environment**: pipenv will create and manage the virtual environment for you. ```python # Command to install dependencies in a new virtual environment pipenv install requests ``` - **pipenv install/run/shell**: These commands are used with pipenv to install packages, run scripts within the virtual environment, or execute shell commands. ```python # Install a package and its dependencies pipenv install requests # Run a Python script in the virtual environment pipenv run python myscript.py # Execute a shell command in the virtual environment pipenv shell ``` These examples should provide a clear understanding of how to use these commands and files in practice."
+  },
   "data_pointers": [
     {
       "title": "Pipenv",
       "uri": "knowledge://py_pipenv_v4",
-      "content_preview": "Pipfile and Pipfile.lock. Automatically creates a virtual environment. pipenv install/run/shell. Here are the translations with added Python code examples for clarity: - **Pipfile**: A file that conta"
+      "content_preview": "Pipenv: Pipfile and Pipfile.lock. Automatically creates a virtual environment. pipenv install/run/shell. Here are the translations with added Python code examples for clarity: - **Pipfile**: A file that contains all of your project's dependencies, including their versions. ```python # Example Pipfile content [packages] requests = \"*\" ``` - **Pipfile.lock**: This is an automatically generated file that records the exact versions of each dependency and its sub-dependencies installed in a virtual environment. It ensures reproducibility. ```python # Example Pipfile.lock snippet { \"default\": { \"requests\": { \"version\": \"==2.25.1\" } }, \"develop\": {} } ``` - **Automatically creates a virtual environment**: pipenv will create and manage the virtual environment for you. ```python # Command to install dependencies in a new virtual environment pipenv install requests ``` - **pipenv install/run/shell**: These commands are used with pipenv to install packages, run scripts within the virtual environment, or execute shell commands. ```python # Install a package and its dependencies pipenv install requests # Run a Python script in the virtual environment pipenv run python myscript.py # Execute a shell command in the virtual environment pipenv shell ``` These examples should provide a clear understanding of how to use these commands and files in practice."
     }
   ],
   "related_nodes": []

@@ -9,12 +9,14 @@
   "parent": "创建型模式",
   "children": [],
   "vector_file": "vector.txt",
-  "metadata": {},
+  "metadata": {
+    "description": "建造者模式: Step-by-step construction of complex objects. Method chaining. Using `StringBuilder` or Lombok's `@Builder`. ### Example with `StringBuilder`: ```python # Python equivalent using a class and method chaining concept class ComplexObject: def __init__(self): self.parts = [] def add_part(self, part): self.parts.append(part) return self # Method chaining # Usage obj = ComplexObject().add_part(\"part1\").add_part(\"part2\") print(obj.parts) # Output: ['part1', 'part2'] ``` ### Example with Lombok's `@Builder`: Lombok is a Java library that provides annotations to simplify the boilerplate code in Java. Python doesn't have an exact equivalent, but we can simulate it using class methods. ```python class ComplexObject: def __init__(self): self.parts = [] @classmethod def builder(cls): return cls() def add_part(self, part): self.parts.append(part) return self # Method chaining # Usage obj = ComplexObject.builder().add_part(\"part1\").add_part(\"part2\").build() print(obj.parts) # Output: ['part1', 'part2'] ``` In the Python examples above, we simulate method chaining using class methods and the `return self` statement to allow for a fluent interface."
+  },
   "data_pointers": [
     {
       "title": "建造者模式",
       "uri": "knowledge://builder_v4",
-      "content_preview": "Step-by-step construction of complex objects. Method chaining. Using `StringBuilder` or Lombok's `@Builder`. ### Example with `StringBuilder`: ```python # Python equivalent using a class and method ch"
+      "content_preview": "建造者模式: Step-by-step construction of complex objects. Method chaining. Using `StringBuilder` or Lombok's `@Builder`. ### Example with `StringBuilder`: ```python # Python equivalent using a class and method chaining concept class ComplexObject: def __init__(self): self.parts = [] def add_part(self, part): self.parts.append(part) return self # Method chaining # Usage obj = ComplexObject().add_part(\"part1\").add_part(\"part2\") print(obj.parts) # Output: ['part1', 'part2'] ``` ### Example with Lombok's `@Builder`: Lombok is a Java library that provides annotations to simplify the boilerplate code in Java. Python doesn't have an exact equivalent, but we can simulate it using class methods. ```python class ComplexObject: def __init__(self): self.parts = [] @classmethod def builder(cls): return cls() def add_part(self, part): self.parts.append(part) return self # Method chaining # Usage obj = ComplexObject.builder().add_part(\"part1\").add_part(\"part2\").build() print(obj.parts) # Output: ['part1', 'part2'] ``` In the Python examples above, we simulate method chaining using class methods and the `return self` statement to allow for a fluent interface."
     }
   ],
   "related_nodes": []
