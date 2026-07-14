@@ -177,9 +177,9 @@ class SemanticKnowledgeTree:
                 sim = self.encoder.similarity(query_vec, node.vector) if node.vector is not None else 0.0
                 scored.append((node, sim, cum_w, p_names, p_ids, l_w))
 
-            # 2. 动态淘汰：低于最高相似度 × elimination_ratio 的淘汰
+            # 2. 动态淘汰：低于最高相似度 × elimination_ratio 或低于绝对阈值 0.05 的淘汰
             max_sim = max(s for _, s, _, _, _, _ in scored)
-            threshold = max_sim * elimination_ratio
+            threshold = max(max_sim * elimination_ratio, 0.05)
 
             survivors = [x for x in scored if x[1] >= threshold]
 
