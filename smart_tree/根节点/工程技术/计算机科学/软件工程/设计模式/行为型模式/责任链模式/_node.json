@@ -19,5 +19,34 @@
       "content_preview": "责任链模式: Multiple processors are chained together. Requests are passed along the chain until they are processed. This is similar to Filter/Interceptor in programming. Here's an example using Python with a simple request handling chain: ```python class Processor: def __init__(self, next_processor=None): self.next_processor = next_processor def process(self, request): # Process the request print(f\"Processing {request} by {self.__class__.__name__}\") # Pass to the next processor in the chain if available if self.next_processor: self.next_processor.process(request) # Example usage if __name__ == \"__main__\": p1 = Processor() p2 = Processor() p3 = Processor() # Chain processors together p1.next_processor = p2 p2.next_processor = p3 # Simulate a request being passed through the chain p1.process(\"Request 1\") ``` In this example, `Processor` objects are chained together to form a processing pipeline. Each processor handles the request and then passes it on to the next one in the chain if available."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    },
+    {
+      "id": "csrf_v4",
+      "type": "application"
+    },
+    {
+      "id": "sql_injection_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n责任链模式是一种行为型设计模式，它允许多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合。这些对象被连接成一条链，并沿着这条链传递请求，直到有一个对象处理它为止。\n\n## 核心要点\n1. 请求沿着链传递，每个处理者决定是否处理请求或将其传递给下一个处理者。\n2. 处理者之间松散耦合，每个处理者只需知道下一个处理者，无需了解链的完整结构。\n3. 可以动态地添加或删除处理者，从而灵活调整请求处理流程。\n4. 每个处理者可以独立处理特定类型的请求，支持单一职责原则。\n5. 如果链中没有处理者能处理请求，通常会有默认处理或忽略请求的机制。\n\n## 应用场景\n责任链模式常用于处理多种类型的请求，例如在日志系统中，不同级别的日志（如DEBUG、INFO、ERROR）由不同的处理器记录；在Web框架中，用于实现过滤器链，依次执行认证、授权、日志等操作；在审批流程中，如报销申请需经过不同级别主管的审批。\n\n## 相关概念\n责任链模式与装饰器模式类似，都涉及链式结构，但装饰器模式侧重于动态添加功能，而责任链模式侧重于请求的分发与处理。此外，它与观察者模式也有区别：观察者模式中，事件广播给所有观察者，而责任链模式中，请求只被一个处理者处理。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

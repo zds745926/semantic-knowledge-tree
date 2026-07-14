@@ -19,5 +19,26 @@
       "content_preview": "哲学: Philosophy explores fundamental issues such as existence, knowledge, value, and reason. The main branches are metaphysics, epistemology, ethics, and aesthetics. Here is a brief Python code example related to the concept of logic (which falls under rationality in philosophy): ```python # Example of logical reasoning using if-else statement def check_age(age): \"\"\" This function checks whether a person is an adult based on age. \"\"\" if age >= 18: return \"Adult\" else: return \"Minor\" # Testing the function print(check_age(20)) # Output: Adult print(check_age(15)) # Output: Minor ``` This code demonstrates a simple logical decision-making process, which is a fundamental aspect of rationality in philosophy."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "hum_history",
+      "type": "related_pattern"
+    },
+    {
+      "id": "hum_lit",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n哲学是研究世界本质、人类存在、知识、价值、理性、心灵和语言等根本问题的学科。它通过批判性思考、逻辑论证和系统反思，探讨超越具体科学领域的普遍原理，为其他学科提供基础性框架。\n\n## 核心要点\n- **本体论**：探讨“存在”本身，研究世界由什么构成，如物质与意识的关系。\n- **认识论**：研究知识的起源、本质和界限，追问“我们如何知道我们所知道的”。\n- **伦理学**：关注道德价值与行为规范，探讨善恶、正义与义务等概念。\n- **逻辑学**：研究有效推理的规则，确保论证的严谨性与一致性。\n- **美学**：审视美、艺术与审美体验，分析何为“美”及其判断标准。\n\n## 应用场景\n哲学广泛应用于教育、法律、科技伦理和公共政策领域。例如，在人工智能发展中，哲学帮助界定机器道德责任；在商业决策中，伦理哲学指导企业社会责任；在个人生活中，哲学思维提升批判性思考与自我认知能力。\n\n## 相关概念\n哲学与科学、宗教、艺术紧密关联。科学依赖哲学预设（如因果律），宗教与哲学共享对终极问题的追问，艺术则通过感性形式表达哲学思想。此外，形而上学、辩证法、存在主义等分支进一步深化了哲学的具体研究领域。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

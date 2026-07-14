@@ -19,5 +19,30 @@
       "content_preview": "HTML: The tag structure is <html><head><body>. Semantic headers include <header>, <nav>, <main>, <section>, <article>, and <footer>. Python code example (using BeautifulSoup to demonstrate the use of semantic HTML tags): ```python from bs4 import BeautifulSoup # Create a simple HTML document with semantic tags html_doc = \"\"\" <html> <head><title>Example Page</title></head> <body> <header> <h1>Welcome to My Website</h1> <nav> <ul> <li><a href=\"#home\">Home</a></li> <li><a href=\"#about\">About</a></li> <li><a href=\"#contact\">Contact</a></li> </ul> </nav> </header> <main> <section> <article> <h2>Article Title</h2> <p>This is the content of the article.</p> </article> </section> </main> <footer> <p>&copy; 2023 My Website. All rights reserved.</p> </footer> </body> </html> \"\"\" # Parse the HTML document soup = BeautifulSoup(html_doc, 'html.parser') # Print the parsed HTML (for demonstration purposes) print(soup.prettify()) ``` This Python code uses BeautifulSoup to create and parse an HTML document that includes semantic tags such as `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, and `<footer>`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "csrf_v4",
+      "type": "application"
+    },
+    {
+      "id": "sql_injection_v4",
+      "type": "application"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nHTML（超文本标记语言）是一种用于创建网页结构和内容的标记语言。它通过一系列标签（如 <h1>、<p>、<a>）来定义文本、图像、链接等元素的语义和布局，是构建万维网的基础技术之一。\n\n## 核心要点\n- **标签与元素**：HTML 使用成对的标签（如 <div> 和 </div>）来包裹内容，形成元素，每个元素具有特定语义或功能。\n- **文档结构**：一个标准 HTML 文档包含 <!DOCTYPE html> 声明、<html>、<head> 和 <body> 等根元素，确保浏览器正确解析。\n- **属性与值**：标签可添加属性（如 class、id、href）来提供额外信息或控制行为，属性值通常用引号括起。\n- **语义化**：使用语义标签（如 <header>、<nav>、<article>）能提升可访问性和 SEO，帮助搜索引擎和辅助技术理解内容。\n- **嵌套与层级**：元素可以嵌套，形成树状结构，但需遵循正确闭合顺序，避免交叉。\n\n## 应用场景\nHTML 广泛应用于网页开发，用于构建静态页面、博客文章、电子商务产品列表等。它常与 CSS 和 JavaScript 结合，实现动态交互和样式美化，是前端开发的核心技能之一。\n\n## 相关概念\n- **CSS**：层叠样式表，用于控制 HTML 元素的视觉呈现（如颜色、布局）。\n- **JavaScript**：脚本语言，为 HTML 页面添加动态功能（如表单验证、动画）。\n- **DOM**：文档对象模型，是 HTML 文档的编程接口，允许脚本动态访问和修改内容。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

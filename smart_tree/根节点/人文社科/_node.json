@@ -17,5 +17,13 @@
     "description": "人文社科: Humanities and social sciences study human society, culture, and spiritual phenomena, including history, literature, philosophy, sociology, psychology, political science, etc. They explore the evolution of human civilization, the development of thought, and the laws governing societal operation, fostering critical thinking and a humanities-based素养 (literature-based). To provide a more accurate translation while keeping technical terms precise, I'll use \"humanities-based\" for \"人文素养,\" which is often used in academic contexts to refer to the overall cultural and intellectual education derived from studying humanities subjects. Here's an added Python code example related to data analysis, which could be relevant if we are discussing methods of exploring societal phenomena: ```python import pandas as pd # Example DataFrame representing a simple dataset about historical events data = { 'Year': [1492, 1789, 1914, 1945], 'Event': ['Columbus discovers America', 'French Revolution begins', 'World War I starts', 'End of World War II'] } df = pd.DataFrame(data) # Analyzing the data to explore historical events def analyze_events(df): # Counting the number of events per year event_counts = df['Year'].value_counts() print(\"Number of events per year:\") print(event_counts) # Finding the earliest and latest years with events earliest_year = df['Year'].min() latest_year = df['Year'].max() print(f\"\\nEarliest event: {earliest_year}\") print(f\"Latest event: {latest_year}\") analyze_events(df) ``` This Python code example demonstrates how to analyze a simple dataset related to historical events, which could be part of the exploration of human civilization's evolution."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "人文社科是研究人类社会、文化、思想与行为的综合性学科领域，涵盖历史、文学与哲学三大核心子分支。历史学探究人类过去的事件、进程与因果，为理解当下提供纵深背景；文学以语言艺术为载体，表达情感、叙事与审美，反映时代精神与个体经验；哲学则追问存在、知识、价值与意义等根本性问题，为其他学科提供思辨基础与批判框架。三者相互交织：历史为文学与哲学提供具体情境与素材，文学以叙事与修辞丰富历史与哲学的表达，哲学则为历史与文学提供方法论与价值判断的反思。学习路径建议从历史入门建立时空框架，再通过文学感受具体人文经验，最后以哲学提升抽象思辨能力，形成立体的人文素养。该分支致力于培养批判性思维、文化理解力与人文关怀，是理解自我与社会的重要途径。",
+  "example_queries": [
+    "历史研究如何帮助我们理解当代社会的冲突与变迁？",
+    "文学作品中的人物塑造如何反映特定时代的价值观？",
+    "哲学中的‘自由意志’概念在当代伦理学中有哪些争议？",
+    "人文社科各分支之间如何相互影响并共同塑造文化认知？",
+    "学习人文社科对个人批判性思维与同理心的培养有何具体作用？"
+  ]
 }

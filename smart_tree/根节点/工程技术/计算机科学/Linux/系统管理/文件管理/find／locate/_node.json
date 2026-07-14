@@ -19,5 +19,26 @@
       "content_preview": "find/locate: Find by name/type/large. locate is fast but not real-time. To provide a more detailed explanation and include a relevant Python code snippet for the \"find\" concept, we can say: Find by name/type/large. This operation is efficient (locate) but does not support real-time updates or monitoring. Here's an example of how you might implement such a function in Python using a dictionary to store and retrieve items based on their names. ```python class ItemFinder: def __init__(self): self.items = {} def add_item(self, name, item_type, large): # Add or update an item by its name self.items[name] = {'type': item_type, 'large': large} def find_by_name(self, name): # Find an item by its name return self.items.get(name) # Example usage: finder = ItemFinder() finder.add_item('apple', 'fruit', True) finder.add_item('banana', 'fruit', False) print(finder.find_by_name('apple')) # Output: {'type': 'fruit', 'large': True} ``` In this example, `ItemFinder` is a simple class that allows adding and finding items by name. The `find_by_name` method retrieves an item based on its name from the dictionary stored in `self.items`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "ls_cd_pwd_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_fnmatch_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nfind和locate是Linux系统中用于文件搜索的两个核心命令。find通过实时遍历文件系统，根据文件名、类型、权限等条件精确查找文件；locate则基于预构建的数据库快速检索文件路径，速度更快但依赖数据库更新。\n\n## 核心要点\n- find命令支持复杂条件组合，如按名称（-name）、类型（-type）、大小（-size）和时间戳（-mtime）筛选，并可执行后续操作（-exec）。\n- locate命令利用updatedb定期生成的数据库，搜索速度极快，但无法实时反映新建或删除的文件。\n- find的递归搜索默认从当前目录开始，而locate通常搜索整个系统，需注意权限和输出过滤。\n- 两者均可通过正则表达式增强匹配灵活性，如find的-regex和locate的-r选项。\n- 性能差异显著：find适合精确、实时查找，locate适合快速模糊搜索。\n\n## 应用场景\nfind常用于系统管理中的日志清理、权限审计或批量操作，例如删除7天前的临时文件。locate则适合快速定位已知名称的配置文件或文档，如查找nginx.conf的位置。两者结合使用可兼顾效率与准确性。\n\n## 相关概念\n- updatedb：locate依赖的数据库更新命令，通常由cron定时执行，确保索引最新。\n- grep：常与find或locate配合，对搜索结果进行内容过滤，如find ... | grep pattern。\n- xargs：与find结合时，可将输出作为参数传递给其他命令，实现批量处理。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

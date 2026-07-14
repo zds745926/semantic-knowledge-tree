@@ -19,5 +19,34 @@
       "content_preview": "IPv4: 32-bit address in dotted decimal notation. Class A/B/C/D/E addresses. NAT to alleviate address exhaustion. Python code example for IP address representation (using a class to represent an IP address): ```python class IPAddress: def __init__(self, ip_str): self.ip = [int(part) for part in ip_str.split('.')] def __str__(self): return '.'.join(map(str, self.ip)) # Example usage: ip = IPAddress('192.0.2.1') print(ip) # Output: 192.0.2.1 ``` This code defines a simple class to represent an IP address in dotted decimal notation and includes a brief example of how it can be used."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nIPv4（Internet Protocol version 4）是互联网协议第四版，是TCP/IP协议栈中网络层的核心协议之一。它使用32位地址空间，以点分十进制表示，为网络中的每个设备分配唯一的逻辑地址，用于数据包的路由和转发。\n\n## 核心要点\n- **地址结构**：IPv4地址由32位二进制数组成，通常分为网络号和主机号两部分，通过子网掩码区分，支持约43亿个唯一地址。\n- **无连接协议**：IPv4采用无连接方式传输数据包，每个数据包独立路由，不保证顺序或可靠性，需上层协议（如TCP）提供可靠传输。\n- **数据包格式**：IPv4数据包包含版本、首部长度、服务类型、总长度、标识、标志、片偏移、生存时间（TTL）、协议、首部校验和、源地址和目的地址等字段。\n- **分片与重组**：当数据包超过链路层最大传输单元（MTU）时，IPv4会在源或中间路由器进行分片，并在目的地重组。\n- **地址耗尽问题**：由于互联网规模爆炸式增长，IPv4地址已基本分配完毕，推动了IPv6的部署。\n\n## 应用场景\nIPv4广泛应用于全球互联网、局域网、广域网以及各种设备（如计算机、手机、服务器）的网络通信。它支撑了网页浏览、电子邮件、文件传输、视频流媒体等绝大多数互联网服务，是当前网络基础设施的基石。\n\n## 相关概念\nIPv4与IPv6（互联网协议第六版）同为网络层协议，IPv6采用128位地址以解决地址耗尽问题。此外，IPv4常与TCP（传输控制协议）配合使用形成TCP/IP协议栈，并与ICMP（互联网控制报文协议）协同进行错误报告和诊断。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

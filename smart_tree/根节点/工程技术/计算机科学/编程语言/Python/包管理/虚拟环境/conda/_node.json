@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "py_virtualenv_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nconda 是一个开源的包管理和环境管理系统，用于安装、运行和更新跨语言的软件包及其依赖，并支持创建隔离的虚拟环境，以避免不同项目间的依赖冲突。\n\n## 何时使用\n当需要在同一台机器上管理多个 Python 项目，且这些项目依赖不同版本的 Python 或第三方库时，conda 是最佳选择。它也适用于需要安装非 Python 依赖（如 C/C++ 库）的场景，因为 conda 能自动处理这些跨语言依赖。此外，在数据科学和机器学习项目中，conda 因其对科学计算库（如 NumPy、Pandas、TensorFlow）的预编译包支持而广泛使用。\n\n## 示例\n```Python\n# 创建一个名为 myenv 的新环境，指定 Python 3.9\nconda create -n myenv python=3.9\n\n# 激活环境\nconda activate myenv\n\n# 安装包\nconda install numpy pandas\n\n# 查看环境中的包列表\nconda list\n\n# 导出环境配置\nconda env export > environment.yml\n\n# 从文件创建环境\nconda env create -f environment.yml\n\n# 退出环境\nconda deactivate\n\n# 删除环境\nconda remove -n myenv --all\n```\n\n## 反例\n错误用法：直接在 base 环境中安装所有项目依赖，导致不同项目的依赖版本冲突，或使用 `pip` 安装 conda 包时未注意依赖兼容性，造成环境混乱。\n\n## 边界条件\n注意：conda 环境路径默认存储在 Anaconda 安装目录下的 `envs` 文件夹中，若磁盘空间不足，可通过 `--prefix` 参数指定其他路径。另外，conda 的包源（channel）默认是官方源，在中国大陆可能速度较慢，建议配置国内镜像源（如清华源）。",
+    "code_pattern": "conda create -n myenv python=3.9\nconda activate myenv\nconda install numpy pandas scikit-learn\n# 运行项目代码\npython main.py\nconda deactivate",
+    "common_pitfalls": [
+      "在 conda 环境中使用 pip 安装包后，可能破坏环境一致性，因为 pip 安装的包不会被 conda 管理，导致后续 conda 操作（如更新）时出现依赖冲突。",
+      "忘记激活环境就在终端中运行 Python，导致使用了 base 环境的 Python 解释器，而不是目标环境的。",
+      "使用 conda install 时未指定版本号，导致安装了最新版包，可能与项目中其他依赖不兼容。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

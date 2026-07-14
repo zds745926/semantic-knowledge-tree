@@ -19,5 +19,34 @@
       "content_preview": "列表基础: A list is mutable and ordered. Indexing starts at 0, and negative indices count from the end. Slicing can be done using the syntax [start:stop:step]. Here's a brief Python code example to illustrate slicing: ```python # Example list my_list = [10, 20, 30, 40, 50] # Slicing example sliced_list = my_list[1:4] # This will return [20, 30, 40] print(sliced_list) # Using negative indices and step sliced_list_negatives = my_list[-3:-1] # This will return [30, 40] print(sliced_list_negatives) ``` This example demonstrates how to slice a list using both positive and negative indices."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n列表（list）是 Python 中内置的可变序列类型，用于按顺序存储多个元素，元素可以是任意类型，且支持增删改查操作。\n\n## 何时使用\n当需要存储一组有序数据，且数据量可能动态变化时，列表是最佳选择。例如，收集用户输入、管理临时数据集合、作为栈或队列的基础结构。列表适用于需要频繁遍历、索引访问或修改元素的场景。\n\n## 示例\n```Python\n# 创建一个包含整数和字符串的列表\nmy_list = [1, 2, 3, 'hello', 4.5]\nprint(my_list[0])      # 输出: 1\nprint(my_list[-1])     # 输出: 4.5\n\n# 添加元素\nmy_list.append('world')\nprint(my_list)         # 输出: [1, 2, 3, 'hello', 4.5, 'world']\n\n# 删除元素\nmy_list.remove(3)\nprint(my_list)         # 输出: [1, 2, 'hello', 4.5, 'world']\n\n# 修改元素\nmy_list[1] = 100\nprint(my_list)         # 输出: [1, 100, 'hello', 4.5, 'world']\n```\n\n## 反例\n错误用法：在遍历列表时直接删除元素，会导致索引错乱或遗漏。例如，`for item in lst: lst.remove(item)` 可能无法删除所有元素。\n\n## 边界条件\n- 索引从 0 开始，超出范围会引发 IndexError。\n- 列表是可变对象，函数内修改列表会影响外部变量，需注意深浅拷贝。",
+    "code_pattern": "def process_list(items):\n    \"\"\"处理列表的通用模板\"\"\"\n    result = []\n    for item in items:\n        # 处理每个元素\n        processed = item * 2  # 示例操作\n        result.append(processed)\n    return result\n\n# 使用示例\ninput_list = [1, 2, 3]\noutput = process_list(input_list)\nprint(output)  # [2, 4, 6]",
+    "common_pitfalls": [
+      "使用列表作为函数默认参数时，默认值只初始化一次，多次调用会累积修改。例如 `def func(lst=[])` 会导致后续调用共享同一个列表。",
+      "在遍历列表时修改列表（如删除或插入元素）会导致索引错乱或跳过元素，应使用列表推导式或创建副本。",
+      "混淆 `==` 和 `is`：`==` 比较值，`is` 比较内存地址。两个内容相同的列表 `==` 返回 True，但 `is` 返回 False。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -16,5 +16,13 @@
     "description": "字典 dict: A dictionary is a key-value mapping structure where keys must be hashable. In Python 3.7+, dictionaries preserve the insertion order. Here's a brief example of using a dictionary in Python: ```python # Creating a dictionary with initial values my_dict = {'apple': 1, 'banana': 2, 'cherry': 3} # Accessing values by key print(my_dict['apple']) # Output: 1 # Adding a new key-value pair my_dict['date'] = 4 print(my_dict) # Output: {'apple': 1, 'banana': 2, 'cherry': 3, 'date': 4} # Iterating over keys and values for key, value in my_dict.items(): print(f\"{key}: {value}\") ``` This example demonstrates creating a dictionary, accessing its values, adding new entries, and iterating over the items."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python内置数据结构中的字典（dict），一种以键值对（key-value pair）存储的可变、无序（Python 3.7+有序）容器。字典基础子节点涵盖字典的创建（字面量、dict()构造器、fromkeys()）、访问（通过键索引、get()方法）、修改（添加/更新键值对、pop()、popitem()删除）、以及遍历（keys()、values()、items()）等核心操作，并涉及键的唯一性与不可变类型要求（如字符串、数字、元组）。字典方法子节点则深入讲解dict提供的丰富内置方法，包括setdefault()（安全获取并设置默认值）、update()（合并字典）、copy()（浅拷贝）、clear()（清空）等，以及高级技巧如defaultdict（collections模块）自动处理缺失键、字典推导式高效生成字典。两个子主题层层递进：先掌握字典的基本增删改查与特性，再学习利用方法优化代码、处理边缘情况。典型学习路径为：理解字典的哈希表原理 → 熟练基础操作 → 掌握常用方法 → 结合列表、集合等解决实际问题（如计数、缓存、配置管理）。",
+  "example_queries": [
+    "如何用字典统计字符串中每个字符出现的次数？",
+    "Python字典的get()方法和直接通过键访问有什么区别？",
+    "如何合并两个字典？update()方法与**操作符有何不同？",
+    "字典的键可以是什么类型？为什么列表不能作为字典的键？",
+    "如何使用defaultdict避免键不存在时的KeyError？"
+  ]
 }

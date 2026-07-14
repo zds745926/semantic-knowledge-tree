@@ -19,5 +19,30 @@
       "content_preview": "策略模式: Define a family of algorithms that can be used interchangeably. Eliminate if-else statements. Python code example: Suppose we have an algorithm to process different types of data, and instead of using if-else statements, we use a dictionary to map the type of data to the corresponding processing function. ```python def process_data(data_type): # Dictionary mapping data types to their respective processing functions processors = { 'text': process_text, 'image': process_image, # Add more data types and their corresponding functions as needed } # Get the appropriate processor based on the data type processor = processors.get(data_type) if processor is None: raise ValueError(f\"No processor found for data type: {data_type}\") # Call the processor function with the data return processor(data) def process_text(text): print(\"Processing text:\", text) def process_image(image): print(\"Processing image:\", image) # Example usage process_data('text') # Output: Processing text: <input text> process_data('image') # Output: Processing image: <input image> ``` In this example, the `processors` dictionary is used to replace if-else statements for selecting the appropriate processing function based on the data type."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cpp_oop_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "adapter_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n策略模式是一种行为型设计模式，它定义了一系列算法，并将每个算法封装起来，使它们可以相互替换。该模式让算法的变化独立于使用算法的客户端，从而实现了算法定义与使用的解耦。\n\n## 核心要点\n1. 策略模式通过定义策略接口或抽象类，将一组可互换的算法封装成独立的策略类，客户端可以根据需要动态选择具体策略。\n2. 上下文（Context）类持有对策略接口的引用，并在运行时委托给具体的策略对象执行算法，从而避免了大量的条件判断语句。\n3. 策略模式遵循开闭原则，新增策略时无需修改现有代码，只需添加新的策略类并调整客户端配置即可。\n4. 每个策略类封装了完整的算法逻辑，使得代码更易于维护、测试和扩展，同时提高了代码的复用性。\n5. 客户端需要了解不同策略之间的差异，以选择合适的策略，这增加了客户端的复杂度，但换来了系统的灵活性。\n\n## 应用场景\n策略模式适用于需要在运行时根据不同条件选择不同算法或行为的场景，例如支付系统（支持多种支付方式）、排序算法（根据数据量选择不同排序策略）或促销活动（根据用户类型应用不同折扣规则）。它特别适合那些算法经常变化或需要避免大量if-else或switch语句的系统。\n\n## 相关概念\n策略模式与状态模式结构相似，但目的不同：状态模式通过改变对象内部状态来改变行为，而策略模式由客户端主动选择算法。策略模式也常与工厂模式结合使用，由工厂负责创建具体的策略对象，进一步降低客户端与具体策略的耦合。此外，策略模式与模板方法模式都涉及算法封装，但模板方法通过继承固定算法骨架，而策略模式通过组合实现算法替换。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,30 @@
       "content_preview": "模块化编程: Modular programming decomposes the program into independent modules or functions, separating interfaces from implementations to reduce coupling. Python code example: ```python # Define a module with a function def calculate_area(length, width): \"\"\"Calculate the area of a rectangle.\"\"\" return length * width # Another module using the above function def main(): length = 10 width = 5 area = calculate_area(length, width) print(f\"The area is {area}\") if __name__ == \"__main__\": main() ``` In this example, `calculate_area` is a separate module that calculates the area of a rectangle. The `main` function uses this module without knowing its internal implementation details, demonstrating separation of interface and implementation."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "git_basics_v4",
+      "type": "application"
+    },
+    {
+      "id": "cpp_oop_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_collections_module_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n模块化编程是一种将程序划分为独立、可复用的模块的编程范式。每个模块封装了特定的功能或数据，并通过明确定义的接口与其他模块交互，从而降低系统复杂性，提高代码的可维护性和可扩展性。\n\n## 核心要点\n- **高内聚低耦合**：模块内部元素紧密相关（高内聚），模块间依赖最小化（低耦合），便于独立开发与测试。\n- **接口与实现分离**：模块对外暴露清晰的接口，隐藏内部实现细节，支持信息隐藏和封装。\n- **复用性**：模块可被不同项目或同一项目的不同部分重复使用，减少重复代码。\n- **可维护性**：修改一个模块的内部实现不影响其他模块，只要接口保持不变，便于调试和升级。\n- **并行开发**：多个开发者可同时独立开发不同模块，提升团队协作效率。\n\n## 应用场景\n模块化编程广泛应用于大型软件系统开发，如操作系统、Web应用、游戏引擎等。例如，在Web开发中，将用户认证、数据库操作、日志记录等功能封装为独立模块，便于团队分工和维护。它也常用于库和框架的设计，如Python的模块系统、JavaScript的ES6模块。\n\n## 相关概念\n模块化编程与面向对象编程（OOP）密切相关，OOP中的类和对象可视为模块的一种实现方式。此外，它与软件架构中的微服务架构有相似理念，后者将系统拆分为独立服务。模块化编程也常与版本控制工具（如Git）结合，管理模块的变更历史。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

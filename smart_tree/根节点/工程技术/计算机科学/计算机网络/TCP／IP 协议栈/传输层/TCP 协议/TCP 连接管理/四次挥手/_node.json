@@ -19,5 +19,22 @@
       "content_preview": "四次挥手: FIN→ACK→FIN→ACK. Full-duplex closure (requires 4 steps). TIME_WAIT waits for 2MSL. Python code example to illustrate the concept of a full-duplex closure in TCP: ```python import socket def simulate_tcp_close(): # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) sock.connect(server_address) try: # Send data message = b\"Hello, world\" print(f\"sending {message}\") sock.sendall(message) # Wait for a response amount_received = 0 amount_expected = len(message) while amount_received < amount_expected: data = sock.recv(16) amount_received += len(data) print(f\"received {data}\") # Simulate sending FIN and receiving ACK sock.shutdown(socket.SHUT_WR) # Send FIN print(\"sent shutdown (FIN)\") # Receive the final ACK while True: data = sock.recv(16) if not data: break print(f\"received {data}\") finally: # Simulate receiving FIN and sending ACK, then sending FIN again to close fully sock.close() print(\"socket closed\") simulate_tcp_close() ``` This Python code simulates a TCP connection and demonstrates the full-duplex closure process, including the four-way handshake for closing the connection. Note that this is a simplified simulation and does not include actual network communication or the TIME_WAIT state."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tcp_congestion_avoid_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n四次挥手是 TCP 协议中用于终止一个已建立的连接的过程，确保双方都能完整地发送和接收数据后，再安全地关闭连接。它通过四次报文交换，实现全双工连接的优雅释放。\n\n## 核心要点\n1. 第一次挥手：主动关闭方发送 FIN 报文，表示不再发送数据，但仍可接收数据。\n2. 第二次挥手：被动关闭方回复 ACK 报文，确认收到 FIN，此时连接处于半关闭状态。\n3. 第三次挥手：被动关闭方准备好后，发送 FIN 报文，表示也不再发送数据。\n4. 第四次挥手：主动关闭方回复 ACK 报文，确认收到 FIN，经过 2MSL 时间后连接彻底关闭。\n\n## 应用场景\n四次挥手广泛应用于所有基于 TCP 的网络应用中，如 Web 浏览（HTTP）、文件传输（FTP）、电子邮件（SMTP）等，确保数据完整传输后连接正常关闭。它防止了数据丢失和资源泄露，是可靠通信的基础。\n\n## 相关概念\n四次挥手与三次握手（建立连接）相对应，共同构成 TCP 连接的生命周期管理。此外，它涉及半关闭状态和 TIME_WAIT 状态，后者用于处理延迟的报文段，避免新旧连接混淆。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

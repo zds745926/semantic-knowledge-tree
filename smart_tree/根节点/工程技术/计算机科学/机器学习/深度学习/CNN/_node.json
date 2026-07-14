@@ -17,5 +17,13 @@
     "description": "CNN: Convolutional neural networks extract local features using convolutional kernels and are suitable for image processing. Here is a brief Python code example using TensorFlow to create a simple convolutional layer: ```python import tensorflow as tf # Define the input shape (assuming 28x28 grayscale images) input_shape = (None, 28, 28, 1) # Create a simple Conv2D layer with 32 filters of size 3x3 conv_layer = tf.keras.layers.Conv2D(32, kernel_size=3, activation='relu', input_shape=input_shape) # Example input tensor (batch size of 1 for simplicity) input_tensor = tf.random.normal((1, 28, 28, 1)) # Apply the convolutional layer to the input output_tensor = conv_layer(input_tensor) print(output_tensor.shape) # Output shape will be (1, 26, 26, 32) ``` This code snippet demonstrates creating a basic Conv2D layer and applying it to an input tensor."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖卷积神经网络（CNN）的核心概念与经典架构，属于深度学习在计算机视觉领域的基础分支。卷积层通过可学习的卷积核提取局部特征，池化层则通过下采样降低特征维度、增强平移不变性，两者交替堆叠形成特征提取主干。经典CNN架构（如LeNet、AlexNet、VGG、GoogLeNet、ResNet等）展示了从浅层到深层、从简单堆叠到残差连接、从单一分支到Inception模块的演进路径，体现了网络设计对性能与效率的不断优化。学习本分支时，建议先掌握卷积与池化的数学原理与计算过程，再理解经典架构的设计动机与创新点，最后通过实践（如使用PyTorch/TensorFlow复现模型）加深理解。该分支为图像分类、目标检测、语义分割等视觉任务提供基础支撑，是进入计算机视觉领域的必经之路。",
+  "example_queries": [
+    "卷积层中卷积核的尺寸和步长如何影响输出特征图的尺寸？",
+    "池化层（最大池化、平均池化）的作用是什么？为什么通常放在卷积层之后？",
+    "ResNet中的残差连接是如何解决深层网络梯度消失问题的？",
+    "LeNet、AlexNet、VGG、GoogLeNet和ResNet各自的核心创新点是什么？",
+    "如何用PyTorch搭建一个简单的CNN模型用于图像分类？"
+  ]
 }

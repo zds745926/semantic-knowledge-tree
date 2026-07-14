@@ -16,5 +16,13 @@
     "description": "树与图算法: Trees and graphs are the most important non-linear data structures. Their algorithms (traversal, shortest path, spanning tree generation, etc.) are at the core of interviews and competitive programming. Here are some brief Python code examples for these concepts: 1. **Tree Traversal**: - Pre-order traversal: ```python def pre_order_traversal(root): if root is None: return print(root.val) pre_order_traversal(root.left) pre_order_traversal(root.right) ``` 2. **Shortest Path in a Graph (using Dijkstra's Algorithm)**: - Using a priority queue to implement Dijkstra’s algorithm: ```python import heapq def dijkstra(graph, start): distances = {node: float('infinity') for node in graph} distances[start] = 0 priority_queue = [(0, start)] while priority_queue: current_distance, current_node = heapq.heappop(priority_queue) if current_distance > distances[current_node]: continue for neighbor, weight in graph[current_node].items(): distance = current_distance + weight if distance < distances[neighbor]: distances[neighbor] = distance heapq.heappush(priority_queue, (distance, neighbor)) return distances ``` 3. **Spanning Tree Generation (using Prim's Algorithm)**: - Generating a minimum spanning tree using Prim’s algorithm: ```python import heapq def prim_mst(graph): mst = [] visited = set() priority_queue = [(0, next(iter(graph)))] # Start from any node while priority_queue and len(visited) < len(graph): weight, current_node = heapq.heappop(priority_queue) if current_node in visited: continue visited.add(current_node) mst.append((current_node, weight)) for neighbor, edge_weight in graph[current_node].items(): if neighbor not in visited: heapq.heappush(priority_queue, (edge_weight, neighbor)) return mst ``` These examples should give you a good starting point for understanding and implementing these algorithms in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "树与图算法是算法与数据结构领域的重要分支，主要研究非线性结构数据的存储、遍历与操作。本分支涵盖二叉树与图算法两大子主题。二叉树是树结构的基础，包括二叉搜索树、平衡树（如AVL、红黑树）、堆以及遍历（前序、中序、后序、层序）等，广泛应用于搜索、排序和优先队列。图算法则处理更复杂的网络结构，涉及图的表示（邻接矩阵、邻接表）、遍历（DFS、BFS）、最短路径（Dijkstra、Floyd）、最小生成树（Kruskal、Prim）、拓扑排序及强连通分量等。两者关系密切：树是图的特例（无环连通图），许多图算法思想（如DFS）源于树的遍历，而树结构常作为图算法的中间结果（如最小生成树）。学习路径建议先掌握二叉树的基础操作与遍历，再深入平衡树与堆；随后转入图的基本表示与遍历，最后学习最短路径、最小生成树等经典算法。该分支是解决复杂系统建模、网络分析、路径规划等问题的核心工具。",
+  "example_queries": [
+    "如何实现二叉树的层序遍历并输出每一层的节点？",
+    "给定一个无向图，如何用Kruskal算法求出最小生成树？",
+    "在加权有向图中，如何用Dijkstra算法找到从起点到所有节点的最短路径？",
+    "如何判断一个二叉树是否为二叉搜索树？",
+    "如何用拓扑排序解决课程安排问题（检测有向图是否有环）？"
+  ]
 }

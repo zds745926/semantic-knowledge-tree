@@ -17,5 +17,13 @@
     "description": "面向对象: Python supports object-oriented programming (OOP), including class definition, inheritance, polymorphism, and magic methods. Python's OOP is flexible and powerful, with decorators like `@property`, `@classmethod`, and `@staticmethod` enriching the functionality of classes. Here are brief examples for each concept: 1. **Class Definition**: ```python class Dog: def __init__(self, name): self.name = name def bark(self): return f\"{self.name} says Woof!\" ``` 2. **Inheritance**: ```python class Puppy(Dog): def __init__(self, name, age): super().__init__(name) self.age = age def play(self): return f\"{self.name} is playing at {self.age} years old.\" ``` 3. **Polymorphism**: ```python class Cat: def __init__(self, name): self.name = name def meow(self): return f\"{self.name} says Meow!\" ``` 4. **Magic Methods** (e.g., `__str__` for custom string representation): ```python class Person: def __init__(self, name, age): self.name = name self.age = age def __str__(self): return f\"Person: {self.name}, Age: {self.age}\" ``` 5. **Decorators** (e.g., `@property` for attribute access): ```python class Person: def __init__(self, name, age): self._name = name self._age = age @property def age(self): return self._age @age.setter def age(self, value): if 0 < value <= 120: # Assuming a valid age range self._age = value else: raise ValueError(\"Age must be between 0 and 120.\") ``` These examples illustrate how Python's OOP features can be utilized effectively."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python编程语言中面向对象编程（OOP）的核心概念与实践。面向对象是一种编程范式，通过将数据与操作数据的方法封装为“对象”来组织代码，提高代码的可重用性、可维护性和扩展性。该分支包含三个子主题：类与实例、魔术方法、异常处理。类与实例是OOP的基础，定义了对象的蓝图（类）和具体实体（实例），涵盖属性、方法、继承、多态等关键机制。魔术方法（如__init__、__str__）是Python中特殊命名的方法，用于重载运算符或定义对象的内置行为，使类能与Python语法无缝集成。异常处理则关注程序运行时的错误管理，通过try/except/finally结构捕获并处理异常，确保程序的健壮性。这三个子主题紧密关联：类与实例构建了对象模型，魔术方法增强了类的灵活性和表达力，而异常处理则为对象交互中的错误提供了优雅的解决路径。学习时建议先掌握类与实例的基本语法，再深入魔术方法以定制对象行为，最后学习异常处理来完善代码的可靠性。",
+  "example_queries": [
+    "如何在Python中定义一个类并创建实例？",
+    "Python中的__init__和__str__魔术方法有什么作用？",
+    "在面向对象编程中，如何通过try/except处理自定义异常？",
+    "Python中继承和多态是如何实现的？",
+    "如何利用魔术方法实现运算符重载？"
+  ]
 }

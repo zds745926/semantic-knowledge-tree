@@ -19,5 +19,34 @@
       "content_preview": "字符串表示: Here is the translation with brief explanations and corresponding Python code examples for each term: 1. **`__str__` User String**: - This method returns a string that represents the object in a way that is easy for humans to read. ```python class Person: def __init__(self, name): self.name = name def __str__(self): return f\"Person: {self.name}\" person = Person(\"Alice\") print(person) # Output: Person: Alice ``` 2. **`__repr__` Development String**: - This method returns a string that represents the object in a way that is useful for debugging and development, often used to recreate the object. ```python class Person: def __init__(self, name): self.name = name def __repr__(self): return f\"Person(name='{self.name}')\" person = Person(\"Alice\") print(person) # Output: Person(name='Alice') ``` 3. **`__format__` Format**: - This method allows you to define how the object should be formatted when it is used in a string formatting context. ```python class Person: def __init__(self, name): self.name = name def __format__(self, format_spec): if format_spec == 'full': return f\"Full Name: {self.name}\" else: return super().__format__(format_spec) person = Person(\"Alice\") print(f\"{person:full}\") # Output: Full Name: Alice ``` These examples illustrate how each method can be implemented and used in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n字符串表示是Python中通过`__str__`和`__repr__`两个魔术方法为对象提供人类可读或开发者友好的字符串输出，分别对应`str()`和`repr()`内置函数。\n\n## 何时使用\n当你需要自定义对象的打印或日志输出时，应重写`__str__`和`__repr__`。`__repr__`用于调试和开发环境，应返回无歧义的、可重建对象的字符串；`__str__`用于最终用户，返回简洁易懂的描述。通常至少实现`__repr__`，因为默认的`__repr__`继承自`object`，仅显示类名和内存地址，缺乏有用信息。\n\n## 示例\n```Python\nclass Point:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __repr__(self):\n        return f\"Point({self.x}, {self.y})\"\n\n    def __str__(self):\n        return f\"({self.x}, {self.y})\"\n\np = Point(3, 4)\nprint(repr(p))  # 输出: Point(3, 4)\nprint(str(p))   # 输出: (3, 4)\nprint(p)        # 隐式调用 __str__，输出: (3, 4)\n```\n\n## 反例\n只实现`__str__`而不实现`__repr__`，导致在列表或调试时显示无意义信息。例如，若仅定义`__str__`，则`[Point(1,2)]`会显示为`[<__main__.Point object at 0x...>]`，因为列表的`__repr__`会调用元素的`__repr__`而非`__str__`。\n\n## 边界条件\n- 当`__str__`未定义时，Python会回退使用`__repr__`，因此至少实现`__repr__`是安全的。\n- `__repr__`应尽量返回一个有效的Python表达式，使得`eval(repr(obj))`能重建对象（但需注意安全性，避免在不可信环境下使用`eval`）。\n- 对于递归或大型对象，字符串表示可能无限循环或过长，应限制输出长度或使用截断。",
+    "code_pattern": "class MyClass:\n    def __init__(self, value):\n        self.value = value\n\n    def __repr__(self):\n        return f\"MyClass({self.value!r})\"\n\n    def __str__(self):\n        return f\"MyClass with value {self.value}\"",
+    "common_pitfalls": [
+      "忘记实现__repr__，导致调试时对象显示为无意义的类名和内存地址，如<__main__.MyClass object at 0x7f...>",
+      "__repr__返回的字符串不包含足够信息，无法区分不同实例，例如只返回类名而不包含属性值",
+      "__str__和__repr__返回的内容过于冗长，导致日志文件膨胀或控制台输出难以阅读，应保持简洁"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

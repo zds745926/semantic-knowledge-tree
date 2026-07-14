@@ -19,5 +19,34 @@
       "content_preview": "背包问题: 0-1 Knapsack. Complete Knapsack (Inner Loop in Ascending Order). Multiple Knapsack (Binary Optimization). ### Python Code Examples #### 0-1 Knapsack ```python def knapsack_01(weights, values, capacity): n = len(weights) dp = [0] * (capacity + 1) # Initialize DP table for i in range(n): for w in range(capacity, weights[i] - 1, -1): # Iterate from capacity to weight of current item dp[w] = max(dp[w], dp[w - weights[i]] + values[i]) # Update DP table return dp[capacity] # Example usage: weights = [2, 3, 4] values = [3, 4, 5] capacity = 5 print(knapsack_01(weights, values, capacity)) # Output: 7 ``` #### Complete Knapsack (Inner Loop in Ascending Order) ```python def knapsack_complete(weights, values, capacity): n = len(weights) dp = [0] * (capacity + 1) # Initialize DP table for i in range(n): # Iterate over items for w in range(weights[i], capacity + 1): # Iterate from weight of current item to capacity dp[w] = max(dp[w], dp[w - weights[i]] + values[i]) # Update DP table return dp[capacity] # Example usage: weights = [2, 3, 4] values = [3, 4, 5] capacity = 5 print(knapsack_complete(weights, values, capacity)) # Output: 9 ``` #### Multiple Knapsack (Binary Optimization) ```python def knapsack_multiple(weights, values, capacities): n = len(weights) dp = [0] * (max(capacities) + 1) # Initialize DP table for i in range(n): # Iterate over items for w in range(max(capacities), weights[i] - 1, -1): # Iterate from max capacity to weight of current item dp[w] = max(dp[w], dp[w - weights[i]] + values[i]) # Update DP table return [dp[c] for c in capacities] # Example usage: weights = [2, 3, 4] values = [3, 4, 5] capacities = [1, 2, 3, 4, 5] print(knapsack_multiple(weights, values, capacities)) # Output: [0, 3, 7, 9, 10] ``` These examples provide a basic implementation of the three knapsack problems using dynamic programming."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "quick_sort_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n背包问题（Knapsack Problem）是组合优化中的经典问题，给定一组物品，每个物品有重量和价值，在限定的总重量内，选择物品使得总价值最大。它通常分为0-1背包、完全背包和多重背包等变体，是动态规划算法的典型应用。\n\n## 核心要点\n- 0-1背包：每个物品只能选或不选，通常用二维dp数组或一维滚动数组优化，状态转移方程为dp[i][j] = max(dp[i-1][j], dp[i-1][j-w[i]] + v[i])。\n- 完全背包：每个物品可以无限选取，状态转移方程与0-1背包类似，但遍历顺序改为正序，以允许重复选择。\n- 多重背包：每个物品有有限数量，可通过二进制拆分转化为0-1背包求解，或使用单调队列优化。\n- 状态定义：dp[i][j]表示前i个物品在容量为j时的最大价值，最终答案为dp[n][capacity]。\n- 空间优化：使用一维数组时，0-1背包需逆序遍历容量，完全背包需正序遍历，以避免覆盖问题。\n\n## 应用场景\n背包问题广泛应用于资源分配、投资组合、货物装载、预算控制等领域。例如，在物流中优化卡车装载以最大化货物价值，或在金融中在风险限额内选择投资组合。此外，它也是算法竞赛和面试中的高频考点。\n\n## 相关概念\n背包问题与贪心算法、分支限界法、回溯法相关，但动态规划是求解最优解的标准方法。其变体包括分组背包、依赖背包和二维费用背包等。此外，背包问题与子集和问题、整数规划有密切联系，是NP完全问题的一种特例。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

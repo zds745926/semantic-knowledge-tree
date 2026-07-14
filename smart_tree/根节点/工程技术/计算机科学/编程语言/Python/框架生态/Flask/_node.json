@@ -19,5 +19,34 @@
       "content_preview": "Flask: Microframeworks: Lightweight and flexible. Jinja2 template engine/Werkzeug WSGI. Blueprint for modularization. Here is a brief Python code example to illustrate the use of Flask (a popular microframework that uses Jinja2 templates and Werkzeug): ```python from flask import Flask, render_template app = Flask(__name__) @app.route('/') def home(): # Example data passed to template return render_template('index.html', message=\"Hello, World!\") if __name__ == '__main__': app.run(debug=True) ``` In this example: - `Flask` is the microframework. - `render_template` is a function from Flask that uses Jinja2 templates to render HTML pages."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "rest_api_v4",
+      "type": "application"
+    },
+    {
+      "id": "http_methods_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nFlask 是一个轻量级的 Python Web 框架，基于 Werkzeug WSGI 工具箱和 Jinja2 模板引擎，用于快速构建 Web 应用和 API。\n\n## 何时使用\n适用于需要快速开发小型到中型 Web 应用或 RESTful API 的场景。当项目规模较小、团队希望保持代码简洁灵活，或需要快速原型验证时，Flask 是理想选择。它也常用于微服务架构中的单个服务实现。\n\n## 示例\n```Python\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\ndef hello():\n    return 'Hello, World!'\n\nif __name__ == '__main__':\n    app.run(debug=True)\n```\n\n## 反例\n在大型单体应用中过度使用 Flask 的全局对象（如 current_app 和 request）可能导致循环导入和测试困难。例如，在多个模块中直接导入 app 实例而不是使用应用工厂模式，会使得配置管理和单元测试变得复杂。\n\n## 边界条件\n在生产环境中必须关闭 debug 模式，否则会暴露敏感信息。同时，Flask 默认的 WSGI 服务器（Werkzeug）不适合高并发场景，应使用 Gunicorn 或 uWSGI 等生产级服务器部署。",
+    "code_pattern": "from flask import Flask, request, jsonify\n\napp = Flask(__name__)\n\n@app.route('/api/endpoint', methods=['GET', 'POST'])\ndef handle_endpoint():\n    if request.method == 'POST':\n        data = request.get_json()\n        # 处理数据\n        return jsonify({'status': 'success', 'data': data}), 201\n    return jsonify({'message': 'GET request'})\n\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+    "common_pitfalls": [
+      "使用全局变量存储请求相关数据，导致并发请求时数据污染，应使用 Flask 的 g 对象或请求上下文。",
+      "在路由函数中直接修改全局 app 配置，造成线程安全问题，应通过 app.config 或环境变量管理配置。",
+      "忘记在返回响应时设置正确的 Content-Type，导致客户端解析错误，应使用 jsonify 返回 JSON 数据。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

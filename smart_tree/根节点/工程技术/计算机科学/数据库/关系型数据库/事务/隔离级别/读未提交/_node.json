@@ -19,5 +19,22 @@
       "content_preview": "读未提交: The lowest level allows reading uncommitted data (dirty reads), which is almost never used. In the context of database transactions and concurrency control, here's a brief explanation with a Python code example using the `sqlite3` library to illustrate dirty reads: ```python import sqlite3 # Connect to SQLite database (or create it if it doesn't exist) conn = sqlite3.connect('example.db') cursor = conn.cursor() # Start a transaction without setting isolation level explicitly # By default, SQLite uses autocommit mode for simplicity # But we can start a manual transaction to demonstrate dirty reads try: # Begin the transaction cursor.execute(\"BEGIN\") # Insert a row of data (but don't commit yet) cursor.execute(\"INSERT INTO my_table (data) VALUES ('dirty_data')\") # Read the uncommitted data (dirty read) cursor.execute(\"SELECT * FROM my_table\") print(cursor.fetchall()) finally: # Rollback the transaction to clean up conn.rollback() conn.close() # Note: In a real-world scenario, you should always commit or rollback transactions properly. ``` In this example, `BEGIN` starts a transaction. The `INSERT` statement adds data without committing it. The subsequent `SELECT` query reads the uncommitted data, demonstrating a dirty read. However, in practice, such behavior is generally undesirable and should be avoided to maintain data integrity."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "read_committed_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n读未提交（Read Uncommitted）是关系型数据库中最低级别的事务隔离级别。在该级别下，一个事务可以读取到另一个事务尚未提交的数据修改，即允许脏读（Dirty Read）的发生。它几乎不提供任何隔离保证，主要关注于最大化并发性能。\n\n## 核心要点\n- 脏读：事务A可以读取到事务B未提交的修改，若事务B回滚，则事务A读取到的数据是无效的。\n- 不可重复读：在同一事务内，两次读取同一数据可能得到不同结果，因为其他事务可能在此期间提交了修改。\n- 幻读：事务A执行范围查询时，事务B插入新行并提交，导致事务A再次查询时出现之前不存在的行。\n- 并发性能最高：由于不加锁或加极少的锁，读操作几乎不会被阻塞，适合对数据一致性要求极低的场景。\n- 数据一致性最弱：可能读到未提交的脏数据，导致业务逻辑错误，通常不用于对数据准确性有要求的系统。\n\n## 应用场景\n读未提交适用于对数据实时性要求不高、允许临时不一致的场合，例如日志记录、监控统计或缓存预热。在这些场景中，少量脏数据可以容忍，而高并发读性能更为重要。但金融、订单等核心业务系统应避免使用此级别。\n\n## 相关概念\n读未提交与读已提交（Read Committed）、可重复读（Repeatable Read）、可串行化（Serializable）共同构成SQL标准的四种隔离级别。读未提交是最低级别，而可串行化提供最强隔离但性能最差。此外，脏读是该级别特有的问题，而不可重复读和幻读在更高隔离级别中可能被解决。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -18,5 +18,13 @@
     "description": "文件管理: The Linux file management commands include core tools such as `ls`, `cd`, `cp`, `mv`, `rm`, and `find`. Here are brief descriptions of these commands along with Python code examples where applicable: - **`ls`**: Lists files and directories in the current directory. ```python import os print(os.listdir('.')) # Equivalent to 'ls' command ``` - **`cd`**: Changes the current working directory. ```python import os os.chdir('/path/to/directory') # Equivalent to 'cd /path/to/directory' ``` - **`cp`**: Copies files or directories. ```python import shutil shutil.copy('source_file', 'destination_file') # Equivalent to 'cp source_file destination_file' ``` - **`mv`**: Moves or renames files and directories. ```python import os os.rename('old_name', 'new_name') # Equivalent to 'mv old_name new_name' ``` - **`rm`**: Removes files or directories (use with caution). ```python import os os.remove('file_to_delete') # Equivalent to 'rm file_to_delete' ``` - **`find`**: Searches for files in a directory hierarchy. ```python import glob matching_files = glob.glob('/path/to/search/**/*', recursive=True) # Similar functionality to 'find /path/to/search -type f' print(matching_files) ``` These examples provide a basic mapping of common Linux commands to Python functions, though the exact usage and behavior may differ slightly."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "文件管理是Linux系统管理中的核心分支，涵盖文件与目录的查看、操作、搜索及压缩归档。子主题分为四组：ls/cd/pwd用于浏览和定位当前工作目录；cp/mv/rm实现文件的复制、移动与删除；find/locate提供强大的文件搜索能力，其中find支持复杂条件查询，locate依赖数据库实现快速检索；tar/gzip则负责文件的打包与压缩，常组合使用以节省存储空间或便于传输。这些子主题层层递进：先掌握基本导航与操作，再学习高效搜索，最后掌握归档压缩。学习路径建议从ls、cd、pwd入手，逐步练习cp、mv、rm，再深入find和locate的用法，最后结合tar与gzip完成文件管理全流程。掌握该分支后，用户能高效组织、查找和维护Linux系统中的文件资源。",
+  "example_queries": [
+    "如何使用find命令查找过去7天内修改过的所有文件？",
+    "cp和mv命令在文件操作上有什么本质区别？",
+    "如何将多个文件打包成tar.gz压缩包并保留目录结构？",
+    "locate命令找不到新创建的文件怎么办？",
+    "rm命令如何安全地删除大量文件而不误删？"
+  ]
 }

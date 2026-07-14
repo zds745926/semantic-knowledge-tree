@@ -19,5 +19,34 @@
       "content_preview": "json: `json.dumps` and `json.loads`. The parameter `ensure_ascii=False` in `json.dumps`. Writing/loading JSON files with `json.dump` and `json.load`. Here's a brief Python code example to illustrate these concepts: ```python import json # Example data structure data = { \"name\": \"张三\", \"age\": 30, \"city\": \"北京\" } # Using json.dumps to convert Python object into JSON string with ensure_ascii=False json_string = json.dumps(data, ensure_ascii=False) print(json_string) # Output: {\"name\": \"\\u5927\\u4e1c\", \"age\": 30, \"city\": \"\\u5317\\u4eac\"} # Writing the JSON string to a file with ensure_ascii=False with open('data.json', 'w', encoding='utf-8') as f: json.dump(data, f, ensure_ascii=False) # Reading from the file using json.load with open('data.json', 'r', encoding='utf-8') as f: loaded_data = json.load(f) print(loaded_data) # Output: {'name': '张三', 'age': 30, 'city': '北京'} ``` This example demonstrates how to use `json.dumps` and `json.loads`, including the `ensure_ascii=False` parameter for proper handling of non-ASCII characters. It also shows how to write and read JSON data from a file using these functions."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_hashlib_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nJSON（JavaScript Object Notation）是一种轻量级的数据交换格式，基于文本，易于人阅读和编写，同时也易于机器解析和生成。\n\n## 何时使用\n当需要在不同系统或程序之间传输结构化数据时，JSON 是首选格式。它常用于 Web API 的请求/响应、配置文件存储以及日志记录。由于其语言无关性，Python 程序常使用 json 模块将字典/列表序列化为 JSON 字符串，或反序列化 JSON 字符串为 Python 对象。\n\n## 示例\n```Python\nimport json\n\ndata = {\"name\": \"Alice\", \"age\": 30, \"skills\": [\"Python\", \"JSON\"]}\njson_str = json.dumps(data, indent=2)\nprint(json_str)\n# 输出:\n# {\n#   \"name\": \"Alice\",\n#   \"age\": 30,\n#   \"skills\": [\n#     \"Python\",\n#     \"JSON\"\n#   ]\n# }\n\nparsed = json.loads(json_str)\nprint(parsed[\"name\"])  # 输出: Alice\n```\n\n## 反例\n错误地将 Python 的元组作为 JSON 键，因为 JSON 只支持字符串键。例如 `json.dumps({(1,2): \"value\"})` 会引发 TypeError。\n\n## 边界条件\n注意 JSON 不支持 Python 的 datetime 对象，直接序列化会报错，需要自定义编码器。另外，JSON 字符串必须使用双引号，单引号会导致解析失败。",
+    "code_pattern": "import json\n\ndef serialize_data(data, filepath=None):\n    \"\"\"将 Python 对象序列化为 JSON 字符串或文件。\"\"\"\n    if filepath:\n        with open(filepath, 'w', encoding='utf-8') as f:\n            json.dump(data, f, ensure_ascii=False, indent=2)\n    else:\n        return json.dumps(data, ensure_ascii=False, indent=2)\n\ndef deserialize_data(source):\n    \"\"\"从 JSON 字符串或文件反序列化为 Python 对象。\"\"\"\n    if isinstance(source, str):\n        with open(source, 'r', encoding='utf-8') as f:\n            return json.load(f)\n    else:\n        return json.loads(source)",
+    "common_pitfalls": [
+      "使用单引号或非标准引号：JSON 规范要求字符串必须用双引号，Python 的 json.loads 会因单引号而抛出 json.decoder.JSONDecodeError。",
+      "序列化自定义对象失败：直接对 datetime、Decimal 或自定义类实例调用 json.dumps 会引发 TypeError，需要提供 default 参数或自定义 JSONEncoder。",
+      "忽略 ensure_ascii 参数：默认 ensure_ascii=True 会将非 ASCII 字符转义为 \\uXXXX，导致中文等字符不可读，应设置为 False 以保留原字符。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

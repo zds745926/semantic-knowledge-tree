@@ -19,5 +19,22 @@
       "content_preview": "BGP: The glue that holds the internet together. Path Vector Protocol. iBGP (within AS)/eBGP (between AS). To provide a bit more context, BGP (Border Gateway Protocol) is used to exchange routing information between different autonomous systems (AS). Here are brief explanations of iBGP and eBGP: - **iBGP**: Interior BGP is used within the same autonomous system. It ensures that all routers in an AS have consistent routing information. - **eBGP**: Exterior BGP is used to exchange routes between different autonomous systems. Here's a simple Python code example using `netmiko` to interact with a router and configure BGP: ```python from netmiko import ConnectHandler def configure_bgp(router_ip, username, password): # Define the device connection parameters device = { 'device_type': 'cisco_ios', # or other supported types like 'juniper_junos' 'ip': router_ip, 'username': username, 'password': password, } # Connect to the device with ConnectHandler(**device) as net_connect: output = net_connect.send_config_set([ \"router bgp 65001\", # Replace 65001 with your AS number \"neighbor 192.168.1.2 remote-as 65002\", # Example neighbor IP and AS ]) print(output) # Example usage configure_bgp(\"192.168.1.1\", \"admin\", \"password\") ``` This script connects to a router, configures BGP with an example AS number and neighbor, and prints the output of the configuration commands."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "four_way_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n边界网关协议（BGP）是运行于TCP上的一种自治系统间的路由协议，用于在互联网中不同自治系统（AS）之间交换路由信息。它通过维护路径向量表，确保数据包能够跨越多个网络到达目的地，是互联网核心路由基础设施的关键组成部分。\n\n## 核心要点\n- **路径向量协议**：BGP通过记录路径中的AS序列来避免路由环路，每个路由更新都包含经过的AS列表。\n- **基于策略的路由**：BGP允许网络管理员根据策略（如商业关系、流量工程）而非仅基于最短路径来选择路由，提供高度灵活性。\n- **可靠传输**：BGP使用TCP端口179进行连接，确保路由更新的可靠传输和顺序到达。\n- **增量更新**：BGP只发送变化的路由信息，而非整个路由表，减少网络带宽消耗。\n- **CIDR支持**：BGP支持无类别域间路由（CIDR），允许路由聚合，有效缩小全球路由表规模。\n\n## 应用场景\nBGP广泛应用于互联网服务提供商（ISP）之间的互联、大型企业多宿主连接、以及内容分发网络（CDN）的流量调度。它使不同AS能够交换可达性信息，实现全球互联网的连通性，并支持多路径负载均衡和故障切换。\n\n## 相关概念\n- **自治系统（AS）**：由单一机构管理的一组网络，拥有唯一的AS号，是BGP路由的基本单位。\n- **内部网关协议（IGP）**：如OSPF、IS-IS，用于AS内部路由，与BGP协同工作。\n- **路由反射器**：用于在IBGP（内部BGP）中减少全互联连接数，提高扩展性。\n- **BGP属性**：如AS_PATH、NEXT_HOP、LOCAL_PREF等，用于路由选择和策略实施。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

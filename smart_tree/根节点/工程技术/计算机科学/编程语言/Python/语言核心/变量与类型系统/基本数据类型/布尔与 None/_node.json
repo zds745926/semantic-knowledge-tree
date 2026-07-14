@@ -19,5 +19,35 @@
       "content_preview": "布尔与 None: In this context, `bool` is a subclass of `int`, with `True` and `False` values corresponding to `1` and `0`. `None` represents a null value. In conditions, `False`, `0`, `''` (empty string), `[]` (empty list), and `{}` (empty dictionary) are all considered false. Here is a brief Python code example that demonstrates these concepts: ```python # Example of bool being a subclass of int class MyInt(int): def __new__(cls, value): return super().__new__(cls, value) my_bool = MyInt(1) print(type(my_bool)) # <class '__main__.MyInt'> print(bool(my_bool)) # True # Example of None representing a null value x = None if x is None: print(\"x is None\") # Output: x is None # Example of conditions being evaluated as false conditions = [False, 0, '', [], {}] for condition in conditions: if not condition: print(f\"{condition} is considered False\") ``` This code creates a custom integer class to illustrate that `bool` can be derived from `int`, checks for `None`, and evaluates various falsy values."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "boolean_algebra_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n布尔（bool）是 Python 中表示真值的数据类型，只有两个值：True 和 False。None 是 Python 中表示“空”或“无”的单例对象，属于 NoneType 类型。\n\n## 何时使用\n布尔类型用于条件判断、逻辑运算和标志位控制，例如 if 语句、while 循环和过滤器函数。None 常用于表示函数无返回值、变量未初始化或可选参数的默认值，也用于标记数据缺失或哨兵值。\n\n## 示例\n```Python\n# 布尔与 None 的基本使用\nis_active = True\nif is_active:\n    print(\"Active\")  # 输出: Active\n\n# None 作为默认参数\ndef greet(name=None):\n    if name is None:\n        print(\"Hello, Guest\")\n    else:\n        print(f\"Hello, {name}\")\n\ngreet()          # 输出: Hello, Guest\ngreet(\"Alice\")   # 输出: Hello, Alice\n\n# 布尔运算\nresult = (5 > 3) and (None is None)\nprint(result)    # 输出: True\n```\n\n## 反例\n错误地将 None 与 False 混淆，例如 `if variable == False` 判断变量是否为假，但 None 不等于 False，会导致逻辑错误。应使用 `if variable is None` 检查 None，或 `if not variable` 检查假值（包括 False、None、0、空序列等）。\n\n## 边界条件\n注意布尔值是单例，比较应使用 `is` 而非 `==`，但 `True is 1` 和 `False is 0` 在 Python 中成立（因为 bool 是 int 的子类），而 `None is None` 是安全的。布尔运算中，`and` 和 `or` 会短路并返回最后一个求值的对象，不一定是布尔值。",
+    "code_pattern": "def process_item(value=None):\n    if value is None:\n        value = []\n    if not value:\n        print(\"Empty or falsy\")\n    else:\n        print(f\"Processing: {value}\")\n\nflag = True\nwhile flag:\n    user_input = input(\"Continue? (y/n): \")\n    if user_input.lower() == 'n':\n        flag = False\n\nresult = None\nif result is None:\n    result = \"default\"",
+    "common_pitfalls": [
+      "误用 `== None` 代替 `is None`：`==` 可能被重载导致意外结果，而 `is` 是身份比较，更安全且符合 PEP 8 规范。",
+      "混淆 None 与 False 在条件判断中的行为：`if not x` 会认为 None、False、0、空字符串等都为假，若只想判断 None 应显式使用 `if x is None`。",
+      "在可变默认参数中使用 None 但未正确处理：例如 `def func(lst=[])` 会导致多次调用共享同一个列表，应改为 `def func(lst=None)` 并在函数内创建新列表。",
+      "布尔运算短路特性导致返回值非布尔：例如 `a or b` 返回 a 或 b 本身，而非 True/False，若需要布尔结果应显式转换如 `bool(a or b)`。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

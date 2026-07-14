@@ -19,5 +19,22 @@
       "content_preview": "最长递增子序列 LIS: O(n²) DP. Binary search optimization to O(n log n). Singing team formation / Stock analysis. ### Explanation and Example 1. **O(n²) DP (Dynamic Programming):** - This refers to a dynamic programming solution that has a time complexity of \\(O(n^2)\\). ```python def max_subarray_sum(arr): n = len(arr) dp = [0] * n # Initialize the DP array for i in range(n): dp[i] = arr[i] for j in range(i): if arr[i] > arr[j]: dp[i] = max(dp[i], dp[j] + arr[i]) return max(dp) ``` 2. **Binary search optimization to O(n log n):** - This refers to using binary search to optimize a solution that originally had a time complexity of \\(O(n^2)\\) or higher, reducing it to \\(O(n \\log n)\\). ```python def find_first_greater(arr, target): left, right = 0, len(arr) while left < right: mid = (left + right) // 2 if arr[mid] > target: right = mid else: left = mid + 1 return left ``` 3. **Singing team formation:** - This could refer to a problem where you need to form teams for a singing competition based on certain criteria. 4. **Stock analysis:** - This involves analyzing stock prices or trends using various algorithms and techniques, often involving time series analysis or machine learning models. These examples provide a basic understanding of the concepts mentioned in your text."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "binary_search_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n最长递增子序列（Longest Increasing Subsequence，LIS）是指在一个给定的序列中，找到一个最长的子序列，使得这个子序列中的元素是严格递增的。注意，子序列不要求连续，但必须保持原序列中的相对顺序。\n\n## 核心要点\n1. 子序列不连续：LIS 不要求元素在原序列中连续，只需保持相对顺序，因此可以通过跳过某些元素来构造更长的递增序列。\n2. 动态规划解法：经典解法使用动态规划，定义 dp[i] 为以第 i 个元素结尾的 LIS 长度，通过遍历之前元素更新 dp 值，时间复杂度 O(n²)。\n3. 贪心+二分优化：通过维护一个递增的“尾部”数组，利用二分查找将时间复杂度优化至 O(n log n)，适用于大规模数据。\n4. 严格递增定义：通常 LIS 要求严格递增（即元素不能相等），若允许非严格递增，则需调整比较条件。\n5. 多解情况：一个序列可能存在多个长度相同的 LIS，算法通常只求长度，但可通过额外记录路径输出具体子序列。\n\n## 应用场景\nLIS 广泛应用于生物信息学中的基因序列比对、金融时间序列分析中的趋势识别、以及计算机科学中的任务调度和信号处理。例如，在股票价格序列中，LIS 可用于找出最长的上涨趋势区间。\n\n## 相关概念\nLIS 与最长公共子序列（LCS）密切相关，可通过将原序列排序后与原序列求 LCS 来间接求解 LIS。此外，LIS 也是动态规划中的经典问题，常与最长递减子序列（LDS）对比学习，二者可通过取负或反转相互转化。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,38 @@
       "content_preview": "协程 coroutine: English translation: ```python async def coroutine_function(): await suspended_wait # Await is used to suspend the function until awaited object is resolved. # Example usage: import asyncio async def main(): await coroutine_function() asyncio.run(main()) ``` Explanation: - `async def` defines an asynchronous function in Python, which can be used for writing asynchronous code that can run concurrently with other tasks. - `await` is a keyword used within an async function to wait for the result of another coroutine or task. It suspends the execution of the current coroutine until the awaited object (like a future) is resolved. - The example shows how you might define and use such a coroutine in a simple program using asyncio, which is Python's library for writing concurrent code using coroutines. Note: In this translation, I've provided an English version that includes the concept of async/await with a brief Python code example."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n协程（coroutine）是一种通过暂停和恢复执行来实现协作式多任务的程序组件，允许函数在执行过程中挂起，并在后续时间点从挂起点继续执行，从而实现高效的异步并发。\n\n## 何时使用\n协程适用于 I/O 密集型任务，如网络请求、文件读写、数据库查询等，在这些场景中协程能显著减少线程切换开销并提高资源利用率。它也适合需要高并发处理大量短连接或微服务的场景，例如 Web 服务器、爬虫和实时数据处理系统。\n\n## 示例\n```Python\nimport asyncio\n\nasync def fetch_data(url):\n    print(f\"开始请求 {url}\")\n    await asyncio.sleep(1)  # 模拟 I/O 操作\n    print(f\"完成请求 {url}\")\n    return f\"数据来自 {url}\"\n\nasync def main():\n    tasks = [fetch_data(\"http://example.com/1\"), fetch_data(\"http://example.com/2\")]\n    results = await asyncio.gather(*tasks)\n    print(results)\n\nasyncio.run(main())\n```\n\n## 反例\n错误地将协程用于 CPU 密集型计算，例如在协程中执行大量数学运算而不释放控制权，这会导致事件循环阻塞，降低并发性能。\n\n## 边界条件\n协程内部不应调用阻塞式同步 I/O 函数（如 time.sleep()），应使用 asyncio.sleep() 等异步版本；同时注意协程的启动必须通过事件循环（如 asyncio.run()），不能直接调用 async 函数。",
+    "code_pattern": "import asyncio\n\nasync def my_coroutine(param):\n    # 模拟异步操作\n    await asyncio.sleep(0.1)\n    return param * 2\n\nasync def main():\n    result = await my_coroutine(5)\n    print(result)\n\nif __name__ == \"__main__\":\n    asyncio.run(main())",
+    "common_pitfalls": [
+      "忘记在协程前加 await 关键字，导致返回协程对象而非结果，常见于调用异步函数时漏写 await。",
+      "在协程中使用 time.sleep() 阻塞事件循环，应使用 await asyncio.sleep() 来避免阻塞其他协程。",
+      "在非异步函数中直接调用 async 函数，导致协程未被执行，必须通过事件循环（如 asyncio.run()）来驱动协程。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

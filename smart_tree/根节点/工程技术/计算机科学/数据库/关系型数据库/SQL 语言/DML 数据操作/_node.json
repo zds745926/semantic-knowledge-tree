@@ -19,5 +19,26 @@
       "content_preview": "DML 数据操作: SELECT/INSERT/UPDATE/DELETE. WHERE/ORDER BY/LIMIT. In the context of SQL (Structured Query Language), these are fundamental commands used for managing data in relational databases. Here's a brief explanation and example using Python with the SQLite3 library: 1. **SELECT**: Used to retrieve data from one or more tables. 2. **INSERT**: Adds new records to a table. 3. **UPDATE**: Modifies existing records in a table. 4. **DELETE**: Removes records from a table. 5. **WHERE**: Filters records based on specified conditions. 6. **ORDER BY**: Sorts the result-set in ascending or descending order. 7. **LIMIT**: Limits the number of records returned. ### Python Example with SQLite3 ```python import sqlite3 # Connect to SQLite database (or create it if it doesn't exist) conn = sqlite3.connect('example.db') cursor = conn.cursor() # Create a table for demonstration purposes cursor.execute(''' CREATE TABLE IF NOT EXISTS employees ( id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER, department TEXT ) ''') # INSERT example cursor.execute(\"INSERT INTO employees (name, age, department) VALUES ('Alice', 30, 'HR')\") conn.commit() # SELECT example cursor.execute(\"SELECT * FROM employees\") print(cursor.fetchall()) # UPDATE example cursor.execute(\"UPDATE employees SET age = 31 WHERE name = 'Alice'\") conn.commit() # DELETE example cursor.execute(\"DELETE FROM employees WHERE id = 1\") conn.commit() # ORDER BY and LIMIT examples cursor.execute(\"SELECT * FROM employees ORDER BY age DESC LIMIT 2\") print(cursor.fetchall()) # Close the connection conn.close() ``` This Python script demonstrates basic SQL operations using SQLite3, including creating a table, inserting data, updating records, deleting records, and querying with `ORDER BY` and `LIMIT`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "sql_injection_v4",
+      "type": "application"
+    },
+    {
+      "id": "durability_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nDML（Data Manipulation Language，数据操作语言）是 SQL 语言中用于对数据库表中的数据进行增、删、改操作的一组语句。它主要包括 INSERT（插入）、UPDATE（更新）和 DELETE（删除）三种核心操作，是日常数据库维护和数据管理的基础工具。\n\n## 核心要点\n- INSERT 语句用于向表中添加新行，可以一次插入单行或多行数据，常与 SELECT 子查询结合实现批量插入。\n- UPDATE 语句用于修改表中已有的数据，通过 SET 子句指定新值，并使用 WHERE 条件限定受影响的行，避免全表更新。\n- DELETE 语句用于删除表中的行，同样依赖 WHERE 条件精确控制删除范围，若省略 WHERE 则会清空整个表。\n- 所有 DML 操作默认在事务中执行，支持 COMMIT 提交和 ROLLBACK 回滚，确保数据的一致性和可恢复性。\n- 执行 DML 操作时，数据库会触发相关的约束检查（如主键、外键、唯一性约束），违反约束会导致操作失败。\n\n## 应用场景\nDML 广泛应用于各类业务系统的数据录入、数据清洗和日常更新，例如电商平台添加新商品、修改库存数量或删除过期订单。在数据仓库中，DML 也用于加载增量数据或修正历史记录，是保证数据实时性和准确性的关键手段。\n\n## 相关概念\nDML 与 DDL（数据定义语言）和 DQL（数据查询语言）共同构成 SQL 的核心子集，DDL 负责创建表结构，DQL 负责查询数据，而 DML 负责修改数据。此外，事务控制语句（如 BEGIN、COMMIT、ROLLBACK）通常与 DML 配合使用，以确保操作的原子性和持久性。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

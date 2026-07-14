@@ -19,5 +19,26 @@
       "content_preview": "tar/gzip: English translation: `tar -czf` is used to create and compress a tarball. `tar -xzf` is used to extract a tarball. The file extensions `.gz`, `.bz2`, and `.xz` indicate the compression format. Example of creating a compressed tarball using gzip: ```python import subprocess def create_tar_gz(file_paths, output_filename): command = ['tar', '-czf', output_filename] + file_paths process = subprocess.Popen(command) process.wait() # Example usage create_tar_gz(['/path/to/file1', '/path/to/file2'], 'output.tar.gz') ``` Example of extracting a tarball with gzip: ```python import subprocess def extract_tar_gz(input_filename): command = ['tar', '-xzf', input_filename] process = subprocess.Popen(command) process.wait() # Example usage extract_tar_gz('output.tar.gz') ``` Note: The above Python code uses the `subprocess` module to run shell commands, which is a common approach for interacting with system utilities in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "ls_cd_pwd_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n`tar` 和 `gzip` 是 Linux/Unix 系统中常用的文件归档与压缩工具。`tar` 用于将多个文件和目录打包成一个单一的归档文件（通常称为 tarball），而 `gzip` 则用于对单个文件进行压缩，生成 `.gz` 格式的压缩文件。两者常结合使用，先通过 `tar` 打包，再通过 `gzip` 压缩，生成 `.tar.gz` 或 `.tgz` 文件，以实现高效的文件存储和传输。\n\n## 核心要点\n- **`tar` 命令**：主要用于创建、查看和提取归档文件，常用选项包括 `-c`（创建）、`-x`（提取）、`-v`（详细输出）、`-f`（指定文件名），例如 `tar -cvf archive.tar file1 dir1` 创建归档。\n- **`gzip` 命令**：用于压缩或解压单个文件，压缩后原文件会被替换为 `.gz` 文件，常用选项 `-d`（解压）、`-k`（保留原文件），例如 `gzip file.txt` 生成 `file.txt.gz`。\n- **组合使用**：通过 `tar -z` 选项可一步完成打包并调用 `gzip` 压缩，如 `tar -zcvf archive.tar.gz dir/`；解压时使用 `tar -zxvf archive.tar.gz`。\n- **压缩率与速度**：`gzip` 提供中等压缩率，速度较快，适合日常使用；可通过 `-1` 到 `-9` 选项调整压缩级别（`-1` 最快，`-9` 压缩率最高）。\n- **兼容性**：`.tar.gz` 格式在几乎所有类 Unix 系统及 Windows（通过第三方工具如 7-Zip）中广泛支持，是软件分发和备份的通用格式。\n\n## 应用场景\n- **软件分发**：开源软件常以 `.tar.gz` 格式发布源码包，用户下载后使用 `tar -zxvf` 解压并编译安装。\n- **系统备份**：管理员使用 `tar` 和 `gzip` 定期备份重要目录（如 `/etc`、`/home`），生成压缩归档以节省存储空间。\n- **日志归档**：将历史日志文件打包压缩，便于长期保存和传输，例如 `tar -zcvf logs_2023.tar.gz /var/log/*.log`。\n\n## 相关概念\n- **`bzip2`**：另一种压缩工具，提供比 `gzip` 更高的压缩率，但速度较慢，常与 `tar` 结合生成 `.tar.bz2` 文件（使用 `-j` 选项）。\n- **`xz`**：更高压缩率的工具，生成 `.tar.xz` 文件（使用 `-J` 选项），适合对压缩率要求极高的场景。\n- **`zip`**：跨平台归档压缩格式，与 `tar`+`gzip` 不同，`zip` 同时完成打包和压缩，且支持加密和分卷，但 Linux 中不如 `.tar.gz` 常用。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

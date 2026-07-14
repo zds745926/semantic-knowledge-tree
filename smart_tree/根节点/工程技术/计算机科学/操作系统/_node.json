@@ -18,5 +18,13 @@
     "description": "操作系统: The operating system is a system software that manages computer hardware and software resources. Core functionalities include process management, memory management, file systems, and I/O management. The operating system serves as a bridge between users and hardware; common examples include Linux, Windows, and macOS. Here's a brief Python code example to illustrate process management (creating a new process): ```python import os # Create a new process pid = os.fork() if pid == 0: # This is the child process print(\"Child process ID:\", os.getpid()) else: # This is the parent process print(\"Parent process ID:\", os.getpid(), \"and child process ID:\", pid) ``` This example uses Python's `os.fork()` to create a new process. The parent and child processes can then be distinguished based on their process IDs (PIDs)."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "操作系统是计算机科学的核心基础课程，本分支涵盖操作系统的基本原理与关键子系统，包括进程与线程管理、内存管理、文件系统和I/O管理。进程与线程管理负责任务的创建、调度与同步，是系统并发执行的基础；内存管理涉及地址映射、虚拟内存与页面置换，为进程提供高效且隔离的内存空间；文件系统管理数据的持久化存储与组织，提供目录、权限与文件操作接口；I/O管理则处理设备驱动、缓冲与中断，实现用户程序与硬件的高效交互。四个子主题相互依赖：进程管理需要内存管理支持地址空间，文件系统依赖I/O管理实现数据读写，而内存管理又通过文件系统实现虚拟内存的交换。学习路径建议先掌握进程与线程管理，理解并发与同步；再学习内存管理，深入虚拟内存机制；接着学习文件系统，了解存储层次；最后学习I/O管理，掌握设备控制与性能优化。通过本分支的学习，能够理解操作系统如何协调硬件与软件资源，为应用提供稳定高效的运行环境。",
+  "example_queries": [
+    "进程和线程有什么区别？如何实现线程同步？",
+    "虚拟内存是如何工作的？页面置换算法有哪些？",
+    "文件系统如何组织数据？什么是inode？",
+    "I/O控制方式有哪些？DMA如何提高效率？",
+    "死锁产生的条件是什么？如何预防和避免死锁？"
+  ]
 }

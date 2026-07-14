@@ -19,5 +19,38 @@
       "content_preview": "基数排序: Bitwise sort from low to high (bit stable sort). O(d·n). Applicable for integers/fixed-length strings. Here is a brief Python code example using a bit-stable sorting algorithm, such as radix sort: ```python def bit_stable_sort(arr): def count_sort_for_radix(arr, exp): n = len(arr) output = [0] * n count = [0] * 10 # Store count of occurrences in count[] for i in range(n): index = (arr[i] // exp) % 10 count[index] += 1 # Change count[i] so that count[i] now contains actual position of this digit in output[] for i in range(1, 10): count[i] += count[i - 1] # Build the output array i = n - 1 while i >= 0: index = (arr[i] // exp) % 10 output[count[index] - 1] = arr[i] count[index] -= 1 i -= 1 # Copy the output array to arr[], so that arr[] now contains sorted numbers according to current digit for i in range(n): arr[i] = output[i] # Find the maximum number to know number of digits max1 = max(arr) # Do counting sort for every digit. Note that instead of passing digit number, exp is passed. exp is 10^i where i is current digit number exp = 1 while max1 // exp > 0: count_sort_for_radix(arr, exp) exp *= 10 # Example usage: arr = [170, 45, 75, 90, 802, 24, 2, 66] bit_stable_sort(arr) print(\"Sorted array is:\", arr) ``` This example demonstrates a bit-stable sorting algorithm (radix sort) that sorts integers based on individual digits from the least significant to the most significant."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "quick_sort_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "bst_search_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "avl_tree_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n基数排序是一种非比较型整数排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别进行稳定排序。它通过分配和收集过程，从最低有效位到最高有效位（或反之）逐步完成排序，最终得到有序序列。\n\n## 核心要点\n- 基数排序基于“桶排序”思想，按位进行排序，通常使用计数排序作为子过程来保证稳定性。\n- 排序时需确定最大数的位数，从最低位（LSD）或最高位（MSD）开始，逐位处理所有元素。\n- 时间复杂度为 O(d*(n+k))，其中 d 是位数，n 是元素个数，k 是基数（如十进制中 k=10），空间复杂度为 O(n+k)。\n- 基数排序是稳定的排序算法，即相等元素的相对顺序在排序后保持不变。\n- 它适用于整数或可以拆分为独立位的数据，如字符串、日期等，但要求数据范围有限且位数固定。\n\n## 应用场景\n基数排序常用于处理大量整数或固定长度字符串的排序，例如在数据库中对电话号码、身份证号进行排序，或在计算机图形学中对颜色值（RGB）进行排序。它特别适合数据范围较小但数量巨大的场景，能比比较排序（如快速排序）获得更优性能。\n\n## 相关概念\n基数排序与计数排序、桶排序同属线性时间排序算法，它们都通过非比较方式实现高效排序。计数排序是基数排序的基础，用于对每一位进行稳定排序；桶排序则通过将数据分布到多个桶中再分别排序，与基数排序的分配-收集思想相似。此外，基数排序的稳定性是其关键特性，与快速排序等不稳定算法形成对比。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

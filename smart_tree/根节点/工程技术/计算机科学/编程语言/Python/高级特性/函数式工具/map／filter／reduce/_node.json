@@ -19,5 +19,38 @@
       "content_preview": "map/filter/reduce: The `map(func, iter)` function applies a given function `func` to each item of an iterable `iter` and returns a map object (an iterator). The `filter(func, iter)` function filters items from an iterable `iter` based on the output of the function `func`, which should return a boolean value. The `reduce(func, iter)` function applies a rolling computation to sequential pairs of values in an iterable `iter`. Here are brief Python code examples for each: ```python # Example of map() numbers = [1, 2, 3, 4] squared = list(map(lambda x: x**2, numbers)) print(squared) # Output: [1, 4, 9, 16] # Example of filter() even_numbers = list(filter(lambda x: x % 2 == 0, numbers)) print(even_numbers) # Output: [2, 4] # Example of reduce() - Note: This requires the functools module from functools import reduce product = reduce(lambda x, y: x * y, numbers) print(product) # Output: 24 ``` These examples illustrate how to use `map`, `filter`, and `reduce` in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "application"
+    },
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nmap、filter 和 reduce 是 Python 中三个高阶函数，用于对可迭代对象进行批量转换、筛选和归约操作，分别对应映射、过滤和累积计算。\n\n## 何时使用\n当需要对列表、元组等可迭代对象的每个元素应用同一函数并收集结果时使用 map；当需要根据条件筛选出满足要求的元素时使用 filter；当需要将序列中的元素通过二元函数逐步合并为单个值时使用 reduce。它们适用于函数式编程风格，能简化循环代码，提高可读性。\n\n## 示例\n```Python\nfrom functools import reduce\n\n# map: 将列表中的每个数字平方\nnumbers = [1, 2, 3, 4]\nsquared = list(map(lambda x: x**2, numbers))\nprint(squared)  # [1, 4, 9, 16]\n\n# filter: 筛选出偶数\nevens = list(filter(lambda x: x % 2 == 0, numbers))\nprint(evens)  # [2, 4]\n\n# reduce: 计算所有数字的乘积\nproduct = reduce(lambda x, y: x * y, numbers)\nprint(product)  # 24\n```\n\n## 反例\n不要用 map 或 filter 替代简单的列表推导式（如 `[x**2 for x in numbers]`），因为列表推导式通常更直观且性能相近；避免在 reduce 中使用过于复杂的 lambda 函数，否则会降低代码可读性。\n\n## 边界条件\nmap 和 filter 返回的是迭代器，需显式转换为列表才能查看结果；reduce 需要从 functools 导入；当可迭代对象为空时，reduce 会抛出 TypeError，除非提供初始值。",
+    "code_pattern": "from functools import reduce\n\ndef transform_data(data, map_func=None, filter_func=None, reduce_func=None, initial=None):\n    \"\"\"通用数据处理模板，支持映射、过滤和归约。\"\"\"\n    result = data\n    if map_func:\n        result = map(map_func, result)\n    if filter_func:\n        result = filter(filter_func, result)\n    if reduce_func:\n        result = reduce(reduce_func, result) if initial is None else reduce(reduce_func, result, initial)\n    return list(result) if not reduce_func else result",
+    "common_pitfalls": [
+      "忘记 map 和 filter 返回的是迭代器，直接打印或使用索引会失败，必须用 list() 转换。",
+      "在 reduce 中未提供初始值，当序列为空时抛出 TypeError，应始终考虑空序列场景并设置 initial 参数。",
+      "混淆 map 和 filter 的参数顺序：map 的第一个参数是函数，第二个是可迭代对象；filter 同样，但函数应返回布尔值。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

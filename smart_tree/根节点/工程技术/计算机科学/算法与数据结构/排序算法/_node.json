@@ -16,5 +16,13 @@
     "description": "排序算法: Sorting is one of the most fundamental and important algorithms in computer science, divided into comparison sorting and non-comparison sorting categories. Here are brief examples for both types: 1. **Comparison Sorting** (e.g., QuickSort): ```python def quicksort(arr): if len(arr) <= 1: return arr pivot = arr[len(arr) // 2] left = [x for x in arr if x < pivot] middle = [x for x in arr if x == pivot] right = [x for x in arr if x > pivot] return quicksort(left) + middle + quicksort(right) ``` 2. **Non-Comparison Sorting** (e.g., Counting Sort): ```python def counting_sort(arr, max_val=None): if not arr: return [] if max_val is None: max_val = max(arr) count = [0] * (max_val + 1) for num in arr: count[num] += 1 sorted_arr = [] for i, cnt in enumerate(count): sorted_arr.extend([i] * cnt) return sorted_arr ``` These examples illustrate the basic implementation of QuickSort and Counting Sort."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "排序算法是计算机科学中算法与数据结构领域的基础分支，主要研究如何将一组数据元素按特定顺序（如升序或降序）进行排列。本分支涵盖了两大类子主题：比较排序和线性排序。比较排序基于元素之间的比较操作来排序，包括冒泡排序、选择排序、插入排序、归并排序、快速排序、堆排序等，其时间复杂度下界为O(n log n)。线性排序则利用数据本身的特性（如数值范围、位数等）在特定条件下实现线性时间复杂度，包括计数排序、基数排序和桶排序。比较排序是排序算法的核心和基础，适用于通用场景；线性排序则适用于数据范围有限或分布均匀的特殊场景，通常作为比较排序的补充或优化。学习路径建议先掌握比较排序的原理、实现和复杂度分析，再学习线性排序的适用条件和实现技巧。理解排序算法有助于深入掌握算法设计思想（如分治、递归、堆等），并为后续学习搜索、图算法等奠定基础。",
+  "example_queries": [
+    "快速排序和归并排序的时间复杂度分别是多少？它们在实际应用中如何选择？",
+    "计数排序和基数排序分别适用于什么类型的数据？它们的时间复杂度为什么是线性的？",
+    "如何用堆排序实现一个稳定的排序？堆排序和快速排序相比有哪些优缺点？",
+    "冒泡排序、插入排序和选择排序中，哪种在近乎有序的数组上表现最好？为什么？",
+    "请给出一个使用桶排序对浮点数进行排序的示例，并分析其空间复杂度。"
+  ]
 }

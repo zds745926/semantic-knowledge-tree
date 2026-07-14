@@ -19,5 +19,34 @@
       "content_preview": "执行上下文: Execution context includes variable environment, lexical environment, and this binding. Execution stack management. To provide a more detailed explanation with a Python code example for the concept of `this` binding: In JavaScript, the `this` keyword refers to the object that the function is called on. However, in Python, there isn't an exact equivalent of `this`, but we can demonstrate similar behavior using methods and self. Here's a simple Python class with a method that demonstrates how attributes are accessed within the context of an instance: ```python class Person: def __init__(self, name): self.name = name # 'name' is an attribute bound to the instance def greet(self): return f\"Hello, my name is {self.name}\" # 'self' acts like 'this' in JavaScript # Create an instance of Person person = Person(\"Alice\") # Call the method on the instance print(person.greet()) # Output: Hello, my name is Alice ``` In this example: - `self` is similar to `this` in that it refers to the current object (instance) when a method is called. - The `greet` method uses `self.name` to access an attribute of the instance."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n执行上下文是 JavaScript 代码执行时的环境抽象概念，它定义了变量、函数、作用域链以及 this 的指向，是代码运行时的基础容器。\n\n## 何时使用\n在理解 JavaScript 的变量提升、作用域、闭包、this 绑定以及函数调用机制时，必须掌握执行上下文。它帮助开发者预测代码执行顺序和变量访问行为，尤其在调试复杂异步逻辑或嵌套函数时至关重要。\n\n## 示例\n```JavaScript\nconsole.log(a); // undefined（变量提升）\nvar a = 1;\n\nfunction foo() {\n  console.log(b); // undefined（函数内部变量提升）\n  var b = 2;\n  console.log(this); // 全局对象（非严格模式）\n}\nfoo();\n```\n\n## 反例\n错误地认为变量声明和赋值同时发生，导致在声明前访问变量时抛出 ReferenceError（对 let/const）或得到 undefined（对 var）而困惑。例如在 let 声明前使用变量会触发暂时性死区。\n\n## 边界条件\n- 全局执行上下文只有一个，在程序启动时创建；函数每次调用都会创建新的执行上下文。\n- 严格模式下，函数内部的 this 为 undefined，而非全局对象。\n- 异步回调（如 setTimeout）会创建新的执行上下文，与调用时的上下文不同。",
+    "code_pattern": "// 全局执行上下文\nvar globalVar = 'global';\n\nfunction outer() {\n  // outer 函数执行上下文\n  var outerVar = 'outer';\n  \n  function inner() {\n    // inner 函数执行上下文\n    var innerVar = 'inner';\n    console.log(globalVar); // 访问全局变量\n    console.log(outerVar);  // 访问外层变量\n  }\n  \n  inner();\n}\n\nouter();",
+    "common_pitfalls": [
+      "混淆变量提升与暂时性死区：使用 var 声明的变量会被提升并初始化为 undefined，而 let/const 虽提升但未初始化，在声明前访问会报 ReferenceError。",
+      "忽略 this 绑定规则：在普通函数中，this 指向调用者；在箭头函数中，this 继承自外层执行上下文。例如在对象方法中使用箭头函数会导致 this 指向全局对象而非对象本身。",
+      "误解闭包中的变量捕获：闭包捕获的是变量的引用而非值，循环中使用 var 声明变量时，所有闭包共享同一个变量，导致最终值相同。应使用 let 或立即执行函数创建独立上下文。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,34 @@
       "content_preview": "Java OOP: Single inheritance for `extends`, multiple interfaces through `implements`. `abstract` and `final`. Python code examples: For single inheritance using `extends` (in Java, but translated to Python): ```python class BaseClass: def __init__(self): self.base_attribute = \"I am from base class\" class DerivedClass(BaseClass): # Inheriting from a single parent class pass # Example usage derived_instance = DerivedClass() print(derived_instance.base_attribute) # Output: I am from base class ``` For multiple interfaces using `implements` (in Java, but translated to Python): ```python class Interface1: def method_one(self): print(\"Method one called\") class Interface2: def method_two(self): print(\"Method two called\") class MyClass(Interface1, Interface2): # Implementing multiple interfaces pass # Example usage my_instance = MyClass() my_instance.method_one() # Output: Method one called my_instance.method_two() # Output: Method two called ``` For `abstract` and `final`: - In Python, there is no direct equivalent to Java's `abstract` class. However, you can use the `abc` module for creating abstract base classes. - There is also no direct `final` keyword in Python. Abstract Base Class Example using `abc`: ```python from abc import ABC, abstractmethod class AbstractBaseClass(ABC): @abstractmethod def my_abstract_method(self): pass # This will raise a TypeError if you try to instantiate this class directly. # abstract_instance = AbstractBaseClass() # Uncommenting this line will cause an error. class ConcreteClass(AbstractBaseClass): def my_abstract_method(self): print(\"Abstract method implemented\") concrete_instance = ConcreteClass() concrete_instance.my_abstract_method() # Output: Abstract method implemented ``` Note that Python's dynamic nature means you can't enforce the same strict rules as in statically typed languages like Java, but these examples illustrate how similar concepts can be achieved."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cpp_oop_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n面向对象编程（OOP）是一种编程范式，通过将数据（属性）和行为（方法）封装在对象中，并利用继承、多态和抽象来组织代码，以提高复用性、可维护性和扩展性。\n\n## 何时使用\n适用于需要模拟现实世界实体及其关系的复杂系统，如企业应用、游戏开发或图形界面。当代码规模增长且需要模块化、可扩展的设计时，OOP 能有效降低耦合度。\n\n## 示例\n```Java\n// 定义一个抽象类 Animal\nabstract class Animal {\n    protected String name;\n    \n    public Animal(String name) {\n        this.name = name;\n    }\n    \n    // 抽象方法，子类必须实现\n    public abstract void sound();\n    \n    public void sleep() {\n        System.out.println(name + \" is sleeping\");\n    }\n}\n\n// 子类 Dog 继承 Animal\nclass Dog extends Animal {\n    public Dog(String name) {\n        super(name);\n    }\n    \n    @Override\n    public void sound() {\n        System.out.println(name + \" barks\");\n    }\n}\n\n// 子类 Cat 继承 Animal\nclass Cat extends Animal {\n    public Cat(String name) {\n        super(name);\n    }\n    \n    @Override\n    public void sound() {\n        System.out.println(name + \" meows\");\n    }\n}\n\n// 主类演示多态\npublic class OOPDemo {\n    public static void main(String[] args) {\n        Animal myDog = new Dog(\"Buddy\");\n        Animal myCat = new Cat(\"Whiskers\");\n        \n        myDog.sound();  // 输出: Buddy barks\n        myCat.sound();  // 输出: Whiskers meows\n        myDog.sleep();  // 输出: Buddy is sleeping\n    }\n}\n```\n\n## 反例\n错误地将所有逻辑写在单个类中，缺乏封装和继承，导致代码重复且难以维护。例如，不使用抽象类而直接为每种动物编写独立的方法，增加修改成本。\n\n## 边界条件\n注意避免过度设计，不要为简单场景强行使用 OOP 模式；同时，继承层次不宜过深（通常不超过 3 层），否则会增加复杂度并降低可读性。",
+    "code_pattern": "public abstract class BaseEntity {\n    protected long id;\n    public BaseEntity(long id) { this.id = id; }\n    public abstract void process();\n    public void printId() { System.out.println(\"ID: \" + id); }\n}\n\npublic class ConcreteEntity extends BaseEntity {\n    public ConcreteEntity(long id) { super(id); }\n    @Override\n    public void process() { System.out.println(\"Processing entity \" + id); }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        BaseEntity entity = new ConcreteEntity(1L);\n        entity.process();\n        entity.printId();\n    }\n}",
+    "common_pitfalls": [
+      "滥用继承：为复用代码而继承不相关的类，导致子类拥有不必要的方法，应优先使用组合而非继承。",
+      "忽略封装：直接公开字段（public field）而不是通过 getter/setter，破坏数据保护，使得内部实现变更影响外部代码。",
+      "多态误用：在父类中定义的方法子类未正确重写（如忘记 @Override 注解），导致调用时执行父类默认行为而非预期行为。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

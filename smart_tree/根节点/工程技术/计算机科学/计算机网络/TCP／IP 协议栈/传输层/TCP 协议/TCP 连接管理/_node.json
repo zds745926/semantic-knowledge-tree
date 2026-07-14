@@ -16,5 +16,13 @@
     "description": "TCP 连接管理: Three-way handshake establishes the connection, and four-way挥手 (wave) should be translated as \"shake\" in this context to maintain accuracy. Here is the translation with a brief Python code example for the three-way handshake concept: Three-way handshake establishes the connection, and four-way handshake closes the connection. Python code example for three-way handshake: ```python import socket def client(): # Create a socket object using IPv4 and TCP protocol s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Define the server's IP address and port number server_address = ('localhost', 10000) try: print(\"Connecting to server...\") # Step 1: Client sends a SYN packet to the server s.connect(server_address) # Step 2: Server responds with a SYN-ACK packet syn_ack = s.recv(1024) # Step 3: Client acknowledges the server's SYN-ACK by sending an ACK packet s.send(syn_ack) print(\"Connection established.\") finally: s.close() print(\"Connection closed.\") client() ``` This Python code demonstrates a simplified version of the three-way handshake process used in establishing a TCP connection."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "TCP连接管理是TCP协议的核心功能之一，主要涵盖连接建立（三次握手）和连接释放（四次挥手）两个子主题。三次握手确保通信双方同步序列号、确认初始参数，并防止历史连接干扰；四次挥手则通过半关闭机制实现可靠的数据传输终止。这两个过程共同构成了TCP面向连接、可靠传输的基础。学习路径建议先理解三次握手的报文交换、状态变迁及异常处理（如SYN洪泛攻击），再掌握四次挥手的流程、TIME_WAIT状态的作用及优化策略。",
+  "example_queries": [
+    "TCP三次握手过程中如果客户端发送的SYN丢失会怎样？",
+    "为什么TCP四次挥手需要TIME_WAIT状态？",
+    "TCP连接建立时如何防止已失效的连接请求到达服务器？",
+    "TCP四次挥手能否合并为三次？",
+    "SYN洪泛攻击的原理及防御方法是什么？"
+  ]
 }

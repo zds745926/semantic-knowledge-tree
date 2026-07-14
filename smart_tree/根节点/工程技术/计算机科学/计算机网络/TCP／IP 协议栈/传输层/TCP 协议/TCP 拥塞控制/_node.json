@@ -17,5 +17,13 @@
     "description": "TCP 拥塞控制: Congestion control prevents network overload, including slow start, congestion avoidance, and fast recovery. Here are brief explanations of these concepts along with corresponding Python code examples: 1. **Slow Start**: During the initial phase of a TCP connection, the sender increases its sending rate gradually to avoid overwhelming the network. This is controlled by an initial congestion window (cwnd) that starts at 1 MSS (Maximum Segment Size). ```python def slow_start(cwnd): if cwnd <= 1: return 1 # Initial value of cwnd else: return min(2 * cwnd, max_mss) # Increase cwnd by a factor of 2 or up to max_mss ``` 2. **Congestion Avoidance**: Once the network starts accepting more data without dropping packets, the sender increases its sending rate linearly with time. This is done by incrementing the congestion window (cwnd) by one MSS for each received acknowledgment. ```python def congestion_avoidance(cwnd): return cwnd + 1 # Increment cwnd by 1 MSS per ACK ``` 3. **Fast Recovery**: When a TCP connection experiences packet loss, it enters fast recovery mode to quickly resume normal operation. This involves halving the congestion window and then incrementing it linearly until it reaches its previous value. ```python def fast_recovery(cwnd): return max(1, cwnd // 2) # Halve the cwnd ``` These examples provide a simplified view of how these concepts are implemented in Python for educational purposes. In real-world applications, additional factors and optimizations would be considered."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "TCP拥塞控制是传输层协议TCP的核心机制之一，旨在防止网络过载并优化数据传输效率。该分支涵盖从经典算法到现代优化的演进路径，包括慢启动、拥塞避免以及TCP BBR等子主题。慢启动是连接建立初期快速探测网络容量的阶段，通过指数增长发送窗口直至遇到丢包或达到阈值；拥塞避免则在慢启动后以线性增长方式谨慎增加窗口，并在检测到丢包时通过乘法减小窗口来缓解拥塞。TCP BBR（Bottleneck Bandwidth and Round-trip propagation time）是一种基于模型的新型拥塞控制算法，不再依赖丢包作为拥塞信号，而是通过测量瓶颈带宽和往返时延来精确控制发送速率，从而在高延迟或高丢包网络中显著提升性能。学习路径建议从理解慢启动和拥塞避免的基本原理入手，掌握经典AIMD（加法增乘法减）策略，再过渡到BBR等现代算法，以应对复杂网络环境。该分支对于网络性能优化、视频流传输及数据中心通信等场景具有重要实践价值。",
+  "example_queries": [
+    "TCP慢启动的阈值是如何确定的？",
+    "拥塞避免阶段如何通过AIMD算法调整窗口大小？",
+    "TCP BBR与传统拥塞控制算法（如CUBIC）相比有哪些优势？",
+    "在高速长距离网络中，如何选择TCP拥塞控制算法？",
+    "如何通过调整拥塞控制参数优化视频流的传输质量？"
+  ]
 }

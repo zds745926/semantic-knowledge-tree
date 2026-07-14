@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "py_requirements_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\npip install 是 Python 包管理器 pip 的核心命令，用于从 Python 包索引（PyPI）或其他源安装第三方包及其依赖。\n\n## 何时使用\n当你需要为 Python 项目添加外部库或工具时，使用 pip install 从 PyPI 安装指定版本的包。它也适用于安装本地包、从版本控制仓库安装或安装私有包。\n\n## 示例\n```Python\n# 安装最新版本的 requests 库\npip install requests\n\n# 安装指定版本\npip install requests==2.28.1\n\n# 从 requirements.txt 安装\npip install -r requirements.txt\n```\n\n## 反例\n使用 `sudo pip install` 直接安装到系统 Python 环境，可能导致系统包冲突或权限问题。应使用虚拟环境（如 venv）隔离项目依赖。\n\n## 边界条件\n确保网络连接正常，且 PyPI 可访问。若安装失败，检查 Python 版本兼容性（如某些包仅支持 Python 3.8+）。使用 `--user` 选项可避免权限问题，但会安装到用户目录。",
+    "code_pattern": "import subprocess\nimport sys\n\ndef install_package(package_name: str, version: str = None) -> None:\n    \"\"\"Install a Python package using pip.\"\"\"\n    cmd = [sys.executable, '-m', 'pip', 'install']\n    if version:\n        cmd.append(f'{package_name}=={version}')\n    else:\n        cmd.append(package_name)\n    try:\n        subprocess.check_call(cmd)\n        print(f'Successfully installed {package_name}')\n    except subprocess.CalledProcessError as e:\n        print(f'Failed to install {package_name}: {e}')",
+    "common_pitfalls": [
+      "使用 sudo pip install 安装到系统 Python 环境，可能导致系统包冲突或权限问题，推荐使用虚拟环境。",
+      "未指定版本号时，pip 会安装最新版本，可能导致项目在不同时间构建时依赖不一致，应固定版本。",
+      "忽略 requirements.txt 中包的依赖关系，手动逐个安装可能遗漏依赖，应使用 -r 选项一次性安装。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

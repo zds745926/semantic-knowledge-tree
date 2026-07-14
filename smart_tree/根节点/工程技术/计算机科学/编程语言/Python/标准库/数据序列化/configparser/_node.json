@@ -19,5 +19,34 @@
       "content_preview": "configparser: Configuration file parsing in INI format. Sections and options. Type safety with `getint` and `getboolean`. Here is an example of how you might use these functions in Python: ```python import configparser # Create a ConfigParser object config = configparser.ConfigParser() # Read the configuration file config.read('example.ini') # Accessing integer values safely using getint database_port = config.getint('Database', 'Port') print(f\"Database port: {database_port}\") # Accessing boolean values safely using getboolean enable_logging = config.getboolean('Logging', 'Enable') print(f\"Enable logging: {enable_logging}\") ``` In this example, `example.ini` is a configuration file that contains sections like `Database` and `Logging`, with options such as `Port` and `Enable`. The `getint` and `getboolean` methods ensure type safety by converting the values to their appropriate types."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_gettext_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_tempfile_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_hashlib_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nconfigparser 是 Python 标准库中用于解析 INI 风格配置文件的模块，它提供类似字典的接口来读取、写入和修改配置文件中的节（section）和键值对（option）。\n\n## 何时使用\n当你的 Python 程序需要将配置参数（如数据库连接字符串、日志级别、文件路径等）与代码分离，并希望使用人类可读的 INI 格式文件时，应使用 configparser。它适用于需要持久化配置且配置项较少的应用程序，例如脚本、桌面应用或小型 Web 服务。\n\n## 示例\n```Python\nimport configparser\n\n# 创建配置对象\nconfig = configparser.ConfigParser()\n\n# 写入配置\nconfig['DEFAULT'] = {'ServerAliveInterval': '45',\n                     'Compression': 'yes',\n                     'CompressionLevel': '9'}\nconfig['bitbucket.org'] = {}\nconfig['bitbucket.org']['User'] = 'hg'\nconfig['topsecret.server.com'] = {}\ntopsecret = config['topsecret.server.com']\ntopsecret['Port'] = '50022'\ntopsecret['ForwardX11'] = 'no'\n\n# 写入文件\nwith open('example.ini', 'w') as configfile:\n    config.write(configfile)\n\n# 读取配置\nconfig.read('example.ini')\nprint(config['bitbucket.org']['User'])  # 输出: hg\nprint(config['DEFAULT']['Compression']) # 输出: yes\n```\n\n## 反例\n不要试图直接用 configparser 解析非 INI 格式的配置文件（如 JSON 或 YAML），这会导致解析错误或数据丢失。例如，将 configparser 用于包含嵌套结构的 JSON 文件是不合适的。\n\n## 边界条件\n- 键和值在内部都以字符串形式存储，因此读取数字或布尔值时需要手动转换（如 `config.getint('section', 'key')`）。\n- 节名和键名是大小写敏感的，但默认情况下选项名会被转换为小写，除非设置 `ConfigParser(optionxform=str)`。",
+    "code_pattern": "import configparser\n\nconfig = configparser.ConfigParser()\n\n# 读取配置文件\nconfig.read('config.ini')\n\n# 获取值（带类型转换）\nvalue_str = config.get('section', 'key')\nvalue_int = config.getint('section', 'key')\nvalue_float = config.getfloat('section', 'key')\nvalue_bool = config.getboolean('section', 'key')\n\n# 写入配置\nconfig['section'] = {'key': 'value'}\nwith open('config.ini', 'w') as f:\n    config.write(f)",
+    "common_pitfalls": [
+      "忘记处理文件不存在的情况：直接调用 config.read('missing.ini') 不会报错，但会返回空列表，后续访问节或键会抛出 NoSectionError 或 NoOptionError。应先用 os.path.exists 检查文件存在性。",
+      "类型自动转换陷阱：configparser 将所有值视为字符串，但 getint/getboolean 等方法会尝试转换。如果值格式不正确（如 'abc' 转为 int），会抛出 ValueError。务必确保配置值格式正确或使用异常处理。",
+      "选项名大小写问题：默认情况下，configparser 会将选项名转换为小写，导致 'Host' 和 'host' 被视为相同。若需保留大小写，需在创建 ConfigParser 时传入 optionxform=str。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

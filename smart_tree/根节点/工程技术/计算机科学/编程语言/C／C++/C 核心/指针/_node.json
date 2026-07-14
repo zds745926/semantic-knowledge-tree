@@ -19,5 +19,35 @@
       "content_preview": "指针: Pointer storage of addresses. Dereferencing/* and address-of/& operations. Function pointers. Pointer arithmetic is a core capability of C. Here are brief Python code examples to illustrate some of these concepts: 1. **Dereferencing**: ```python value = 42 pointer = id(value) # Get the memory address of `value` print(pointer) dereferenced_value = ctypes.cast(pointer, ctypes.py_object).value # Dereference to get the actual value print(dereferenced_value) ``` 2. **Address-of**: ```python x = 10 addr_of_x = id(x) # Get the memory address of `x` print(addr_of_x) ``` 3. **Function pointers** (Python doesn't have explicit function pointers, but we can simulate them): ```python def func1(): return \"Hello from func1\" def func2(): return \"Hello from func2\" # Simulating a function pointer func_ptr = func1 # Assigning a function to a variable print(func_ptr()) # Call the function through the pointer ``` 4. **Pointer arithmetic** (Python doesn't support direct pointer arithmetic, but we can simulate it with lists): ```python arr = [0, 1, 2, 3, 4] ptr = 2 # Pointer to index 2 print(arr[ptr]) # Access the element at the pointed index ``` These examples provide a basic understanding of how these concepts can be simulated or implemented in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "cpp_oop_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n指针是一个变量，其值为另一个变量的内存地址，通过该地址可以间接访问和操作该变量。\n\n## 何时使用\n当需要在函数间传递大型数据结构（如数组、结构体）而不复制整个数据时，使用指针可以提高效率。当需要动态分配内存（如使用malloc/new）时，必须使用指针来管理堆内存。当需要实现多态或回调函数时，函数指针是C/C++的核心机制。\n\n## 示例\n```C/C++\n#include <stdio.h>\n\nvoid swap(int *a, int *b) {\n    int temp = *a;\n    *a = *b;\n    *b = temp;\n}\n\nint main() {\n    int x = 10, y = 20;\n    printf(\"Before: x=%d, y=%d\\n\", x, y);\n    swap(&x, &y);\n    printf(\"After: x=%d, y=%d\\n\", x, y);\n    return 0;\n}\n```\n\n## 反例\n错误用法：使用未初始化的指针（野指针）进行读写，会导致未定义行为甚至程序崩溃。例如：`int *p; *p = 5;` 是危险的，因为p指向随机地址。\n\n## 边界条件\n注意空指针（NULL）的解引用会导致段错误，使用前必须检查指针是否为NULL。指针运算时需确保不越界，例如数组指针加减后不能超出数组范围。",
+    "code_pattern": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int value = 42;\n    int *ptr = &value;\n    printf(\"Value: %d\\n\", *ptr);\n    \n    int *dyn = (int*)malloc(sizeof(int));\n    if (dyn != NULL) {\n        *dyn = 100;\n        printf(\"Dynamic: %d\\n\", *dyn);\n        free(dyn);\n    }\n    return 0;\n}",
+    "common_pitfalls": [
+      "未初始化指针：声明指针后未赋值就使用，导致野指针，应初始化为NULL或有效地址。",
+      "内存泄漏：动态分配内存后忘记free/delete，导致内存无法回收，应在不再使用时释放。",
+      "悬挂指针：释放内存后未将指针置NULL，后续误用该指针访问已释放内存，应在free后立即置NULL。",
+      "指针越界：对数组指针进行加减运算时超出数组边界，导致访问非法内存，应严格限制指针运算范围。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

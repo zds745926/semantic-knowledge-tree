@@ -16,5 +16,13 @@
     "description": "集成学习: Ensemble learning combines multiple weak learners to enhance performance. Python code example: ```python from sklearn.ensemble import BaggingClassifier from sklearn.tree import DecisionTreeClassifier # Assuming X_train and y_train are already defined base_estimator = DecisionTreeClassifier(max_depth=1) # A weak learner, e.g., a decision tree with small depth bagging_classifier = BaggingClassifier(base_estimator=base_estimator, n_estimators=100) # Fit the model bagging_classifier.fit(X_train, y_train) ``` In this example, `BaggingClassifier` is used to combine multiple weak learners (in this case, decision trees with a maximum depth of 1). The `n_estimators` parameter specifies the number of base estimators in the ensemble."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "集成学习是监督学习中的一个重要分支，旨在通过构建并组合多个学习器来完成学习任务，从而获得比单一学习器更优越的泛化性能。本分支涵盖的核心子主题包括随机森林和梯度提升树（GBDT）。随机森林基于Bagging策略，通过并行构建多个决策树并对其预测结果进行投票或平均，有效降低了模型的方差，对噪声和过拟合有较强的鲁棒性。梯度提升树则基于Boosting策略，通过串行迭代地拟合前一个模型的残差，逐步降低偏差，从而在各类回归与分类任务中取得高精度。两者均以决策树为基学习器，但优化目标与集成方式不同：随机森林侧重降低方差，适合高维数据且训练可并行；GBDT侧重降低偏差，通常需要更多调参但预测性能更优。学习路径建议：先掌握决策树原理，再学习Bagging与随机森林，进而理解Boosting与GBDT，最后可扩展至XGBoost、LightGBM等进阶模型。",
+  "example_queries": [
+    "随机森林和梯度提升树（GBDT）在原理上有什么主要区别？",
+    "如何调整随机森林的超参数（如树的数量、最大深度）来提升模型性能？",
+    "梯度提升树（GBDT）在处理缺失值时有哪些常用策略？",
+    "在什么场景下更适合使用随机森林而非GBDT？",
+    "集成学习中Bagging和Boosting的核心思想分别是什么？"
+  ]
 }

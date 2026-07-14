@@ -17,5 +17,13 @@
     "description": "HTTP: HTTP is the foundation of the Web, operating on a request-response model and being stateless. The HTTP/1.1 text protocol. To provide a brief Python code example related to this concept, here's how you might make an HTTP GET request using the `requests` library: ```python import requests # Make an HTTP GET request response = requests.get('https://api.example.com/data') # Print the status code and response content print(\"Status Code:\", response.status_code) print(\"Response Content:\", response.text) ``` This example demonstrates making a simple HTTP GET request using Python's `requests` library, which is commonly used for interacting with web services."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于HTTP协议，它是TCP/IP协议栈中应用层的核心协议，定义了客户端与服务器之间如何传输超文本数据。分支涵盖HTTP核心（包括HTTP/1.1的基本请求-响应模型、方法、状态码、头部、缓存机制等）、HTTP/2（引入二进制分帧、多路复用、头部压缩、服务器推送等性能优化特性）以及HTTP/3（基于QUIC协议，使用UDP传输，进一步减少连接延迟、改进拥塞控制与多路复用）。三者呈现递进演进关系：HTTP核心是基础，HTTP/2在保持语义兼容的前提下大幅提升性能，HTTP/3则通过更换传输层协议解决队头阻塞等遗留问题。学习路径建议先掌握HTTP/1.1的完整工作机制，再理解HTTP/2的改进点及其原理，最后了解HTTP/3如何借助QUIC实现更优的传输效率。",
+  "example_queries": [
+    "HTTP/1.1的持久连接与管道化有什么区别？",
+    "HTTP/2的多路复用是如何解决队头阻塞问题的？",
+    "HTTP/3为什么选择基于UDP的QUIC协议？",
+    "如何配置HTTP头部以优化缓存性能？",
+    "从HTTP/1.1升级到HTTP/2需要修改哪些服务器配置？"
+  ]
 }

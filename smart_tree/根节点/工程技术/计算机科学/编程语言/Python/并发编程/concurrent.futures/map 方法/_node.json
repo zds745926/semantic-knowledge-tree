@@ -19,5 +19,34 @@
       "content_preview": "map 方法: The `executor.map(func, iterable)` function batches the submissions and returns an iterator of results. The order of the results corresponds to the input. Here's a brief Python code example using the `concurrent.futures` module: ```python from concurrent.futures import ThreadPoolExecutor def func(x): return x * x # Example function that squares the input numbers = [1, 2, 3, 4, 5] with ThreadPoolExecutor() as executor: results = list(executor.map(func, numbers)) print(results) # Output: [1, 4, 9, 16, 25] ``` In this example, `executor.map` is used to apply the `func` function to each element in the `numbers` list. The results are returned in an iterator and converted to a list for printing."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nmap 方法是 concurrent.futures.Executor 基类（如 ThreadPoolExecutor 和 ProcessPoolExecutor）提供的一个高阶函数，用于将一个可调用对象并行地应用于一个可迭代对象的每个元素，并返回一个迭代器，该迭代器按输入顺序产生结果。\n\n## 何时使用\n当需要将同一函数应用于大量独立数据项，且每个数据项的处理时间相对较长（如 I/O 操作或 CPU 密集型计算）时，使用 map 方法可以显著提升性能。它特别适合批量处理任务，无需手动管理 Future 对象或显式提交每个任务。\n\n## 示例\n```Python\nfrom concurrent.futures import ThreadPoolExecutor\nimport time\n\ndef square(x):\n    time.sleep(0.1)  # 模拟耗时操作\n    return x * x\n\nwith ThreadPoolExecutor(max_workers=4) as executor:\n    results = list(executor.map(square, range(10)))\nprint(results)  # 输出: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n```\n\n## 反例\n错误地假设 map 返回的结果顺序与任务完成顺序一致，实际上它严格保持输入顺序；或者将 map 用于有状态或依赖顺序的任务，导致竞态条件或错误结果。\n\n## 边界条件\nmap 方法会阻塞直到所有任务完成，因此如果某个任务抛出异常，异常会在迭代结果时被抛出，且后续未完成的任务可能不会被执行；另外，当可迭代对象非常大时，map 会一次性消费所有输入，可能导致内存压力，建议使用 chunksize 参数（仅 ProcessPoolExecutor）或分批处理。",
+    "code_pattern": "from concurrent.futures import ThreadPoolExecutor\n\ndef process_item(item):\n    # 处理单个项的逻辑\n    return item * 2\n\nitems = [1, 2, 3, 4, 5]\nwith ThreadPoolExecutor(max_workers=4) as executor:\n    results = list(executor.map(process_item, items))",
+    "common_pitfalls": [
+      "结果迭代顺序与输入顺序一致，但若任务执行时间差异大，先完成的任务必须等待后完成的任务才能被迭代，导致整体延迟增加，应使用 as_completed 函数按完成顺序处理结果。",
+      "map 方法默认不限制输入迭代器的大小，当输入数据量极大时，会一次性将整个迭代器转换为列表，消耗大量内存，应使用 chunksize 参数（ProcessPoolExecutor）或手动分批提交。",
+      "如果被映射的函数抛出异常，异常会在迭代结果时抛出，且后续未完成的任务可能被取消或忽略，导致部分结果丢失，应使用 try-except 包裹迭代过程或使用 submit 加回调处理异常。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

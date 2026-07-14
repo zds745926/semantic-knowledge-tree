@@ -16,5 +16,12 @@
     "description": "微积分: Calculus studies the rates of change and cumulative effects of functions, including limits, derivatives, integrals, and differential equations. Newton and Leibniz independently developed calculus, one of the greatest achievements in modern mathematics. Here is a brief Python code example to illustrate the concept of derivatives using SymPy: ```python from sympy import symbols, diff # Define the variable and function x = symbols('x') f = x**3 - 2*x + 1 # Calculate the derivative of the function f_prime = diff(f, x) print(\"The derivative of f(x) =\", f, \"is\", f_prime) ``` This code defines a function `f(x) = x^3 - 2x + 1` and calculates its derivative using SymPy's `diff` function."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "微积分是数学的一个基础分支，主要研究变化率和累积量。本分支涵盖导数与积分两大核心子主题。导数描述函数在某一点的变化率，用于分析函数的局部性质，如斜率、极值和单调性；积分则计算函数在区间上的累积效应，如面积、体积和总量。两者通过微积分基本定理紧密联系：积分是导数的逆运算，导数则是积分的微分形式。学习路径通常从极限概念入手，理解导数定义与计算规则，进而掌握积分的概念与技巧，最后应用微积分解决实际问题，如物理中的运动分析、经济学中的边际与总量关系等。本分支为高等数学、工程、物理、经济等领域提供核心工具。",
+  "example_queries": [
+    "如何求函数 f(x)=x^2 在 x=3 处的导数？",
+    "计算曲线 y=sin(x) 从 x=0 到 x=π 与 x 轴围成的面积。",
+    "微积分基本定理是什么？如何用其计算定积分？",
+    "导数在优化问题中如何用于求函数的最大值和最小值？"
+  ]
 }

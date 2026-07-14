@@ -17,5 +17,13 @@
     "description": "变量与类型系统: Python is a dynamically typed language where variables are just labels for objects. The type system supports basic data types, type annotations, and duck typing. Understanding Python's type system is foundational to writing robust code. Here’s an example of using type hints in Python: ```python def greet(name: str) -> None: \"\"\"Print a greeting with the provided name.\"\"\" print(f\"Hello, {name}!\") # Calling the function greet(\"World\") ``` In this example, `str` is used as a type hint for the `name` parameter and `None` indicates that the function does not return any value. This helps in understanding the expected input and output types, which can be particularly useful during code reviews or when using static type checkers like `mypy`."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Python编程语言中关于变量与类型系统的核心概念，包括基本数据类型、类型系统特性和变量作用域。基本数据类型（如整数、浮点数、字符串、布尔值等）是构建程序的基础元素，它们决定了数据在内存中的表示和操作方式。类型系统特性则探讨Python作为动态类型语言的特点，如类型推断、类型检查、类型转换以及鸭子类型等，这些特性影响了代码的灵活性和错误处理。变量作用域定义了变量在程序中的可见性和生命周期，包括局部作用域、全局作用域、闭包作用域等，理解作用域对于避免命名冲突和有效管理内存至关重要。这三个子主题相互关联：基本数据类型是变量存储的内容，类型系统特性决定了变量如何被解释和操作，而变量作用域则管理变量在程序不同部分的访问权限。学习路径建议从基本数据类型入手，掌握每种类型的用法和常见操作；然后深入理解类型系统特性，特别是动态类型和类型安全的概念；最后学习变量作用域规则，结合函数和模块理解作用域链。通过实践编写简单程序，逐步加深对变量与类型系统的综合理解，为后续学习面向对象编程、异常处理等高级主题打下坚实基础。",
+  "example_queries": [
+    "Python中可变类型和不可变类型有什么区别？",
+    "什么是全局变量和局部变量？如何在函数内部修改全局变量？",
+    "Python是强类型还是弱类型语言？动态类型是什么意思？",
+    "如何检查一个变量的数据类型？类型转换有哪些常见方法？",
+    "变量作用域有哪些规则？闭包是如何实现变量捕获的？"
+  ]
 }

@@ -19,5 +19,34 @@
       "content_preview": "词嵌入: Word2Vec/GloVe/FastText. BERT contextual embeddings surpass static vectors. Python code examples for context: 1. **Word2Vec**: ```python from gensim.models import Word2Vec # Example training of a Word2Vec model on some sample text data sentences = [\"I love programming\", \"Machine learning is fascinating\"] model = Word2Vec(sentences, vector_size=50, window=5, min_count=1, workers=4) # Accessing the word vectors print(model.wv['programming']) ``` 2. **GloVe**: ```python from gensim.models import KeyedVectors # Load a pre-trained GloVe model glove_model = KeyedVectors.load_word2vec_format('glove.6B.50d.txt', binary=False) # Accessing the word vectors print(glove_model['programming']) ``` 3. **FastText**: ```python from gensim.models import FastText # Example training of a FastText model on some sample text data sentences = [[\"I\", \"love\", \"programming\"], [\"Machine\", \"learning\", \"is\", \"fascinating\"]] model = FastText(sentences, vector_size=50, window=5, min_count=1, workers=4) # Accessing the word vectors print(model.wv['programming']) ``` 4. **BERT Contextual Embeddings**: ```python from transformers import BertModel, BertTokenizer # Load BERT tokenizer and model tokenizer = BertTokenizer.from_pretrained('bert-base-uncased') model = BertModel.from_pretrained('bert-base-uncased') # Tokenize input text inputs = tokenizer(\"I love programming\", return_tensors=\"pt\") # Get contextual embeddings outputs = model(**inputs) print(outputs.last_hidden_state) # This is the last layer's hidden states, which are the contextual embeddings. ``` These examples illustrate how to use these different embedding techniques in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "pca_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "trie_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "conv_layer_v4",
+      "type": "application"
+    },
+    {
+      "id": "fulltext_index_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n词嵌入（Word Embedding）是一种将自然语言中的词汇映射到低维、稠密的实数向量空间的技术。其核心思想是让语义相近的词在向量空间中距离更近，从而捕捉词汇之间的语义和语法关系。\n\n## 核心要点\n- 词嵌入通过无监督学习从大规模文本语料中自动学习词的向量表示，无需人工标注特征。\n- 常见的词嵌入模型包括 Word2Vec（CBOW 和 Skip-gram）、GloVe 和 FastText，它们分别基于上下文预测或共现矩阵分解。\n- 词嵌入向量通常具有 50 到 300 维，相比独热编码（One-hot）能大幅降低维度并缓解稀疏性问题。\n- 词嵌入能够编码类比关系，例如“国王 - 男人 + 女人 ≈ 女王”，展示了向量空间中的线性语义结构。\n\n## 应用场景\n词嵌入广泛应用于自然语言处理任务，如文本分类、情感分析、机器翻译和问答系统。它作为输入层的一部分，为深度学习模型提供高质量的词汇特征，显著提升模型性能。\n\n## 相关概念\n词嵌入与独热编码（One-hot Encoding）形成对比，后者维度高且无法表达语义相似性。此外，词嵌入是语言模型（如 BERT、GPT）的基础，但预训练语言模型通过上下文动态生成词向量，比静态词嵌入更具表现力。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

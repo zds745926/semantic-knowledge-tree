@@ -16,5 +16,13 @@
     "description": "NoSQL: NoSQL databases offer flexible data models and horizontal scalability. Python code example (to illustrate flexibility in data modeling): ```python from pymongo import MongoClient # Connecting to MongoDB, a popular NoSQL database client = MongoClient('mongodb://localhost:27017/') # Creating a simple document-oriented collection db = client['sample_db'] collection = db['users'] # Inserting documents with varying structures (flexibility) user1 = {\"name\": \"John\", \"age\": 30, \"email\": \"john@example.com\"} user2 = {\"username\": \"jane_doe\", \"age\": 25, \"bio\": \"Software Developer\"} collection.insert_one(user1) collection.insert_one(user2) # Querying the collection (horizontal scalability allows for distributed queries) for user in collection.find({\"age\": {\"$gt\": 25}}): print(user) ``` This example uses MongoDB, a NoSQL database, to demonstrate flexible data modeling by inserting documents with different schemas and querying them horizontally."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "NoSQL（Not Only SQL）是一类非关系型数据库的统称，旨在解决传统关系型数据库在应对海量数据、高并发读写、灵活数据模型等方面的局限性。本分支涵盖NoSQL的核心概念、分类（如键值存储、文档数据库、列族数据库、图数据库）、典型系统（如Redis、MongoDB）以及应用场景。子节点Redis和MongoDB分别代表键值存储和文档数据库两大主流类型：Redis以内存存储、高性能和丰富数据结构著称，适用于缓存、会话管理和实时分析；MongoDB则以灵活的文档模型、强大的查询能力和水平扩展能力见长，适合内容管理、物联网和日志系统。学习路径建议从NoSQL的基本原理和与关系型数据库的对比入手，然后分别深入Redis和MongoDB的安装、核心特性、数据操作、集群部署及最佳实践，最后结合实际项目进行综合应用。",
+  "example_queries": [
+    "NoSQL数据库有哪些主要类型？各有什么典型代表？",
+    "Redis和MongoDB在数据模型和适用场景上有何区别？",
+    "如何设计一个基于Redis的缓存系统来提升Web应用性能？",
+    "MongoDB的副本集和分片集群是如何实现高可用和水平扩展的？",
+    "在什么情况下应该选择NoSQL而不是传统关系型数据库？"
+  ]
 }

@@ -19,5 +19,34 @@
       "content_preview": "Condition: `threading.Condition`: A condition variable. It is used for waiting and notification between threads. The `wait()` method causes the current thread to wait until it is notified, while `notify()` or `notify_all()` wakes up one or all waiting threads respectively. This pattern is often used in producer-consumer scenarios. Python code example: ```python import threading class ProducerConsumer: def __init__(self): self.condition = threading.Condition() self.buffer = [] def produce(self, item): with self.condition: # Wait until the buffer has space for a new item while len(self.buffer) == 10: self.condition.wait() # Add the item to the buffer self.buffer.append(item) print(f\"Produced: {item}\") # Notify one waiting consumer thread self.condition.notify() def consume(self): with self.condition: # Wait until there is an item in the buffer while not self.buffer: self.condition.wait() # Remove and return the first item from the buffer item = self.buffer.pop(0) print(f\"Consumed: {item}\") # Notify one waiting producer thread self.condition.notify() # Example usage producer_consumer = ProducerConsumer() producer_thread = threading.Thread(target=producer_consumer.produce, args=(1,)) consumer_thread = threading.Thread(target=producer_consumer.consume) producer_thread.start() consumer_thread.start() ``` This example demonstrates the use of `threading.Condition` in a producer-consumer scenario where both threads wait and notify each other based on the state of the shared buffer."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_thread_safety_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "deadlock_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "py_lifo_queue_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nCondition（条件变量）是Python多线程编程中用于线程间同步的机制，它允许一个或多个线程等待某个条件成立，并由其他线程在条件满足时通知它们继续执行。\n\n## 何时使用\n当多个线程需要基于某个共享状态或资源的状态变化进行协作时，使用Condition。例如，生产者-消费者模式中，消费者线程在队列为空时等待，生产者线程在添加元素后通知消费者；或者多个线程等待某个事件（如数据加载完成）后再继续执行。\n\n## 示例\n```Python\nimport threading\nimport time\n\n# 共享资源\nbuffer = []\nMAX_SIZE = 5\ncondition = threading.Condition()\n\ndef producer():\n    for i in range(10):\n        with condition:\n            while len(buffer) == MAX_SIZE:\n                print(\"Buffer full, producer waiting...\")\n                condition.wait()\n            buffer.append(i)\n            print(f\"Produced {i}, buffer: {buffer}\")\n            condition.notify()  # 通知消费者\n        time.sleep(0.1)\n\ndef consumer():\n    for _ in range(10):\n        with condition:\n            while not buffer:\n                print(\"Buffer empty, consumer waiting...\")\n                condition.wait()\n            item = buffer.pop(0)\n            print(f\"Consumed {item}, buffer: {buffer}\")\n            condition.notify()  # 通知生产者\n        time.sleep(0.15)\n\nthreading.Thread(target=producer).start()\nthreading.Thread(target=consumer).start()\n```\n\n## 反例\n错误用法：在wait()之前没有检查条件是否满足，直接调用wait()可能导致线程永久阻塞。例如，消费者在buffer为空时直接wait()，但生产者可能已经结束，导致消费者永远无法被唤醒。\n\n## 边界条件\n使用Condition时，wait()和notify()必须在获取锁的上下文中调用（即with condition:块内）。notify()只唤醒一个等待线程，而notify_all()唤醒所有等待线程；如果多个线程等待不同条件，应使用notify_all()避免死锁。",
+    "code_pattern": "import threading\n\ncondition = threading.Condition()\nshared_resource = []\n\ndef worker():\n    with condition:\n        while not condition_met(shared_resource):\n            condition.wait()\n        # 处理共享资源\n        condition.notify()  # 或 condition.notify_all()",
+    "common_pitfalls": [
+      "忘记在wait()前使用while循环检查条件，而是用if，导致虚假唤醒（spurious wakeup）后条件不满足时继续执行，引发逻辑错误。",
+      "在with块外调用wait()或notify()，导致RuntimeError: cannot wait on un-acquired lock。",
+      "使用notify()而不是notify_all()，当多个线程等待不同条件时，可能只唤醒一个线程，而该线程的条件不满足，导致死锁。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

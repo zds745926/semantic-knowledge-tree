@@ -15,5 +15,13 @@
     "description": "HTTP/2: HTTP/2 binary framing, multiplexing. Header compression (HPACK). Server push. Here are some brief explanations and corresponding Python code examples for the concepts mentioned: 1. **Binary Framing**: HTTP/2 uses a binary framing layer to encapsulate data into frames. ```python # Example of creating an HTTP/2 frame in Python using hypothetical functions def create_http2_frame(data): header = b'\\x00\\x05' # Example header, actual values depend on the payload and flags return header + data frame_data = b'This is some example data' binary_frame = create_http2_frame(frame_data) print(binary_frame) ``` 2. **Multiplexing**: HTTP/2 allows multiple streams to be multiplexed over a single TCP connection. ```python # Example of managing multiple streams in Python using hypothetical functions def manage_streams(streams): for stream_id, data in streams.items(): print(f\"Processing stream {stream_id}: {data}\") streams = { 1: b'Stream 1 Data', 2: b'Stream 2 Data' } manage_streams(streams) ``` 3. **Header Compression (HPACK)**: HPACK is used to compress HTTP headers for efficient transmission. ```python # Example of header compression using a simple dictionary and hypothetical functions def hpack_compress(headers): compressed_data = b'\\x01\\x02' # Example compressed data, actual values depend on the implementation return compressed_data headers = { 'Host': 'example.com', 'User-Agent': 'Python HTTP Client' } compressed_headers = hpack_compress(headers) print(compressed_headers) ``` 4. **Server Push**: Server push allows a server to proactively send resources before they are requested by the client. ```python # Example of server push in Python using hypothetical functions def server_push(resource): print(f\"Pushing resource: {resource}\") resource = b'Some resource data' server_push(resource) ``` These examples provide a basic understanding and structure for implementing these concepts, though actual implementations would require more detailed coding based on specific libraries or frameworks."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于HTTP/2协议，它是HTTP协议的重要演进版本，位于TCP/IP协议栈的应用层。HTTP/2的核心改进在于引入了多路复用（Multiplexing）机制，允许在单个TCP连接上同时并行处理多个请求和响应，从而解决了HTTP/1.x中的队头阻塞问题，显著提升了页面加载速度和网络资源利用率。子主题“多路复用”正是HTTP/2的关键特性之一，它通过将HTTP消息分解为独立的帧，并在一个连接上交错传输，实现了高效的并发处理。学习本分支时，建议先理解HTTP/1.x的局限性，再深入掌握HTTP/2的二进制分帧层、流优先级、服务器推送等核心概念，最后通过实践对比HTTP/2与HTTP/1.x的性能差异。",
+  "example_queries": [
+    "HTTP/2的多路复用是如何解决队头阻塞问题的？",
+    "HTTP/2的二进制分帧层与HTTP/1.x的文本格式有何不同？",
+    "如何在实际网站中启用HTTP/2并验证其效果？",
+    "HTTP/2的服务器推送机制如何优化页面加载？",
+    "HTTP/2与HTTP/3在传输层上的主要区别是什么？"
+  ]
 }

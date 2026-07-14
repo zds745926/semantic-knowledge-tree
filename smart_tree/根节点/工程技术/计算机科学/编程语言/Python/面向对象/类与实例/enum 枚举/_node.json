@@ -19,5 +19,39 @@
       "content_preview": "enum 枚举: ```python from enum import Enum, IntEnum, Flag class Color(Enum): RED = 0 GREEN = 1 BLUE = 2 print(Color.RED.name) # Output: RED print(Color.RED.value) # Output: 0 # Using IntEnum for integer-based enums class Priority(IntEnum): HIGH = 1 MEDIUM = 2 LOW = 3 print(Priority.HIGH.value) # Output: 1 # Using Flag to represent bit flags class ColorFlag(Flag): RED = 0b001 GREEN = 0b010 BLUE = 0b100 print(ColorFlag.RED | ColorFlag.GREEN) # Output: <ColorFlag.GREEN|RED: 3> ``` Explanation: - `Enum`: A base class for creating enumerations. - `IntEnum`: An enumeration where members are also integers, allowing them to be used in arithmetic operations. - `Flag`: An enumeration that represents a bit flag. Members can be combined using bitwise OR (`|`) and other logical operators. This translation maintains the technical accuracy of the original text while providing examples in Python for clarity."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cpp_oop_v4",
+      "type": "cross_lang_equivalent"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n枚举（Enum）是一种用于定义一组命名常量的数据类型，每个成员都是唯一的、不可变的值，通常用于表示有限集合中的选项。\n\n## 何时使用\n当需要表示一组固定的、有限的选项（如状态、类型、方向等）时，使用枚举可以提高代码的可读性和可维护性。它比使用字符串或整数常量更安全，能避免拼写错误和无效值。\n\n## 示例\n```Python\nfrom enum import Enum\n\nclass Color(Enum):\n    RED = 1\n    GREEN = 2\n    BLUE = 3\n\nprint(Color.RED)          # Color.RED\nprint(Color.RED.name)     # 'RED'\nprint(Color.RED.value)    # 1\n\n# 遍历\nfor color in Color:\n    print(color)\n```\n\n## 反例\n使用普通常量（如字符串）代替枚举，容易因拼写错误导致难以发现的 bug，例如 if status == 'active' 可能误写为 'activ'。\n\n## 边界条件\n枚举成员的值可以重复，但名称必须唯一；若需强制值唯一，可使用 @unique 装饰器。枚举成员之间不能直接比较大小，但支持身份和相等比较。",
+    "code_pattern": "from enum import Enum\n\nclass Status(Enum):\n    PENDING = 1\n    ACTIVE = 2\n    INACTIVE = 3\n\n# 使用\ndef process(status: Status):\n    if status == Status.ACTIVE:\n        print(\"Active\")\n    elif status == Status.PENDING:\n        print(\"Pending\")\n    else:\n        print(\"Inactive\")\n\nprocess(Status.PENDING)",
+    "common_pitfalls": [
+      "忘记导入 Enum 基类，导致定义的类不是枚举类型，而是普通类。",
+      "枚举成员值重复时不会报错，但遍历时只会保留第一个，容易引发逻辑错误；应使用 @unique 装饰器强制唯一。",
+      "误将枚举成员当作普通变量赋值，如 Status.ACTIVE = 5，会引发 AttributeError，因为枚举成员是只读的。",
+      "在不同模块中定义同名枚举时，直接比较可能因对象不同而失败，应使用 value 或 name 进行比较。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

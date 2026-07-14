@@ -19,5 +19,38 @@
       "content_preview": "Future 对象: The `Future.result()` method blocks until the result is available and then retrieves it. The `done()` and `cancelled()` methods check if the future has completed or been cancelled, respectively. The `add_done_callback` method adds a callback function to be called when the future completes. Here's an example using Python's `concurrent.futures` module: ```python import concurrent.futures def worker(n): return n * n with concurrent.futures.ThreadPoolExecutor() as executor: future = executor.submit(worker, 3) # Blocking call to retrieve the result print(\"Result:\", future.result()) # Check if the future is done or cancelled print(\"Is done:\", future.done()) print(\"Cancelled:\", future.cancelled()) # Add a callback function to be called when the future completes def on_complete(f): print(\"Callback: Future completed with result\", f.result()) future.add_done_callback(on_complete) ``` In this example, `future.result()` blocks until the worker function has completed and prints the result. The `done()` and `cancelled()` methods are used to check the status of the future. A callback function is added using `add_done_callback` which will be called when the future completes."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nFuture 对象是 concurrent.futures 模块中用于表示异步操作结果的占位符，它封装了尚未完成的异步计算，允许通过回调或阻塞等待获取最终结果。\n\n## 何时使用\n当需要提交任务到线程池或进程池并获取其返回值时，Future 对象用于跟踪任务状态（运行中、已完成、已取消）和获取结果。它特别适合需要并发执行多个独立任务并收集结果的场景，如批量网络请求、文件处理或计算密集型任务。\n\n## 示例\n```Python\nfrom concurrent.futures import ThreadPoolExecutor\nimport time\n\ndef task(n):\n    time.sleep(1)\n    return n * n\n\nwith ThreadPoolExecutor(max_workers=2) as executor:\n    future = executor.submit(task, 5)\n    print(f\"任务是否完成: {future.done()}\")\n    result = future.result()\n    print(f\"结果: {result}\")\n```\n\n## 反例\n错误用法：在任务尚未完成时多次调用 future.result() 且不设置超时，可能导致主线程无限阻塞。应始终设置超时参数或先检查 done() 状态。\n\n## 边界条件\n注意：Future 对象不可序列化，不能跨进程传递；若任务抛出异常，future.result() 会重新抛出该异常，需用 try-except 捕获；取消 Future 仅在任务尚未开始执行时有效，已开始的任务无法取消。",
+    "code_pattern": "from concurrent.futures import ThreadPoolExecutor, as_completed\n\ndef worker(arg):\n    # 业务逻辑\n    return arg * 2\n\nwith ThreadPoolExecutor(max_workers=4) as executor:\n    futures = {executor.submit(worker, i): i for i in range(10)}\n    for future in as_completed(futures):\n        try:\n            result = future.result(timeout=5)\n        except Exception as e:\n            print(f\"任务失败: {e}\")",
+    "common_pitfalls": [
+      "调用 future.result() 时未设置 timeout 参数，若任务卡死会导致主线程永久阻塞，应始终指定超时时间。",
+      "在 with 块外访问 Future 对象，因为 with 块结束时执行器会关闭，导致 Future 处于取消状态，无法获取结果。",
+      "忽略 Future 抛出的异常，future.result() 会重新抛出任务中的异常，必须用 try-except 捕获，否则程序崩溃。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

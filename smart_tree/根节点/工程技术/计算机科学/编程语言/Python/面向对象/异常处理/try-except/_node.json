@@ -19,5 +19,30 @@
       "content_preview": "try-except: `try-except-else-finally`. The `except ValueError as e:` block captures a specific exception. Python code example: ```python def safe_conversion(input_str): try: # Attempt to convert the input string to an integer return int(input_str) except ValueError as e: # Handle the case where conversion fails due to non-integer input print(f\"Conversion error: {e}\") else: # This block executes if no exceptions were raised in the try block print(\"Conversion successful!\") finally: # This block always executes, regardless of whether an exception was raised or not print(\"Attempted conversion.\") # Example usage safe_conversion(\"123\") # Should work fine safe_conversion(\"abc\") # Should trigger the except block ``` This example demonstrates how to use `try`, `except`, `else`, and `finally` blocks in Python. The `try` block attempts to convert a string to an integer, the `except` block handles the case where this conversion fails due to non-integer input, the `else` block runs if no exceptions occur, and the `finally` block always executes, indicating that the attempt to convert was made."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_thread_safety_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "deadlock_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\ntry-except 是 Python 中用于捕获和处理异常的结构，允许程序在遇到错误时优雅地恢复或退出，而不是直接崩溃。\n\n## 何时使用\n当代码可能引发异常（如文件不存在、网络超时、类型错误等）且你希望提供备用逻辑或用户友好提示时使用。它也适用于资源清理、重试机制或日志记录场景，避免程序因未处理异常而终止。\n\n## 示例\n```Python\ntry:\n    num = int(input(\"请输入一个整数: \"))\n    result = 10 / num\n    print(f\"结果是 {result}\")\nexcept ValueError:\n    print(\"输入无效，请输入整数\")\nexcept ZeroDivisionError:\n    print(\"除数不能为零\")\nexcept Exception as e:\n    print(f\"发生未知错误: {e}\")\nelse:\n    print(\"没有异常发生\")\nfinally:\n    print(\"程序结束\")\n```\n\n## 反例\n不要使用空的 except 子句（except:）捕获所有异常，这会隐藏错误，使调试困难；也不要在 try 块中放置过多无关代码，应只包裹可能出错的代码行。\n\n## 边界条件\n注意异常继承顺序：子类异常应放在父类之前，否则子类永远不会被捕获；finally 块中的代码无论是否异常都会执行，常用于释放资源；在 except 块中重新抛出异常时使用 raise 而不带参数以保留原始堆栈。",
+    "code_pattern": "try:\n    # 可能引发异常的代码\n    risky_operation()\nexcept SpecificError as e:\n    # 处理特定异常\n    handle_error(e)\nexcept (AnotherError, YetAnotherError) as e:\n    # 处理多个异常\n    handle_multiple(e)\nexcept Exception as e:\n    # 兜底处理\n    log_error(e)\n    raise  # 可选：重新抛出\nelse:\n    # 无异常时执行\n    success_action()\nfinally:\n    # 总是执行（如资源清理）\n    cleanup()",
+    "common_pitfalls": [
+      "使用裸露的 except: 捕获所有异常，包括 SystemExit 和 KeyboardInterrupt，导致程序无法正常退出或中断，应改为 except Exception: 或指定具体异常。",
+      "在 except 块中忘记重新抛出异常（raise），导致错误被静默吞掉，后续调试困难。",
+      "异常处理顺序错误：将父类异常放在子类之前，导致子类异常永远不会被捕获，例如将 Exception 放在 ValueError 前面。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

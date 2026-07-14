@@ -16,5 +16,13 @@
     "description": "控制流: Python control flow includes conditional judgments (if-elif-else) and looping structures (for/while). Python 3.10+ also introduces the match/case pattern matching syntax. Here are brief examples for each: ### Conditional Judgments (if-elif-else) ```python x = 10 if x > 20: print(\"x is greater than 20\") elif x > 10: print(\"x is between 11 and 20\") else: print(\"x is less than or equal to 10\") ``` ### Looping Structures (for/while) ```python # For loop example fruits = [\"apple\", \"banana\", \"cherry\"] for fruit in fruits: print(fruit) # While loop example count = 0 while count < 5: print(count) count += 1 ``` ### Pattern Matching (match/case) - Python 3.10+ ```python value = 42 match value: case 42: print(\"The answer to life, the universe, and everything\") case _: print(\"Not the answer we were looking for\") ``` These examples should give you a clear idea of how these control flow structures work in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "控制流是编程语言中用于控制代码执行顺序和逻辑的核心机制。在Python中，控制流分支主要涵盖条件判断和循环两大子主题。条件判断（如if-elif-else语句）允许程序根据布尔条件选择执行不同的代码块，实现分支逻辑；循环（如for和while语句）则用于重复执行代码块，直到满足特定条件。这两者相辅相成：条件判断常用于控制循环的终止或跳过特定迭代（如结合break、continue），而循环也常嵌套条件判断以处理复杂逻辑。学习路径建议先掌握基础的条件判断语法和逻辑运算符，再学习循环结构，最后通过综合练习（如遍历列表并筛选元素）理解两者的协同。该分支是编写动态、高效Python程序的基础，后续可进一步学习异常处理、生成器等进阶控制流概念。",
+  "example_queries": [
+    "如何在Python中使用if-elif-else进行多条件判断？",
+    "for循环和while循环在Python中的区别是什么？",
+    "如何在循环中使用break和continue控制流程？",
+    "Python中如何实现嵌套循环和条件判断的组合？",
+    "如何用列表推导式简化循环和条件判断？"
+  ]
 }

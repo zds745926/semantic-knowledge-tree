@@ -19,5 +19,30 @@
       "content_preview": "最长公共子序列 LCS: O(mn). DNA sequence alignment/text diff. ### Explanation: - **O(mn)**: This is the time complexity notation indicating that the algorithm's performance scales with the product of two variables, `m` and `n`. In the context of DNA sequence alignment or text diff, `m` and `n` typically represent the lengths of the two sequences being compared. - **DNA Sequence Alignment**: This refers to the process of comparing two DNA sequences to identify regions of similarity that may indicate functional, structural, or evolutionary relationships between the sequences. It is a fundamental task in bioinformatics. - **Text Diff**: This term refers to the comparison of two versions of a text document to highlight differences between them. It's commonly used in version control systems and text editors. ### Python Code Example for Text Diff: Here’s a simple example using Python to perform a basic text diff: ```python def text_diff(text1, text2): # Split texts into lines lines1 = text1.splitlines() lines2 = text2.splitlines() # Initialize the result with differences diff_lines = [] i, j = 0, 0 while i < len(lines1) and j < len(lines2): if lines1[i] == lines2[j]: # Lines match, move both pointers i += 1 j += 1 else: # Lines differ, add the differing line to diff_lines diff_lines.append(f\"Line {i+1}: {lines1[i]}\") diff_lines.append(f\"Line {j+1}: {lines2[j]}\") i += 1 j += 1 # Add remaining lines from both texts if any while i < len(lines1): diff_lines.append(f\"Only in original: Line {i+1}: {lines1[i]}\") i += 1 while j < len(lines2): diff_lines.append(f\"Only in modified: Line {j+1}: {lines2[j]}\") j += 1 return \"\\n\".join(diff_lines) # Example usage text1 = \"Line 1\\nLine 2\\nLine 3\" text2 = \"Line 1\\nLine 4\\nLine 3\" print(text_diff(text1, text2)) ``` This code defines a simple function `text_diff` that compares two texts line by line and outputs the differences."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "bst_search_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n最长公共子序列（LCS）是指在两个或多个序列中，按原顺序出现但不一定连续的最长子序列。它不同于最长公共子串，后者要求连续。LCS 问题旨在找出所有给定序列共有的最长子序列。\n\n## 核心要点\n- 动态规划解法：通过构建二维 DP 表，记录子问题的最优解，状态转移方程为 dp[i][j] = dp[i-1][j-1] + 1（若字符相等）或 max(dp[i-1][j], dp[i][j-1])（若不等）。\n- 时间复杂度：通常为 O(mn)，其中 m 和 n 为两序列长度，空间可优化至 O(min(m,n))。\n- 不唯一性：LCS 可能有多条，算法通常只返回长度或一条具体序列。\n- 子序列特性：子序列不要求连续，因此 LCS 能反映序列间的整体相似性。\n\n## 应用场景\nLCS 广泛应用于生物信息学中的 DNA 或蛋白质序列比对，用于识别基因相似性。在文本比较工具（如 diff）中，LCS 用于找出文件间的最长公共内容，辅助版本控制。此外，在自然语言处理中，LCS 可用于抄袭检测或摘要生成。\n\n## 相关概念\n- 最长公共子串：要求连续，通常用后缀树或动态规划求解，与 LCS 问题不同。\n- 编辑距离：衡量两序列差异，可通过 LCS 长度推导：编辑距离 = m + n - 2 * LCS 长度。\n- 动态规划：LCS 是经典 DP 问题，其状态转移和表格构建方法可推广到其他序列比对问题。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

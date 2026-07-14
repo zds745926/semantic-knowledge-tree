@@ -16,5 +16,13 @@
     "description": "TCP 可靠传输: TCP achieves reliable transmission through sequence numbers, acknowledgment, retransmission timeout, and sliding window mechanism. Python code example for understanding the sliding window concept (this is a simplified representation): ```python class SlidingWindow: def __init__(self, window_size): self.window_size = window_size self.buffer = [] def send_data(self, data): # Simulate sending data print(f\"Sending: {data}\") self.buffer.append(data) if len(self.buffer) > self.window_size: self.buffer.pop(0) def receive_ack(self, sequence_number): # Simulate receiving an acknowledgment print(f\"Received ACK for sequence number: {sequence_number}\") self.buffer = [item for item in self.buffer if item != sequence_number] # Example usage sw = SlidingWindow(window_size=3) sw.send_data(10) sw.send_data(20) sw.send_data(30) sw.receive_ack(20) # Acknowledgment for data with sequence number 20 ``` This code provides a basic simulation of the sliding window mechanism, where data is sent and acknowledgments are received to manage the transmission buffer."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于TCP协议如何实现可靠传输，这是传输层保证数据无差错、不丢失、不重复且按序到达的核心机制。TCP可靠传输主要依赖序列号、确认应答、超时重传、校验和等基础手段，而流量控制与滑动窗口则是其关键子主题。流量控制通过接收方通告窗口大小来调节发送速率，防止接收方缓冲区溢出；滑动窗口机制则允许发送方在未收到确认前连续发送多个数据段，从而提升信道利用率。两者紧密配合：滑动窗口的大小由流量控制动态调整，同时窗口管理也直接影响重传策略（如快速重传）的效率。学习本分支时，建议先理解TCP报文段结构与序列号作用，再掌握滑动窗口的工作原理，最后深入流量控制的实现（如窗口关闭、糊涂窗口综合征）。掌握这些内容后，可进一步探索拥塞控制（与流量控制不同但易混淆）及TCP性能优化。",
+  "example_queries": [
+    "TCP滑动窗口的大小是如何动态变化的？",
+    "流量控制与拥塞控制有什么区别？",
+    "什么是糊涂窗口综合征？如何避免？",
+    "TCP如何通过序列号和确认应答实现可靠传输？",
+    "快速重传与超时重传在什么情况下触发？"
+  ]
 }

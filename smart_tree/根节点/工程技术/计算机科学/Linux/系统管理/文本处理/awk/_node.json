@@ -19,5 +19,34 @@
       "content_preview": "awk: \"awk '{print $1,$NF}' field processing. Conditional statistics and reports.\" Explanation of the technical term with a Python code example: The `awk` command in the original text is used for parsing and transforming structured data, particularly in text files. The provided `awk` script `{print $1,$NF}` prints the first field (`$1`) and the last field (`$NF`, where `N` is the number of fields) of each line. In Python, a similar functionality can be achieved using the `csv` module or regular expressions. Here's an example: ```python import csv # Sample data as a list of lists (rows) data = [ [\"Name\", \"Age\", \"City\"], [\"Alice\", \"30\", \"New York\"], [\"Bob\", \"25\", \"Los Angeles\"] ] # Process each row and print the first and last column values for row in data[1:]: # Skip header row print(row[0], row[-1]) # Output: # Alice New York # Bob Los Angeles ``` This Python code processes a list of lists (similar to rows in an `awk` script) and prints the first and last elements of each sublist, which corresponds to the functionality of the provided `awk` command."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_csv_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_str_methods_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "tar_gzip_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_glob_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nawk是一种强大的文本处理工具和编程语言，专门用于在Linux/Unix系统中对结构化文本（如表格数据）进行模式扫描、字段提取和报告生成。它逐行读取输入，根据用户定义的模式和动作处理数据，尤其擅长处理以空格或制表符分隔的列式文件。\n\n## 核心要点\n- **字段分割**：awk自动将每行按分隔符（默认空白符）分割成多个字段，通过$1、$2等变量访问，极大简化列数据提取。\n- **模式-动作结构**：awk脚本由模式（如正则表达式或条件表达式）和动作（如打印、计算）组成，仅当模式匹配时执行动作，实现灵活过滤。\n- **内置变量**：提供NR（行号）、NF（字段数）、FS（字段分隔符）等内置变量，便于控制处理逻辑和输出格式。\n- **关联数组**：支持以字符串为索引的数组，可用于统计、去重等复杂数据聚合操作。\n- **流程控制**：包含if-else、while、for等语句，允许编写多行脚本实现高级数据处理逻辑。\n\n## 应用场景\nawk常用于日志分析（如提取特定时间段的访问记录）、系统监控（如从/proc/meminfo提取内存使用率）、数据报表生成（如按部门汇总销售金额）以及快速格式化文本（如将CSV转换为表格）。它特别适合处理规则性强的列式数据，且无需编译即可在命令行直接使用。\n\n## 相关概念\nawk与sed、grep并称为Linux文本处理三剑客，但awk更侧重于结构化数据的计算和格式化，而sed擅长流编辑，grep专注模式匹配。awk的语法受C语言影响，其数组和字符串处理能力与Perl有相似之处，但更轻量。在复杂场景中，awk常与管道、重定向结合，或嵌入shell脚本实现自动化任务。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

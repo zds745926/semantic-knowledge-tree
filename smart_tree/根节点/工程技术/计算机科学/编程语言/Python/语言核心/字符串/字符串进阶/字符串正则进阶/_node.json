@@ -19,5 +19,27 @@
       "content_preview": "字符串正则进阶: re.match/re.search/re.findall/re.sub. Capturing groups () and non-capturing groups (?:). In regular expressions used in programming, `re.match`, `re.search`, `re.findall`, and `re.sub` are commonly used functions for pattern matching and text manipulation. - **re.match**: This function attempts to apply the regex at the beginning of the string. If it matches, a match object is returned; otherwise, None is returned. ```python import re # Example: Match 'abc' at the start of a string result = re.match(r'^abc', 'abcdef') if result: print(\"Match found:\", result.group()) else: print(\"No match\") ``` - **re.search**: This function scans through the string, looking for any location where the regex matches. It returns a match object or None. ```python import re # Example: Find 'abc' anywhere in the string result = re.search(r'abc', 'abcdef') if result: print(\"Match found:\", result.group()) else: print(\"No match\") ``` - **re.findall**: This function returns all non-overlapping matches of pattern in string, as a list of strings. The string is scanned left-to-right, and matches are returned in the order found. ```python import re # Example: Find all occurrences of 'abc' in the string result = re.findall(r'abc', 'abcdef abc def') print(\"Matches found:\", result) ``` - **re.sub**: This function replaces matched patterns with a specified replacement. It returns the modified string. ```python import re # Example: Replace all occurrences of 'abc' with 'def' result = re.sub(r'abc', 'def', 'abcdef abc def') print(\"Modified string:\", result) ``` - **Capturing groups ()**: These are used to capture a part of the matched text. The captured group can be referenced later using \\1, \\2, etc. ```python import re # Example: Capture and replace 'abc' with its uppercase version result = re.sub(r'(abc)', lambda x: x.group().upper(), 'abcdef abc def') print(\"Modified string:\", result) ``` - **Non-capturing groups (?:)**: These are used to group parts of a regex without capturing them. They can be useful for making the pattern more readable or for using in look-ahead/look-behind assertions. ```python import re # Example: Match 'abc' but do not capture it result = re.search(r'(?:abc)', 'abcdef abc def') if result: print(\"Match found:\", result.group()) else: print(\"No match\") ``` These functions and concepts are fundamental in text processing and pattern matching tasks in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_fnmatch_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n字符串正则进阶是指在Python中使用`re`模块进行复杂模式匹配、替换、分割和编译，支持分组、前瞻、后顾、非贪婪匹配等高级特性，以灵活高效地处理文本。\n\n## 何时使用\n当需要从文本中提取结构化信息（如邮箱、电话号码）、进行条件替换或验证输入格式时，正则进阶技术尤为适用。它特别适合处理嵌套或重复模式，以及需要性能优化的场景，例如日志解析、数据清洗和表单校验。\n\n## 示例\n```Python\nimport re\n\n# 提取所有邮箱地址，支持点号和连字符\npattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}'\ntext = \"请联系 support@example.com 或 admin@my-site.org。\"\nemails = re.findall(pattern, text)\nprint(emails)  # ['support@example.com', 'admin@my-site.org']\n\n# 使用命名分组和前瞻后顾\npattern2 = r'(?P<name>\\w+)\\s+(?=\\d+)'  # 单词后紧跟数字\ntext2 = \"Tom 25, Jerry 30\"\nmatches = re.finditer(pattern2, text2)\nfor m in matches:\n    print(m.group('name'))  # Tom, Jerry\n```\n\n## 反例\n错误地使用贪婪匹配导致匹配过多内容，例如用`<.*>`匹配HTML标签时，会匹配到整个字符串而非单个标签。\n\n## 边界条件\n注意转义特殊字符（如`.`要写成`\\.`）；使用原始字符串（`r'...'`）避免反斜杠混淆；编译正则时考虑`re.IGNORECASE`等标志；处理空字符串或None时需先检查。",
+    "code_pattern": "import re\n\ndef extract_patterns(text, pattern, flags=0):\n    \"\"\"使用正则提取所有匹配项\"\"\"\n    return re.findall(pattern, text, flags)\n\ndef replace_pattern(text, pattern, replacement, count=0, flags=0):\n    \"\"\"替换匹配内容\"\"\"\n    return re.sub(pattern, replacement, text, count, flags)\n\ndef split_text(text, pattern, maxsplit=0, flags=0):\n    \"\"\"按模式分割文本\"\"\"\n    return re.split(pattern, text, maxsplit, flags)\n\n# 示例用法\nif __name__ == '__main__':\n    sample = \"Hello, world! Email: test@example.com\"\n    email_pat = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}'\n    print(extract_patterns(sample, email_pat))\n    print(replace_pattern(sample, r'\\s+', '_'))\n    print(split_text(sample, r'[,\\s!]+'))",
+    "common_pitfalls": [
+      "忘记使用原始字符串（r'...'）导致反斜杠被解释为转义字符，例如`'\\d'`实际匹配数字d而非数字。",
+      "贪婪匹配导致匹配范围过大，例如用`<.*>`匹配HTML标签时，会匹配从第一个<到最后一个>之间的所有内容，应改用`<.*?>`。",
+      "未考虑多行模式，导致`^`和`$`只匹配字符串首尾而非行首行尾，应添加`re.MULTILINE`标志。",
+      "忽略特殊字符的转义，如用`.`匹配字面点号时未写成`\\.`，导致匹配任意字符。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,35 @@
       "content_preview": "gather: `asyncio.gather(task1, task2)` runs multiple coroutines concurrently. It returns a list of results. If an exception occurs in any of the tasks, it will be included in the result list unless `return_exceptions` is set to `False`. Python code example: ```python import asyncio async def my_coroutine(i): await asyncio.sleep(1) # Simulate some async operation return i * 2 # Run two coroutines concurrently tasks = [my_coroutine(i) for i in range(3)] try: results = asyncio.gather(*tasks) done, pending = await results print(done) # Output: [0, 2, 4] except Exception as e: print(f\"An exception occurred: {e}\") ``` In this example, `asyncio.gather` is used to run three coroutines concurrently. The results are collected in a list and printed out."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n`asyncio.gather` 是 Python 异步编程中用于并发运行多个可等待对象（如协程、Future、Task）的函数，它会等待所有传入的协程执行完毕，并按照传入顺序返回结果列表。\n\n## 何时使用\n当需要同时启动多个独立的异步操作（如并发 HTTP 请求、数据库查询、文件读写），并等待所有操作完成后统一处理结果时，使用 `gather`。它比逐个 `await` 更高效，因为多个协程可以并发执行，而不是串行等待。\n\n## 示例\n```Python\nimport asyncio\n\nasync def fetch_data(id: int) -> str:\n    await asyncio.sleep(1)  # 模拟 IO 操作\n    return f\"Data from {id}\"\n\nasync def main():\n    results = await asyncio.gather(\n        fetch_data(1),\n        fetch_data(2),\n        fetch_data(3),\n    )\n    print(results)  # 输出: ['Data from 1', 'Data from 2', 'Data from 3']\n\nasyncio.run(main())\n```\n\n## 反例\n错误地传入普通函数而非协程，或忘记 `await` gather 的结果，导致协程未执行或返回协程对象。例如：`asyncio.gather(func1(), func2())` 但未 `await`，则 gather 返回一个协程对象，不会实际运行。\n\n## 边界条件\n- 如果某个协程抛出异常，`gather` 默认会立即抛出该异常，其他协程可能被取消。可通过 `return_exceptions=True` 参数让异常作为结果返回。\n- 传入空列表时，`gather` 返回空列表。\n- 如果传入的是已创建的 Task 对象，gather 不会重新调度它们，但会等待它们完成。",
+    "code_pattern": "import asyncio\n\nasync def worker(name: str, delay: float) -> str:\n    await asyncio.sleep(delay)\n    return f\"{name} done\"\n\nasync def main():\n    tasks = [worker(f\"task{i}\", i) for i in range(3)]\n    results = await asyncio.gather(*tasks, return_exceptions=False)\n    print(results)\n\nif __name__ == \"__main__\":\n    asyncio.run(main())",
+    "common_pitfalls": [
+      "忘记 await gather 的返回值：直接调用 asyncio.gather(...) 而不 await，导致协程未执行，返回的是协程对象而非结果。",
+      "误传普通函数或已运行的协程：传入普通函数（非协程函数调用）或已经 await 过的协程，会导致 TypeError 或协程已运行完毕。",
+      "未处理异常导致部分结果丢失：默认情况下，任何一个协程抛出异常都会导致 gather 立即抛出，其他协程可能被取消，应使用 return_exceptions=True 并检查结果中的异常。",
+      "在 gather 中混用 Task 和协程：如果传入已创建的 Task，gather 不会重新创建 Task，但会等待其完成；如果传入协程，gather 会自动创建 Task。混用时需注意 Task 可能已被其他代码 await 或取消。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -23,5 +23,13 @@
     "description": "异步编程: Async/await coroutines are a model for single-threaded concurrency, suitable for high I/O concurrency. Here is a brief Python code example to illustrate the use of `async` and `await`: ```python import asyncio # Define an asynchronous function using async/await async def fetch_data(): print(\"Start fetching\") await asyncio.sleep(2) # Simulate an I/O operation print(\"Data fetched\") return {\"data\": 123} # Main function to run the coroutine async def main(): result = await fetch_data() # Wait for the coroutine to complete print(result) # Run the event loop asyncio.run(main()) ``` In this example, `fetch_data` is an asynchronous function that uses `await` to wait for an I/O operation (simulated by `asyncio.sleep(2)`). The `main` function demonstrates how to call and await the completion of an async function."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Python异步编程的核心概念与工具，包括async/await语法、协程（coroutine）、事件循环（event loop）、Task任务以及asyncio库中的高级API如gather、as_completed、wait和Lock。这些子主题相互关联：async/await是定义协程的基础语法，协程是异步编程的基本单元，事件循环负责调度和执行协程，Task则是对协程的封装，使其能被事件循环管理并支持并发执行。gather、as_completed、wait等函数提供了对多个Task进行组合、等待和结果收集的便利方式，而asyncio Lock则解决了异步环境下的资源竞争问题。学习路径建议从理解事件循环和协程概念入手，掌握async/await写法，然后学习Task的创建与调度，再通过gather等工具实现并发控制，最后了解同步原语如Lock以处理共享资源。",
+  "example_queries": [
+    "Python中async/await与普通函数有什么区别？",
+    "如何用asyncio.gather同时运行多个协程并获取结果？",
+    "asyncio中Task和Future的关系是什么？",
+    "在异步编程中如何使用Lock避免数据竞争？",
+    "as_completed和wait在等待多个任务时有什么不同？"
+  ]
 }

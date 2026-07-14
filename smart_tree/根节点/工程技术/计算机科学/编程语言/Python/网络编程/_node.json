@@ -16,5 +16,13 @@
     "description": "网络编程: Python network programming encompasses the built-in libraries urllib and third-party libraries such as requests and aiohttp. Here are brief examples for each: 1. **Using `urllib`**: ```python import urllib.request # Fetching a web page content with urllib.request.urlopen('https://www.example.com') as response: html = response.read() print(html) ``` 2. **Using `requests`**: ```python import requests # Sending a GET request to fetch data from an API response = requests.get('https://api.example.com/data') if response.status_code == 200: data = response.json() print(data) ``` 3. **Using `aiohttp` for asynchronous operations**: ```python import aiohttp async def fetch(session, url): async with session.get(url) as response: return await response.text() async def main(): async with aiohttp.ClientSession() as session: html = await fetch(session, 'https://www.example.com') print(html) # Running the asynchronous function import asyncio asyncio.run(main()) ``` These examples illustrate basic usage of each library for network operations in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python网络编程，涵盖从底层socket API到高层requests库的完整技术栈。socket API提供对TCP/UDP协议的底层控制，适用于构建自定义协议、高性能服务器或需要精细控制网络通信的场景；而requests库则封装了HTTP协议的细节，提供简洁、人性化的接口，用于快速开发Web客户端、API调用和爬虫。两者之间的关系是：requests库底层基于urllib3，而urllib3又使用socket实现，因此理解socket有助于深入掌握requests的工作原理和调试网络问题。学习路径建议：先掌握socket编程基础（包括TCP/UDP、阻塞与非阻塞、多路复用），再学习requests库的常用功能（会话、认证、代理、超时等），最后通过实际项目（如简易HTTP服务器、REST API客户端）将两者融会贯通。",
+  "example_queries": [
+    "如何使用Python的socket模块创建一个简单的TCP服务器？",
+    "requests库中Session对象的作用是什么？如何利用它保持会话？",
+    "在Python中，如何通过socket实现非阻塞I/O？",
+    "requests库如何处理重定向和超时？",
+    "如何用Python的socket和requests库实现一个简易的HTTP客户端？"
+  ]
 }

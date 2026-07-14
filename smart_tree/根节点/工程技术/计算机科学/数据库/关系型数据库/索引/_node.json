@@ -15,5 +15,13 @@
     "description": "索引: Index is an auxiliary data structure used to accelerate data queries, with core types including B+ trees and hash indexes. Python code examples: For a B+ tree index: ```python from btree import BTree # Initialize a B+ tree b_plus_tree = BTree(order=5) # Insert some data b_plus_tree[1] = 'one' b_plus_tree[2] = 'two' b_plus_tree[3] = 'three' # Query the index print(b_plus_tree[2]) # Output: two ``` For a hash index: ```python from collections import defaultdict # Initialize a hash index (using a dictionary) hash_index = defaultdict(list) # Insert some data hash_index['one'].append(1) hash_index['two'].append(2) hash_index['three'].append(3) # Query the index print(hash_index['two']) # Output: [2] ``` Note: The `btree` module used in the B+ tree example is a fictional module for demonstration purposes. In actual Python programming, you would typically use database-specific libraries or third-party packages that provide B+ tree implementations."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于关系型数据库中的索引技术，索引是数据库性能优化的核心手段之一。索引类型子主题涵盖B+树索引、哈希索引、全文索引、空间索引、位图索引等，每种索引基于不同的数据结构和应用场景设计。B+树索引是最常用的索引类型，支持范围查询和排序；哈希索引适用于等值查询，但不支持范围操作；全文索引专为文本搜索优化；空间索引用于地理数据；位图索引适合低基数列。学习路径建议从B+树索引的原理入手，理解其平衡树结构和页分裂机制，然后对比哈希索引的适用场景，再扩展到全文和空间索引等特殊用途。掌握索引类型有助于根据查询模式选择最优索引，避免全表扫描，提升数据库读写效率。本分支还涉及索引的创建、维护及性能调优策略。",
+  "example_queries": [
+    "B+树索引和哈希索引分别适用于哪些查询场景？",
+    "如何为经常进行范围查询的列选择合适的索引类型？",
+    "全文索引在MySQL中如何实现中文分词和搜索？",
+    "空间索引（如R树）在地理信息系统中的工作原理是什么？",
+    "位图索引在数据仓库中如何优化低基数列的查询？"
+  ]
 }

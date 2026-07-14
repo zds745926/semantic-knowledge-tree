@@ -19,5 +19,26 @@
       "content_preview": "原型链: JavaScript Inheritance Mechanism. `__proto__` points to the prototype. Property lookup traverses up the prototype chain. Here's a brief explanation with a Python code example to illustrate: In JavaScript, objects inherit properties and methods from their prototypes through a prototype chain. The `__proto__` property allows you to access an object's prototype directly. ```python # Example in Python (Note: Python uses a different inheritance model but can still demonstrate the concept) class Animal: def __init__(self, name): self.name = name def sound(self): return \"Some sound\" class Dog(Animal): def __init__(self, name): super().__init__(name) # Python uses `super()` to call the parent class constructor def sound(self): return \"Woof!\" # Creating an instance of Dog dog = Dog(\"Buddy\") print(dog.name) # Output: Buddy print(dog.sound()) # Output: Woof! # In JavaScript, you could do something similar with prototypes: class Animal: pass class Dog(Animal): pass Dog.prototype = Object.create(Animal.prototype) Dog.prototype.constructor = Dog dog = new Dog() ``` In the Python example, `Dog` inherits from `Animal`, and we can see how methods are passed down through inheritance. While Python uses a different mechanism (new-style classes with `super()`), it still demonstrates the concept of method overriding and property inheritance."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cpp_oop_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n原型链是 JavaScript 中实现继承的一种机制，每个对象都有一个内部链接指向其原型对象，当访问对象的属性或方法时，如果对象本身没有，则会沿着原型链向上查找，直到找到或到达链的末端（null）。\n\n## 何时使用\n原型链用于在对象之间共享属性和方法，减少内存占用并实现代码复用。它特别适合在需要创建大量相似对象或实现类式继承的场景中使用，例如定义构造函数并在其原型上添加共享方法。\n\n## 示例\n```JavaScript\nfunction Animal(name) {\n  this.name = name;\n}\nAnimal.prototype.speak = function() {\n  console.log(this.name + ' makes a sound.');\n};\n\nfunction Dog(name, breed) {\n  Animal.call(this, name);\n  this.breed = breed;\n}\nDog.prototype = Object.create(Animal.prototype);\nDog.prototype.constructor = Dog;\nDog.prototype.bark = function() {\n  console.log(this.name + ' barks.');\n};\n\nconst dog = new Dog('Rex', 'Labrador');\ndog.speak(); // Rex makes a sound.\ndog.bark();  // Rex barks.\n```\n\n## 反例\n错误地直接修改内置对象的原型（如 Array.prototype），可能导致全局污染和不可预期的行为，例如在所有数组上添加非标准方法，会破坏代码的可维护性和兼容性。\n\n## 边界条件\n原型链的末端是 null，如果查找的属性在整条链上都不存在，则返回 undefined。另外，避免过长的原型链，否则会影响属性查找性能，并可能导致代码难以调试。",
+    "code_pattern": "function Parent(name) {\n  this.name = name;\n}\nParent.prototype.method = function() {\n  return this.name;\n};\n\nfunction Child(name, extra) {\n  Parent.call(this, name);\n  this.extra = extra;\n}\nChild.prototype = Object.create(Parent.prototype);\nChild.prototype.constructor = Child;\nChild.prototype.childMethod = function() {\n  return this.extra;\n};\n\nconst instance = new Child('test', 'data');",
+    "common_pitfalls": [
+      "忘记设置 constructor 属性：在将子类的 prototype 设置为父类实例或 Object.create 后，子类的 constructor 会丢失，导致 instanceof 和类型判断出错，应手动赋值 Child.prototype.constructor = Child。",
+      "直接使用 new Parent() 设置原型：使用 Child.prototype = new Parent() 会调用父类构造函数，可能带来不必要的副作用（如设置实例属性），应优先使用 Object.create(Parent.prototype) 来避免。",
+      "在原型上存储可变对象：在原型上定义数组或对象属性时，所有实例共享同一引用，修改一个实例会影响其他实例，应避免在原型上放置可变数据，或在构造函数中初始化。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

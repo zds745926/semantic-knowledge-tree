@@ -19,5 +19,22 @@
       "content_preview": "Docker 容器: Mirror running instances. run/exec/stop/rm. Port mapping -p. Volume mounting -v. Here are the corresponding brief Python code examples for some of these concepts, assuming we're working with Docker in a Python environment using the `docker` library: ```python # Importing the docker library import docker client = docker.from_env() # Running an instance container = client.containers.run(\"nginx\", detach=True) print(container.id) # Executing a command inside the container exec_id = client.containers.get(container.id).exec_run(\"echo 'Hello, World!'\") print(exec_id.output.decode()) # Stopping the container client.containers.get(container.id).stop() # Removing the container client.containers.get(container.id).remove() # Port mapping -p container_with_ports = client.containers.run(\"nginx\", ports={\"80/tcp\": 8080}, detach=True) print(container_with_ports.ports) # Volume mounting -v from docker.models.mounts import Mount mount = Mount(source=\"my_volume\", target=\"/data\", type=\"bind\") container_with_volumes = client.containers.run(\"nginx\", mounts=[mount], detach=True) print(container_with_volumes.attrs[\"Mounts\"]) ``` Note: The `docker` library is a Python wrapper for the Docker API and must be installed in your environment (`pip install docker`)."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nDocker 容器是 Docker 技术中的核心运行单元，它是一个轻量级、可执行的软件包，包含了应用程序及其所有依赖项（如代码、运行时、系统工具、库和设置）。容器通过操作系统级虚拟化技术实现隔离，确保应用在任何环境中都能一致地运行，且启动速度极快，资源占用远小于传统虚拟机。\n\n## 核心要点\n1. **轻量级与高效**：容器共享宿主操作系统的内核，无需模拟完整操作系统，因此启动时间通常为毫秒级，内存和磁盘占用显著低于虚拟机。\n2. **可移植性**：容器镜像封装了应用及其依赖，可在任何支持 Docker 的平台上（如开发机、测试服务器、生产环境）无缝运行，消除了“在我机器上能跑”的问题。\n3. **隔离性**：每个容器拥有独立的文件系统、网络栈和进程空间，通过 Linux 命名空间（Namespace）和控制组（Cgroups）实现资源隔离与限制，保障应用安全。\n4. **版本控制与复用**：容器镜像支持分层存储和版本管理，可通过 Dockerfile 构建，并利用 Docker Hub 等仓库共享和复用基础镜像。\n5. **生命周期管理**：容器可被快速创建、启动、停止、删除和迁移，配合 Docker Compose 或 Kubernetes 等编排工具，能轻松管理大规模容器集群。\n\n## 应用场景\nDocker 容器广泛应用于微服务架构，将复杂应用拆分为多个独立容器，便于独立开发、部署和扩展。它也常用于持续集成/持续部署（CI/CD）流程，确保构建、测试和生产环境的一致性。此外，容器化技术适用于快速原型开发、多租户隔离、以及混合云或多云环境下的应用迁移。\n\n## 相关概念\nDocker 容器与 **Docker 镜像** 紧密相关：镜像是只读模板，容器是镜像的运行实例，类似于面向对象编程中“类”与“对象”的关系。**Docker 引擎** 是管理容器的运行时环境，而 **Docker Compose** 和 **Kubernetes** 则用于编排多容器应用。与 **虚拟机** 相比，容器更轻量但隔离性稍弱，因为容器共享宿主机内核，而虚拟机拥有独立内核。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

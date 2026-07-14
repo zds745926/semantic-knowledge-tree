@@ -15,5 +15,13 @@
     "description": "变量作用域: Python variable resolution follows the LEGB rule: Local → Enclosing → Global → Built-in. To provide a brief Python code example that illustrates this concept: ```python # Define a global variable global_var = \"I am global\" def outer_function(): # Define an enclosing (non-local) variable enclosing_var = \"I am enclosing\" def inner_function(): # Define a local variable local_var = \"I am local\" print(local_var) print(enclosing_var) print(global_var) inner_function() outer_function() ``` In this example: - `local_var` is a local variable within the `inner_function`. - `enclosing_var` is an enclosing (non-local) variable in relation to `inner_function`. - `global_var` is a global variable that can be accessed from any function. When you run this code, it will output: ``` I am local I am enclosing I am global ```"
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python语言中变量作用域的核心概念与机制，涵盖变量作用域的定义、分类、查找规则以及实际应用。变量作用域决定了变量在程序中的可见性和生命周期，是理解Python代码行为、避免命名冲突和实现闭包、装饰器等高级特性的基础。子主题包括局部作用域（Local）、嵌套函数中的闭包作用域（Enclosing）、全局作用域（Global）以及内置作用域（Built-in），它们共同构成了LEGB规则——Python在访问变量时按照Local、Enclosing、Global、Built-in的顺序逐层查找。学习路径建议从理解局部与全局作用域的区别入手，然后通过嵌套函数掌握闭包作用域，最后结合内置函数和模块理解内置作用域。掌握LEGB规则有助于正确使用global和nonlocal关键字，避免变量污染，并深入理解函数式编程和装饰器原理。本分支是Python进阶学习的关键环节，为后续学习模块、包、面向对象编程中的属性查找等概念奠定基础。",
+  "example_queries": [
+    "在Python中，变量作用域的查找顺序是什么？请解释LEGB规则。",
+    "如何在嵌套函数中修改外层函数的变量？请说明nonlocal关键字的用法。",
+    "全局变量和局部变量同名时，在函数内部如何访问全局变量？",
+    "Python内置函数如print()的作用域属于哪一层？如何查看所有内置函数？",
+    "闭包是如何利用作用域规则实现状态保持的？请举例说明。"
+  ]
 }

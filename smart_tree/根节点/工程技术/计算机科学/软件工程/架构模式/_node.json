@@ -16,5 +16,13 @@
     "description": "架构模式: Architectural patterns serve as the blueprint for the top-level design of software systems. To provide a more comprehensive explanation and include a relevant Python code example, let's consider an architectural pattern such as the Singleton pattern. The Singleton pattern ensures that a class has only one instance, and provides a global point of access to it. Here is a brief Python implementation of the Singleton pattern: ```python class Singleton: _instance = None @staticmethod def getInstance(): \"\"\" Static method to fetch the current instance.\"\"\" if Singleton._instance == None: Singleton() return Singleton._instance def __init__(self): \"\"\" Virtually private constructor. \"\"\" if Singleton._instance != None: raise Exception(\"This class is a singleton!\") else: Singleton._instance = self # Usage if __name__==\"__main__\": # Attempting to create multiple instances will fail try: s1 = Singleton() except Exception as e: print(e) s2 = Singleton.getInstance() print(s2 is s1) # This should output True, indicating that both references point to the same instance. ``` This code demonstrates how the Singleton pattern can be implemented in Python to ensure that only one instance of a class exists and provide a global access point."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "架构模式是软件工程中用于解决系统设计问题的通用、可复用的方案。本分支聚焦于两种关键的分布式系统架构模式：微服务和事件驱动架构。微服务架构将应用拆分为一组小型、独立的服务，每个服务围绕特定业务能力构建，可独立部署、扩展和维护。事件驱动架构则强调组件之间通过异步事件进行通信，实现松耦合和高响应性。两者并非互斥，而是相辅相成：微服务常通过事件驱动机制实现服务间的异步协作，从而提升系统的弹性、可扩展性和实时处理能力。学习本分支，建议先理解单体架构的局限性，再掌握微服务的拆分原则、服务发现、API网关等核心概念，随后学习事件驱动架构的基本模式（如事件通知、事件溯源、CQRS），最后探索两者结合的最佳实践，如使用消息队列（Kafka、RabbitMQ）实现服务间异步通信。掌握这些模式有助于设计高可用、可维护的现代云原生系统。",
+  "example_queries": [
+    "微服务架构与单体架构相比有哪些优缺点？",
+    "事件驱动架构如何实现服务间的异步通信？",
+    "在微服务中如何保证数据一致性？",
+    "如何选择消息队列（如Kafka、RabbitMQ）来实现事件驱动？",
+    "事件溯源和CQRS模式在什么场景下适用？"
+  ]
 }

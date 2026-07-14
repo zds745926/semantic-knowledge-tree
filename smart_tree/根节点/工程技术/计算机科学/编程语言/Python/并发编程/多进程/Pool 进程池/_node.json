@@ -19,5 +19,38 @@
       "content_preview": "Pool 进程池: Pool.map/apply/starmap. Process reuse. map is unordered/apply is ordered. Here are brief explanations and corresponding Python code examples for each: 1. **`Pool.map()`**: - This function applies a given function to all items in an iterable argument, as if calling the function a pool of workers. - The results are returned in a list, but not necessarily in the order you might expect because it processes tasks concurrently. ```python from multiprocessing import Pool def f(x): return x * x with Pool(processes=4) as p: result = p.map(f, [1, 2, 3]) print(result) # Output: [1, 4, 9] or any other order ``` 2. **`Pool.apply()`**: - This function submits a task to the process pool and waits for the result. - The results are returned in the order they were submitted. ```python from multiprocessing import Pool def f(x): return x * x with Pool(processes=4) as p: result = p.apply(f, [2]) print(result) # Output: 4 ``` 3. **`Pool.starmap()`**: - This function is similar to `map()`, but it works on tuples of arguments. - It applies the function to each tuple in the iterable argument. ```python from multiprocessing import Pool def f(x, y): return x + y with Pool(processes=4) as p: result = p.starmap(f, [(1, 2), (3, 4)]) print(result) # Output: [3, 7] ``` These examples illustrate the differences in how `map`, `apply`, and `starmap` functions work with multiprocessing pools."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nPool 进程池是 Python `multiprocessing` 模块提供的一种用于管理多个子进程的机制，它预先创建一组工作进程，并将任务分配给这些进程执行，从而避免频繁创建和销毁进程的开销。\n\n## 何时使用\n当需要并行执行大量独立任务（如 CPU 密集型计算、批量 I/O 操作）时，使用 Pool 可以显著提升性能。它特别适用于任务数量远大于 CPU 核心数的情况，因为 Pool 会自动管理任务队列和进程复用。\n\n## 示例\n```Python\nimport multiprocessing\n\ndef square(x):\n    return x * x\n\nif __name__ == '__main__':\n    with multiprocessing.Pool(processes=4) as pool:\n        results = pool.map(square, range(10))\n    print(results)  # 输出: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n```\n\n## 反例\n错误地将 Pool 用于需要共享状态或频繁通信的任务，例如多个进程同时修改同一个全局变量而不加锁，会导致数据竞争和不可预测的结果。\n\n## 边界条件\n注意 `if __name__ == '__main__'` 保护是必需的，否则在 Windows 上会引发无限递归。另外，传递给 `map` 的可迭代对象过大时，建议使用 `imap` 或 `imap_unordered` 以节省内存。",
+    "code_pattern": "import multiprocessing\n\ndef worker_func(args):\n    # 处理单个任务\n    return args * 2\n\nif __name__ == '__main__':\n    with multiprocessing.Pool(processes=multiprocessing.cpu_count()) as pool:\n        results = pool.map(worker_func, range(100))\n    print(results)",
+    "common_pitfalls": [
+      "在 Windows 上运行时忘记 `if __name__ == '__main__'` 保护，导致子进程无限递归创建新进程。",
+      "将不可序列化的对象（如 lambda 函数、嵌套函数）作为任务参数，导致 PicklingError。",
+      "使用 `pool.apply_async` 但不调用 `get()` 或 `wait()`，导致主进程在任务完成前退出，丢失结果。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,26 @@
       "content_preview": "ABC 抽象基类: ```python from abc import ABC, abstractmethod # Define an interface contract. class MyInterface(ABC): @abstractmethod def my_method(self): pass # Subclasses must implement the abstract method. class MyClass(MyInterface): def my_method(self): print(\"Method implemented\") # collections.abc includes mixin protocols. from collections.abc import Iterable class MyIterableClass(Iterable): def __iter__(self): yield 1 yield 2 yield 3 ``` Explanation: - `ABC` and `abstractmethod` are used to define an abstract base class with an abstract method, which enforces that any subclass must implement the specified method. - The `collections.abc` module provides a set of mixin protocols (like `Iterable`) that can be used to add specific behaviors to classes without inheriting from them directly."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_collections_module_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nABC（Abstract Base Class，抽象基类）是 Python 中用于定义接口和强制子类实现特定方法的类，它本身不能被实例化。\n\n## 何时使用\n当需要为一组相关类定义统一的接口，并确保所有子类都实现某些方法时，应使用 ABC。它特别适合框架设计、插件系统或需要多态性的场景，可以避免因遗漏实现而导致的运行时错误。\n\n## 示例\n```Python\nfrom abc import ABC, abstractmethod\n\nclass Shape(ABC):\n    @abstractmethod\n    def area(self):\n        pass\n\nclass Circle(Shape):\n    def __init__(self, radius):\n        self.radius = radius\n    def area(self):\n        return 3.14 * self.radius ** 2\n\nclass Square(Shape):\n    def __init__(self, side):\n        self.side = side\n    def area(self):\n        return self.side ** 2\n\n# 使用\nshapes = [Circle(5), Square(4)]\nfor s in shapes:\n    print(s.area())\n```\n\n## 反例\n错误地实例化抽象基类，例如 `s = Shape()` 会抛出 `TypeError`；或者子类未实现所有抽象方法就实例化，也会导致同样的错误。\n\n## 边界条件\n抽象方法可以有具体实现，子类可以通过 `super()` 调用；`@abstractmethod` 可以与其他装饰器（如 `@staticmethod`、`@classmethod`、`@property`）组合使用，但顺序需注意：`@abstractmethod` 应放在最内层。",
+    "code_pattern": "from abc import ABC, abstractmethod\n\nclass AbstractClassName(ABC):\n    @abstractmethod\n    def method_name(self, param1, param2):\n        \"\"\"文档字符串描述方法\"\"\"\n        pass\n\nclass ConcreteClass(AbstractClassName):\n    def method_name(self, param1, param2):\n        # 实现具体逻辑\n        return param1 + param2",
+    "common_pitfalls": [
+      "忘记在子类中实现所有抽象方法就尝试实例化，导致 TypeError。",
+      "在抽象方法中使用了 `pass` 但未提供任何实现，误以为子类可以自动继承，实际上子类必须显式覆盖。",
+      "将 `@abstractmethod` 放在 `@staticmethod` 或 `@property` 等装饰器之后，导致抽象方法无法正确注册，应确保 `@abstractmethod` 在最内层。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

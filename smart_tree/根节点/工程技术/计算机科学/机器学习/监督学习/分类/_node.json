@@ -17,5 +17,13 @@
     "description": "分类: Classification for predicting discrete category labels. For a brief illustration using Python, consider the following example where we use scikit-learn to perform classification: ```python from sklearn.datasets import load_iris from sklearn.model_selection import train_test_split from sklearn.preprocessing import LabelEncoder from sklearn.tree import DecisionTreeClassifier # Load dataset data = load_iris() X = data.data y = data.target # Convert labels to discrete categories (if not already) label_encoder = LabelEncoder() y = label_encoder.fit_transform(y) # Split the dataset into training and testing sets X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Create a decision tree classifier model model = DecisionTreeClassifier() # Train the model using the training sets model.fit(X_train, y_train) # Predict the response for test dataset predictions = model.predict(X_test) ``` This example demonstrates loading data, encoding labels, splitting the dataset, training a classification model (in this case, a decision tree), and making predictions."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖机器学习中监督学习下的分类任务，核心目标是利用已标注数据训练模型，将新样本划分到预定义的类别中。子节点包括决策树、支持向量机（SVM）和K近邻（KNN），三者代表了不同的分类策略：决策树通过树状规则进行特征划分，可解释性强且能处理非线性关系；SVM通过寻找最大间隔超平面实现分类，在高维空间表现优异；KNN则基于样本间距离进行多数投票，简单直观但计算成本高。这些算法在应用场景上互补，例如决策树适合可解释性要求高的领域（如医疗诊断），SVM擅长文本分类和图像识别，KNN常用于推荐系统。学习路径建议从KNN入手理解分类基础，再学习决策树掌握规则构建，最后深入SVM理解优化理论。通过对比实验（如使用鸢尾花数据集）可直观感受各算法的差异。",
+  "example_queries": [
+    "如何使用决策树对客户流失进行分类？",
+    "SVM的核函数如何选择以提升分类准确率？",
+    "KNN中K值对分类结果有何影响？",
+    "决策树与SVM在文本分类任务中哪个更优？",
+    "如何评估分类模型的性能（如准确率、召回率）？"
+  ]
 }

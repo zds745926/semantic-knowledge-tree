@@ -19,5 +19,34 @@
       "content_preview": "SSH: SSH user@host. Key-based authentication. SCP copying. Port forwarding. Here are the translations with brief Python code examples for relevant concepts: 1. **SSH user@host** - This refers to establishing an SSH (Secure Shell) connection to a remote host. 2. **Key-based authentication** - This is a method of authenticating using public key cryptography, which involves generating a public-private key pair and configuring the server to accept connections from the client's public key. 3. **SCP copying** - SCP (Secure Copy Protocol) is used for securely transferring files between hosts on a network. 4. **Port forwarding** - This technique allows you to forward traffic from one port to another, often used in scenarios like accessing services behind a firewall or setting up remote desktop connections. ### Python Code Examples 1. **Generating SSH Key Pair:** ```python import paramiko # Generate an RSA key pair key = paramiko.RSAKey.generate(2048) private_key = key.export_private_key() public_key = key.export_public_key() with open('id_rsa', 'wb') as f: f.write(private_key) with open('id_rsa.pub', 'wb') as f: f.write(public_key) ``` 2. **Using SCP to Copy Files:** ```python import paramiko ssh = paramiko.SSHClient() ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy()) # Connect to the remote host using key-based authentication ssh.connect('hostname', username='user', key_filename='/path/to/id_rsa') # Use SCP to copy a file from local to remote sftp = ssh.open_sftp() sftp.put('/local/path/file.txt', '/remote/path/file.txt') sftp.close() ssh.close() ``` 3. **Port Forwarding:** ```python import paramiko ssh = paramiko.SSHClient() ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy()) # Connect to the remote host using key-based authentication ssh.connect('hostname', username='user', key_filename='/path/to/id_rsa') # Set up port forwarding from local port 12345 to remote port 8080 transport = ssh.get_transport() channel = transport.open_channel(\"direct-tcpip\", (\"remote_host\", 8080), ('localhost', 12345)) print(f\"Port forwarded from localhost:12345 to {ssh.get_name()}:{8080}\") # Close the channel when done channel.close() ``` These examples provide a basic understanding of how these concepts can be implemented in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "sudo_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "tcp_bbr_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nSSH（Secure Shell，安全外壳协议）是一种加密的网络传输协议，用于在不安全的网络中安全地远程登录和管理计算机系统。它通过公钥密码学对通信双方进行身份验证，并对所有传输的数据进行加密，从而防止窃听、连接劫持等攻击。\n\n## 核心要点\n- **加密通信**：SSH 使用对称加密（如 AES）和非对称加密（如 RSA）相结合的方式，确保客户端与服务器之间的所有数据（包括密码、命令和文件）都经过加密传输。\n- **身份验证机制**：支持密码认证和公钥认证，其中公钥认证更安全，通过生成密钥对（私钥和公钥）实现免密码登录。\n- **端口转发功能**：SSH 可以创建安全隧道，将本地端口流量转发到远程服务器，或反向转发，用于加密其他协议（如 HTTP、数据库连接）的通信。\n- **文件传输支持**：基于 SSH 的 SFTP（SSH File Transfer Protocol）和 SCP（Secure Copy）协议，提供安全的文件上传、下载和管理功能。\n- **默认端口**：SSH 服务通常监听 TCP 端口 22，但可通过配置更改以增强安全性。\n\n## 应用场景\nSSH 广泛用于系统管理员远程管理 Linux/Unix 服务器，执行命令、修改配置和监控系统状态。开发人员通过 SSH 安全地访问云服务器、部署代码或进行 Git 操作（如 git push/pull）。此外，SSH 隧道常用于绕过防火墙限制，安全访问内网服务或加密不安全的协议流量。\n\n## 相关概念\n- **Telnet**：早期远程登录协议，但传输数据为明文，无加密，已被 SSH 取代。\n- **SSL/TLS**：用于 Web 安全的加密协议，与 SSH 不同，SSL/TLS 主要保护 HTTP 通信，而 SSH 专为远程 shell 和文件传输设计。\n- **OpenSSH**：最流行的 SSH 实现，开源免费，集成在大多数 Linux 发行版中，提供 ssh、sshd、scp、sftp 等工具。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

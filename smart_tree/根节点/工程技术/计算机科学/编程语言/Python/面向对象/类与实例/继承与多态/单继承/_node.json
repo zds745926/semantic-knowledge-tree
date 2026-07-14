@@ -19,5 +19,31 @@
       "content_preview": "单继承: Class B(A): Class B inherits from A. `super().__init__()` calls the constructor of the parent class. `isinstance` is used for type checking. Python code example: ```python class A: def __init__(self): print(\"Initializing A\") class B(A): def __init__(self): super().__init__() # Calls the constructor of class A # Example usage b = B() # Output: Initializing A ``` In this example, `B` is a subclass of `A`, and when an instance of `B` is created, `super().__init__()` ensures that the initializer of `A` is called. The `isinstance` function could be used elsewhere in the code to check if an object is an instance of class `A` or `B`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cpp_oop_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n单继承是指一个子类只能从一个父类继承属性和方法的机制。在Python中，单继承通过`class 子类名(父类名):`语法实现，子类自动获得父类的非私有成员，并可以重写或扩展它们。\n\n## 何时使用\n当类之间存在明确的“is-a”关系（如“猫是一种动物”）且不需要从多个不相关的类继承功能时，应使用单继承。它适用于构建层次化、可扩展的类体系，例如在GUI框架中从基础控件类派生具体按钮、文本框等。单继承简化了代码结构，避免了多继承可能引发的菱形问题。\n\n## 示例\n```Python\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n\n    def speak(self):\n        return f\"{self.name} makes a sound\"\n\nclass Dog(Animal):\n    def speak(self):\n        return f\"{self.name} barks\"\n\n# 使用\ndog = Dog(\"Rex\")\nprint(dog.speak())  # 输出: Rex barks\n```\n\n## 反例\n错误地将继承用于“has-a”关系（如“汽车有一个引擎”），导致子类不恰当地继承父类所有方法，造成接口污染。例如让`Car`继承`Engine`，而不是将`Engine`作为`Car`的属性。\n\n## 边界条件\n注意子类初始化时需显式调用父类的`__init__`（通过`super().__init__()`），否则父类实例属性可能未设置。此外，避免过深的继承层次（超过3层），否则代码可读性和维护性会显著下降。",
+    "code_pattern": "class Parent:\n    def __init__(self, attr):\n        self.attr = attr\n\n    def method(self):\n        return f\"Parent method with {self.attr}\"\n\nclass Child(Parent):\n    def __init__(self, attr, extra):\n        super().__init__(attr)\n        self.extra = extra\n\n    def method(self):\n        return f\"Child overridden: {self.attr}, {self.extra}\"\n\n    def child_method(self):\n        return \"Only in child\"",
+    "common_pitfalls": [
+      "忘记在子类的`__init__`中调用`super().__init__()`，导致父类属性未初始化，访问时引发`AttributeError`。",
+      "在子类中重写方法时无意中改变了方法签名（参数列表），破坏了多态性，导致调用方期望的接口不匹配。",
+      "继承层次过深（超过3层），使得代码难以理解和调试，且修改基类可能影响大量子类。",
+      "将继承用于代码复用而非建立is-a关系，例如让`Stack`继承`list`，导致栈暴露了列表的无关方法（如`insert`），破坏了封装。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

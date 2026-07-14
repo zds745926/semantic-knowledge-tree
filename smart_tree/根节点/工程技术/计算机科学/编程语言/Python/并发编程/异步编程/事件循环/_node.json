@@ -22,5 +22,22 @@
   "related_nodes": [
     "py_asyncio_task_v4",
     "py_coroutine_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n事件循环是异步编程的核心机制，负责调度和执行协程、处理 I/O 事件、管理回调函数，并在单线程中实现并发。\n\n## 何时使用\n当需要处理大量 I/O 密集型任务（如网络请求、文件读写）时，事件循环可以避免线程切换开销，提高性能。它也适用于需要同时管理多个异步操作且要求低延迟的场景，例如 Web 服务器或实时数据处理。\n\n## 示例\n```Python\nimport asyncio\n\nasync def fetch_data(url):\n    print(f\"开始请求: {url}\")\n    await asyncio.sleep(1)  # 模拟 I/O 操作\n    print(f\"完成请求: {url}\")\n    return f\"数据来自 {url}\"\n\nasync def main():\n    tasks = [fetch_data(\"url1\"), fetch_data(\"url2\")]\n    results = await asyncio.gather(*tasks)\n    print(results)\n\nasyncio.run(main())\n```\n\n## 反例\n在事件循环中执行 CPU 密集型任务（如大量计算）会导致阻塞，使其他协程无法运行，从而失去异步优势。\n\n## 边界条件\n事件循环默认是单线程的，因此协程内不应使用阻塞式 I/O（如 time.sleep），应使用 await asyncio.sleep。另外，在 Windows 上可能需要设置事件循环策略以避免 SelectorEventLoop 的兼容性问题。",
+    "code_pattern": "import asyncio\n\nasync def async_task(name, delay):\n    print(f\"任务 {name} 开始\")\n    await asyncio.sleep(delay)\n    print(f\"任务 {name} 完成\")\n    return f\"结果 {name}\"\n\nasync def main():\n    tasks = [async_task(\"A\", 2), async_task(\"B\", 1)]\n    results = await asyncio.gather(*tasks)\n    print(results)\n\nif __name__ == \"__main__\":\n    asyncio.run(main())",
+    "common_pitfalls": [
+      "在协程内使用 time.sleep() 而非 await asyncio.sleep()，导致事件循环阻塞，其他协程无法执行。",
+      "忘记在异步函数前加 async 或在调用协程时未使用 await，导致返回协程对象而非实际结果。",
+      "在事件循环中执行 CPU 密集型任务（如循环计算）而不使用 run_in_executor，造成整个循环卡顿。",
+      "在 Windows 上使用默认事件循环时遇到 ProactorEventLoop 与子进程不兼容的问题，需手动设置事件循环策略。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

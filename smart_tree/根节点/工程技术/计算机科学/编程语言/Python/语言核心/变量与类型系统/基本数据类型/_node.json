@@ -19,5 +19,13 @@
     "description": "基本数据类型: The basic data types in Python include integer (int), float, complex, boolean (bool), and NoneType. Numeric types support arbitrary-precision arithmetic, forming the foundation for data processing in Python. Here are brief examples of each type using Python code: 1. Integer: ```python x = 42 print(type(x)) # <class 'int'> ``` 2. Float: ```python y = 3.14 print(type(y)) # <class 'float'> ``` 3. Complex: ```python z = 1 + 2j print(type(z)) # <class 'complex'> ``` 4. Boolean: ```python b = True print(type(b)) # <class 'bool'> ``` 5. NoneType: ```python none_value = None print(type(none_value)) # <class 'NoneType'> ```"
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Python语言核心中变量与类型系统下的基本数据类型，主要包括整型(int)、浮点型(float)、布尔型(bool)与NoneType，以及整型和浮点型的进阶用法。子主题之间的关系为：整型和浮点型是数值类型的基础，布尔型是整型的子类型（True/False对应1/0），NoneType表示空值，常用于函数默认返回值或变量初始化。学习路径建议先掌握基本类型（int、float、bool、None）的创建与简单运算，再深入理解int的进制表示、位运算、大整数支持，以及float的精度问题、科学计数法、浮点数比较等进阶内容。该分支是Python编程的基石，后续学习字符串、列表、字典等复合类型以及函数、类等高级特性均需依赖对基本数据类型的扎实理解。",
+  "example_queries": [
+    "Python中如何表示二进制、八进制和十六进制整数？",
+    "浮点数比较时为什么会出现精度问题？如何正确比较两个浮点数是否相等？",
+    "布尔值True和False在数值运算中如何参与？",
+    "Python的int类型可以表示任意大的整数吗？底层是如何实现的？",
+    "None和空字符串、0、空列表有什么区别？"
+  ]
 }

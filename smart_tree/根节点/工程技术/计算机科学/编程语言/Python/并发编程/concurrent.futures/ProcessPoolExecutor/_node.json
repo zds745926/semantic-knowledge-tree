@@ -19,5 +19,43 @@
       "content_preview": "ProcessPoolExecutor: Process pool executor. Across the Global Interpreter Lock (GIL), suitable for CPU-intensive tasks. Parameters must be picklable. Here is a brief Python code example to illustrate using a process pool executor: ```python from multiprocessing import Pool def cpu_intensive_task(x): # Example task: compute x squared return x * x if __name__ == \"__main__\": with Pool() as p: results = p.map(cpu_intensive_task, [1, 2, 3, 4, 5]) print(results) ``` In this example, the `Pool` class from the `multiprocessing` module is used to create a process pool. The `map` method of the `Pool` object is then used to apply the `cpu_intensive_task` function to each element in the list `[1, 2, 3, 4, 5]`. Note that the task must be picklable for it to work with multiprocessing."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nProcessPoolExecutor 是 Python concurrent.futures 模块中用于并行执行 CPU 密集型任务的执行器，它通过多进程方式利用多核 CPU 资源，实现真正的并行计算。\n\n## 何时使用\n适用于 CPU 密集型任务（如数值计算、图像处理、数据压缩等）且需要利用多核 CPU 加速的场景。当任务之间相互独立、无共享状态或可通过消息传递通信时，ProcessPoolExecutor 能显著提升吞吐量。不适用于 I/O 密集型任务，因为进程创建和上下文切换开销较大。\n\n## 示例\n```Python\nimport concurrent.futures\nimport math\n\ndef compute_factorial(n):\n    return math.factorial(n)\n\nif __name__ == '__main__':\n    numbers = [100000, 200000, 300000]\n    with concurrent.futures.ProcessPoolExecutor(max_workers=4) as executor:\n        results = list(executor.map(compute_factorial, numbers))\n    print(results)\n```\n\n## 反例\n错误地将 I/O 密集型任务（如网络请求、文件读写）提交给 ProcessPoolExecutor，导致进程创建和通信开销远超收益，应改用 ThreadPoolExecutor 或 asyncio。\n\n## 边界条件\n注意：Windows 上必须将主逻辑放在 `if __name__ == '__main__':` 块中，否则会引发 RuntimeError。任务函数和参数必须可序列化（pickle），否则会抛出异常。max_workers 不宜超过 CPU 核心数，否则因上下文切换降低性能。",
+    "code_pattern": "import concurrent.futures\n\ndef task_func(arg):\n    # CPU-intensive work\n    return result\n\nif __name__ == '__main__':\n    with concurrent.futures.ProcessPoolExecutor(max_workers=4) as executor:\n        futures = [executor.submit(task_func, arg) for arg in args]\n        for future in concurrent.futures.as_completed(futures):\n            result = future.result()\n            # process result",
+    "common_pitfalls": [
+      "未将主逻辑放在 if __name__ == '__main__' 保护下，在 Windows 上导致子进程递归创建进程而崩溃。",
+      "任务函数或参数包含不可 pickle 的对象（如 lambda、闭包、文件句柄），导致序列化失败。",
+      "max_workers 设置过大（如超过 CPU 核心数），导致大量进程切换开销，反而降低性能。",
+      "在进程间共享可变对象（如列表、字典）而不使用 Manager 或 Queue，导致数据不一致或死锁。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

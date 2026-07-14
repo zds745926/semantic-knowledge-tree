@@ -19,5 +19,13 @@
     "description": "测试: Python has an extensive suite of testing tools. Unit tests ensure the correctness of the code, with pytest providing a concise testing syntax and unittest.mock for mocking external dependencies. TDD is recommended practice in the Python community. Here's a brief example using pytest and unittest.mock: ```python import requests def test_example(): # Using unittest.mock to mock the response from requests.get from unittest.mock import patch @patch('requests.get') def test_get_request(mock_get): # Configure the mock to return a specific response mock_get.return_value.status_code = 200 mock_get.return_value.json.return_value = {'key': 'value'} # Call the function that uses requests.get result = get_data() # Assert the expected behavior assert result == {'key': 'value'} def get_data(): response = requests.get('https://api.example.com/data') return response.json() # Note: In a real-world scenario, you would replace this with an actual API call. ``` In this example, `pytest` is used to write a unit test for the function `get_data()`. The `unittest.mock.patch` context manager is used to mock the `requests.get` method, allowing us to control its behavior and verify that our code works as expected without making real HTTP requests."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Python测试领域的核心工具与方法，旨在帮助开发者系统掌握代码质量保障技术。子节点包括pytest、unittest、Mock模拟、pdb调试器和doctest。pytest和unittest是两种主流的测试框架，其中pytest以简洁语法和强大插件生态著称，而unittest作为标准库提供基础测试能力。Mock模拟用于隔离外部依赖，确保单元测试的独立性。pdb调试器是交互式调试工具，帮助定位运行时错误。doctest则通过文档字符串中的示例代码实现轻量级测试。学习路径建议从unittest入手理解测试基础，再过渡到pytest提升效率；同时结合Mock模拟处理复杂场景，利用pdb进行问题排查，最后用doctest补充文档测试。这些工具相辅相成，共同构建从单元测试到集成调试的完整测试体系。",
+  "example_queries": [
+    "如何在Python中使用pytest编写参数化测试？",
+    "unittest和pytest的主要区别是什么？",
+    "如何使用Mock模拟外部API调用进行单元测试？",
+    "pdb调试器有哪些常用命令？",
+    "doctest如何从文档字符串中自动执行测试用例？"
+  ]
 }

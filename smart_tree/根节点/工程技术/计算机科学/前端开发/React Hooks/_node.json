@@ -21,5 +21,17 @@
   ],
   "related_nodes": [
     "react_vdom_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nReact Hooks 是 React 16.8 引入的一组函数，允许在函数组件中使用状态（state）和生命周期特性，无需编写类组件。它们通过如 useState、useEffect 等内置钩子，将组件逻辑封装为可复用的函数，从而简化状态管理和副作用处理。\n\n## 核心要点\n- **状态管理**：useState 钩子为函数组件提供局部状态，返回状态值和更新函数，支持响应式更新。\n- **副作用处理**：useEffect 钩子替代生命周期方法，处理数据获取、订阅或 DOM 操作，并支持清理函数。\n- **自定义钩子**：用户可组合内置钩子创建自定义钩子，实现逻辑复用，如 useFetch 封装数据请求。\n- **规则约束**：Hooks 必须在函数组件顶层调用，不能在条件或循环中使用，以确保调用顺序稳定。\n- **性能优化**：useMemo 和 useCallback 钩子通过记忆化减少不必要的计算和渲染，提升组件性能。\n\n## 应用场景\nReact Hooks 广泛用于构建现代 React 应用，例如在表单中管理输入状态（useState）、在页面加载时发起 API 请求（useEffect）、以及通过自定义钩子共享认证逻辑或主题切换。它们使代码更简洁、可测试，并促进函数式编程风格。\n\n## 相关概念\nHooks 与类组件中的生命周期方法（如 componentDidMount）和 this.state 相关，但提供了更声明式的替代方案。此外，它们与 React 的虚拟 DOM 和 Fiber 架构协同工作，确保高效的更新调度。理解闭包和 JavaScript 函数式编程有助于掌握 Hooks 的底层机制。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

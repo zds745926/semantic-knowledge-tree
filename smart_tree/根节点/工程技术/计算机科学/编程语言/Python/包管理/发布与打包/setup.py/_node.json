@@ -21,5 +21,22 @@
   ],
   "related_nodes": [
     "py_pyproject_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nsetup.py 是 Python 包分发与安装的核心配置文件，用于定义包的元数据、依赖关系、入口点以及构建过程，是 setuptools 和 distutils 工具的标准入口。\n\n## 何时使用\n当你需要将 Python 代码打包成可分发的库或应用程序，并希望用户能通过 pip 安装时，必须编写 setup.py。它也适用于定义包的版本、作者、许可证等信息，以及配置命令行脚本或扩展模块。\n\n## 示例\n```Python\nfrom setuptools import setup, find_packages\n\nsetup(\n    name='mypackage',\n    version='0.1.0',\n    packages=find_packages(),\n    install_requires=[\n        'requests>=2.25.0',\n        'numpy>=1.19.0',\n    ],\n    entry_points={\n        'console_scripts': [\n            'mycli = mypackage.cli:main',\n        ],\n    },\n    author='Your Name',\n    author_email='your.email@example.com',\n    description='A sample Python package',\n    long_description=open('README.md').read(),\n    long_description_content_type='text/markdown',\n    url='https://github.com/yourname/mypackage',\n    classifiers=[\n        'Programming Language :: Python :: 3',\n        'License :: OSI Approved :: MIT License',\n    ],\n    python_requires='>=3.6',\n)\n```\n\n## 反例\n错误用法：直接在 setup.py 中硬编码文件路径或使用相对路径而不使用 find_packages()，导致打包时遗漏子包。例如手动列出 packages=['mypackage'] 而忽略 mypackage.subpackage，使得安装后子模块不可用。\n\n## 边界条件\n注意：setup.py 中不要包含动态计算依赖的逻辑（如根据系统版本安装不同包），应使用 extras_require 或 requirements.txt 处理。另外，避免在 setup.py 中执行网络请求或写入文件，因为安装时可能无网络或权限不足。",
+    "code_pattern": "from setuptools import setup, find_packages\n\nsetup(\n    name='your_package_name',\n    version='0.1.0',\n    packages=find_packages(),\n    install_requires=[],\n    entry_points={\n        'console_scripts': [\n            'your-command = your_package.module:function',\n        ],\n    },\n    author='Your Name',\n    author_email='your.email@example.com',\n    description='A short description',\n    long_description=open('README.md').read(),\n    long_description_content_type='text/markdown',\n    url='https://github.com/yourname/your_package',\n    classifiers=[\n        'Programming Language :: Python :: 3',\n        'License :: OSI Approved :: MIT License',\n    ],\n    python_requires='>=3.6',\n)",
+    "common_pitfalls": [
+      "忘记在 packages 参数中使用 find_packages() 或手动列出所有子包，导致打包后缺少模块。",
+      "在 install_requires 中指定了过宽或过窄的版本范围，例如使用 '>=0.1' 可能引入不兼容版本，或使用 '==0.1' 导致无法与其他包共存。",
+      "将非 Python 文件（如数据文件、配置文件）未通过 package_data 或 MANIFEST.in 包含，导致安装后缺少资源。",
+      "在 setup.py 中执行复杂逻辑（如读取环境变量、下载文件），破坏可重复构建，应保持 setup.py 为纯声明式。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

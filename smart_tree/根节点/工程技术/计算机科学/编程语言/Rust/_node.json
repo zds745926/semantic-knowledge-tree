@@ -17,5 +17,13 @@
     "description": "Rust: Rust is a systems-level language developed by Mozilla, known for its zero-cost abstractions and memory safety. The ownership system and borrow checker ensure memory safety at compile time, eliminating the need for garbage collection (GC). Here's a brief Python code example to illustrate a concept related to Rust's ownership model: In Python, you can simulate Rust's ownership with context managers or by using classes to manage resource lifetimes. However, note that Python does not have explicit ownership semantics like Rust. ```python class Resource: def __init__(self): self.is_active = True def use(self): if self.is_active: print(\"Resource is being used.\") else: raise ValueError(\"Resource is inactive.\") def with_resource(func): def wrapper(): resource = Resource() try: func(resource) finally: resource.is_active = False return wrapper @with_resource def process_resource(resource): resource.use() # Usage process_resource() # Output: \"Resource is being used.\" ``` In this example, `Resource` simulates the concept of ownership by managing its active state. The `with_resource` decorator ensures that the resource's lifecycle is managed properly, similar to how Rust's borrow checker enforces borrowing rules at compile time."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于 Rust 编程语言的核心机制，涵盖所有权（Ownership）、借用检查器（Borrow Checker）和 Trait 系统（Trait System）三大子主题。所有权是 Rust 的基石，通过所有权规则（每个值有且仅有一个所有者）在编译期管理内存，避免垃圾回收；借用检查器则基于所有权规则，在编译时检查引用是否合法（如不可同时存在可变与不可变引用），从而保证内存安全和线程安全；Trait 系统定义了类型共享的行为接口，支持泛型编程、动态分发和代码复用。三者层层递进：所有权提供内存管理的基本法则，借用检查器强制执行这些法则，Trait 系统则在此基础上实现抽象与多态。学习路径建议先理解所有权与借用规则，再深入借用检查器的具体约束，最后掌握 Trait 的定义、实现及高级用法（如关联类型、默认实现）。掌握这些内容后，开发者能编写高效、安全且可复用的 Rust 代码。",
+  "example_queries": [
+    "Rust 的所有权规则如何避免内存泄漏？",
+    "借用检查器在什么情况下会报错？如何修复？",
+    "如何为一个自定义类型实现 Display Trait？",
+    "Rust 中生命周期标注与借用检查器的关系是什么？",
+    "Trait 对象与泛型约束在性能上有什么区别？"
+  ]
 }

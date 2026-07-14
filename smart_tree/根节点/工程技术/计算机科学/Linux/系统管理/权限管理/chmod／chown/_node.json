@@ -19,5 +19,26 @@
       "content_preview": "chmod/chown: chmod 755 (rwxr-xr-x). chown user:group. SUID/SGID/sticky bit. Here are brief explanations and Python code examples for the concepts mentioned: 1. **chmod 755**: This sets file permissions to read, write, and execute for the owner of the file, but only read and execute for everyone else. ```python import os # Example: Set file permissions to 755 os.chmod('example_file', 0o755) ``` 2. **chown user:group**: This changes the owner and group of a file or directory. ```python import os # Example: Change ownership to 'user' and group 'group' os.chown('example_file', user_uid, group_gid) ``` 3. **SUID/SGID/sticky bit**: - SUID (Set User ID): When set on an executable file, it allows the process to run with the permissions of the file's owner. ```python import os # Example: Set SUID on a file os.chmod('example_executable', 0o4755) ``` - SGID (Set Group ID): When set on an executable file, it allows the process to run with the permissions of the group owner. ```python import os # Example: Set SGID on a file os.chmod('example_executable', 0o2755) ``` - Sticky bit: When set on directories, it prevents files in that directory from being deleted or renamed by users who do not own the file or the directory. ```python import os # Example: Set sticky bit on a directory os.chmod('example_directory', 0o1755) ``` Note: The `user_uid` and `group_gid` in the examples are placeholders for the actual user and group IDs, which you would need to obtain using other methods (e.g., `os.getuid()` or `grp.getgrnam()`)."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "ls_cd_pwd_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "sudo_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nchmod和chown是Linux系统中用于管理文件和目录权限的两个核心命令。chmod（change mode）用于修改文件或目录的访问权限，而chown（change owner）用于更改文件或目录的所有者和所属组。\n\n## 核心要点\n- chmod通过符号模式（如u+x）或数字模式（如755）设置读、写、执行权限，分别对应所有者、组和其他用户。\n- chown可以单独更改所有者（如chown user file）或同时更改所有者和组（如chown user:group file）。\n- 只有文件的所有者或超级用户（root）才能使用chmod和chown命令。\n- 使用-R选项可以递归地修改目录及其内部所有文件和子目录的权限或所有者。\n- 权限位由三组三位二进制数组成，分别代表所有者、组和其他用户的rwx权限，数字模式中r=4、w=2、x=1。\n\n## 应用场景\nchmod常用于保护敏感文件（如配置文件、私钥）不被未授权访问，或为脚本添加可执行权限。chown常用于在多用户环境中将文件所有权转移给特定用户或组，例如在部署Web应用时调整网站文件的所有者。\n\n## 相关概念\numask（用户文件创建掩码）决定新创建文件的默认权限，与chmod的权限设置互补。ACL（访问控制列表）提供比chmod更细粒度的权限控制，允许为特定用户或组设置独立权限。这些工具共同构成Linux权限管理体系。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

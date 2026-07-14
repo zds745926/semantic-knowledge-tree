@@ -19,5 +19,26 @@
       "content_preview": "共享内存: Fastest Inter-Process Communication (IPC). Multiple processes map the same physical memory. Synchronization is required using semaphores. Here's a brief Python code example to illustrate how semaphores can be used for synchronization in this context: ```python import multiprocessing import time # Semaphore to control access to shared memory semaphore = multiprocessing.Semaphore(1) def process_function(shared_memory): with semaphore: # Critical section: Accessing the shared memory print(f\"Process {multiprocessing.current_process().name} accessing shared memory\") time.sleep(1) # Simulate some work print(f\"Process {multiprocessing.current_process().name} finished accessing shared memory\") if __name__ == \"__main__\": # Shared memory (for illustration, using a simple list) shared_memory = [0] * 10 processes = [] for i in range(5): p = multiprocessing.Process(target=process_function, args=(shared_memory,)) processes.append(p) p.start() for p in processes: p.join() ``` In this example, a semaphore with an initial value of 1 is used to ensure that only one process can access the shared memory at any given time. This helps prevent race conditions and ensures proper synchronization between processes accessing the same physical memory region."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n共享内存是一种高效的进程间通信（IPC）机制，它允许多个进程直接访问同一块物理内存区域。通过将同一段内存映射到不同进程的地址空间，进程可以像访问本地内存一样读写共享数据，无需内核介入数据拷贝，从而实现最快的通信速度。\n\n## 核心要点\n- 共享内存是速度最快的IPC方式，因为数据在进程间传递时无需经过内核缓冲，减少了数据拷贝次数。\n- 使用共享内存需要同步机制（如信号量、互斥锁）来协调多个进程的读写操作，防止数据竞争和不一致。\n- 共享内存的生命周期独立于创建它的进程，即使创建进程退出，共享内存段仍可被其他进程访问，直到显式删除。\n- 共享内存通常通过系统调用（如shmget、shmat、shmdt）来创建、附加和分离内存段，操作相对底层。\n- 共享内存适用于大量数据的高频交换场景，但需要开发者自行处理并发控制和内存管理。\n\n## 应用场景\n共享内存广泛应用于需要高性能数据交换的场合，例如数据库系统中的缓冲池、Web服务器的缓存模块、以及多媒体处理中的帧数据共享。它也常用于多进程协作的服务器程序，如Nginx的进程间通信，以提升吞吐量并降低延迟。\n\n## 相关概念\n共享内存常与信号量、互斥锁等同步原语配合使用，以确保数据一致性。它与消息队列、管道等IPC机制相比，虽然速度更快，但缺乏内置的同步和消息边界管理，因此更适用于对性能要求极高且数据格式固定的场景。此外，共享内存的实现依赖于操作系统的内存管理单元（MMU）和虚拟内存机制。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

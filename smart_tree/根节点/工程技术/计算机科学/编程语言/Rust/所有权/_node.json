@@ -19,5 +19,34 @@
       "content_preview": "所有权: Each value has a unique owner. Ownership is transferred (move) versus borrowing (&/&mut). Compile-time memory safety. Here's a brief explanation with a Python code example to illustrate the concept of ownership and borrowing: In Rust, which is known for its strong ownership rules, this can be illustrated as follows: ```rust // Example in Rust fn main() { let s1 = String::from(\"hello\"); // s1 is owned by the local scope let s2 = s1; // Ownership of s1 is moved to s2, making s1 invalid println!(\"{}\", s2); // s2 is valid and prints \"hello\" // The following line would cause a compile-time error because s1 is no longer valid: // println!(\"{}\", s1); } ``` In Python, which does not have explicit ownership rules like Rust, you can simulate borrowing with context managers or by using references: ```python class Resource: def __init__(self, name): self.name = name def borrow_resource(resource): print(f\"Borrowing {resource.name}\") # Simulating a borrowed resource with Resource(\"Resource1\") as r: borrow_resource(r) # The resource is automatically released after the block ``` This Python example uses a `with` statement to simulate borrowing, but it's important to note that Python does not enforce ownership in the same way Rust does."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "cpp_oop_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n所有权是 Rust 的核心内存管理机制，它规定每个值在任一时刻只能有一个所有者变量，当所有者离开作用域时，值会被自动释放。\n\n## 何时使用\n所有权适用于所有 Rust 程序，尤其是需要精细控制内存分配和释放的场景，如系统编程、嵌入式开发或高性能应用。它通过编译时检查消除垃圾回收器，确保内存安全且无运行时开销。\n\n## 示例\n```Rust\nfn main() {\n    let s1 = String::from(\"hello\"); // s1 是所有者\n    let s2 = s1; // 所有权从 s1 移动到 s2\n    // println!(\"{}\", s1); // 编译错误：s1 已失效\n    println!(\"{}\", s2); // 正确：s2 现在是所有者\n} // s2 离开作用域，内存自动释放\n```\n\n## 反例\n错误用法：尝试在所有权移动后继续使用原变量，如上述示例中取消注释 `println!(\"{}\", s1);` 会导致编译错误。\n\n## 边界条件\n注意：基本类型（如 i32）实现了 Copy trait，赋值时是复制而非移动，因此原变量仍可用。所有权规则不适用于引用和借用，它们不拥有值。",
+    "code_pattern": "fn main() {\n    let original = String::from(\"data\");\n    let moved = original; // 所有权转移\n    // println!(\"{}\", original); // 错误：original 已失效\n    println!(\"{}\", moved); // 正确\n}",
+    "common_pitfalls": [
+      "移动后使用原变量：如将 String 赋值给另一个变量后，原变量不能再被使用，否则编译失败。",
+      "忘记所有权转移影响函数参数：将值传递给函数会转移所有权，函数外无法再使用原变量，除非函数返回值。",
+      "误认为所有类型都移动：基本类型（如整数、布尔）实现了 Copy trait，赋值时是复制，原变量仍可用，容易混淆。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

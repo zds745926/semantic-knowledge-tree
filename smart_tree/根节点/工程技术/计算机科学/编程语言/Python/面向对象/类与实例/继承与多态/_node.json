@@ -16,5 +16,13 @@
     "description": "继承与多态: Python supports single inheritance and multiple inheritance (using Mixin). The `super()` function is used to call the parent class. Method Resolution Order (MRO) determines the method search sequence. Here's a brief explanation with Python code examples: - **Single Inheritance**: ```python class Parent: def __init__(self): print(\"Parent constructor\") class Child(Parent): def __init__(self): super().__init__() print(\"Child constructor\") ``` - **Multiple Inheritance (using Mixin)**: ```python class LoggingMixin: def log(self, message): print(f\"Logging: {message}\") class NetworkDevice(LoggingMixin): def __init__(self): super().__init__() self.ip_address = \"192.168.0.1\" def connect(self): self.log(\"Connecting to network\") # Simulate connection logic ``` - **Method Resolution Order (MRO)**: ```python class A: def foo(self): print(\"A.foo\") class B(A): def foo(self): super().foo() print(\"B.foo\") class C(A): def foo(self): super().foo() print(\"C.foo\") class D(B, C): pass d = D() d.foo() # Output: A.foo B.foo C.foo ``` In the MRO example, `D` inherits from both `B` and `C`, which in turn inherit from `A`. The output shows how Python resolves methods using the C3 linearization algorithm."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于 Python 面向对象编程中的继承与多态机制，涵盖单继承与 Mixin 混入两种核心模式。单继承是类层次结构的基础，允许子类继承父类的属性和方法，并支持方法重写实现多态；Mixin 混入则是一种通过多重继承组合功能的轻量级设计模式，旨在解决单一继承的局限性，实现代码的横向复用。两者关系紧密：单继承构建纵向的“is-a”关系，而 Mixin 提供横向的“has-a”能力，共同支撑 Python 中灵活的类型系统与多态行为。学习路径建议：先掌握单继承的语法、super() 调用与方法重写，理解多态的动态分派原理；再深入 Mixin 的设计意图、命名规范（如以 Mixin 后缀）及与多重继承的区别，最后通过实际案例（如 Django 类视图中的 Mixin）巩固应用。",
+  "example_queries": [
+    "Python 中单继承如何实现方法重写与多态？",
+    "Mixin 混入与普通多重继承有什么区别？",
+    "如何在 Python 中通过 super() 正确调用父类方法？",
+    "请举例说明 Mixin 在 Django 类视图中的典型用法。",
+    "Python 多态的实现原理是什么？与静态类型语言有何不同？"
+  ]
 }

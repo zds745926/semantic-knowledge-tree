@@ -19,5 +19,22 @@
       "content_preview": "韦达定理: Vieta's Formulas: For the quadratic equation \\( ax^2 + bx + c = 0 \\), the roots \\( x_1 \\) and \\( x_2 \\) satisfy \\( x_1 + x_2 = -\\frac{b}{a} \\) and \\( x_1 \\cdot x_2 = \\frac{c}{a} \\). Here is a brief Python code example to demonstrate these formulas: ```python import sympy as sp # Define the symbols a, b, c, x1, x2 = sp.symbols('a b c x1 x2') # Vieta's formulas sum_of_roots = -b/a product_of_roots = c/a # Example quadratic equation coefficients a_val = 1 b_val = 5 c_val = 6 # Calculate the roots using sympy's solve function roots = sp.solve(a*x**2 + b*x + c, x) x1_val = roots[0] x2_val = roots[1] # Verify Vieta's formulas sum_check = x1_val + x2_val == -b/a product_check = x1_val * x2_val == c/a print(\"Sum of roots:\", sum_of_roots.subs({a: a_val, b: b_val})) print(\"Product of roots:\", product_of_roots.subs({a: a_val, c: c_val})) print(\"Sum check (should be -5):\", sum_check) print(\"Product check (should be 6):\", product_check) ``` This code uses the `sympy` library to define symbols and solve for the roots of a quadratic equation. It then verifies Vieta's formulas by substituting the calculated roots back into the formulas."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "quad_formula_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n韦达定理揭示了一元二次方程根与系数之间的关系。对于一元二次方程 ax² + bx + c = 0（a ≠ 0），若其两个根为 x₁ 和 x₂，则有 x₁ + x₂ = -b/a，x₁·x₂ = c/a。该定理以法国数学家弗朗索瓦·韦达命名，是代数方程理论中的基本定理。\n\n## 核心要点\n1. 韦达定理仅适用于一元二次方程，且要求判别式 Δ = b² - 4ac ≥ 0，以保证根为实数。\n2. 定理给出了根的和与积直接由系数表示，无需实际求解方程即可得到根的关系。\n3. 对于二次项系数 a = 1 的简化形式 x² + px + q = 0，根的和为 -p，根的积为 q。\n4. 韦达定理可推广到高次方程，如三次方程的根与系数也有类似关系。\n5. 定理的逆命题也成立：若两数之和为 -b/a，积为 c/a，则它们是方程 ax² + bx + c = 0 的根。\n\n## 应用场景\n韦达定理常用于快速求解与根相关的代数问题，如已知一根求另一根、求根的和与积、构造新方程等。在解析几何中，它可用于处理二次曲线与直线的交点问题，简化计算过程。此外，在物理和工程领域，当需要分析二次模型中的参数关系时，韦达定理也提供便捷的数学工具。\n\n## 相关概念\n韦达定理与判别式密切相关，判别式决定根的性质，而韦达定理描述根的数量关系。它与因式分解也有联系，二次三项式可分解为 a(x - x₁)(x - x₂)，展开后系数即体现韦达定理。此外，韦达定理是代数基本定理在二次方程中的具体表现，后者指出 n 次方程有 n 个根，且根与系数满足对称多项式关系。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

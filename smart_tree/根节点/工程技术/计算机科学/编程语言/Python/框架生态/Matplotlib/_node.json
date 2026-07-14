@@ -19,5 +19,30 @@
       "content_preview": "Matplotlib: Python standard visualization library. The pyplot interface supports line, scatter, bar, and heatmap plots. Object-oriented plotting API. Here's a brief example for each type of plot using the `matplotlib.pyplot` interface: 1. **Line Plot**: ```python import matplotlib.pyplot as plt x = [1, 2, 3, 4] y = [10, 15, 7, 8] plt.plot(x, y) plt.show() ``` 2. **Scatter Plot**: ```python import matplotlib.pyplot as plt x = [1, 2, 3, 4] y = [10, 15, 7, 8] plt.scatter(x, y) plt.show() ``` 3. **Bar Plot**: ```python import matplotlib.pyplot as plt x = ['A', 'B', 'C', 'D'] y = [10, 15, 7, 8] plt.bar(x, y) plt.show() ``` 4. **Heatmap Plot**: ```python import matplotlib.pyplot as plt import numpy as np data = np.random.rand(10, 10) # Generate random data for the heatmap plt.imshow(data, cmap='hot', interpolation='nearest') plt.colorbar() plt.show() ``` These examples demonstrate how to use `matplotlib.pyplot` to create different types of plots."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_scipy_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "pca_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nMatplotlib 是 Python 中最流行的 2D 绘图库，提供类似 MATLAB 的 API，用于生成静态、交互式或动画图表，支持折线图、散点图、柱状图、直方图等多种图表类型。\n\n## 何时使用\n当需要快速可视化数据分布、趋势或比较时，Matplotlib 是首选工具。它适用于科学计算、数据分析、机器学习结果展示等场景，尤其适合生成出版级的高质量图表。对于简单绘图，其 pyplot 模块提供便捷接口；对于复杂定制，其面向对象接口提供精细控制。\n\n## 示例\n```Python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y, label='sin(x)')\nplt.xlabel('x')\nplt.ylabel('y')\nplt.title('Sine Wave')\nplt.legend()\nplt.grid(True)\nplt.show()\n```\n\n## 反例\n错误用法：在循环中反复调用 plt.figure() 而不关闭旧图，导致内存泄漏或图表重叠。正确做法是使用 plt.close() 或显式管理 Figure 对象。\n\n## 边界条件\n注意：Matplotlib 默认使用英文字体，若图表包含中文，需设置中文字体（如 SimHei）否则显示方框。另外，在非交互式环境（如脚本）中，plt.show() 会阻塞执行，建议使用 plt.savefig() 保存图片。",
+    "code_pattern": "import matplotlib.pyplot as plt\nimport numpy as np\n\n# 生成数据\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\n# 创建图形和轴\nfig, ax = plt.subplots()\n\n# 绘图\nax.plot(x, y, label='sin(x)')\n\n# 装饰\nax.set_xlabel('x')\nax.set_ylabel('y')\nax.set_title('Title')\nax.legend()\nax.grid(True)\n\n# 显示或保存\nplt.show()\n# plt.savefig('plot.png', dpi=300, bbox_inches='tight')",
+    "common_pitfalls": [
+      "在 Jupyter Notebook 中未使用 %matplotlib inline 导致图表不显示，需在代码开头添加该魔术命令。",
+      "多次调用 plt.plot() 后忘记添加 label 参数，导致图例无法自动生成，需为每条线显式指定 label。",
+      "使用 plt.savefig() 保存图片时，若在 plt.show() 之后调用，可能保存空白图片，应在 show() 之前保存。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

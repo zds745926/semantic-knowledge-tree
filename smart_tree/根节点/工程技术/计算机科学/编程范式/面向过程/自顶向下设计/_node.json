@@ -19,5 +19,26 @@
       "content_preview": "自顶向下设计: Top-down design breaks down complex problems into simpler sub-problems layer by layer, progressively refining each module. Here's a brief Python code example to illustrate the top-down approach in solving a problem of calculating factorial: ```python def factorial(n): # Base case: if n is 0 or 1, return 1 if n == 0 or n == 1: return 1 else: # Recursive call: n * factorial(n-1) return n * factorial(n - 1) # Example usage print(factorial(5)) # Output should be 120 ``` In this example, the problem of calculating the factorial is broken down into simpler sub-problems (calculating the factorial of a smaller number) until reaching the base case."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "quick_sort_v4",
+      "type": "application"
+    },
+    {
+      "id": "merge_sort_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n自顶向下设计是一种将复杂问题逐步分解为更小、更易管理的子问题的系统化方法。它从整体系统的高层抽象开始，逐层细化，直到每个子问题都可以直接实现或解决。\n\n## 核心要点\n1. **逐步求精**：从最高层的功能描述开始，通过反复分解，每一步都增加细节，直到获得足够具体的实现方案。\n2. **模块化**：每个子问题对应一个独立模块，模块间通过清晰的接口交互，降低耦合度。\n3. **层次结构**：设计结果形成树状或层次化结构，顶层控制整体流程，底层处理具体操作。\n4. **可验证性**：每层分解后，可独立验证该层的正确性，便于调试和维护。\n\n## 应用场景\n自顶向下设计广泛应用于软件工程中的结构化编程，例如编写大型程序时先设计主程序流程，再逐步细化函数和过程。它也用于系统架构设计、算法设计以及项目规划，帮助团队从全局视角出发，确保各部分协调一致。\n\n## 相关概念\n自顶向下设计与自底向上设计相对，后者从基础组件开始构建系统。两者常结合使用：自顶向下用于整体规划，自底向上用于实现和测试。此外，它还与模块化编程、结构化编程紧密相关，强调清晰的分层和抽象。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

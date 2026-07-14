@@ -16,5 +16,13 @@
     "description": "代数: Algebra is a core branch of mathematics that focuses on the study of operation rules and structures, including equation solving, linear algebra, and abstract algebra. The quadratic formula for finding roots of a quadratic equation and Vieta's formulas are fundamental achievements in algebra, widely applied in mathematical modeling and engineering calculations. Python code example (quadratic formula): ```python import cmath def solve_quadratic(a, b, c): # Calculate the discriminant discriminant = cmath.sqrt(b**2 - 4*a*c) # Find two solutions sol1 = (-b - discriminant) / (2 * a) sol2 = (-b + discriminant) / (2 * a) return sol1, sol2 # Example usage: a = 1 b = 5 c = 6 solutions = solve_quadratic(a, b, c) print(\"The solutions are {0} and {1}\".format(solutions[0], solutions[1])) ``` This Python function `solve_quadratic` demonstrates the application of the quadratic formula to find the roots of a given quadratic equation. The `cmath` module is used to handle complex numbers in case the discriminant is negative, ensuring that the function works for all real and imaginary coefficients."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "代数分支是数学的核心领域之一，主要研究符号运算、方程求解以及变量之间的关系。本分支涵盖一元二次方程求根公式和韦达定理，两者紧密相连：求根公式直接给出方程的解，而韦达定理则揭示了根与系数之间的内在联系。学习时，应先掌握一元二次方程的标准形式及其判别式，理解求根公式的推导过程，再通过韦达定理深化对根与系数关系的认识，从而能够灵活解决涉及根的和、积以及构造新方程等问题。这一分支为后续学习多项式、函数及更高级的代数结构奠定基础。",
+  "example_queries": [
+    "如何用求根公式解一元二次方程 x^2 - 5x + 6 = 0？",
+    "已知一元二次方程的两个根为 2 和 3，如何利用韦达定理求原方程？",
+    "一元二次方程的判别式小于零时，求根公式还能用吗？",
+    "韦达定理可以用于三次方程吗？",
+    "如何利用韦达定理求两根的平方和？"
+  ]
 }

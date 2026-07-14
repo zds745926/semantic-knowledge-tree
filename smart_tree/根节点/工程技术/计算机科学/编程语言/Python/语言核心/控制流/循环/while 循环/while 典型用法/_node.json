@@ -19,5 +19,35 @@
       "content_preview": "while 典型用法: The `while True` loop combined with the `break` statement is often used for implementing validation or queue-based producer-consumer scenarios using `input()` in Python. In a validation context, this pattern might look like: ```python user_input = \"\" while True: user_input = input(\"Please enter 'exit' to quit: \") if user_input == \"exit\": break ``` For a producer-consumer scenario with a queue, it could be implemented as follows: ```python from collections import deque queue = deque() def producer(): while True: item = input(\"Enter an item (or 'stop' to quit): \") if item == \"stop\": break queue.append(item) def consumer(): while True: if not queue: # Check if the queue is empty continue item = queue.popleft() print(f\"Processing {item}\") # Example usage (in a real scenario, you would run these in separate threads or processes) producer_thread = threading.Thread(target=producer) consumer_thread = threading.Thread(target=consumer) producer_thread.start() consumer_thread.start() producer_thread.join() consumer_thread.join() ``` Note: The above example uses Python's `threading` module to simulate a producer-consumer scenario. In practice, you might use more sophisticated queue implementations or inter-thread communication mechanisms depending on your specific requirements."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "boolean_algebra_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nwhile 循环是一种基于条件表达式的控制流结构，只要条件为真，就重复执行一段代码块。\n\n## 何时使用\n当循环次数不确定，且需要根据某个条件是否满足来决定是否继续循环时，使用 while 循环。典型场景包括：读取文件直到文件末尾、等待用户输入特定值、实现状态机或游戏主循环。\n\n## 示例\n```Python\n# 计算 1 到 10 的和\nsum = 0\ni = 1\nwhile i <= 10:\n    sum += i\n    i += 1\nprint(sum)  # 输出 55\n```\n\n## 反例\n在循环体内忘记更新循环变量，导致无限循环。例如，while i <= 10: sum += i 中缺少 i += 1，程序将永远运行。\n\n## 边界条件\n初始条件可能为假，此时循环体一次都不执行。例如 while False: print('never') 不会输出任何内容。另外，条件表达式中的变量应在循环体内被修改，否则可能造成死循环。",
+    "code_pattern": "def while_loop_example(condition_check, update_func, initial_value):\n    result = []\n    current = initial_value\n    while condition_check(current):\n        result.append(current)\n        current = update_func(current)\n    return result\n\n# 使用示例：生成 0 到 4 的列表\nprint(while_loop_example(lambda x: x < 5, lambda x: x + 1, 0))",
+    "common_pitfalls": [
+      "忘记在循环体内更新循环变量，导致无限循环。例如 while i < 10: print(i) 中缺少 i += 1。",
+      "条件表达式写反，导致循环提前退出或永不执行。例如 while i > 10 而非 while i < 10。",
+      "在循环体内修改了条件变量但未考虑边界值，导致多循环或少循环一次。例如 while i <= 10 时，若 i 从 0 开始，循环会执行 11 次。",
+      "使用 while True 时缺少 break 条件，造成死循环。例如 while True: print('loop') 没有退出机制。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

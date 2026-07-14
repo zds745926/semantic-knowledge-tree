@@ -19,5 +19,30 @@
       "content_preview": "哈希索引: Key Hash Mapping. Only equal value queries. Memery engine by default. O(1) query. For the technical term \"Memery engine,\" it seems there might be a typo, as the correct term is likely \"Memory engine.\" Here's an accurate translation with a brief Python code example for the concept of key hash mapping: Key Hash Mapping. Only equal value queries. Memory engine by default. O(1) query. Python code example: ```python class SimpleHashTable: def __init__(self, size=10): self.size = size self.table = [None] * size def _hash_function(self, key): return hash(key) % self.size def insert(self, key, value): index = self._hash_function(key) self.table[index] = (key, value) def get(self, key): index = self._hash_function(key) entry = self.table[index] if entry and entry[0] == key: return entry[1] else: return None # Example usage ht = SimpleHashTable() ht.insert('apple', 5) print(ht.get('apple')) # Output: 5 ``` This Python code defines a simple hash table that performs O(1) average-time complexity for insert and get operations, demonstrating the key hash mapping concept."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cap_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "durability_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n哈希索引是一种基于哈希表实现的索引结构，它通过哈希函数将索引键值映射到存储位置，从而实现精确匹配查询的快速数据访问。与B+树索引不同，哈希索引不支持范围查询和排序操作，但单行等值查询性能极高。\n\n## 核心要点\n- 哈希索引使用哈希函数计算键值对应的存储桶位置，理想情况下查询时间复杂度为O(1)。\n- 哈希冲突是常见问题，通常通过链地址法或开放地址法解决，冲突过多会降低性能。\n- 哈希索引仅支持等值比较（如=、IN），不支持范围查询（如>、<）和模糊匹配。\n- 哈希索引无法用于排序操作，因为数据存储顺序与键值逻辑顺序无关。\n- 哈希索引的构建和维护需要额外存储空间和计算开销，但适合高并发等值查询场景。\n\n## 应用场景\n哈希索引常用于内存数据库（如Redis）和关系型数据库的特定存储引擎（如MySQL的Memory引擎），适用于需要快速单点查找的场景，例如用户登录验证、缓存键值对查找。在OLTP系统中，哈希索引可加速主键或唯一键的等值查询，但需注意其不支持范围扫描的局限性。\n\n## 相关概念\n哈希索引与B+树索引是数据库中最常见的两种索引类型，B+树支持范围查询和排序，而哈希索引仅适合等值查询。哈希索引的实现依赖于哈希函数和冲突解决机制，与散列表数据结构紧密相关。此外，自适应哈希索引（如InnoDB中的AHI）是数据库自动优化的内部机制，用于加速频繁访问的索引页。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

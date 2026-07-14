@@ -19,5 +19,30 @@
       "content_preview": "Grafana: Visualization dashboard. Multi-data source support. Alarm rules. Rich panel types. Here is an expanded version with a brief Python code example for creating a simple visualization using the `matplotlib` library: Visualization dashboard. This feature allows users to create and customize dashboards that can display data from multiple sources in various visual formats, such as charts, graphs, and tables. Multi-data source support. The system supports integrating data from different sources, enabling comprehensive data analysis and monitoring across various systems or departments. Alarm rules. Users can define custom alarm rules based on specific conditions to receive notifications when certain thresholds are exceeded. For example, an email alert could be triggered if CPU usage exceeds 80%. Rich panel types. A variety of pre-defined panels are available for users to choose from, including line charts, bar graphs, pie charts, and more. Python code example using `matplotlib`: ```python import matplotlib.pyplot as plt # Sample data months = ['Jan', 'Feb', 'Mar', 'Apr', 'May'] sales = [200, 350, 400, 600, 800] # Create a bar chart plt.bar(months, sales) # Add title and labels plt.title('Monthly Sales Data') plt.xlabel('Month') plt.ylabel('Sales') # Show the plot plt.show() ``` This code creates a simple bar chart to visualize monthly sales data."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "auth_v4",
+      "type": "application"
+    },
+    {
+      "id": "https_v4",
+      "type": "application"
+    },
+    {
+      "id": "systemd_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nGrafana 是一个开源的可视化和监控分析平台，用于查询、展示和告警来自多种数据源的指标数据。它允许用户通过丰富的图表和仪表盘，实时理解系统运行状态，是 DevOps 和可观测性领域的核心工具。\n\n## 核心要点\n- **多数据源支持**：Grafana 可以连接 Prometheus、InfluxDB、Elasticsearch、CloudWatch 等多种数据源，统一展示不同系统的数据。\n- **灵活的仪表盘**：用户通过拖拽式界面创建自定义仪表盘，支持折线图、柱状图、热力图等可视化组件，并可以设置变量实现动态过滤。\n- **告警与通知**：内置告警引擎，可基于查询结果设置阈值规则，并通过邮件、Slack、PagerDuty 等渠道发送通知。\n- **插件生态**：提供丰富的插件市场，包括数据源插件、面板插件和应用插件，可扩展功能以满足特定需求。\n- **团队协作**：支持组织、团队和用户权限管理，允许共享仪表盘和告警规则，促进团队协作。\n\n## 应用场景\nGrafana 广泛应用于基础设施监控（如服务器 CPU、内存）、应用性能监控（如请求延迟、错误率）以及业务指标分析（如用户活跃度、收入趋势）。它帮助运维和开发团队快速定位故障、优化性能，并支持数据驱动的决策。\n\n## 相关概念\n- **Prometheus**：一个流行的开源监控系统和时间序列数据库，常与 Grafana 配合使用作为数据源。\n- **可观测性**：涵盖监控、日志和链路追踪三大支柱，Grafana 主要聚焦于监控和可视化部分。\n- **仪表盘**：Grafana 中的核心概念，用于组织和展示多个面板，每个面板对应一个数据查询和可视化结果。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

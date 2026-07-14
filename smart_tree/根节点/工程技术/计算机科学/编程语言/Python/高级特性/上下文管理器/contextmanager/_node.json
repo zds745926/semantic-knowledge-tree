@@ -19,5 +19,34 @@
       "content_preview": "contextmanager: The `@contextmanager` decorator function is used in Python for context management. The code within the function runs before the `yield` statement when entering the context, and any code after the `yield` statement runs when exiting the context. Here's a brief example: ```python from contextlib import contextmanager @contextmanager def simple_context_manager(resource): print(\"Entering the context\") # Perform setup here (e.g., acquire resource) try: yield resource # This is where the code within the `with` block runs finally: print(\"Exiting the context\") # Perform cleanup here (e.g., release resource) # Usage example with simple_context_manager(\"Resource\") as res: print(f\"Using {res}\") ``` In this example, when you use the `simple_context_manager` in a `with` statement, it will print \"Entering the context\", then execute the code within the `with` block (which prints the resource), and finally print \"Exiting the context\"."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_tempfile_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_thread_safety_v4",
+      "type": "application"
+    },
+    {
+      "id": "deadlock_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n`contextmanager` 是 `contextlib` 模块中的一个装饰器，用于将一个生成器函数转换为上下文管理器，从而简化 `__enter__` 和 `__exit__` 方法的编写。\n\n## 何时使用\n当你需要管理资源（如文件、网络连接、锁）的获取和释放，且希望避免重复编写 `__enter__` 和 `__exit__` 方法时，可以使用 `contextmanager`。它特别适合那些逻辑简单、只需在进入和退出时执行特定操作的场景，例如计时、事务管理或临时修改全局状态。\n\n## 示例\n```Python\nfrom contextlib import contextmanager\n\n@contextmanager\ndef managed_file(filename, mode):\n    f = open(filename, mode)\n    try:\n        yield f\n    finally:\n        f.close()\n\nwith managed_file('test.txt', 'w') as f:\n    f.write('Hello, world!')\n```\n\n## 反例\n错误用法：在生成器函数中忘记使用 `try...finally` 或 `with` 语句来确保资源释放，例如直接 `yield` 后不处理异常，导致资源泄漏。\n\n## 边界条件\n- 生成器函数中 `yield` 语句只能出现一次，否则会引发 `RuntimeError`。\n- 如果 `yield` 之前发生异常，`finally` 块仍然会执行，但 `yield` 后的代码不会运行，因此资源清理逻辑应放在 `finally` 中。",
+    "code_pattern": "from contextlib import contextmanager\n\n@contextmanager\ndef my_context():\n    # 进入上下文时的初始化\n    resource = acquire_resource()\n    try:\n        yield resource\n    finally:\n        # 退出上下文时的清理\n        release_resource(resource)",
+    "common_pitfalls": [
+      "生成器中 yield 多次：contextmanager 要求生成器只能 yield 一次，否则会抛出 RuntimeError，常见于误用循环。",
+      "忘记异常处理：如果 yield 后的代码抛出异常，而生成器中没有 try...finally，资源将无法释放，导致泄漏。",
+      "在 yield 之前返回：如果在 yield 之前有 return 语句，生成器会提前结束，导致上下文管理器行为异常，通常应避免在生成器中使用 return。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

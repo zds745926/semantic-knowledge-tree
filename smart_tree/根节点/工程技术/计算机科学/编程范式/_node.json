@@ -17,5 +17,13 @@
     "description": "编程范式: Programming paradigms are the fundamental styles and methodologies in programming, including procedural, object-oriented, functional, and declarative approaches. Each paradigm offers different ways of abstraction and thought models. Understanding multiple paradigms can help write better code. Here is a brief example for each paradigm using Python: 1. **Procedural Programming**: This paradigm focuses on procedures or routines to solve problems. ```python def calculate_area(length, width): return length * width area = calculate_area(5, 3) print(area) # Output: 15 ``` 2. **Object-Oriented Programming (OOP)**: This paradigm revolves around objects that have properties and methods. ```python class Rectangle: def __init__(self, length, width): self.length = length self.width = width def area(self): return self.length * self.width rect = Rectangle(5, 3) print(rect.area()) # Output: 15 ``` 3. **Functional Programming**: This paradigm treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. ```python def area(length, width): return length * width from functools import partial calculate_area = partial(area, width=3) print(calculate_area(5)) # Output: 15 ``` 4. **Declarative Programming**: This paradigm focuses on what the program should accomplish rather than how it accomplishes it. ```python from math import sqrt def find_roots(a, b, c): discriminant = sqrt(b**2 - 4*a*c) root1 = (-b + discriminant) / (2 * a) root2 = (-b - discriminant) / (2 * a) return root1, root2 roots = find_roots(1, -3, 2) print(roots) # Output: (2.0, 1.0) ``` These examples illustrate the basic structure and differences between these programming paradigms in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "编程范式是计算机科学中关于程序设计基本风格和方法的分类体系，它定义了程序员如何思考、组织和表达计算过程。本分支涵盖三大核心范式：面向过程、面向对象和函数式编程。面向过程以过程或函数为基本单元，强调自上而下的分解和顺序执行，适合算法实现和底层系统开发。面向对象以对象和类为核心，通过封装、继承和多态实现模块化与复用，广泛应用于大型软件工程。函数式编程基于数学函数概念，强调无副作用、不可变数据和声明式风格，在并发计算和数据处理中优势显著。三者并非互斥，而是互补：面向过程提供清晰的执行流程，面向对象增强代码组织与维护，函数式提升逻辑严谨性与并行安全性。学习路径建议先掌握面向过程以理解程序基本结构，再学习面向对象以应对复杂系统，最后探索函数式编程以提升抽象思维和代码质量。掌握这些范式有助于选择合适工具解决特定问题，并培养多角度编程思维。",
+  "example_queries": [
+    "面向过程、面向对象和函数式编程各自的核心思想是什么？",
+    "在实际项目中如何选择合适的编程范式？",
+    "面向对象编程中的继承与函数式编程中的组合有何异同？",
+    "函数式编程中的纯函数和不可变数据如何提升代码可靠性？",
+    "面向过程编程在哪些场景下仍然不可替代？"
+  ]
 }

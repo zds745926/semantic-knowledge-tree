@@ -15,5 +15,13 @@
     "description": "计算机网络: Computer networks study the protocols and technologies for data transmission between different devices. At its core, the TCP/IP protocol stack is fundamental, encompassing layers such as the transport layer (TCP/UDP), the network layer (IP/routing), and the application layer (HTTP/DNS). Here's a brief Python code example to illustrate how data might be sent over a TCP connection using sockets: ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) print(f'Connecting to {server_address[0]} on port {server_address[1]}') sock.connect(server_address) try: # Send data message = 'This is the message. It will be repeated.' print(f'Sending: \"{message}\"') sock.sendall(message.encode()) finally: print('Closing socket') sock.close() ``` This example demonstrates creating a TCP socket, connecting to a server, sending a message, and then closing the connection."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "计算机网络是计算机科学的重要分支，主要研究如何将分散的计算机系统通过通信设备和线路连接起来，实现资源共享和信息传递。本分支涵盖网络体系结构、协议、硬件设备、应用服务等核心内容。子主题包括网络分层模型（如OSI七层模型和TCP/IP四层模型）、物理层与数据链路层（涉及传输介质、MAC地址、以太网）、网络层（IP地址、路由协议、子网划分）、传输层（TCP/UDP协议、端口、流量控制）、应用层（HTTP、DNS、FTP、电子邮件等）。各子主题之间遵循从底层到顶层的递进关系：物理层负责比特流传输，数据链路层确保帧的可靠传递，网络层实现跨网络的路由与寻址，传输层提供端到端的通信服务，应用层则面向用户提供具体网络功能。学习路径建议先掌握网络基础概念与分层思想，再依次深入各层协议原理，最后结合实践理解网络应用与安全。",
+  "example_queries": [
+    "TCP/IP协议栈各层的主要功能是什么？",
+    "IP地址和MAC地址有什么区别？",
+    "TCP三次握手和四次挥手的过程是怎样的？",
+    "DNS域名解析的工作原理是什么？",
+    "如何通过子网掩码计算网络地址和主机地址？"
+  ]
 }

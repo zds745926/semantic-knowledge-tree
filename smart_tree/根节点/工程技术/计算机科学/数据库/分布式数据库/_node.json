@@ -17,5 +17,13 @@
     "description": "分布式数据库: Distributed databases distribute data across multiple machines. The CAP theorem serves as the theoretical foundation. To provide a more comprehensive explanation and include a relevant Python code example, let's delve into what the CAP theorem means in practice: The CAP theorem states that a distributed system can at most satisfy two out of three desirable properties: Consistency, Availability, and Partition Tolerance (CAP). Here’s a brief description of each property: - **Consistency**: Every read receives the most recent write or an error. - **Availability**: Every request receives a response about whether it was successful or not without unbounded delay. - **Partition Tolerance**: The system continues to operate despite arbitrary message loss or failure of part of the system. Here’s a simple Python code example using a basic in-memory data structure to illustrate how these concepts might be implemented, though this is highly simplified and not meant for production use: ```python class SimpleDB: def __init__(self): self.data = {} def put(self, key, value): # Simulate consistency by ensuring the latest write wins self.data[key] = value def get(self, key): # Simulate availability and partition tolerance with a simple in-memory store return self.data.get(key) def is_partitioned(self): # Simulate checking for partition conditions (e.g., network failure) import random if random.random() < 0.5: raise Exception(\"Partition occurred\") return True # Example usage db = SimpleDB() db.put('key1', 'value1') print(db.get('key1')) # Output: value1 try: db.is_partitioned() except Exception as e: print(e) # Output: Partition occurred ``` This example demonstrates a basic in-memory database that can be used to illustrate the trade-offs between consistency, availability, and partition tolerance. In practice, distributed databases use complex algorithms and strategies to manage these properties more effectively."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "分布式数据库是计算机科学中数据库领域的重要分支，主要研究如何将数据分布在多个独立节点上，以支持大规模、高可用、高并发的数据管理需求。本分支涵盖的核心子主题包括CAP定理、Raft共识算法和分片。CAP定理是分布式系统的理论基础，阐述了在一致性、可用性和分区容错性三者之间只能同时满足两个，为系统设计提供了权衡框架。Raft共识算法则是一种用于实现分布式系统中节点间状态一致性的协议，通过领导者选举和日志复制确保数据在节点间可靠同步，是构建强一致性分布式数据库的关键技术。分片技术将数据水平划分为多个片段，分布在不同节点上，以提升系统扩展性和查询性能，但同时也引入了跨分片事务和查询路由等挑战。这三个子主题相互关联：CAP定理指导系统设计者在一致性和可用性间做出选择；Raft算法为需要强一致性的场景提供实现手段；分片则通过数据分布优化性能，但需结合CAP定理和共识机制来保证数据正确性。学习路径建议先理解CAP定理，掌握分布式系统的核心权衡；然后学习Raft共识算法，了解如何实现一致性；最后研究分片技术，掌握数据分布与查询优化方法。",
+  "example_queries": [
+    "在分布式数据库中，如何根据业务需求在CAP定理中选择合适的一致性模型？",
+    "Raft共识算法如何通过领导者选举和日志复制保证数据一致性？",
+    "分片技术如何实现数据水平扩展，并解决跨分片查询和分布式事务问题？",
+    "分布式数据库在节点故障时如何利用Raft算法实现自动恢复？",
+    "如何设计一个兼顾高可用性和扩展性的分布式数据库分片策略？"
+  ]
 }

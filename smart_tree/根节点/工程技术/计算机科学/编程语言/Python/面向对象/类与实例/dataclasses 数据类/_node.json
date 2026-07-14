@@ -19,5 +19,30 @@
       "content_preview": "dataclasses 数据类: The `@dataclass` decorator automatically generates the `__init__`, `__repr__`, and `__eq__` methods. The `field()` function allows for custom field definitions. The `frozen` parameter makes the class immutable. This feature is available in Python 3.7 and later. ```python from dataclasses import dataclass, field @dataclass(frozen=True) class ExampleClass: x: int = field(default=0) # Custom field definition with a default value def __repr__(self): return f\"ExampleClass(x={self.x})\" ``` This example demonstrates the use of `@dataclass` and `field()` to create an immutable class with a custom field. The `__repr__` method is also defined for better object representation."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_collections_module_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "immutability_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n`dataclasses` 数据类是 Python 3.7+ 引入的一个装饰器和函数，用于自动生成类中的 `__init__`、`__repr__`、`__eq__` 等特殊方法，从而简化数据容器的定义。\n\n## 何时使用\n当需要定义一个主要存储数据的类（如配置、记录、值对象），且不需要复杂的行为逻辑时，使用 `dataclasses` 可以显著减少样板代码。它特别适用于需要比较、打印或序列化数据对象的场景，例如从 JSON 解析的模型、数据库行映射或函数参数封装。\n\n## 示例\n```Python\nfrom dataclasses import dataclass\n\n@dataclass\nclass Point:\n    x: float\n    y: float\n    label: str = \"origin\"\n\np1 = Point(1.0, 2.0, \"A\")\np2 = Point(1.0, 2.0, \"A\")\nprint(p1)          # Point(x=1.0, y=2.0, label='A')\nprint(p1 == p2)    # True\n```\n\n## 反例\n错误地使用可变默认值（如空列表）会导致所有实例共享同一个对象，引发难以调试的 bug。例如 `items: list = []` 应改为 `items: list = field(default_factory=list)`。\n\n## 边界条件\n- 字段顺序决定 `__init__` 参数顺序，有默认值的字段必须放在无默认值字段之后。\n- 继承时需小心：子类字段会覆盖父类同名字段，且父类字段顺序可能被破坏。\n- 使用 `frozen=True` 创建不可变实例后，无法修改字段值，但若字段本身是可变对象（如列表），其内容仍可修改。",
+    "code_pattern": "from dataclasses import dataclass, field\nfrom typing import List, Optional\n\n@dataclass\nclass DataModel:\n    name: str\n    value: int = 0\n    tags: List[str] = field(default_factory=list)\n    optional_field: Optional[str] = None\n\n# 使用示例\nobj = DataModel(name=\"example\", value=42)\nobj.tags.append(\"new\")\nprint(obj)",
+    "common_pitfalls": [
+      "使用可变默认值（如 `[]` 或 `{}`）而不使用 `field(default_factory=...)`，导致所有实例共享同一个可变对象，修改一个实例会影响其他实例。",
+      "在继承中使用 `dataclass` 时，子类字段会覆盖父类同名字段，且父类字段顺序可能不符合预期，需要显式指定 `@dataclass(order=True)` 或手动调整字段顺序。",
+      "忘记设置 `frozen=True` 时，实例字段可以被随意修改，可能导致数据不一致；而设置 `frozen=True` 后，若字段包含可变对象（如列表），仍可通过方法修改其内容，造成不可变假象。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

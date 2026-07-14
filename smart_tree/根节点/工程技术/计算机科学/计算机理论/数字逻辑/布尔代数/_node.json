@@ -19,5 +19,22 @@
       "content_preview": "布尔代数: Boolean Algebra Basic Operations: AND, OR, NOT. De Morgan's Laws allow the conversion between AND and OR operations. Here are brief Python code examples for these Boolean operations: ```python # Define variables a = True b = False # AND operation and_result = a and b # Output will be False # OR operation or_result = a or b # Output will be True # NOT operation not_a = not a # Output will be False ``` De Morgan's Laws can be demonstrated as follows: ```python # De Morgan's Law: NOT (a and b) is equivalent to (NOT a) or (NOT b) left_side = not (a and b) # Output will be True right_side = (not a) or (not b) # Output will be True print(left_side == right_side) # This should print True ``` These examples illustrate the basic Boolean operations and De Morgan's Laws in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n布尔代数是一种处理逻辑值的代数系统，其变量仅取两个值：真（1）和假（0）。它由英国数学家乔治·布尔在19世纪中叶提出，通过逻辑运算（如与、或、非）来描述和操作逻辑命题。\n\n## 核心要点\n- 基本运算：布尔代数的核心运算包括与（AND，记为·）、或（OR，记为+）和非（NOT，记为¬或上划线），它们定义了逻辑值的组合规则。\n- 运算定律：布尔代数遵循交换律、结合律、分配律、吸收律和德摩根定律等，这些定律简化逻辑表达式。\n- 对偶性：布尔代数中的每个定理或定律都有一个对偶形式，通过交换与和或运算以及0和1得到。\n- 最小化：通过卡诺图或代数方法，布尔表达式可以简化为最简形式，减少逻辑门数量。\n- 完备性：任何逻辑函数都可以用与、或、非运算的有限组合表示，因此布尔代数构成逻辑设计的基础。\n\n## 应用场景\n布尔代数广泛应用于数字电路设计，用于构建加法器、多路选择器和处理器等逻辑电路。它也是计算机科学中逻辑编程、数据库查询优化和算法设计的基础工具。\n\n## 相关概念\n布尔代数与集合代数密切相关，其中与运算对应交集，或运算对应并集，非运算对应补集。此外，它还与命题逻辑中的逻辑联结词（如合取、析取、否定）等价，是数字逻辑和计算机体系结构的基础。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

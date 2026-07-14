@@ -21,5 +21,22 @@
   ],
   "related_nodes": [
     "py_random_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nmath 模块是 Python 标准库中提供数学函数和常量的模块，支持浮点运算、三角函数、对数、幂运算、阶乘等，基于 C 语言标准库实现，性能高效。\n\n## 何时使用\n当需要进行数学计算，如求平方根、三角函数、对数、幂运算、阶乘、取整、角度弧度转换等，且不依赖 NumPy 等第三方库时，应使用 math 模块。它适用于科学计算、数据分析、游戏开发、工程模拟等场景中的基础数学运算。\n\n## 示例\n```Python\nimport math\n\n# 计算圆的面积\nradius = 5.0\narea = math.pi * math.pow(radius, 2)\nprint(f\"半径为 {radius} 的圆面积为 {area:.2f}\")\n\n# 计算直角三角形的斜边\na, b = 3.0, 4.0\nhypotenuse = math.hypot(a, b)\nprint(f\"直角边 {a} 和 {b} 的斜边长为 {hypotenuse}\")\n\n# 角度转弧度并计算正弦\ndegrees = 30\nradians = math.radians(degrees)\nsin_val = math.sin(radians)\nprint(f\"sin({degrees}°) = {sin_val:.4f}\")\n```\n\n## 反例\n错误用法：直接对复数调用 math.sqrt()，例如 math.sqrt(-1) 会抛出 ValueError，因为 math 模块不支持复数运算，应使用 cmath 模块。\n\n## 边界条件\n注意 math 函数对输入类型敏感，通常只接受 int 和 float，传入 Decimal 或 Fraction 可能引发 TypeError。对于超大浮点数，部分函数可能返回 inf 或导致溢出错误。",
+    "code_pattern": "import math\n\n# 通用数学计算模板\ndef calculate(operation, *args):\n    if operation == 'sqrt':\n        return math.sqrt(args[0])\n    elif operation == 'sin':\n        return math.sin(math.radians(args[0]))\n    elif operation == 'cos':\n        return math.cos(math.radians(args[0]))\n    elif operation == 'tan':\n        return math.tan(math.radians(args[0]))\n    elif operation == 'log':\n        return math.log(args[0], args[1]) if len(args) > 1 else math.log(args[0])\n    elif operation == 'pow':\n        return math.pow(args[0], args[1])\n    elif operation == 'hypot':\n        return math.hypot(*args)\n    else:\n        raise ValueError(f\"Unsupported operation: {operation}\")\n\n# 使用示例\nresult = calculate('sqrt', 16)\nprint(result)  # 4.0",
+    "common_pitfalls": [
+      "对负数调用 math.sqrt() 会抛出 ValueError，应使用 cmath.sqrt() 处理复数。",
+      "三角函数默认使用弧度，若传入角度值需先用 math.radians() 转换，否则结果错误。",
+      "math.log(x, base) 中 x 必须为正数，对 0 或负数调用会引发 ValueError。",
+      "浮点数精度问题：math 函数返回浮点数，比较结果时需使用 math.isclose() 而非 ==，例如 math.isclose(math.sin(math.pi), 0.0)。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,30 @@
       "content_preview": "图灵机: Turing machines are abstract models in computational theory, consisting of an infinite tape and a read/write head. They can simulate any computer algorithm. Python code example to illustrate the basic concept (this is a simplified representation): ```python class TuringMachine: def __init__(self, tape=None, blank_symbol='0', initial_state='q0'): self.tape = tape if tape else ['0'] * 1000 # Initialize tape with zeros self.head_position = 500 # Start in the middle of the tape self.blank_symbol = blank_symbol self.current_state = initial_state def step(self, transition_function): current_symbol = self.tape[self.head_position] next_action = transition_function.get((self.current_state, current_symbol)) if not next_action: raise ValueError(f\"No transition defined for state {self.current_state} and symbol {current_symbol}\") action, new_state, write_symbol, move_direction = next_action self.tape[self.head_position] = write_symbol # Write the symbol on the tape self.current_state = new_state # Move to the new state if move_direction == 'R': self.head_position += 1 elif move_direction == 'L': self.head_position -= 1 # Example transition function (simplified) transition_function = { ('q0', '0'): ('write_1', 'q1', '1', 'R'), ('q1', '1'): ('halt', None, None, None), } tm = TuringMachine() tm.step(transition_function) # This is a simplified step function for demonstration ``` This Python code provides a basic structure of a Turing machine and demonstrates how it can process symbols on an infinite tape based on its current state. Note that this example is highly simplified and does not fully capture the complexity of actual Turing machines."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "boolean_algebra_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n图灵机是由英国数学家艾伦·图灵于1936年提出的一种抽象计算模型，它由一个无限长的纸带、一个读写头以及一套有限的状态转移规则组成。该模型通过读写头在纸带上读取和写入符号，并根据当前状态和读取的符号决定下一步操作，从而模拟任何可计算问题的求解过程。\n\n## 核心要点\n- 图灵机由无限纸带、读写头和有限状态控制器三部分构成，纸带被划分为连续单元格，每个单元格可存储一个符号。\n- 其操作基于状态转移函数，即根据当前状态和读取的符号，决定写入新符号、移动读写头（左移或右移）以及进入下一状态。\n- 图灵机可模拟任何算法，是计算理论中“可计算性”的基石，所有可计算函数都能在图灵机上实现。\n- 停机问题是指判断任意图灵机在给定输入下是否会终止，图灵证明该问题不可判定，揭示了计算的固有局限性。\n- 通用图灵机是一种特殊的图灵机，它能模拟任何其他图灵机的行为，是现代通用计算机的理论原型。\n\n## 应用场景\n图灵机主要用于理论计算机科学中，作为定义算法和计算极限的基准模型。它帮助研究人员分析问题的可计算性，例如在复杂性理论中区分P和NP问题。此外，图灵机的概念也启发并指导了实际计算机体系结构的设计，如冯·诺依曼架构。\n\n## 相关概念\n图灵机与λ演算等价，两者都是可计算性理论的核心模型。此外，它还与邱奇-图灵论题紧密相关，该论题认为任何在直觉上可计算的函数都能被图灵机计算。现代编程语言和计算机本质上都是图灵完备的，即能模拟图灵机的所有功能。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

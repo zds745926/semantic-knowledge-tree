@@ -19,5 +19,34 @@
       "content_preview": "线程安全: Atomic operations (int/float assignments) are thread-safe. Lists and similar non-atomic structures are not. `threading.settrace` is used to set a trace function for all threads. Python code example: ```python import threading # Atomic operation - safe in multi-threaded environment x = 0 def increment(): global x x += 1 # This is an atomic operation in CPython due to the Global Interpreter Lock (GIL) # Non-atomic operation - unsafe in a multi-threaded environment without proper synchronization y = [0] def append_to_list(): y.append(1) # This is not thread-safe because multiple threads can interfere with each other # Using threading.settrace to trace all threads def my_tracefunc(frame, event, arg): if event == 'call': print(f\"Function {frame.f_code.co_name} called\") return my_tracefunc threading.settrace(my_tracefunc) ``` Note: The `x += 1` operation is generally considered atomic in CPython due to the Global Interpreter Lock (GIL), but it's important to understand that this doesn't apply universally across all Python implementations. For more complex operations, explicit synchronization mechanisms like locks are necessary."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "deadlock_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "immutability_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_lifo_queue_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n线程安全是指多线程环境下，共享数据在未加锁保护时，多个线程同时读写该数据不会导致数据不一致或程序崩溃的特性。\n\n## 何时使用\n当多个线程需要并发访问同一个可变对象（如列表、字典、计数器）时，必须确保线程安全。例如，在Web服务器中多个请求线程同时更新全局计数器，或生产者-消费者模式中多个线程操作共享队列。\n\n## 示例\n```Python\nimport threading\n\ncounter = 0\nlock = threading.Lock()\n\ndef increment():\n    global counter\n    for _ in range(100000):\n        with lock:\n            counter += 1\n\nthreads = [threading.Thread(target=increment) for _ in range(10)]\nfor t in threads:\n    t.start()\nfor t in threads:\n    t.join()\nprint(f\"Final counter: {counter}\")  # 预期输出 1000000\n```\n\n## 反例\n不使用锁直接操作共享变量，如多个线程同时执行 `counter += 1` 而不加锁，会导致数据竞争，最终结果小于预期值。\n\n## 边界条件\n注意锁的粒度：过粗的锁会降低并发性能，过细的锁可能导致死锁。另外，Python的GIL（全局解释器锁）仅保证字节码级别的原子性，对于非原子操作（如 `counter += 1`）仍需显式同步。",
+    "code_pattern": "import threading\n\nclass ThreadSafeCounter:\n    def __init__(self):\n        self.value = 0\n        self._lock = threading.Lock()\n\n    def increment(self):\n        with self._lock:\n            self.value += 1\n\n    def get_value(self):\n        with self._lock:\n            return self.value\n\n# 使用示例\ncounter = ThreadSafeCounter()\ndef worker():\n    for _ in range(1000):\n        counter.increment()\nthreads = [threading.Thread(target=worker) for _ in range(10)]\nfor t in threads:\n    t.start()\nfor t in threads:\n    t.join()\nprint(counter.get_value())",
+    "common_pitfalls": [
+      "忘记加锁：直接对共享变量进行非原子操作（如 `counter += 1`）导致数据竞争，结果不可预测。",
+      "锁的粒度不当：使用全局锁保护整个函数，导致大量线程串行执行，性能下降；或者锁范围过小，遗漏关键代码段。",
+      "死锁：多个线程互相等待对方持有的锁，例如线程A持有锁1等待锁2，线程B持有锁2等待锁1，导致程序永久阻塞。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

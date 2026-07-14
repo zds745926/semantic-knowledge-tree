@@ -19,5 +19,34 @@
       "content_preview": "SimpleQueue: queue.SimpleQueue(3.8+) Lightweight FIFO (First-In-First-Out) queue. No task door/join required, faster. Python code example: ```python import queue # Create a SimpleQueue with Python's built-in queue module simple_queue = queue.SimpleQueue() # Example usage: putting and getting items from the queue simple_queue.put(1) simple_queue.put(2) while not simple_queue.empty(): print(simple_queue.get(), end=' ') ``` Note: The `queue.SimpleQueue` class is available in Python 3.8+. This example demonstrates how to use it for basic operations like putting and getting items from the queue."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_condition_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nSimpleQueue 是 Python queue 模块中的一个无界 FIFO（先进先出）队列，专为多线程生产者-消费者模式设计，提供线程安全的 put() 和 get() 操作，但不支持任务跟踪（如 task_done() 和 join()）。\n\n## 何时使用\n当需要在线程间安全地传递数据，且不关心任务完成状态时，SimpleQueue 是轻量级选择。它比 Queue 更高效，因为省去了任务计数和等待机制。适用于简单数据流场景，如日志收集、事件分发。\n\n## 示例\n```Python\nimport threading\nimport time\nfrom queue import SimpleQueue\n\ndef producer(q):\n    for i in range(5):\n        q.put(f\"item-{i}\")\n        time.sleep(0.1)\n\ndef consumer(q):\n    while True:\n        item = q.get()\n        if item is None:  # 哨兵值退出\n            break\n        print(f\"Consumed: {item}\")\n\nq = SimpleQueue()\nt1 = threading.Thread(target=producer, args=(q,))\nt2 = threading.Thread(target=consumer, args=(q,))\nt1.start()\nt2.start()\nt1.join()\nq.put(None)  # 通知消费者退出\nt2.join()\n```\n\n## 反例\n错误地将 SimpleQueue 用于需要等待所有任务完成的场景，例如调用 join() 方法会引发 AttributeError。应该使用 Queue 并配合 task_done() 和 join() 来跟踪任务进度。\n\n## 边界条件\nSimpleQueue 是无界队列，put() 永远不会阻塞，但 get() 会在队列为空时阻塞。不要在生产环境中依赖无界队列，否则可能导致内存耗尽。另外，SimpleQueue 不支持优先级或延迟项。",
+    "code_pattern": "from queue import SimpleQueue\nimport threading\n\ndef worker(q):\n    while True:\n        item = q.get()\n        if item is None:\n            break\n        # 处理 item\n        pass\n\nq = SimpleQueue()\nthreads = [threading.Thread(target=worker, args=(q,)) for _ in range(4)]\nfor t in threads:\n    t.start()\n# 生产者\nfor data in data_source:\n    q.put(data)\n# 停止信号\nfor _ in threads:\n    q.put(None)\nfor t in threads:\n    t.join()",
+    "common_pitfalls": [
+      "误用 join() 方法：SimpleQueue 没有 join() 和 task_done()，如果代码中调用 q.join() 会抛出 AttributeError，应改用 Queue 或自行实现同步。",
+      "无界队列内存风险：SimpleQueue 是无界的，如果生产者速度远快于消费者，队列会无限增长，最终耗尽内存。建议在生产者端添加限流或改用有界 Queue。",
+      "哨兵值使用不当：使用 None 作为停止信号时，如果队列中可能包含 None 作为正常数据，会导致消费者提前退出。应使用自定义哨兵对象，如 _sentinel = object()。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

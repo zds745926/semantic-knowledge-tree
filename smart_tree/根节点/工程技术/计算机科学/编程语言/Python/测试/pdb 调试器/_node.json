@@ -19,5 +19,34 @@
       "content_preview": "pdb 调试器: The command `python -m pdb script.py` starts the Python debugger (pdb) on the specified script. Here are the key commands you can use within pdb: - `l` (list): Lists the source code for the current scope. - `n` (next): Execute the next line of code. - `s` (step): Step into function calls. - `c` (continue): Continue execution until a breakpoint is hit or the program terminates. - `p` (print): Print the value of an expression. - `q` (quit): Exit the debugger. Here's a brief Python code example to illustrate using pdb: ```python import pdb def calculate(x, y): result = x + y pdb.set_trace() # This will pause execution here and enter pdb mode return result calculate(5, 3) ``` When you run this script with `python -m pdb script.py`, it will pause at the line containing `pdb.set_trace()` and allow you to use pdb commands like `l`, `n`, `s`, etc."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\npdb 是 Python 内置的交互式源代码调试器，支持设置断点、单步执行、查看变量和堆栈跟踪，帮助开发者定位和修复代码中的逻辑错误。\n\n## 何时使用\n当程序出现难以通过 print 语句定位的复杂逻辑错误或异常时，使用 pdb 可以动态检查变量状态和执行流程。它也适用于理解不熟悉的代码库，通过逐步执行来观察运行行为。在编写测试用例时，pdb 可用于验证中间结果是否符合预期。\n\n## 示例\n```Python\nimport pdb\n\ndef divide(a, b):\n    result = a / b\n    return result\n\npdb.set_trace()  # 在此处暂停\nx = 10\ny = 0\nz = divide(x, y)\nprint(z)\n```\n运行后进入交互模式，可输入 `c` 继续执行，`n` 单步，`p x` 查看变量。\n\n## 反例\n不要在生产环境代码中保留 `pdb.set_trace()`，这会导致程序挂起等待输入。也不要用 pdb 替代单元测试来验证简单逻辑，过度依赖交互调试会降低代码质量。\n\n## 边界条件\npdb 在交互式环境（如 Jupyter Notebook）中可能无法正常工作，建议在终端中运行脚本。另外，在多线程或多进程程序中，pdb 默认只调试主线程，其他线程可能不受控制。",
+    "code_pattern": "import pdb\n\ndef debug_function(param):\n    # 在此处设置断点\n    pdb.set_trace()\n    # 业务逻辑\n    result = param * 2\n    return result\n\nif __name__ == \"__main__\":\n    value = 5\n    output = debug_function(value)\n    print(output)",
+    "common_pitfalls": [
+      "忘记删除 pdb.set_trace() 导致生产环境挂起：调试完成后必须移除所有 set_trace 调用，否则程序会阻塞等待输入。",
+      "在循环内设置断点导致重复暂停：如果断点位于循环内部，每次迭代都会触发暂停，应使用条件断点（如 pdb.set_trace() 前加 if 判断）或仅在外层设置。",
+      "混淆 pdb 命令与 Python 语法：在 pdb 提示符下直接输入变量名会打印其值，但若变量名与 pdb 命令冲突（如 'c' 表示 continue），需使用 '!' 前缀执行 Python 语句，如 !c = 1。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

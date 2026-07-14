@@ -17,5 +17,13 @@
     "description": "计算机理论: Theoretical computer science investigates the essence, limits, and possibilities of computation, including information theory, computational theory, and digital logic. It provides a formal foundation for all areas of computer science, revealing the boundaries of computability and the fundamental measures of information. Here is a brief Python code example to illustrate a simple concept in computational theory: determining whether a number is even or odd: ```python def is_even(number): \"\"\" Check if a given number is even. :param number: The integer to check. :return: True if the number is even, False otherwise. \"\"\" return number % 2 == 0 # Example usage: print(is_even(4)) # Output: True print(is_even(7)) # Output: False ``` This example demonstrates a basic computational concept and how it can be implemented in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "计算机理论是计算机科学的基础分支，主要研究计算的基本原理、信息的表示与处理、以及数字系统的逻辑设计。该分支涵盖信息论、计算理论和数字逻辑三大子主题。信息论关注信息的量化、存储和通信，为数据压缩和加密提供理论基础；计算理论探讨计算的本质，包括可计算性、计算复杂性和自动机理论，是算法设计与分析的核心；数字逻辑则研究数字电路的设计与实现，涉及布尔代数、逻辑门和组合与时序逻辑，是计算机硬件的基础。三者相互关联：信息论为计算理论提供信息处理的上限，计算理论指导算法与程序的设计，数字逻辑则将理论转化为物理实现。学习路径建议先掌握数字逻辑，建立硬件基础；再学习计算理论，理解计算模型与复杂度；最后深入信息论，掌握信息处理与通信原理。该分支为理解计算机系统、算法优化和人工智能等高级领域提供必要支撑。",
+  "example_queries": [
+    "什么是图灵机，它如何定义可计算性？",
+    "信息论中的熵如何衡量信息量？",
+    "如何用布尔代数简化逻辑电路？",
+    "P与NP问题的核心是什么？",
+    "数字逻辑中组合电路与时序电路的区别是什么？"
+  ]
 }

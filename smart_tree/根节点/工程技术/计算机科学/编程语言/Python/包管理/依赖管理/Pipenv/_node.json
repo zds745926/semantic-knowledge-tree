@@ -19,5 +19,42 @@
       "content_preview": "Pipenv: Pipfile and Pipfile.lock. Automatically creates a virtual environment. pipenv install/run/shell. Here are the translations with added Python code examples for clarity: - **Pipfile**: A file that contains all of your project's dependencies, including their versions. ```python # Example Pipfile content [packages] requests = \"*\" ``` - **Pipfile.lock**: This is an automatically generated file that records the exact versions of each dependency and its sub-dependencies installed in a virtual environment. It ensures reproducibility. ```python # Example Pipfile.lock snippet { \"default\": { \"requests\": { \"version\": \"==2.25.1\" } }, \"develop\": {} } ``` - **Automatically creates a virtual environment**: pipenv will create and manage the virtual environment for you. ```python # Command to install dependencies in a new virtual environment pipenv install requests ``` - **pipenv install/run/shell**: These commands are used with pipenv to install packages, run scripts within the virtual environment, or execute shell commands. ```python # Install a package and its dependencies pipenv install requests # Run a Python script in the virtual environment pipenv run python myscript.py # Execute a shell command in the virtual environment pipenv shell ``` These examples should provide a clear understanding of how to use these commands and files in practice."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_tempfile_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_hashlib_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nPipenv 是 Python 官方推荐的包管理工具，它自动管理虚拟环境和依赖关系，通过 Pipfile 和 Pipfile.lock 文件实现确定性构建。\n\n## 何时使用\n当项目需要隔离依赖环境、确保不同开发者和部署环境依赖版本一致时，应使用 Pipenv。它尤其适合需要同时管理开发和生产依赖的项目，以及希望简化 pip + virtualenv 手动操作流程的团队。\n\n## 示例\n```Python\n# 1. 安装 Pipenv（如果尚未安装）\n# pip install pipenv\n\n# 2. 在项目根目录初始化虚拟环境并安装依赖\n# pipenv install requests flask\n\n# 3. 安装开发依赖\n# pipenv install --dev pytest black\n\n# 4. 激活虚拟环境\n# pipenv shell\n\n# 5. 运行脚本\n# python main.py\n\n# 6. 退出虚拟环境\n# exit\n\n# 7. 生成 Pipfile.lock 锁定版本\n# pipenv lock\n\n# 8. 在其他机器上根据 Pipfile.lock 安装精确版本\n# pipenv install --ignore-pipfile\n```\n\n## 反例\n错误用法：在已有 pip 和 virtualenv 的项目中直接运行 pipenv install，而不先清理旧的 requirements.txt 和虚拟环境，可能导致依赖冲突或版本不一致。\n\n## 边界条件\n注意：Pipenv 默认使用 Pipfile 而非 requirements.txt，如果团队仍依赖 requirements.txt，需通过 pipenv requirements 命令生成。另外，Pipenv 在 Windows 上有时会出现路径编码问题，建议使用 WSL 或确保 Python 和 Pipenv 版本最新。",
+    "code_pattern": "pip install pipenv\npipenv install requests flask\npipenv install --dev pytest\npipenv shell\n# 运行你的 Python 代码\npipenv lock\npipenv install --ignore-pipfile",
+    "common_pitfalls": [
+      "Pipenv 在 Windows 上可能因路径空格或编码问题导致虚拟环境创建失败，建议项目路径不含中文或空格，并升级到最新版 Pipenv。",
+      "使用 pipenv install 时如果 Pipfile.lock 已存在但版本不兼容，会报锁文件冲突，应先运行 pipenv lock 更新锁文件再安装。",
+      "在 CI/CD 环境中使用 pipenv install 时，若未指定 --ignore-pipfile，会优先使用 Pipfile 而非 Pipfile.lock，导致构建不一致，应始终使用 pipenv install --ignore-pipfile 或 pipenv sync。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

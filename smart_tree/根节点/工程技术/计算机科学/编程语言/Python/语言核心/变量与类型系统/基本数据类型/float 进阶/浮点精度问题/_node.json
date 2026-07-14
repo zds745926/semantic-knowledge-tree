@@ -19,5 +19,35 @@
       "content_preview": "浮点精度问题: 0.1 + 0.2 ≠ 0.3 because binary cannot precisely represent certain decimal fractions. Use `decimal.Decimal` or `math.isclose`. Python code example using `decimal.Decimal`: ```python from decimal import Decimal # Using Decimal to avoid precision issues result = Decimal('0.1') + Decimal('0.2') print(result) # Output: 0.30000000000000004 ``` Note that while the output shows a value slightly different from 0.3 due to the nature of floating-point arithmetic, using `Decimal` helps in managing such precision issues more effectively. Alternatively, you can use `math.isclose` to check if two values are close enough: ```python import math # Using isclose to compare values a = 0.1 + 0.2 b = 0.3 print(math.isclose(a, b)) # Output: True ``` This approach acknowledges the inherent imprecision in floating-point arithmetic and provides a way to handle it gracefully."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n浮点精度问题是指由于计算机使用二进制浮点数（IEEE 754标准）表示实数时，无法精确表示所有十进制小数，导致运算结果出现微小误差的现象。\n\n## 何时使用\n在Python中处理浮点数运算时，尤其是涉及金融计算、科学计算或需要高精度比较的场景，必须警惕精度问题。当需要精确的十进制运算或避免累积误差时，应使用decimal模块或分数表示。\n\n## 示例\n```Python\n# 浮点精度问题的典型示例\nprint(0.1 + 0.2)  # 输出 0.30000000000000004，而非 0.3\nprint(0.1 + 0.2 == 0.3)  # 输出 False\n\n# 使用 decimal 解决\nfrom decimal import Decimal\nprint(Decimal('0.1') + Decimal('0.2'))  # 输出 0.3\nprint(Decimal('0.1') + Decimal('0.2') == Decimal('0.3'))  # 输出 True\n```\n\n## 反例\n直接使用浮点数进行货币计算或精确比较，例如 `if total == 0.1:` 会导致意外结果，应使用 `abs(total - 0.1) < 1e-9` 或 decimal。\n\n## 边界条件\n浮点数精度问题在连续运算中会累积，例如循环累加0.1十次不等于1.0；此外，不同平台或Python版本可能因底层C库差异导致微小不同，但IEEE 754标准保证跨平台一致性。",
+    "code_pattern": "from decimal import Decimal, getcontext\n\ndef safe_add(a, b):\n    \"\"\"使用Decimal进行安全加法，避免浮点精度问题\"\"\"\n    return float(Decimal(str(a)) + Decimal(str(b)))\n\ndef safe_compare(a, b, tolerance=1e-9):\n    \"\"\"带容差的浮点数比较\"\"\"\n    return abs(a - b) < tolerance\n\n# 使用示例\nresult = safe_add(0.1, 0.2)\nprint(result)  # 0.3\nprint(safe_compare(result, 0.3))  # True",
+    "common_pitfalls": [
+      "直接使用 == 比较浮点数：例如 `0.1 + 0.2 == 0.3` 返回 False，应使用容差比较或 Decimal。",
+      "忽略累积误差：在循环中重复加减浮点数（如 for i in range(10): total += 0.1），最终 total 不等于 1.0，导致逻辑错误。",
+      "将浮点数用于货币计算：如计算金额时使用 float，导致分币误差，应使用 Decimal 并设置合适精度。",
+      "混淆 str() 和 repr() 输出：print(0.1) 显示 0.1 但实际存储为近似值，repr(0.1) 显示 '0.10000000000000000555'，容易误导开发者。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

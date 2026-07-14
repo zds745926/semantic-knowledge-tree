@@ -19,5 +19,39 @@
       "content_preview": "Pandas: DataFrame Data Structure. read_csv/groupby/merge/pivot. Core of Data Science and Analysis. Here are brief explanations with corresponding Python code examples: 1. **DataFrame Data Structure**: A DataFrame is a two-dimensional labeled data structure with columns of potentially different types. You can think of it like a spreadsheet or SQL table, but it supports more complex operations. ```python import pandas as pd # Example: Creating a simple DataFrame df = pd.DataFrame({ 'A': [1, 2, 3], 'B': [4, 5, 6] }) print(df) ``` 2. **read_csv**: This function reads tabular data in CSV format into a DataFrame. ```python # Example: Reading a CSV file into a DataFrame df = pd.read_csv('example.csv') print(df.head()) # Display the first few rows of the DataFrame ``` 3. **groupby**: This method groups data by one or more columns and applies aggregate functions to each group. ```python # Example: Grouping by a column and calculating mean grouped_df = df.groupby('A').mean() print(grouped_df) ``` 4. **merge**: This function merges two DataFrames based on one or more keys, similar to SQL joins. ```python # Example: Merging two DataFrames on a common key left_df = pd.DataFrame({'key': ['K0', 'K1', 'K2'], 'A': [1, 2, 3]}) right_df = pd.DataFrame({'key': ['K0', 'K1', 'K2'], 'B': [4, 5, 6]}) merged_df = pd.merge(left_df, right_df, on='key') print(merged_df) ``` 5. **pivot**: This function reshapes the DataFrame into a pivot table format. ```python # Example: Creating a pivot table pivoted_df = df.pivot(index='A', columns='B', values='C') print(pivoted_df) ``` These examples should give you a good understanding of how these operations are performed in Python using the pandas library."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_scipy_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "pca_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_collections_module_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "immutability_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nPandas是一个开源的Python数据分析库，提供高性能、易用的数据结构和数据分析工具，核心数据结构包括Series（一维）和DataFrame（二维）。\n\n## 何时使用\n当需要处理结构化数据（如CSV、Excel、SQL表）时，Pandas是首选工具。它适用于数据清洗、转换、聚合、可视化等任务，尤其适合中小规模数据（内存可容纳）的快速分析和探索。\n\n## 示例\n```Python\nimport pandas as pd\n\n# 创建DataFrame\ndata = {'Name': ['Alice', 'Bob', 'Charlie'],\n        'Age': [25, 30, 35],\n        'Salary': [50000, 60000, 70000]}\ndf = pd.DataFrame(data)\n\n# 基本操作\nprint(df.head())\nprint(df.describe())\ndf['Bonus'] = df['Salary'] * 0.1\nprint(df.groupby('Age').mean())\n```\n\n## 反例\n避免在循环中逐行追加DataFrame（如使用append或concat在循环内），这会导致性能极差，应使用列表收集后一次性构建。\n\n## 边界条件\n注意Pandas默认使用0-based索引，且inplace操作可能不返回新对象；处理缺失值时，fillna和dropna需明确axis参数，否则默认操作整行。",
+    "code_pattern": "import pandas as pd\n\ndef load_and_process(filepath):\n    df = pd.read_csv(filepath)\n    df.dropna(inplace=True)\n    df['new_col'] = df['col1'] + df['col2']\n    result = df.groupby('category').agg({'value': 'sum'})\n    return result\n\nif __name__ == '__main__':\n    output = load_and_process('data.csv')\n    print(output)",
+    "common_pitfalls": [
+      "链式赋值警告：使用df[df['col'] > 0]['col2'] = 1可能修改副本而非原DataFrame，应使用df.loc[df['col'] > 0, 'col2'] = 1。",
+      "忽视数据类型：读取CSV时，Pandas可能将数字列误读为字符串，需用pd.to_numeric或dtype参数显式指定。",
+      "索引混淆：重置索引后忘记drop=True会导致旧索引成为列，使用reset_index(drop=True)避免。",
+      "内存爆炸：在大型数据集上使用groupby后直接apply复杂函数，可能因中间结果膨胀导致内存溢出，应优先使用内置聚合函数。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

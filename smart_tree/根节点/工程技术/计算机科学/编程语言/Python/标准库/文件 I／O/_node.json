@@ -19,5 +19,34 @@
       "content_preview": "文件 I/O: Built-in `open()` function. Modes like 'r', 'w', 'a', 'b', and 't'. The `with` statement automatically closes the file. Classes like `TextIOWrapper` and `BufferedReader` for low-level I/O operations. Python code example: ```python # Using open() with a context manager (the 'with' statement) with open('example.txt', 'r') as file: content = file.read() print(content) # Example of using TextIOWrapper import io text_stream = io.TextIOWrapper(open('example.txt', 'r'), encoding='utf-8') print(text_stream.readline()) ``` This example demonstrates opening a file in read mode with the `with` statement, which ensures the file is properly closed after its suite finishes. It also shows how to use `TextIOWrapper` for handling text streams with specified encoding."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_tempfile_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n文件 I/O（输入/输出）是 Python 中用于读写文件的基本操作，通过内置函数 open() 打开文件并返回文件对象，支持文本和二进制模式，以及读取、写入、追加等操作。\n\n## 何时使用\n当程序需要持久化存储数据（如日志、配置、用户数据）或从外部文件加载数据时使用文件 I/O。典型场景包括读取配置文件、保存程序运行结果、处理 CSV 或 JSON 数据文件。\n\n## 示例\n```Python\n# 写入文件\nwith open('example.txt', 'w', encoding='utf-8') as f:\n    f.write('Hello, World!')\n\n# 读取文件\nwith open('example.txt', 'r', encoding='utf-8') as f:\n    content = f.read()\n    print(content)\n```\n\n## 反例\n错误用法：使用 open() 后忘记调用 close() 导致资源泄漏，或使用 'w' 模式打开文件时未考虑数据丢失风险。\n\n## 边界条件\n注意文件路径的跨平台兼容性（使用 os.path.join 或 pathlib），以及大文件应逐行读取而非一次性读入内存。",
+    "code_pattern": "def read_file(filepath):\n    with open(filepath, 'r', encoding='utf-8') as f:\n        return f.read()\n\ndef write_file(filepath, data):\n    with open(filepath, 'w', encoding='utf-8') as f:\n        f.write(data)\n\ndef append_file(filepath, data):\n    with open(filepath, 'a', encoding='utf-8') as f:\n        f.write(data)",
+    "common_pitfalls": [
+      "忘记使用 with 语句导致文件句柄未关闭，可能造成资源泄漏或数据未刷新",
+      "在文本模式下处理二进制文件（如图片）导致编码错误，应使用 'rb' 或 'wb' 模式",
+      "使用 'w' 模式打开已存在文件时直接清空内容，应使用 'x' 模式（排他创建）或先检查文件是否存在"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

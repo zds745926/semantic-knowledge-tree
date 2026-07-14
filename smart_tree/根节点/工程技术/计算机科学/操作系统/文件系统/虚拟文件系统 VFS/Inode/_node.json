@@ -19,5 +19,30 @@
       "content_preview": "Inode: Store file metadata. Do not store filenames. Hard link count manages the lifecycle. Python code example for managing hard links: ```python import os def create_hard_link(original_file, new_link_name): \"\"\" Create a hard link to an existing file. :param original_file: The path of the original file. :param new_link_name: The name of the new hard link. \"\"\" try: os.link(original_file, new_link_name) print(f\"Hard link '{new_link_name}' created for file '{original_file}'.\") except OSError as e: print(f\"Error creating hard link: {e}\") def remove_hard_link(linked_file): \"\"\" Remove a hard link to an existing file. :param linked_file: The path of the hard link to be removed. \"\"\" try: os.unlink(linked_file) print(f\"Hard link '{linked_file}' removed.\") except OSError as e: print(f\"Error removing hard link: {e}\") # Example usage original_path = 'example.txt' hard_link_path = 'example_hardlink.txt' create_hard_link(original_path, hard_link_path) # The file will still exist even if the original is deleted because of the hard link. os.remove(original_path) print(f\"Original file '{original_path}' has been removed.\") remove_hard_link(hard_link_path) ``` This Python script demonstrates creating and removing hard links, which can be used to manage the lifecycle of files through their hard link count."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "durability_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nInode（索引节点）是Unix/Linux文件系统中的核心数据结构，用于存储文件或目录的元数据，而非文件名或数据内容。每个文件或目录都有一个唯一的Inode，它记录了文件的权限、所有者、大小、时间戳以及数据块指针等关键信息。\n\n## 核心要点\n- Inode包含文件的元数据，如权限（rwx）、所有者（UID/GID）、文件大小、时间戳（访问、修改、状态变更）和链接计数。\n- Inode通过数据块指针（直接、间接、双重间接、三重间接指针）定位文件数据在磁盘上的存储位置，支持大文件管理。\n- 文件名与Inode通过目录项关联，目录项存储文件名和对应Inode编号，实现文件系统的层次结构。\n- Inode数量在格式化时固定，因此即使磁盘有空闲空间，Inode耗尽也会导致无法创建新文件。\n- 硬链接共享同一个Inode，而软链接（符号链接）拥有自己的Inode，指向目标文件的路径。\n\n## 应用场景\nInode广泛应用于文件系统的创建、读取、修改和删除操作，如通过`ls -i`查看文件Inode编号，或使用`stat`命令获取详细元数据。在文件系统修复（如`fsck`）和性能优化（如调整Inode密度）中，Inode管理至关重要。\n\n## 相关概念\n- **目录项（dentry）**：将文件名映射到Inode编号，是VFS（虚拟文件系统）中的缓存结构，加速路径查找。\n- **超级块（Superblock）**：存储文件系统的全局信息，如Inode总数、空闲块数等，与Inode共同管理文件系统。\n- **数据块（Data Block）**：实际存储文件内容，由Inode中的指针引用，形成文件数据的逻辑视图。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

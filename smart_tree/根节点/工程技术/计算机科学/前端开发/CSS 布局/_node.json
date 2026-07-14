@@ -19,5 +19,22 @@
       "content_preview": "CSS 布局: Flexbox for one-dimensional layout / Grid for two-dimensional layout. Media queries for responsive design. Here are the corresponding technical terms and examples in Python (assuming you want to provide an example of using media queries with a simple web framework like Flask): For Flexbox: ```python # Example of setting up flexbox in CSS via a Flask route from flask import Flask, render_template_string app = Flask(__name__) @app.route('/') def home(): return render_template_string(''' <style> .container { display: flex; justify-content: center; /* Center items horizontally */ align-items: center; /* Center items vertically */ } .item { width: 100px; height: 100px; background-color: lightblue; margin: 10px; } </style> <div class=\"container\"> <div class=\"item\">Item 1</div> <div class=\"item\">Item 2</div> <div class=\"item\">Item 3</div> </div> ''') if __name__ == '__main__': app.run(debug=True) ``` For Grid: ```python # Example of setting up grid in CSS via a Flask route from flask import Flask, render_template_string app = Flask(__name__) @app.route('/') def home(): return render_template_string(''' <style> .container { display: grid; grid-template-columns: repeat(3, 1fr); /* Three equal columns */ justify-content: center; /* Center items horizontally */ align-items: center; /* Center items vertically */ } .item { width: 100px; height: 100px; background-color: lightgreen; margin: 10px; } </style> <div class=\"container\"> <div class=\"item\">Item 1</div> <div class=\"item\">Item 2</div> <div class=\"item\">Item 3</div> </div> ''') if __name__ == '__main__': app.run(debug=True) ``` For Media Queries: ```python # Example of using media queries in CSS via a Flask route from flask import Flask, render_template_string app = Flask(__name__) @app.route('/') def home(): return render_template_string(''' <style> @media (max-width: 600px) { .container { flex-direction: column; /* Stack items vertically on small screens */ } } </style> <div class=\"container\"> <div>Item 1</div> <div>Item 2</div> <div>Item 3</div> </div> ''') if __name__ == '__main__': app.run(debug=True) ``` These examples demonstrate how to use Flexbox and Grid layouts, as well as media queries, in a simple web application using Flask."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "css_box_model_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nCSS 布局是指使用层叠样式表（CSS）控制网页元素在浏览器中的位置和尺寸，实现页面的视觉组织与结构划分。它通过盒模型、定位机制和弹性/网格系统等，将内容按设计稿排列成多栏、自适应或响应式结构。\n\n## 核心要点\n- **盒模型**：每个元素被视为一个矩形盒子，由内容区、内边距、边框和外边距组成，是布局计算的基础。\n- **文档流**：默认元素按从上到下、从左到右的顺序排列，通过 `display`、`float` 和 `position` 等属性可改变流式行为。\n- **弹性布局（Flexbox）**：一维布局模型，擅长在行或列方向分配空间和对齐元素，适用于导航栏、卡片列表等。\n- **网格布局（Grid）**：二维布局模型，可同时控制行和列，适合构建复杂页面骨架，如仪表盘、杂志式排版。\n- **定位机制**：`static`、`relative`、`absolute`、`fixed` 和 `sticky` 五种定位方式，用于脱离文档流或相对于视口固定元素。\n\n## 应用场景\nCSS 布局广泛应用于响应式网页设计，使页面在不同屏幕尺寸下自动调整；也用于构建多栏文章、侧边栏、模态框和导航菜单等常见界面组件。现代框架（如 Bootstrap）和 CSS 工具库均依赖这些布局技术实现快速原型开发。\n\n## 相关概念\n- **响应式设计**：结合媒体查询和弹性单位，使布局适应不同设备。\n- **层叠上下文**：决定元素在 Z 轴上的堆叠顺序，影响 `z-index` 和定位元素的表现。\n- **CSS 预处理器**：如 Sass、Less，通过嵌套、变量和混合宏简化布局代码的编写与维护。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

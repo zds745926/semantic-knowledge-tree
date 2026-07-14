@@ -19,5 +19,30 @@
       "content_preview": "正则表达式: `re.search`, `re.match`, `re.findall`, `re.sub`. Pre-compile with `re.compile`. Python code examples: ```python import re # Example 1: Using re.search to find a pattern in a string pattern = r'\\d+' # Pattern to match one or more digits text = \"There are 24 hours in a day.\" match = re.search(pattern, text) if match: print(\"Found:\", match.group()) # Output: Found: 24 # Example 2: Using re.match to check if the string starts with a pattern pattern = r'^\\d+' # Pattern to match one or more digits at the start of the string text = \"123 hours in a day.\" match = re.match(pattern, text) if match: print(\"Matched:\", match.group()) # Output: Matched: 123 # Example 3: Using re.findall to find all matches of a pattern pattern = r'\\d+' # Pattern to match one or more digits text = \"There are 24 hours in a day, and 60 minutes in an hour.\" matches = re.findall(pattern, text) print(\"All matches:\", matches) # Output: All matches: ['24', '60'] # Example 4: Using re.sub to replace all occurrences of a pattern pattern = r'\\d+' # Pattern to match one or more digits text = \"There are 24 hours in a day, and 60 minutes in an hour.\" new_text = re.sub(pattern, 'X', text) print(\"Replaced text:\", new_text) # Output: Replaced text: There are XX hours in a day, and XX minutes in an hour. # Pre-compiling the pattern for efficiency compiled_pattern = re.compile(r'\\d+') matches = compiled_pattern.findall(text) print(\"Pre-compiled matches:\", matches) # Output: Pre-compiled matches: ['24', '60'] ``` These examples demonstrate how to use `re.search`, `re.match`, `re.findall`, and `re.sub` with Python's `re` module, as well as the benefit of pre-compiling a regular expression pattern."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_fnmatch_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "trie_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n正则表达式（Regular Expression，简称 regex）是一种用于匹配字符串中字符组合的模式，在 Python 中通过 re 模块提供支持，用于文本搜索、替换和解析。\n\n## 何时使用\n当需要从文本中提取特定模式（如邮箱、电话号码）或验证输入格式时，使用正则表达式。它也适用于批量替换文本、分割字符串以及进行复杂的模式匹配，例如在日志分析或数据清洗中。\n\n## 示例\n```Python\nimport re\n\n# 匹配邮箱地址\npattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}'\ntext = \"请联系 support@example.com 获取帮助。\"\nmatches = re.findall(pattern, text)\nprint(matches)  # 输出: ['support@example.com']\n```\n\n## 反例\n错误用法：在不需要复杂匹配时过度使用正则表达式，例如仅检查字符串是否以特定前缀开头，使用 str.startswith() 更简单高效。\n\n## 边界条件\n注意转义：在正则表达式中，特殊字符（如 . * + ?）需要转义才能匹配字面值。此外，re.match() 只从字符串开头匹配，而 re.search() 扫描整个字符串。",
+    "code_pattern": "import re\n\ndef extract_pattern(text, pattern):\n    \"\"\"使用正则表达式从文本中提取所有匹配项。\"\"\"\n    matches = re.findall(pattern, text)\n    return matches\n\n# 示例用法\nif __name__ == \"__main__\":\n    text = \"示例文本: 123-456-7890 和 abc@def.com\"\n    phone_pattern = r'\\d{3}-\\d{3}-\\d{4}'\n    email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}'\n    phones = extract_pattern(text, phone_pattern)\n    emails = extract_pattern(text, email_pattern)\n    print(f\"电话: {phones}, 邮箱: {emails}\")",
+    "common_pitfalls": [
+      "忘记转义特殊字符：例如匹配点号 '.' 时应写为 r'\\.'，否则 '.' 会匹配任意字符。",
+      "混淆 re.match 和 re.search：re.match 只从字符串开头匹配，re.search 扫描整个字符串，误用会导致匹配失败。",
+      "过度使用贪婪匹配：默认量词（如 * 和 +）是贪婪的，会匹配尽可能多的字符，可能导致意外结果，应使用非贪婪版本（如 *? 和 +?）。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -18,5 +18,13 @@
     "description": "时间与日期: Python Time Handling Core Modules: - `datetime`: An object-oriented approach to handling dates and times. ```python from datetime import datetime now = datetime.now() print(now) ``` - `time`: Lower-level time functions for operations like sleep and formatting timestamps. ```python import time time.sleep(2) # Sleep for 2 seconds current_time = time.time() # Get the current timestamp in seconds since the Epoch print(current_time) ``` - `calendar`: Functions related to calendars, such as month views and leap year determination. ```python import calendar cal = calendar.month(2023, 4) # Print April 2023 calendar print(cal) ``` - `zoneinfo` (introduced in Python 3.9): Handling time zones with first-class support for IANA time zone database. ```python from datetime import datetime from zoneinfo import ZoneInfo dt = datetime(2023, 4, 1, tzinfo=ZoneInfo(\"America/New_York\")) print(dt) ``` Note: The `zoneinfo` module is available starting with Python 3.9 and provides a more robust way to handle time zones compared to the older `pytz` library."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Python标准库中与时间、日期处理相关的核心模块，包括datetime、time、calendar和zoneinfo。datetime模块是处理日期和时间的主要工具，支持日期、时间、时间差和时区操作，适用于大多数日常场景。time模块提供底层的时间函数，如获取当前时间戳、睡眠等待和格式化时间，常用于性能测量和简单计时。calendar模块专注于日历生成和日期计算，如判断闰年、获取月份日历等。zoneinfo模块（Python 3.9+）提供IANA时区支持，用于处理带时区的日期时间，弥补了datetime模块在时区处理上的不足。这些模块相互补充：datetime和time处理具体时间点，calendar处理日历逻辑，zoneinfo增强时区功能。学习路径建议从datetime入手，掌握基础日期时间操作；然后学习time理解底层时间表示；接着了解calendar处理日历相关需求；最后学习zoneinfo应对时区问题。通过组合使用这些模块，可以解决绝大多数时间日期编程任务。",
+  "example_queries": [
+    "如何在Python中获取当前日期和时间？",
+    "如何计算两个日期之间的天数差？",
+    "如何将字符串解析为datetime对象？",
+    "如何生成某个月的日历并判断是否为闰年？",
+    "如何处理带时区的日期时间转换？"
+  ]
 }

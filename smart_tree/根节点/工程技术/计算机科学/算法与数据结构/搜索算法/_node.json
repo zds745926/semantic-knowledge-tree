@@ -18,5 +18,13 @@
     "description": "搜索算法: Search algorithms are used to find target elements in data, including linear search, binary search, and graph search. - **Linear Search**: This is a simple search algorithm that checks each element in the list one by one until it finds the target or reaches the end of the list. ```python def linear_search(arr, target): for i in range(len(arr)): if arr[i] == target: return i return -1 # Example usage: arr = [3, 7, 9, 12, 15] target = 9 result = linear_search(arr, target) print(\"Index of\", target, \"is:\", result) # Output: Index of 9 is: 2 ``` - **Binary Search**: This algorithm works on sorted lists and repeatedly divides the search interval in half. It starts by comparing the middle element of the list with the target value and then narrows down the search to the upper or lower half depending on whether the target is less than or greater than the middle element. ```python def binary_search(arr, target): low, high = 0, len(arr) - 1 while low <= high: mid = (low + high) // 2 if arr[mid] == target: return mid elif arr[mid] < target: low = mid + 1 else: high = mid - 1 return -1 # Example usage: arr = [3, 7, 9, 12, 15] target = 9 result = binary_search(arr, target) print(\"Index of\", target, \"is:\", result) # Output: Index of 9 is: 2 ``` - **Graph Search**: This involves traversing or searching through nodes in a graph. Common algorithms include Depth-First Search (DFS) and Breadth-First Search (BFS). ```python from collections import deque def bfs(graph, start): visited = set() queue = deque([start]) while queue: vertex = queue.popleft() if vertex not in visited: print(vertex) visited.add(vertex) for neighbor in graph[vertex]: queue.append(neighbor) # Example usage with a simple graph represented as an adjacency list graph = { 'A': ['B', 'C'], 'B': ['D', 'E'], 'C': ['F'], 'D': [], 'E': ['F'], 'F': [] } bfs(graph, 'A') # Output: A B C D E F ``` These examples provide a basic understanding of how these search algorithms can be implemented in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "搜索算法是计算机科学中用于在数据结构中查找特定元素或解决路径规划等问题的核心方法。本分支涵盖了从简单到复杂的多种搜索策略，包括线性搜索、二分搜索、广度优先搜索（BFS）和深度优先搜索（DFS）。线性搜索是最基础的顺序查找方法，适用于无序数据；二分搜索则要求数据有序，通过不断缩小搜索范围实现高效查找。BFS和DFS主要用于图和树的遍历：BFS按层次逐层扩展，适合寻找最短路径；DFS则深入一条路径直到尽头，适合探索所有可能解。这些算法之间相互关联，线性搜索和二分搜索侧重于静态数据集合的查找，而BFS和DFS则处理动态结构中的搜索问题。学习路径建议从线性搜索和二分搜索入手，理解基本查找思想，再过渡到图搜索算法，掌握BFS和DFS的原理及应用场景。掌握这些算法是理解更高级搜索技术（如A*、回溯法）的基础。",
+  "example_queries": [
+    "如何在一个无序数组中查找特定元素？",
+    "在有序数组中，如何用最少的比较次数找到目标值？",
+    "如何用广度优先搜索找到迷宫中的最短路径？",
+    "深度优先搜索在解决八皇后问题时如何避免重复？",
+    "二分搜索的时间复杂度为什么是O(log n)？"
+  ]
 }

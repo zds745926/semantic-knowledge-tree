@@ -19,5 +19,26 @@
       "content_preview": "pip freeze: The command `pip freeze > requirements.txt` exports the current environment package list. The command `pip list` lists installed packages. Here is a brief Python code example to demonstrate how you might use these commands in a script: ```python import subprocess # Export current environment package list to requirements.txt subprocess.run([\"pip\", \"freeze\"], stdout=open(\"requirements.txt\", \"w\")) # List all installed packages installed_packages = subprocess.check_output([\"pip\", \"list\"]) print(installed_packages.decode()) ``` This Python script uses the `subprocess` module to run the `pip freeze` and `pip list` commands. The first command exports the package list to a file named `requirements.txt`, while the second command lists all installed packages, which are then printed out."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\npip freeze 是 pip 包管理器的一个命令，用于以 requirements.txt 格式输出当前 Python 环境中已安装的所有包及其精确版本号。\n\n## 何时使用\n当你需要记录或复制当前 Python 环境的依赖时使用，例如在部署项目前生成 requirements.txt 文件，或在团队协作中确保所有成员使用相同的依赖版本。它也常用于 CI/CD 流程中锁定依赖版本，避免因包更新导致构建失败。\n\n## 示例\n```Python\n# 在终端中运行以下命令：\npip freeze > requirements.txt\n# 这会生成一个包含所有已安装包及其版本的文件，如：\n# Flask==2.3.2\n# requests==2.31.0\n\n# 若要查看输出而不保存到文件：\npip freeze\n```\n\n## 反例\n错误用法：直接使用 pip freeze 的输出作为 requirements.txt 而不加过滤，导致包含大量无关的系统级包（如 setuptools、wheel），使依赖文件臃肿且难以维护。正确做法是使用 pip freeze 后手动清理或结合 pip list --format=freeze 并排除不需要的包。\n\n## 边界条件\n注意：pip freeze 会列出所有已安装包，包括依赖包，因此生成的 requirements.txt 可能包含间接依赖；在虚拟环境外使用会污染全局环境。建议始终在虚拟环境中运行 pip freeze 以隔离项目依赖。",
+    "code_pattern": "import subprocess\nimport sys\n\ndef freeze_requirements(output_file='requirements.txt'):\n    \"\"\"生成当前环境的依赖文件\"\"\"\n    result = subprocess.run([sys.executable, '-m', 'pip', 'freeze'], capture_output=True, text=True)\n    if result.returncode == 0:\n        with open(output_file, 'w') as f:\n            f.write(result.stdout)\n        print(f'Requirements written to {output_file}')\n    else:\n        print('Error:', result.stderr)\n\nif __name__ == '__main__':\n    freeze_requirements()",
+    "common_pitfalls": [
+      "忘记在虚拟环境中运行：如果在全局 Python 环境中运行 pip freeze，会生成所有全局包的列表，导致项目依赖混乱且难以管理。",
+      "未过滤无关包：pip freeze 默认包含 setuptools、pip 等工具包，这些通常不应出现在项目 requirements.txt 中，需要手动删除或使用 pip list --format=freeze 并排除。",
+      "版本号不兼容：直接使用 pip freeze 的输出安装时，可能因平台差异导致某些包版本不可用（如 Windows vs Linux），建议在目标平台上重新生成。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

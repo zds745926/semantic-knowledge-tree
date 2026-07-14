@@ -19,5 +19,27 @@
       "content_preview": "functools 模块: Higher-order function tools: `partial` for fixing parameters, `lru_cache` for caching, `wraps` for preserving metadata, `reduce` for reduction, and `singledispatch` for single dispatch. Here are brief Python code examples for each: 1. **`partial` for fixing parameters**: ```python from functools import partial def multiply(x, y): return x * y # Fix the first argument to 2 double_multiply = partial(multiply, 2) print(double_multiply(3)) # Output: 6 ``` 2. **`lru_cache` for caching**: ```python from functools import lru_cache @lru_cache(maxsize=100) def fibonacci(n): if n < 2: return n return fibonacci(n - 1) + fibonacci(n - 2) print(fibonacci(30)) # This will be cached and faster for subsequent calls ``` 3. **`wraps` for preserving metadata**: ```python from functools import wraps def my_decorator(func): @wraps(func) def wrapper(*args, **kwargs): print(\"Before calling the function\") result = func(*args, **kwargs) print(\"After calling the function\") return result return wrapper @my_decorator def say_hello(name): \"\"\"Print a greeting\"\"\" print(f\"Hello {name}\") help(say_hello) # This will show the correct docstring and name ``` 4. **`reduce` for reduction**: ```python from functools import reduce numbers = [1, 2, 3, 4] product = reduce(lambda x, y: x * y, numbers) print(product) # Output: 24 ``` 5. **`singledispatch` for single dispatch**: ```python from functools import singledispatch @singledispatch def process(value): raise NotImplementedError(\"No implementation for this type\") @process.register(int) def _(value): print(f\"Processing an integer: {value}\") @process.register(str) def _(value): print(f\"Processing a string: {value}\") process(42) # Output: Processing an integer: 42 process(\"hello\") # Output: Processing a string: hello ``` These examples should help illustrate the usage of these higher-order functions in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_collections_module_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nfunctools 是 Python 标准库中的一个模块，提供用于高阶函数（即操作或返回其他函数的函数）的工具，例如缓存、偏函数、函数重载等，以简化函数式编程和优化性能。\n\n## 何时使用\n当需要优化重复计算（如递归或纯函数调用）时，可使用 `lru_cache` 或 `cache` 装饰器缓存结果。当需要固定函数的部分参数以创建新函数时，使用 `partial`。当需要基于参数类型实现函数重载时，使用 `singledispatch`。此外，`wraps` 用于保留被装饰函数的元数据，避免调试困难。\n\n## 示例\n```Python\nfrom functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fibonacci(n):\n    if n < 2:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n\nprint(fibonacci(10))  # 输出 55\n```\n\n## 反例\n错误地使用 `lru_cache` 装饰可变参数函数（如参数为列表或字典），会导致缓存键不可哈希而引发 `TypeError`。另外，在不需要缓存时滥用 `lru_cache` 可能浪费内存且无性能提升。\n\n## 边界条件\n`lru_cache` 的 `maxsize` 参数设为 `None` 表示无限制缓存，但可能耗尽内存；设为 0 则禁用缓存。`partial` 创建的对象不是原始函数，其 `__name__` 和 `__doc__` 会丢失，除非使用 `wraps`。`singledispatch` 仅支持单参数分派，且注册类型需为类或抽象基类。",
+    "code_pattern": "from functools import lru_cache, partial, wraps\n\n@lru_cache(maxsize=128)\ndef expensive_func(x):\n    return x * x\n\ndef base_func(a, b, c):\n    return a + b + c\n\npartial_func = partial(base_func, 1, 2)\n\ndef decorator(func):\n    @wraps(func)\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper",
+    "common_pitfalls": [
+      "对可变参数（如列表、字典）使用 lru_cache 会导致 TypeError: unhashable type，因为缓存键必须是可哈希的。",
+      "使用 partial 创建的函数丢失原始函数的 __name__ 和 __doc__，导致调试困难；应结合 wraps 或手动复制元数据。",
+      "singledispatch 只能根据第一个参数的类型分派，若需要多参数分派需使用第三方库或自行实现。",
+      "lru_cache 的 maxsize 设置过小会导致频繁缓存失效，反而降低性能；设置过大可能消耗过多内存，需根据实际调用模式调整。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

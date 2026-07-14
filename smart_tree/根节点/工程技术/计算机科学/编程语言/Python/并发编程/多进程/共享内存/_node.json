@@ -19,5 +19,34 @@
       "content_preview": "共享内存: `multiprocessing.shared_memory` (3.8+). `ShareableList`. Multiple processes can directly read and write to the same memory block. Python code example: ```python import multiprocessing def worker(shm): # Accessing shared memory print(\"Initial value:\", shm[:]) # Modifying shared memory for i in range(len(shm)): shm[i] = i * 2 if __name__ == \"__main__\": # Creating a shared memory block with size 10 shm = multiprocessing.shared_memory.ShareableList(range(10)) # Starting processes that will access and modify the shared memory p1 = multiprocessing.Process(target=worker, args=(shm,)) p2 = multiprocessing.Process(target=worker, args=(shm,)) p1.start() p2.start() p1.join() p2.join() print(\"Final value:\", shm[:]) ``` This example demonstrates the use of `ShareableList` from the `multiprocessing.shared_memory` module. Two processes modify and read a shared list, showcasing direct memory access between processes."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n共享内存是多进程间通信的一种机制，允许多个进程直接访问同一块物理内存区域，从而实现高效的数据交换，避免数据拷贝的开销。\n\n## 何时使用\n当需要在多个独立进程间共享大量数据，且对性能要求较高时，使用共享内存。例如，在图像处理或科学计算中，主进程生成数据，子进程并行处理，共享内存可减少序列化/反序列化成本。此外，在需要低延迟通信的实时系统中，共享内存也比管道或消息队列更合适。\n\n## 示例\n```Python\nimport multiprocessing as mp\nimport numpy as np\n\ndef worker(shared_array, shape, dtype):\n    arr = np.frombuffer(shared_array.get_obj(), dtype=dtype).reshape(shape)\n    arr[:] = arr * 2  # 修改共享数据\n\nif __name__ == '__main__':\n    shape = (3, 4)\n    dtype = np.float64\n    size = int(np.prod(shape) * np.dtype(dtype).itemsize)\n    shared_array = mp.Array('d', size // 8, lock=False)  # 'd' 表示 double，8 字节\n    arr = np.frombuffer(shared_array.get_obj(), dtype=dtype).reshape(shape)\n    arr[:] = np.arange(12).reshape(shape).astype(dtype)\n    p = mp.Process(target=worker, args=(shared_array, shape, dtype))\n    p.start()\n    p.join()\n    print(arr)  # 输出修改后的数组\n```\n\n## 反例\n错误地使用锁机制导致死锁：在多个进程同时读写共享内存时，若不加锁或加锁不当，可能造成数据竞争或死锁。例如，两个进程各自先获取一个锁再尝试获取另一个锁，可能导致互相等待。\n\n## 边界条件\n共享内存大小必须事先确定，且所有进程需知道其布局；不同操作系统对共享内存大小有限制（如Linux默认shmmax为32MB），超出会报错。另外，进程退出后共享内存可能残留，需显式清理。",
+    "code_pattern": "import multiprocessing as mp\nimport numpy as np\n\ndef worker(shared_array, shape, dtype):\n    arr = np.frombuffer(shared_array.get_obj(), dtype=dtype).reshape(shape)\n    # 对 arr 进行读写操作\n    pass\n\nif __name__ == '__main__':\n    shape = (rows, cols)\n    dtype = np.float64\n    size = int(np.prod(shape) * np.dtype(dtype).itemsize)\n    shared_array = mp.Array('d', size // 8, lock=False)\n    arr = np.frombuffer(shared_array.get_obj(), dtype=dtype).reshape(shape)\n    # 初始化 arr\n    p = mp.Process(target=worker, args=(shared_array, shape, dtype))\n    p.start()\n    p.join()",
+    "common_pitfalls": [
+      "共享内存大小计算错误：使用 mp.Array 时，元素个数需根据数据类型字节数换算，例如 'd' 为 8 字节，若需存储 100 个 double，应传入 100 而非 800。",
+      "忘记加锁导致数据竞争：当多个进程同时写入共享内存时，必须使用 mp.Lock 保护，否则结果不可预测。",
+      "进程退出后共享内存未释放：使用 mp.Array 创建的共享内存会在所有关联进程退出后自动回收，但若使用底层 shm 模块，需手动调用 shm.close() 和 shm.unlink() 避免资源泄漏。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

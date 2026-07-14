@@ -19,5 +19,42 @@
       "content_preview": "Django: Full-stack Web Frameworks: ORM/Admin/Templates. MTV Architecture. DRF for Building APIs. ### Explanation: - **Full-stack Web Frameworks**: These are frameworks that provide tools and libraries to handle both the client-side (front-end) and server-side (back-end) of web applications. - **ORM/Admin/Templates**: - **ORM (Object-Relational Mapping)**: A programming technique for converting data between incompatible type systems using object-oriented programming languages. In Python, Django's ORM is a good example. - **Admin**: Typically refers to an administrative interface that allows users to manage the application’s content and settings. For instance, in Django, you can use `admin.site.register` to register models with the admin site. - **Templates**: Used for rendering dynamic web pages. In Django, templates are used extensively. ### Example Python Code (Django ORM): ```python from django.db import models class Author(models.Model): name = models.CharField(max_length=100) def create_author(name): author = Author(name=name) author.save() return author # Usage author = create_author('John Doe') ``` ### Example Python Code (Django Admin): ```python from django.contrib import admin from .models import Author @admin.register(Author) class AuthorAdmin(admin.ModelAdmin): list_display = ('name', 'id') # Register the model with the admin site. admin.site.register(Author, AuthorAdmin) ``` ### Example Python Code (Django Templates): ```html <!-- templates/author_list.html --> {% for author in authors %} <p>{{ author.name }}</p> {% endfor %} ``` ### MTV Architecture: - **M**odel: Represents the data and business logic of the application. - **T**emplate: Used to render dynamic web pages. - **V**iew: Handles requests, interacts with models, and selects templates. ### Example Python Code (Django View): ```python from django.shortcuts import render from .models import Author def author_list(request): authors = Author.objects.all() return render(request, 'author_list.html', {'authors': authors}) ``` ### DRF for Building APIs: - **DRF** stands for Django REST Framework. It is a powerful and flexible toolkit that makes building Web APIs in Python easy. ### Example Python Code (DRF API View): ```python from rest_framework import viewsets from .models import Author from .serializers import AuthorSerializer class AuthorViewSet(viewsets.ModelViewSet): queryset = Author.objects.all() serializer_class = AuthorSerializer ``` These examples provide a basic understanding of how these concepts can be implemented in Python using Django and DRF."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    },
+    {
+      "id": "rest_api_v4",
+      "type": "application"
+    },
+    {
+      "id": "http_methods_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "http_status_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "xss_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nDjango 是一个基于 Python 的高级 Web 框架，遵循模型-视图-模板（MVT）架构模式，旨在快速开发安全、可维护的网站。\n\n## 何时使用\n适用于需要快速构建数据库驱动、功能丰富的 Web 应用，如内容管理系统、社交平台、电子商务网站。尤其适合团队协作开发，因其内置管理后台、ORM、认证系统等，可大幅减少重复工作。\n\n## 示例\n```Python\n# 在 models.py 中定义模型\nfrom django.db import models\n\nclass BlogPost(models.Model):\n    title = models.CharField(max_length=200)\n    content = models.TextField()\n    pub_date = models.DateTimeField(auto_now_add=True)\n\n    def __str__(self):\n        return self.title\n\n# 在 views.py 中定义视图\nfrom django.shortcuts import render\nfrom .models import BlogPost\n\ndef blog_list(request):\n    posts = BlogPost.objects.all().order_by('-pub_date')\n    return render(request, 'blog/list.html', {'posts': posts})\n\n# 在 urls.py 中配置 URL\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.blog_list, name='blog_list'),\n]\n```\n\n## 反例\n避免在视图中直接编写原始 SQL 查询，应使用 Django ORM 进行数据库操作，否则会丧失 ORM 的安全性和跨数据库兼容性。\n\n## 边界条件\n注意 Django 默认的时区设置（USE_TZ=True），处理时间相关字段时需确保数据库和代码时区一致；生产环境务必关闭 DEBUG=True 并配置静态文件服务。",
+    "code_pattern": "from django.db import models\nfrom django.shortcuts import render\nfrom django.urls import path\n\nclass Item(models.Model):\n    name = models.CharField(max_length=100)\n    created_at = models.DateTimeField(auto_now_add=True)\n\ndef item_list(request):\n    items = Item.objects.all()\n    return render(request, 'items/list.html', {'items': items})\n\nurlpatterns = [\n    path('items/', item_list, name='item_list'),\n]",
+    "common_pitfalls": [
+      "忘记运行 `python manage.py makemigrations` 和 `python manage.py migrate` 导致模型变更未同步到数据库，出现表不存在的错误。",
+      "在模板中直接使用 `{{ user.is_authenticated }}` 但未在视图上下文传递 `request`，导致模板变量未定义。",
+      "生产环境未设置 `ALLOWED_HOSTS` 导致 HTTP 400 错误，或未关闭 DEBUG 导致敏感信息泄露。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,34 @@
       "content_preview": "JSON 处理: `json.dumps(obj, ensure_ascii=False)` serializes an object to a JSON formatted str. `json.loads(str)` deserializes a JSON formatted string back into a Python object. Python code examples: Serializing with `ensure_ascii=False`: ```python import json data = {\"name\": \"张三\", \"age\": 30} # A dictionary containing non-ASCII characters json_str = json.dumps(data, ensure_ascii=False) print(json_str) # Output: {\"name\": \"\\u5927\\u4e09\", \"age\": 30} ``` Deserializing: ```python import json json_str = '{\"name\": \"\\u5927\\u4e09\", \"age\": 30}' # A JSON string data = json.loads(json_str) print(data) # Output: {'name': '张三', 'age': 30} ```"
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_hashlib_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_tempfile_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nJSON处理是指使用Python标准库中的json模块对JSON（JavaScript Object Notation）格式的数据进行编码（序列化）和解码（反序列化）的操作，以便在Python对象与JSON字符串之间进行转换。\n\n## 何时使用\n当需要在Python程序与外部系统（如Web API、配置文件、数据存储）之间交换结构化数据时，使用JSON处理。它特别适用于需要轻量级、可读性强的数据交换格式的场景，例如从RESTful API获取数据或保存应用程序配置。\n\n## 示例\n```Python\nimport json\n\n# Python字典序列化为JSON字符串\ndata = {\"name\": \"Alice\", \"age\": 30, \"city\": \"New York\"}\njson_str = json.dumps(data, indent=2)\nprint(json_str)\n\n# JSON字符串反序列化为Python字典\njson_input = '{\"name\": \"Bob\", \"age\": 25}'\nparsed_data = json.loads(json_input)\nprint(parsed_data[\"name\"])  # 输出: Bob\n```\n\n## 反例\n不要直接使用eval()或exec()解析JSON字符串，这会导致严重的安全漏洞（代码注入）。应始终使用json.loads()进行安全解析。\n\n## 边界条件\n注意JSON仅支持有限的数据类型（如字符串、数字、布尔值、null、数组、对象），Python中的元组、集合、datetime等对象需要自定义编码器或先转换为兼容类型。另外，JSON字符串必须使用双引号，单引号会导致解析错误。",
+    "code_pattern": "import json\n\ndef process_json(data: dict) -> str:\n    \"\"\"将字典序列化为格式化的JSON字符串\"\"\"\n    return json.dumps(data, indent=2, ensure_ascii=False)\n\ndef parse_json(json_str: str) -> dict:\n    \"\"\"将JSON字符串反序列化为字典\"\"\"\n    try:\n        return json.loads(json_str)\n    except json.JSONDecodeError as e:\n        print(f\"JSON解析错误: {e}\")\n        return {}\n\n# 使用示例\nif __name__ == \"__main__\":\n    sample = {\"key\": \"value\", \"number\": 42}\n    serialized = process_json(sample)\n    print(serialized)\n    deserialized = parse_json(serialized)\n    print(deserialized)",
+    "common_pitfalls": [
+      "使用单引号或非法引号：JSON标准要求字符串必须用双引号，使用单引号会导致json.loads()抛出JSONDecodeError。",
+      "忽略非ASCII字符处理：当数据包含中文等Unicode字符时，json.dumps()默认会将其转义为\\uXXXX，应设置ensure_ascii=False以保留原始字符。",
+      "忘记处理文件编码：从文件读取JSON时，若未指定encoding='utf-8'，可能因系统默认编码不同导致乱码或解析失败。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

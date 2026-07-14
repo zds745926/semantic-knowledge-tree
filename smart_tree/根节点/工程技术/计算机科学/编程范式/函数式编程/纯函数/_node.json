@@ -19,5 +19,26 @@
       "content_preview": "纯函数: Pure functions always return the same output for the same input and have no side effects. Benefits: they can be cached, tested, and executed in parallel. Python code example to illustrate a pure function: ```python def add(a, b): return a + b # Example usage: result1 = add(2, 3) # result1 will always be 5 result2 = add(2, 3) # result2 will also be 5 print(result1 == result2) # This will print True ``` In this example, the `add` function is a pure function because it takes two inputs and returns the same output every time without any side effects."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "immutability_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_thread_safety_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n纯函数是函数式编程中的核心概念，指对于相同的输入，总是返回相同输出的函数，且其执行过程不产生任何可观察的副作用。这意味着纯函数不依赖于或修改外部状态，如全局变量、I/O操作或数据库状态。\n\n## 核心要点\n- **确定性**：纯函数的输出完全由输入决定，给定相同的参数，必然返回相同的结果，不受外部环境变化影响。\n- **无副作用**：纯函数不会修改任何外部变量、不执行I/O操作、不改变传入参数的值，也不抛出异常，从而保证程序行为可预测。\n- **引用透明**：纯函数的调用可以用其返回值替换而不改变程序行为，这简化了代码推理和测试。\n- **易于测试和调试**：由于纯函数不依赖外部状态，测试时只需关注输入和输出，无需设置复杂的环境或模拟副作用。\n- **支持并行和缓存**：纯函数无状态依赖，可以安全地并行执行，且结果可缓存（memoization）以提高性能。\n\n## 应用场景\n纯函数广泛应用于函数式编程语言（如Haskell、Scala）和现代JavaScript开发中，例如在Redux的reducer、React的纯组件以及数据转换管道（如map、filter、reduce）中。它们也常用于编写无状态的工具函数、数学计算和配置处理，以提升代码的可维护性和可测试性。\n\n## 相关概念\n纯函数与**副作用**相对，副作用指函数执行过程中对外部状态产生的任何改变。**高阶函数**（接收或返回函数的函数）常与纯函数结合使用，以构建组合式逻辑。**不可变性**（immutability）是纯函数的常见伴侣，确保数据不被直接修改，而是通过创建新副本进行更新。此外，**函数组合**（function composition）通过将多个纯函数串联，形成更复杂的操作，是函数式编程的核心模式。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

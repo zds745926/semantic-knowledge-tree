@@ -19,5 +19,34 @@
       "content_preview": "返回值: `return` returns the result. If there is no `return`, it returns `None`. Returning multiple values essentially means returning a tuple. Python code example for returning multiple values: ```python def sample_function(x, y): return x + y, x - y # Returns a tuple containing the sum and difference of x and y result1, result2 = sample_function(10, 5) print(result1) # Output: 15 print(result2) # Output: 5 ``` In this example, `sample_function` returns a tuple with two elements: the sum and the difference of the inputs `x` and `y`. The returned tuple is then unpacked into `result1` and `result2`, which can be used separately."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n返回值是函数执行完毕后向调用者返回的结果，通过 `return` 语句实现。函数可以返回单个值、多个值（以元组形式）、或 `None`（无 `return` 或 `return` 后无表达式）。\n\n## 何时使用\n当函数需要向调用者传递计算结果、状态信息或处理后的数据时，必须使用返回值。例如，数学计算函数返回数值，数据验证函数返回布尔值，或配置解析函数返回字典。返回值使函数具有可组合性和可测试性，避免全局变量污染。\n\n## 示例\n```Python\ndef add(a, b):\n    \"\"\"返回两个数的和\"\"\"\n    return a + b\n\ndef get_user_info(user_id):\n    \"\"\"返回用户信息字典，若不存在返回None\"\"\"\n    if user_id == 1:\n        return {\"name\": \"Alice\", \"age\": 30}\n    else:\n        return None\n\nresult = add(3, 5)\nprint(result)  # 输出: 8\n\nuser = get_user_info(2)\nprint(user)    # 输出: None\n```\n\n## 反例\n错误用法：在函数内打印结果而不是返回，导致调用者无法获取值。例如，`def add(a, b): print(a + b)` 后无法用 `result = add(3, 5)` 得到结果，`result` 为 `None`。\n\n## 边界条件\n- 函数没有 `return` 语句或 `return` 后无表达式时，默认返回 `None`。\n- 返回多个值时以元组形式打包，调用时可用解包赋值：`a, b = func()`。\n- 函数执行到 `return` 后立即结束，后续代码不会执行。",
+    "code_pattern": "def function_name(param1, param2):\n    \"\"\"函数文档字符串\"\"\"\n    # 处理逻辑\n    result = param1 + param2\n    return result\n\n# 调用\noutput = function_name(10, 20)\nprint(output)",
+    "common_pitfalls": [
+      "忘记写 return 语句，导致函数返回 None，而调用者期望得到计算结果。",
+      "返回可变对象（如列表、字典）时，调用者修改返回值会影响函数内部状态，需考虑返回副本或使用不可变类型。",
+      "在循环或条件分支中遗漏 return，导致某些路径下函数隐式返回 None，引发逻辑错误。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

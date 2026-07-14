@@ -19,5 +19,34 @@
       "content_preview": "Kafka: Topic/Partition/Offset. High-throughput sequential IO. Publish-Subscribe. Here are the technical terms translated with brief Python code examples where applicable: 1. **Topic/Partition/Offset** - In distributed systems, particularly in message brokers like Apache Kafka, these concepts are crucial. - `Topic`: A category or subject of messages that can be subscribed to by consumers. - `Partition`: A way to divide a topic into multiple parts for better scalability and fault tolerance. Each partition is an ordered sequence of messages. - `Offset`: The position in the stream of messages within a partition, used to track the processing progress. 2. **High-throughput sequential IO** - This refers to efficient input/output operations that handle large volumes of data sequentially. 3. **Publish-Subscribe (Pub/Sub)** - A messaging pattern where senders and receivers of messages are decoupled using a message broker or event bus. Here is an example in Python using the `kafka-python` library: ```python from kafka import KafkaProducer, TopicPartition # Initialize a Kafka producer producer = KafkaProducer(bootstrap_servers='localhost:9092') # Example topic and partition topic_name = 'example_topic' partition = 0 # Send messages to a specific partition of the topic for i in range(10): message = f\"Message {i}\".encode('utf-8') producer.send(topic=topic_name, value=message, partition=partition) # Close the producer producer.close() # Example of working with partitions and offsets (using KafkaConsumer) from kafka import KafkaConsumer consumer = KafkaConsumer(bootstrap_servers='localhost:9092', group_id='my-group') # Subscribe to a topic consumer.subscribe([topic_name]) for message in consumer: print(f\"Received message: {message.value.decode('utf-8')}\") # Close the consumer consumer.close() ``` This example demonstrates sending messages to a specific partition and consuming messages from that partition."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    },
+    {
+      "id": "prometheus_v4",
+      "type": "application"
+    },
+    {
+      "id": "read_committed_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "immutability_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nApache Kafka 是一个分布式流处理平台，最初由 LinkedIn 开发并开源。它主要用于构建实时数据管道和流式应用程序，能够以高吞吐量、低延迟的方式发布、订阅、存储和处理记录流。\n\n## 核心要点\n- **发布-订阅模型**：Kafka 采用发布-订阅消息模式，生产者将消息发布到主题，消费者订阅主题并消费消息，实现解耦。\n- **持久化与顺序保证**：消息被持久化到磁盘，并在分区内保持顺序，支持消息回放和批量处理。\n- **高吞吐量与可扩展性**：通过分区和副本机制，Kafka 能水平扩展，处理每秒数百万条消息。\n- **容错与高可用**：数据在多个 broker 间复制，即使部分节点故障，系统仍能正常运行。\n- **流处理能力**：Kafka Streams 提供内置的流处理 API，支持对数据流进行实时转换和分析。\n\n## 应用场景\nKafka 广泛应用于日志聚合、实时监控、事件溯源、数据集成和流式 ETL 等场景。例如，在微服务架构中，Kafka 作为事件总线，解耦服务间通信；在大数据领域，它连接数据源与 Hadoop、Spark 等分析系统。\n\n## 相关概念\nKafka 与 RabbitMQ、ActiveMQ 等同属消息队列系统，但 Kafka 更侧重高吞吐和持久化。相关概念包括：主题（Topic）、分区（Partition）、生产者（Producer）、消费者（Consumer）、消费者组（Consumer Group）以及 ZooKeeper（用于协调管理）。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

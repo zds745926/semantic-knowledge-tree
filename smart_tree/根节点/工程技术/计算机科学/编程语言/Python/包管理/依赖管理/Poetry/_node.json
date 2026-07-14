@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "py_pdm_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nPoetry 是一个用于 Python 依赖管理和打包的工具，它通过 `pyproject.toml` 文件统一管理项目依赖、虚拟环境和构建，提供声明式依赖解析和锁文件机制。\n\n## 何时使用\n当需要为 Python 项目创建隔离的虚拟环境并精确控制依赖版本时，Poetry 是理想选择。它特别适用于需要发布到 PyPI 的库项目，或需要多人协作且依赖关系复杂的应用项目。Poetry 自动处理依赖解析和冲突，简化了从开发到部署的流程。\n\n## 示例\n```Python\n# 初始化项目\n# poetry new my-project\n# cd my-project\n\n# 添加依赖\n# poetry add requests\n\n# 安装所有依赖（包括开发依赖）\n# poetry install\n\n# 运行脚本\n# poetry run python -c \"import requests; print(requests.__version__)\"\n\n# 构建和发布\n# poetry build\n# poetry publish\n```\n\n## 反例\n直接手动编辑 `pyproject.toml` 文件添加依赖而不使用 `poetry add` 命令，可能导致依赖版本冲突或锁文件不同步。\n\n## 边界条件\nPoetry 要求 Python 3.7 及以上版本。当项目中有 C 扩展或需要系统级库时，可能需要额外配置系统环境。在 CI/CD 环境中，建议使用 `poetry lock` 生成的 `poetry.lock` 文件确保环境一致性。",
+    "code_pattern": "import subprocess\nimport sys\n\ndef poetry_install():\n    \"\"\"使用 Poetry 安装依赖并运行脚本\"\"\"\n    subprocess.run([sys.executable, \"-m\", \"poetry\", \"install\"], check=True)\n    subprocess.run([sys.executable, \"-m\", \"poetry\", \"run\", \"python\", \"main.py\"], check=True)\n\nif __name__ == \"__main__\":\n    poetry_install()",
+    "common_pitfalls": [
+      "使用 `pip install poetry` 安装 Poetry 后，在全局环境中运行 `poetry` 命令可能因 PATH 配置问题找不到命令，建议使用 `pipx install poetry` 或官方安装脚本。",
+      "在已有 `requirements.txt` 的项目中迁移到 Poetry 时，直接运行 `poetry init` 不会自动导入现有依赖，需手动添加或使用 `poetry add $(cat requirements.txt)`。",
+      "在 Docker 容器中构建时，如果未将 `poetry.lock` 文件复制到镜像中，Poetry 会重新解析依赖，导致不同构建之间版本不一致。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

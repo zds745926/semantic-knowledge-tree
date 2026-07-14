@@ -19,5 +19,42 @@
       "content_preview": "List 系列: ArrayList (Array) vs LinkedList (Linked List). Vector/Stack (Thread-Safe). In Java, both `ArrayList` and `LinkedList` are implementations of the `List` interface. The choice between them depends on the specific use case. - **ArrayList**: This is based on an array. It provides constant-time performance for the basic operations (`get` and `set`), assuming the index is within bounds. However, inserting or deleting elements can be costly as it may require shifting other elements. ```python # Example of using ArrayList in Python (using list) arr_list = [] arr_list.append(10) # O(1) operation print(arr_list[0]) # O(1) operation ``` - **LinkedList**: This is based on nodes that contain data and a reference to the next node. It provides `O(n)` time complexity for `get` operations, but `add` and `remove` operations are generally faster than in ArrayList because they only require updating references. ```python # Example of using LinkedList in Python (using collections.deque) from collections import deque linked_list = deque() linked_list.append(10) # O(1) operation print(linked_list[0]) # O(n) operation ``` - **Vector/Stack (Thread-Safe)**: `Vector` is similar to `ArrayList`, but it is synchronized, making it thread-safe. However, this comes with a performance overhead due to the synchronization mechanism. ```python # Example of using Vector in Python (using threading.Lock) from collections import deque from threading import Lock class ThreadSafeVector: def __init__(self): self.lock = Lock() self.vector = deque() def append(self, item): with self.lock: self.vector.append(item) def get(self, index): with self.lock: return self.vector[index] ts_vector = ThreadSafeVector() ts_vector.append(10) print(ts_vector.get(0)) ``` - **Stack**: A stack is a special type of list in which elements can be added or removed only from the end. It follows the Last In First Out (LIFO) principle. ```python # Example of using Stack in Python (using collections.deque) from collections import deque stack = deque() stack.append(10) # Push operation print(stack.pop()) # Pop operation, returns 10 ``` These examples provide a basic understanding of how these data structures can be implemented and used in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "java_map_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "py_thread_safety_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "application"
+    },
+    {
+      "id": "binary_search_v4",
+      "type": "application"
+    },
+    {
+      "id": "adapter_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nList 系列是 Java 集合框架中用于存储有序、可重复元素的一组接口和实现类，核心接口为 `java.util.List`，允许通过索引访问元素。\n\n## 何时使用\n当需要维护元素的插入顺序，并允许重复元素时使用 List。常见场景包括：需要按顺序遍历数据、通过索引快速随机访问（如 ArrayList）、或频繁在中间插入/删除元素（如 LinkedList）。\n\n## 示例\n```Java\nimport java.util.*;\n\npublic class ListExample {\n    public static void main(String[] args) {\n        List<String> list = new ArrayList<>();\n        list.add(\"Apple\");\n        list.add(\"Banana\");\n        list.add(1, \"Orange\"); // 在索引1处插入\n        System.out.println(list.get(0)); // Apple\n        System.out.println(list.size()); // 3\n        list.remove(\"Banana\");\n        for (String s : list) {\n            System.out.println(s);\n        }\n    }\n}\n```\n\n## 反例\n错误地使用 LinkedList 进行大量随机访问（如 for 循环中 `get(i)`），因为 LinkedList 的随机访问是 O(n)，应改用 ArrayList。\n\n## 边界条件\n注意 List 的索引从 0 开始，操作时避免 IndexOutOfBoundsException；ArrayList 扩容有性能开销，若已知元素数量，建议指定初始容量。",
+    "code_pattern": "import java.util.*;\n\npublic class ListTemplate {\n    public static void main(String[] args) {\n        List<String> list = new ArrayList<>(); // 或 new LinkedList<>()\n        list.add(\"item1\");\n        list.add(\"item2\");\n        list.add(0, \"item0\"); // 插入到开头\n        String first = list.get(0);\n        list.set(1, \"newItem\");\n        list.remove(0);\n        for (String s : list) {\n            System.out.println(s);\n        }\n    }\n}",
+    "common_pitfalls": [
+      "使用 for 循环通过索引遍历 LinkedList 时，每次 get(i) 都是 O(n) 操作，导致整体 O(n^2) 性能，应改用迭代器或 for-each。",
+      "对 ArrayList 频繁调用 add(int index, E element) 在头部插入，会导致大量元素移位，性能差，应改用 LinkedList 或 ArrayDeque。",
+      "调用 subList() 返回的是视图而非独立副本，对子列表的修改会反映到原列表，且原列表结构性修改后子列表失效，抛出 ConcurrentModificationException。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

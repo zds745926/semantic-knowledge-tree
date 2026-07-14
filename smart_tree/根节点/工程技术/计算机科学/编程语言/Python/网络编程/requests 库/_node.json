@@ -19,5 +19,35 @@
       "content_preview": "requests 库: `requests.get/post/put/delete`. Session for reusing connections. One of the most popular HTTP libraries. Python code examples: ```python import requests # Using GET request response = requests.get('https://api.example.com/data') print(response.status_code) # Using POST request with data data = {'key': 'value'} response = requests.post('https://api.example.com/submit', data=data) print(response.status_code) # Using PUT request headers = {'Content-Type': 'application/json'} json_data = {'id': 1, 'name': 'example'} response = requests.put('https://api.example.com/update', json=json_data, headers=headers) print(response.status_code) # Using DELETE request response = requests.delete('https://api.example.com/delete/1') print(response.status_code) # Session for reusing connections s = requests.Session() response = s.get('https://api.example.com/data') print(response.status_code) ``` This code demonstrates the use of various HTTP methods (`get`, `post`, `put`, and `delete`) with the `requests` library, as well as how to reuse a session for multiple requests."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "http_methods_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "http_status_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "rest_api_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nrequests 库是一个简洁且人性化的 Python HTTP 库，用于发送 HTTP 请求并处理响应，支持 GET、POST 等常见方法，自动处理编码、会话和重定向。\n\n## 何时使用\n当需要与 Web API 交互、爬取网页内容或模拟浏览器请求时，使用 requests 库。它特别适合快速开发、原型验证以及需要处理复杂 HTTP 特性（如会话、认证、超时）的场景。\n\n## 示例\n```Python\nimport requests\n\nresponse = requests.get('https://api.github.com')\nif response.status_code == 200:\n    print(response.json())\nelse:\n    print('请求失败，状态码:', response.status_code)\n```\n\n## 反例\n错误用法：忽略异常处理，直接假设请求总是成功。例如，不检查状态码或捕获网络错误，导致程序在服务器不可用时崩溃。\n\n## 边界条件\n注意：requests 默认不设置超时，可能导致程序挂起；应始终为请求设置 timeout 参数。另外，大量并发请求时需使用 Session 对象复用连接，避免性能瓶颈。",
+    "code_pattern": "import requests\n\ndef make_request(url, method='GET', params=None, data=None, headers=None, timeout=10):\n    try:\n        if method.upper() == 'GET':\n            resp = requests.get(url, params=params, headers=headers, timeout=timeout)\n        elif method.upper() == 'POST':\n            resp = requests.post(url, data=data, headers=headers, timeout=timeout)\n        else:\n            raise ValueError('Unsupported method')\n        resp.raise_for_status()\n        return resp.json() if 'application/json' in resp.headers.get('Content-Type', '') else resp.text\n    except requests.exceptions.RequestException as e:\n        print(f'Request failed: {e}')\n        return None",
+    "common_pitfalls": [
+      "未设置超时：默认无超时，网络故障时请求会无限阻塞，应始终添加 timeout 参数。",
+      "忽略异常处理：不捕获 requests.exceptions.RequestException，导致网络错误或 HTTP 错误时程序崩溃。",
+      "混淆响应内容：直接使用 response.text 而非 response.json() 解析 JSON，或未检查状态码就处理数据。",
+      "滥用全局连接：每次请求都创建新连接，应使用 Session 对象复用 TCP 连接以提高性能。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

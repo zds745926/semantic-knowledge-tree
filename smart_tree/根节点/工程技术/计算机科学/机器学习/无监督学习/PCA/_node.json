@@ -19,5 +19,30 @@
       "content_preview": "PCA: Principal Component Analysis (PCA) dimensionality reduction. Uncorrelated noise removal. Maximizing variance retention. Python code example for PCA: ```python from sklearn.decomposition import PCA import numpy as np # Sample data generation np.random.seed(0) data = np.random.rand(100, 5) # 100 samples with 5 features each # Applying PCA pca = PCA(n_components=2) # Reduce to 2 principal components principal Components = pca.fit_transform(data) print(\"Principal Components shape:\", principal_components.shape) ``` In this example, we use the `PCA` class from `sklearn.decomposition` to perform dimensionality reduction on a sample dataset. The data is reduced from 5 dimensions to 2 dimensions while retaining as much variance as possible."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cap_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n主成分分析（PCA）是一种统计方法，通过正交变换将可能相关的变量转换为线性不相关的变量，这些新变量称为主成分。其核心思想是在保留数据最大方差的前提下，降低数据维度，从而简化数据集。\n\n## 核心要点\n- PCA通过计算协方差矩阵的特征值和特征向量，确定数据的主要变化方向。\n- 主成分按方差大小排序，第一主成分捕获最大方差，后续主成分依次递减。\n- 降维过程中，PCA会丢弃方差较小的成分，从而减少噪声和冗余信息。\n- PCA要求数据经过中心化（减去均值）处理，且对数据尺度敏感，通常需标准化。\n- 主成分是原始变量的线性组合，具有可解释性，但物理意义可能模糊。\n\n## 应用场景\nPCA广泛应用于数据可视化（将高维数据投影到2D或3D平面）、特征提取（为机器学习模型减少特征数量）以及噪声过滤（通过保留主要成分去除噪声）。在图像压缩、基因表达分析和金融风险管理等领域也有重要应用。\n\n## 相关概念\nPCA与奇异值分解（SVD）密切相关，SVD是计算PCA的常用数值方法。此外，PCA属于线性降维方法，与非线性方法如t-SNE和UMAP形成对比。因子分析（FA）与PCA类似，但FA假设数据存在潜在因子，而PCA仅关注方差最大化。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,26 @@
       "content_preview": "分词: BPE/WordPiece/Unigram. SentencePiece. Here are brief explanations and corresponding Python code examples for each of these concepts: 1. **BPE (Byte Pair Encoding)** - BPE is a subword tokenization method that involves iteratively merging the most frequent byte pairs in a text. ```python from tokenizers import Tokenizer # Example usage with Hugging Face's Tokenizers library tokenizer = Tokenizer.from_file(\"bpe_tokenizer.json\") encoded_output = tokenizer.encode(\"This is an example sentence.\") print(encoded_output.tokens) ``` 2. **WordPiece** - WordPiece is a subword tokenization method that involves splitting words into subwords based on the most frequent character n-grams. ```python from tokenizers import Tokenizer # Example usage with Hugging Face's Tokenizers library tokenizer = Tokenizer.from_file(\"wordpiece_tokenizer.json\") encoded_output = tokenizer.encode(\"This is an example sentence.\") print(encoded_output.tokens) ``` 3. **Unigram** - Unigram tokenization involves splitting text into individual words or tokens. ```python from tokenizers import Tokenizer # Example usage with Hugging Face's Tokenizers library tokenizer = Tokenizer.from_file(\"unigram_tokenizer.json\") encoded_output = tokenizer.encode(\"This is an example sentence.\") print(encoded_output.tokens) ``` 4. **SentencePiece** - SentencePiece is a subword tokenization method that involves splitting text into subwords based on the most frequent byte pairs or character n-grams. ```python from sentencepiece import SentencePieceTokenizer # Example usage with SentencePiece library tokenizer = SentencePieceTokenizer(model_file=\"sentencepiece.model\") encoded_output = tokenizer.encode(\"This is an example sentence.\") print(encoded_output.tokens) ``` These examples use the Hugging Face `tokenizers` and `SentencePiece` libraries to demonstrate how these tokenization methods can be implemented in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "trie_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "fulltext_index_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n分词是自然语言处理中的一项基础任务，指将连续的文本序列切分成有意义的词语或词素序列。其核心目标是在保持语义完整的前提下，确定词语的边界，为后续的语义分析、句法分析等高级任务提供可靠的输入单元。\n\n## 核心要点\n- 分词是中文等无空格分隔语言处理的必要步骤，英文等语言通常以空格为天然分隔符，但仍需处理缩写、连字符等特殊情况。\n- 分词算法主要分为基于词典的匹配方法（如最大匹配法）和基于统计的机器学习方法（如隐马尔可夫模型、条件随机场），以及近年流行的深度学习模型（如BiLSTM+CRF、BERT）。\n- 分词面临的主要挑战包括歧义切分（如“南京市长江大桥”）、未登录词识别（如新词、专业术语）以及词性标注的协同处理。\n- 分词结果直接影响下游任务性能，如信息检索、机器翻译、情感分析等，因此需要根据具体应用场景选择合适的分词粒度与模型。\n- 当前主流分词工具（如jieba、HanLP、LTP）均支持自定义词典与模型微调，以适应不同领域（如医疗、法律）的特定词汇需求。\n\n## 应用场景\n分词广泛应用于搜索引擎的索引构建、智能客服的意图识别、文本分类的特征提取以及语音识别中的语言模型训练。例如，在电商平台中，分词可帮助系统理解用户搜索“苹果手机”的意图，从而准确匹配商品。\n\n## 相关概念\n分词与词性标注、命名实体识别、句法分析等任务紧密关联，常作为预处理步骤。此外，分词结果的质量直接影响词向量（如Word2Vec）的训练效果，进而影响整个NLP系统的性能。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

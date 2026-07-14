@@ -21,5 +21,22 @@
   ],
   "related_nodes": [
     "java_oop_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nJVM（Java Virtual Machine，Java虚拟机）是Java程序运行的环境，负责将Java字节码解释或编译为机器码并执行，同时提供内存管理、垃圾回收、线程调度等核心服务。\n\n## 何时使用\n所有Java应用程序都运行在JVM之上，因此任何Java开发场景都需要理解JVM。当需要优化程序性能、排查内存泄漏或调整垃圾回收行为时，深入掌握JVM基础尤为重要。\n\n## 示例\n```Java\npublic class JvmDemo {\n    public static void main(String[] args) {\n        // 获取JVM运行时信息\n        Runtime runtime = Runtime.getRuntime();\n        long maxMemory = runtime.maxMemory();\n        long totalMemory = runtime.totalMemory();\n        long freeMemory = runtime.freeMemory();\n        \n        System.out.println(\"最大内存: \" + maxMemory / 1024 / 1024 + \" MB\");\n        System.out.println(\"已分配内存: \" + totalMemory / 1024 / 1024 + \" MB\");\n        System.out.println(\"空闲内存: \" + freeMemory / 1024 / 1024 + \" MB\");\n        \n        // 触发垃圾回收（建议仅供演示）\n        System.gc();\n    }\n}\n```\n\n## 反例\n错误地认为JVM内存越大越好，直接设置-Xmx为物理内存的90%以上，导致操作系统频繁交换，反而降低性能。\n\n## 边界条件\nJVM的堆内存并非越大越好，过大的堆会导致垃圾回收暂停时间变长。32位JVM最大堆内存约为4GB，64位JVM受限于操作系统和物理内存。",
+    "code_pattern": "public class JvmInfo {\n    public static void main(String[] args) {\n        Runtime rt = Runtime.getRuntime();\n        long max = rt.maxMemory();\n        long total = rt.totalMemory();\n        long free = rt.freeMemory();\n        System.out.println(\"Max: \" + max / 1024 / 1024 + \" MB\");\n        System.out.println(\"Total: \" + total / 1024 / 1024 + \" MB\");\n        System.out.println(\"Free: \" + free / 1024 / 1024 + \" MB\");\n        System.out.println(\"Used: \" + (total - free) / 1024 / 1024 + \" MB\");\n    }\n}",
+    "common_pitfalls": [
+      "忽略-Xms和-Xmx的初始与最大堆设置，导致程序启动后频繁GC调整堆大小，影响性能。",
+      "在代码中频繁调用System.gc()，这会触发Full GC并暂停所有应用线程，通常应避免。",
+      "混淆栈内存和堆内存，误将大量对象引用存储在栈上，导致栈溢出而非堆溢出。",
+      "未设置元空间（Metaspace）上限，导致类加载过多时元空间无限增长，最终耗尽系统内存。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

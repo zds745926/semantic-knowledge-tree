@@ -19,5 +19,39 @@
       "content_preview": "as_completed: The `asyncio.as_completed(fs)` function yields futures in the order they complete. The first future to complete will be yielded first. Here is an example of how you might use this in Python: ```python import asyncio # Define some asynchronous tasks async def task1(): await asyncio.sleep(1) return 'Task 1 completed' async def task2(): await asyncio.sleep(2) return 'Task 2 completed' async def main(): # Create a list of futures representing the tasks fs = [task1(), task2()] # Use as_completed to run and yield results in the order they complete for coro in asyncio.as_completed(fs): result = await coro print(result) # Run the main function asyncio.run(main()) ``` In this example, `task1` completes before `task2`, so \"Task 1 completed\" will be printed first."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n`as_completed` 是 `asyncio` 模块中的一个函数，它接受一个可等待对象（如协程、Future 或 Task）的可迭代对象，并返回一个迭代器，该迭代器按完成顺序（而非提交顺序）产出已完成的可等待对象。\n\n## 何时使用\n当需要并发执行多个异步任务，并希望在每个任务完成时立即处理其结果（而非等待所有任务完成）时，使用 `as_completed`。它特别适用于任务执行时间差异较大、需要逐步响应的场景，例如同时发起多个网络请求并逐个处理返回结果。\n\n## 示例\n```Python\nimport asyncio\n\nasync def fetch_data(delay, name):\n    await asyncio.sleep(delay)\n    return f\"{name} done\"\n\nasync def main():\n    tasks = [fetch_data(3, \"A\"), fetch_data(1, \"B\"), fetch_data(2, \"C\")]\n    for coro in asyncio.as_completed(tasks):\n        result = await coro\n        print(result)\n\nasyncio.run(main())\n# 输出顺序：B done, C done, A done\n```\n\n## 反例\n错误地将 `as_completed` 用于同步代码或普通函数，这会导致 `TypeError`，因为 `as_completed` 要求传入可等待对象。\n\n## 边界条件\n- 传入的可迭代对象必须包含可等待对象（如协程、Task 或 Future），否则会引发 `TypeError`。\n- 如果所有任务都已完成，`as_completed` 返回的迭代器会立即产出所有结果，但顺序仍为完成顺序。\n- 在事件循环关闭后使用 `as_completed` 会导致 `RuntimeError`，需确保在运行中的事件循环内调用。",
+    "code_pattern": "import asyncio\n\nasync def worker(task_id, delay):\n    await asyncio.sleep(delay)\n    return f\"Task {task_id} finished\"\n\nasync def main():\n    tasks = [worker(i, i) for i in range(1, 5)]\n    for coro in asyncio.as_completed(tasks):\n        result = await coro\n        print(result)\n\nif __name__ == \"__main__\":\n    asyncio.run(main())",
+    "common_pitfalls": [
+      "忘记 `await` 每个 `coro`：`as_completed` 返回的是可等待对象，必须用 `await` 获取结果，否则会得到协程对象而非实际值。",
+      "传入非可等待对象：如普通函数或整数，会引发 `TypeError`，必须确保传入的是协程、Task 或 Future。",
+      "在事件循环外使用：`as_completed` 需要在运行中的事件循环内调用，否则会抛出 `RuntimeError`。",
+      "误解完成顺序：`as_completed` 按完成顺序产出，不是按提交顺序，因此结果顺序可能不可预测，需依赖任务实际耗时。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,27 @@
       "content_preview": "整型 int: Python's `int` is an arbitrary-precision integer (large integers are automatically extended). It supports literal values in binary (0b), octal (0o), and hexadecimal (0x) formats. Here’s a brief Python code example to illustrate: ```python # Binary, Octal, Hexadecimal literals binary_number = 0b1010 # 10 in decimal octal_number = 0o12 # 10 in decimal hexadecimal_number = 0xA # 10 in decimal print(binary_number) # Output: 10 print(octal_number) # Output: 10 print(hexadecimal_number) # Output: 10 ``` This example demonstrates how to use binary, octal, and hexadecimal number literals in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "immutability_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n整型（int）是 Python 中用于表示整数的不可变数据类型，支持任意大小的整数（包括负数），没有固定位宽限制。\n\n## 何时使用\n当需要处理整数运算、计数、索引或任何不含小数部分的数值时，应使用 int 类型。Python 的 int 自动支持大整数运算，适合科学计算、数据分析中的精确整数操作。\n\n## 示例\n```Python\n# 基本整数赋值与运算\na = 42\nb = -7\nc = a + b  # 35\nd = a * 100  # 4200\ne = 2 ** 100  # 大整数：1267650600228229401496703205376\nprint(type(a))  # <class 'int'>\n```\n\n## 反例\n避免将浮点数直接赋给 int 变量而不显式转换，例如 `x = 3.14` 会得到 float 而非 int；也不要用 int 表示布尔值（应使用 bool 类型）。\n\n## 边界条件\nPython 3 中 int 与 long 合并，无溢出风险，但大整数运算会消耗更多内存和 CPU；整数除法（/）返回 float，需用 // 获得整数结果；int 对象不可变，所有运算都返回新对象。",
+    "code_pattern": "def process_integer(value: int) -> int:\n    \"\"\"处理整数并返回结果。\"\"\"\n    if not isinstance(value, int):\n        raise TypeError(\"value must be int\")\n    result = value * 2 + 10\n    return result\n\n# 使用示例\nnum = 5\noutput = process_integer(num)\nprint(output)  # 20",
+    "common_pitfalls": [
+      "整数除法（/）默认返回浮点数，例如 5/2 得到 2.5 而非 2，应使用 // 进行整除。",
+      "int 类型不可变，对变量重新赋值实际上是创建新对象，而非修改原对象，这在循环或函数参数中容易误解。",
+      "从字符串转换时，int('123') 正确，但 int('12.3') 会抛出 ValueError，需先转为 float 再取整。",
+      "大整数运算（如 10**1000）虽然支持，但会显著增加内存占用和计算时间，需注意性能影响。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

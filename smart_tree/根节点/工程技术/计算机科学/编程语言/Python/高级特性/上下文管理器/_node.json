@@ -16,5 +16,13 @@
     "description": "上下文管理器: The `with` statement manages resources (files/locks/connections), achieving this through the use of `__enter__` and `__exit__`. Here's a brief example in Python to illustrate how the `with` statement works with file management: ```python # Using 'with' for file handling try: with open('example.txt', 'r') as file: content = file.read() print(content) except FileNotFoundError: print(\"The file was not found.\") ``` In this example, the `__enter__` method is called when entering the `with` block (when the file is opened), and the `__exit__` method is called after the block is executed (regardless of whether an exception occurred or not). This ensures that the file is properly closed even if an error occurs within the block."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "上下文管理器是 Python 中用于资源管理的高级特性，其核心目的是确保资源（如文件、锁、网络连接）在使用后能被正确释放，避免资源泄漏。该分支包含两个主要子主题：类实现上下文和 contextmanager。类实现上下文是指通过定义 __enter__ 和 __exit__ 方法来自定义上下文管理器，适用于需要复杂初始化和清理逻辑的场景；而 contextmanager 是 Python 标准库 contextlib 提供的装饰器，允许用生成器函数简洁地实现上下文管理器，适合简单逻辑。两者本质上是实现同一协议的不同方式：类实现更灵活、可读性强，适合大型或状态丰富的管理器；contextmanager 更简洁，适合快速封装。学习路径建议先掌握 with 语句的用法，然后理解 __enter__/__exit__ 协议，接着学习类实现方式，最后掌握 contextmanager 装饰器及其限制。掌握这些内容后，能高效处理文件操作、数据库连接、线程锁等常见资源管理任务。",
+  "example_queries": [
+    "如何使用 __enter__ 和 __exit__ 自定义一个文件上下文管理器？",
+    "contextmanager 装饰器与类实现上下文管理器相比有哪些优缺点？",
+    "如何在上下文管理器中处理异常并决定是否传播？",
+    "Python 中 with 语句的执行流程是怎样的？",
+    "能否用 contextmanager 实现一个计时器上下文管理器？"
+  ]
 }

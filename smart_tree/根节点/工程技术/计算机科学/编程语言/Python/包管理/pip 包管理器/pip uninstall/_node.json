@@ -19,5 +19,31 @@
       "content_preview": "pip uninstall: Uninstalling a package using pip involves the command `pip uninstall package`. For automatic confirmation, you can use `pip uninstall -y`. Here is a brief explanation and an example of how this might be used in Python: ```python # Uninstall a package using pip with automatic confirmation !pip uninstall -y some_package_name # Note: The above line should be run in a shell or terminal, not directly in the Python interpreter. ``` In this example, `some_package_name` should be replaced with the actual name of the package you wish to uninstall. The `-y` flag automatically confirms the operation without requiring user input."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "sudo_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\npip uninstall 是 Python 包管理器 pip 提供的命令，用于从当前 Python 环境中移除已安装的第三方包及其关联文件。\n\n## 何时使用\n当你需要清理不再需要的 Python 包以释放磁盘空间或解决包冲突时，应使用此命令。例如，在项目迁移或依赖更新后，移除旧版本包以避免版本混乱。此外，在测试环境中频繁安装/卸载包时，也常用此命令保持环境整洁。\n\n## 示例\n```Python\n# 卸载单个包\npip uninstall requests\n\n# 卸载多个包\npip uninstall numpy pandas matplotlib\n\n# 使用 -y 参数跳过确认，适合脚本自动化\npip uninstall -y flask\n\n# 卸载时同时移除依赖（需谨慎）\npip uninstall -r requirements.txt -y\n```\n\n## 反例\n错误用法：直接使用 `pip uninstall` 而不加包名，会导致命令报错。另外，在未确认依赖关系的情况下强制卸载核心包（如 setuptools），可能破坏 Python 环境。\n\n## 边界条件\n注意：pip uninstall 默认只移除包本身，不会自动移除其依赖包（除非使用 `pip-autoremove` 等第三方工具）。如果包被其他已安装包依赖，卸载会导致依赖断裂。此外，卸载后若仍有其他包引用该包，运行时可能抛出 ImportError。",
+    "code_pattern": "import subprocess\nimport sys\n\ndef uninstall_packages(packages, yes=False):\n    \"\"\"卸载指定的 Python 包列表。\n    \n    Args:\n        packages (list): 要卸载的包名列表\n        yes (bool): 是否自动确认（跳过提示）\n    \"\"\"\n    cmd = [sys.executable, '-m', 'pip', 'uninstall'] + packages\n    if yes:\n        cmd.append('-y')\n    result = subprocess.run(cmd, capture_output=True, text=True)\n    if result.returncode != 0:\n        print(f\"卸载失败: {result.stderr}\")\n    else:\n        print(f\"成功卸载: {', '.join(packages)}\")\n\n# 使用示例\nuninstall_packages(['requests', 'numpy'], yes=True)",
+    "common_pitfalls": [
+      "卸载时未使用 -y 参数，在自动化脚本中会因等待用户输入而挂起，导致流程中断。",
+      "误卸载了 pip 自身或其他核心包（如 setuptools、wheel），导致 Python 环境无法正常使用 pip 命令。",
+      "卸载包后未检查其依赖是否被其他包共享，盲目使用第三方工具自动移除依赖，可能破坏其他包的运行。",
+      "在虚拟环境外执行卸载操作，意外修改了全局 Python 环境，影响其他项目或系统工具。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

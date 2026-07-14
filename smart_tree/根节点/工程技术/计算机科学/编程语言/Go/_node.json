@@ -16,5 +16,13 @@
     "description": "Go: Go is a compiled language developed by Google, known for its simplicity and efficiency. It natively supports concurrency through goroutines and channels. Here's a brief Python code example to illustrate the concept of goroutines (using threading as an analogy): ```python import threading def worker(id): print(f\"Worker {id} started\") # Simulate some work import time time.sleep(2) print(f\"Worker {id} finished\") # Create and start 3 goroutine-like threads for i in range(3): thread = threading.Thread(target=worker, args=(i,)) thread.start() ``` Note that Python's `threading` module does not provide the same level of concurrency as Go's goroutines due to the Global Interpreter Lock (GIL). However, this example demonstrates the basic idea of running multiple concurrent tasks."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "Go语言分支涵盖Go编程语言的核心概念与并发编程模型，子主题Goroutine和Channel是Go并发机制的两大支柱。Goroutine是轻量级线程，由Go运行时管理，支持高并发执行；Channel是Goroutine间通信的管道，遵循CSP（通信顺序进程）模型，通过发送和接收操作实现数据同步。两者相辅相成：Goroutine负责并行任务，Channel负责协调与数据传递，共同构建了“不要通过共享内存来通信，而应通过通信来共享内存”的Go哲学。学习路径建议先掌握Go基础语法（如函数、结构体、接口），然后深入理解Goroutine的调度原理与生命周期，再学习Channel的类型、缓冲与同步机制，最后通过实际模式（如扇入、扇出、管道）综合运用。此分支适合构建高并发服务、网络应用和分布式系统。",
+  "example_queries": [
+    "Goroutine和普通线程有什么区别？如何高效创建和管理Goroutine？",
+    "Channel的缓冲与非缓冲模式有何不同？如何避免死锁？",
+    "如何使用select语句在多个Channel间进行多路复用？",
+    "Go中如何实现工作池（Worker Pool）模式？",
+    "Goroutine泄漏的常见原因及如何检测和预防？"
+  ]
 }

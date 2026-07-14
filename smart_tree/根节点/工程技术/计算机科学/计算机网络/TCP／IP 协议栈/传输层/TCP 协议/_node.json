@@ -18,5 +18,13 @@
     "description": "TCP 协议: TCP (Transmission Control Protocol) provides a reliable byte stream service over a connection. Header size is 20 bytes. Python code example: ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) sock.connect(server_address) try: # Send data message = 'This is the message. It will be repeated.' print(f'Sending: {message}') sock.sendall(message.encode()) finally: print('Closing socket') sock.close() ``` In this example, a simple TCP connection is established to `localhost` on port `10000`, and a message is sent over the connection. This demonstrates the use of TCP for reliable data transmission."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于TCP协议的核心机制，涵盖可靠传输、拥塞控制、状态机与连接管理四大子主题。可靠传输通过序列号、确认应答、超时重传等机制确保数据无差错、不丢失、不重复地到达；拥塞控制则通过慢启动、拥塞避免、快重传与快恢复算法动态调整发送速率，避免网络过载；状态机描述了TCP连接从建立到关闭的完整生命周期，包括SYN、ESTABLISHED、FIN_WAIT等状态转换；连接管理则涉及三次握手建立连接与四次挥手释放连接的具体流程。这四个子主题相互关联：可靠传输是基础，拥塞控制保障网络公平性，状态机与连接管理则定义了TCP的行为规范。学习路径建议先理解可靠传输与连接管理，再深入拥塞控制与状态机，最后综合理解TCP的端到端通信原理。",
+  "example_queries": [
+    "TCP如何通过序列号和确认应答实现可靠传输？",
+    "TCP拥塞控制中的慢启动和拥塞避免算法是如何工作的？",
+    "TCP三次握手和四次挥手的具体过程是什么？",
+    "TCP状态机中TIME_WAIT状态的作用是什么？",
+    "快重传和快恢复算法如何提高TCP性能？"
+  ]
 }

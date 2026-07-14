@@ -19,5 +19,34 @@
       "content_preview": "大整数运算: Python `int` automatically handles arbitrarily large integers, capable of computing values like 2**1000000, which are astronomical in scale. This feature is widely used in RSA cryptography. Here's a brief Python code example demonstrating the handling of such large integers: ```python # Example of using Python int to handle large numbers large_number = 2 ** 1000000 print(large_number) ``` This code snippet demonstrates how Python can easily manage and compute extremely large integer values, which is crucial for cryptographic applications like RSA."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n大整数运算是指Python中int类型能够自动处理任意精度整数的算术运算，无需开发者手动管理内存或担心溢出问题。\n\n## 何时使用\n当需要处理超出常规整数范围（如超过2^63-1）的数值时，例如在密码学、科学计算或大数据处理中。Python的int类型会自动扩展内存以容纳大整数，因此可以直接使用标准算术运算符进行加减乘除等操作。\n\n## 示例\n```Python\n# 计算2的1000次方，结果是一个超大整数\nbig_num = 2 ** 1000\nprint(big_num)  # 输出: 10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376\n\n# 大整数加法\nresult = big_num + 12345678901234567890\nprint(result)\n```\n\n## 反例\n不要试图用浮点数表示大整数，因为浮点数精度有限会导致数据丢失。例如，`float(2**1000)`会得到`inf`（无穷大）。\n\n## 边界条件\n大整数运算会消耗更多内存和CPU时间，极端大的整数（如百万位）可能导致性能问题或内存溢出。此外，除法运算（`/`）会返回浮点数，可能丢失精度，应使用整数除法（`//`）或`divmod()`。",
+    "code_pattern": "def big_int_operations(a: int, b: int) -> dict:\n    \"\"\"演示大整数基本运算，返回结果字典\"\"\"\n    return {\n        'addition': a + b,\n        'subtraction': a - b,\n        'multiplication': a * b,\n        'floor_division': a // b if b != 0 else None,\n        'modulus': a % b if b != 0 else None,\n        'power': a ** b if b >= 0 else None\n    }\n\n# 示例用法\nif __name__ == '__main__':\n    x = 10**100  # 1后面100个0\n    y = 10**50\n    result = big_int_operations(x, y)\n    print(result)",
+    "common_pitfalls": [
+      "使用浮点数表示大整数：例如`float(10**100)`会得到`1e+100`，但精度只有约15-17位有效数字，后续位被截断，导致数据失真。",
+      "误用除法导致精度丢失：`10**100 / 3`返回浮点数，结果近似但非精确；应使用`10**100 // 3`获得精确整数商。",
+      "忽略性能开销：对大整数进行大量循环运算（如逐位操作）可能极慢，应优先使用内置函数（如`pow()`带模运算）或优化算法。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

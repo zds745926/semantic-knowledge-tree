@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "py_locale_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\ngettext 是 Python 标准库中用于实现程序国际化的模块，通过将字符串标记为可翻译项，并基于用户语言环境加载对应的翻译文件（.mo），从而在运行时动态替换为本地化文本。\n\n## 何时使用\n当你的 Python 应用需要支持多语言界面（如 CLI 工具、Web 应用或桌面软件），且希望将字符串与代码分离以便翻译人员独立维护时，应使用 gettext。它特别适合需要根据系统或用户设置自动切换语言的场景，例如国际化网站后端、多语言命令行工具或跨平台 GUI 程序。\n\n## 示例\n```Python\nimport gettext\nimport locale\n\n# 设置本地化目录和域\nlocaledir = './locale'\ndomain = 'myapp'\n\n# 根据当前系统语言加载翻译\nlang = locale.getdefaultlocale()[0]  # 例如 'zh_CN'\ntrans = gettext.translation(domain, localedir, languages=[lang], fallback=True)\ntrans.install()\n\n# 使用 _() 标记可翻译字符串\nprint(_(\"Hello, world!\"))\nprint(_(\"File not found: %s\") % \"config.ini\")\n```\n\n## 反例\n错误地将翻译函数命名为 `_` 后，在同一个模块中又定义了同名的变量或函数，导致覆盖翻译函数，使得所有 `_(\"...\")` 调用失效。\n\n## 边界条件\n- 翻译文件必须位于正确的目录结构（如 `locale/zh_CN/LC_MESSAGES/myapp.mo`），否则 `gettext.translation()` 会回退到原始字符串。\n- 若 `fallback=True` 未设置且找不到翻译文件，会抛出 `FileNotFoundError` 异常，因此生产环境应始终启用回退。",
+    "code_pattern": "import gettext\nimport locale\n\ndef setup_i18n(domain='myapp', localedir='./locale'):\n    lang = locale.getdefaultlocale()[0]\n    trans = gettext.translation(domain, localedir, languages=[lang], fallback=True)\n    trans.install()\n    return trans\n\n# 在模块顶层调用一次\nsetup_i18n()\n\n# 之后所有模块中直接使用 _()\nprint(_(\"Welcome\"))",
+    "common_pitfalls": [
+      "翻译文件路径错误：忘记将 .mo 文件放在正确的 locale/<lang>/LC_MESSAGES/<domain>.mo 目录下，导致 gettext 找不到翻译而回退到原始字符串，用户看不到本地化内容。",
+      "未设置 fallback=True：在翻译文件缺失时，gettext.translation() 默认抛出 FileNotFoundError，导致程序崩溃；应始终设置 fallback=True 以优雅降级。",
+      "多线程环境中的语言切换：gettext 的 install() 是全局的，若在不同线程中需要不同语言，应使用 gettext.translation() 返回的翻译对象并显式调用 gettext() 方法，而非依赖全局 _()。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

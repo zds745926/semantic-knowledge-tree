@@ -19,5 +19,31 @@
       "content_preview": "while 基础: While the condition is true, the loop will repeatedly execute. The `break` statement exits the loop entirely, whereas the `continue` statement skips the rest of the current iteration and moves on to the next one. Python code example: ```python # Example using while loop with break and continue i = 0 while i < 5: i += 1 if i == 3: continue # Skip the rest of this iteration since i is 3 print(i) # This will only print 1, 2, 4, 5 print(\"\\nUsing break:\") i = 0 while i < 5: i += 1 if i == 3: break # Exit the loop entirely since i is 3 print(i) # This will only print 1 and 2 ``` This example demonstrates how `continue` skips to the next iteration of the loop, while `break` exits the loop altogether."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_enumerate_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "binary_search_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nwhile 循环是 Python 中一种基于条件表达式的重复执行结构，只要条件为真，就会持续执行循环体内的代码块。\n\n## 何时使用\n当需要重复执行某段代码，但循环次数不确定，而是依赖于某个条件是否满足时，应使用 while 循环。例如，等待用户输入有效数据、处理未知长度的数据流、实现游戏主循环等场景。它特别适合那些循环次数在编写代码时无法预知，但可以通过一个布尔表达式来控制的情况。\n\n## 示例\n```Python\n# 计算 1 到 10 的累加和\nsum = 0\ni = 1\nwhile i <= 10:\n    sum += i\n    i += 1\nprint(\"1到10的和为:\", sum)\n```\n\n## 反例\n错误用法：忘记在循环体内更新循环变量，导致无限循环。例如，若上述示例中缺少 `i += 1`，则 `i` 永远为 1，条件 `i <= 10` 永远为真，程序将无限执行下去。\n\n## 边界条件\n1. 初始条件可能直接为假：如果 while 后的条件一开始就为 False，则循环体一次都不会执行。\n2. 条件表达式中的变量必须在循环体内被改变，否则可能导致无限循环。\n3. 注意浮点数比较的精度问题，避免使用 while x != 0.0 这样的条件，应使用绝对值比较。",
+    "code_pattern": "i = 0\nwhile i < n:\n    # 循环体代码\n    # 更新循环变量\n    i += 1",
+    "common_pitfalls": [
+      "忘记在循环体内更新循环变量，导致无限循环。例如 while i < 10: print(i) 中缺少 i += 1，程序将永远打印 0。",
+      "条件表达式使用赋值运算符 = 而非比较运算符 ==，导致意外赋值并可能产生无限循环。例如 while x = 1: 会始终为真。",
+      "在循环体内修改了循环条件中使用的变量，但修改逻辑错误，导致循环提前退出或无法退出。例如 while i < 10: i -= 1 会导致 i 越来越小，无限循环。",
+      "使用 while True 时忘记在合适位置添加 break 语句，导致死循环。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

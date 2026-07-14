@@ -19,5 +19,30 @@
       "content_preview": "sed: `sed 's/old/new/g'` substitution. `sed -n '1,10p'` to print a range. Python code example for the concepts mentioned: For `sed 's/old/new/g'`, you can use Python's `re` module to achieve similar functionality: ```python import re text = \"This is an old sentence that needs to be replaced with new.\" new_text = re.sub(r\"old\", \"new\", text, flags=re.IGNORECASE) print(new_text) ``` For `sed -n '1,10p'`, you can use Python's slicing and string methods: ```python text = \"\"\"Line 1 Line 2 Line 3 Line 4 Line 5 Line 6 Line 7 Line 8 Line 9 Line 10 Line 11\"\"\" lines = text.split('\\n') print('\\n'.join(lines[0:10])) ``` These examples demonstrate how to perform substitution and print a range of lines in Python, mirroring the functionality provided by `sed`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_tempfile_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_gettext_v4",
+      "type": "application"
+    },
+    {
+      "id": "inode_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nsed（Stream Editor）是一种流式文本编辑器，用于对文本文件或输入流进行非交互式的编辑操作。它通过逐行读取输入、应用预定义的编辑命令并输出结果，常用于自动化文本处理任务。\n\n## 核心要点\n- **逐行处理**：sed 按行读取输入，对每一行应用指定的编辑命令，适用于处理大型文件或流式数据。\n- **命令模式**：支持多种编辑操作，如替换（s）、删除（d）、插入（i）、追加（a）和打印（p），可通过正则表达式匹配特定行。\n- **脚本化**：可以将多个命令组合成脚本文件，实现复杂的文本转换流程，提高重复任务的效率。\n- **原地编辑**：通过 `-i` 选项可直接修改原文件，无需创建临时文件，但需谨慎使用以避免数据丢失。\n- **地址范围**：支持指定行号或模式匹配的地址范围，精确控制命令作用的目标行。\n\n## 应用场景\nsed 常用于批量替换文件中的字符串、删除或提取特定行、格式化文本输出，以及作为管道命令的一部分处理日志文件或配置文件。在自动化运维和脚本编程中，sed 是快速处理文本数据的利器。\n\n## 相关概念\ngrep 用于搜索匹配模式的行，awk 则提供更强大的字段处理和计算功能，三者常结合使用。正则表达式是 sed 命令的基础，用于定义匹配模式。此外，sed 与管道（|）和重定向（>）配合，可构建高效的文本处理流水线。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

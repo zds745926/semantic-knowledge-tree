@@ -19,5 +19,38 @@
       "content_preview": "as_completed: The `concurrent.futures.as_completed(fs)` function yields futures objects as they complete. The ones that finish first are yielded first. Here's a brief Python code example to illustrate this: ```python import concurrent.futures import time def task(n): time.sleep(n) # Simulate a long-running task return f\"Task {n} completed\" # Create a list of futures for tasks with different durations with concurrent.futures.ThreadPoolExecutor() as executor: fs = [executor.submit(task, n) for n in range(1, 4)] for future in concurrent.futures.as_completed(fs): print(future.result()) # This will print the results in the order they complete ``` In this example, `as_completed` yields futures as their corresponding tasks finish, and we print the results in the order they are completed."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n`as_completed` 是 `concurrent.futures` 模块中的一个函数，它接受一个 Future 对象的可迭代对象（通常由 `Executor.submit()` 返回），并返回一个迭代器，该迭代器在 Future 完成时（无论成功、失败或取消）立即产出该 Future 对象，从而允许按完成顺序处理结果，而不是按提交顺序。\n\n## 何时使用\n当你有多个并发任务（如网络请求、I/O 操作或 CPU 密集型任务）需要并行执行，并且希望尽快处理每个完成的任务的结果，而不是等待所有任务按提交顺序完成时，使用 `as_completed`。它特别适用于任务执行时间不均匀的场景，可以显著减少整体等待时间，提高响应性。\n\n## 示例\n```Python\nimport concurrent.futures\nimport time\n\ndef slow_square(x):\n    time.sleep(x)\n    return x * x\n\nwith concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:\n    futures = {executor.submit(slow_square, i): i for i in [3, 1, 2]}\n    for future in concurrent.futures.as_completed(futures):\n        result = future.result()\n        print(f\"Task completed with result: {result}\")\n```\n输出（顺序可能不同，但总是先完成先输出）：\n```\nTask completed with result: 1\nTask completed with result: 4\nTask completed with result: 9\n```\n\n## 反例\n错误地将 `as_completed` 用于同步任务或单线程执行器，此时任务不会真正并发，`as_completed` 只是按提交顺序返回，失去了其优势。另外，在迭代 `as_completed` 时直接修改 `futures` 字典（如删除元素）可能导致运行时错误。\n\n## 边界条件\n- `as_completed` 返回的迭代器是惰性的，只有在迭代时才会阻塞等待下一个完成的 Future，因此必须确保迭代器被消费，否则未完成的任务可能永远不会被处理。\n- 如果所有 Future 都已完成，`as_completed` 会立即按完成顺序产出它们，但完成顺序可能与提交顺序不同。\n- 当 Future 被取消时，`future.result()` 会抛出 `CancelledError`，需要在迭代中适当处理异常。",
+    "code_pattern": "import concurrent.futures\n\ndef worker(arg):\n    # 执行实际任务\n    return arg * 2\n\nwith concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:\n    args = [1, 2, 3, 4]\n    future_to_arg = {executor.submit(worker, arg): arg for arg in args}\n    for future in concurrent.futures.as_completed(future_to_arg):\n        try:\n            result = future.result()\n            arg = future_to_arg[future]\n            print(f\"Task {arg} completed with result: {result}\")\n        except Exception as e:\n            print(f\"Task raised exception: {e}\")",
+    "common_pitfalls": [
+      "在迭代 `as_completed` 时修改 `future_to_arg` 字典（如删除已处理的项），会导致 `KeyError` 或 `RuntimeError: dictionary changed size during iteration`。应使用副本或仅读取字典。",
+      "忘记捕获 `future.result()` 可能抛出的异常（如 `CancelledError` 或任务内部异常），导致迭代中断。应始终在 `try-except` 块中调用 `result()`。",
+      "假设 `as_completed` 返回的 Future 顺序与提交顺序相同，导致逻辑错误。实际上顺序取决于任务完成时间，不可预测。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,30 @@
       "content_preview": "for 迭代原理: The given Chinese technical text translates to: \"For `x` in `iterable`: is equivalent to calling `iter()` → `__next__()` until `StopIteration`. Here's a brief Python code example to illustrate this concept: ```python # Define an iterable my_list = [1, 2, 3] # Using the for loop for x in my_list: print(x) # Equivalent manual iteration using iter() and __next__() it = iter(my_list) # Get the iterator object try: while True: # Continue until StopIteration is raised print(next(it)) # This is equivalent to x in for loop except StopIteration: pass # End of iterable, do nothing ``` In this example, both the `for` loop and the manual iteration using `iter()` and `next()` achieve the same result.\""
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_enumerate_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_collections_module_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nfor 迭代原理是指 Python 中 for 循环通过迭代器协议（__iter__ 和 __next__）逐个访问可迭代对象（如列表、字符串、字典、文件等）中元素的过程。\n\n## 何时使用\n当需要遍历序列（如列表、元组、字符串）或非序列可迭代对象（如字典、集合、生成器）中的每个元素时，使用 for 循环。它适用于任何实现了迭代器协议的对象，无需手动管理索引或循环变量。\n\n## 示例\n```Python\n# 遍历列表\nfruits = ['apple', 'banana', 'cherry']\nfor fruit in fruits:\n    print(fruit)\n\n# 遍历字符串\nfor char in 'hello':\n    print(char)\n\n# 遍历字典\nperson = {'name': 'Alice', 'age': 30}\nfor key, value in person.items():\n    print(f'{key}: {value}')\n```\n\n## 反例\n错误地尝试在迭代过程中修改可迭代对象的大小（如删除列表元素），会导致迭代跳过元素或引发异常。例如，在 for 循环中删除列表元素会使索引错乱。\n\n## 边界条件\n注意：迭代过程中不要修改正在迭代的容器（如列表、字典）的长度；对于空的可迭代对象，for 循环体不会执行，不会报错。",
+    "code_pattern": "def process_items(items):\n    \"\"\"通用迭代处理函数\"\"\"\n    for index, item in enumerate(items):\n        # 处理每个元素\n        print(f\"Item {index}: {item}\")\n\n# 使用示例\nmy_list = [10, 20, 30]\nprocess_items(my_list)",
+    "common_pitfalls": [
+      "在迭代列表时使用 remove() 或 pop() 删除元素，导致后续元素索引偏移，跳过元素或引发 IndexError。",
+      "在迭代字典时修改字典（添加或删除键），引发 RuntimeError: dictionary changed size during iteration。",
+      "误以为 for 循环会创建副本，实际上直接修改可变元素（如列表中的列表）会影响原对象。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,42 @@
       "content_preview": "字典基础: {} creation. `d[key]` access, `d.get(key, default)` safe access. Preserves insertion order since Python 3.7. Here's a brief explanation with a Python code example: - **Creation**: This refers to the process of creating a dictionary in Python. - **Access**: - `d[key]`: Directly accesses the value associated with the key `key` in the dictionary `d`. If the key is not found, it will raise a `KeyError`. - `d.get(key, default)`: Safely accesses the value associated with the key `key` in the dictionary `d`. If the key is not found, it returns the specified `default` value instead of raising an error. - **Preserves Insertion Order**: Since Python 3.7, dictionaries maintain the insertion order of keys. ```python # Example usage: my_dict = {'apple': 1, 'banana': 2, 'cherry': 3} # Direct access (may raise KeyError if key is not found) print(my_dict['banana']) # Output: 2 # Safe access with default value print(my_dict.get('banana', 0)) # Output: 2 print(my_dict.get('orange', 0)) # Output: 0, 'orange' is not in the dictionary ``` This example demonstrates both direct and safe dictionary access methods."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "application"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "py_hashlib_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n字典（dict）是 Python 中一种可变、无序的键值对（key-value）集合，每个键必须是不可变类型（如字符串、数字、元组），且唯一。\n\n## 何时使用\n当需要根据自定义的键（而非整数索引）快速访问、修改或删除数据时，字典是最佳选择。例如，存储用户信息（如姓名、年龄）、配置参数、计数器等。它适合处理关联数据，且查找时间复杂度为 O(1)。\n\n## 示例\n```Python\n# 创建一个字典存储学生信息\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 20,\n    \"grade\": \"A\"\n}\n\n# 访问和修改\nprint(student[\"name\"])  # 输出: Alice\nstudent[\"age\"] = 21\n\n# 添加新键值对\nstudent[\"city\"] = \"Beijing\"\n\n# 删除键值对\ndel student[\"grade\"]\n\n# 遍历\nfor key, value in student.items():\n    print(f\"{key}: {value}\")\n```\n\n## 反例\n不要使用可变类型（如列表、字典）作为键，否则会引发 TypeError。例如，`my_dict = {[1,2]: \"value\"}` 会报错。\n\n## 边界条件\n字典的键必须可哈希（hashable），且不可变。空字典用 `{}` 表示，但注意 `{}` 是空字典，不是空集合（空集合用 `set()`）。",
+    "code_pattern": "def create_and_use_dict():\n    # 创建字典\n    my_dict = {\n        \"key1\": \"value1\",\n        \"key2\": 42,\n        \"key3\": [1, 2, 3]\n    }\n    \n    # 安全访问（避免 KeyError）\n    value = my_dict.get(\"key1\", \"default\")\n    \n    # 添加或更新\n    my_dict[\"new_key\"] = \"new_value\"\n    \n    # 删除（安全）\n    if \"key2\" in my_dict:\n        del my_dict[\"key2\"]\n    \n    # 遍历\n    for k, v in my_dict.items():\n        print(f\"{k}: {v}\")\n    \n    return my_dict",
+    "common_pitfalls": [
+      "使用不存在的键直接访问（如 `my_dict[\"nonexistent\"]`）会引发 KeyError，应使用 `.get()` 方法并指定默认值。",
+      "字典的键必须是不可变类型，误用列表或字典作为键会导致 TypeError。",
+      "在遍历字典时修改字典大小（如添加或删除键）会引发 RuntimeError，应遍历副本（如 `list(my_dict.items())`）或使用字典推导式。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

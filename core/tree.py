@@ -132,7 +132,7 @@ class SemanticKnowledgeTree:
         self,
         query: str,
         query_vec: Optional[np.ndarray] = None,
-        elimination_ratio: float = 0.3,
+        elimination_ratio: float = 0.5,
         verbose: bool = False,
     ) -> List[Dict]:
         """
@@ -148,7 +148,7 @@ class SemanticKnowledgeTree:
         Args:
             query: 查询文本
             query_vec: 预编码查询向量
-            elimination_ratio: 淘汰比例（默认 0.3，即低于最高分 30% 的淘汰）
+            elimination_ratio: 淘汰比例（默认 0.5，即低于最高分 50% 的淘汰）
             verbose: 是否打印详细路径
 
         Returns:

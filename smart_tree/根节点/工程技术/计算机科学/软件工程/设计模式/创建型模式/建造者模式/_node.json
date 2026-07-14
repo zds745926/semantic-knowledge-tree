@@ -19,5 +19,30 @@
       "content_preview": "建造者模式: Step-by-step construction of complex objects. Method chaining. Using `StringBuilder` or Lombok's `@Builder`. ### Example with `StringBuilder`: ```python # Python equivalent using a class and method chaining concept class ComplexObject: def __init__(self): self.parts = [] def add_part(self, part): self.parts.append(part) return self # Method chaining # Usage obj = ComplexObject().add_part(\"part1\").add_part(\"part2\") print(obj.parts) # Output: ['part1', 'part2'] ``` ### Example with Lombok's `@Builder`: Lombok is a Java library that provides annotations to simplify the boilerplate code in Java. Python doesn't have an exact equivalent, but we can simulate it using class methods. ```python class ComplexObject: def __init__(self): self.parts = [] @classmethod def builder(cls): return cls() def add_part(self, part): self.parts.append(part) return self # Method chaining # Usage obj = ComplexObject.builder().add_part(\"part1\").add_part(\"part2\").build() print(obj.parts) # Output: ['part1', 'part2'] ``` In the Python examples above, we simulate method chaining using class methods and the `return self` statement to allow for a fluent interface."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cpp_oop_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n建造者模式是一种创建型设计模式，它将一个复杂对象的构建过程与其表示分离，使得同样的构建过程可以创建不同的表示。该模式通过一个指挥者（Director）指导建造者（Builder）逐步构建产品，最终返回一个完整的对象。\n\n## 核心要点\n1. 分离构建与表示：建造者模式将对象的构建过程（由指挥者控制）和具体表示（由具体建造者实现）解耦，提高代码的灵活性和可维护性。\n2. 分步构建：产品通常由多个部件组成，建造者模式通过一系列步骤（如设置属性、添加组件）逐步构建，支持精细控制。\n3. 可复用构建过程：相同的构建步骤（由指挥者定义）可以用于创建不同变体的产品，只需更换具体建造者即可。\n4. 隐藏复杂性：客户端无需了解产品的内部结构和构建细节，只需指定建造者类型即可获得完整对象。\n5. 与工厂模式的区别：建造者模式关注分步组装，而工厂模式通常一次性创建整个对象。\n\n## 应用场景\n建造者模式适用于需要创建复杂对象（如包含多个可选或必选属性的对象）的场景，例如生成复杂的文档（如HTML或PDF）、构建游戏角色（具有多种装备和技能）或配置数据库连接（包含多个参数）。它特别适合当对象的构建过程需要独立于其表示，且可能产生多种变体时使用。\n\n## 相关概念\n建造者模式与工厂方法模式、抽象工厂模式同属创建型模式，但侧重点不同：工厂模式关注对象创建的整体，而建造者模式强调分步组装。此外，它与模板方法模式有相似之处，因为指挥者定义了构建步骤的骨架，而具体建造者实现细节。在复杂对象构建中，建造者模式常与组合模式结合，以处理树状结构的部件。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

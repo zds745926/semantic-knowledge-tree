@@ -19,5 +19,22 @@
       "content_preview": "sudo: Ordinary users execute with root privileges. Use `visudo` to edit the configuration. NOPASSWD allows passwordless execution. Here's a brief explanation and an example of how this might be implemented in Python, although it's important to note that Python itself doesn't directly control system permissions or sudo configurations: ```python # This is just an illustrative code snippet for understanding the context. import os def execute_command_with_sudo(command): \"\"\" Execute a command with sudo privileges. Note: This function assumes NOPASSWD is configured in /etc/sudoers. :param command: The command to be executed as a string or list of strings. \"\"\" try: # Using subprocess to run the command import subprocess result = subprocess.run(command, shell=True, check=True, text=True) print(\"Command executed successfully:\", result.stdout) except subprocess.CalledProcessError as e: print(f\"Failed to execute command: {e}\") # Example usage (replace 'command_to_run' with your actual command): execute_command_with_sudo('command_to_run') ``` This Python function `execute_command_with_sudo` demonstrates how a command might be executed using sudo, assuming NOPASSWD is configured in the `/etc/sudoers` file. However, this example does not cover the configuration of sudo or the use of `visudo`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "ls_cd_pwd_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nsudo（Superuser Do）是Linux/Unix系统中的一条命令，允许授权用户以超级用户或其他用户的身份执行命令，而无需切换用户或知晓目标用户的密码。它通过配置文件/etc/sudoers定义权限，提供细粒度的权限控制，是系统安全管理的核心工具。\n\n## 核心要点\n1. **权限提升**：sudo允许普通用户临时获得root权限执行特定命令，减少直接使用root账户的风险。\n2. **日志审计**：所有sudo操作都会被记录到系统日志（如/var/log/secure），便于追踪和审计。\n3. **细粒度控制**：通过/etc/sudoers文件，可以精确指定哪些用户或组可以执行哪些命令，以及是否需要密码。\n4. **时间戳缓存**：默认情况下，sudo会缓存认证信息（通常5分钟），期间再次执行无需重复输入密码。\n5. **别名支持**：支持用户别名、命令别名和主机别名，简化复杂权限配置的管理。\n\n## 应用场景\n系统管理员常用sudo授权开发人员执行特定管理命令（如重启服务、查看日志），而无需交出root密码。在自动化脚本中，sudo用于临时提升权限执行安装或配置操作。此外，sudo也用于多用户服务器环境，限制普通用户对关键系统文件的修改。\n\n## 相关概念\n**su命令**：su（Switch User）用于切换用户身份，通常需要目标用户密码，而sudo只需当前用户密码。**/etc/sudoers文件**：sudo的配置文件，必须用visudo命令编辑以避免语法错误。**权限提升**：指从低权限用户切换到高权限用户的过程，sudo是实现此功能的常用机制。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

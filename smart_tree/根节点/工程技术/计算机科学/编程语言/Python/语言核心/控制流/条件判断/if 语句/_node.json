@@ -19,5 +19,30 @@
       "content_preview": "if 语句: ```python if condition: # Conditional check. statement # If the condition is true, execute this block of code. elif other_condition: # Additional conditional branches. statement # If the first condition is false and this one is true, execute this block of code. else: # Fallback option. statement # Executed if all previous conditions are false. # Ternary expression: x if cond else y # Equivalent to using an if-else statement but in a single line. For example: result = \"even\" if number % 2 == 0 else \"odd\" # Checks if 'number' is even or odd. ``` Explanation: - `if condition:`: This checks whether the given condition is true and executes the corresponding block of code if it is. - `elif other_condition:`: This provides additional conditions to check. If the initial `if` condition fails, Python will evaluate this one next. - `else:`: This part of the statement is executed only if all preceding `if` or `elif` conditions are false. - The ternary expression `x if cond else y`: This is a shorthand for an `if-else` statement. It evaluates `cond`, and if it's true, returns `x`; otherwise, it returns `y`. In the example provided, `result` will be set to `\"even\"` if `number % 2 == 0` (i.e., if `number` is even), or `\"odd\"` otherwise."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "boolean_algebra_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nif 语句是一种条件控制结构，根据布尔表达式的真值决定是否执行特定代码块。\n\n## 何时使用\n当程序需要根据某个条件（如用户输入、计算结果、状态标志）做出分支决策时使用 if 语句。它适用于所有需要判断“如果…那么…”逻辑的场景，比如验证输入、处理边界情况或实现多路选择。\n\n## 示例\n```Python\n# 检查用户年龄是否满足投票资格\nage = int(input(\"请输入你的年龄: \"))\nif age >= 18:\n    print(\"你可以投票。\")\nelse:\n    print(\"你还不能投票。\")\n```\n\n## 反例\n错误地将赋值表达式 `=` 用于条件判断，例如 `if x = 5:` 会导致语法错误或意外行为（在 Python 中会引发 SyntaxError）。\n\n## 边界条件\n注意布尔表达式的求值顺序：`and` 和 `or` 具有短路特性，可能跳过后续条件；同时避免在条件中使用可变对象（如列表）直接作为布尔值，除非明确知道其真值规则（空列表为 False）。",
+    "code_pattern": "def check_condition(value):\n    if value > 0:\n        return \"positive\"\n    elif value == 0:\n        return \"zero\"\n    else:\n        return \"negative\"\n\nresult = check_condition(user_input)",
+    "common_pitfalls": [
+      "使用 `=` 代替 `==` 进行条件判断，导致赋值而非比较，引发 SyntaxError 或逻辑错误。",
+      "忘记处理 `elif` 或 `else` 分支，使得某些输入落入未定义状态，产生意外结果。",
+      "在条件中直接使用可变对象（如 `if my_list:`）时，误解其真值规则，例如误以为空列表为 True。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

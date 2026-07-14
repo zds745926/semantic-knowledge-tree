@@ -19,5 +19,30 @@
       "content_preview": "PyTorch: Deep learning framework. Dynamic computational graph/automatic differentiation. Tensor core data structure. torch.nn for building neural networks. Python code examples: 1. **Dynamic Computational Graph/Automatic Differentiation**: ```python import torch x = torch.tensor([2.0], requires_grad=True) y = x ** 2 y.backward() # This computes the gradient of `y` with respect to `x` print(x.grad) # Output: tensor([4.]) ``` 2. **Tensor Core Data Structure**: ```python import torch a = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32) b = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32) c = a + b # Element-wise addition print(c) # Output: tensor([[ 6., 8.], # [10., 12.]]) ``` 3. **torch.nn for Building Neural Networks**: ```python import torch import torch.nn as nn class SimpleNN(nn.Module): def __init__(self): super(SimpleNN, self).__init__() self.linear = nn.Linear(2, 1) # A simple linear layer def forward(self, x): return self.linear(x) model = SimpleNN() input_data = torch.tensor([[1.0, 2.0]]) output = model(input_data) print(output) # Output: tensor([[-3.]]) ``` These examples illustrate key concepts in the deep learning framework using Python and PyTorch."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "conv_layer_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nPyTorch 是一个基于 Torch 的开源机器学习库，用于构建和训练深度学习模型，提供动态计算图和强大的 GPU 加速支持。\n\n## 何时使用\nPyTorch 适用于研究和生产环境中的深度学习任务，特别是需要灵活调试和快速原型设计的场景。它支持自动微分，便于实现自定义神经网络，并拥有丰富的预训练模型和社区资源。\n\n## 示例\n```Python\nimport torch\nimport torch.nn as nn\n\n# 定义一个简单的线性模型\nclass LinearModel(nn.Module):\n    def __init__(self):\n        super(LinearModel, self).__init__()\n        self.linear = nn.Linear(10, 1)\n\n    def forward(self, x):\n        return self.linear(x)\n\n# 创建模型和数据\nmodel = LinearModel()\nx = torch.randn(5, 10)\ny = model(x)\nprint(y)\n```\n\n## 反例\n避免在 CPU 上训练大型模型而不使用 GPU，这会导致训练速度极慢；同时不要忽略设置随机种子，否则结果不可复现。\n\n## 边界条件\n注意 PyTorch 默认使用 32 位浮点数，若需要更高精度应显式转换；当使用 DataLoader 时，确保 num_workers 不超过系统核心数，否则可能引发内存溢出。",
+    "code_pattern": "import torch\nimport torch.nn as nn\nimport torch.optim as optim\n\nclass MyModel(nn.Module):\n    def __init__(self):\n        super(MyModel, self).__init__()\n        self.fc = nn.Linear(10, 1)\n\n    def forward(self, x):\n        return self.fc(x)\n\nmodel = MyModel()\ncriterion = nn.MSELoss()\noptimizer = optim.SGD(model.parameters(), lr=0.01)\n\nfor epoch in range(10):\n    inputs = torch.randn(32, 10)\n    targets = torch.randn(32, 1)\n    outputs = model(inputs)\n    loss = criterion(outputs, targets)\n    optimizer.zero_grad()\n    loss.backward()\n    optimizer.step()",
+    "common_pitfalls": [
+      "忘记调用 optimizer.zero_grad() 导致梯度累积，使模型无法收敛。",
+      "在 GPU 上训练时未将模型和数据移动到同一设备（如 .cuda()），导致类型错误。",
+      "使用 DataLoader 时设置 num_workers 过大，引发内存不足或数据加载缓慢。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

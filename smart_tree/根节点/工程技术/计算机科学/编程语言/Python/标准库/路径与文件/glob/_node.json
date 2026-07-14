@@ -19,5 +19,34 @@
       "content_preview": "glob: The `glob.glob('**/*.py', recursive=True)` function performs file pattern matching. It is equivalent to using `Path.glob` from the `pathlib` module. ### Python Example: ```python from glob import glob # Using glob to find all .py files recursively matching_files = glob('**/*.py', recursive=True) print(matching_files) ``` This code will print a list of all `.py` files found in the current directory and its subdirectories."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_tempfile_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nglob 是 Python 标准库中用于根据 Unix shell 风格的通配符规则匹配文件路径的模块，返回匹配的文件名列表。\n\n## 何时使用\n当需要根据简单的模式（如 *.txt、data?.csv、**/*.py）批量查找文件，而不想编写复杂的正则表达式或递归遍历目录时，使用 glob。它适合处理文件筛选、批量处理、配置加载等场景，尤其适合快速原型开发和脚本编写。\n\n## 示例\n```Python\nimport glob\n\n# 查找当前目录下所有 .txt 文件\nfor file in glob.glob('*.txt'):\n    print(file)\n\n# 递归查找子目录下所有 .py 文件（Python 3.5+）\nfor file in glob.glob('**/*.py', recursive=True):\n    print(file)\n```\n\n## 反例\n错误用法：使用 glob 匹配复杂文件名模式（如需要匹配特定日期范围或数字序列），此时应使用正则表达式或 os.listdir 加条件判断。\n\n## 边界条件\n注意：glob 默认不匹配以点号开头的隐藏文件（如 .hidden.txt），如需匹配需显式指定模式如 '.*'。另外，在 Windows 上路径分隔符会自动转换，但在递归模式中需小心使用反斜杠。",
+    "code_pattern": "import glob\n\ndef find_files(pattern: str, recursive: bool = False) -> list:\n    \"\"\"根据通配符模式查找文件，支持递归\"\"\"\n    return glob.glob(pattern, recursive=recursive)\n\n# 使用示例\nif __name__ == '__main__':\n    txt_files = find_files('*.txt')\n    all_py = find_files('**/*.py', recursive=True)\n    print(txt_files, all_py)",
+    "common_pitfalls": [
+      "忘记设置 recursive=True 导致 ** 不递归：在 Python 3.5 之前，** 不表示递归匹配，即使 3.5+ 也必须显式传入 recursive=True，否则 ** 只匹配当前目录下名为 ** 的目录。",
+      "路径分隔符问题：在 Windows 上使用 glob 时，如果模式中包含反斜杠，可能不会按预期工作，建议始终使用正斜杠 '/'，glob 会自动转换。",
+      "忽略隐藏文件：默认情况下，glob 不匹配以点开头的文件或目录，如果需要包含它们，必须显式在模式中添加 '.*' 或使用 iglob 并手动过滤。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

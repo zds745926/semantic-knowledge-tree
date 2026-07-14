@@ -19,5 +19,30 @@
       "content_preview": "分布式缓存: Redis Cluster / Consistent Hashing / Virtual Nodes. Multi-level Cache L1 + L2. Explanation: - **Redis Cluster**: A distributed key-value store that allows you to scale out your Redis instances. - **Consistent Hashing**: An algorithm used in computer science and networking for distributing keys across a cluster of nodes, ensuring that the distribution is balanced and that adding or removing nodes minimally impacts the overall system. - **Virtual Nodes**: In Redis Cluster, virtual nodes are additional replicas of the data stored on each node. This helps to improve fault tolerance and load balancing. Python code example (for illustration purposes): ```python import redis # Initialize a Redis connection r = redis.Redis(host='localhost', port=6379, db=0) # Example of adding a key-value pair in Redis Cluster with virtual nodes r.set('key1', 'value1') # Example of getting the value from Redis print(r.get('key1')) ``` This example demonstrates basic operations using Redis. In a real-world scenario, you would need to configure and connect to a Redis Cluster properly, which involves setting up multiple Redis instances with virtual nodes configured."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cap_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n分布式缓存是一种将数据分散存储在多个服务器节点上的缓存技术，通过水平扩展来提升系统性能和可扩展性。它旨在解决单机缓存的容量和吞吐量瓶颈，为大规模分布式系统提供低延迟的数据访问。\n\n## 核心要点\n1. 数据分片：通过一致性哈希等算法将数据均匀分布到多个节点，实现负载均衡和弹性扩容。\n2. 高可用性：采用主从复制、哨兵或集群模式，确保节点故障时缓存数据不丢失或可快速恢复。\n3. 高性能：利用内存存储和异步网络通信，显著降低数据库查询压力，提升响应速度。\n4. 一致性模型：提供最终一致性或强一致性选项，需根据业务场景权衡数据准确性与性能。\n5. 淘汰策略：支持LRU、TTL等机制，自动清理过期或低频数据，优化内存利用率。\n\n## 应用场景\n分布式缓存广泛应用于电商秒杀、社交动态、实时排行榜等读多写少的高并发场景。它可作为数据库的前置屏障，缓存热点数据（如商品详情、用户会话），有效降低后端负载。同时，在微服务架构中用于共享状态或跨服务数据交换，提升整体系统吞吐量。\n\n## 相关概念\n分布式缓存与本地缓存（如Guava Cache）互补，后者适用于单机快速访问，前者适合跨节点共享。它常与数据库、消息队列（如Kafka）协同工作，形成分层缓存架构。此外，缓存穿透、雪崩、击穿等问题的解决策略（如布隆过滤器、限流降级）是其实践中的关键关联技术。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

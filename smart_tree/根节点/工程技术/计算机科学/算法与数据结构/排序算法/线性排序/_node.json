@@ -16,5 +16,13 @@
     "description": "线性排序: Linear sorting does not rely on comparisons but leverages the characteristics of the data to achieve O(n) time complexity. Here's an example using counting sort, a linear sorting algorithm that works well when the range of input values is not significantly greater than the number of items to be sorted: ```python def counting_sort(arr): if len(arr) == 0: return arr # Find the maximum value in the array max_val = max(arr) # Initialize count array count = [0] * (max_val + 1) # Count each element for num in arr: count[num] += 1 # Reconstruct the sorted array sorted_arr = [] for i, cnt in enumerate(count): sorted_arr.extend([i] * cnt) return sorted_arr # Example usage arr = [4, 2, 2, 8, 3, 3, 1] sorted_arr = counting_sort(arr) print(sorted_arr) # Output: [1, 2, 2, 3, 3, 4, 8] ``` This Python code demonstrates the counting sort algorithm, which is a linear sorting technique that operates in O(n + k) time complexity, where `k` is the range of input values."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "线性排序是排序算法中一类特殊且高效的算法，其核心思想是利用数据的特殊性质（如取值范围有限、可分解为独立位等）来突破基于比较的排序算法Ω(n log n)的下界，达到线性时间复杂度O(n)。本分支涵盖计数排序和基数排序两种主要算法。计数排序适用于数据范围较小且已知的情况，通过统计每个元素出现的次数，直接计算元素在有序序列中的位置；基数排序则通过将数据按位（如个位、十位）进行多次排序，每次排序可采用计数排序或桶排序作为子过程，从而处理范围较大的整数或字符串。两者之间的关系在于：基数排序常依赖计数排序作为其稳定排序的子步骤，而计数排序的稳定性是基数排序正确性的关键。学习路径建议先掌握计数排序的原理与实现，理解其空间换时间的思想及稳定性要求，再学习基数排序，重点理解如何通过多趟分配与收集实现整体有序。掌握这两种算法有助于深入理解算法设计中如何利用数据特性优化性能。",
+  "example_queries": [
+    "如何用计数排序对一组年龄在0-120之间的整数进行排序？",
+    "基数排序中为什么需要稳定排序作为子过程？",
+    "计数排序的时间复杂度和空间复杂度分别是多少？适用于什么场景？",
+    "给定一组三位数整数，请用基数排序演示排序过程。",
+    "线性排序算法与基于比较的排序算法（如快速排序）相比，优缺点是什么？"
+  ]
 }

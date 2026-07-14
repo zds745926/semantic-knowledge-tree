@@ -21,5 +21,22 @@
   ],
   "related_nodes": [
     "py_os_module_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nsubprocess 模块是 Python 标准库中用于生成子进程、连接其输入/输出/错误管道并获取其返回码的模块。它替代了旧的 os.system、os.popen 等函数，提供了更强大、更安全的进程管理能力。\n\n## 何时使用\n当你需要在 Python 程序中执行外部命令或程序，并需要控制其输入、捕获其输出或等待其完成时，应使用 subprocess 模块。例如，在自动化脚本中调用系统工具（如 git、ffmpeg）、运行其他语言编写的程序、或需要与子进程进行交互式通信时。\n\n## 示例\n```Python\nimport subprocess\n\n# 运行 'echo hello' 命令，捕获输出\nresult = subprocess.run(['echo', 'hello'], capture_output=True, text=True)\nprint(result.stdout)  # 输出: hello\nprint(result.returncode)  # 输出: 0\n```\n\n## 反例\n使用 os.system('ls -l') 来执行命令，因为 os.system 无法直接捕获输出，且容易受到 shell 注入攻击。应使用 subprocess.run(['ls', '-l'], capture_output=True) 替代。\n\n## 边界条件\n当命令路径包含空格或特殊字符时，务必使用列表形式传递参数，不要使用字符串加 shell=True，以避免注入风险。另外，子进程可能产生大量输出导致管道阻塞，需设置合适的缓冲区或使用 communicate() 方法。",
+    "code_pattern": "import subprocess\n\ndef run_command(cmd_list, input_data=None):\n    try:\n        result = subprocess.run(\n            cmd_list,\n            input=input_data,\n            capture_output=True,\n            text=True,\n            check=True\n        )\n        return result.stdout, result.stderr, result.returncode\n    except subprocess.CalledProcessError as e:\n        return e.stdout, e.stderr, e.returncode\n\n# 使用示例\nstdout, stderr, rc = run_command(['ls', '-l'])\nprint(stdout)",
+    "common_pitfalls": [
+      "使用 shell=True 且参数为字符串时容易受到 shell 注入攻击，例如 subprocess.run('ls ' + user_input, shell=True) 可能被恶意利用。应始终使用列表形式传递命令和参数。",
+      "忽略子进程的输出缓冲区可能导致死锁，例如当子进程输出大量数据到 stdout 且未及时读取时，管道缓冲区满会导致子进程阻塞。应使用 capture_output=True 或 communicate() 方法自动处理。",
+      "忘记设置 text=True 或 universal_newlines=True 会导致输出为字节串而非字符串，增加后续处理难度。在需要文本输出时应明确设置。",
+      "使用 check=True 时若命令返回非零退出码会抛出 CalledProcessError，但未捕获该异常会导致程序中断。应使用 try-except 包裹或手动检查 returncode。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

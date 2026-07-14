@@ -19,5 +19,30 @@
       "content_preview": "CDN: Global Cache Nodes. Request to the nearest node. Origin pull if necessary. Edge computing. Here is a brief explanation with a related Python code example for the concept of requesting data from the nearest cache node: Global Cache Nodes: This refers to distributed caching systems where data is stored across multiple nodes worldwide, allowing requests to be served by the closest available node. Request to the nearest node: The system routes requests to the cache node that is geographically closest to the user or client making the request. Origin pull if necessary: If the requested content is not found in any of the cache nodes (i.e., a cache miss), the system may need to fetch it from the origin server. Edge computing: This involves processing data closer to where it's generated, reducing latency and bandwidth usage. It can be implemented using various frameworks or libraries depending on the specific use case. Python code example for routing requests to the nearest node (simplified): ```python import requests def get_nearest_node(requested_data): # Assume we have a list of cache nodes with their latencies to the user cache_nodes = [ {\"node_id\": 1, \"latency_ms\": 50}, {\"node_id\": 2, \"latency_ms\": 75}, {\"node_id\": 3, \"latency_ms\": 100} ] # Find the nearest node nearest_node = min(cache_nodes, key=lambda x: x[\"latency_ms\"]) # Simulate fetching data from the nearest cache node response = requests.get(f\"http://cache-node-{nearest_node['node_id']}/data/{requested_data}\") return response.content # Example usage content = get_nearest_node(\"example_data\") print(content) ``` This example demonstrates a simple approach to routing requests to the nearest cache node. In practice, more sophisticated algorithms and infrastructure would be used for such tasks."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "tcp_bbr_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cap_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nCDN（内容分发网络）是一种分布式网络架构，通过在全球范围内部署多个边缘节点服务器，将网站、应用或流媒体等内容缓存到离用户最近的节点上，从而加速内容的传输和访问。其核心目标是降低网络延迟、减轻源站压力并提升用户体验。\n\n## 核心要点\n1. **边缘节点缓存**：CDN在全球各地部署大量边缘服务器，将源站内容复制到这些节点，用户请求时自动从最近的节点获取数据，显著缩短传输距离。\n2. **智能调度**：通过DNS解析或HTTP重定向等技术，根据用户地理位置、网络状况和节点负载，动态选择最优节点提供服务，实现负载均衡。\n3. **内容加速**：针对静态资源（如图片、CSS、JS文件）和动态内容（如API响应）均可加速，静态内容通过缓存直接返回，动态内容则通过优化路由和协议减少延迟。\n4. **安全防护**：CDN可提供DDoS攻击防护、Web应用防火墙等功能，分散攻击流量到各节点，保护源站免受恶意流量冲击。\n5. **高可用性**：当某个节点故障时，CDN自动将请求切换到其他健康节点，确保服务持续可用，提升整体可靠性。\n\n## 应用场景\nCDN广泛应用于视频流媒体平台（如Netflix、抖音）加速视频播放，电商网站（如淘宝）提升商品图片和页面加载速度，以及游戏行业减少玩家登录和下载延迟。此外，新闻门户和社交媒体也依赖CDN应对突发流量高峰，确保全球用户快速访问。\n\n## 相关概念\nCDN与**反向代理**类似，都位于用户和源服务器之间，但CDN更强调分布式部署和缓存。**边缘计算**常与CDN结合，在节点上执行轻量级计算任务。**DNS负载均衡**是CDN调度的基础技术，而**HTTP/2**和**QUIC**等协议优化则进一步提升了CDN的传输效率。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

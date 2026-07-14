@@ -19,5 +19,30 @@
       "content_preview": "梯度提升树 GBDT: Gradually adding residual fitting. XGBoost/LightGBM. Optimal table data. For context, let's assume you want to provide a brief Python code example for using XGBoost or LightGBM with residual fitting in a regression task: ### Example Using XGBoost ```python import xgboost as xgb from sklearn.datasets import make_regression from sklearn.model_selection import train_test_split from sklearn.metrics import mean_squared_error # Generate synthetic data X, y = make_regression(n_samples=1000, n_features=20, noise=0.1) X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42) # Train the initial model model_initial = xgb.XGBRegressor(n_estimators=50, learning_rate=0.1, max_depth=3) model_initial.fit(X_train, y_train) # Predict and calculate residuals y_pred_initial = model_initial.predict(X_val) residuals = y_val - y_pred_initial # Train the second model on residuals model_residual = xgb.XGBRegressor(n_estimators=50, learning_rate=0.1, max_depth=3) model_residual.fit(X_val, residuals) # Combine predictions from both models y_pred_combined = model_initial.predict(X_val) + model_residual.predict(X_val) # Evaluate the combined prediction mse = mean_squared_error(y_val, y_pred_combined) print(f\"Mean Squared Error: {mse}\") ``` ### Example Using LightGBM ```python import lightgbm as lgb from sklearn.datasets import make_regression from sklearn.model_selection import train_test_split from sklearn.metrics import mean_squared_error # Generate synthetic data X, y = make_regression(n_samples=1000, n_features=20, noise=0.1) X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42) # Train the initial model model_initial = lgb.LGBMRegressor(n_estimators=50, learning_rate=0.1, max_depth=3) model_initial.fit(X_train, y_train) # Predict and calculate residuals y_pred_initial = model_initial.predict(X_val) residuals = y_val - y_pred_initial # Train the second model on residuals model_residual = lgb.LGBMRegressor(n_estimators=50, learning_rate=0.1, max_depth=3) model_residual.fit(X_val, residuals) # Combine predictions from both models y_pred_combined = model_initial.predict(X_val) + model_residual.predict(X_val) # Evaluate the combined prediction mse = mean_squared_error(y_val, y_pred_combined) print(f\"Mean Squared Error: {mse}\") ``` These examples demonstrate how to use XGBoost and LightGBM for residual fitting in a regression task."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "bst_search_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "avl_tree_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "cap_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n梯度提升树（Gradient Boosting Decision Tree，GBDT）是一种基于迭代累加的集成学习算法，通过逐步添加决策树来拟合前一轮的残差（梯度负方向），从而最小化损失函数。它结合了梯度提升（Gradient Boosting）和决策树（Decision Tree）的优势，在回归和分类任务中表现优异。\n\n## 核心要点\n1. **迭代优化**：GBDT 通过多轮迭代，每轮训练一棵新树来拟合当前模型的残差（即损失函数负梯度），逐步降低整体误差。\n2. **基学习器为决策树**：通常使用深度较浅的 CART 回归树作为基学习器，限制树复杂度以防止过拟合。\n3. **梯度近似**：利用损失函数的梯度信息来指导新树的构建，使得算法适用于多种损失函数（如平方损失、对数损失）。\n4. **正则化策略**：通过学习率（shrinkage）、子采样（subsample）和树剪枝等技巧控制模型复杂度，提升泛化能力。\n5. **特征重要性**：GBDT 能自动计算特征的重要性得分，用于特征选择和模型解释。\n\n## 应用场景\nGBDT 广泛应用于金融风控（如信用评分、欺诈检测）、搜索引擎排序（如点击率预测）、推荐系统（如用户行为预测）以及各类回归和分类问题。它在处理混合型特征、缺失值和非线性关系时表现稳健，常作为竞赛和工业界的基线模型。\n\n## 相关概念\nGBDT 与随机森林同属集成学习，但随机森林基于 Bagging 并行训练，而 GBDT 基于 Boosting 串行迭代。XGBoost、LightGBM 和 CatBoost 是 GBDT 的优化实现，引入了二阶导数、直方图算法和对称树等改进。此外，梯度提升与 AdaBoost 的区别在于前者通过梯度拟合残差，后者通过调整样本权重。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

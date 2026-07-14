@@ -17,5 +17,13 @@
     "description": "行为型模式: Behavioral design patterns focus on the interaction between objects and the allocation of responsibilities. Here is an example to illustrate a behavioral pattern in Python. Let's use the Strategy pattern, which defines a family of algorithms, encapsulates each one, and makes them interchangeable. This allows the algorithm to vary independently from clients that use it. ```python from abc import ABC, abstractmethod # Define the strategy interface class QuackBehavior(ABC): @abstractmethod def quack(self) -> None: pass # Concrete strategies class Quack(QuackBehavior): def quack(self) -> None: print(\"Quack\") class MuteQuack(QuackBehavior): def quack(self) -> None: print(\"Mute Quack\") class Squeak(QuackBehavior): def quack(self) -> None: print(\"Squeak\") # Context class class Duck: def __init__(self, quack_behavior: QuackBehavior) -> None: self._quack_behavior = quack_behavior @property def quack_behavior(self) -> QuackBehavior: return self._quack_behavior @quack_behavior.setter def quack_behavior(self, quack_behavior: QuackBehavior) -> None: self._quack_behavior = quack_behavior def perform_quack(self) -> None: self._quack_behavior.quack() # Usage example if __name__ == \"__main__\": duck = Duck(Quack()) duck.perform_quack() # Output: Quack duck.quack_behavior = Squeak() duck.perform_quack() # Output: Squeak ``` In this example, the `Duck` class uses a strategy to perform its quacking behavior. The `quack_behavior` can be changed at runtime by setting it to an instance of another concrete strategy (e.g., `Quack`, `MuteQuack`, or `Squeak`)."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "行为型模式是设计模式中关注对象间通信和职责分配的一类模式，主要解决对象之间的交互问题。本分支涵盖观察者模式、策略模式和责任链模式，它们分别处理对象间的一对多依赖关系、算法的封装与互换，以及请求的链式传递。观察者模式定义了对象间的一种一对多依赖，当一个对象状态改变时，所有依赖者都会收到通知并自动更新；策略模式将算法族封装起来，使它们可以互相替换，从而让算法的变化独立于使用它的客户；责任链模式则允许多个对象都有机会处理请求，将这些对象连成一条链，并沿着链传递请求，直到有对象处理它为止。这三种模式都旨在降低对象间的耦合度，但侧重点不同：观察者模式强调通知机制，策略模式强调算法替换，责任链模式强调请求的传递与处理。学习路径建议先理解观察者模式，因为它最直观且应用广泛；然后学习策略模式，理解如何通过组合代替继承；最后掌握责任链模式，了解如何动态组合处理逻辑。掌握这些模式有助于设计出更灵活、可扩展的软件系统。",
+  "example_queries": [
+    "观察者模式在事件驱动架构中如何实现？",
+    "策略模式与状态模式有什么区别？",
+    "责任链模式在日志框架中如何应用？",
+    "如何用观察者模式实现一个简单的消息订阅系统？",
+    "策略模式在支付系统中的应用案例有哪些？"
+  ]
 }

@@ -19,5 +19,34 @@
       "content_preview": "随机森林: Bagging with feature randomness. Multiple tree voting. Less prone to overfitting. Python code example: ```python from sklearn.ensemble import BaggingClassifier from sklearn.tree import DecisionTreeClassifier # Example dataset X, y = ..., ... # Replace with actual data # Define the base estimator (a decision tree) base_estimator = DecisionTreeClassifier(max_depth=3) # Create a Bagging classifier with feature randomness and multiple trees bagging_clf = BaggingClassifier(base_estimator=base_estimator, n_estimators=100, # Number of trees max_samples=0.8, # Fraction of samples to use for each tree bootstrap_features=True) # Feature randomness # Train the model bagging_clf.fit(X, y) # Predict using the trained model predictions = bagging_clf.predict(X) ``` In this example, `BaggingClassifier` is used with a decision tree as the base estimator. The `bootstrap_features=True` parameter enables feature randomness, and `n_estimators=100` specifies that 100 trees will be used in the ensemble."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "bst_search_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "avl_tree_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "cap_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n随机森林是一种集成学习算法，通过构建多个决策树并综合它们的预测结果来提高模型的准确性和鲁棒性。它属于Bagging（Bootstrap Aggregating）方法的一种变体，在训练过程中引入随机性以降低过拟合风险。\n\n## 核心要点\n- 随机森林由大量决策树组成，每棵树基于随机抽取的样本子集和特征子集训练，确保多样性。\n- 对于分类任务，采用投票机制决定最终类别；对于回归任务，取所有树预测值的平均值。\n- 它能够处理高维数据，并评估特征的重要性，帮助筛选有效特征。\n- 随机森林对缺失值和异常值具有较好的容忍性，且不易过拟合。\n- 训练过程可以并行化，适合大规模数据集。\n\n## 应用场景\n随机森林广泛应用于金融风控中的信用评分、医疗诊断中的疾病预测、电商推荐系统中的用户行为分析等。它也能用于遥感图像分类、生物信息学中的基因表达分析等复杂任务。\n\n## 相关概念\n随机森林属于集成学习中的Bagging方法，与Boosting（如AdaBoost、XGBoost）不同，它通过并行构建弱学习器来降低方差。决策树是随机森林的基础模型，而特征随机选择是其区别于普通Bagging的关键。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

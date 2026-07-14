@@ -19,5 +19,42 @@
       "content_preview": "yield from: yield from sub_gen is a delegation of sub-generator. It simplifies nested generator patterns. Here’s an example to illustrate this in Python: ```python def parent_generator(): print(\"Parent generator starts\") try: while True: received = yield print(f\"Received: {received}\") # Delegate the processing to a sub-generator for value in child_generator(received): yield value except GeneratorExit: print(\"Parent generator is being closed\") def child_generator(input_value): print(f\"Child generator starts with input: {input_value}\") try: while True: received = yield f\"Processed: {input_value}\" except GeneratorExit: print(\"Child generator is being closed\") # Usage parent_gen = parent_generator() next(parent_gen) # Prime the parent generator for i in range(3): parent_gen.send(i) ``` In this example, `yield from` is not explicitly used because Python 3.3+ automatically handles delegation between generators using the `yield from` syntax. However, the concept of delegating to a sub-generator (`child_generator`) within the `parent_generator` is demonstrated."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nyield from 是 Python 3.3+ 引入的生成器语法，用于将一个生成器（或可迭代对象）的产出委托给另一个生成器，简化嵌套生成器的编写，本质上是生成器代理（delegating generator）向子生成器（subgenerator）转发 yield 表达式。\n\n## 何时使用\n当需要在一个生成器中逐项产出另一个可迭代对象（如列表、生成器、迭代器）的所有元素时，使用 yield from 可替代显式的 for 循环。它也常用于协程中，将控制权委托给另一个协程，实现协程间的组合与数据传递。\n\n## 示例\n```Python\ndef sub_gen():\n    yield 1\n    yield 2\n\ndef main_gen():\n    yield 'start'\n    yield from sub_gen()\n    yield 'end'\n\nfor item in main_gen():\n    print(item)\n# 输出: start 1 2 end\n```\n\n## 反例\n错误地认为 yield from 只能用于生成器函数，实际上它可以用于任何可迭代对象（如列表、字符串）。另外，不要混淆 yield from 和 yield，前者是委托产出，后者是直接产出。\n\n## 边界条件\nyield from 会捕获子生成器抛出的 StopIteration 异常，并将其 value 属性作为 yield from 表达式的返回值（仅适用于生成器）。如果子生成器是无限迭代器，则 yield from 永远不会结束，调用方需自行控制终止条件。",
+    "code_pattern": "def delegator(iterable):\n    # 预处理逻辑\n    result = yield from iterable\n    # 后处理逻辑，result 为子生成器返回值（若有）\n    return result\n\n# 使用示例：\n# for item in delegator([1, 2, 3]):\n#     print(item)",
+    "common_pitfalls": [
+      "误以为 yield from 只能用于生成器对象，实际上它可以用于任何可迭代对象（如列表、元组、字符串），但若传入非可迭代对象（如整数）会引发 TypeError。",
+      "忽略 yield from 表达式的返回值：当子生成器使用 return 语句返回一个值时，该值会被封装在 StopIteration 异常中，yield from 会捕获该异常并返回该值，若未捕获则丢失。",
+      "在协程中使用 yield from 时，若子生成器未正确处理 send() 和 throw()，会导致数据传递异常或协程崩溃，需确保子生成器也是协程或兼容 send/throw 协议。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -18,5 +18,13 @@
     "description": "路径与文件: Python provides various tools for file and path operations, ranging from the traditional `os.path` interface to the object-oriented approach with `pathlib`, and including pattern matching with `glob` and `fnmatch`. Here are brief examples of each: 1. **Using `os.path`:** ```python import os # Get the current working directory cwd = os.getcwd() print(cwd) # Join paths file_path = os.path.join(cwd, 'example.txt') print(file_path) ``` 2. **Using `pathlib`:** ```python from pathlib import Path # Get the current working directory cwd = Path.cwd() print(cwd) # Join paths file_path = cwd / 'example.txt' print(file_path) ``` 3. **Using `glob` for pattern matching:** ```python import glob # Find all .txt files in the current directory and its subdirectories txt_files = glob.glob('**/*.txt', recursive=True) print(txt_files) ``` 4. **Using `fnmatch` for pattern matching:** ```python import fnmatch # List of filenames to match against filenames = ['example.txt', 'report.pdf', 'notes.docx'] # Match .txt files txt_files = [name for name in filenames if fnmatch.fnmatch(name, '*.txt')] print(txt_files) ```"
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python标准库中处理路径与文件的模块，涵盖pathlib、glob、fnmatch和tempfile四个核心子主题。pathlib提供了面向对象的路径操作接口，支持跨平台路径拼接、解析和属性访问，是推荐的文件路径处理方式；glob基于通配符模式匹配文件路径，常用于批量查找文件；fnmatch提供文件名模式匹配功能，类似于shell中的通配符匹配，适用于过滤文件名；tempfile则用于创建临时文件和目录，确保临时资源的唯一性和自动清理。这些模块相互补充：pathlib作为路径操作的基础，glob和fnmatch用于文件搜索与筛选，tempfile解决临时文件管理问题。学习路径建议从pathlib入手掌握路径操作，再学习glob和fnmatch进行文件匹配，最后了解tempfile处理临时资源，从而构建完整的文件处理能力。",
+  "example_queries": [
+    "如何使用pathlib遍历目录并获取所有Python文件？",
+    "glob和fnmatch在文件匹配上有什么区别？",
+    "如何安全地创建临时文件并确保程序退出后自动删除？",
+    "怎样用pathlib跨平台地拼接和解析文件路径？",
+    "如何用glob递归查找所有子目录中的.txt文件？"
+  ]
 }

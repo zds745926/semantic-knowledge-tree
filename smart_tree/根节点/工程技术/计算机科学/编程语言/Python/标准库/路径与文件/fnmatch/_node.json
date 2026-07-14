@@ -19,5 +19,34 @@
       "content_preview": "fnmatch: `fnmatch.fnmatch('file.txt', '*.txt')`: Unix-style filename matching. `fnmatch.filter`. Python Code Example for `fnmatch.fnmatch`: ```python import fnmatch # Check if a file name matches the pattern matches = fnmatch.fnmatch('file.txt', '*.txt') print(matches) # Output: True ``` Explanation: The `fnmatch.fnmatch` function checks whether a filename (or pathname) matches a given shell-style wildcard pattern. In this example, it verifies that 'file.txt' matches the pattern '*.txt', which is true. Python Code Example for `fnmatch.filter`: ```python import fnmatch # Filter a list of filenames based on a pattern filenames = ['file1.txt', 'image.png', 'notes.txt', 'report.pdf'] matching_files = fnmatch.filter(filenames, '*.txt') print(matching_files) # Output: ['file1.txt', 'notes.txt'] ``` Explanation: The `fnmatch.filter` function returns a list of paths that match the given pattern. In this example, it filters out all filenames from the list that do not end with '.txt'."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_tempfile_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nfnmatch 是 Python 标准库中用于 Unix 风格文件名模式匹配的模块，提供 `fnmatch()`、`fnmatchcase()`、`filter()` 和 `translate()` 函数，支持 `*`、`?`、`[seq]` 等通配符，但不支持正则表达式的复杂语法。\n\n## 何时使用\n当需要根据简单的通配符模式（如 `*.txt`、`data?.csv`）来筛选文件名或字符串列表时，fnmatch 比正则表达式更简洁直观。它特别适合处理文件系统操作中的模式匹配，例如在批量处理文件时过滤特定扩展名或命名规则的文件。注意，fnmatch 默认忽略大小写（在 Windows/macOS 上），而 `fnmatchcase()` 则严格区分大小写。\n\n## 示例\n```Python\nimport fnmatch\nimport os\n\n# 列出当前目录下所有 .py 文件\npy_files = [f for f in os.listdir('.') if fnmatch.fnmatch(f, '*.py')]\nprint(py_files)\n\n# 使用 filter 函数直接过滤列表\nnames = ['data1.csv', 'data2.txt', 'info.csv', 'log.txt']\ncsv_files = fnmatch.filter(names, '*.csv')\nprint(csv_files)  # 输出: ['data1.csv', 'info.csv']\n\n# 使用 translate 将模式转换为正则表达式\nimport re\npattern = fnmatch.translate('data?.csv')\nregex = re.compile(pattern)\nprint(regex.match('data1.csv'))  # 输出匹配对象\n```\n\n## 反例\n错误地将 fnmatch 用于复杂模式匹配，例如需要匹配重复字符或分组时，应使用正则表达式而非 fnmatch。例如，`fnmatch.fnmatch('abc.txt', '[a-z]*.txt')` 中的 `[a-z]` 仅匹配单个字符，无法匹配多个小写字母。\n\n## 边界条件\n- 模式中的 `*` 不匹配路径分隔符（如 `/` 或 `\\`），因此不能用于跨目录匹配；若需跨目录，请使用 `pathlib` 或 `glob`。\n- 在 Windows 上，`fnmatch()` 默认忽略大小写，但 `fnmatchcase()` 始终区分大小写；在 Linux 上两者都区分大小写。",
+    "code_pattern": "import fnmatch\nimport os\n\ndef filter_files(directory, pattern):\n    \"\"\"返回目录中匹配模式的文件名列表\"\"\"\n    return [f for f in os.listdir(directory) if fnmatch.fnmatch(f, pattern)]\n\n# 使用示例\nif __name__ == '__main__':\n    py_files = filter_files('.', '*.py')\n    print(py_files)",
+    "common_pitfalls": [
+      "误以为 `*` 可以匹配路径分隔符：`fnmatch.fnmatch('/path/file.txt', '/*.txt')` 返回 False，因为 `*` 不匹配 `/`。应改用 `pathlib.PurePath.match()` 或 `glob.glob()`。",
+      "忽略大小写差异：在 Windows 上 `fnmatch('File.TXT', '*.txt')` 返回 True，但在 Linux 上返回 False。若需跨平台一致行为，应始终使用 `fnmatchcase()`。",
+      "混淆 `fnmatch` 与 `glob`：`fnmatch` 仅匹配字符串，不涉及文件系统；`glob` 则实际遍历目录。若需递归查找子目录，应使用 `glob.glob('**/*.py', recursive=True)`。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

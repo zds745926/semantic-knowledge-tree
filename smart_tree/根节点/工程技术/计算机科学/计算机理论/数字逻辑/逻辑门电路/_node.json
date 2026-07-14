@@ -19,5 +19,30 @@
       "content_preview": "逻辑门电路: Basic logic gates: AND gate, OR gate, NOT gate, NAND gate. The NAND gate is a universal gate. Here are brief Python code examples for each of these gates: 1. **NOT Gate**: ```python def not_gate(input_bit): return not input_bit # Example usage print(not_gate(True)) # Output: False ``` 2. **AND Gate**: ```python def and_gate(a, b): return a and b # Example usage print(and_gate(True, True)) # Output: True ``` 3. **OR Gate**: ```python def or_gate(a, b): return a or b # Example usage print(or_gate(False, True)) # Output: True ``` 4. **NAND Gate**: ```python def nand_gate(a, b): return not (a and b) # Example usage print(nand_gate(True, False)) # Output: True ``` These examples demonstrate how to implement the basic logic gates in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "boolean_algebra_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n逻辑门电路是数字电路中的基本构建单元，用于实现布尔代数中的基本逻辑运算（如与、或、非）。它通过处理输入信号（通常为高电平或低电平，对应逻辑1和0）来产生相应的输出信号，从而构成复杂数字系统的基础。\n\n## 核心要点\n- 基本逻辑门包括与门、或门和非门，分别实现逻辑与、逻辑或和逻辑非运算。\n- 复合逻辑门如与非门、或非门、异或门等，由基本门组合而成，可简化电路设计。\n- 逻辑门的输入和输出均为二进制信号，通常用电压高低表示，遵循真值表定义。\n- 逻辑门电路可由晶体管（如CMOS、TTL）实现，不同技术影响速度、功耗和集成度。\n- 逻辑门具有延迟特性，信号传输需要时间，这在高频设计中至关重要。\n\n## 应用场景\n逻辑门电路广泛应用于计算机处理器、存储器、通信设备和各类数字系统中，用于实现算术运算、数据选择、状态控制等功能。例如，CPU中的算术逻辑单元（ALU）由大量逻辑门构成，以执行加减乘除等操作。\n\n## 相关概念\n逻辑门电路与布尔代数、真值表、时序逻辑电路密切相关。布尔代数提供数学基础，真值表描述门的行为，而时序逻辑电路（如触发器）则利用门电路实现状态存储。此外，逻辑门是组合逻辑电路的核心，与可编程逻辑器件（如FPGA）的设计原理相通。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,34 @@
       "content_preview": "借用检查器: Compile-time Analysis of References: A mutable reference or multiple immutable references cannot coexist simultaneously. To illustrate this with a simple Python code example, consider the following scenario where attempting to have both a mutable and an immutable reference to the same variable at the same time would result in a runtime error: ```python def test_references(): x = 10 # An immutable integer def try_to_mutate(): # This will raise a TypeError because you cannot modify an immutable object x += 1 def use_reference(): # This is fine as it just uses the reference without modifying it print(x) # Trying to mutate 'x' directly would fail, but this example shows the concept try_to_mutate() use_reference() # test_references() # Uncommenting this line will raise a TypeError if supported by your Python version ``` In this example, `x` is an immutable integer. Attempting to modify it within the `try_to_mutate()` function would result in a runtime error (`TypeError`). The `use_reference()` function simply prints the value of `x`, demonstrating the use of an immutable reference without modification."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "cpp_oop_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n借用检查器是 Rust 编译器的一部分，它在编译时通过所有权、借用和生命周期规则，确保内存安全，防止数据竞争、悬垂指针和重复释放，而无需垃圾回收器。\n\n## 何时使用\n在编写任何 Rust 代码时，借用检查器始终处于激活状态。当你需要共享或临时访问数据而不转移所有权时，必须遵循借用规则：要么同时拥有多个不可变引用（&T），要么只拥有一个可变引用（&mut T）。它适用于所有涉及引用、函数参数传递、结构体字段访问以及并发编程的场景。\n\n## 示例\n```Rust\nfn main() {\n    let mut s = String::from(\"hello\");\n    let r1 = &s; // 不可变借用\n    let r2 = &s; // 多个不可变借用允许\n    println!(\"{}, {}\", r1, r2);\n    // 此处 r1, r2 不再使用\n    let r3 = &mut s; // 可变借用，之前不可变引用已失效\n    r3.push_str(\" world\");\n    println!(\"{}\", r3);\n}\n```\n\n## 反例\n同时存在可变引用和不可变引用会导致编译错误。例如，在创建不可变引用后尝试创建可变引用，或者在使用不可变引用时修改原变量。\n\n## 边界条件\n借用规则在函数返回引用时特别严格：返回的引用必须指向函数参数或静态变量，不能返回局部变量的引用。生命周期标注（如 `<'a>`）用于显式说明引用的有效范围。",
+    "code_pattern": "fn example<'a>(x: &'a str, y: &'a str) -> &'a str {\n    if x.len() > y.len() { x } else { y }\n}\n\nfn main() {\n    let s1 = String::from(\"short\");\n    let s2 = String::from(\"longer\");\n    let result = example(&s1, &s2);\n    println!(\"Longer: {}\", result);\n}",
+    "common_pitfalls": [
+      "在不可变引用作用域内尝试创建可变引用：即使不可变引用不再使用，只要其作用域未结束，编译器仍会阻止可变引用。应使用花括号缩小作用域或确保不可变引用在可变引用创建前被丢弃。",
+      "返回局部变量的引用：函数内创建的局部变量在函数结束后被销毁，返回其引用会导致悬垂指针。应返回参数引用或使用所有权转移。",
+      "在循环中同时持有可变引用和不可变引用：例如在迭代器上调用 `iter()` 后尝试修改集合，会导致编译错误。应使用 `iter_mut()` 或重新设计循环逻辑。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

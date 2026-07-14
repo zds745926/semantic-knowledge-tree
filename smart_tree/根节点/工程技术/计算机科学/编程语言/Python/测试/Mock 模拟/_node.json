@@ -19,5 +19,42 @@
       "content_preview": "Mock 模拟: unittest.mock replaces external dependencies. It includes `Mock`, `MagicMock`, and `patch`. `side_effect` and `return_value` are used to control behavior. Here's a brief explanation with Python code examples: - **unittest.mock**: This module provides tools for replacing parts of your system under test, which can be particularly useful when dealing with external dependencies like file systems or network calls. - **Mock** and **MagicMock**: These classes allow you to create mock objects that mimic the behavior of real objects. `MagicMock` is a subclass of `Mock` with additional magic methods. - **patch**: This function allows you to replace parts of the system under test (or any other module) with a \"stub\" version during tests, which can be particularly useful for isolating your code from external dependencies. - **side_effect** and **return_value**: These attributes control how mock objects behave. `return_value` sets what value is returned when a method or function is called on the mock object. `side_effect` allows you to specify a callable that will be invoked instead of the method being called, which can simulate side effects like raising exceptions. Here's an example: ```python from unittest.mock import patch def test_example(): # Using Mock to replace a function call with patch('module.function_to_patch') as mock_function: mock_function.return_value = 'mocked result' # Call the function that uses the patched function result = module.some_function() assert result == 'mocked result' # Example of using side_effect to simulate a side effect def test_side_effect(): with patch('module.function_to_patch') as mock_function: def side_effect(*args, **kwargs): if args[0] == 'error_case': raise ValueError(\"Simulated error\") return \"normal result\" mock_function.side_effect = side_effect # Test the function that calls the patched function assert module.some_function('normal_case') == 'normal result' with pytest.raises(ValueError): module.some_function('error_case') ``` In this example, `patch` is used to replace a function in another module during testing. The `return_value` attribute sets what value should be returned when the mocked function is called. The `side_effect` attribute allows you to define a callable that will be invoked instead of the method being called on the mock object, simulating side effects like raising exceptions."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_tempfile_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_hashlib_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nMock模拟是一种测试技术，通过创建模拟对象来替代真实依赖，以便隔离测试目标代码的行为和验证交互。\n\n## 何时使用\n当测试的代码依赖于外部服务（如数据库、API、文件系统）或复杂对象时，使用Mock可以避免真实调用带来的不确定性、速度慢或难以控制的问题。它也适用于需要验证函数是否被正确调用、参数是否正确传递的场景。\n\n## 示例\n```Python\nfrom unittest.mock import Mock\n\n# 创建一个模拟对象\nmock_obj = Mock()\n# 设置返回值\nmock_obj.get_data.return_value = {'key': 'value'}\n# 调用并验证\nresult = mock_obj.get_data('param')\nassert result == {'key': 'value'}\nmock_obj.get_data.assert_called_once_with('param')\n```\n\n## 反例\n错误用法：在测试中过度Mock，导致测试与真实行为脱节，例如Mock了所有依赖却未测试实际逻辑，或Mock了简单函数而忽略其副作用。\n\n## 边界条件\n注意：Mock对象默认允许任意属性访问，需通过spec参数限制接口；同时，Mock的自动创建属性可能导致误测，应显式声明所需方法。",
+    "code_pattern": "from unittest.mock import Mock, patch\n\ndef test_function():\n    with patch('module.ClassName') as MockClass:\n        mock_instance = MockClass.return_value\n        mock_instance.method.return_value = 'mocked'\n        result = module.function_under_test()\n        assert result == 'expected'\n        mock_instance.method.assert_called_once()",
+    "common_pitfalls": [
+      "忘记使用spec参数导致Mock对象接受任意属性调用，使得测试通过但真实代码会失败",
+      "使用patch时路径错误，例如拼写模块名或类名不正确，导致Mock未生效",
+      "未重置Mock状态导致测试间相互影响，例如在setUp中创建Mock但未在tearDown中清理"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

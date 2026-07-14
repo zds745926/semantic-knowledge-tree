@@ -19,5 +19,26 @@
       "content_preview": "Raft 共识算法: Leader Election → Log Replication → Security. Used in Etcd/Consul/TiKV. ### Leader Election In distributed systems, leader election is a process where nodes in the system elect one of themselves to be the leader. The leader node then makes decisions on behalf of the entire group and coordinates operations among the other nodes. **Python Code Example:** ```python import random class Node: def __init__(self, id): self.id = id self.is_leader = False def elect_leader(nodes): # Randomly select a leader node leader_id = random.choice([node.id for node in nodes]) print(f\"Leader elected: Node {leader_id}\") for node in nodes: if node.id == leader_id: node.is_leader = True nodes = [Node(i) for i in range(5)] elect_leader(nodes) for node in nodes: print(f\"Node {node.id} is a leader: {node.is_leader}\") ``` ### Log Replication Log replication involves replicating transaction logs to multiple nodes to ensure data consistency and fault tolerance. This process ensures that all nodes have the same up-to-date state. **Python Code Example:** ```python class Node: def __init__(self, id): self.id = id self.log = [] def replicate_logs(nodes, log_entry): for node in nodes: node.log.append(log_entry) print(f\"Node {node.id} received log entry: {log_entry}\") nodes = [Node(i) for i in range(3)] replicate_logs(nodes, \"Transaction 123\") for node in nodes: print(f\"Node {node.id} logs: {node.log}\") ``` ### Security Security measures are crucial to protect the system from unauthorized access and ensure data integrity. Etcd/Consul/TiKV use various security mechanisms such as encryption, authentication, and authorization. **Python Code Example (using basic encryption):** ```python from cryptography.fernet import Fernet # Generate a key for encryption key = Fernet.generate_key() cipher_suite = Fernet(key) def encrypt_data(data): encrypted_data = cipher_suite.encrypt(data.encode()) return encrypted_data def decrypt_data(encrypted_data): decrypted_data = cipher_suite.decrypt(encrypted_data).decode() return decrypted_data data_to_encrypt = \"Sensitive information\" encrypted_data = encrypt_data(data_to_encrypt) print(f\"Encrypted data: {encrypted_data}\") decrypted_data = decrypt_data(encrypted_data) print(f\"Decrypted data: {decrypted_data}\") ``` These examples provide a basic understanding of leader election, log replication, and security mechanisms used in distributed systems like Etcd/Consul/TiKV."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_ipc_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "ospf_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nRaft 共识算法是一种用于管理复制日志的分布式一致性协议，旨在通过选举领导者来简化共识过程。它将共识问题分解为领导者选举、日志复制和安全性三个子问题，确保在非拜占庭故障下系统的一致性和可用性。\n\n## 核心要点\n- **领导者选举**：Raft 通过随机超时机制选举一个领导者，负责处理所有客户端请求和日志复制，避免活锁和分裂投票。\n- **日志复制**：领导者将客户端请求作为日志条目追加到本地日志，并复制到所有跟随者，确保日志一致性和顺序提交。\n- **安全性**：Raft 保证已提交的日志条目不会被覆盖，通过选举限制（只有拥有最新日志的节点才能成为领导者）和提交规则实现。\n- **成员变更**：Raft 支持集群成员动态调整，使用联合共识（joint consensus）过渡阶段，避免不一致。\n- **日志压缩**：通过快照（snapshot）机制压缩日志，减少存储和恢复开销，同时保留系统状态。\n\n## 应用场景\nRaft 广泛用于分布式数据库（如 etcd、Consul）和分布式存储系统（如 TiKV、CockroachDB），实现强一致性和高可用性。它也适用于微服务架构中的服务发现、配置管理和分布式锁等场景。\n\n## 相关概念\nRaft 与 Paxos 同属共识算法，但更易理解和实现；与 CAP 定理相关，Raft 在分区时优先保证一致性（C）和可用性（A），牺牲分区容忍性（P）的极端情况。此外，Raft 常与复制状态机（Replicated State Machine）结合，通过日志复制实现状态同步。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

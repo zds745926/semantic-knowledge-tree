@@ -19,5 +19,38 @@
       "content_preview": "multiprocessing: Process/Pool.map/Queue/Pipe. Not constrained by GIL, suitable for CPU-intensive tasks. Here are brief explanations and corresponding Python code examples: 1. **Process**: A process is a program in execution. In the context of multiprocessing, processes can be used to run multiple tasks concurrently on different cores or CPUs. ```python from multiprocessing import Process def worker(num): print(f'Worker {num} started') if __name__ == '__main__': processes = [] for i in range(5): p = Process(target=worker, args=(i,)) processes.append(p) p.start() for p in processes: p.join() ``` 2. **Pool.map**: The `map` function of the `Pool` class is used to apply a function to all items in an input iterable in parallel. ```python from multiprocessing import Pool def f(x): return x*x if __name__ == '__main__': with Pool(5) as p: print(p.map(f, [1, 2, 3])) ``` 3. **Queue**: A `Queue` is a container in which multiple processes can store and retrieve items. It ensures that data is passed between processes safely. ```python from multiprocessing import Process, Queue def worker(q): q.put(f'Worker result') if __name__ == '__main__': q = Queue() p = Process(target=worker, args=(q,)) p.start() print(q.get()) p.join() ``` 4. **Pipe**: A `Pipe` is a communication channel between two processes. It allows for bidirectional data exchange. ```python from multiprocessing import Process, Pipe def sender(conn): conn.send('Hello') conn.close() def receiver(conn): print(f'Received: {conn.recv()}') if __name__ == '__main__': parent_conn, child_conn = Pipe() p1 = Process(target=sender, args=(child_conn,)) p2 = Process(target=receiver, args=(parent_conn,)) p1.start() p2.start() p1.join() p2.join() ``` These examples illustrate how to use these concepts in Python for CPU-intensive tasks."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "deadlock_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "py_thread_safety_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_lifo_queue_v4",
+      "type": "application"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nmultiprocessing 是 Python 标准库中用于创建和管理多进程的模块，通过绕过全局解释器锁（GIL）实现真正的并行计算，适用于 CPU 密集型任务。\n\n## 何时使用\n当需要利用多核 CPU 加速 CPU 密集型计算（如数值运算、图像处理）时，或需要隔离进程以避免内存共享导致的竞态条件时使用。它也适用于需要同时执行多个独立任务且任务间通信较少的场景。\n\n## 示例\n```Python\nimport multiprocessing\n\ndef worker(num):\n    \"\"\"一个简单的 worker 函数，计算平方。\"\"\"\n    return num * num\n\nif __name__ == '__main__':\n    with multiprocessing.Pool(processes=4) as pool:\n        results = pool.map(worker, range(10))\n        print(results)  # 输出: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n```\n\n## 反例\n错误地使用 multiprocessing 处理 I/O 密集型任务（如网络请求），因为进程创建开销大且 I/O 等待时无法有效利用多核，应改用多线程或异步 I/O。\n\n## 边界条件\n注意在 Windows 上，必须将进程创建代码放在 `if __name__ == '__main__':` 块内，否则会无限递归创建子进程。另外，进程间通信（如 Queue、Pipe）需谨慎处理数据序列化，避免传递大型对象导致性能下降。",
+    "code_pattern": "import multiprocessing\n\ndef worker(x):\n    return x * 2\n\nif __name__ == '__main__':\n    with multiprocessing.Pool() as pool:\n        results = pool.map(worker, range(10))\n    print(results)",
+    "common_pitfalls": [
+      "在 Windows 上未使用 `if __name__ == '__main__':` 保护创建进程的代码，导致无限递归创建子进程。",
+      "在进程间传递大型数据结构（如大列表或 DataFrame）时，序列化开销巨大，导致性能反而下降，应尽量传递小数据或使用共享内存。",
+      "错误地假设子进程可以共享父进程的全局变量或文件句柄，实际上每个子进程有独立的内存空间，修改不会反映到其他进程。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

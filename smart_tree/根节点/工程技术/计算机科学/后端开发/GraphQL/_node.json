@@ -19,5 +19,30 @@
       "content_preview": "GraphQL: Client declares fields. Single endpoint. Avoid over-fetching or under-fetching. Here is a brief Python code example to illustrate the concept of using a single endpoint in API calls, which can help avoid over-fetching or under-fetching data: ```python import requests def fetch_data(url): # Make a GET request to the single endpoint response = requests.get(url) # Check if the request was successful if response.status_code == 200: # Assuming the API returns JSON, parse it data = response.json() # Client can declare fields needed and extract them here required_fields = ['id', 'name', 'price'] # Example fields to fetch fetched_data = {field: data.get(field) for field in required_fields} return fetched_data else: print(f\"Failed to retrieve data: {response.status_code}\") return None # Example usage url = \"https://api.example.com/single-endpoint\" data = fetch_data(url) print(data) ``` This example demonstrates making a single API call and fetching only the necessary fields, which aligns with the concept of avoiding over-fetching or under-fetching data."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "rest_api_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "http_methods_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "http_status_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nGraphQL 是一种用于 API 的查询语言，由 Facebook 开发，它允许客户端精确地指定所需的数据结构，从而避免过度获取或获取不足的问题。与传统的 REST API 不同，GraphQL 通过单个端点提供灵活的数据查询和操作能力。\n\n## 核心要点\n- **声明式数据获取**：客户端可以声明需要哪些字段，服务器返回精确匹配的数据结构，减少网络传输和冗余。\n- **单一端点**：所有查询和变更请求都通过一个端点处理，简化了 API 路由管理。\n- **强类型系统**：GraphQL 使用模式（Schema）定义类型和操作，提供自动验证和文档生成。\n- **实时订阅**：支持订阅操作，允许客户端实时接收数据更新。\n- **分层与关联**：查询可以嵌套关联对象，一次请求获取多个资源，减少多次往返。\n\n## 应用场景\nGraphQL 适用于需要灵活数据获取的复杂前端应用，如移动端和单页应用，能显著减少数据过载。它也常用于微服务架构中，作为聚合层统一多个后端服务的数据。此外，在需要实时数据更新的场景（如聊天、仪表盘）中，GraphQL 的订阅功能非常实用。\n\n## 相关概念\n- **REST**：一种传统的 API 设计风格，使用多个端点对应不同资源，常导致过度获取或多次请求。\n- **Apollo**：一个流行的 GraphQL 客户端和服务器框架，提供缓存、状态管理等功能。\n- **模式（Schema）**：GraphQL 的核心，定义类型、查询、变更和订阅的结构。\n- **解析器（Resolver）**：服务器端函数，负责处理每个字段的数据获取逻辑。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -16,5 +16,13 @@
     "description": "函数: Python functions are the basic units for organizing and reusing code. They support positional arguments, default parameters, variable-length argument lists (*args), and keyword arguments (**kwargs). Functions can be nested to form closures and can be assigned and passed around as first-class citizens. Here's a brief Python code example demonstrating some of these concepts: ```python def outer_function(outer_arg): def inner_function(inner_arg1, inner_arg2): return outer_arg + inner_arg1 + inner_arg2 # Using *args for variable-length argument lists def flexible_function(*args): total = 0 for arg in args: total += arg return total # Using **kwargs for keyword arguments def keyword_function(**kwargs): print(\"Keyword arguments:\", kwargs) return inner_function, flexible_function, keyword_function # Example usage inner_func, flex_func, kwarg_func = outer_function(10) print(inner_func(5, 7)) # Output: 22 print(flex_func(1, 2, 3, 4)) # Output: 10 kwarg_func(a=1, b=2) # Output: Keyword arguments: {'a': 1, 'b': 2} ``` This example demonstrates nested functions, the use of `*args` for handling variable-length argument lists, and the use of `**kwargs` for keyword arguments."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python语言中“函数”这一核心概念，涵盖从基础定义到高级特性的完整知识体系。函数定义部分包括def语句、参数传递（位置参数、默认参数、可变参数、关键字参数）、返回值以及作用域规则（LEGB原则）。函数高级特性则深入探讨装饰器（用于扩展函数行为）、闭包（捕获自由变量）、生成器函数（实现惰性求值）、lambda匿名函数以及函数式编程工具（如map、filter、reduce）。这些子主题之间存在递进关系：先掌握如何定义和调用函数，再理解函数作为一等公民的特性，进而学习利用高阶函数和装饰器实现代码复用与元编程。学习路径建议从基础定义入手，逐步过渡到参数高级用法，最后掌握闭包、装饰器和生成器等进阶内容。该分支是Python编程的基石，对理解面向对象、异步编程等后续主题至关重要。",
+  "example_queries": [
+    "Python中如何定义可变参数和关键字参数？",
+    "装饰器的工作原理是什么？如何编写一个带参数的装饰器？",
+    "闭包和普通函数有什么区别？闭包在什么场景下使用？",
+    "生成器函数和普通函数有何不同？yield关键字如何实现状态保存？",
+    "Python中lambda表达式和def定义函数的主要区别是什么？"
+  ]
 }

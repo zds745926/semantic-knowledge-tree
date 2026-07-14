@@ -19,5 +19,39 @@
       "content_preview": "内存管理: malloc/calloc/realloc/free. Stack memory is automatically reclaimed. Valgrind detects memory errors. Here are brief explanations of the terms and an example using Python to illustrate `realloc`: - **malloc**: Allocates a block of memory. - **calloc**: Allocates a block of memory and initializes it to zero. - **realloc**: Resizes an existing memory block. - **free**: Frees allocated memory. Python does not have direct equivalents for these functions, but you can simulate `realloc` using the following example: ```python import ctypes def realloc_example(): # Allocate initial memory original_memory = (ctypes.c_char * 10)() print(\"Initial allocation:\", original_memory) # Resize the allocated memory to a new size resized_memory = ctypes.realloc(original_memory, 20) if resized_memory: print(\"Resized allocation:\", resized_memory) else: print(\"Failed to resize allocation\") realloc_example() ``` In this example, `ctypes` is used to simulate the behavior of `realloc`. Note that Python's memory management handles most cases automatically, and explicit use of such functions like `malloc`, `calloc`, or `free` is not common in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "application"
+    },
+    {
+      "id": "cpp_oop_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n内存管理是指程序在运行时对计算机内存资源的分配、使用和回收的过程，包括堆内存的动态分配与释放、栈内存的自动管理以及静态内存的持久化，旨在高效利用有限内存并避免泄漏、碎片和非法访问。\n\n## 何时使用\n当程序需要处理大小可变或生命周期不确定的数据（如动态数组、链表、树等数据结构）时，必须使用动态内存管理。此外，在需要跨函数传递大型对象或实现多态对象时，也依赖堆内存的显式分配与释放。\n\n## 示例\n```C/C++\n#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint main() {\n    // 动态分配一个包含10个整数的数组\n    int* arr = (int*)malloc(10 * sizeof(int));\n    if (arr == NULL) {\n        fprintf(stderr, \"内存分配失败\\n\");\n        return 1;\n    }\n    // 使用内存\n    for (int i = 0; i < 10; i++) {\n        arr[i] = i * i;\n    }\n    // 打印结果\n    for (int i = 0; i < 10; i++) {\n        printf(\"%d \", arr[i]);\n    }\n    printf(\"\\n\");\n    // 释放内存\n    free(arr);\n    return 0;\n}\n```\n\n## 反例\n忘记释放动态分配的内存会导致内存泄漏，例如在函数内部分配内存后未调用free()，或释放后仍继续使用指针（悬空指针）。\n\n## 边界条件\n分配内存后必须检查返回值是否为NULL；释放后应将指针置为NULL以避免野指针；避免重复释放同一块内存。",
+    "code_pattern": "#include <stdlib.h>\n\ntype* ptr = (type*)malloc(count * sizeof(type));\nif (ptr == NULL) {\n    // 处理分配失败\n    exit(1);\n}\n// 使用 ptr\nfree(ptr);\nptr = NULL;",
+    "common_pitfalls": [
+      "忘记释放内存：在函数返回前或不再使用内存时未调用free()，导致内存泄漏，长期运行程序会耗尽系统资源。",
+      "使用已释放的内存：释放指针后未置空，后续误用该指针导致未定义行为（如段错误或数据损坏）。",
+      "重复释放同一内存：对同一指针多次调用free()，可能破坏内存管理结构，引发崩溃或安全漏洞。",
+      "内存分配失败未检查：malloc/calloc/realloc返回NULL时直接使用，导致空指针解引用崩溃。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,26 @@
       "content_preview": "模板: Template<typename T> Generic Template. Template Specialization. Compile-Time Metaprogramming. Here are the explanations with a brief Python code example for each concept: 1. **Generic Template (Template<typename T>)** This is a template that can work with any data type specified by the user. ```python def generic_function(data: T) -> T: return data * 2 # Example operation, assuming T supports multiplication print(generic_function(5)) # Output: 10 print(generic_function(\"hello\")) # Output: 'hellohello' ``` 2. **Template Specialization** This is a way to provide a specific implementation for a template when the type parameter matches certain criteria. ```python from typing import TypeVar, Generic T = TypeVar('T') class MyGenericClass(Generic[T]): def __init__(self, value: T): self.value = value # Specialization for int class MyIntClass(MyGenericClass[int]): def double_value(self) -> int: return self.value * 2 my_int_class = MyIntClass(5) print(my_int_class.double_value()) # Output: 10 ``` 3. **Compile-Time Metaprogramming** This involves writing code that manipulates other code at compile time, often using templates or similar mechanisms. ```python from typing import Type def template_specialization_example(template_type: Type[T]) -> T: if template_type is int: return 42 # Special case for int else: raise ValueError(\"Unsupported type\") print(template_specialization_example(int)) # Output: 42 ``` These examples illustrate the concepts in Python, which does not have native support for C++ templates but can simulate similar behavior using `typing` and other mechanisms."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cpp_oop_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n模板是C++中一种泛型编程机制，允许在定义类或函数时使用类型参数，从而生成针对不同具体类型的代码实例，实现代码复用和类型安全。\n\n## 何时使用\n当需要编写与类型无关的通用算法或数据结构（如排序、容器）时，使用模板避免为每种类型重复编写代码。它也适用于需要编译期多态的场景，如策略模式或类型萃取，以提高性能并保持代码简洁。\n\n## 示例\n```C/C++\n#include <iostream>\n\ntemplate<typename T>\nT max(T a, T b) {\n    return (a > b) ? a : b;\n}\n\nint main() {\n    std::cout << max(3, 5) << std::endl;        // 输出 5\n    std::cout << max(3.14, 2.71) << std::endl;  // 输出 3.14\n    return 0;\n}\n```\n\n## 反例\n将模板定义放在源文件中而不在头文件中显式实例化，导致链接错误；或在模板函数体内依赖具体类型的特殊操作（如调用私有成员），导致编译失败。\n\n## 边界条件\n模板代码必须完全在头文件中实现（或使用显式实例化），因为模板在编译期需要完整定义。模板参数可以是类型或非类型（如整数），但非类型参数必须是编译期常量。",
+    "code_pattern": "template<typename T>\nclass MyContainer {\npublic:\n    void add(const T& item);\n    T get(size_t index) const;\nprivate:\n    std::vector<T> data;\n};\n\ntemplate<typename T>\nvoid MyContainer<T>::add(const T& item) {\n    data.push_back(item);\n}\n\ntemplate<typename T>\nT MyContainer<T>::get(size_t index) const {\n    return data.at(index);\n}",
+    "common_pitfalls": [
+      "模板定义与实现分离：将模板成员函数定义放在.cpp文件中而未显式实例化，导致链接时找不到符号。解决方案是将实现放在头文件或使用显式实例化。",
+      "依赖名称查找问题：在模板中调用依赖模板参数的函数时，可能因两阶段查找导致未找到正确重载。应使用typename或template关键字明确依赖名称，或通过ADL机制。",
+      "模板特化不完整：对模板进行偏特化或全特化时，忘记提供所有必要成员，导致特化版本行为不一致或编译错误。需确保特化版本满足原模板的接口约定。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

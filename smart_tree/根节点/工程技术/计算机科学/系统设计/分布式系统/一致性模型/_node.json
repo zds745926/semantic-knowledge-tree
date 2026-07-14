@@ -19,5 +19,30 @@
       "content_preview": "一致性模型: Strong Consistency/Final Consistency. Quorum Read-Write. PACELC Theorem. ### Explanation with Python Code Example **1. Strong Consistency vs Final Consistency** - **Strong Consistency**: Ensures that all nodes in a distributed system see the same data at the same time. - **Final Consistency**: Guarantees that eventually, all nodes will have the same data but not necessarily at the same time. #### Python Code Example for Strong Consistency ```python class StronglyConsistentSystem: def __init__(self): self.data = {} def update_data(self, key, value): # Ensure all nodes see the same data immediately self.data[key] = value def get_data(self, key): return self.data.get(key) ``` #### Python Code Example for Final Consistency ```python import time class EventuallyConsistentSystem: def __init__(self): self.data = {} def update_data(self, key, value): # Simulate eventual consistency by introducing a delay time.sleep(1) # Delay to simulate network latency self.data[key] = value def get_data(self, key): return self.data.get(key) ``` **2. Quorum Read-Write** - **Quorum**: A mechanism used in distributed systems where a majority of nodes must agree on the state before it is considered valid. #### Python Code Example for Quorum Write ```python class QuorumSystem: def __init__(self, nodes): self.nodes = nodes def write_to_quorum(self, key, value): # Simulate quorum write by ensuring a majority of nodes agree required_nodes = len(self.nodes) // 2 + 1 agreed_nodes = [] for node in self.nodes: if node.write(key, value): # Assume each node has a method to write data agreed_nodes.append(node) if len(agreed_nodes) >= required_nodes: print(f\"Quorum achieved with {len(agreed_nodes)} nodes\") else: print(\"Quorum not achieved\") # Example usage nodes = [Node1(), Node2(), Node3()] system = QuorumSystem(nodes) system.write_to_quorum('key', 'value') ``` **3. PACELC Theorem** - **PACELC Theorem**: A theorem that states a distributed system can satisfy at most three out of the following four properties: Partition Tolerance, Availability, Consistency, and Low Latency. #### Explanation - **Partition Tolerance**: The system continues to operate despite arbitrary message loss or failure. - **Availability**: Every request receives an answer without requiring all nodes to be available. - **Consistency**: All nodes see the same data at any given time. - **Low Latency**: Operations are completed quickly. This theorem highlights the trade-offs in designing distributed systems."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cap_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "durability_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n一致性模型是分布式系统中用于定义数据副本之间同步程度和可见性约束的规范。它描述了在并发访问和更新操作下，系统如何保证不同节点上的数据视图保持一致，是权衡系统性能与数据正确性的核心准则。\n\n## 核心要点\n- 强一致性：所有读操作都能立即看到最新写入的数据，实现难度高，通常以牺牲可用性和性能为代价。\n- 最终一致性：系统保证如果没有新的更新，所有副本最终会达到一致状态，但中间可能存在短暂的不一致窗口，适用于高可用场景。\n- 因果一致性：要求有因果关系的操作按顺序被所有节点看到，无因果关系的操作可以并发执行，兼顾了部分顺序性和性能。\n- 读己之写一致性：保证用户总能读取到自己最近写入的数据，常用于用户会话场景，提升用户体验。\n- 单调读一致性：确保一旦读取到某个值，后续读操作不会返回更旧的值，避免数据回滚现象。\n\n## 应用场景\n一致性模型广泛应用于分布式数据库、缓存系统、分布式文件系统和区块链中。例如，社交网络采用最终一致性来提升读写吞吐量，而金融交易系统则要求强一致性以确保账目准确。\n\n## 相关概念\n- CAP定理：指出一致性、可用性和分区容错性三者不可兼得，一致性模型的选择常受CAP约束。\n- 分布式事务：通过原子提交协议（如两阶段提交）实现跨节点强一致性，但会降低系统性能。\n- 复制协议：如主从复制、多主复制和Quorum机制，是实现不同一致性模型的具体技术手段。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

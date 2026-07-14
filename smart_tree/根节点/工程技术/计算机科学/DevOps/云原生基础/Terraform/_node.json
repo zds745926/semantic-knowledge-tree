@@ -19,5 +19,26 @@
       "content_preview": "Terraform: IaC (HCL language). Plan/Apply/Destroy. State file. Multi-provider. Here's a brief explanation with a related Python code example for context, even though the original text is about Infrastructure as Code using HashiCorp Configuration Language (HCL): Infrastructure as Code (using HCL language). Plan, Apply, Destroy operations. State file management. Support for multiple providers. Python code example (related to IaC but not directly translating the given Chinese text): ```python import os class TerraformManager: def __init__(self, working_dir): self.working_dir = working_dir def plan(self): \"\"\"Plan the infrastructure changes.\"\"\" command = f\"terraform plan -out={os.path.join(self.working_dir, 'plan_file.tfplan')}\" os.system(command) def apply(self): \"\"\"Apply the planned infrastructure changes.\"\"\" command = \"terraform apply @plan_file.tfplan\" os.system(command) def destroy(self): \"\"\"Destroy the infrastructure.\"\"\" command = \"terraform destroy -auto-approve\" os.system(command) # Example usage manager = TerraformManager(working_dir=\"/path/to/your/project\") manager.plan() manager.apply() manager.destroy() ``` This Python class provides a simple interface to manage Terraform operations, which is often used in IaC workflows. Note that this example assumes you have the `terraform` command-line tool installed and available in your system's PATH."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "immutability_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "auth_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nTerraform 是一个开源的基础设施即代码（Infrastructure as Code, IaC）工具，由 HashiCorp 公司开发。它允许用户使用声明式配置语言（HCL）来定义和提供数据中心基础设施，从低层组件如计算实例、网络和存储，到高层组件如 DNS 条目和 SaaS 功能。其核心能力在于跨多个云服务提供商（如 AWS、Azure、GCP）和本地数据中心，实现基础设施的自动化编排与生命周期管理。\n\n## 核心要点\n- **声明式配置**：用户描述期望的最终状态，Terraform 自动计算并执行达到该状态所需的操作，无需指定具体步骤。\n- **执行计划**：`terraform plan` 命令会生成一个详细的执行计划，展示将要创建、修改或删除的资源，便于审查和审计。\n- **资源图**：Terraform 构建一个依赖关系图，确保资源按正确顺序创建和销毁，例如先创建网络再创建虚拟机。\n- **状态管理**：通过状态文件（terraform.tfstate）跟踪已管理资源的实际状态，用于增量更新和团队协作。\n- **模块化与可复用**：支持将配置封装成模块，便于团队共享、版本控制和标准化基础设施部署。\n\n## 应用场景\nTerraform 广泛应用于多云环境下的基础设施自动化部署，例如快速搭建开发、测试和生产环境。它也常用于 CI/CD 流水线中，实现基础设施的持续交付，以及灾难恢复场景中快速重建整个环境。此外，通过 Terraform 管理 Kubernetes 集群及其资源（如 Helm Chart 部署）也是常见实践。\n\n## 相关概念\n- **基础设施即代码 (IaC)**：Terraform 是 IaC 理念的典型实现，与 Ansible、Pulumi 等同属此类工具。\n- **HCL (HashiCorp Configuration Language)**：Terraform 使用的专用配置语言，设计用于人类可读且机器可解析。\n- **Provider**：Terraform 通过 Provider 插件与各类云平台、SaaS 服务交互，每个 Provider 负责管理特定服务的资源。\n- **State**：Terraform 的状态文件是核心组件，记录了资源与配置的映射关系，是增量更新的基础。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -18,5 +18,13 @@
     "description": "隔离级别: Four isolation levels control the visibility of concurrent transactions. To provide a more detailed explanation and an example related to this concept in Python using the `sqlite3` library (which supports SQL transaction isolation levels), here's how you can demonstrate different isolation levels: ```python import sqlite3 # Connect to SQLite database (or create it if it doesn't exist) conn = sqlite3.connect('example.db') cursor = conn.cursor() # Create a table for demonstration purposes cursor.execute('''CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, name TEXT)''') def set_isolation_level(level): \"\"\"Set the transaction isolation level.\"\"\" conn.isolation_level = level def read_items(): \"\"\"Read all items from the database.\"\"\" cursor.execute('SELECT * FROM items') return cursor.fetchall() # Example 1: Read Uncommitted (SQLite default) print(\"Read Uncommitted:\") set_isolation_level(None) # None means \"read uncommitted\" items = read_items() print(items) # Example 2: Read Committed print(\"\\nRead Committed:\") set_isolation_level('DEFERRED') # Default in SQLite, but explicitly set for clarity items = read_items() print(items) # Example 3: Repeatable Read print(\"\\nRepeatable Read:\") set_isolation_level('IMMEDIATE') items = read_items() print(items) # Example 4: Serializable print(\"\\nSerializable:\") set_isolation_level('EXCLUSIVE') items = read_items() print(items) # Close the connection conn.close() ``` This Python script demonstrates how to set different isolation levels in an SQLite database using the `sqlite3` module. Each level affects when changes made by other transactions are visible to the current transaction."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "隔离级别是关系型数据库中事务并发控制的核心概念，定义了事务之间如何相互隔离，以解决脏读、不可重复读和幻读等并发问题。本分支涵盖四种标准隔离级别：读未提交（允许脏读，并发性最高）、读已提交（避免脏读，但不可重复读仍可能发生）、可重复读（避免脏读和不可重复读，但幻读可能发生）和可串行化（完全隔离，并发性最低）。这些级别从低到高依次增强数据一致性，但降低并发性能。学习路径建议：先理解事务的ACID特性，再掌握并发问题（脏读、不可重复读、幻读），然后逐一学习每种隔离级别的定义、实现机制（如锁或MVCC）及适用场景，最后通过对比分析选择合适级别。该分支是数据库设计和优化的重要基础，直接影响系统的一致性和吞吐量。",
+  "example_queries": [
+    "什么是脏读、不可重复读和幻读？它们分别被哪些隔离级别解决？",
+    "如何根据业务需求选择合适的事务隔离级别？",
+    "MySQL的InnoDB引擎默认使用哪种隔离级别？它如何通过MVCC实现可重复读？",
+    "可串行化隔离级别如何保证完全隔离？其性能代价是什么？",
+    "不同隔离级别在分布式数据库（如TiDB）中如何实现？"
+  ]
 }

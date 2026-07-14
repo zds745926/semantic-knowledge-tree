@@ -18,5 +18,13 @@
     "description": "机器学习: Machine learning enables computers to learn patterns from data without explicit programming. It is categorized into supervised learning, unsupervised learning, semi-supervised learning, and reinforcement learning. Deep learning is an important branch of machine learning. Python code examples: 1. **Supervised Learning (Linear Regression)**: ```python import numpy as np from sklearn.linear_model import LinearRegression # Example data: x are input features, y is the target variable X = np.array([[1], [2], [3], [4]]) y = np.array([2, 3, 5, 7]) model = LinearRegression() model.fit(X, y) print(\"Coefficients:\", model.coef_) ``` 2. **Unsupervised Learning (K-means Clustering)**: ```python from sklearn.cluster import KMeans # Example data: X is the input dataset X = np.array([[1, 2], [1, 4], [1, 0], [10, 2], [10, 4], [10, 0]]) kmeans = KMeans(n_clusters=2) kmeans.fit(X) print(\"Cluster centers:\", kmeans.cluster_centers_) ``` 3. **Semi-supervised Learning (Label Propagation)**: ```python from sklearn.semi_supervised import LabelSpreading # Example data: X are the input features, y are the labels with some missing values X = np.array([[1], [2], [3], [4]]) y = np.array([-1, -1, 0, 1]) # -1 indicates unlabeled data label_spread = LabelSpreading(kernel='knn', alpha=0.8) label_spread.fit(X, y) print(\"Predicted labels:\", label_spread.labels_) ``` 4. **Reinforcement Learning (Simple Q-learning)**: ```python import numpy as np # Example environment: a simple grid world with 4 states and 2 actions per state states = ['A', 'B', 'C', 'D'] actions = {'left': -1, 'right': 1} rewards = { ('A', 'left'): -1, ('A', 'right'): +1, ('B', 'left'): +1, ('B', 'right'): -1, ('C', 'left'): -1, ('C', 'right'): +1, ('D', 'left'): +1, ('D', 'right'): -1 } def q_learning(state, action): next_state = state + actions[action] reward = rewards.get((state, action), 0) return (reward, next_state) # Example of a single step in Q-learning current_state = 'A' action = 'right' # Choose an action based on some policy reward, next_state = q_learning(current_state, action) print(\"Reward:\", reward, \"Next state:\", next_state) ``` These examples provide basic implementations of the mentioned machine learning techniques."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "机器学习是计算机科学的一个核心分支，旨在让计算机系统从数据中自动学习模式和规律，并利用这些规律进行预测或决策。本分支涵盖监督学习、无监督学习、深度学习和自然语言处理四大子领域。监督学习通过标注数据学习输入到输出的映射，常用于分类和回归任务；无监督学习则从无标签数据中发现隐藏结构，如聚类和降维。深度学习作为机器学习的进阶技术，利用多层神经网络处理复杂数据，在图像、语音等领域表现卓越。自然语言处理则专注于让机器理解和生成人类语言，常结合深度学习方法。这些子主题相互关联：监督学习和无监督学习是基础，深度学习为复杂任务提供强大工具，而自然语言处理是深度学习的重要应用方向。学习路径建议从监督学习（如线性回归、决策树）和无监督学习（如K-means、PCA）入手，再深入学习深度学习（如CNN、RNN），最后探索自然语言处理（如词嵌入、Transformer）。",
+  "example_queries": [
+    "如何用监督学习预测房价？",
+    "无监督学习中的K-means聚类算法如何工作？",
+    "深度学习与传统机器学习的主要区别是什么？",
+    "自然语言处理中如何用词向量表示文本？",
+    "如何用机器学习进行图像分类？"
+  ]
 }

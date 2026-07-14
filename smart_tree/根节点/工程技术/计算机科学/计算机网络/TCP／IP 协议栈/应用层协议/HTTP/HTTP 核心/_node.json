@@ -17,5 +17,13 @@
     "description": "HTTP 核心: HTTP core includes request methods, status codes, and caching mechanisms. To provide a more comprehensive explanation, here are some brief descriptions of these components: 1. **Request Methods**: These define the type of action to be performed on the resource identified in the request URL. Common HTTP request methods include GET, POST, PUT, DELETE, etc. - Example Python code using `requests` library: ```python import requests # GET request example response = requests.get('https://api.example.com/data') print(response.status_code) # Print the status code of the response # POST request example payload = {'key1': 'value1', 'key2': 'value2'} response = requests.post('https://api.example.com/submit', data=payload) print(response.status_code) # Print the status code of the response ``` 2. **Status Codes**: These are three-digit numbers that indicate the result of a client's request to a server. - Common examples include: - `200 OK`: The request has succeeded. - `404 Not Found`: The requested resource could not be found but may be available in the future. - `500 Internal Server Error`: The server encountered an unexpected condition that prevented it from fulfilling the request. 3. **Caching Mechanisms**: These are used to store copies of responses for reuse, reducing the load on servers and improving response times. - Example Python code using caching with `requests`: ```python import requests # Using a session object to enable persistent connections and caching session = requests.Session() response = session.get('https://api.example.com/data') print(response.status_code) # Print the status code of the first request # Subsequent requests will use cached data if available response = session.get('https://api.example.com/data') print(response.from_cache) # True if the response was served from cache ``` These examples should give you a better understanding of how these concepts are implemented in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "HTTP核心分支涵盖超文本传输协议（HTTP）的基础概念、核心机制及其安全扩展（HTTPS）。该分支是应用层协议的核心，定义了客户端与服务器之间请求-响应交互的规范。子节点包括HTTP方法（如GET、POST、PUT等，用于指定操作类型）、HTTP状态码（如200、404、500等，用于表示请求结果）以及HTTPS（HTTP over TLS，提供加密传输和身份验证）。这些子主题相互关联：HTTP方法是请求的动词，状态码是响应的状态标识，而HTTPS则是在HTTP基础上增加安全层，确保数据机密性和完整性。学习路径建议从理解HTTP基本工作原理开始，然后掌握常用方法和状态码的含义与使用场景，最后学习HTTPS的加密机制和证书管理。掌握这些内容有助于深入理解Web通信、API设计、性能优化和网络安全。",
+  "example_queries": [
+    "HTTP的GET和POST方法有什么区别？各自适用于什么场景？",
+    "常见的HTTP状态码有哪些？例如200、301、404、500分别代表什么含义？",
+    "HTTPS是如何实现数据加密和身份验证的？与HTTP相比有哪些安全优势？",
+    "如何设计RESTful API时合理选择HTTP方法？",
+    "HTTP/2和HTTP/1.1相比有哪些改进？对性能有何影响？"
+  ]
 }

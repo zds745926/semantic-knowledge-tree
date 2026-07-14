@@ -19,5 +19,22 @@
       "content_preview": "流量控制: The receive window (rwnd) informs the sender of the remaining buffer space. This prevents fast senders from overwhelming slow receivers. To illustrate this concept with a Python code example, we can simulate a simple scenario where a receiver adjusts its advertised window based on available buffer space: ```python class Receiver: def __init__(self, buffer_size): self.buffer_size = buffer_size # Total buffer size self.used_space = 0 # Current used space in the buffer def update_window(self): \"\"\"Update the advertised receive window based on current buffer usage.\"\"\" available_space = self.buffer_size - self.used_space return max(available_space, 0) # Ensure at least a minimum window size of 0 # Example usage: receiver = Receiver(buffer_size=1024) print(\"Initial window:\", receiver.update_window()) # Initial window is the full buffer size receiver.used_space += 512 print(\"Window after using half the buffer:\", receiver.update_window()) # Window should be halved receiver.used_space += 384 print(\"Window after further usage:\", receiver.update_window()) # Window should now be smaller, reflecting remaining space ``` In this example, `Receiver` class simulates a network receiver that adjusts its advertised window based on the current buffer usage. The `update_window` method calculates and returns the available buffer space as the receive window."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tcp_congestion_avoid_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n流量控制是TCP协议中用于防止发送方发送数据过快、超出接收方处理能力的一种机制。它通过动态调整发送窗口大小，确保接收方有足够的缓冲区来接收数据，从而避免数据丢失和网络拥塞。\n\n## 核心要点\n- 滑动窗口机制：TCP使用滑动窗口协议实现流量控制，窗口大小由接收方通告，表示其当前可接收的数据量。\n- 接收窗口（rwnd）：接收方在TCP报文段首部的窗口字段中通告自己的剩余缓冲区大小，发送方据此调整发送速率。\n- 零窗口通知：当接收方缓冲区满时，会通告窗口大小为0，发送方停止发送数据，直到收到新的非零窗口更新。\n- 持续计时器：为避免死锁，发送方在收到零窗口后启动持续计时器，定期发送探测报文段以获取接收方的最新窗口大小。\n- 与拥塞控制的区别：流量控制针对端到端的接收能力，而拥塞控制针对网络中间节点的负载情况，两者协同工作。\n\n## 应用场景\n流量控制广泛应用于所有基于TCP的可靠数据传输场景，如网页浏览、文件传输（FTP）、电子邮件（SMTP）和视频流媒体。它确保在接收方处理能力有限时（如移动设备或服务器负载高），发送方不会过度占用资源，从而维持通信的稳定性和可靠性。\n\n## 相关概念\n流量控制与拥塞控制密切相关，但作用层面不同：前者由接收方驱动，后者由网络状况驱动。此外，滑动窗口协议和确认应答机制（ACK）是流量控制的基础，而Nagle算法和延迟确认则是对流量控制的优化，以减少小数据包带来的网络开销。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -16,5 +16,13 @@
     "description": "权限管理: Linux permissions are represented in three-digit groups (rwx). The `chmod` and `chown` commands manage these permissions. `sudo` is used for authorization. Here's a brief explanation of each concept: 1. **Three-Digit Permission Groups**: Each file or directory has nine permission bits, which can be grouped into three sets of three: owner, group, others. These are represented as rwx (read, write, execute). 2. **chmod Command**: This command is used to change the permissions of a file or directory. ```python # Example Python code using subprocess to run chmod import subprocess def change_permissions(file_path, mode): try: subprocess.run(['chmod', str(mode), file_path], check=True) print(f\"Permissions for {file_path} changed successfully.\") except subprocess.CalledProcessError as e: print(f\"Failed to change permissions: {e}\") # Example usage change_permissions('/path/to/file', 0o755) # Change permissions to rwxr-x--- ``` 3. **chown Command**: This command is used to change the owner and group of a file or directory. ```python # Example Python code using subprocess to run chown import subprocess def change_owner(file_path, user, group=None): try: cmd = ['chown'] if group: cmd.extend([user, f\"{user}:{group}\"]) else: cmd.append(user) cmd.append(file_path) subprocess.run(cmd, check=True) print(f\"Owner and/or group for {file_path} changed successfully.\") except subprocess.CalledProcessError as e: print(f\"Failed to change owner: {e}\") # Example usage change_owner('/path/to/file', 'newuser') # Change the owner to newuser ``` 4. **sudo Command**: This command is used for running commands with elevated privileges. ```python # Example Python code using subprocess to run a command with sudo import subprocess def run_command_with_sudo(command): try: result = subprocess.run(['sudo', *command], check=True, capture_output=True) print(f\"Command executed successfully: {result.stdout.decode()}\") except subprocess.CalledProcessError as e: print(f\"Failed to execute command with sudo: {e.stderr.decode()}\") # Example usage run_command_with_sudo(['ls', '-l']) # List files in the current directory with elevated privileges ``` These examples provide a basic understanding of how these commands can be used programmatically."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "权限管理是Linux系统管理中的核心分支，涵盖如何控制用户和进程对文件、目录及系统资源的访问。本分支主要包含两个子主题：chmod/chown和sudo。chmod用于修改文件或目录的读、写、执行权限，chown则用于更改文件或目录的所有者和所属组，两者共同构成了对文件系统权限的精细控制。sudo则是一种授权机制，允许普通用户以超级用户或其他用户的身份执行特定命令，从而在保证系统安全的前提下赋予用户必要的管理能力。学习本分支时，建议先掌握chmod和chown的基本用法，理解权限位（如rwx）和所有者概念，再深入学习sudo的配置（如/etc/sudoers文件）和最佳实践。这两个子主题相辅相成：chmod/chown管理静态资源权限，而sudo管理动态操作权限，共同构建了Linux系统的安全防线。",
+  "example_queries": [
+    "如何使用chmod命令为文件设置755权限？",
+    "chown命令如何递归更改目录的所有者？",
+    "如何配置sudo使普通用户无需密码即可执行特定命令？",
+    "Linux文件权限中rwx分别代表什么含义？",
+    "sudo和su命令有什么区别？"
+  ]
 }

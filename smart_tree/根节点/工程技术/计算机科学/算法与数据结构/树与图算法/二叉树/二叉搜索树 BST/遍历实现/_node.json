@@ -17,5 +17,13 @@
     "description": "遍历实现: There are three depth-first traversal methods for binary trees, each with its own characteristics and applications. Here are brief descriptions of the three methods along with corresponding Python code examples: 1. **Pre-order Traversal (先序遍历)**: - This method visits the root node first, then traverses the left subtree, and finally the right subtree. ```python def pre_order_traversal(root): if root is None: return [] result = [root.val] result += pre_order_traversal(root.left) result += pre_order_traversal(root.right) return result ``` 2. **In-order Traversal (中序遍历)**: - This method traverses the left subtree first, then visits the root node, and finally traverses the right subtree. ```python def in_order_traversal(root): if root is None: return [] result = in_order_traversal(root.left) result.append(root.val) result += in_order_traversal(root.right) return result ``` 3. **Post-order Traversal (后序遍历)**: - This method traverses the left subtree first, then the right subtree, and finally visits the root node. ```python def post_order_traversal(root): if root is None: return [] result = post_order_traversal(root.left) result += post_order_traversal(root.right) result.append(root.val) return result ``` These methods are fundamental in tree traversal and have various applications in algorithms and data structures."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于二叉搜索树（BST）的遍历实现，涵盖前序、中序和后序三种基本遍历方式的具体编码实现。前序遍历按照“根-左-右”的顺序访问节点，常用于复制树或生成前缀表达式；中序遍历按“左-根-右”顺序访问，在BST中可得到递增序列，是验证BST性质或排序的基础；后序遍历按“左-右-根”顺序，常用于删除树或计算表达式树。三者均可用递归或迭代（借助栈）实现，递归实现简洁但可能栈溢出，迭代实现更高效且可控。学习路径建议先掌握递归实现，理解遍历顺序的本质，再过渡到迭代实现，最后通过LeetCode题目（如“二叉树的中序遍历”、“验证二叉搜索树”）巩固。本分支是树算法的基础，为更复杂的树操作（如查找、插入、删除）提供遍历框架。",
+  "example_queries": [
+    "如何用递归实现二叉搜索树的前序遍历？",
+    "二叉搜索树的中序遍历迭代实现步骤是什么？",
+    "后序遍历在二叉搜索树删除节点时如何应用？",
+    "前序、中序、后序遍历的递归与迭代实现有何异同？",
+    "给定二叉搜索树的前序和中序遍历结果，如何重建树？"
+  ]
 }

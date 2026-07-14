@@ -19,5 +19,34 @@
       "content_preview": "Trait 系统: Traits define shared behavior. Generic constraint `fn foo<T: Display>(t: T)`. Trait objects. Here's a brief explanation with a Python code example to illustrate the concept: In Rust, traits are used to define shared behavior that can be implemented by multiple types. A generic function can constrain its parameters to implement a specific trait, ensuring that only types capable of fulfilling the trait's requirements can be passed as arguments. For instance, in Rust: ```rust trait Display { fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result; } fn foo<T: Display>(t: T) { // The function `foo` requires its parameter to implement the `Display` trait. println!(\"Displaying value: {:?}\", t); } ``` In Python, while there's no direct equivalent of Rust traits, you can achieve similar functionality using abstract base classes (ABCs) from the `abc` module. Here’s a simple example: ```python from abc import ABC, abstractmethod class Display(ABC): @abstractmethod def display(self): pass def foo(t: Display): # The function `foo` requires its parameter to implement the `Display` interface. print(\"Displaying value:\", t.display()) # Example implementation of the Display trait class MyDisplay(Display): def display(self): return \"Hello, World!\" foo(MyDisplay()) # Output: Displaying value: Hello, World! ``` This Python example uses an abstract base class `Display` with a method `display`, and a generic function `foo` that requires its argument to implement this interface."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "cpp_oop_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nTrait 系统是 Rust 中定义共享行为（方法签名）的机制，允许不同类型实现相同接口，实现多态与代码复用。\n\n## 何时使用\n当需要为多个不同类型定义共同行为（如打印、比较、序列化）时，使用 trait。它也用于泛型约束，确保泛型参数支持特定操作。此外，trait 对象支持动态分发，适合在运行时处理多种类型。\n\n## 示例\n```Rust\n// 定义 trait\ntrait Speak {\n    fn speak(&self) -> String;\n}\n\n// 为不同类型实现 trait\nstruct Dog;\nstruct Cat;\n\nimpl Speak for Dog {\n    fn speak(&self) -> String {\n        \"Woof!\".to_string()\n    }\n}\n\nimpl Speak for Cat {\n    fn speak(&self) -> String {\n        \"Meow!\".to_string()\n    }\n}\n\n// 泛型函数使用 trait 约束\nfn make_speak<T: Speak>(animal: &T) {\n    println!(\"{}\", animal.speak());\n}\n\nfn main() {\n    let dog = Dog;\n    let cat = Cat;\n    make_speak(&dog);\n    make_speak(&cat);\n}\n```\n\n## 反例\n错误用法：为外部类型实现外部 trait（孤儿规则）。例如，在 crate 中为 `Vec<T>` 实现标准库的 `Display` trait 会导致编译错误，因为两者都不属于当前 crate。\n\n## 边界条件\n注意 trait 方法默认不可变，若需修改 `self` 应使用 `&mut self` 或 `self`。trait 定义的方法不能直接调用私有方法，除非 trait 本身在定义模块中。",
+    "code_pattern": "trait MyTrait {\n    fn method(&self) -> String;\n}\n\nstruct MyStruct;\n\nimpl MyTrait for MyStruct {\n    fn method(&self) -> String {\n        \"Hello\".to_string()\n    }\n}\n\nfn use_trait<T: MyTrait>(item: &T) {\n    println!(\"{}\", item.method());\n}\n\nfn main() {\n    let s = MyStruct;\n    use_trait(&s);\n}",
+    "common_pitfalls": [
+      "孤儿规则：为外部类型实现外部 trait 会导致编译错误，应使用 newtype 模式或本地 trait 解决。",
+      "trait 对象安全性：返回 `Self` 或包含泛型参数的方法不能用于 trait 对象，需确保 trait 是对象安全的。",
+      "关联类型与泛型混淆：关联类型在 trait 中定义一次，而泛型参数可多次实现，选择不当会导致设计冗余。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

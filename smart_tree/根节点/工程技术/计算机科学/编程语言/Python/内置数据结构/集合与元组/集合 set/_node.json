@@ -19,5 +19,30 @@
       "content_preview": "集合 set: The provided Chinese text appears to be describing set operations in mathematics or computer science. Here is the English translation with corresponding Python code examples for each operation: 1. **Set unordered and unique**: - In programming, a set is an unordered collection of unique elements. 2. **Intersection | Union - Difference ^ Symmetric difference**: - Intersection: Elements common to both sets. - Union: All elements from both sets without duplicates. - Difference: Elements in the first set that are not in the second set. - Symmetric Difference: Elements that are in either of the sets but not in their intersection. Here are Python code examples for these operations: ```python # Example sets set1 = {1, 2, 3, 4} set2 = {3, 4, 5, 6} # Intersection intersection = set1.intersection(set2) print(\"Intersection:\", intersection) # Output: {3, 4} # Union union = set1.union(set2) print(\"Union:\", union) # Output: {1, 2, 3, 4, 5, 6} # Difference (set1 - set2) difference_set1 = set1.difference(set2) print(\"Difference (set1 - set2):\", difference_set1) # Output: {1, 2} # Symmetric Difference symmetric_difference = set1.symmetric_difference(set2) print(\"Symmetric Difference:\", symmetric_difference) # Output: {1, 2, 5, 6} ``` This code demonstrates how to perform the specified set operations in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "immutability_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "union_find_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n集合（set）是 Python 中一种无序、不重复元素的可变数据结构，基于哈希表实现，支持数学上的集合运算（如并集、交集、差集）。\n\n## 何时使用\n当需要存储唯一元素、快速检查成员是否存在（O(1) 平均时间复杂度），或执行集合逻辑运算（如去重、比较两个数据集）时，应使用 set。它也常用于从列表或元组中移除重复项。\n\n## 示例\n```Python\n# 创建集合并执行基本操作\nfruits = {'apple', 'banana', 'cherry', 'apple'}  # 自动去重\nprint(fruits)  # 输出: {'banana', 'cherry', 'apple'}\n\n# 成员检测\nprint('apple' in fruits)  # True\nprint('grape' in fruits)  # False\n\n# 集合运算\na = {1, 2, 3}\nb = {2, 3, 4}\nprint(a | b)  # 并集: {1, 2, 3, 4}\nprint(a & b)  # 交集: {2, 3}\nprint(a - b)  # 差集: {1}\n```\n\n## 反例\n不要用 set 来维护元素顺序或索引访问，因为 set 是无序的，不支持下标操作。例如，`my_set[0]` 会引发 TypeError。\n\n## 边界条件\n集合元素必须是可哈希（hashable）的，因此列表、字典等可变类型不能作为元素。空集合必须用 `set()` 创建，`{}` 表示空字典。集合本身可变，但 frozenset 是不可变的变体。",
+    "code_pattern": "def deduplicate_and_compare(list1, list2):\n    \"\"\"去重并返回两个列表的公共元素和差异元素\"\"\"\n    set1 = set(list1)\n    set2 = set(list2)\n    common = set1 & set2\n    only_in_first = set1 - set2\n    only_in_second = set2 - set1\n    return list(common), list(only_in_first), list(only_in_second)\n\n# 使用示例\n# common, only_a, only_b = deduplicate_and_compare([1,2,2,3], [2,3,4])",
+    "common_pitfalls": [
+      "误用 {} 创建空集合：{} 创建的是空字典，必须用 set() 才能创建空集合。",
+      "尝试将可变类型（如列表、字典）加入集合：会引发 TypeError: unhashable type，因为集合要求元素不可变且可哈希。",
+      "假设集合有序：集合不保证元素顺序，遍历或打印时顺序可能与插入顺序不同，依赖顺序的代码会出错。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,34 @@
       "content_preview": "NAT: Private Network ↔ Public Network Mapping. SNAT for Private to Public IP Address Translation / DNAT for Port Mapping. Destroys End-to-End Transparency. Python code example for DNAT (Port Mapping): ```python import socket def dnat(port_mapping): \"\"\" Simulate DNAT (Destination NAT) port mapping. :param port_mapping: A dictionary where keys are public ports and values are private IP addresses. \"\"\" # Example usage: # port_mapping = {8080: '192.168.1.2', 8443: '192.168.1.3'} def handle_client(client_socket): public_port, _ = client_socket.getpeername() private_ip = port_mapping[public_port] # Here you would typically forward the connection to the correct private IP address print(f\"Received connection on public port {public_port}, forwarding to {private_ip}\") server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM) server_socket.bind(('0.0.0.0', 80)) # Binding to a public port for demonstration purposes server_socket.listen(5) print(\"DNAT Server is listening on public port 80...\") while True: client_socket, _ = server_socket.accept() handle_client(client_socket) # Example of running the DNAT simulation dnat({8080: '192.168.1.2', 8443: '192.168.1.3'}) ``` This Python code simulates a simple DNAT (Destination NAT) port mapping scenario where incoming connections on public ports are redirected to specific private IP addresses. Note that this is a simplified example for illustrative purposes and does not include actual network traffic forwarding logic."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tcp_bbr_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cap_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n网络地址转换（NAT）是一种在IP数据包通过路由器或防火墙时，通过修改源或目的IP地址来实现私有网络与公共网络通信的技术。它主要解决IPv4地址短缺问题，并增强网络安全。\n\n## 核心要点\n- NAT将私有IP地址映射为公共IP地址，允许多个设备共享一个公网IP上网。\n- 它通过维护转换表来跟踪每个会话的地址映射，确保数据包能正确返回。\n- 常见的NAT类型包括静态NAT（一对一映射）、动态NAT（池映射）和端口地址转换（PAT，即多对一映射）。\n- PAT通过复用端口号，使单个公网IP可支持数千个并发连接，是家庭和企业网络中最常用的形式。\n- NAT会破坏端到端连接性，因此对某些应用（如P2P、VoIP）需要额外配置（如端口转发或UPnP）。\n\n## 应用场景\nNAT广泛应用于家庭路由器、企业网关和移动网络中，让内部设备使用私有地址访问互联网。它也用于数据中心负载均衡和IPv4到IPv6过渡（如NAT64）。此外，NAT能隐藏内部网络结构，提供基本的安全隔离。\n\n## 相关概念\nNAT与代理服务器类似，但工作在网络层而非应用层。它常与DHCP（动态分配私有地址）和防火墙（过滤未授权流量）配合使用。IPv6的普及有望减少对NAT的依赖，因为其地址空间足够为每台设备分配全球唯一地址。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

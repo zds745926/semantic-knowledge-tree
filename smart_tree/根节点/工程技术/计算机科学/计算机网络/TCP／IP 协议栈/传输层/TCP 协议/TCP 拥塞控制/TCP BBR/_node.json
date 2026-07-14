@@ -19,5 +19,22 @@
       "content_preview": "TCP BBR: Google proposed. Based on bandwidth and RTT modeling, without relying on packet loss. High throughput with low latency. To provide a more detailed explanation, this concept is often related to network congestion control algorithms like BBR (Bottleneck Bandwidth and Round-trip propagation time). Here's a brief Python code example using the `bbr` module (hypothetical for illustration purposes): ```python from bbr import BBR # Initialize BBR with default parameters bbr = BBR() # Simulate sending data over a network connection for packet in range(100): # Send a packet and get the estimated bandwidth and latency bandwidth, latency = bbr.send_packet(packet_size=1500) print(f\"Packet {packet}: Bandwidth={bandwidth} Bps, Latency={latency} ms\") # Adjust parameters based on feedback bbr.update_parameters(bandwidth, latency) ``` Note: The `bbr` module is hypothetical and used here for illustrative purposes. In practice, you would use the actual implementation provided by your network stack or operating system."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tcp_congestion_avoid_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nTCP BBR（Bottleneck Bandwidth and Round-trip propagation time）是一种基于拥塞控制的TCP协议改进算法，由Google开发。它通过估算网络瓶颈带宽和往返传播时间（RTT）来优化数据传输速率，避免传统基于丢包的拥塞控制算法（如CUBIC）因丢包而过度降低吞吐量的问题。\n\n## 核心要点\n- BBR不依赖丢包作为拥塞信号，而是通过测量瓶颈带宽和最小RTT来动态调整发送速率，从而在高延迟或丢包环境下保持高吞吐量。\n- 算法分为启动、排空、带宽探测和RTT探测四个阶段，周期性地探测网络状态以维持最优发送速率。\n- BBR能显著提升长肥网络（高带宽高延迟）的性能，减少缓冲区膨胀（Bufferbloat）导致的延迟抖动。\n- 与CUBIC相比，BBR在丢包率较高的无线网络或跨洲链路上表现更稳定，吞吐量提升可达2-10倍。\n- BBRv3版本进一步改进了对公平性和RTT公平性的处理，减少了对其他TCP流的负面影响。\n\n## 应用场景\nBBR广泛应用于需要高吞吐量和低延迟的网络环境，如视频流媒体、云服务数据传输、CDN加速以及跨国网络通信。在Google的YouTube和Google Cloud Platform中，BBR已部署多年，显著改善了用户体验。此外，它也适用于卫星链路、4G/5G移动网络等丢包率较高的场景。\n\n## 相关概念\nBBR与传统的TCP拥塞控制算法（如Reno、CUBIC）形成对比，后者基于丢包检测来调整窗口，而BBR基于带宽和延迟的主动探测。相关概念包括瓶颈带宽、RTT、缓冲区膨胀（Bufferbloat）以及公平性（如RTT公平性）。BBR的改进版本BBRv3和BBR+进一步优化了与CUBIC等算法的共存性能。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

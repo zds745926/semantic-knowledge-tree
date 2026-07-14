@@ -19,5 +19,26 @@
       "content_preview": "JOIN 连接: INNER/LEFT/RIGHT/FULL OUTER/CROSS JOIN. These are types of SQL joins used in database management and query operations. Here’s a brief explanation along with Python code examples using the `pandas` library, which is commonly used for data manipulation: 1. **INNER JOIN**: Returns only the records that have matching values in both tables. 2. **LEFT JOIN (or LEFT OUTER JOIN)**: Returns all records from the left table, and the matched records from the right table. The result is NULL on the side of the join if there is no match. 3. **RIGHT JOIN (or RIGHT OUTER JOIN)**: Returns all records from the right table, and the matched records from the left table. The result is NULL on the side of the join if there is no match. 4. **FULL OUTER JOIN**: Returns all records when there is a match in either left or right table. If there is no match, the result is NULL on the corresponding side. 5. **CROSS JOIN (or CARTESIAN JOIN)**: Returns the Cartesian product of the two tables, meaning every row from the first table is paired with every row from the second table. Here are some Python code examples using `pandas`: ```python import pandas as pd # Sample data frames df_left = pd.DataFrame({ 'A': ['A0', 'A1', 'A2'], 'B': ['B0', 'B1', 'B2'] }) df_right = pd.DataFrame({ 'C': ['C0', 'C1', 'C2'], 'D': ['D0', 'D1', 'D2'] }) # INNER JOIN inner_join_result = pd.merge(df_left, df_right, how='inner') print(\"INNER JOIN Result:\") print(inner_join_result) # LEFT JOIN left_join_result = pd.merge(df_left, df_right, how='left') print(\"\\nLEFT JOIN Result:\") print(left_join_result) # RIGHT JOIN right_join_result = pd.merge(df_left, df_right, how='right') print(\"\\nRIGHT JOIN Result:\") print(right_join_result) # FULL OUTER JOIN (pandas does not support FULL OUTER JOIN directly) full_outer_join_result = pd.merge(df_left, df_right, how='outer', indicator=True) print(\"\\nFULL OUTER JOIN Result with 'indicator' for missing values:\") print(full_outer_join_result) # CROSS JOIN cross_join_result = pd.merge(df_left, df_right, how='cross') print(\"\\nCROSS JOIN Result:\") print(cross_join_result) ``` This code demonstrates the use of `pandas` to perform different types of joins on two sample data frames."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "sql_injection_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "cap_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nJOIN 连接是 SQL 中用于将两个或多个表中的行基于相关列进行组合的操作，它通过匹配表之间的共同字段（通常是主键和外键）来创建新的结果集。JOIN 是关系型数据库实现数据关联查询的核心机制，能够从分散的表中提取并整合信息。\n\n## 核心要点\n- 连接类型多样：包括 INNER JOIN（仅返回匹配行）、LEFT JOIN（保留左表所有行）、RIGHT JOIN（保留右表所有行）和 FULL OUTER JOIN（保留所有行），每种类型适用于不同的数据合并需求。\n- 基于条件匹配：JOIN 通常使用 ON 子句指定连接条件，如等值连接（a.id = b.id）或不等值连接（a.price > b.price），条件决定了行的组合方式。\n- 性能影响显著：JOIN 操作涉及多表扫描和匹配，大数据量下需优化索引和查询计划，避免笛卡尔积（无条件的交叉连接）导致性能问题。\n- 可结合其他子句：JOIN 常与 WHERE、GROUP BY、ORDER BY 等子句配合使用，以过滤、聚合或排序结果，增强查询灵活性。\n- 支持多表连接：一个查询可以连续使用多个 JOIN 连接三个或更多表，形成复杂的关联网络，满足多维度数据需求。\n\n## 应用场景\nJOIN 广泛应用于数据仓库中的报表生成，例如将订单表与客户表连接以获取客户详细信息；在电商系统中，用于关联商品、库存和订单表来展示完整交易记录；此外，在数据分析中，JOIN 可合并日志表与用户表，分析用户行为模式。\n\n## 相关概念\n主键和外键是 JOIN 的基础，主键唯一标识一行，外键引用另一表的主键，确保连接的有效性；索引能加速 JOIN 的匹配过程，减少全表扫描；子查询有时可替代 JOIN，但 JOIN 通常更高效；交叉连接（CROSS JOIN）生成笛卡尔积，是 JOIN 的一种特殊形式，但需谨慎使用。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

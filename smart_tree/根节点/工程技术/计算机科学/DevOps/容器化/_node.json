@@ -16,5 +16,13 @@
     "description": "容器化: Containers provide a lightweight application isolation and packaging method. Docker is the standard for containerization. Here’s an additional explanation with a brief Python code example to illustrate how containers can be used in practice, though this isn't directly related to Docker itself but shows how one might interact with containers programmatically: In Python, you could use libraries like `docker` to manage Docker containers. Below is a simple example of starting and stopping a container using the `docker` library. ```python import docker # Initialize the Docker client client = docker.from_env() def start_container(image_name): \"\"\"Starts a Docker container from the specified image.\"\"\" try: container = client.containers.run(image_name, detach=True) print(f\"Container {container.id} started.\") except Exception as e: print(f\"Failed to start container: {e}\") def stop_container(container_id): \"\"\"Stops the Docker container with the given ID.\"\"\" try: container = client.containers.get(container_id) container.stop() print(f\"Container {container_id} stopped.\") except Exception as e: print(f\"Failed to stop container: {container_id}: {e}\") # Example usage start_container(\"nginx\") stop_container(\"some_container_id\") ``` This example demonstrates how Python can be used to interact with Docker containers, showcasing the use of lightweight application isolation and packaging in a practical context."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "容器化是DevOps实践中的核心技术分支，旨在通过轻量级、可移植的虚拟化方式，将应用及其依赖打包成独立的容器镜像，从而实现环境一致性、快速部署和弹性伸缩。本分支涵盖两大核心子主题：Docker和Kubernetes。Docker是最流行的容器引擎，负责容器的构建、运行和管理，提供了镜像仓库、网络和存储等基础能力；而Kubernetes则是一个容器编排平台，用于在集群中自动部署、扩展和管理容器化应用，解决了多容器、跨主机场景下的调度、服务发现、负载均衡和故障恢复等复杂问题。学习本分支建议先掌握Docker的基本操作（镜像、容器、Dockerfile），理解容器网络与数据卷，然后过渡到Kubernetes的核心概念（Pod、Service、Deployment、ConfigMap等），最后学习集群管理、监控与CI/CD集成。整体路径从单机容器管理到分布式集群编排，是云原生应用开发与运维的基石。",
+  "example_queries": [
+    "如何使用Dockerfile构建一个Python Web应用的镜像？",
+    "Kubernetes中如何通过Service实现Pod的负载均衡？",
+    "Docker容器与虚拟机的主要区别是什么？",
+    "如何在Kubernetes集群中滚动更新一个Deployment？",
+    "容器化部署相比传统部署有哪些优势？"
+  ]
 }

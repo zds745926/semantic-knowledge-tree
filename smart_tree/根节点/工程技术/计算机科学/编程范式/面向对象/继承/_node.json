@@ -19,5 +19,30 @@
       "content_preview": "继承: Inheritance allows subclasses to reuse the attributes and methods of their parent classes. Single inheritance (in Java) vs multiple inheritance (in C++). Here are brief Python code examples for both concepts: Single Inheritance in Python: ```python class ParentClass: def __init__(self, name): self.name = name def display_name(self): print(f\"Name: {self.name}\") class ChildClass(ParentClass): pass # Example usage child_instance = ChildClass(\"Child\") child_instance.display_name() # Output: Name: Child ``` Multiple Inheritance in Python (Note: Python does not support multiple inheritance natively, but it can be simulated using a comma-separated list of base classes.): ```python class BaseClass1: def method_from_base1(self): print(\"Method from BaseClass1\") class BaseClass2: def method_from_base2(self): print(\"Method from BaseClass2\") class DerivedClass(BaseClass1, BaseClass2): pass # Example usage derived_instance = DerivedClass() derived_instance.method_from_base1() # Output: Method from BaseClass1 derived_instance.method_from_base2() # Output: Method from BaseClass2 ``` These examples illustrate how single and multiple inheritance work in Python, even though Python primarily supports only single inheritance."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cpp_oop_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n继承是面向对象编程中的一种机制，允许一个类（子类）基于另一个类（父类）来定义，从而自动获得父类的属性和方法。它建立了类之间的层次关系，支持代码复用和扩展。\n\n## 核心要点\n- 子类继承父类的非私有成员，包括字段和方法，但可以覆盖或扩展它们。\n- 继承支持单继承（一个子类只有一个直接父类）和多级继承（类可以形成层次链）。\n- 通过继承，子类可以添加新的成员或重写父类方法以实现多态性。\n- 继承关系通常用“is-a”来描述，例如“猫是动物”。\n- 继承可能增加耦合度，过度使用会导致类层次复杂。\n\n## 应用场景\n继承常用于构建具有共性和差异的类体系，例如在图形界面中，所有控件（按钮、文本框）继承自基础控件类，共享位置、大小等属性。它也用于框架设计，让用户通过继承基类来定制行为。\n\n## 相关概念\n继承与组合是两种主要的代码复用方式：组合通过包含其他类的对象来实现复用，而继承通过类层次实现。多态性常与继承结合，允许通过父类引用调用子类重写的方法。抽象类和接口也常作为继承的基类，定义契约。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,30 @@
       "content_preview": "编码与 bytes: The translation is as follows: `str.encode('utf-8') -> bytes`, `b'hello'.decode('utf-8') -> str`. Unicode is a character set, while UTF-8 is an encoding. Here's a brief Python code example to illustrate these concepts: ```python # Encoding a string to bytes using UTF-8 original_string = \"hello\" encoded_bytes = original_string.encode('utf-8') print(encoded_bytes) # Output: b'hello' # Decoding bytes back to a string using UTF-8 decoded_string = encoded_bytes.decode('utf-8') print(decoded_string) # Output: hello # Unicode is the character set, and UTF-8 is one of its encodings. ``` This code demonstrates encoding a simple string into bytes using UTF-8 and then decoding those bytes back to a string."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_hashlib_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "{\n  \"full\": \"## 定义\\n编码（encoding）是将字符串（str）转换为字节序列（bytes）的过程，而解码（decoding）是逆过程。在 Python 中，字符串以 Unicode 表示，bytes 是原始字节序列，两者通过指定字符编码（如 UTF-8、ASCII）相互转换。\\n\\n## 何时使用\\n当需要将文本写入文件、网络传输或与外部系统交互时，必须将字符串编码为 bytes。同样，从文件或网络读取原始字节后，需要解码为字符串才能进行文本处理。例如，读写二进制文件、发送 HTTP 请求、处理 JSON 数据时都涉及编码与 bytes 的转换。\\n\\n## 示例\\n```Python\\n# 编码：字符串 -> bytes\\ntext = \"你好，世界！\"  # Unicode 字符串\\nencoded = text.encode('utf-8')  # 编码为 UTF-8 字节序列\\nprint(encoded)  # 输出: b'\\\\xe4\\\\xbd\\\\xa0\\\\xe5\\\\xa5\\\\xbd\\\\xef\\\\xbc\\\\x8c\\\\xe4\\\\xb8\\\\x96\\\\xe7\\\\x95\\\\x8c\\\\xef\\\\xbc\\\\x81'\\n\\n# 解码：bytes -> 字符串\\noriginal = encoded.decode('utf-8')  # 用相同编码解码\\nprint(original)  # 输出: 你好，世界！\\n\\n# 不同编码可能导致乱码\\nwrong = encoded.decode('latin-1')  # 用错误编码解码\\nprint(wrong)  # 输出: ä½ å¥½ï¼ä¸çï¼\\n```\\n\\n## 反例\\n直接对字符串调用 bytes() 而不指定编码会引发 TypeError，因为 Python 不知道如何将 Unicode 字符串转换为字节序列。例如 `bytes(text)` 会报错，必须显式提供编码参数如 `bytes(text, 'utf-8')`。\\n\\n## 边界条件\\n编码和解码必须使用相同的字符编码，否则会导致乱码或 UnicodeDecodeError。对于非 ASCII 字符（如中文），不能使用 ASCII 编码，否则会抛出 UnicodeEncodeError。建议始终使用 UTF-8，因为它支持所有 Unicode 字符且兼容 ASCII。\",\n  \"code_pattern\": \"def encode_decode_example(text: str, encoding: str = 'utf-8') -> tuple:\\n    \\\"\\\"\\\"编码字符串为 bytes，再解码回字符串\\\"\\\"\\\"\\n    encoded_bytes = text.encode(encoding)\\n    decoded_text = encoded_bytes.decode(encoding)\\n    return encoded_bytes, decoded_text\\n\\n# 使用示例\\noriginal = \\\"Hello, 世界!\\\"\\nenc, dec = encode_decode_example(original)\\nprint(f\\\"Original: {original}\\\")\\nprint(f\\\"Encoded: {enc}\\\")\\nprint(f\\\"Decoded: {dec}\\\")\\nassert original == dec\",\n  \"common_pitfalls\": [\n    \"使用错误的编码解码：例如用 ASCII 解码 UTF-8 编码的字节，会抛出 UnicodeDecodeError 或产生乱码。\",\n    \"忽略默认编码：Python 3 默认使用 UTF-8，但某些系统或旧代码可能依赖其他编码（如 GBK），导致跨平台时出错。\",\n    \"混淆 str 和 bytes：对 bytes 对象调用字符串方法（如 .upper()）会报错，需先解码；对 str 调用 bytes 方法（如 .decode()）也会报错。\",\n    \"在二进制模式下写入文本：以 'wb' 模式打开文件时，必须传入 bytes 而非 str，否则 TypeError；反之，以 'w' 模式写入 bytes 也会报错。\"\n  ]\n}",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.3,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

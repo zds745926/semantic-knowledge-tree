@@ -19,5 +19,26 @@
       "content_preview": "virtualenv: `virtualenv` creates isolated environments. It was created before `venv`, supporting Python 2 and allows access to the global site packages (`--system-site-packages`). Here is a brief example of creating an environment with `virtualenv`: ```python # Install virtualenv if not already installed pip install virtualenv # Create a new virtual environment named 'myenv' with global site packages virtualenv --system-site-packages myenv # Activate the virtual environment on Unix or MacOS source myenv/bin/activate # Or activate it on Windows myenv\\Scripts\\activate ``` Note: The above example is provided for illustrative purposes and assumes you are using a Unix-like shell or PowerShell on Windows."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nvirtualenv 是 Python 的一个第三方工具，用于创建隔离的 Python 虚拟环境，使每个项目拥有独立的依赖包，避免全局包冲突。\n\n## 何时使用\n当多个 Python 项目需要不同版本的同一依赖包时，使用 virtualenv 为每个项目创建独立环境。也适用于在无 root 权限的服务器上安装包，或测试包在不同 Python 版本下的兼容性。\n\n## 示例\n```Python\n# 安装 virtualenv\n# pip install virtualenv\n\n# 创建虚拟环境\n# virtualenv myenv\n\n# 激活虚拟环境 (Windows)\n# myenv\\Scripts\\activate\n\n# 激活虚拟环境 (Linux/macOS)\n# source myenv/bin/activate\n\n# 在虚拟环境中安装包\n# pip install requests\n\n# 退出虚拟环境\n# deactivate\n```\n\n## 反例\n在激活虚拟环境后，使用 `sudo pip install` 安装包，这会绕过虚拟环境，将包安装到系统全局，破坏隔离性。\n\n## 边界条件\n虚拟环境目录应放在项目根目录下，并加入 `.gitignore` 避免提交到版本控制。如果使用 Python 3.3+，推荐使用内置的 `venv` 模块替代 virtualenv，但 virtualenv 支持更老的 Python 版本。",
+    "code_pattern": "#!/usr/bin/env bash\n# 创建虚拟环境\nvirtualenv venv\n# 激活虚拟环境\nsource venv/bin/activate\n# 安装依赖\npip install -r requirements.txt\n# 运行脚本\npython main.py\n# 退出虚拟环境\ndeactivate",
+    "common_pitfalls": [
+      "忘记激活虚拟环境：直接运行 `pip install` 会将包安装到系统全局，而不是虚拟环境中，导致项目依赖混乱。",
+      "虚拟环境路径包含中文或空格：某些工具或脚本可能无法正确处理路径，导致激活失败或包安装错误。",
+      "跨平台移植时路径问题：Windows 使用 Scripts/activate，Linux/macOS 使用 bin/activate，直接复制激活命令会失效。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

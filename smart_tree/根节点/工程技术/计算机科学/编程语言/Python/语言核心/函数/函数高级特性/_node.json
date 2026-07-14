@@ -17,5 +17,13 @@
     "description": "函数高级特性: The advanced features of Python functions include closures, decorators, and lambda expressions. Here are brief explanations with corresponding Python code examples for each: 1. **Closures**: A closure is a function object that remembers values in enclosing scopes even if they are not present in memory. ```python def outer_function(x): def inner_function(y): return x + y return inner_function # Using the closure add_5 = outer_function(5) print(add_5(10)) # Output: 15 ``` 2. **Decorators**: Decorators are a very powerful and useful tool in Python since they allow programmers to modify the behavior of function or class. Wraps is a decorator that helps with this. ```python import functools def my_decorator(func): @functools.wraps(func) def wrapper(*args, **kwargs): print(\"Something is happening before the function is called.\") result = func(*args, **kwargs) print(\"Something is happening after the function is called.\") return result return wrapper @my_decorator def say_hello(): print(\"Hello!\") say_hello() ``` 3. **Lambda Expressions**: Lambda functions are used to create anonymous (unnamed) functions and can take any number of arguments but can only have one expression. ```python # Using a lambda function to add two numbers add = lambda x, y: x + y print(add(5, 7)) # Output: 12 ``` These examples should give you a clear understanding of how these advanced features work in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Python函数的高级特性，包括lambda表达式、闭包和装饰器。这些特性建立在函数作为一等公民的基础上，允许函数被传递、嵌套和动态修改。lambda表达式提供了一种简洁的匿名函数定义方式，常用于需要简单函数作为参数的场景，如排序或映射。闭包则允许函数捕获并记住其定义时的环境变量，即使外部函数已经执行完毕，这为实现数据隐藏和延迟计算提供了基础。装饰器是闭包的高级应用，它通过在不修改原函数代码的情况下，动态地给函数添加额外功能，如日志记录、性能测试或权限检查。这三个主题层层递进：lambda表达式是函数式编程的入门，闭包揭示了函数与环境的绑定关系，而装饰器则是闭包在代码复用和切面编程中的典型实践。学习本分支，用户将能够编写更简洁、灵活和可复用的Python代码，并理解Python中函数式编程的核心思想。",
+  "example_queries": [
+    "如何在Python中使用lambda表达式简化排序操作？",
+    "闭包在Python中如何实现数据隐藏和状态保持？",
+    "如何编写一个带参数的装饰器来为函数添加日志功能？",
+    "装饰器与闭包之间有什么关系？",
+    "在什么场景下应该使用lambda表达式而不是普通函数？"
+  ]
 }

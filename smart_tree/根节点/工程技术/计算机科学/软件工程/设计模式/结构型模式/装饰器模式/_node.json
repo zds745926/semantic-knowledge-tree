@@ -19,5 +19,22 @@
       "content_preview": "装饰器模式: Dynamic addition of responsibilities to objects. More flexible than inheritance. IO stream BufferedInputStream. In the context of programming, adding responsibilities dynamically to objects is often achieved through design patterns such as Decorator or Strategy. Here’s a brief example using Python with the `io` module and `BufferedInputStream` concept: ```python import io class DataStream: def __init__(self, data): self.data = data def read(self): return self.data # Using BufferedInputStream concept dynamically class BufferedDataStream(io.BufferedIOBase): def __init__(self, stream): super().__init__() self.stream = stream def readable(self): return True def readinto(self, b): data = self.stream.read() b[:len(data)] = data return len(data) # Example usage data_stream = DataStream(\"Hello, World!\") buffered_data_stream = BufferedDataStream(data_stream) print(buffered_data_stream.read()) # Output: Hello, World! ``` In this example: - `DataStream` is a simple class that represents an input stream. - `BufferedDataStream` is a custom buffer class that wraps around the original data stream to provide buffering functionality. This demonstrates how you can dynamically add responsibilities (like buffering) to an existing object without modifying its core structure, which is more flexible than inheritance."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "adapter_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n装饰器模式是一种结构型设计模式，它允许在不改变原有对象结构的情况下，动态地给对象添加新的功能。该模式通过创建一个包装对象（即装饰器）来包裹真实对象，并在调用前后执行额外的行为，从而实现对功能的灵活扩展。\n\n## 核心要点\n- **透明性**：装饰器模式要求装饰后的对象与原始对象实现相同的接口，使得客户端无需区分两者，从而保持使用上的透明性。\n- **动态扩展**：与静态继承不同，装饰器模式可以在运行时动态地添加或移除职责，提供了比继承更灵活的扩展方式。\n- **组合优于继承**：通过组合多个装饰器，可以形成功能链，每个装饰器负责一项具体增强，避免了类爆炸问题。\n- **开闭原则**：系统对扩展开放、对修改关闭，新增功能只需创建新的装饰器类，无需修改现有代码。\n- **职责分离**：每个装饰器只关注单一职责的增强，符合单一职责原则，便于维护和测试。\n\n## 应用场景\n装饰器模式广泛应用于需要动态增强对象功能的场景，例如 Java I/O 流中的 BufferedInputStream、DataInputStream 等装饰器，它们在不改变 InputStream 接口的前提下添加缓冲、数据转换等功能。此外，在图形界面开发中，可为窗口组件添加滚动条、边框等装饰；在 Web 开发中，可用于对请求或响应进行日志记录、权限校验等横切关注点的处理。\n\n## 相关概念\n装饰器模式与代理模式结构相似，但目的不同：代理模式控制对对象的访问，而装饰器模式增强对象的功能。与适配器模式相比，适配器用于转换接口以匹配客户端期望，装饰器则保持原有接口不变。此外，装饰器模式常与工厂模式或构建器模式结合使用，以简化复杂装饰链的创建过程。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

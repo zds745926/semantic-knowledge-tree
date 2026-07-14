@@ -19,5 +19,38 @@
       "content_preview": "async/await: English translation: The provided text refers to asynchronous programming concepts in Python. Here is the translation with added context and a brief Python code example for each term: 1. `async def`: This keyword is used to define an asynchronous function, which can be awaited. ```python import asyncio async def my_async_function(): print(\"Starting async function\") # Calling the function does not execute it immediately; you need to await it. ``` 2. `await`: This keyword is used inside an asynchronous function to wait for another coroutine to complete. ```python import asyncio async def my_coroutine(): result = await some_other_coroutine() print(result) # Example of a simple coroutine that returns a value after 1 second. async def some_other_coroutine(): await asyncio.sleep(1) return \"Coroutine completed\" ``` 3. `asyncio.run`: This function is used to run the main entry point of an asynchronous program, ensuring proper cleanup and exception handling. ```python import asyncio async def main(): print(\"Running async program\") # Running the main function using asyncio.run. asyncio.run(main()) ``` 4. `asyncio.gather`: This function is used to run multiple coroutines concurrently and wait for all of them to complete, returning a list of results. ```python import asyncio async def fetch_data(i): await asyncio.sleep(1) return f\"Data {i}\" # Gathering three coroutines that simulate fetching data. tasks = [fetch_data(i) for i in range(3)] results = asyncio.gather(*tasks) # Running the gathered tasks and printing results. asyncio.run(results) ``` These examples provide a basic understanding of how to use these asynchronous programming concepts in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nasync/await 是 Python 中用于编写异步代码的语法糖，允许在协程中挂起执行而不阻塞线程，从而实现高效的并发 I/O 操作。\n\n## 何时使用\n当程序需要执行大量 I/O 密集型任务（如网络请求、文件读写、数据库查询）且希望提高吞吐量时，应使用 async/await。它特别适合需要同时处理多个独立 I/O 操作的场景，例如 Web 服务器处理并发请求或爬虫抓取多个页面。\n\n## 示例\n```Python\nimport asyncio\n\nasync def fetch_data(url):\n    print(f\"开始请求 {url}\")\n    await asyncio.sleep(1)  # 模拟 I/O 操作\n    print(f\"完成请求 {url}\")\n    return f\"数据来自 {url}\"\n\nasync def main():\n    tasks = [fetch_data(\"https://example.com\"), fetch_data(\"https://python.org\")]\n    results = await asyncio.gather(*tasks)\n    print(results)\n\nasyncio.run(main())\n```\n\n## 反例\n在异步函数中直接调用另一个异步函数而不使用 await，会导致协程对象被创建但未执行，从而丢失结果。例如 `result = fetch_data(\"url\")` 不会执行函数体，应改为 `result = await fetch_data(\"url\")`。\n\n## 边界条件\nasync/await 不能与传统的阻塞 I/O 函数（如 time.sleep）混用，否则会阻塞事件循环；应使用 asyncio.sleep 等异步版本。此外，在同步函数中不能直接使用 await，必须将调用放在异步函数内或通过 asyncio.run 启动。",
+    "code_pattern": "import asyncio\n\nasync def async_task(name: str, delay: float) -> str:\n    await asyncio.sleep(delay)\n    return f\"Task {name} completed\"\n\nasync def main():\n    results = await asyncio.gather(\n        async_task(\"A\", 1),\n        async_task(\"B\", 2)\n    )\n    print(results)\n\nif __name__ == \"__main__\":\n    asyncio.run(main())",
+    "common_pitfalls": [
+      "忘记 await：在异步函数内调用另一个异步函数时，如果遗漏 await，协程对象不会被调度执行，导致函数看似无效果或返回协程对象而非预期结果。",
+      "在异步代码中使用阻塞调用：在 async 函数内使用 time.sleep()、requests.get() 等阻塞函数，会阻塞整个事件循环，使并发失效。应使用 asyncio.sleep()、aiohttp 等异步库。",
+      "在同步函数中直接 await：在非 async 函数中使用 await 会引发 SyntaxError。必须确保 await 只在 async 函数内部使用，并通过 asyncio.run() 或事件循环来驱动顶层协程。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

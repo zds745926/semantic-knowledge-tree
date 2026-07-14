@@ -17,5 +17,13 @@
     "description": "数字逻辑: Digital logic studies the principles of implementing Boolean operations using electronic circuits, including Boolean algebra, logic gates, and flip-flops. Digital logic forms the foundation of computer hardware, ranging from simple logic gates to complex CPUs, which are engineering realizations of digital logic. Python code example for a basic logic gate (NOT gate): ```python def not_gate(input_bit): \"\"\" Implement a NOT gate. :param input_bit: The input bit (0 or 1) :return: The output bit after applying the NOT operation \"\"\" return not input_bit # Example usage: input_bit = 1 output_bit = not_gate(input_bit) print(f\"Input: {input_bit}, Output: {output_bit}\") ``` This code defines a simple function to simulate a NOT gate, which inverts the input bit."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "数字逻辑是计算机理论的基础分支，研究如何用离散信号（0和1）表示和处理信息。它涵盖从基本数学工具到硬件实现的全过程。布尔代数提供了逻辑运算的数学框架，是分析和设计数字电路的代数基础。逻辑门电路（如与门、或门、非门）是布尔代数的物理实现，通过电子开关完成基本逻辑操作。触发器和寄存器则是在门电路基础上构建的时序逻辑元件，能够存储状态（如1位记忆单元）并实现数据同步与移位。三者层层递进：布尔代数→逻辑门→触发器/寄存器，构成从抽象理论到具体存储单元的完整链路。学习时建议先掌握布尔代数化简与真值表，再理解门电路组合逻辑，最后深入时序逻辑的时钟与状态转换。",
+  "example_queries": [
+    "如何用布尔代数化简逻辑表达式 F = A'B + AB' + AB？",
+    "逻辑门电路中的与非门和或非门如何构成通用门？",
+    "D触发器和JK触发器在功能上有什么区别？",
+    "如何用触发器设计一个4位二进制计数器？",
+    "组合逻辑电路和时序逻辑电路的根本区别是什么？"
+  ]
 }

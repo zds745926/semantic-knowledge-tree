@@ -21,5 +21,17 @@
   ],
   "related_nodes": [
     "http_status_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nHTTP 方法是客户端向服务器发送请求时指定的操作类型，用于指示服务器对资源执行何种动作。每个 HTTP 请求都包含一个方法，常见的有 GET、POST、PUT、DELETE 等，分别对应资源的读取、创建、更新和删除操作。\n\n## 核心要点\n- GET 方法用于请求获取指定资源，是幂等的且不应有副作用，通常用于数据查询。\n- POST 方法用于向服务器提交数据，可能创建新资源或触发处理，非幂等且可能多次提交产生不同结果。\n- PUT 方法用于上传或替换指定资源，是幂等的，多次请求结果与一次相同。\n- DELETE 方法用于删除指定资源，也是幂等的，但实际删除行为可能受服务器策略影响。\n- 其他方法如 HEAD、OPTIONS、PATCH 等提供额外功能：HEAD 类似 GET 但只返回头部，OPTIONS 用于查询支持的方法，PATCH 用于部分更新资源。\n\n## 应用场景\n在 Web 开发中，GET 常用于获取页面或 API 数据，POST 用于表单提交或创建新记录，PUT 用于更新整个资源（如修改用户信息），DELETE 用于删除资源（如移除文章）。RESTful API 设计严格遵循这些方法语义，以实现统一接口和可预测行为。\n\n## 相关概念\nHTTP 方法与状态码紧密相关，例如 200 OK 常伴随 GET 成功，201 Created 用于 POST 创建资源，204 No Content 用于 DELETE 成功。此外，安全方法（如 GET、HEAD）不改变服务器状态，幂等方法（如 GET、PUT、DELETE）保证多次请求效果一致，这些特性影响缓存和重试机制。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

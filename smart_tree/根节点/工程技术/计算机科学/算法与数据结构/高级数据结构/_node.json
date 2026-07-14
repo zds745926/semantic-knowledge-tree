@@ -18,5 +18,12 @@
     "description": "高级数据结构: Advanced data structures solve specific scenario problems, including disjoint-set (union-find), segment trees, tries, and Bloom filters. Here are brief Python code examples for each: 1. **Disjoint-Set (Union-Find):** ```python class UnionFind: def __init__(self, n): self.parent = list(range(n)) def find(self, x): if self.parent[x] != x: self.parent[x] = self.find(self.parent[x]) return self.parent[x] def union(self, x, y): rootX = self.find(x) rootY = self.find(y) if rootX != rootY: self.parent[rootY] = rootX ``` 2. **Segment Tree:** ```python class SegmentTree: def __init__(self, arr): self.n = len(arr) self.st = [0] * (4 * self.n) self.build(arr, 0, 0, self.n - 1) def build(self, arr, node, start, end): if start == end: self.st[node] = arr[start] else: mid = (start + end) // 2 self.build(arr, 2 * node + 1, start, mid) self.build(arr, 2 * node + 2, mid + 1, end) self.st[node] = self.st[2 * node + 1] + self.st[2 * node + 2] ``` 3. **Trie (Prefix Tree):** ```python class TrieNode: def __init__(self): self.children = {} self.is_end_of_word = False class Trie: def __init__(self): self.root = TrieNode() def insert(self, word): node = self.root for char in word: if char not in node.children: node.children[char] = TrieNode() node = node.children[char] node.is_end_of_word = True def search(self, word): node = self.root for char in word: if char not in node.children: return False node = node.children[char] return node.is_end_of_word ``` 4. **Bloom Filter:** ```python import mmh3 from bitarray import bitarray class BloomFilter: def __init__(self, size, hash_count): self.size = size self.hash_count = hash_count self.bit_array = bitarray(size) self.bit_array.setall(0) def add(self, item): for seed in range(self.hash_count): index = mmh3.hash(item, seed) % self.size self.bit_array[index] = 1 def query(self, item): for seed in range(self.hash_count): index = mmh3.hash(item, seed) % self.size if self.bit_array[index] == 0: return False return True ``` These examples provide a basic implementation of each data structure."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "高级数据结构是算法与数据结构领域中的进阶内容，主要解决普通线性或树形结构无法高效处理的复杂问题。本分支涵盖并查集、线段树、字典树（Trie）和布隆过滤器四种经典结构。并查集用于高效管理不相交集合的合并与查询，常见于连通性问题；线段树支持区间查询与更新，适用于动态区间统计；字典树擅长字符串前缀匹配与词频统计，是搜索引擎和自动补全的基础；布隆过滤器是一种概率性数据结构，用于快速判断元素是否存在，以空间换时间。这些结构在功能上互补：并查集侧重集合关系，线段树侧重区间操作，字典树侧重字符串处理，布隆过滤器侧重存在性判断。学习路径建议先掌握并查集和线段树（基础且应用广泛），再学习字典树，最后了解布隆过滤器的原理与工程应用。掌握这些结构能显著提升解决复杂算法问题的能力。",
+  "example_queries": [
+    "如何用并查集判断图中是否存在环？",
+    "线段树如何实现区间最大值查询与单点更新？",
+    "字典树如何实现高效的单词自动补全？",
+    "布隆过滤器如何判断一个元素是否在集合中，其误判率如何控制？"
+  ]
 }

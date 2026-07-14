@@ -16,5 +16,13 @@
     "description": "Java: Java is a statically typed, object-oriented compiled language that provides cross-platform capabilities via the JVM. It boasts a rich enterprise ecosystem (Spring/Hibernate), making it a common choice for large-scale systems. Here's a brief Python code example to illustrate a simple concept often used in Java, such as creating a class: ```python class Person: def __init__(self, name, age): self.name = name self.age = age def introduce(self): print(f\"Hello, my name is {self.name} and I am {self.age} years old.\") # Creating an instance of the Person class person1 = Person(\"Alice\", 30) person1.introduce() # Output: Hello, my name is Alice and I am 30 years old. ``` This Python code defines a `Person` class with attributes `name` and `age`, and a method `introduce`. It demonstrates the concept of object-oriented programming similar to what you might find in Java."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Java编程语言的核心知识体系，包括Java核心与集合框架两大子主题。Java核心是语言的基础，涉及语法、面向对象编程（OOP）、异常处理、多线程、输入输出（I/O）等，为开发者提供构建应用程序的基本能力。集合框架则是在Java核心之上抽象出的数据结构和算法库，包括List、Set、Map等接口及其实现类（如ArrayList、HashSet、HashMap），用于高效地存储和操作对象集合。两者紧密关联：Java核心中的泛型、迭代器、比较器等概念是理解集合框架的前提，而集合框架的熟练运用又能深化对核心特性的掌握。学习路径建议先系统学习Java核心，掌握变量、控制流、类与对象、继承、接口、异常、线程等基础，再深入集合框架，理解不同集合的底层实现（如数组、链表、哈希表）及性能特性，最后通过实际项目将两者结合，提升代码的组织与优化能力。",
+  "example_queries": [
+    "Java中ArrayList和LinkedList的区别是什么？",
+    "如何在Java中实现多线程？",
+    "Java集合框架中的HashMap是如何工作的？",
+    "Java中的异常处理机制有哪些？",
+    "Java泛型在集合框架中的作用是什么？"
+  ]
 }

@@ -19,5 +19,26 @@
       "content_preview": "线程局部存储 TLS: The `threading.local()` object provides thread-local data in each thread. Thread-local data is isolated among threads. Here's an example to illustrate this concept using Python: ```python import threading # Create a local object local_data = threading.local() def process_data(): # Each thread gets its own instance of 'value' local_data.value = 100 print(f\"Thread {threading.current_thread().name}: value is {local_data.value}\") # Create threads threads = [] for i in range(3): t = threading.Thread(target=process_data, name=f'Thread-{i+1}') threads.append(t) t.start() # Wait for all threads to complete for t in threads: t.join() ``` In this example, each thread has its own `value` attribute stored independently of the others."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_thread_safety_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n线程局部存储（Thread Local Storage，TLS）是一种机制，允许每个线程拥有自己独立的变量副本，不同线程对同一变量的修改互不影响，从而避免加锁开销，实现线程安全的数据隔离。\n\n## 何时使用\n当多个线程需要共享一个全局变量，但每个线程都希望维护自己的独立状态（如用户会话、数据库连接、日志上下文）时，应使用TLS。它特别适用于避免锁竞争、简化无锁设计，以及在不修改函数签名的情况下传递线程上下文信息。\n\n## 示例\n```Python\nimport threading\nimport time\n\n# 创建线程局部存储对象\nlocal_data = threading.local()\n\ndef worker():\n    # 每个线程独立设置自己的值\n    local_data.value = threading.current_thread().name\n    time.sleep(0.1)  # 模拟并发\n    print(f\"{threading.current_thread().name}: {local_data.value}\")\n\nthreads = []\nfor i in range(3):\n    t = threading.Thread(target=worker, name=f\"Thread-{i}\")\n    threads.append(t)\n    t.start()\n\nfor t in threads:\n    t.join()\n```\n\n## 反例\n错误地将TLS用于线程间通信或共享可变对象（如列表），因为TLS本质是隔离的，无法实现数据同步。例如，试图通过TLS传递一个全局计数器，会导致每个线程看到自己的副本，无法累加。\n\n## 边界条件\n注意TLS变量在子线程中不会自动继承父线程的值，需显式初始化。另外，TLS对象本身是线程安全的，但存储的可变对象（如字典）仍需要加锁保护，否则可能引发数据竞争。",
+    "code_pattern": "import threading\n\nclass ThreadLocalManager:\n    _local = threading.local()\n\n    @classmethod\n    def set(cls, key, value):\n        setattr(cls._local, key, value)\n\n    @classmethod\n    def get(cls, key, default=None):\n        return getattr(cls._local, key, default)\n\n    @classmethod\n    def clear(cls):\n        cls._local.__dict__.clear()",
+    "common_pitfalls": [
+      "忘记在子线程中初始化TLS变量，导致AttributeError。每个线程必须显式设置变量，否则访问时抛出异常。",
+      "误以为TLS变量在父线程和子线程间共享，实际上子线程拥有独立副本，父线程的修改不会影响子线程。",
+      "在TLS中存储可变对象（如列表、字典）后，多个线程通过引用修改该对象内容，导致数据竞争。TLS只保证变量引用隔离，不保证对象内容隔离。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

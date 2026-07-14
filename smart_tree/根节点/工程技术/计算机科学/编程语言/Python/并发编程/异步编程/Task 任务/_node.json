@@ -19,5 +19,38 @@
       "content_preview": "Task 任务: The `asyncio.create_task()` function creates a task. The `task.cancel()` method cancels the task. The `task.result()` method retrieves the result of the task. Here are brief Python code examples for each: 1. **Creating a Task with `asyncio.create_task()`**: ```python import asyncio async def my_coroutine(): print(\"Coroutine is running\") # Create and run a task task = asyncio.create_task(my_coroutine()) await task # Wait for the task to complete ``` 2. **Cancelling a Task with `task.cancel()`**: ```python import asyncio async def my_coroutine(): print(\"Coroutine is running\") await asyncio.sleep(10) # Simulate long-running operation # Create and run a task task = asyncio.create_task(my_coroutine()) await asyncio.sleep(2) # Wait for some time before cancelling task.cancel() # Cancel the task try: await task # This will raise a CancelledError except asyncio.CancelledError: print(\"Task was cancelled\") ``` 3. **Getting the Result of a Task with `task.result()`**: ```python import asyncio async def my_coroutine(): return \"Coroutine result\" # Create and run a task task = asyncio.create_task(my_coroutine()) await task # Ensure the task completes before getting its result print(task.result()) # Output: Coroutine result ```"
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nTask 是 asyncio 中用于并发执行协程的调度单元，它封装一个协程并允许在事件循环中独立运行，同时提供状态查询和结果获取的能力。\n\n## 何时使用\n当需要并发执行多个异步操作（如网络请求、文件读写）时，使用 Task 来调度协程。Task 特别适合管理一组独立的任务，并等待它们全部完成或部分完成，例如并行下载多个文件或同时处理多个客户端连接。\n\n## 示例\n```Python\nimport asyncio\n\nasync def fetch_data(url):\n    await asyncio.sleep(1)  # 模拟网络延迟\n    return f\"Data from {url}\"\n\nasync def main():\n    task1 = asyncio.create_task(fetch_data(\"url1\"))\n    task2 = asyncio.create_task(fetch_data(\"url2\"))\n    results = await asyncio.gather(task1, task2)\n    print(results)\n\nasyncio.run(main())\n```\n\n## 反例\n错误地在协程内部直接创建 Task 而不等待，导致任务泄漏或未完成。例如在异步函数中创建 Task 后立即返回，未使用 await 或 gather 等待其完成。\n\n## 边界条件\nTask 创建后必须被 await 或通过 gather 等待，否则会在事件循环关闭时被取消并发出警告。另外，不要在同步代码中直接调用 asyncio.create_task，需在异步上下文中使用。",
+    "code_pattern": "import asyncio\n\nasync def worker(name):\n    await asyncio.sleep(1)\n    return f\"Task {name} done\"\n\nasync def main():\n    tasks = [asyncio.create_task(worker(i)) for i in range(3)]\n    results = await asyncio.gather(*tasks)\n    print(results)\n\nif __name__ == \"__main__\":\n    asyncio.run(main())",
+    "common_pitfalls": [
+      "忘记 await Task：创建 Task 后未使用 await 或 gather 等待，导致任务在事件循环关闭时被取消，抛出 Task was destroyed but it is pending 警告。",
+      "在同步代码中调用 create_task：在非异步函数（如普通函数）中直接使用 asyncio.create_task，会因缺少运行中的事件循环而引发 RuntimeError。",
+      "Task 内异常未捕获：Task 中抛出的异常不会自动传播到创建者，需通过 await 或 add_done_callback 处理，否则异常会被静默丢弃。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

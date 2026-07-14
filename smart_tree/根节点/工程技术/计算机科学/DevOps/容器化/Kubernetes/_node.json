@@ -17,5 +17,13 @@
     "description": "Kubernetes: Kubernetes container orchestration platform. Manage the deployment, scaling, and operations of containerized applications. Here is a brief Python code example to demonstrate how you might interact with Kubernetes using the `kubernetes` Python client library: ```python from kubernetes import client, config # Load kubeconfig file (usually located at ~/.kube/config) config.load_kube_config() # Create an instance of the API class v1 = client.AppsV1Api() # List all deployments in the default namespace deployments = v1.list_namespaced_deployment(namespace=\"default\") for deployment in deployments.items: print(f\"Deployment: {deployment.metadata.name}\") ``` This code snippet loads the Kubernetes configuration, creates an API instance for managing applications (deployments), and lists all deployments in the default namespace."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "Kubernetes（K8s）是容器编排领域的核心平台，用于自动化容器化应用的部署、扩展和管理。本分支聚焦于Kubernetes的基础架构与核心概念，涵盖Pod、Deployment和Service三大子主题。Pod是Kubernetes中最小的可部署单元，代表一个或多个容器的集合，共享网络和存储资源；Deployment负责声明式地管理Pod的副本数量、滚动更新和回滚，确保应用的高可用与版本控制；Service则提供稳定的网络访问入口，通过标签选择器将流量负载均衡到一组Pod上。三者形成清晰的层次关系：Deployment控制Pod的生命周期，Service为Pod集群提供统一的访问抽象。学习路径建议从理解Pod的创建与生命周期入手，再学习Deployment的部署策略和副本管理，最后掌握Service的服务发现与负载均衡机制，从而构建完整的Kubernetes应用管理认知。",
+  "example_queries": [
+    "如何创建一个包含多个容器的Pod并共享卷？",
+    "Deployment的滚动更新策略如何配置，以及如何进行回滚？",
+    "Service有哪几种类型（ClusterIP、NodePort、LoadBalancer）？各自适用什么场景？",
+    "Pod的生命周期有哪些阶段，如何通过探针（Probe）进行健康检查？",
+    "如何通过Service实现外部访问集群内的应用？"
+  ]
 }

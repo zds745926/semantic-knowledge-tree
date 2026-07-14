@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "red_black_tree_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nMap 是 Java 集合框架中用于存储键值对（key-value pair）的接口，每个键唯一映射到一个值，提供基于键的快速查找、插入和删除操作。\n\n## 何时使用\n当需要通过非整数索引（如字符串、对象）快速访问数据时，应使用 Map。例如，缓存用户信息（用户ID到用户对象的映射）、配置属性管理（属性名到属性值的映射）或统计词频（单词到出现次数的映射）。Map 特别适合需要高效查找和更新键值关联的场景。\n\n## 示例\n```Java\nimport java.util.*;\n\npublic class MapExample {\n    public static void main(String[] args) {\n        Map<String, Integer> ageMap = new HashMap<>();\n        ageMap.put(\"Alice\", 25);\n        ageMap.put(\"Bob\", 30);\n        ageMap.put(\"Charlie\", 35);\n        \n        // 查找\n        Integer age = ageMap.get(\"Bob\");\n        System.out.println(\"Bob's age: \" + age); // 输出 30\n        \n        // 遍历\n        for (Map.Entry<String, Integer> entry : ageMap.entrySet()) {\n            System.out.println(entry.getKey() + \" -> \" + entry.getValue());\n        }\n        \n        // 删除\n        ageMap.remove(\"Charlie\");\n        System.out.println(\"Size after removal: \" + ageMap.size()); // 输出 2\n    }\n}\n```\n\n## 反例\n使用可变对象作为键，且修改了对象中影响 hashCode 或 equals 的字段，导致无法正确查找。例如，将 List 作为键后修改其内容。\n\n## 边界条件\n键不能重复（若 put 已存在的键，会覆盖旧值）；HashMap 允许一个 null 键和多个 null 值，而 Hashtable 不允许 null。并发环境下应使用 ConcurrentHashMap 而非 HashMap。",
+    "code_pattern": "import java.util.*;\n\npublic class MapTemplate {\n    public static void main(String[] args) {\n        Map<String, String> map = new HashMap<>();\n        map.put(\"key1\", \"value1\");\n        map.put(\"key2\", \"value2\");\n        \n        String value = map.get(\"key1\");\n        if (value != null) {\n            System.out.println(value);\n        }\n        \n        map.forEach((k, v) -> System.out.println(k + \": \" + v));\n        \n        map.remove(\"key2\");\n        System.out.println(\"Size: \" + map.size());\n    }\n}",
+    "common_pitfalls": [
+      "使用可变对象作为键，修改后导致 hashCode 变化，无法通过原键或新键查找，造成内存泄漏。应使用不可变对象（如 String、Integer）作为键。",
+      "在遍历 Map 时直接调用 remove 方法，会抛出 ConcurrentModificationException。应使用迭代器的 remove 方法或 Java 8 的 removeIf。",
+      "误用 HashMap 的 containsValue 进行频繁查找，其时间复杂度为 O(n)，性能差。应设计反向映射或使用其他数据结构。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

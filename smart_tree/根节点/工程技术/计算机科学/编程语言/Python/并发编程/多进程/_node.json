@@ -22,5 +22,13 @@
     "description": "多进程: Multiprocessing bypasses the Global Interpreter Lock (GIL), leveraging multi-core CPUs. Python code example: ```python import multiprocessing def worker(num): \"\"\"worker function\"\"\" print(f'Worker {num}') if __name__ == '__main__': jobs = [] for i in range(5): # Create and start 5 processes p = multiprocessing.Process(target=worker, args=(i,)) jobs.append(p) p.start() ``` This example demonstrates creating multiple processes using Python's `multiprocessing` module to bypass the GIL. Each process runs the `worker` function with a unique argument."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python并发编程中的多进程技术，涵盖从基础概念到高级应用的全链路知识。核心子主题包括：multiprocessing模块作为核心工具集，提供Process类实现进程创建与管理，Pool进程池用于高效处理并行任务，Manager实现跨进程数据共享，进程间Queue和IPC机制解决数据交换问题，共享内存提升大数据传输效率，以及锁、信号量等进程同步原语避免竞态条件。各子主题层层递进：先掌握Process类与Pool的基础用法，再深入Manager和Queue实现进程间通信，最后学习共享内存与同步机制以优化性能和安全性。学习路径建议从单进程调试过渡到多进程架构设计，重点理解进程隔离性、GIL影响及操作系统调度原理。",
+  "example_queries": [
+    "如何在Python中使用multiprocessing.Pool实现并行计算？",
+    "进程间通信（IPC）有哪些方式？Queue和Pipe的区别是什么？",
+    "多进程共享内存时如何保证数据一致性？需要哪些同步原语？",
+    "Manager和Value/Array在共享数据时性能差异有多大？",
+    "Python多进程如何避免死锁？常见的进程同步陷阱有哪些？"
+  ]
 }

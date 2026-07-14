@@ -19,5 +19,34 @@
       "content_preview": "Mixin 混入: Mixin provides specific functionalities as small base classes and can be combined through multiple inheritance. The naming convention typically ends with \"Mixin.\" Here's a brief Python code example to illustrate the concept: ```python class LoggingMixin: def log_action(self, action): print(f\"Action '{action}' logged.\") class User: def __init__(self, name): self.name = name # Using multiple inheritance to combine Mixin with another class class Admin(User, LoggingMixin): pass admin_user = Admin(\"John Doe\") admin_user.log_action(\"Login\") # Output: Action 'Login' logged. ``` In this example, `LoggingMixin` is a mixin that provides logging functionality. The `Admin` class inherits from both `User` and `LoggingMixin`, thus gaining the ability to log actions."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "cpp_oop_v4",
+      "type": "cross_lang_equivalent"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nMixin 混入是一种通过多重继承为类提供可复用功能的设计模式，它定义一组方法，供其他类通过继承来获得这些功能，而不改变类的层次结构。\n\n## 何时使用\n当多个不相关的类需要共享一组通用方法，且这些方法不应作为基类的一部分时，使用 Mixin。它特别适合横向切分功能，如日志记录、序列化、缓存等，避免深度继承带来的复杂性。\n\n## 示例\n```Python\nclass LogMixin:\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\nclass JSONMixin:\n    def to_json(self):\n        import json\n        return json.dumps(self.__dict__)\n\nclass User(LogMixin, JSONMixin):\n    def __init__(self, name):\n        self.name = name\n\nuser = User(\"Alice\")\nuser.log(\"User created\")\nprint(user.to_json())\n```\n\n## 反例\n将 Mixin 作为唯一基类使用，或让 Mixin 依赖于子类的特定属性，导致耦合过紧。例如，一个 Mixin 假设子类有 `data` 属性，但子类未定义，运行时抛出 AttributeError。\n\n## 边界条件\nMixin 应保持无状态，即不定义 `__init__` 或实例变量，以避免与子类初始化冲突。同时，Mixin 的方法应尽量独立，不依赖子类的内部细节。",
+    "code_pattern": "class MixinName:\n    def mixin_method(self, *args, **kwargs):\n        # 通用功能实现\n        pass\n\nclass ConcreteClass(BaseClass, MixinName):\n    def __init__(self, ...):\n        BaseClass.__init__(self, ...)\n        # 其他初始化",
+    "common_pitfalls": [
+      "Mixin 中定义了 `__init__` 方法，导致子类多重继承时初始化顺序混乱，可能跳过其他父类的初始化。",
+      "Mixin 方法直接访问子类私有属性（如 `self.__private`），由于名称修饰，实际访问的是 `_MixinName__private` 而非子类属性。",
+      "多个 Mixin 定义了同名方法，且未使用 `super()` 协调，导致方法覆盖或调用顺序不可预测。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

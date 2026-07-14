@@ -19,5 +19,22 @@
       "content_preview": "Vite: A build tool based on ESM (ECMAScript Modules). Millisecond HMR (Hot Module Replacement). Rollup bundling. Trending away from Webpack. Python code example for HMR using a simple Flask application: ```python from flask import Flask, render_template_string app = Flask(__name__) @app.route('/') def index(): return render_template_string(\"\"\" <h1>Hello, World!</h1> <script src=\"{{ url_for('static', filename='dynamic.js') }}\"></script> \"\"\") if __name__ == '__main__': app.run(debug=True) ``` In this example, `debug=True` enables HMR in a Flask application. When you make changes to the JavaScript file (`dynamic.js`), the browser will automatically reload without needing to restart the server. Note: For actual HMR implementation with Rollup or other build tools, you would typically use a configuration file and a plugin like `rollup-plugin-hot-reload`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "react_hooks_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nVite 是一种新型的前端构建工具，由 Vue.js 作者尤雨溪开发。它利用浏览器原生 ES 模块导入能力，在开发环境下提供极速的模块热更新，在生产环境下则通过 Rollup 进行高效打包。其核心理念是“按需编译”，显著提升开发体验。\n\n## 核心要点\n- **极速冷启动**：Vite 无需像 Webpack 那样先打包整个应用，而是直接启动开发服务器，按需编译请求的模块，因此项目启动速度极快。\n- **高效的模块热更新**：当文件修改时，Vite 只重新编译被修改的模块及其直接依赖，而非整个模块图，更新速度不随项目规模增大而变慢。\n- **开箱即用的 TypeScript 支持**：Vite 原生支持 .ts 文件，无需额外配置即可使用 TypeScript 进行开发。\n- **丰富的插件生态**：Vite 兼容 Rollup 插件，并提供了自己的插件 API，方便扩展功能，如支持 Vue、React 等框架。\n- **生产构建基于 Rollup**：Vite 在生产环境下使用 Rollup 进行打包，生成高度优化的静态资源，支持代码分割、CSS 代码分割等。\n\n## 应用场景\nVite 适用于各类前端项目，尤其是现代 JavaScript/TypeScript 单页应用（SPA）的开发。它特别适合大型项目，因为其热更新性能不会随代码量增加而下降。此外，Vite 也常用于库/框架的开发，例如 Vue 3 官方推荐使用 Vite 作为构建工具。\n\n## 相关概念\n- **Webpack**：传统打包工具，通过打包所有模块来提供服务，启动和热更新速度较慢。\n- **ES Modules**：浏览器原生支持的模块系统，Vite 利用它实现按需编译。\n- **Rollup**：专注于 ES 模块打包的工具，Vite 生产构建时使用。\n- **Snowpack**：与 Vite 类似的工具，也是利用 ES 模块实现快速开发，但 Vite 在生态和性能上更胜一筹。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -29,5 +29,13 @@
     "description": "计算机科学: Computer science researches the principles, methods, and applications of information processing and computation. It encompasses subfields such as theoretical computer science, programming languages, algorithms and data structures, operating systems, computer networks, databases, software engineering, artificial intelligence, machine learning, and security. Computer science is at the core of modern information technology. Here's a brief Python code example for an algorithm: ```python # Example: A simple function to find the maximum element in a list def find_max(numbers): if not numbers: return None # Return None if the list is empty max_num = numbers[0] # Assume the first number is the largest initially for num in numbers: if num > max_num: max_num = num # Update max_num if a larger number is found return max_num # Example usage numbers_list = [3, 5, 2, 8, 1] print(\"The maximum number is:\", find_max(numbers_list)) ``` This code defines a function `find_max` that takes a list of numbers and returns the largest number in the list."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "计算机科学是工程技术领域下的核心分支，涵盖计算机系统的理论、设计、实现与应用。其子主题包括计算机理论（如计算模型、可计算性、复杂度理论）、编程范式（如面向对象、函数式、逻辑式）、编程语言（如C、Java、Python、Rust）、算法与数据结构（如排序、图算法、树、哈希表）、操作系统（如进程管理、内存管理、文件系统）、计算机网络（如TCP/IP、HTTP、路由协议）、数据库（如关系型、NoSQL、事务处理）以及Linux（作为操作系统和开发环境）。这些主题相互关联：计算机理论提供基础，算法与数据结构是解决问题的核心，编程语言和范式是表达算法的工具，操作系统和网络是运行环境，数据库管理数据，Linux则是实践平台。学习路径建议从编程语言和算法与数据结构入手，逐步深入操作系统、网络和数据库，最后理解计算机理论。该分支能回答从基础概念到系统设计的广泛问题。",
+  "example_queries": [
+    "什么是时间复杂度？如何分析一个算法的时间复杂度？",
+    "面向对象编程和函数式编程的主要区别是什么？",
+    "TCP/IP协议栈各层的作用是什么？",
+    "数据库中的事务是什么？如何保证ACID特性？",
+    "Linux中的进程和线程有什么区别？"
+  ]
 }

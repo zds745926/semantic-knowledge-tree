@@ -16,5 +16,13 @@
     "description": "分布式系统: Distributed systems consist of multiple computers working together to present themselves as a single system externally. Challenges include consistency and partition tolerance. To provide a more concrete example, let's consider a simple Python code snippet that demonstrates the concept of partition tolerance in a distributed system using a basic leader election algorithm: ```python import random class Node: def __init__(self, node_id): self.node_id = node_id self.is_leader = False def elect_leader(nodes): # Randomly select a leader from the nodes leader_node = random.choice(nodes) for node in nodes: if node is leader_node: node.is_leader = True print(f\"Node {node.node_id} elected as leader.\") else: print(f\"Node {node.node_id} did not become leader.\") # Example usage nodes = [Node(i) for i in range(5)] elect_leader(nodes) ``` This code snippet demonstrates a simple leader election process, which is crucial for maintaining consistency and partition tolerance in distributed systems."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "分布式系统是计算机科学中系统设计领域的重要分支，主要研究如何将多个独立的计算节点通过网络连接起来，协同完成单一系统无法高效处理的任务。本分支涵盖一致性模型和分布式 ID 两个核心子主题。一致性模型定义了在分布式环境下数据更新操作的可见性和顺序保证，是确保系统正确性和可靠性的基础；分布式 ID 则解决在无中心化全局时钟的场景下，如何生成全局唯一、有序且高效的标识符问题。两者紧密关联：一致性模型为分布式 ID 的生成和分配提供理论保障（如强一致性确保 ID 不重复），而分布式 ID 的实践又常依赖一致性算法（如 Raft、Paxos）或特定一致性模型（如最终一致性）。学习本分支应首先理解分布式系统的核心挑战（如网络延迟、节点故障、数据一致性），然后深入掌握常见一致性模型（如强一致性、最终一致性、CAP 理论），再结合分布式 ID 的生成策略（如雪花算法、UUID、数据库自增）进行实践。建议通过阅读经典论文（如 Google 的 Chubby、Amazon 的 Dynamo）和动手搭建小型分布式系统来巩固理解。",
+  "example_queries": [
+    "在分布式系统中，如何选择合适的一致性模型来平衡可用性和数据准确性？",
+    "分布式 ID 的生成方式有哪些？雪花算法是如何保证全局唯一且趋势递增的？",
+    "CAP 理论中的一致性、可用性和分区容错性在实际系统中如何权衡？",
+    "如何设计一个高可用的分布式 ID 生成服务，并确保其不产生重复 ID？",
+    "最终一致性模型下，如何解决数据冲突和时序问题？"
+  ]
 }

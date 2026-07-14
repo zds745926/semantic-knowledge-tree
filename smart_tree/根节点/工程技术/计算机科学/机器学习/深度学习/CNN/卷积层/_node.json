@@ -19,5 +19,22 @@
       "content_preview": "卷积层: Convolutional kernels slide over the input to extract features. Parameter sharing occurs. Padding and stride are applied. Here is a brief explanation with a Python code example using TensorFlow/Keras: ```python import tensorflow as tf # Define a simple convolution layer model = tf.keras.models.Sequential([ tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3)) ]) # The Conv2D layer applies the convolution operation with a kernel size of 3x3 and 32 filters # Parameter sharing means that each filter is applied to the entire input volume # Padding example: 'same' padding keeps the output dimensions the same as the input model = tf.keras.models.Sequential([ tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3), padding='same') ]) # Stride example: a stride of 2 reduces the spatial dimensions by half model = tf.keras.models.Sequential([ tf.keras.layers.Conv2D(32, (3, 3), strides=2, activation='relu', input_shape=(64, 64, 3)) ]) ``` In this example: - `Conv2D` is used to apply a convolution operation. - The `padding` parameter can be set to 'same' or 'valid'. - The `strides` parameter controls the step size of the kernel during its sliding process."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "pca_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n卷积层是卷积神经网络（CNN）中的核心构建块，通过一组可学习的卷积核（滤波器）对输入数据进行滑动窗口式的卷积运算，从而提取局部特征。每个卷积核在输入上滑动并计算点积，生成一个特征图，多个卷积核共同生成多个特征图，以捕捉不同模式。\n\n## 核心要点\n- 卷积运算：卷积核在输入上滑动，与局部区域进行元素相乘后求和，输出一个数值，形成特征图。\n- 参数共享：同一卷积核在整个输入上共享权重，大幅减少参数数量，提升计算效率并增强平移不变性。\n- 局部连接：每个神经元只与输入的一个局部区域相连，关注局部特征，如边缘、纹理等。\n- 感受野：卷积核的大小决定了感受野，即每个输出单元对应的输入区域大小，堆叠多层可扩大感受野。\n- 填充与步长：填充（padding）控制输出尺寸，步长（stride）控制卷积核移动的步幅，两者共同影响特征图的空间维度。\n\n## 应用场景\n卷积层广泛应用于图像识别、目标检测、图像分割等计算机视觉任务，用于提取从低级边缘到高级语义的层次化特征。此外，在自然语言处理中，一维卷积层可用于文本分类和序列建模，捕捉局部词序模式。\n\n## 相关概念\n池化层通常紧随卷积层，通过下采样降低特征图维度并增强鲁棒性。全连接层在卷积层之后，将提取的特征映射到最终输出，如分类结果。激活函数（如ReLU）常插入卷积层后，引入非线性，提升模型表达能力。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

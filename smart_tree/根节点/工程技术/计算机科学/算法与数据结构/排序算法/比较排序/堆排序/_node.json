@@ -19,5 +19,26 @@
       "content_preview": "堆排序: Heapify → Swap the root → Adjust. O(n log n) in-place. Unstable. No worst-case degeneration. Here's a brief Python code example for heapifying an array and then swapping the root with the last element, followed by adjusting the heap: ```python import heapq def heapify(arr): # Convert list to heap in-place, in linear time. heapq.heapify(arr) # Swap the root (smallest element) with the last element arr[0], arr[-1] = arr[-1], arr[0] # Adjust the heap by calling _siftup from the heapq module heapq._siftup(arr, 0) # Example usage: arr = [3, 2, 1, 7, 8, 4, 10, 16, 12] heapify(arr) print(\"After heapifying and swapping root:\", arr) ``` This example demonstrates the process of heapifying an array using Python's `heapq` module, then swapping the root element with the last element in the array, and finally adjusting the heap to maintain its properties."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "quick_sort_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "merge_sort_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n堆排序是一种基于二叉堆数据结构的比较排序算法。它利用最大堆（或最小堆）的性质，通过反复将堆顶元素（最大值或最小值）与堆末尾元素交换并调整堆，从而完成排序。\n\n## 核心要点\n1. 堆排序分为建堆和排序两个阶段：建堆将无序数组构建成最大堆，排序阶段反复取出堆顶元素并调整堆。\n2. 堆排序的时间复杂度为 O(n log n)，无论最好、最坏还是平均情况均如此，且为原地排序算法。\n3. 堆排序是不稳定的排序算法，因为堆调整过程中可能改变相等元素的相对顺序。\n4. 堆排序的空间复杂度为 O(1)，仅需常数级别的额外空间。\n5. 堆排序通过完全二叉树实现，通常使用数组存储，父节点与子节点的索引关系为：父节点 i 的左子节点为 2i+1，右子节点为 2i+2。\n\n## 应用场景\n堆排序适用于需要稳定 O(n log n) 时间复杂度和 O(1) 空间复杂度的场景，例如嵌入式系统或内存受限的环境。它常用于实现优先队列，以及处理大数据流中的 Top K 问题。\n\n## 相关概念\n堆排序与二叉堆、优先队列密切相关，二叉堆是实现堆排序的基础。此外，堆排序与快速排序、归并排序同属高效比较排序算法，但堆排序在稳定性上不如归并排序，在常数因子效率上通常低于快速排序。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

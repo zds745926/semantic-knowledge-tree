@@ -19,5 +19,30 @@
       "content_preview": "UDP vs TCP: UDP is fast but does not retransmit lost packets. TCP is reliable but has higher latency. TCP header is 20 bytes compared to UDP's 8 bytes. Python code example for understanding the difference (not for actual implementation): For **TCP**: ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) sock.connect(server_address) try: # Send data message = b'This is the message. It will be repeated.' sock.sendall(message) finally: print('Closing socket') sock.close() ``` For **UDP**: ```python import socket # Create a UDP socket sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # Bind the socket to the port server_address = ('localhost', 10000) sock.bind(server_address) try: # Send data message = b'This is the message. It will be repeated.' sock.sendto(message, server_address) finally: print('Closing socket') sock.close() ``` These examples illustrate the basic usage of TCP and UDP sockets in Python, highlighting their differences in terms of reliability and latency."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tcp_congestion_avoid_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "four_way_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "http_methods_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nUDP（用户数据报协议）和TCP（传输控制协议）是传输层的两个核心协议。UDP提供无连接、不可靠的数据传输服务，而TCP提供面向连接、可靠的数据流传输服务。\n\n## 核心要点\n- **连接性**：UDP是无连接的，发送数据前无需建立连接；TCP是面向连接的，需经过三次握手建立连接。\n- **可靠性**：UDP不保证数据可靠到达，无确认重传机制；TCP通过确认、重传、序号等机制确保数据可靠传输。\n- **传输方式**：UDP以数据报形式发送，保留消息边界；TCP以字节流形式发送，不保留消息边界。\n- **开销与速度**：UDP头部开销小（8字节），传输速度快；TCP头部开销大（20字节），因控制机制速度较慢。\n- **流量控制**：UDP无流量控制；TCP有滑动窗口机制进行流量控制和拥塞控制。\n\n## 应用场景\nUDP适用于对实时性要求高、可容忍少量丢包的应用，如视频直播、在线游戏、DNS查询。TCP适用于需要可靠传输的应用，如网页浏览、文件传输、电子邮件。\n\n## 相关概念\n与UDP和TCP相关的概念包括端口号（用于标识进程）、套接字（IP地址与端口组合）、多路复用（多个应用共享传输层）。此外，QUIC协议基于UDP但提供了类似TCP的可靠性，是新一代传输协议。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

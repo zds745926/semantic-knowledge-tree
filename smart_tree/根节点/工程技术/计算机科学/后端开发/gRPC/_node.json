@@ -19,5 +19,30 @@
       "content_preview": "gRPC: High-performance RPC. Protobuf serialization. HTTP/2. Streaming communication. Here are the technical terms translated with brief Python code examples where applicable: 1. **High-performance RPC (Remote Procedure Call):** In Python, you can use libraries like `grpc` for implementing high-performance RPC services. ```python import grpc def say_hello(name): # Define a simple service class GreeterServicer(grpc.Service): def SayHello(self, request, context): return HelloReply(message=f'Hello, {name}!') server = grpc.server(futures.ThreadPoolExecutor(max_workers=10)) hello_pb2_grpc.add_GreeterServicer_to_server(GreeterServicer(), server) server.add_insecure_port('[::]:50051') server.start() print(\"Server started\") ``` 2. **Protobuf serialization:** Protobuf (Protocol Buffers) is a method of serializing structured data. ```python import grpc from google.protobuf import json_format # Define a simple message class HelloRequest(proto.Message): name = proto.Field(proto.STRING, number=1) request = HelloRequest(name=\"World\") serialized_data = request.SerializeToString() print(serialized_data) ``` 3. **HTTP/2:** HTTP/2 is an updated version of the Hypertext Transfer Protocol. ```python import http.client conn = http.client.HTTPSConnection(\"www.example.com\", port=443, timeout=10) headers = {\"Content-type\": \"application/json\"} conn.request(\"GET\", \"/\", headers=headers) response = conn.getresponse() print(response.status, response.reason) ``` 4. **Streaming communication:** Streaming allows for continuous data transfer. ```python import grpc def stream_messages(): # Define a simple service with streaming class GreeterServicer(grpc.Service): def SayHello(self, request_iterator, context): for name in request_iterator: yield HelloReply(message=f'Hello, {name}!') server = grpc.server(futures.ThreadPoolExecutor(max_workers=10)) hello_pb2_grpc.add_GreeterServicer_to_server(GreeterServicer(), server) server.add_insecure_port('[::]:50051') server.start() print(\"Server started\") ``` These examples provide a basic understanding of how these concepts can be implemented in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_ipc_v4",
+      "type": "application"
+    },
+    {
+      "id": "https_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "auth_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\ngRPC（gRPC Remote Procedure Calls）是一个高性能、开源、通用的远程过程调用（RPC）框架，由Google开发。它基于HTTP/2协议传输，使用Protocol Buffers作为接口定义语言和序列化工具，支持多种编程语言，旨在实现跨语言、跨平台的服务间高效通信。\n\n## 核心要点\n- **基于HTTP/2**：gRPC利用HTTP/2的多路复用、流控、头部压缩等特性，显著提升通信效率，支持双向流、服务器推送等高级功能。\n- **使用Protocol Buffers**：通过.proto文件定义服务和消息结构，自动生成客户端和服务端代码，序列化后的数据体积小、解析快，确保强类型和向后兼容。\n- **支持多种通信模式**：包括一元RPC（简单请求-响应）、服务器流式RPC、客户端流式RPC和双向流式RPC，灵活适应不同场景。\n- **跨语言互操作性**：官方支持C++、Java、Python、Go、Node.js等十余种语言，通过统一的IDL和协议实现不同语言服务间的无缝调用。\n- **内置认证与负载均衡**：支持基于TLS/SSL的加密认证，以及基于HTTP/2的负载均衡机制，保障通信安全和可靠性。\n\n## 应用场景\ngRPC广泛应用于微服务架构中的服务间通信，尤其适合需要低延迟、高吞吐量的内部系统。典型场景包括：分布式系统的服务调用、实时数据流处理（如物联网设备数据上报）、移动端与后端的高效通信，以及多语言混合技术栈的集成。\n\n## 相关概念\n- **RPC（远程过程调用）**：gRPC是RPC的一种具体实现，允许程序像调用本地函数一样调用远程服务。\n- **HTTP/2**：gRPC的底层传输协议，提供二进制分帧、多路复用等特性，相比HTTP/1.1性能更优。\n- **Protocol Buffers**：gRPC默认的序列化框架，通过.proto文件定义数据结构，比JSON/XML更紧凑高效。\n- **服务网格**：如Istio，常与gRPC结合使用，提供更细粒度的流量管理、安全策略和可观测性。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

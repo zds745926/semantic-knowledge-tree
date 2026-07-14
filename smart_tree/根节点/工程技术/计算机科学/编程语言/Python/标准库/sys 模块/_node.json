@@ -19,5 +19,26 @@
       "content_preview": "sys 模块: The `sys` module accesses interpreter variables and functions: `sys.argv` for command-line arguments, `sys.path` for module search paths, and `sys.exit` to exit. Here are brief Python code examples for each concept: 1. **Accessing Command-Line Arguments (`sys.argv`):** ```python import sys # Example usage print(\"Command line arguments:\", sys.argv) ``` 2. **Using Module Search Paths (`sys.path`):** ```python import sys # Print the current module search paths print(\"Module search paths:\", sys.path) ``` 3. **Exiting the Program (`sys.exit`):** ```python import sys # Example usage to exit the program with an error code 1 sys.exit(1) ``` These examples illustrate how to use `sys.argv`, `sys.path`, and `sys.exit` in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nsys 模块是 Python 标准库中提供与 Python 解释器交互功能的模块，允许访问解释器相关的变量和函数，如命令行参数、标准输入输出、退出解释器等。\n\n## 何时使用\n当需要处理命令行参数、控制程序退出状态、操作标准输入输出流、获取或修改 Python 运行时环境（如模块搜索路径、递归深度限制）时，应使用 sys 模块。它也常用于调试和性能分析，例如测量代码执行时间或跟踪内存使用。\n\n## 示例\n```Python\nimport sys\n\n# 获取命令行参数\nprint(\"脚本名:\", sys.argv[0])\nprint(\"参数列表:\", sys.argv[1:])\n\n# 标准输出重定向到文件\nwith open('output.log', 'w') as f:\n    sys.stdout = f\n    print(\"这条信息会写入文件\")\n    sys.stdout = sys.__stdout__  # 恢复标准输出\n\n# 退出程序并返回状态码\nsys.exit(0)  # 正常退出\n```\n\n## 反例\n错误用法：直接修改 sys.modules 来卸载模块，可能导致不可预测的导入错误和内存泄漏。正确做法是使用 importlib.reload() 重新加载模块。\n\n## 边界条件\n注意 sys.setrecursionlimit() 设置过高的递归深度可能导致 Python 解释器崩溃，而非仅抛出 RecursionError。sys.argv 的第一个元素始终是脚本路径，但若使用 -c 选项运行代码，则为 '-c'。",
+    "code_pattern": "import sys\n\ndef main():\n    if len(sys.argv) < 2:\n        print(\"Usage: python script.py <arg1> [arg2 ...]\")\n        sys.exit(1)\n    args = sys.argv[1:]\n    print(\"Arguments:\", args)\n    # 业务逻辑\n    result = sum(int(x) for x in args)\n    print(\"Sum:\", result)\n    sys.exit(0)\n\nif __name__ == \"__main__\":\n    main()",
+    "common_pitfalls": [
+      "直接修改 sys.path 可能导致导入混乱，应使用 site.addsitedir() 或 PYTHONPATH 环境变量来添加路径。",
+      "误用 sys.stdin.read() 读取所有输入直到 EOF，在交互式环境中会导致程序挂起，应使用 input() 或逐行读取。",
+      "在退出前未恢复 sys.stdout 重定向，导致后续代码输出丢失或写入错误文件。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,38 @@
       "content_preview": "不可变性: Data created is immutable; update operations return new objects. This avoids side effects and simplifies concurrent operations. Python code example: ```python class ImmutableData: def __init__(self, value): self._value = value @property def value(self): return self._value # Creating an immutable object data = ImmutableData(10) # Trying to update the data directly will raise an error or be ignored if not properly implemented try: data.value = 20 # This would fail as it's supposed to be read-only except AttributeError as e: print(f\"Error: {e}\") # To \"update\", a new object is created instead new_data = ImmutableData(data.value + 1) print(\"Original:\", data.value) # Output: Original: 10 print(\"Updated:\", new_data.value) # Output: Updated: 11 ``` This example demonstrates the immutability of objects and how updates result in new instances, avoiding side effects."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "durability_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cap_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "js_promise_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n不可变性（Immutability）是指数据一旦创建，其状态就不能被修改。在函数式编程中，对数据的任何操作都会返回一个新的数据副本，而原始数据保持不变。这一特性避免了副作用，使程序行为更可预测。\n\n## 核心要点\n1. 数据不可变：变量或对象的值在初始化后无法更改，任何修改操作都会生成新实例。\n2. 无副作用：由于不修改原有数据，函数调用不会影响外部状态，便于并行计算和调试。\n3. 引用透明：相同的输入总是产生相同的输出，因为数据不会在过程中被改变。\n4. 线程安全：不可变数据天然支持并发，无需加锁即可在多线程间共享。\n5. 简化状态管理：在复杂系统中，不可变性减少了状态变化的追踪难度，尤其适合事件溯源和函数式架构。\n\n## 应用场景\n不可变性广泛应用于函数式编程语言（如 Haskell、Clojure）以及现代框架的状态管理（如 React 的 Redux 状态树）。它也用于持久化数据结构（如 Immutable.js）和并发编程中，以提升系统的可靠性和性能。\n\n## 相关概念\n不可变性与可变性（Mutability）相对，后者允许数据原地修改。持久化数据结构（Persistent Data Structure）利用不可变性实现高效版本控制。纯函数（Pure Function）依赖不可变性来保证无副作用，而引用透明性（Referential Transparency）则是不可变性的直接结果。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -20,5 +20,13 @@
     "description": "算法与数据结构: Algorithms are the steps and methods for solving problems, while data structures are the ways to organize and store data. Both are core foundations in computer science and directly impact program performance and quality. Here's a brief Python code example that demonstrates both an algorithm (searching for an element in a list) and a common data structure (a list): ```python # Example of using a list as a data structure and implementing a simple search algorithm def linear_search(data, target): \"\"\" Perform a linear search on the given list to find the target value. :param data: List of elements to search through :param target: The element we are searching for :return: Index of the target if found, otherwise -1 \"\"\" for index, element in enumerate(data): if element == target: return index return -1 # Example usage data_list = [5, 3, 7, 2, 8] target_value = 7 result = linear_search(data_list, target_value) if result != -1: print(f\"Element found at index: {result}\") else: print(\"Element not found\") ``` This code defines a simple `linear_search` function that uses a list as a data structure to find an element. The algorithm iterates through each element in the list, checking if it matches the target value. If a match is found, the index is returned; otherwise, -1 is returned indicating the target was not found."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "算法与数据结构是计算机科学的核心基础，本分支系统性地涵盖了从基础到高级的数据组织方式和算法设计方法。子节点包括：基础数据结构（如数组、链表、栈、队列、哈希表）、排序算法（如快速排序、归并排序、堆排序）、搜索算法（如二分搜索、深度优先搜索、广度优先搜索）、树与图算法（如二叉树遍历、最短路径、最小生成树）、动态规划（如背包问题、最长公共子序列）以及高级数据结构（如线段树、并查集、Trie树）。这些子主题之间存在清晰的递进关系：首先掌握基础数据结构，它们是实现排序和搜索的基石；排序和搜索算法进一步深化对数据操作的理解；树与图算法扩展了非线性结构的处理能力；动态规划则引入状态转移和最优子结构思想；高级数据结构解决更复杂场景下的效率问题。学习路径建议从基础数据结构开始，依次学习排序和搜索，再深入树与图，然后掌握动态规划，最后探索高级数据结构。通过本分支的学习，学习者能够理解算法复杂度分析，并具备解决实际编程问题的能力。",
+  "example_queries": [
+    "如何用哈希表实现O(1)时间复杂度的查找操作？",
+    "在图中找到从节点A到节点B的最短路径有哪些算法？",
+    "动态规划与分治算法的区别是什么？请举例说明。",
+    "如何用线段树解决区间求和和区间修改问题？",
+    "快速排序在最坏情况下的时间复杂度是多少？如何优化？"
+  ]
 }

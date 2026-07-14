@@ -19,5 +19,26 @@
       "content_preview": "zip 并行迭代: The `zip(iter1, iter2)` function parallelly iterates over multiple sequences and pairs elements from the same index positions. The `zip_longest` variant fills in missing values with a specified fill value until the longest sequence is exhausted. Here's an example using Python: ```python # Example of using zip to iterate over two lists list1 = [1, 2, 3] list2 = ['a', 'b', 'c'] for x, y in zip(list1, list2): print(x, y) # Output: # 1 a # 2 b # 3 c # Example of using zip_longest to handle sequences of different lengths from itertools import zip_longest list1 = [1, 2, 3] list2 = ['a', 'b'] for x, y in zip_longest(list1, list2, fillvalue='z'): print(x, y) # Output: # 1 a # 2 b # 3 z ``` In the examples above, `zip` pairs elements from `list1` and `list2` based on their index positions. When the sequences have different lengths, `zip_longest` continues to yield pairs until all input iterables are exhausted, filling in missing values with 'z'."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_enumerate_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nzip 并行迭代是 Python 中用于同时遍历多个可迭代对象（如列表、元组等）的内置函数，它将多个可迭代对象中对应位置的元素打包成元组，返回一个迭代器。\n\n## 何时使用\n当需要同步处理多个长度相同或不同的序列时，使用 zip 可以避免通过索引手动访问元素，使代码更简洁、可读性更强。例如，同时遍历两个列表来组合数据，或并行处理多个数据源。\n\n## 示例\n```Python\nnames = ['Alice', 'Bob', 'Charlie']\nscores = [85, 92, 78]\nfor name, score in zip(names, scores):\n    print(f'{name}: {score}')\n# 输出:\n# Alice: 85\n# Bob: 92\n# Charlie: 78\n```\n\n## 反例\n错误地假设 zip 会处理长度不等的序列时，短序列会截断长序列，导致数据丢失。例如，zip(names, scores) 如果 names 有 4 个元素而 scores 有 3 个，则只迭代 3 次。\n\n## 边界条件\n当传入的可迭代对象长度不同时，zip 以最短的为准，多余元素被忽略。如果需要以最长的为准，应使用 itertools.zip_longest。另外，zip 返回的是迭代器，只能迭代一次。",
+    "code_pattern": "def process_parallel_data(list1, list2):\n    result = []\n    for item1, item2 in zip(list1, list2):\n        # 处理对应元素\n        combined = item1 + item2\n        result.append(combined)\n    return result",
+    "common_pitfalls": [
+      "忽略长度不一致：当多个可迭代对象长度不同时，zip 默认以最短的为准，可能导致数据丢失，应使用 itertools.zip_longest 并指定 fillvalue 来避免。",
+      "误用为解压缩：zip(*zipped) 可以解压，但要求所有元组长度一致，否则会截断，且解压后返回的是元组列表，需注意类型。",
+      "迭代器耗尽：zip 返回的是迭代器，只能迭代一次，如果多次使用需先转换为列表。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

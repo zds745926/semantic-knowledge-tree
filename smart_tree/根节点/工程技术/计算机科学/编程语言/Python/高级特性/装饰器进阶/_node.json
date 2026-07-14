@@ -17,5 +17,13 @@
     "description": "装饰器进阶: The essence of a decorator is a closure, and mastering its principles allows you to write flexible decorators. Here's an explanation with a brief Python code example: In Python, a decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it. This is achieved through closures, which allow data to be remembered from the scope in which the closure was created. ```python def my_decorator(func): def wrapper(): print(\"Something is happening before the function is called.\") func() print(\"Something is happening after the function is called.\") return wrapper @my_decorator def say_hello(): print(\"Hello!\") say_hello() ``` In this example, `my_decorator` is a decorator that adds some functionality (printing messages) around the call to the `say_hello` function. When you run `say_hello()`, it behaves as if you had written: ```python def say_hello(): print(\"Hello!\") say_hello = my_decorator(say_hello) ``` This shows how decorators can be used to modify or extend the behavior of functions in a flexible and clean way."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支“装饰器进阶”是Python高级特性中装饰器知识的深化部分，主要涵盖装饰器原理、带参数装饰器和类装饰器三个子主题。装饰器原理是基础，解释了闭包、函数作为一等公民以及装饰器如何在不修改原函数代码的前提下增强其功能。带参数装饰器则是在此基础上，通过外层函数接收额外参数，使装饰器更加灵活，能够根据参数调整行为。类装饰器利用类的__call__方法实现装饰器，提供了更面向对象的实现方式，便于状态管理和复用。这三个子主题层层递进：先理解装饰器的核心机制，再掌握参数化定制，最后学习类装饰器的封装优势。学习路径建议从装饰器原理入手，理解闭包和@语法糖；然后学习带参数装饰器的嵌套结构；最后掌握类装饰器的实现与适用场景。通过本分支，学习者能够编写更复杂、可配置的装饰器，提升代码的模块化和可维护性。",
+  "example_queries": [
+    "Python装饰器是如何通过闭包实现函数增强的？",
+    "如何编写一个带参数的装饰器来控制缓存时间？",
+    "类装饰器与函数装饰器在实现上有何不同？",
+    "如何在装饰器中保留原函数的元信息（如__name__）？",
+    "装饰器在日志记录和权限校验中的高级应用有哪些？"
+  ]
 }

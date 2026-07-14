@@ -19,5 +19,34 @@
       "content_preview": "元组 tuple: A tuple is an immutable ordered collection. It can be created using (1, 2, 3). Tuples can be used as dictionary keys. Named tuples are a subclass of tuples with named fields. Here's a brief Python code example for creating and using a named tuple: ```python from collections import namedtuple # Define a named tuple called Point with two fields: x and y Point = namedtuple('Point', ['x', 'y']) # Create an instance of Point p = Point(1, 2) # Access the fields by name print(p.x) # Output: 1 print(p.y) # Output: 2 # Use a tuple as a dictionary key (since tuples are immutable) my_dict = {(1, 2): 'value'} print(my_dict[(1, 2)]) # Output: value ``` This example demonstrates creating a named tuple and accessing its fields by name. It also shows how a tuple can be used as a key in a dictionary."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n元组（tuple）是 Python 中一种不可变的有序序列，用于存储一组任意类型的元素，元素之间用逗号分隔，通常用圆括号括起来。\n\n## 何时使用\n当需要存储一组不应被修改的数据时，例如函数返回多个值、数据库查询结果的行记录、配置常量等。元组比列表更安全，因为其不可变性可以防止意外修改，同时元组可以作为字典的键（而列表不行）。\n\n## 示例\n```Python\n# 创建一个元组\npoint = (3, 4)\nprint(point[0])  # 输出: 3\n\n# 元组解包\nx, y = point\nprint(f\"x={x}, y={y}\")  # 输出: x=3, y=4\n\n# 单元素元组需要加逗号\nsingle = (5,)\nprint(type(single))  # <class 'tuple'>\n\n# 元组作为字典键\nlocations = {(40.7128, -74.0060): \"New York\", (34.0522, -118.2437): \"Los Angeles\"}\nprint(locations[(40.7128, -74.0060)])  # 输出: New York\n```\n\n## 反例\n不要试图修改元组中的元素，例如 `point[0] = 5` 会抛出 TypeError。也不要混淆元组与列表，例如在需要不可变序列时误用列表导致字典键错误。\n\n## 边界条件\n单元素元组必须加逗号，否则会被解释为普通括号表达式。元组中的可变对象（如列表）本身可以被修改，但元组引用不可变。",
+    "code_pattern": "def create_and_use_tuple():\n    # 创建元组\n    coordinates = (10.5, 20.3)\n    \n    # 访问元素\n    lat, lon = coordinates\n    print(f\"Latitude: {lat}, Longitude: {lon}\")\n    \n    # 元组作为函数返回值\n    def min_max(data):\n        return min(data), max(data)\n    \n    values = [3, 1, 4, 1, 5, 9]\n    min_val, max_val = min_max(values)\n    print(f\"Min: {min_val}, Max: {max_val}\")\n    \n    # 元组作为字典键\n    location_map = {\n        (40.7128, -74.0060): \"New York\",\n        (34.0522, -118.2437): \"Los Angeles\"\n    }\n    print(location_map[(40.7128, -74.0060)])\n\nif __name__ == \"__main__\":\n    create_and_use_tuple()",
+    "common_pitfalls": [
+      "忘记单元素元组的逗号：`t = (5)` 创建的是整数 5 而不是元组，正确写法是 `t = (5,)`。",
+      "试图修改元组内容：元组是不可变的，`t[0] = 1` 会抛出 TypeError。但如果元组中包含可变对象（如列表），可以修改该对象的内容，例如 `t = ([1, 2], 3); t[0].append(4)` 是允许的，这可能导致意外副作用。",
+      "混淆元组与列表：在需要不可变序列的场景（如字典键）误用列表，会导致 TypeError: unhashable type: 'list'。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

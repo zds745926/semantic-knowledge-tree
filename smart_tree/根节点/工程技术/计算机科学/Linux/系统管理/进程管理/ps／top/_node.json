@@ -19,5 +19,34 @@
       "content_preview": "ps/top: ps aux for all processes. top for real-time view. htop for enhanced interactive view. Here are the corresponding Python code examples for each command: 1. **`ps aux`**: This command lists all running processes. ```python import subprocess # Run ps aux and capture the output result = subprocess.run(['ps', 'aux'], stdout=subprocess.PIPE) print(result.stdout.decode()) ``` 2. **`top`**: This command provides a dynamic real-time view of a running system, showing system summary information (such as load averages, memory, swap) and a list of processes. ```python import subprocess # Run top and capture the output result = subprocess.run(['top', '-b', '-n', '1'], stdout=subprocess.PIPE) print(result.stdout.decode()) ``` 3. **`htop`**: This command provides an interactive process viewer with a more user-friendly interface compared to `top`. ```python import subprocess # Run htop and capture the output (Note: htop might not be available in all environments, especially non-GUI ones) try: result = subprocess.run(['htop'], stdout=subprocess.PIPE) print(result.stdout.decode()) except FileNotFoundError: print(\"htop is not installed or not available in this environment.\") ``` These examples use Python's `subprocess` module to run the commands and capture their output."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "ls_cd_pwd_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "sudo_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "prometheus_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nps和top是Linux系统中用于查看和管理进程的核心命令行工具。ps（Process Status）用于静态显示当前系统进程的快照，而top则提供动态、实时更新的进程列表，并支持交互式操作。\n\n## 核心要点\n- **ps命令**：通过不同选项（如aux、ef）可查看所有进程的详细信息，包括PID、CPU和内存使用率、状态等，常用于快速定位特定进程。\n- **top命令**：默认按CPU占用率排序，实时刷新进程列表，支持按内存、时间等排序，并可发送信号（如kill）给进程。\n- **进程状态**：两者都显示进程状态（如R运行、S睡眠、Z僵尸），帮助判断进程是否异常。\n- **资源监控**：top能显示系统整体资源（CPU、内存、负载）的实时使用情况，而ps则需结合其他命令（如grep）进行过滤。\n- **交互操作**：top支持在运行时按键（如k杀死进程、r调整优先级），ps则需配合管道和信号使用。\n\n## 应用场景\n- **故障排查**：当系统响应缓慢时，使用top快速找出占用CPU或内存最高的进程，或用ps检查是否存在僵尸进程。\n- **进程管理**：通过ps获取特定进程的PID，再配合kill命令终止异常进程；top则可在交互界面直接终止进程。\n- **性能分析**：结合ps和top的输出，分析进程的资源消耗模式，为系统调优提供依据。\n\n## 相关概念\n- **进程与线程**：ps和top主要管理进程，但top可通过-H选项显示线程，便于多线程应用分析。\n- **信号（Signal）**：kill命令通过发送信号（如SIGTERM、SIGKILL）控制进程，top的交互操作本质也是发送信号。\n- **系统负载**：top显示的负载平均值（load average）反映系统整体繁忙程度，与进程状态密切相关。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

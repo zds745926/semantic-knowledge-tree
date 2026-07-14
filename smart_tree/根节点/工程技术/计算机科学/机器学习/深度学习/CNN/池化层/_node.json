@@ -19,5 +19,22 @@
       "content_preview": "池化层: Max Pooling/Average Pooling. Downsampling. Translation Invariance. Here are the translations with added Python code examples for max pooling and average pooling: Max Pooling: ```python import torch from torchvision import transforms # Example input tensor input_tensor = torch.randn(1, 1, 4, 4) # Batch size 1, 1 channel, 4x4 spatial dimensions # Define a max pool operation with kernel size 2 and stride 2 max_pool = transforms.Compose([ transforms.Lambda(lambda x: x.unsqueeze(0)), # Add batch dimension if needed transforms.MaxPool2d(kernel_size=2, stride=2) ]) # Apply the max pooling operation output_tensor = max_pool(input_tensor) print(output_tensor) ``` Average Pooling: ```python import torch from torchvision import transforms # Example input tensor input_tensor = torch.randn(1, 1, 4, 4) # Batch size 1, 1 channel, 4x4 spatial dimensions # Define an average pool operation with kernel size 2 and stride 2 avg_pool = transforms.Compose([ transforms.Lambda(lambda x: x.unsqueeze(0)), # Add batch dimension if needed transforms.AvgPool2d(kernel_size=2, stride=2) ]) # Apply the average pooling operation output_tensor = avg_pool(input_tensor) print(output_tensor) ``` Note that in these examples, we use `torchvision.transforms` to apply max and average pooling operations. The `Lambda` function is used to ensure the input tensor has a batch dimension if it's not already present."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "conv_layer_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n池化层是卷积神经网络（CNN）中的一种关键组件，通常位于卷积层之后。它通过下采样操作，对输入的特征图进行空间维度的压缩，从而降低数据尺寸、减少参数量和计算量，同时保留最重要的特征信息。\n\n## 核心要点\n- **下采样与降维**：池化层通过滑动窗口在特征图上进行聚合操作（如取最大值或平均值），有效减小特征图的高度和宽度，降低后续层的计算负担。\n- **特征不变性**：池化操作使网络对输入图像的微小平移、旋转或缩放具有一定的不变性，增强模型的鲁棒性。\n- **防止过拟合**：通过减少参数数量和特征维度，池化层有助于抑制过拟合，提升模型的泛化能力。\n- **常见类型**：最大池化（取窗口内最大值）和平均池化（取窗口内平均值）是最常用的两种方式，前者保留纹理信息，后者保留背景信息。\n\n## 应用场景\n池化层广泛应用于图像分类、目标检测、语义分割等计算机视觉任务中。例如，在图像分类网络中，池化层逐步压缩特征图，将高层语义特征传递至全连接层；在目标检测中，池化层用于降低特征图分辨率，加速后续区域提议和边界框回归。\n\n## 相关概念\n- **卷积层**：池化层通常与卷积层交替使用，卷积层负责提取局部特征，池化层负责降维和特征聚合。\n- **步长与填充**：池化层的窗口大小和步长决定了下采样的程度，填充则用于控制边界处理。\n- **全局平均池化**：一种特殊的池化方式，将整个特征图压缩为一个值，常用于替代全连接层，减少参数量。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

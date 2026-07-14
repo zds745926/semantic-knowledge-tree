@@ -19,5 +19,38 @@
       "content_preview": "RabbitMQ: AMQP. Exchange (Topic/Direct/Fanout). Message Acknowledgment (ACK). Here is a brief explanation with a related Python code example using the `pika` library, which is commonly used for working with AMQP: ```python import pika # Establish a connection to the RabbitMQ server connection = pika.BlockingConnection(pika.ConnectionParameters('localhost')) channel = connection.channel() # Declare an exchange of type 'direct' channel.exchange_declare(exchange='logs', exchange_type='direct') # Define a callback function for handling messages def callback(ch, method, properties, body): print(f\"Received {body}\") # Acknowledge the message to the server ch.basic_ack(delivery_tag=method.delivery_tag) # Set up a queue and bind it to the exchange with routing key 'info' channel.queue_declare(queue='info') channel.queue_bind(exchange='logs', queue='info', routing_key='info') # Start consuming messages from the queue channel.basic_consume(queue='info', on_message_callback=callback) print('Waiting for logs. To exit press CTRL+C') channel.start_consuming() connection.close() ``` This example demonstrates setting up a direct exchange and handling message acknowledgments in Python using the `pika` library."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cap_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "durability_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nRabbitMQ 是一个开源的消息代理和队列服务器，基于高级消息队列协议（AMQP）实现，用于在分布式系统中通过异步消息传递实现应用解耦、流量削峰和可靠通信。\n\n## 核心要点\n- **消息模型**：RabbitMQ 采用生产者-消费者模型，生产者将消息发送到交换机，交换机根据路由规则将消息分发到一个或多个队列，消费者从队列中拉取或订阅消息。\n- **交换机类型**：支持 direct、topic、fanout 和 headers 四种交换机，分别实现点对点、主题匹配、广播和自定义头路由。\n- **可靠性机制**：提供消息持久化、生产者确认、消费者确认和死信队列，确保消息不丢失且可重试。\n- **集群与高可用**：支持镜像队列和仲裁队列，通过集群模式实现节点间数据同步和故障转移。\n- **灵活扩展**：通过插件系统支持 MQTT、STOMP 等协议，并集成管理界面和监控 API。\n\n## 应用场景\n常用于微服务间的异步任务调度（如订单处理）、系统解耦（如日志收集与存储分离）、流量削峰（如秒杀请求排队）以及跨语言服务通信（如 Java 与 Python 服务通过 RabbitMQ 交换数据）。\n\n## 相关概念\nAMQP 是 RabbitMQ 的核心协议，定义了消息格式和网络交互；交换机、队列和绑定是消息路由的三要素；死信队列用于处理无法消费的消息；虚拟主机（vhost）实现多租户隔离。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -17,5 +17,13 @@
     "description": "计算理论: Computational theory studies the mathematical models and fundamental limitations of computation, including Turing machines, formal languages, and computational complexity. One of the most important unsolved problems in computer science is the P vs NP problem. Here's a brief explanation with a Python code example for understanding the concept: - **P (Polynomial Time)**: Problems that can be solved in polynomial time by a deterministic Turing machine. - **NP (Nondeterministic Polynomial Time)**: Problems for which a solution can be verified in polynomial time by a deterministic Turing machine. Python code example to illustrate the difference between P and NP problems: ```python import itertools def is_subset_sum(numbers, target): # This function checks if there exists a subset of 'numbers' that sums up to 'target' for subset in itertools.chain.from_iterable(itertools.combinations(numbers, r) for r in range(len(numbers)+1)): if sum(subset) == target: return True return False # Example usage numbers = [3, 34, 4, 12, 5, 2] target = 9 print(is_subset_sum(numbers, target)) # Output: True or False depending on the input ``` This example demonstrates a problem that is NP-complete (subset sum problem), which means it can be verified in polynomial time but may not be solvable in polynomial time."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "计算理论是计算机科学的基础分支，主要研究计算的本质、计算问题的可解性以及计算资源的复杂性。本分支涵盖的核心子主题包括图灵机、P与NP问题以及有限自动机。图灵机是一种抽象计算模型，定义了什么是可计算的问题，是计算理论的基础；有限自动机是更简单的计算模型，常用于文本处理、编译器设计等领域，是理解更复杂模型的前提。P与NP问题则探讨计算问题的难度分类，即哪些问题可以在多项式时间内求解（P类），哪些问题的解可以在多项式时间内验证（NP类），以及两者是否相等，这是计算机科学中最重要的未解难题之一。学习路径建议从有限自动机入手，理解状态转移和正则语言；然后学习图灵机，掌握可计算性和停机问题；最后深入P与NP问题，了解复杂性理论和算法设计。这三个子主题层层递进，共同构成了计算理论的核心框架。",
+  "example_queries": [
+    "什么是图灵机，它如何定义可计算性？",
+    "P与NP问题是什么，为什么它如此重要？",
+    "有限自动机在编译器设计中有哪些应用？",
+    "如何判断一个问题是NP完全的？",
+    "停机问题为什么是不可判定的？"
+  ]
 }

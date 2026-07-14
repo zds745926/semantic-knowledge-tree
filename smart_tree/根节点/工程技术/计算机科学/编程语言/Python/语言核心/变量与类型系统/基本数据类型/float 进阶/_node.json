@@ -16,5 +16,13 @@
     "description": "float 进阶: The precision issues of floating-point numbers and the handling of special values are crucial topics in numerical computation. To illustrate this with an example using Python: ```python # Example to demonstrate floating point precision issue a = 0.1 + 0.2 print(\"Sum of 0.1 + 0.2:\", a) print(\"Expected: 0.3\") # Output will likely be something like: Sum of 0.1 + 0.2: 0.30000000000000004 # Handling special values such as infinity import math b = float('inf') print(\"Value of positive infinity:\", b) c = 1 / b print(\"Result of dividing 1 by infinity:\", c) # Output will be: Value of positive infinity: inf, Result of dividing 1 by infinity: 0.0 ``` This example demonstrates both the precision issue with floating-point arithmetic and how to handle special values like infinity in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "该分支深入探讨Python中float类型的进阶知识，主要涵盖浮点精度问题和特殊浮点值两个子主题。浮点精度问题源于二进制浮点数无法精确表示所有十进制小数，导致计算误差，这是计算机科学中普遍存在的挑战；特殊浮点值则包括正负无穷大（inf）、非数字（NaN）等，它们在某些数学运算或异常情况下出现，需要开发者正确识别和处理。这两个子主题相互关联：理解精度问题有助于避免计算错误，而掌握特殊浮点值则能处理边界情况。学习路径建议先理解浮点数的二进制表示原理，再掌握精度问题的表现与规避方法（如使用decimal模块），最后学习特殊浮点值的判断与处理。该分支适合已掌握float基本用法的开发者，帮助其编写更健壮、可靠的数值计算代码。",
+  "example_queries": [
+    "为什么0.1 + 0.2不等于0.3？如何解决？",
+    "如何判断一个浮点数是否为NaN或无穷大？",
+    "Python中float('inf')和float('-inf')的常见用途是什么？",
+    "如何避免浮点数比较时的精度陷阱？",
+    "decimal模块与float在精度控制上有何区别？"
+  ]
 }

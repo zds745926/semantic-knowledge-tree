@@ -19,5 +19,38 @@
       "content_preview": "列表推导式: The given Chinese text can be translated to English as follows: \"[Expression for variable in iterable_object if condition]. This is more concise and efficient than a for loop.\" Here's a brief Python code example that illustrates this concept: ```python # Example: Generate a list of squares of even numbers from 1 to 9 squares_of_evens = [x**2 for x in range(1, 10) if x % 2 == 0] print(squares_of_evens) # Output: [4, 16, 36, 64] ``` In this example, a list comprehension is used to generate the squares of even numbers between 1 and 9. This approach is more concise than using an explicit for loop with an if condition."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n列表推导式（List Comprehension）是Python中一种简洁、高效的创建列表的语法结构，它通过在一行代码中结合循环和条件表达式来生成新列表。\n\n## 何时使用\n当你需要从一个可迭代对象（如列表、元组、字符串、range等）中转换、过滤或组合元素以生成新列表时，列表推导式是首选。它特别适用于简单的映射（如对每个元素应用函数）和过滤（如保留满足条件的元素）操作，能显著减少代码行数并提高可读性。\n\n## 示例\n```Python\n# 生成0到9的平方列表\nsquares = [x**2 for x in range(10)]\nprint(squares)  # 输出: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\n# 过滤出偶数并求平方\neven_squares = [x**2 for x in range(10) if x % 2 == 0]\nprint(even_squares)  # 输出: [0, 4, 16, 36, 64]\n\n# 嵌套循环：生成笛卡尔积\npairs = [(x, y) for x in [1, 2, 3] for y in [4, 5, 6]]\nprint(pairs)  # 输出: [(1, 4), (1, 5), (1, 6), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6)]\n```\n\n## 反例\n避免在列表推导式中编写过于复杂的逻辑（如超过两个循环或嵌套多个条件），这会降低可读性。例如，`[x for x in range(100) if x % 2 == 0 if x % 3 == 0]` 虽然合法，但不如使用 `and` 连接条件清晰。\n\n## 边界条件\n注意列表推导式会立即生成整个列表，如果处理大量数据（如数百万个元素），会占用大量内存，此时应考虑使用生成器表达式（`(x for x in ...)`）以节省内存。另外，列表推导式中的变量作用域在Python 3中已修正，不会泄漏到外部作用域。",
+    "code_pattern": "def generate_list(input_iterable, condition=None, transform=None):\n    \"\"\"通用列表推导式模板：从可迭代对象生成新列表。\n    \n    Args:\n        input_iterable: 可迭代对象\n        condition: 可选的过滤函数，返回布尔值\n        transform: 可选的转换函数，应用于每个元素\n    \n    Returns:\n        新列表\n    \"\"\"\n    if condition is None:\n        condition = lambda x: True\n    if transform is None:\n        transform = lambda x: x\n    return [transform(item) for item in input_iterable if condition(item)]",
+    "common_pitfalls": [
+      "忘记使用条件表达式时，列表推导式会包含所有元素，可能导致结果不符合预期。例如，`[x for x in range(10) if x > 5]` 只保留大于5的元素，而 `[x for x in range(10) if x > 5 else 0]` 是语法错误，正确写法是 `[x if x > 5 else 0 for x in range(10)]`。",
+      "在嵌套循环的列表推导式中，循环顺序容易搞反。例如，`[(x, y) for x in range(3) for y in range(2)]` 等价于外层循环 `for x` 内层循环 `for y`，而不是相反。",
+      "列表推导式会立即计算并生成整个列表，对于大型数据集（如超过10万元素）会消耗大量内存和CPU，此时应使用生成器表达式或迭代器。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

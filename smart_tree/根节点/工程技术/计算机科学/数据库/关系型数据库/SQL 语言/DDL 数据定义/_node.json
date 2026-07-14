@@ -19,5 +19,26 @@
       "content_preview": "DDL 数据定义: CREATE/ALTER/DROP TABLE. Data types and constraints. PRIMARY KEY/FOREIGN KEY. Here are the translations with added Python code examples for coding/programming concepts: 1. **CREATE/ALTER/DROP TABLE** - In SQL, these commands are used to manage database tables. ```python # Example of creating a table in Python using SQLite3 import sqlite3 conn = sqlite3.connect('example.db') c = conn.cursor() # Create table c.execute('''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, age INTEGER)''') # Alter table (adding a column) c.execute(\"ALTER TABLE users ADD COLUMN email TEXT\") # Drop table c.execute(\"DROP TABLE users\") conn.commit() conn.close() ``` 2. **Data types and constraints** - Data types define the kind of data that can be stored in a database, while constraints ensure the integrity of the data. ```python # Example using SQLite3 to demonstrate data types and constraints import sqlite3 conn = sqlite3.connect('example.db') c = conn.cursor() # Create table with specific data types and constraints c.execute('''CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, name TEXT NOT NULL, price REAL CHECK(price > 0), stock INTEGER DEFAULT 10)''') # Inserting a row with valid data type and constraint c.execute(\"INSERT INTO products (name, price) VALUES ('Laptop', 999.99)\") conn.commit() conn.close() ``` 3. **PRIMARY KEY/FOREIGN KEY** - PRIMARY KEY is used to ensure that each record in a table has a unique identifier. - FOREIGN KEY is used to establish relationships between tables. ```python # Example using SQLite3 to demonstrate primary and foreign keys import sqlite3 conn = sqlite3.connect('example.db') c = conn.cursor() # Create parent table with PRIMARY KEY c.execute('''CREATE TABLE IF NOT EXISTS categories (id INTEGER PRIMARY KEY, name TEXT)''') # Create child table with FOREIGN KEY referencing the parent table c.execute('''CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, name TEXT, category_id INTEGER, FOREIGN KEY(category_id) REFERENCES categories(id))''') conn.commit() conn.close() ``` These examples provide a basic understanding of how to use these SQL commands and concepts in Python with SQLite3."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "sql_injection_v4",
+      "type": "application"
+    },
+    {
+      "id": "durability_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nDDL（Data Definition Language，数据定义语言）是 SQL 语言中用于定义和管理数据库结构（如数据库、表、索引、视图等）的一组语句。它主要关注数据库对象的创建、修改和删除，而不涉及具体数据的操作。常见的 DDL 语句包括 CREATE、ALTER、DROP 和 TRUNCATE。\n\n## 核心要点\n- **CREATE 语句**：用于创建新的数据库对象，如 CREATE TABLE 定义表结构，CREATE INDEX 创建索引，CREATE VIEW 创建视图。\n- **ALTER 语句**：用于修改现有数据库对象的结构，如 ALTER TABLE 添加、删除或修改列，ALTER INDEX 重建索引。\n- **DROP 语句**：用于删除数据库对象，如 DROP TABLE 删除表及其数据，DROP INDEX 删除索引，操作不可逆。\n- **TRUNCATE 语句**：用于快速删除表中的所有数据，但保留表结构，比 DELETE 效率更高且不可回滚。\n- **约束定义**：DDL 中常包含约束（如 PRIMARY KEY、FOREIGN KEY、UNIQUE、NOT NULL），用于保证数据的完整性和一致性。\n\n## 应用场景\nDDL 主要用于数据库的初始设计、结构变更和版本迁移。例如，在项目开发初期，使用 CREATE 语句建立数据库和表结构；当业务需求变化时，通过 ALTER 语句调整表字段或索引；在清理旧数据时，使用 DROP 或 TRUNCATE 快速释放空间。此外，DDL 也常用于数据库备份恢复脚本和自动化部署流程中。\n\n## 相关概念\nDDL 与 DML（数据操作语言，如 INSERT、UPDATE、DELETE）和 DCL（数据控制语言，如 GRANT、REVOKE）共同构成 SQL 语言的三大子集。DDL 操作通常具有隐式提交事务的特性，即执行后自动提交，无法回滚（部分数据库支持 DDL 事务）。此外，DDL 还涉及数据字典（系统表）的更新，用于存储数据库对象的元数据。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

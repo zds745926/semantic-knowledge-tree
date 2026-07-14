@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "py_mock_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\npytest 是一个功能强大、易于使用的 Python 测试框架，支持简单的单元测试和复杂的功能测试，具有自动发现测试、丰富的断言、fixture 机制和插件扩展等特点。\n\n## 何时使用\n当你需要为 Python 项目编写自动化测试时，pytest 是首选框架，尤其适合从简单到复杂的各种测试场景。它能够自动发现以 test_ 开头的测试文件和函数，无需额外配置，且支持参数化测试、fixture 共享和第三方插件集成，显著提升测试效率。\n\n## 示例\n```Python\n# test_sample.py\nimport pytest\n\ndef add(a, b):\n    return a + b\n\ndef test_add_positive():\n    assert add(1, 2) == 3\n\ndef test_add_negative():\n    assert add(-1, -2) == -3\n\n@pytest.mark.parametrize(\"a,b,expected\", [\n    (1, 2, 3),\n    (0, 0, 0),\n    (-1, 1, 0),\n])\ndef test_add_parametrize(a, b, expected):\n    assert add(a, b) == expected\n```\n\n## 反例\n错误用法：在测试函数中使用 print 语句进行调试，而不使用断言或 pytest 的 -s 选项，导致测试输出混乱且无法自动化验证结果。\n\n## 边界条件\n注意：测试函数名必须以 test_ 开头或结尾，否则 pytest 默认不会发现它们。同时，fixture 的作用域（scope）需合理设置，避免在函数级 fixture 中执行耗时操作导致测试效率低下。",
+    "code_pattern": "import pytest\n\ndef add(a, b):\n    return a + b\n\n@pytest.mark.parametrize(\"a,b,expected\", [\n    (1, 2, 3),\n    (0, 0, 0),\n    (-1, 1, 0),\n])\ndef test_add(a, b, expected):\n    assert add(a, b) == expected",
+    "common_pitfalls": [
+      "测试文件或函数命名不符合 pytest 默认规则（如不以 test_ 开头），导致测试未被自动发现，需手动指定或修改命名。",
+      "在 fixture 中未正确设置 scope（如默认 function 级别），导致每个测试函数都重新创建 fixture 实例，造成性能浪费或状态不一致。",
+      "使用 assert 时忽略异常处理，例如 assert func() 直接抛出异常而非捕获，导致测试失败信息不明确，应使用 pytest.raises 显式检查异常。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

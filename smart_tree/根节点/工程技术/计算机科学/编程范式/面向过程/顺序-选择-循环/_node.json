@@ -19,5 +19,34 @@
       "content_preview": "顺序-选择-循环: The three basic structures of procedural programming: sequential execution, conditional selection (if-else), and looping (while/for). Here are brief Python code examples for each: 1. **Sequential Execution**: ```python x = 5 y = 10 print(x + y) ``` 2. **Conditional Selection (if-else)**: ```python age = 20 if age >= 18: print(\"You are an adult.\") else: print(\"You are a minor.\") ``` 3. **Looping (while/for)**: - Using `while` loop: ```python count = 0 while count < 5: print(count) count += 1 ``` - Using `for` loop: ```python for i in range(5): print(i) ```"
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "boolean_algebra_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "application"
+    },
+    {
+      "id": "sjf_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n顺序-选择-循环是结构化编程的三种基本控制结构，用于描述程序执行流程。顺序结构按代码书写顺序依次执行；选择结构根据条件判断选择执行不同分支；循环结构重复执行某段代码直到条件不满足。这三种结构组合可以表达任何算法逻辑。\n\n## 核心要点\n1. 顺序结构是最简单的流程，语句按先后顺序逐条执行，无分支或跳转。\n2. 选择结构通过条件判断（如if-else、switch）实现分支，使程序能根据情况执行不同路径。\n3. 循环结构（如for、while、do-while）允许重复执行代码块，需设置循环变量和终止条件避免死循环。\n4. 三种结构可以嵌套使用，例如循环内包含选择，或选择内包含顺序，以构建复杂逻辑。\n5. 结构化编程强调仅使用这三种结构，避免goto语句，以提高代码可读性和可维护性。\n\n## 应用场景\n顺序-选择-循环广泛应用于所有编程语言和软件开发中。例如，用户登录验证（顺序读取输入、选择判断密码、循环重试）、数据处理（循环遍历数组、选择过滤条件）、游戏逻辑（顺序初始化、选择玩家操作、循环更新状态）。它们是构建任何程序的基础模块。\n\n## 相关概念\n相关概念包括控制流（程序执行路径）、流程图（可视化表示三种结构）、算法（用这三种结构描述步骤）。此外，函数和模块化编程将三种结构封装为独立单元，而面向对象编程中方法内部仍依赖这些结构实现逻辑。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

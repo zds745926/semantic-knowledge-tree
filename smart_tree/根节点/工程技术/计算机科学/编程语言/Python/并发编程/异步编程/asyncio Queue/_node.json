@@ -19,5 +19,30 @@
       "content_preview": "asyncio Queue: asyncio.Queue. async put/get. maxsize. LifoQueue/PriorityQueue. Here are the translations with brief Python code examples: 1. **asyncio.Queue** - This is a queue implementation in asyncio for managing asynchronous tasks. ```python import asyncio async def producer(queue): await queue.put(\"Item 1\") await queue.put(\"Item 2\") async def consumer(queue): item = await queue.get() print(f\"Consumed: {item}\") async def main(): queue = asyncio.Queue(maxsize=2) task1 = asyncio.create_task(producer(queue)) task2 = asyncio.create_task(consumer(queue)) await task1 await task2 asyncio.run(main()) ``` 2. **async put/get** - These are asynchronous methods to add and retrieve items from a queue. ```python import asyncio async def main(): queue = asyncio.Queue() await queue.put(\"Item 3\") item = await queue.get() print(f\"Retrieved: {item}\") asyncio.run(main()) ``` 3. **maxsize** - This parameter sets the maximum size of the queue. ```python import asyncio async def main(): queue = asyncio.Queue(maxsize=1) await queue.put(\"Item 4\") try: await queue.put(\"Item 5\") # This will block or raise an exception if maxsize is reached except asyncio.QueueFull: print(\"Queue is full\") asyncio.run(main()) ``` 4. **LifoQueue/PriorityQueue** - LifoQueue implements a last-in-first-out (LIFO) stack, while PriorityQueue orders items based on their priority. ```python import asyncio from queue import LifoQueue, PriorityQueue # Example with LifoQueue lifo_queue = LifoQueue() lifo_queue.put(\"Item 6\") print(lifo_queue.get()) # Output: Item 6 # Example with PriorityQueue priority_queue = PriorityQueue() priority_queue.put((2, \"Item 7\")) priority_queue.put((1, \"Item 8\")) while not priority_queue.empty(): print(priority_queue.get()) # Output: (1, 'Item 8'), then (2, 'Item 7') ``` These examples should give you a clear understanding of how these concepts work in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_lifo_queue_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_thread_safety_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nasyncio Queue 是 Python asyncio 库中提供的异步队列，用于在协程之间安全地传递数据，支持异步的 put 和 get 操作，避免阻塞事件循环。\n\n## 何时使用\n当需要在多个生产者协程和多个消费者协程之间进行数据交换时，使用 asyncio Queue 可以解耦生产与消费逻辑，并控制流量。特别适用于爬虫、WebSocket 消息处理、任务分发等场景，其中生产速度和消费速度可能不一致。\n\n## 示例\n```Python\nimport asyncio\n\nasync def producer(queue, n):\n    for i in range(n):\n        await asyncio.sleep(0.1)  # 模拟生产耗时\n        await queue.put(f\"item-{i}\")\n        print(f\"Produced item-{i}\")\n    await queue.put(None)  # 发送结束信号\n\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(f\"Consumed {item}\")\n        queue.task_done()\n\nasync def main():\n    queue = asyncio.Queue(maxsize=5)\n    await asyncio.gather(producer(queue, 10), consumer(queue))\n\nasyncio.run(main())\n```\n\n## 反例\n不要在协程中使用普通的 queue.Queue，因为它会阻塞线程，导致事件循环挂起。例如，在协程中调用 queue.get() 会阻塞整个线程，其他协程无法运行。\n\n## 边界条件\n- 队列满时，put 会等待直到有空间；队列空时，get 会等待直到有数据，需确保有对应的消费者/生产者避免死锁。\n- 使用 maxsize 限制队列大小可防止内存溢出，但需合理设置以避免生产者过度等待。",
+    "code_pattern": "import asyncio\n\nasync def worker(name, queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            queue.task_done()\n            break\n        # 处理 item\n        await asyncio.sleep(0.1)\n        queue.task_done()\n\nasync def main():\n    queue = asyncio.Queue(maxsize=10)\n    producers = [asyncio.create_task(produce(queue, i)) for i in range(3)]\n    consumers = [asyncio.create_task(worker(f'worker-{i}', queue)) for i in range(2)]\n    await asyncio.gather(*producers)\n    # 发送结束信号\n    for _ in consumers:\n        await queue.put(None)\n    await asyncio.gather(*consumers)\n\nasync def produce(queue, id):\n    for i in range(5):\n        await queue.put(f'data-{id}-{i}')\n        await asyncio.sleep(0.05)\n\nasyncio.run(main())",
+    "common_pitfalls": [
+      "忘记调用 queue.task_done() 导致 join() 永远不返回，应确保每个 get 后最终调用 task_done()。",
+      "使用普通 queue.Queue 替代 asyncio.Queue，导致事件循环阻塞，应始终使用 asyncio.Queue。",
+      "未处理队列空或满时的等待，导致协程死锁，应确保生产者和消费者数量匹配，或使用超时参数。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

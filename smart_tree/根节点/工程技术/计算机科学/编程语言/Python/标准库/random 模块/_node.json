@@ -19,5 +19,42 @@
       "content_preview": "random 模块: The provided Chinese text translates to: `random.random()` generates a floating-point number between 0 and 1 (exclusive of 1). `randint(start, stop)` generates an integer between `start` and `stop`, inclusive. `choice(sequence)` or `shuffle(sequence)` are used for sequence operations such as selecting an element from a sequence or shuffling the elements in a sequence, respectively. The `secrets` module provides functions for generating cryptographically strong random numbers suitable for managing secrets. Here is a brief Python code example using these concepts: ```python import random import secrets # Using random.random() random_float = random.random() print(\"Random float:\", random_float) # Using randint() random_integer = random.randint(1, 10) print(\"Random integer between 1 and 10:\", random_integer) # Using choice() and shuffle() items = [1, 2, 3, 4, 5] chosen_item = secrets.choice(items) print(\"Chosen item from the list:\", chosen_item) random.shuffle(items) print(\"Shuffled list:\", items) # Using secrets module for stronger randomness secrets_token = secrets.token_hex(16) # Generates a 32-character random token in hexadecimal format print(\"Secrets token:\", secrets_token) ``` This example demonstrates the usage of `random.random()`, `randint()`, `choice()`, and `shuffle()` functions, as well as how to use the `secrets` module for generating cryptographically strong random numbers."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_hashlib_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nrandom 模块是 Python 标准库中用于生成伪随机数的模块，提供了多种分布（均匀、正态、指数等）的随机数生成函数，以及随机选择、打乱序列等实用功能。\n\n## 何时使用\n当需要在程序中引入不确定性或模拟随机事件时使用，例如游戏中的随机掉落、数据采样、密码学无关的随机测试数据生成、蒙特卡洛模拟等。注意：random 模块基于 Mersenne Twister 算法，不适用于密码学安全场景。\n\n## 示例\n```Python\nimport random\n\n# 生成 [1, 10] 之间的随机整数\nprint(random.randint(1, 10))\n\n# 从列表中随机选择一个元素\nitems = ['苹果', '香蕉', '橘子']\nprint(random.choice(items))\n\n# 打乱列表顺序\nrandom.shuffle(items)\nprint(items)\n\n# 从 100 个数字中随机采样 5 个不重复的元素\npopulation = range(100)\nsample = random.sample(population, 5)\nprint(sample)\n```\n\n## 反例\n不要使用 random 模块生成密码或令牌，因为其伪随机性可被预测，应使用 secrets 模块。例如：`random.choice('abcdef123456')` 生成密码是不安全的。\n\n## 边界条件\nrandom.seed() 设置种子后，同一种子产生的随机序列完全相同，适合重现实验；但若在多线程中共享同一个 Random 实例，可能引发竞态条件，建议每个线程使用独立的 Random 实例。",
+    "code_pattern": "import random\n\ndef generate_random_data(seed=None):\n    if seed is not None:\n        random.seed(seed)\n    \n    rand_int = random.randint(1, 100)\n    rand_float = random.uniform(0.0, 1.0)\n    rand_choice = random.choice(['a', 'b', 'c'])\n    shuffled = [1, 2, 3, 4, 5]\n    random.shuffle(shuffled)\n    sample = random.sample(range(1000), 10)\n    \n    return {\n        'rand_int': rand_int,\n        'rand_float': rand_float,\n        'rand_choice': rand_choice,\n        'shuffled': shuffled,\n        'sample': sample\n    }",
+    "common_pitfalls": [
+      "误用 random 模块进行密码学安全操作：random 模块的伪随机数生成器是可预测的，不应用于生成密码、令牌或密钥，应使用 secrets 模块。",
+      "忘记设置种子导致结果不可复现：在调试或需要确定性结果时，未调用 random.seed() 会导致每次运行结果不同，难以定位问题。",
+      "在多线程中共享 Random 实例：多个线程同时调用同一个 Random 对象的方法可能导致数据竞争和不可预测行为，应为每个线程创建独立的 Random 实例。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

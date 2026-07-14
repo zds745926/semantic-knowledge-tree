@@ -19,5 +19,30 @@
       "content_preview": "ip/ss: IP address/link/route. `ss -tuln` as an alternative to `netstat`. In the context of network utilities in Linux, `ip`, `ss`, and `netstat` are commonly used tools for displaying network connections, routing tables, interface statistics, etc. - **ip**: This is a command-line utility that can be used to configure network interfaces and display their status. It's more powerful and flexible than the older `ifconfig`. - **ss**: This stands for \"stream state\" and is a utility similar to `netstat` but generally faster and more efficient, especially when dealing with large amounts of data. Here’s an example of how you might use these commands: ### Using `ip` To display all network interfaces: ```sh ip addr show ``` To display link layer information: ```sh ip -d link show ``` To display routing tables: ```sh ip route show ``` ### Using `ss` To display all active TCP connections: ```python import subprocess def get_active_tcp_connections(): result = subprocess.run(['ss', 'tcp'], capture_output=True, text=True) return result.stdout print(get_active_tcp_connections()) ``` This Python function uses the `subprocess` module to run the `ss -t` command and captures its output. To display all active UDP connections: ```python def get_active_udp_connections(): result = subprocess.run(['ss', 'udp'], capture_output=True, text=True) return result.stdout print(get_active_udp_connections()) ``` These examples demonstrate how to use Python to interface with the `ss` command for network diagnostics."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tcp_bbr_v4",
+      "type": "application"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nip 和 ss 是 Linux 系统中用于网络配置和诊断的两个命令行工具。ip 命令用于显示或操作路由、网络设备、接口和隧道，是 ifconfig 的现代替代品；ss 命令用于查看套接字统计信息，是 netstat 的现代替代品，能更高效地显示网络连接状态。\n\n## 核心要点\n- ip 命令支持子命令如 ip addr（管理IP地址）、ip link（管理网络接口）、ip route（管理路由表），功能全面且输出格式清晰。\n- ss 命令通过直接读取内核信息来获取套接字数据，比 netstat 更快，尤其在高并发场景下优势明显。\n- 两者都支持过滤和格式化输出，例如 ss -tuln 可列出所有监听中的 TCP/UDP 端口，ip -s link 可显示接口统计信息。\n- ip 和 ss 是 iproute2 软件包的一部分，现代 Linux 发行版默认安装，推荐替代传统的 net-tools 工具集。\n- 使用 ip 和 ss 时通常需要 root 权限才能查看所有连接或修改网络配置，普通用户只能查看有限信息。\n\n## 应用场景\n系统管理员常用 ip 命令配置网络接口、添加或删除路由、管理 VLAN 和隧道；ss 命令用于快速诊断网络连接问题，如检查服务是否在监听端口、查看连接数或识别异常连接。两者结合可高效完成日常网络排障和配置任务。\n\n## 相关概念\nip 和 ss 属于 iproute2 工具集，与传统的 ifconfig、netstat、route 命令功能重叠但更现代。它们依赖内核的 netlink 接口获取信息，而旧工具使用 proc 文件系统（如 /proc/net/dev）。此外，网络配置还涉及 iptables/nftables（防火墙）、tcpdump（抓包）等工具，共同构成 Linux 网络管理生态。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

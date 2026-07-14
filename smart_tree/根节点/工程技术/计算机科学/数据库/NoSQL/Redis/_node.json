@@ -19,5 +19,34 @@
       "content_preview": "Redis: Memory-based key-value database. String/List/Set/SortedSet/Hash/Bitmap/GEO. Here is a brief explanation of each term along with a corresponding Python code example using the `redis` library, which is commonly used for implementing such databases: 1. **String**: A string value can be stored and retrieved. ```python import redis r = redis.Redis(host='localhost', port=6379, db=0) r.set('key', 'value') print(r.get('key')) # Output: b'value' ``` 2. **List**: A list of strings can be stored and manipulated. ```python import redis r = redis.Redis(host='localhost', port=6379, db=0) r.rpush('list_key', 'item1', 'item2') print(r.lrange('list_key', 0, -1)) # Output: [b'item1', b'item2'] ``` 3. **Set**: A set of unique strings can be stored. ```python import redis r = redis.Redis(host='localhost', port=6379, db=0) r.sadd('set_key', 'member1', 'member2') print(r.smembers('set_key')) # Output: {b'member1', b'member2'} ``` 4. **Sorted Set**: A set of unique strings with associated scores can be stored and sorted. ```python import redis r = redis.Redis(host='localhost', port=6379, db=0) r.zadd('sorted_set_key', {'member1': 1, 'member2': 2}) print(r.zrange('sorted_set_key', 0, -1)) # Output: [b'member1', b'member2'] ``` 5. **Hash**: A collection of fields and values can be stored. ```python import redis r = redis.Redis(host='localhost', port=6379, db=0) r.hset('hash_key', mapping={'field1': 'value1', 'field2': 'value2'}) print(r.hgetall('hash_key')) # Output: {b'field1': b'value1', b'field2': b'value2'} ``` 6. **Bitmap**: A bit array can be stored and manipulated. ```python import redis r = redis.Redis(host='localhost', port=6379, db=0) r.setbit('bitmap_key', 5, 1) # Set the 5th bit to 1 print(r.getbit('bitmap_key', 5)) # Output: 1 ``` 7. **GEO**: Geospatial data can be stored and queried. ```python import redis r = redis.Redis(host='localhost', port=6379, db=0) r.geoadd('geo_key', 12.345, -67.890, 'location1') print(r.georadius('geo_key', 12.345, -67.890, 1000, unit='m')) # Output: [b'location1'] ``` These examples use the `redis` library to interact with a Redis server, which is a popular in-memory data structure store used as a database, cache, and message broker."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "bloom_filter_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_json_v4",
+      "type": "application"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_ipc_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nRedis（Remote Dictionary Server）是一个开源的高性能键值对（Key-Value）存储系统，通常被归类为NoSQL数据库。它主要将数据存储在内存中，因此读写速度极快，并支持数据持久化到磁盘，以平衡速度与可靠性。\n\n## 核心要点\n- **内存存储与高性能**：Redis将所有数据保存在内存中，读写延迟通常在微秒级别，每秒可处理数十万次操作，非常适合高并发场景。\n- **丰富的数据结构**：支持字符串、哈希、列表、集合、有序集合等，以及位图、HyperLogLog、地理空间索引等高级结构，满足多样化的数据操作需求。\n- **持久化与高可用**：提供RDB快照和AOF日志两种持久化方式，防止数据丢失；同时支持主从复制、哨兵模式和集群模式，实现高可用性和水平扩展。\n- **原子操作与事务**：单个命令是原子性的，并支持通过MULTI/EXEC实现简单事务，保证多个操作的原子执行。\n\n## 应用场景\nRedis广泛应用于缓存系统，以加速数据库查询；也常用于实时排行榜、会话管理、消息队列（如发布/订阅模式）、分布式锁以及限流计数器等场景。其高性能和丰富特性使其成为现代互联网架构中不可或缺的组件。\n\n## 相关概念\nRedis常与Memcached比较，后者是更简单的纯内存缓存系统，但缺乏持久化和丰富数据结构。此外，Redis与关系型数据库（如MySQL）互补，常作为前端缓存层；与消息队列（如Kafka）相比，Redis的发布/订阅功能更轻量但持久性较弱。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

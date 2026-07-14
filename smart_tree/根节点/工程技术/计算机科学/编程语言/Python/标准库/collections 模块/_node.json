@@ -19,5 +19,39 @@
       "content_preview": "collections 模块: Special Containers: - defaultdict with automatic default values - Counter for counting elements - deque for double-ended queue operations with O(1) time complexity at both ends - namedtuple for named tuples Python code examples: ```python from collections import defaultdict, Counter, deque, namedtuple # Example of defaultdict def example_defaultdict(): d = defaultdict(int) # Default value is 0 (integer) d['a'] += 1 print(d) # Output: defaultdict(<class 'int'>, {'a': 1}) # Example of Counter def example_counter(): c = Counter(['a', 'b', 'c', 'a', 'b', 'b']) print(c) # Output: Counter({'b': 3, 'a': 2, 'c': 1}) # Example of deque def example_deque(): d = deque([1, 2, 3]) d.append(4) d.appendleft(0) print(d) # Output: deque([0, 1, 2, 3, 4]) # Example of namedtuple def example_namedtuple(): Point = namedtuple('Point', ['x', 'y']) p = Point(x=1.0, y=2.0) print(p.x, p.y) # Output: 1.0 2.0 example_defaultdict() example_counter() example_deque() example_namedtuple() ``` These examples demonstrate the basic usage of each special container in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_hashlib_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\ncollections 模块是 Python 标准库中提供替代内置容器类型（如 dict、list、set、tuple）的专用容器数据类型的模块，旨在提高代码的可读性、性能和内存效率。\n\n## 何时使用\n当需要更高效或更语义化的数据结构时使用，例如使用 namedtuple 创建轻量级不可变对象，使用 deque 实现双端队列操作，使用 Counter 进行计数统计，使用 OrderedDict 保持插入顺序，使用 defaultdict 提供默认值避免键不存在错误。这些场景常见于数据处理、缓存、算法实现和日志分析中。\n\n## 示例\n```Python\nfrom collections import Counter, defaultdict, deque, namedtuple\n\n# 使用 Counter 统计字符频率\ntext = \"hello world\"\ncounter = Counter(text)\nprint(counter.most_common(2))  # [('l', 3), ('o', 2)]\n\n# 使用 defaultdict 分组\nwords = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']\ngroup = defaultdict(list)\nfor word in words:\n    group[word].append(len(word))\nprint(dict(group))  # {'apple': [5, 5, 5], 'banana': [6, 6], 'orange': [6]}\n\n# 使用 deque 高效双端操作\nd = deque([1, 2, 3])\nd.appendleft(0)\nd.append(4)\nprint(list(d))  # [0, 1, 2, 3, 4]\n\n# 使用 namedtuple 定义简单类\nPoint = namedtuple('Point', ['x', 'y'])\np = Point(10, 20)\nprint(p.x, p.y)  # 10 20\n```\n\n## 反例\n错误用法：在需要频繁随机访问的场景中使用 deque，因为 deque 的索引访问是 O(n) 而非 O(1)；或者使用 OrderedDict 但不需要保持顺序，造成不必要的内存开销。\n\n## 边界条件\n注意：Counter 的 most_common 方法在空计数器上返回空列表；defaultdict 的默认工厂函数在访问不存在的键时自动调用，可能导致意外副作用（如文件打开）；deque 的最大长度限制（maxlen）会丢弃另一端的元素。",
+    "code_pattern": "from collections import Counter, defaultdict, deque, namedtuple\n\n# 通用模板：根据需求选择容器\n# 计数：Counter\ncounter = Counter(iterable)\n# 分组：defaultdict\ngroup = defaultdict(list)\nfor item in iterable:\n    group[key].append(item)\n# 双端队列：deque\ndq = deque(iterable, maxlen=None)\ndq.append(item)\ndq.appendleft(item)\n# 命名元组：namedtuple\nRecord = namedtuple('Record', ['field1', 'field2'])\nrecord = Record(value1, value2)",
+    "common_pitfalls": [
+      "使用 defaultdict 时，如果默认工厂函数有副作用（如打开文件或网络连接），每次访问不存在的键都会触发该函数，导致资源泄漏或意外行为。",
+      "deque 的索引访问（如 dq[100]）是 O(n) 操作，在需要频繁随机访问时性能极差，应改用 list。",
+      "Counter 的 subtract 方法允许结果出现负数，而 update 方法仅增加计数，容易混淆导致计数错误。",
+      "namedtuple 的字段名不能是 Python 关键字或以下划线开头，否则会引发 ValueError，且字段名重复也会报错。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

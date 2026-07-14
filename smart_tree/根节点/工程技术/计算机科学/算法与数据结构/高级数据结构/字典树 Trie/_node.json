@@ -19,5 +19,34 @@
       "content_preview": "字典树 Trie: Prefix string matching. Time complexity O(L). Autocomplete/spell checking/IP routing. Here are some brief Python code examples for each concept: 1. **Prefix String Matching**: ```python def prefix_match(text, prefix): return text.startswith(prefix) # Example usage print(prefix_match(\"hello\", \"he\")) # Output: True ``` 2. **Autocomplete** (using a simple Trie structure for demonstration purposes): ```python class TrieNode: def __init__(self): self.children = {} self.is_end_of_word = False class Trie: def __init__(self): self.root = TrieNode() def insert(self, word): node = self.root for char in word: if char not in node.children: node.children[char] = TrieNode() node = node.children[char] node.is_end_of_word = True def autocomplete(self, prefix): node = self.root for char in prefix: if char not in node.children: return [] node = node.children[char] def dfs(node, path, results): if node.is_end_of_word: results.append(''.join(path + [node])) for child_char, child_node in node.children.items(): dfs(child_node, path + [child_char], results) result_words = [] dfs(node, [], result_words) return result_words # Example usage trie = Trie() words = [\"hello\", \"helium\", \"heat\", \"help\"] for word in words: trie.insert(word) print(trie.autocomplete(\"he\")) # Output: ['hello', 'helium', 'heat', 'help'] ``` 3. **Spell Checking** (using a simple approach with a dictionary): ```python def spell_check(word, dictionary): return word in dictionary # Example usage dictionary = {\"hello\", \"world\", \"python\", \"code\"} print(spell_check(\"hello\", dictionary)) # Output: True ``` 4. **IP Routing** (using a simple routing table structure for demonstration purposes): ```python class Route: def __init__(self, prefix, next_hop): self.prefix = prefix self.next_hop = next_hop class Router: def __init__(self): self.routing_table = [] def add_route(self, route): self.routing_table.append(route) def find_next_hop(self, ip_address): for route in self.routing_table: if ip_address.startswith(route.prefix): return route.next_hop return \"Unknown\" # Example usage router = Router() routes = [ Route(\"192.168.\", \"next_hop_1\"), Route(\"10.0.\", \"next_hop_2\") ] for route in routes: router.add_route(route) print(router.find_next_hop(\"192.168.1.1\")) # Output: next_hop_1 ``` These examples provide a basic implementation of the concepts mentioned, which can be expanded and optimized based on specific requirements."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "bst_search_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "avl_tree_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n字典树（Trie），又称前缀树或单词查找树，是一种用于高效存储和检索字符串集合中键的树形数据结构。其核心思想是利用字符串的公共前缀来减少查询时间，最大限度地减少无谓的字符串比较，使得插入和查找操作的时间复杂度与字符串长度成正比。\n\n## 核心要点\n1.  **节点结构**：每个节点通常包含一个指向子节点的指针数组（或哈希表），以及一个布尔标志位，用于标记从根节点到当前节点路径上的字符序列是否构成一个完整的单词。\n2.  **前缀共享**：所有具有相同前缀的字符串共享从根节点开始的相同路径，这是Trie节省空间和提高查询效率的关键。\n3.  **基本操作**：主要操作包括插入（Insert）和搜索（Search），两者均从根节点出发，逐字符遍历路径。搜索操作可精确查找单词或检查前缀是否存在。\n4.  **时间复杂度**：插入和查找的时间复杂度均为O(L)，其中L为字符串的长度，与集合中字符串的总数无关，这是其相对于哈希表等结构的优势。\n5.  **空间权衡**：Trie以空间换时间，当存储大量短字符串或字符集较大时，节点中的指针数组可能造成较大的内存开销。\n\n## 应用场景\n字典树广泛应用于自动补全、拼写检查、IP路由（最长前缀匹配）和词频统计等场景。例如，搜索引擎的搜索建议功能利用Trie快速找出所有以用户输入为前缀的搜索词，而编译器中的词法分析器也常使用Trie来识别关键字。\n\n## 相关概念\nTrie与**后缀树**和**基数树**密切相关，后缀树是Trie的一种压缩形式，用于处理字符串的子串问题；基数树则通过合并只有一个子节点的节点来进一步压缩空间。此外，**AC自动机**（Aho-Corasick算法）在Trie的基础上引入了失败指针，用于多模式串匹配。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

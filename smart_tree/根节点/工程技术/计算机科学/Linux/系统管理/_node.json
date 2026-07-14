@@ -19,5 +19,13 @@
     "description": "系统管理: Linux system management includes file operations, text processing, process management, and permission control—essential daily operational skills. For a more detailed explanation, here are some brief Python code examples for each concept: 1. **File Operations**: ```python # Example of reading from and writing to a file in Python with open('example.txt', 'w') as f: f.write(\"Hello, world!\") with open('example.txt', 'r') as f: content = f.read() print(content) ``` 2. **Text Processing**: ```python # Example of using regular expressions to find patterns in text import re text = \"The quick brown fox jumps over the lazy dog\" pattern = r\"fox\" matches = re.findall(pattern, text) print(matches) # Output: ['fox'] ``` 3. **Process Management**: ```python # Example of using subprocess to run a command and capture its output import subprocess result = subprocess.run(['ls', '-l'], stdout=subprocess.PIPE) print(result.stdout.decode()) ``` 4. **Permission Control**: While Python itself does not directly control file permissions, you can use the `os` module to check them. ```python # Example of checking if a file is writable using os module import os path = 'example.txt' if os.access(path, os.W_OK): print(f\"{path} is writable.\") else: print(f\"{path} is not writable.\") ``` These examples provide a basic understanding and practical application of these concepts in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "系统管理是Linux操作系统的核心实践领域，涵盖文件管理、文本处理、进程管理、权限管理和网络配置五大子主题。文件管理涉及目录结构、文件操作与磁盘管理，是系统操作的基础；文本处理则利用grep、sed、awk等工具对配置文件与日志进行高效解析；进程管理关注程序运行状态、资源调度与后台任务控制，确保系统稳定高效；权限管理通过用户、组与文件权限机制保障系统安全；网络配置则负责网络接口、路由、防火墙及服务监听等设置，使系统能够互联互通。这些子主题相互依赖：文件与文本处理为进程和网络配置提供数据支持，权限管理贯穿所有操作以控制访问，网络配置则依赖进程管理来启动服务。学习路径建议从文件管理和文本处理入手，掌握基本操作与日志分析；再学习进程管理理解系统运行机制；随后深入权限管理强化安全意识；最后结合网络配置实现完整的系统管理能力。该分支能回答从日常运维到故障排查的各类问题，是Linux工程师的必备技能。",
+  "example_queries": [
+    "如何在Linux中查找并删除30天前的日志文件？",
+    "如何查看当前系统中CPU和内存占用最高的进程？",
+    "如何设置目录权限，使某个用户只能读取而不能修改文件？",
+    "如何配置静态IP地址并重启网络服务使配置生效？",
+    "如何使用awk命令从系统日志中提取特定时间段的错误信息？"
+  ]
 }

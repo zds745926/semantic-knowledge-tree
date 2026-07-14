@@ -19,5 +19,38 @@
       "content_preview": "datetime: Here is the English translation with added Python code examples for clarity: \"datetime.now() / timedelta / date / time / datetime.strftime formatting.\" Python code examples: ```python from datetime import datetime, timedelta # Get current datetime current_datetime = datetime.now() print(current_datetime) # Calculate a past date using timedelta past_date = current_datetime - timedelta(days=7) print(past_date) # Create a date object specific_date = datetime(year=2023, month=10, day=5).date() print(specific_date) # Extract time from datetime current_time = current_datetime.time() print(current_time) # Format datetime using strftime formatted_datetime = current_datetime.strftime('%Y-%m-%d %H:%M:%S') print(formatted_datetime) ``` This translation and the provided code examples cover the technical terms you mentioned, including `datetime.now()`, `timedelta`, `date`, `time`, and `strftime` formatting in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_timer_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_tempfile_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_hashlib_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\ndatetime 是 Python 标准库中用于处理日期和时间的模块，提供了 datetime、date、time、timedelta 等类，支持日期时间的创建、运算、格式化与解析。\n\n## 何时使用\n当需要表示具体的日期和时间（如 2025-01-15 14:30:00）时，应使用 datetime 模块。它适用于时间戳转换、日期计算、时间差计算、时区处理等场景，是 Python 中处理日期时间最核心的模块。\n\n## 示例\n```Python\nfrom datetime import datetime, timedelta\n\n# 获取当前时间\nnow = datetime.now()\nprint(now)  # 输出类似 2025-01-15 14:30:00.123456\n\n# 创建指定时间\ndt = datetime(2025, 1, 15, 14, 30, 0)\nprint(dt)  # 2025-01-15 14:30:00\n\n# 时间差计算\nfuture = now + timedelta(days=7)\nprint(future)\n\n# 格式化输出\nprint(now.strftime(\"%Y-%m-%d %H:%M:%S\"))  # 2025-01-15 14:30:00\n\n# 解析字符串\nparsed = datetime.strptime(\"2025-01-15 14:30:00\", \"%Y-%m-%d %H:%M:%S\")\nprint(parsed)\n```\n\n## 反例\n错误地使用 datetime 对象直接与字符串拼接，例如 `print(\"当前时间：\" + datetime.now())` 会引发 TypeError，应使用 strftime 或 f-string 格式化。\n\n## 边界条件\n注意 datetime 对象是时区无感知的（naive），跨时区操作时需使用 pytz 或 zoneinfo 明确指定时区；timedelta 支持负数，但加减运算时需注意溢出（如 datetime.min - timedelta(days=1) 会引发 OverflowError）。",
+    "code_pattern": "from datetime import datetime, timedelta, timezone\n\n# 获取当前 UTC 时间\nnow_utc = datetime.now(timezone.utc)\n\n# 创建指定时间（本地时区无感知）\ndt = datetime(2025, 1, 15, 14, 30, 0)\n\n# 格式化输出\nformatted = dt.strftime(\"%Y-%m-%d %H:%M:%S\")\n\n# 解析字符串\nparsed = datetime.strptime(\"2025-01-15 14:30:00\", \"%Y-%m-%d %H:%M:%S\")\n\n# 时间加减\nfuture = dt + timedelta(days=7, hours=3)\n\n# 时间差\ndelta = future - dt\nprint(delta.days, delta.seconds)",
+    "common_pitfalls": [
+      "1. 时区问题：直接使用 datetime.now() 获取的是本地时间且无时区信息，跨时区比较或存储时应使用 datetime.now(timezone.utc) 或带时区的对象，否则可能导致时间偏差。",
+      "2. 格式化字符串错误：strftime 和 strptime 的格式码区分大小写（如 %Y 与 %y 不同），且不支持毫秒直接使用 %f（需用 %f 表示微秒，6 位数字），容易因格式不匹配导致 ValueError。",
+      "3. 时间运算溢出：datetime 对象有范围限制（year 1-9999），加减 timedelta 时若超出范围会引发 OverflowError，需在使用前检查边界。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

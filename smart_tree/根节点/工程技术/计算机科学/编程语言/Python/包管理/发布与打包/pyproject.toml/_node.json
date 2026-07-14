@@ -19,5 +19,30 @@
       "content_preview": "pyproject.toml: PEP 518/621 Project Specifications. [build-system] declaration for defining the build backend. [project] metadata. Modern standards. Here is a brief explanation with an example of how you might implement this in Python using `setuptools`: ```python from setuptools import setup setup( name='example_package', version='0.1.0', description='An example package to demonstrate PEP 518/621 usage.', # [project] metadata url='https://github.com/example/example_package', author='Example Author', author_email='author@example.com', # [build-system] declaration for defining the build backend python_requires='>=3.7', install_requires=[ 'numpy' ], setup_requires=[ 'setuptools>=40.8.0', 'wheel' ], tests_require=[ 'pytest' ] ) ``` In this example, `setup()` is used to define the package metadata and build system requirements according to PEP 518/621 standards."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    },
+    {
+      "id": "vite_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\npyproject.toml 是 Python 项目的配置文件，用于集中管理项目元数据、依赖、构建系统和工具配置，遵循 PEP 518 和 PEP 621 标准。\n\n## 何时使用\n当需要发布 Python 包到 PyPI 或管理项目依赖时，应使用 pyproject.toml 替代传统的 setup.py 和 requirements.txt。它适用于现代 Python 项目，尤其是使用 Poetry、Flit 或 PDM 等工具时，能统一构建系统配置和工具设置。\n\n## 示例\n```Python\n# 项目根目录下的 pyproject.toml 文件\n[build-system]\nrequires = [\"setuptools>=61.0\"]\nbuild-backend = \"setuptools.build_meta\"\n\n[project]\nname = \"my_package\"\nversion = \"0.1.0\"\ndescription = \"A sample Python package\"\nauthors = [{name = \"Author\", email = \"author@example.com\"}]\ndependencies = [\n    \"requests>=2.25.0\",\n    \"click>=8.0.0\"\n]\n\n[project.optional-dependencies]\ndev = [\"pytest>=7.0.0\", \"black>=22.0.0\"]\n\n[tool.setuptools.packages.find]\nwhere = [\"src\"]\n```\n\n## 反例\n错误用法：在 pyproject.toml 中混合使用 setup.py 的配置，例如同时定义 [project] 和 setup() 函数，导致构建冲突。应完全迁移到 pyproject.toml。\n\n## 边界条件\n注意事项：pyproject.toml 使用 TOML 格式，严格区分大小写和缩进；版本号必须符合 PEP 440 规范；构建系统字段 [build-system] 必须存在，否则 pip 无法识别。",
+    "code_pattern": "[build-system]\nrequires = [\"setuptools>=61.0\"]\nbuild-backend = \"setuptools.build_meta\"\n\n[project]\nname = \"my_package\"\nversion = \"0.1.0\"\ndescription = \"A short description\"\nauthors = [{name = \"Your Name\", email = \"you@example.com\"}]\nlicense = {text = \"MIT\"}\nreadme = \"README.md\"\nrequires-python = \">=3.8\"\ndependencies = []\n\n[project.optional-dependencies]\ndev = [\"pytest\"]\n\n[tool.setuptools.packages.find]\nwhere = [\"src\"]",
+    "common_pitfalls": [
+      "忘记在 [build-system] 中指定 build-backend，导致 pip 无法构建包，报错 'Missing build-backend'。",
+      "在 [project] 中使用了不兼容的版本号格式，如 '1.0' 而非 '1.0.0'，违反 PEP 440，导致发布失败。",
+      "将依赖同时写在 [project.dependencies] 和 requirements.txt 中，造成版本冲突和管理混乱。应统一使用 pyproject.toml。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

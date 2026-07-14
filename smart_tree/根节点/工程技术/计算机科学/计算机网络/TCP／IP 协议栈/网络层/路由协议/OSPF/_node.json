@@ -19,5 +19,34 @@
       "content_preview": "OSPF: Link-state routing. Dijkstra's SPF algorithm calculates paths. Area hierarchy. Fast convergence. Here is a brief explanation with a related Python code example for the Dijkstra's SPF algorithm: ```python import heapq def dijkstra(graph, start): # Initialize distances to all nodes as infinity and set the distance of the start node to 0 distances = {node: float('infinity') for node in graph} distances[start] = 0 # Priority queue to store (distance, node) pairs priority_queue = [(0, start)] while priority_queue: # Pop the node with the smallest distance current_distance, current_node = heapq.heappop(priority_queue) # If the distance of this node in the distances dictionary is smaller than what we just popped, # skip it (this means a shorter path to this node was already found) if current_distance > distances[current_node]: continue # Explore neighbors for neighbor, weight in graph[current_node].items(): distance = current_distance + weight # Only consider this new path if it's better if distance < distances[neighbor]: distances[neighbor] = distance heapq.heappush(priority_queue, (distance, neighbor)) return distances # Example graph represented as an adjacency list graph = { 'A': {'B': 1, 'C': 4}, 'B': {'A': 1, 'C': 2, 'D': 5}, 'C': {'A': 4, 'B': 2, 'D': 1}, 'D': {'B': 5, 'C': 1} } # Calculate shortest paths from node 'A' shortest_paths = dijkstra(graph, 'A') print(shortest_paths) ``` This Python code implements Dijkstra's algorithm to find the shortest path tree in a graph. The `graph` is represented as an adjacency list where each key is a node and its value is another dictionary representing the neighbors and their edge weights."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "tcp_bbr_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "cap_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nOSPF（Open Shortest Path First，开放最短路径优先）是一种基于链路状态的内部网关协议（IGP），用于在单一自治系统（AS）内进行路由决策。它通过计算最短路径树来确定到达每个网络的最佳路径，并支持快速收敛和分层路由设计。\n\n## 核心要点\n- **链路状态算法**：OSPF 使用 Dijkstra 算法计算最短路径，每个路由器维护完整的网络拓扑数据库，确保路由决策基于全局信息。\n- **区域划分**：通过将网络划分为骨干区域（Area 0）和常规区域，OSPF 减少路由表规模，提高网络稳定性和扩展性。\n- **快速收敛**：当网络拓扑变化时，OSPF 通过洪泛链路状态通告（LSA）快速更新所有路由器，实现秒级收敛。\n- **支持 VLSM 和 CIDR**：OSPF 支持可变长子网掩码（VLSM）和无类域间路由（CIDR），有效利用 IP 地址空间。\n- **认证机制**：支持明文和 MD5 认证，增强路由信息交换的安全性。\n\n## 应用场景\nOSPF 广泛应用于大型企业网络、数据中心和互联网服务提供商（ISP）的核心网络，因其高效的路由计算和良好的扩展性，适合需要快速故障恢复和复杂拓扑管理的环境。它也常用于多厂商设备互通的场景，因为 OSPF 是开放标准协议。\n\n## 相关概念\nOSPF 与 RIP（路由信息协议）同属 IGP，但 OSPF 基于链路状态而非距离向量，具有更快的收敛速度和更少的网络开销。它常与 BGP（边界网关协议）配合使用，OSPF 处理 AS 内部路由，BGP 处理 AS 间路由。此外，OSPF 的区域设计依赖于 DR（指定路由器）和 BDR（备份指定路由器）来优化广播网络中的 LSA 洪泛。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

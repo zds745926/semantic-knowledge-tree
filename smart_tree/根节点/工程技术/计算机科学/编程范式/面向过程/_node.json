@@ -17,5 +17,13 @@
     "description": "面向过程: Process-oriented programming organizes code around functions or procedures and emphasizes the use of three fundamental structures: sequence, selection, and iteration. C is a typical example of process-oriented programming, making it suitable for system-level programming and performance-sensitive scenarios. Here's a brief Python code example to illustrate the concept: ```python def calculate_area(length, width): # Function to calculate area using sequence (order of operations) return length * width # Example usage with selection (if statement) length = 10 width = 5 area = calculate_area(length, width) if area > 40: print(\"The area is large.\") else: print(\"The area is small.\") # Example usage with iteration (for loop) for i in range(3): print(f\"Area calculation {i+1}: {calculate_area(length, width)}\") ``` This example demonstrates the use of functions and basic control structures like if statements and for loops."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "面向过程编程是一种以过程或函数为核心的编程范式，强调通过顺序、选择和循环三种基本控制结构来组织程序逻辑。该分支涵盖的核心内容包括：顺序-选择-循环结构，这是程序流程控制的基础；模块化编程，通过将程序分解为独立的函数或过程来提高代码的可维护性和复用性；自顶向下设计，一种从整体功能逐步细化到具体实现的系统化设计方法。这些子主题之间层层递进：自顶向下设计提供了宏观的分解策略，模块化编程实现了具体的功能划分，而顺序-选择-循环则构成了模块内部的基本执行单元。学习该分支时，建议先掌握控制结构，再学习模块化编程，最后运用自顶向下设计方法进行完整程序开发。面向过程编程是理解更复杂编程范式（如面向对象、函数式编程）的基础，广泛应用于系统软件、嵌入式开发和算法实现等领域。",
+  "example_queries": [
+    "如何使用顺序、选择和循环结构实现一个简单的计算器程序？",
+    "在C语言中，如何通过模块化编程将程序拆分为多个函数文件？",
+    "自顶向下设计方法在解决复杂问题时有哪些具体步骤？",
+    "面向过程编程与面向对象编程的主要区别是什么？",
+    "如何用面向过程思想实现一个学生成绩管理系统？"
+  ]
 }

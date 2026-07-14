@@ -19,5 +19,34 @@
       "content_preview": "进程间 Queue: Multiprocessing.Queue is a process-safe queue. It supports put and get methods. JoinableQueue is an extension of Queue that allows you to wait until all items have been retrieved from the queue. Python code example for using `multiprocessing.Queue`: ```python import multiprocessing def worker(queue): # Example task: append 'task' to the queue queue.put('task') if __name__ == '__main__': q = multiprocessing.Queue() # Create and start a process that will put items into the queue p = multiprocessing.Process(target=worker, args=(q,)) p.start() p.join() # Wait for the worker to finish # Retrieve an item from the queue task = q.get() print(f\"Received task: {task}\") ``` Python code example for using `multiprocessing.JoinableQueue`: ```python import multiprocessing def worker(queue): while True: task = queue.get() # Blocks until a task is available if task is None: break # Sentinel value to indicate the end of tasks print(f\"Processing {task}\") queue.task_done() if __name__ == '__main__': q = multiprocessing.JoinableQueue() # Create and start processes that will process items from the queue for _ in range(5): p = multiprocessing.Process(target=worker, args=(q,)) p.start() # Put tasks into the queue for i in range(10): q.put(f\"Task {i}\") # Signal the end of tasks by putting sentinel values for _ in range(5): q.put(None) # Wait until all items have been retrieved from the queue q.join() ``` These examples demonstrate basic usage of `multiprocessing.Queue` and `multiprocessing.JoinableQueue`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n进程间 Queue（multiprocessing.Queue）是 Python 多进程编程中用于在多个独立进程之间安全传递数据的线程/进程安全队列，基于管道和锁实现，支持任意可 pickle 对象的先进先出传输。\n\n## 何时使用\n当需要将数据从一个工作进程发送到另一个工作进程或主进程时，例如生产者-消费者模式、任务分发与结果收集。它适用于进程间数据交换，但注意队列中的元素必须可序列化（pickle），且队列大小受内存限制。\n\n## 示例\n```Python\nfrom multiprocessing import Process, Queue\n\ndef worker(q):\n    q.put('hello from worker')\n\nif __name__ == '__main__':\n    q = Queue()\n    p = Process(target=worker, args=(q,))\n    p.start()\n    print(q.get())  # 输出: hello from worker\n    p.join()\n```\n\n## 反例\n不要在主进程中创建 Queue 后直接传递给子进程的构造函数之外的线程，因为 Queue 不是线程安全的；也不要在子进程中创建 Queue 后期望主进程直接访问，必须通过参数传递。\n\n## 边界条件\nQueue 的 get() 和 put() 默认是阻塞的，可设置 timeout 避免死锁；当队列满时 put() 会阻塞，空时 get() 会阻塞；队列中的元素必须可 pickle 序列化；使用后应调用 q.close() 和 q.join_thread() 确保资源释放。",
+    "code_pattern": "from multiprocessing import Process, Queue\n\ndef worker(q):\n    # 从队列获取任务\n    task = q.get()\n    # 处理任务\n    result = task * 2\n    # 将结果放回队列\n    q.put(result)\n\nif __name__ == '__main__':\n    q = Queue()\n    processes = []\n    for _ in range(4):\n        p = Process(target=worker, args=(q,))\n        processes.append(p)\n        p.start()\n    for p in processes:\n        p.join()",
+    "common_pitfalls": [
+      "忘记在 if __name__ == '__main__' 保护下创建进程，导致 Windows 上无限递归创建子进程",
+      "在子进程创建 Queue 对象而不是从主进程传递，导致队列无法跨进程共享",
+      "put() 或 get() 未设置 timeout 且队列满/空时导致进程永久阻塞，程序挂起"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,34 @@
       "content_preview": "SciPy: Scientific computing library. Optimized for linear algebra, integration, interpolation, and signal processing. Built on top of NumPy's `ndarray`. Here is a brief Python code example demonstrating some of these functionalities: ```python import numpy as np # Linear Algebra A = np.array([[1, 2], [3, 4]]) B = np.linalg.inv(A) # Inverse of matrix A print(\"Inverse of A:\\n\", B) # Integration from scipy.integrate import quad def integrand(x): return x**2 result, error = quad(integrand, 0, 1) print(\"Integral result:\", result) # Interpolation x = np.linspace(0, 10, 10) # Generate 10 points between 0 and 10 y = np.sin(x) # Sample sine function at these points new_x = np.linspace(0, 10, 100) # Generate 100 new points for interpolation y_interpolated = np.interp(new_x, x, y) print(\"Interpolated values:\", y_interpolated[:5]) # Print first 5 interpolated values # Signal Processing from scipy.signal import find_peaks peaks, _ = find_peaks(y_interpolated, height=0.8) print(\"Peaks found at indices:\", peaks) ``` This code snippet demonstrates basic operations in linear algebra (matrix inversion), integration using `quad` from SciPy, interpolation with NumPy's `interp`, and signal processing to find peaks in a signal."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nSciPy是一个基于NumPy的开源Python科学计算库，提供高级数学、科学和工程算法，包括优化、积分、插值、特征值问题、代数方程、微分方程求解和统计函数。\n\n## 何时使用\n当需要执行科学计算任务（如数值积分、优化、信号处理、统计分析）且希望使用经过验证的高效算法时，应使用SciPy。它适合在数据科学、工程仿真、物理建模等领域替代手动实现复杂数学运算。\n\n## 示例\n```Python\nimport numpy as np\nfrom scipy.optimize import minimize\n\n# 定义目标函数\ndef rosen(x):\n    return sum(100.0*(x[1:]-x[:-1]**2.0)**2.0 + (1-x[:-1])**2.0)\n\n# 初始猜测\nx0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])\n\n# 使用BFGS算法最小化\nres = minimize(rosen, x0, method='BFGS', options={'disp': True})\nprint(res.x)\n```\n\n## 反例\n错误用法：直接使用SciPy的优化函数而不检查输入数据的类型或维度，例如传递列表而非NumPy数组，导致内部广播错误。\n\n## 边界条件\n注意：SciPy的许多函数假设输入为浮点型数组，整数数组可能导致精度损失或类型错误；对于大规模问题，应优先使用稀疏矩阵（scipy.sparse）以避免内存溢出。",
+    "code_pattern": "import numpy as np\nfrom scipy import integrate, optimize, stats\n\n# 数值积分示例\ndef integrand(x):\n    return np.exp(-x**2)\nresult, error = integrate.quad(integrand, 0, np.inf)\n\n# 优化示例\ndef func(x):\n    return (x[0] - 1)**2 + (x[1] - 2.5)**2\nx0 = [0, 0]\nres = optimize.minimize(func, x0, method='Nelder-Mead')\n\n# 统计示例\ndata = np.random.normal(0, 1, 100)\nmean, std = stats.norm.fit(data)",
+    "common_pitfalls": [
+      "忘记导入子模块：直接使用scipy.optimize.minimize()而未先导入from scipy import optimize，导致AttributeError。",
+      "数组维度不匹配：在调用scipy.linalg或scipy.sparse函数时，传递了形状不兼容的数组，导致ValueError。",
+      "忽略返回值的顺序：例如scipy.integrate.quad返回(结果, 误差)，新手常只取第一个值而忽略误差估计。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

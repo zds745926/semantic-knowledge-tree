@@ -19,5 +19,34 @@
       "content_preview": "滑动窗口: Windows where sent data is waiting for ACK. Move forward while waiting for the ACK. Cumulative acknowledgment. To provide a more context-specific translation and to include a brief Python code example related to this concept, let's assume we are dealing with a simple TCP/IP model scenario in networking. Here’s an example of how you might implement a basic mechanism for handling sent data and waiting for ACKs in Python: ```python class SimpleTCP: def __init__(self): self.sent_data = [] # List to hold the data that has been sent but not yet acknowledged def send_data(self, data): self.sent_data.append(data) print(f\"Sent: {data}\") def receive_ack(self, ack): if ack in [data for _, data in self.sent_data]: print(f\"Received ACK for: {ack}\") # Remove the corresponding sent data from the list self.sent_data = [(index, data) for index, (index, data) in enumerate(self.sent_data) if data != ack] else: print(\"ACK not found\") # Example usage tcp = SimpleTCP() tcp.send_data('Hello') tcp.receive_ack('Hello') # This should indicate that the ACK has been received ``` This Python code snippet demonstrates a simple mechanism for tracking sent data and acknowledging receipt of those data. The `SimpleTCP` class keeps track of sent data in a list, and when an acknowledgment (ACK) is received, it removes the corresponding entry from the list."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tcp_bbr_v4",
+      "type": "application"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cap_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n滑动窗口是TCP协议实现可靠传输和流量控制的核心机制，它允许发送方在未收到确认的情况下连续发送多个数据段，窗口大小决定了可连续发送的数据量。通过动态调整窗口，TCP能够在保证可靠性的同时提高网络利用率。\n\n## 核心要点\n- 窗口大小由接收方通告，发送方根据窗口大小决定一次能发送多少数据，避免接收方缓冲区溢出。\n- 滑动窗口支持累积确认，接收方可以确认多个连续数据段，减少确认包数量，提升效率。\n- 窗口滑动机制：当收到确认后，窗口向前移动，发送方可以发送新数据，形成“滑动”效果。\n- 窗口大小可动态调整，通过拥塞控制算法（如慢启动、拥塞避免）适应网络状况，防止拥塞崩溃。\n- 零窗口通知：当接收方缓冲区满时，会通告窗口大小为0，发送方停止发送，直到收到窗口更新。\n\n## 应用场景\n滑动窗口广泛应用于TCP数据传输，如网页浏览、文件传输、视频流等需要可靠传输的场景。它确保数据按序到达，同时通过窗口控制避免网络过载，提升传输效率。\n\n## 相关概念\n滑动窗口与流量控制、拥塞控制密切相关，流量控制防止接收方过载，拥塞控制防止网络过载。此外，窗口大小与往返时间（RTT）共同影响吞吐量，是TCP性能优化的关键参数。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

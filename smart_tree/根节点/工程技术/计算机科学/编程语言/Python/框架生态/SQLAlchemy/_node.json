@@ -19,5 +19,34 @@
       "content_preview": "SQLAlchemy: Python Object-Relational Mapping (ORM) Framework. Declarative mapping/session management/relation loading. Core SQL expression language independent of ORM. Here's a brief Python code example to illustrate the use of an ORM framework like SQLAlchemy, which is a popular Python ORM: ```python from sqlalchemy import create_engine, Column, Integer, String from sqlalchemy.ext.declarative import declarative_base from sqlalchemy.orm import sessionmaker # Create an engine that stores data in the local directory's test.db file. engine = create_engine('sqlite:///test.db') # Declare a base class for our models Base = declarative_base() # Define a User class that maps to the user table class User(Base): __tablename__ = 'users' id = Column(Integer, primary_key=True) name = Column(String) age = Column(Integer) # Create all tables in the engine. This is equivalent to \"Create Table\" Base.metadata.create_all(engine) # Create a configured \"Session\" class Session = sessionmaker(bind=engine) # Create a Session session = Session() # Add an User object to the session and commit it. new_user = User(name='John Doe', age=30) session.add(new_user) session.commit() # Query for objects in the style of SQL queries users = session.query(User).filter_by(name='John Doe').all() for user in users: print(user.name, user.age) # Close the session session.close() ``` This example demonstrates basic ORM operations such as defining a model class, creating tables, adding and querying objects."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "adapter_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "rest_api_v4",
+      "type": "application"
+    },
+    {
+      "id": "read_committed_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nSQLAlchemy 是 Python 生态中最流行的对象关系映射（ORM）框架，它提供了一套高层次的抽象，允许开发者用 Python 类来操作数据库表，同时支持原生 SQL 执行，实现数据库无关的持久化操作。\n\n## 何时使用\n当你的 Python 应用需要与关系型数据库（如 PostgreSQL、MySQL、SQLite）交互，且希望避免手写重复的 SQL 语句时，使用 SQLAlchemy 可以显著提升开发效率。它特别适合需要复杂查询、事务管理或模型关系映射的中大型项目，也适用于快速原型开发。\n\n## 示例\n```Python\nfrom sqlalchemy import create_engine, Column, Integer, String\nfrom sqlalchemy.orm import declarative_base, sessionmaker\n\n# 创建引擎和基类\nengine = create_engine('sqlite:///example.db', echo=True)\nBase = declarative_base()\n\n# 定义模型\nclass User(Base):\n    __tablename__ = 'users'\n    id = Column(Integer, primary_key=True)\n    name = Column(String)\n    age = Column(Integer)\n\n# 创建表\nBase.metadata.create_all(engine)\n\n# 创建会话\nSession = sessionmaker(bind=engine)\nsession = Session()\n\n# 插入数据\nnew_user = User(name='Alice', age=30)\nsession.add(new_user)\nsession.commit()\n\n# 查询数据\nuser = session.query(User).filter_by(name='Alice').first()\nprint(user.name, user.age)\n```\n\n## 反例\n错误用法：在每次请求中都手动创建引擎和会话，而不使用会话工厂或上下文管理器，导致连接泄漏和性能下降。例如，在 Web 视图函数中直接 `engine = create_engine(...)` 并 `session = Session(engine)`，而不在请求结束时关闭会话。\n\n## 边界条件\n注意：SQLAlchemy 的会话不是线程安全的，在多线程环境下应使用 `scoped_session` 或确保每个线程拥有独立的会话。另外，对于大量数据的批量插入，应使用 `bulk_insert_mappings` 或原生 SQL，避免逐条 `add` 导致的性能瓶颈。",
+    "code_pattern": "from sqlalchemy import create_engine, Column, Integer, String\nfrom sqlalchemy.orm import declarative_base, sessionmaker\n\nengine = create_engine('sqlite:///example.db')\nBase = declarative_base()\n\nclass Model(Base):\n    __tablename__ = 'models'\n    id = Column(Integer, primary_key=True)\n    name = Column(String)\n\nBase.metadata.create_all(engine)\nSession = sessionmaker(bind=engine)\nsession = Session()\n\n# 使用 session 进行 CRUD 操作\n# session.add(...)\n# session.commit()\n# session.query(...).all()\nsession.close()",
+    "common_pitfalls": [
+      "会话未正确关闭：在 Web 应用或长时间运行的任务中，忘记在 finally 块或上下文管理器中关闭会话，导致数据库连接池耗尽。应使用 `with session.begin():` 或 `try/finally` 确保会话被关闭。",
+      "N+1 查询问题：在查询关联对象时，默认的懒加载会导致循环查询，例如遍历所有用户并访问其订单。应使用 `joinedload` 或 `subqueryload` 进行预加载，减少数据库查询次数。",
+      "模型定义中的类型不匹配：例如将 `String` 列用于存储整数，或忘记设置 `primary_key` 导致无法正确映射。应仔细检查列类型与数据库字段的对应关系，并始终为每个表定义主键。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

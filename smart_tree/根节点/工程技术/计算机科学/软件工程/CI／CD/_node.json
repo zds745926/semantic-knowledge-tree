@@ -16,5 +16,13 @@
     "description": "CI/CD: Continuous Integration (CI) and Continuous Deployment (CD) enable automated code building, testing, and deployment. Here's a brief explanation with a Python code example for a simple CI/CD pipeline using a hypothetical function `calculate_sum`: ```python # Example function to be tested and deployed def calculate_sum(a, b): return a + b # Test case def test_calculate_sum(): assert calculate_sum(1, 2) == 3, \"Test failed: sum of 1 and 2 should be 3\" assert calculate_sum(-1, -1) == -2, \"Test failed: sum of -1 and -1 should be -2\" # Example of a simple CI/CD step using Python's built-in functions def run_tests(): test_calculate_sum() print(\"All tests passed!\") run_tests() ``` In this example, `calculate_sum` is the function that would typically be part of your codebase. The `test_calculate_sum` function contains assertions to verify its correctness. A simple CI/CD step (`run_tests`) runs these tests and prints a success message if all tests pass."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "CI/CD（持续集成与持续部署）是软件工程中实现自动化构建、测试和发布的核心实践。本分支涵盖持续集成（CI）和持续部署（CD）两个子主题。持续集成强调开发人员频繁地将代码变更合并到主干，并通过自动化构建与测试快速发现集成错误，从而提升代码质量和协作效率。持续部署则在此基础上，将通过测试的代码自动部署到生产环境或预发布环境，实现快速、可靠的交付。两者相辅相成：CI为CD提供经过验证的代码基础，CD则延伸CI的价值，使软件能够持续、安全地发布。学习路径建议从理解CI的基本概念和工具（如Jenkins、GitLab CI）入手，掌握构建、测试、代码质量检查等环节；然后学习CD的部署策略（如蓝绿部署、滚动更新）和基础设施即代码（如Docker、Kubernetes），最终形成完整的自动化交付流水线。",
+  "example_queries": [
+    "如何搭建一个基于GitLab CI的持续集成流水线？",
+    "持续部署与持续交付有什么区别？",
+    "在CI/CD中如何实现自动化测试和代码质量门禁？",
+    "蓝绿部署和滚动更新的优缺点分别是什么？",
+    "如何将Docker和Kubernetes集成到CI/CD流程中？"
+  ]
 }

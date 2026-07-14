@@ -19,5 +19,13 @@
     "description": "数据序列化: Python supports multiple data serialization formats. json is cross-language and platform-independent; pickle is specific to Python; csv is used for tabular data; configparser is used for configuration files. Here are brief examples in Python for each: 1. **JSON (Cross-language, platform-independent)**: ```python import json data = {\"name\": \"John\", \"age\": 30, \"city\": \"New York\"} json_string = json.dumps(data) print(json_string) # Output: {\"name\": \"John\", \"age\": 30, \"city\": \"New York\"} ``` 2. **Pickle (Specific to Python)**: ```python import pickle data = {\"name\": \"John\", \"age\": 30, \"city\": \"New York\"} with open('data.pickle', 'wb') as f: pickle.dump(data, f) ``` 3. **CSV (Tabular Data)**: ```python import csv data = [[\"Name\", \"Age\", \"City\"], [\"John\", 30, \"New York\"]] with open('data.csv', 'w', newline='') as file: writer = csv.writer(file) writer.writerows(data) ``` 4. **ConfigParser (Configuration Files)**: ```python import configparser config = configparser.ConfigParser() config['DEFAULT'] = {'ServerAliveInterval': '45', 'Compression': 'yes', 'CompressionLevel': '9'} with open('example.ini', 'w') as configfile: config.write(configfile) ```"
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "数据序列化分支涵盖Python标准库中用于数据序列化和反序列化的核心模块，包括json、pickle、csv、xml和configparser。这些模块将内存中的数据结构转换为可存储或传输的格式，以及反向解析。子主题之间的关系：json和pickle用于通用对象序列化，但json仅支持基本类型且跨语言，pickle支持Python任意对象但仅限Python；csv专用于表格数据，xml用于标记文档，configparser用于配置文件。学习路径：建议从json开始，因其简单通用；然后学习csv处理表格数据；接着掌握pickle实现Python对象持久化；再学习xml处理复杂文档；最后学习configparser管理配置文件。这些模块覆盖了从简单到复杂、从通用到专用的序列化需求，是Python数据处理的基础。",
+  "example_queries": [
+    "如何在Python中将字典转换为JSON字符串？",
+    "pickle和json在序列化Python对象时有什么区别？",
+    "如何使用csv模块读写带有标题行的CSV文件？",
+    "如何用xml.etree.ElementTree解析XML文件并提取特定元素？",
+    "configparser如何读取和修改INI格式的配置文件？"
+  ]
 }

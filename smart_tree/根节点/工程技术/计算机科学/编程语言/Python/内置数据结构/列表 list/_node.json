@@ -17,5 +17,13 @@
     "description": "列表 list: Lists are mutable ordered sequences that support indexing, slicing, and method operations. List comprehensions are a distinctive syntax of Python. Here's an example to illustrate the use of list comprehensions in Python: ```python # Example 1: Creating a list with list comprehension numbers = [x for x in range(5)] print(numbers) # Output: [0, 1, 2, 3, 4] # Example 2: Applying a condition within the list comprehension even_numbers = [x for x in range(10) if x % 2 == 0] print(even_numbers) # Output: [0, 2, 4, 6, 8] ``` These examples demonstrate how to create lists using list comprehensions and apply conditions within them."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python内置数据结构中的列表（list），涵盖其基础概念、常用方法以及列表推导式三大子主题。列表基础部分介绍列表的定义、索引、切片、嵌套等核心特性，为后续操作奠定基础；列表方法部分详细讲解append、extend、insert、remove、pop、sort等内置函数，帮助用户高效增删改查；列表推导式则展示一种简洁、Pythonic的列表生成方式，可替代传统循环，提升代码可读性与执行效率。三部分层层递进：先理解列表是什么，再掌握如何操作列表，最后学会用推导式优雅地创建和转换列表。学习路径建议从基础语法入手，逐步练习常用方法，再深入推导式与条件过滤，最终能灵活运用列表解决实际编程问题，如数据清洗、序列处理、算法实现等。",
+  "example_queries": [
+    "如何在Python列表中快速删除重复元素？",
+    "列表推导式与for循环生成列表的性能差异有多大？",
+    "Python列表的sort方法和sorted函数有什么区别？",
+    "如何对嵌套列表进行扁平化处理？",
+    "列表的浅拷贝与深拷贝在什么情况下会出问题？"
+  ]
 }

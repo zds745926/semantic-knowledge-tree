@@ -19,5 +19,30 @@
       "content_preview": "Monad: Monads encapsulate computational contexts. `Maybe` handles null values, `Either` handles errors, and `IO` deals with side effects. Here are brief Python code examples for each concept: 1. **Monad (using List as an example):** This demonstrates how a list can be used to handle computations that may produce zero or more results. ```python from typing import List def find_numbers(numbers: List[int], target: int) -> List[bool]: return [num == target for num in numbers] # Example usage: result = find_numbers([1, 2, 3, 4, 5], 3) print(result) # Output: [False, False, True, False, False] ``` 2. **Maybe (using Optional as an example):** This shows how `Optional` can be used to handle cases where a value might not exist. ```python from typing import Optional def safe_divide(a: int, b: int) -> Optional[float]: if b == 0: return None else: return a / b # Example usage: result = safe_divide(10, 2) print(result) # Output: 5.0 result = safe_divide(10, 0) print(result) # Output: None ``` 3. **Either (using a custom class as an example):** This demonstrates how to handle errors using a custom `Either` class. ```python class Either: def __init__(self, value): self.value = value def safe_divide(a: int, b: int) -> Either: if b == 0: return Either(\"Error: Division by zero\") else: return Either(a / b) # Example usage: result = safe_divide(10, 2) print(result.value) # Output: 5.0 result = safe_divide(10, 0) print(result.value) # Output: Error: Division by zero ``` 4. **IO (using context managers as an example):** This shows how to handle file operations using Python's `with` statement. ```python def read_file(filename: str) -> None: with open(filename, 'r') as file: print(file.read()) # Example usage: read_file('example.txt') ``` These examples provide a basic understanding of how these concepts can be implemented in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nMonad 是函数式编程中的一种设计模式，它提供了一种将值包装在上下文中的方式，并定义了如何将函数应用于这些包装后的值。本质上，Monad 是一个自函子范畴上的幺半群，它通过 `bind`（或 `>>=`）和 `return`（或 `unit`）两个操作，允许程序员以纯函数的方式处理副作用、异常、异步操作等。\n\n## 核心要点\n- **上下文封装**：Monad 将值包裹在一个上下文中（如 `Maybe` 表示可能为空，`Either` 表示可能出错），从而在不破坏纯函数特性的前提下携带额外信息。\n- **链式操作**：通过 `bind` 操作，可以将多个返回 Monad 的函数串联起来，形成清晰的计算管道，避免嵌套回调或显式错误检查。\n- **保持纯度**：Monad 使得副作用（如 I/O、状态更新）在函数式语言中能被安全地隔离和组合，而不会污染纯函数。\n- **类型约束**：Monad 必须满足三个法则（左单位元、右单位元、结合律），确保 `bind` 和 `return` 的行为可预测且可组合。\n- **泛化能力**：Monad 是许多函数式库（如 Haskell 的 `IO`、`List`、`State`）的基础，提供统一的接口来处理不同种类的计算。\n\n## 应用场景\nMonad 广泛应用于处理副作用，例如在 Haskell 中 `IO Monad` 管理输入输出操作，确保纯函数不受外部影响。在错误处理中，`Maybe` 和 `Either` Monad 允许优雅地处理空值或异常，无需显式检查。此外，异步编程中的 `Promise` 或 `Future` 也常被视为 Monad，用于链式处理异步结果。\n\n## 相关概念\n- **Functor**：比 Monad 更基础，只提供 `map` 操作，将函数应用于上下文内的值，但不能处理嵌套上下文。\n- **Applicative**：介于 Functor 和 Monad 之间，允许将包装在上下文中的函数应用到包装的值上，但计算顺序固定。\n- **Monoid**：与 Monad 同属范畴论概念，但 Monoid 关注于值的合并（如列表拼接），而 Monad 关注于计算序列的组合。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

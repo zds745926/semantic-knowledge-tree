@@ -19,5 +19,26 @@
       "content_preview": "ext4 文件系统: Linux default. 16TB file/1 EB volume. Log ensures consistency. Extents reduce metadata overhead. Here is the explanation with a brief Python code example for one of the concepts: - **Log ensures consistency**: In the context of file systems, logs are used to maintain transactional integrity and ensure that operations are recorded in a consistent manner. For instance, in a simple logging mechanism, you might want to log changes to a file system. ```python import os def log_change(file_path, message): # Define the log file path log_file = \"system_log.txt\" # Append the message to the log file with open(log_file, 'a') as f: f.write(f\"{message} - {os.path.getmtime(file_path)}\\n\") # Example usage: Log a change in a file system log_change(\"/path/to/file\", \"File modified\") ``` This Python function `log_change` appends a message to a log file along with the timestamp of when the operation was performed, ensuring that changes are recorded consistently."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "inode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\next4（第四扩展文件系统）是Linux操作系统中广泛使用的日志文件系统，是ext3文件系统的后继版本。它支持最大1 EB的文件系统和最大16 TB的单个文件，并引入了多项性能与可靠性改进，如延迟分配、多块分配和快速文件系统检查。\n\n## 核心要点\n- **日志机制**：ext4采用日志（journaling）技术，记录文件系统元数据的变更，从而在系统崩溃后能快速恢复数据一致性，减少fsck检查时间。\n- **延迟分配**：ext4将数据块的分配推迟到数据实际写入磁盘时，允许文件系统更智能地安排连续空间，减少碎片并提升写入性能。\n- **多块分配**：在写入大文件时，ext4一次性分配多个连续块，而非逐个分配，显著降低磁盘寻道时间，提高吞吐量。\n- **扩展性**：支持最大1 EB的文件系统大小和最大16 TB的单个文件，同时支持子目录数量无硬性限制（基于目录索引），适应现代大规模存储需求。\n- **快速文件系统检查**：通过未分配块组和inode表校验和，ext4在文件系统检查时跳过已标记为干净的块组，大幅缩短检查时间。\n\n## 应用场景\next4广泛应用于Linux服务器、桌面系统及嵌入式设备中，作为默认文件系统之一。它适合需要高可靠性和性能的通用存储场景，如数据库服务器、Web服务器、文件服务器以及个人计算机的根文件系统。\n\n## 相关概念\next4属于虚拟文件系统（VFS）层下的具体文件系统实现，与ext2、ext3同属ext家族。其设计借鉴了ext3的日志功能，并引入了Btrfs等现代文件系统的部分特性（如延迟分配）。此外，ext4与磁盘分区工具（如fdisk、parted）和文件系统管理工具（如mkfs.ext4、tune2fs）紧密关联。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,34 @@
       "content_preview": "csv: CSV reader/writer. DictReader/DictWriter. dialect. Here are the explanations and corresponding Python code examples: 1. **csv.reader/csv.writer**: These classes read from and write to CSV files, respectively. - `csv.reader` reads a CSV file line by line into a list of strings. - `csv.writer` writes data to a CSV file. Example: ```python import csv # Using csv.reader with open('example.csv', newline='') as csvfile: reader = csv.reader(csvfile) for row in reader: print(row) # Using csv.writer with open('output.csv', 'w', newline='') as csvfile: writer = csv.writer(csvfile) writer.writerow(['Name', 'Age']) writer.writerow(['Alice', 24]) writer.writerow(['Bob', 30]) ``` 2. **csv.DictReader/csv.DictWriter**: These classes read from and write to CSV files, but they handle the data as dictionaries. - `csv.DictReader` reads a CSV file into a dictionary where each row is a dictionary with keys corresponding to column headers. - `csv.DictWriter` writes data to a CSV file using dictionaries. Example: ```python import csv # Using csv.DictReader with open('example.csv', newline='') as csvfile: reader = csv.DictReader(csvfile) for row in reader: print(row) # Using csv.DictWriter fieldnames = ['Name', 'Age'] with open('output_dict.csv', 'w', newline='') as csvfile: writer = csv.DictWriter(csvfile, fieldnames=fieldnames) writer.writeheader() writer.writerow({'Name': 'Alice', 'Age': 24}) writer.writerow({'Name': 'Bob', 'Age': 30}) ``` 3. **dialect**: This refers to the specific format of a CSV file, such as quoting rules and delimiter usage. - You can use `csv.get_dialect` or `csv.register_dialect` to manage dialects. Example: ```python import csv # Registering a custom dialect csv.register_dialect('mydialect', delimiter='|', quotechar='\"') with open('example.csv', 'w', newline='') as csvfile: writer = csv.writer(csvfile, dialect='mydialect') writer.writerow(['Name', 'Age']) writer.writerow(['Alice', 24]) writer.writerow(['Bob', 30]) # Reading the file using the custom dialect with open('example.csv', newline='') as csvfile: reader = csv.reader(csvfile, dialect='mydialect') for row in reader: print(row) ``` These examples should help you understand how to use these CSV handling methods in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_tempfile_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nCSV（逗号分隔值）是一种以纯文本形式存储表格数据的文件格式，每行代表一条记录，字段之间用逗号分隔，通常用于数据交换和简单存储。\n\n## 何时使用\n当需要以简单、通用的格式存储或交换表格数据时，CSV 是理想选择，尤其适合与电子表格软件（如 Excel）或数据库工具互操作。它也常用于数据分析和机器学习中的数据加载，因为大多数库（如 pandas）都原生支持 CSV 读写。\n\n## 示例\n```Python\nimport csv\n\n# 写入 CSV 文件\nwith open('data.csv', 'w', newline='') as f:\n    writer = csv.writer(f)\n    writer.writerow(['Name', 'Age', 'City'])\n    writer.writerow(['Alice', 30, 'New York'])\n    writer.writerow(['Bob', 25, 'London'])\n\n# 读取 CSV 文件\nwith open('data.csv', 'r') as f:\n    reader = csv.reader(f)\n    for row in reader:\n        print(row)\n```\n\n## 反例\n错误用法：手动用字符串拼接 CSV 行，例如 `f.write(f\"{name},{age}\\n\")`，因为字段内可能包含逗号、换行符或引号，导致解析错误。应始终使用 `csv.writer` 和 `csv.reader` 处理转义。\n\n## 边界条件\n注意：CSV 没有严格的编码标准，默认使用 ASCII 或 UTF-8，但不同工具可能使用不同编码（如 Excel 的 GBK），读写时应明确指定 `encoding` 参数。另外，空行处理需谨慎：写入时设置 `newline=''` 避免多余空行，读取时默认会跳过空行。",
+    "code_pattern": "import csv\n\ndef write_csv(filepath, headers, rows):\n    with open(filepath, 'w', newline='', encoding='utf-8') as f:\n        writer = csv.writer(f)\n        writer.writerow(headers)\n        writer.writerows(rows)\n\ndef read_csv(filepath):\n    data = []\n    with open(filepath, 'r', encoding='utf-8') as f:\n        reader = csv.reader(f)\n        for row in reader:\n            data.append(row)\n    return data\n\n# 使用示例\nheaders = ['Name', 'Age']\nrows = [['Alice', 30], ['Bob', 25]]\nwrite_csv('output.csv', headers, rows)\nresult = read_csv('output.csv')\nprint(result)",
+    "common_pitfalls": [
+      "字段内包含逗号或换行符时未使用 csv 模块，导致解析错误：应始终使用 csv.writer 和 csv.reader，它们会自动处理引号转义。",
+      "写入时忘记设置 newline='' 参数，导致文件每行后多一个空行：在 open() 中指定 newline='' 可避免此问题。",
+      "读取时忽略编码问题，导致中文乱码：明确指定 encoding 参数（如 'utf-8' 或 'gbk'），与写入时的编码保持一致。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

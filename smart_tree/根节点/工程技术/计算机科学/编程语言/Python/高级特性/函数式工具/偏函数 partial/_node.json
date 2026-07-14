@@ -19,5 +19,30 @@
       "content_preview": "偏函数 partial: The `functools.partial` function fixes some of the parameters of a function and returns a new callable object. Here is an example to illustrate this: ```python import functools # Define a sample function with three parameters. def sample_function(a, b, c): return a + b + c # Use functools.partial to fix the first parameter 'a' to 10. partial_func = functools.partial(sample_function, a=10) # Now partial_func can be called with only two arguments. result = partial_func(b=20, c=30) print(result) # Output: 60 ``` In this example, `functools.partial` is used to create a new function `partial_func` that always calls `sample_function` with the first argument fixed at 10."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n偏函数（partial）是 Python 中 functools 模块提供的一个高阶函数，用于固定一个或多个参数，从而创建一个新的可调用对象，简化函数调用。\n\n## 何时使用\n当某个函数需要频繁调用且部分参数固定不变时，使用偏函数可以避免重复传递相同参数，提高代码可读性和可维护性。例如，在数据处理中固定转换函数的目标编码，或在回调函数中预置上下文参数。\n\n## 示例\n```Python\nfrom functools import partial\n\ndef power(base, exp):\n    return base ** exp\n\nsquare = partial(power, exp=2)\ncube = partial(power, exp=3)\n\nprint(square(5))  # 25\nprint(cube(5))    # 125\n```\n\n## 反例\n不要用偏函数来包装一个本来就不需要固定参数的函数，或者固定参数后导致函数语义混乱。例如，`partial(sorted, reverse=True)` 虽然合法，但不如直接用 `sorted(..., reverse=True)` 清晰。\n\n## 边界条件\n偏函数不会立即执行原函数，它只是保存了原函数和固定参数；当固定参数与后续调用参数冲突时（如同时提供位置参数和关键字参数），会引发 TypeError。",
+    "code_pattern": "from functools import partial\n\ndef original_func(arg1, arg2, *args, **kwargs):\n    # 函数体\n    pass\n\n# 固定部分参数\npartial_func = partial(original_func, fixed_arg1, fixed_kwarg=value)\n\n# 调用时只需传入剩余参数\nresult = partial_func(remaining_arg, other_kwarg=value)",
+    "common_pitfalls": [
+      "固定参数后，调用时传入相同关键字参数会导致 TypeError，因为 partial 已经绑定了该参数",
+      "对可变参数（*args, **kwargs）使用 partial 时，固定参数会按位置绑定到 args 或 kwargs，容易混淆",
+      "偏函数对象没有 __name__ 和 __doc__ 属性（除非手动设置），调试时可能不易识别原函数"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

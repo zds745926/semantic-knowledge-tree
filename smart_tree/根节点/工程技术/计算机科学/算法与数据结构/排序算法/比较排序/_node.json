@@ -18,5 +18,13 @@
     "description": "比较排序: Comparison sorting is based on comparison operations between elements and has strong generality. To provide a more comprehensive response, here is a simple Python code example for a comparison-based sorting algorithm, specifically the Bubble Sort: ```python def bubble_sort(arr): n = len(arr) # Traverse through all array elements for i in range(n): # Last i elements are already in place for j in range(0, n-i-1): # Swap if the element found is greater than the next element if arr[j] > arr[j+1]: arr[j], arr[j+1] = arr[j+1], arr[j] return arr # Example usage: example_array = [64, 34, 25, 12, 22, 11, 90] sorted_array = bubble_sort(example_array) print(\"Sorted array:\", sorted_array) ``` This example demonstrates a basic comparison-based sorting algorithm."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "比较排序是排序算法中最为基础和重要的一类，其核心思想是通过元素之间的两两比较来确定相对顺序，进而完成整个序列的排序。本分支涵盖了四种经典的比较排序算法：快速排序、归并排序、堆排序和插入排序。这些算法在时间复杂度、空间复杂度和稳定性上各有特点：快速排序平均情况下效率极高，但最坏情况性能较差；归并排序稳定且时间复杂度始终为O(n log n)，但需要额外空间；堆排序通过堆数据结构实现原地排序，但稳定性不足；插入排序在小规模数据或近乎有序的数据上表现优异。学习这些算法时，建议先掌握插入排序作为基础，再逐步理解分治策略（归并排序、快速排序）和堆结构（堆排序）的高级思想。通过对比不同算法的适用场景和性能差异，可以深入理解算法设计的权衡与优化。",
+  "example_queries": [
+    "快速排序在最坏情况下的时间复杂度是多少？如何优化？",
+    "归并排序的空间复杂度为什么是O(n)？",
+    "堆排序是如何利用堆数据结构实现排序的？",
+    "插入排序在什么情况下效率最高？",
+    "比较排序算法的时间复杂度下界为什么是O(n log n)？"
+  ]
 }

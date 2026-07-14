@@ -21,5 +21,17 @@
   ],
   "related_nodes": [
     "k8s_deploy_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nPod 是 Kubernetes 中最小的可部署计算单元，代表一个或多个容器的逻辑分组。这些容器共享相同的网络命名空间、存储卷和生命周期，通常运行紧密耦合的应用组件。\n\n## 核心要点\n- Pod 内的容器共享 IP 地址和端口空间，可通过 localhost 互相通信，无需额外服务发现。\n- 每个 Pod 有一个唯一的 IP 地址，Kubernetes 通过 Service 或 Ingress 将流量路由到 Pod。\n- Pod 是临时性的，可被调度、复制和销毁，通常由控制器（如 Deployment）管理其生命周期。\n- 一个 Pod 可以包含一个主容器和多个辅助容器（如 Sidecar），用于日志收集、代理或监控。\n- Pod 支持资源请求和限制，确保容器获得所需的 CPU 和内存，并防止资源争用。\n\n## 应用场景\nPod 常用于运行单个微服务实例，例如一个 Web 服务器容器。对于需要紧密协作的进程，如应用容器与日志收集器，可放在同一 Pod 中共享网络和存储。此外，Pod 也支持批处理任务和定时作业，通过 Job 或 CronJob 控制器管理。\n\n## 相关概念\nPod 与 Deployment 紧密相关，Deployment 负责管理 Pod 的副本和滚动更新。Service 为 Pod 提供稳定的网络入口，而 ConfigMap 和 Secret 用于向 Pod 注入配置和敏感数据。此外，Node 是 Pod 运行的物理或虚拟机器，调度器决定 Pod 分配到哪个 Node。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

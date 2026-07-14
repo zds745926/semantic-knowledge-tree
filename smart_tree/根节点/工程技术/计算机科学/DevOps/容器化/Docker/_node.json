@@ -17,5 +17,13 @@
     "description": "Docker: Docker containerization platform. Image layering with UnionFS. Container isolation using namespaces and cgroups. Here are the corresponding technical terms explained briefly: - **Docker containerization platform**: A platform that uses Docker to package, distribute, and run applications inside containers. - **Image layering with UnionFS**: Docker images are built as a stack of read-only layers on top of a writable layer. This is achieved using filesystem technologies like UnionFS. - **Container isolation using namespaces and cgroups**: - **Namespaces (namespace)**: Isolates the resources seen by processes inside the container, such as network interfaces, file systems, and process IDs. - **cgroups (control groups)**: Limits, accounts for, and prioritizes the resource usage of a collection of processes. Here is a brief Python code example to illustrate how namespaces can be used in Docker-like scenarios: ```python import os def create_network_namespace(): # Create a new network namespace using iproute2 tools os.system(\"ip netns add mynamespace\") def list_network_namespaces(): # List all existing network namespaces output = os.popen(\"ip netns\").read() print(output) # Example usage create_network_namespace() list_network_namespaces() ``` This Python script uses the `os` module to interact with the system's iproute2 tools, which are commonly used for managing network namespaces in Linux."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "Docker 是 DevOps 容器化技术的核心工具，本分支涵盖 Docker 镜像、Docker 容器和 Docker 网络三个子主题。Docker 镜像是只读的模板，用于创建容器；Docker 容器是镜像的运行实例，提供隔离的应用环境；Docker 网络则管理容器间的通信与外部访问。三者形成“镜像构建→容器运行→网络连通”的递进关系：先通过 Dockerfile 或仓库获取镜像，然后基于镜像启动容器，最后配置网络实现容器互联或端口映射。学习路径建议从镜像操作入手，掌握构建与拉取；再深入容器的生命周期管理（启动、停止、日志、资源限制）；最后学习网络模式（bridge、host、overlay）及自定义网络。该分支是容器化部署的基础，适用于微服务架构、持续集成/持续部署（CI/CD）及本地开发环境快速搭建。",
+  "example_queries": [
+    "如何编写 Dockerfile 来构建一个包含 Python 应用的镜像？",
+    "Docker 容器与虚拟机的主要区别是什么？",
+    "如何让两个 Docker 容器在同一个网络中互相通信？",
+    "Docker 镜像的层结构是如何影响存储和构建效率的？",
+    "如何将 Docker 容器的端口映射到宿主机以实现外部访问？"
+  ]
 }

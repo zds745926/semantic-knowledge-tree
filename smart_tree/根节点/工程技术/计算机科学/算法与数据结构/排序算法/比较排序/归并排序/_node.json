@@ -19,5 +19,30 @@
       "content_preview": "归并排序: Divide and Conquer: Split in half → Recursion → Merge. Stable O(n log n). Requires O(n) space. External sorting criterion. Here's a brief Python code example for the merge step of the divide and conquer algorithm, which is commonly used in merge sort: ```python def merge(left, right): result = [] i, j = 0, 0 # Merge the two lists together while maintaining order while i < len(left) and j < len(right): if left[i] <= right[j]: result.append(left[i]) i += 1 else: result.append(right[j]) j += 1 # If there are remaining elements in either list, add them to the result result.extend(left[i:]) result.extend(right[j:]) return result ``` This function merges two sorted lists into one sorted list. It's a key part of the merge sort algorithm, which is an example of divide and conquer strategy."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "quick_sort_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "heap_sort_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "binary_search_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n归并排序是一种基于分治策略的高效排序算法，它将待排序数组递归地分成两半，分别排序后再合并成一个有序数组。其核心操作是合并两个已排序的子数组，时间复杂度稳定为 O(n log n)。\n\n## 核心要点\n1. 分治思想：归并排序将问题分解为更小的子问题，通过递归解决子问题再合并结果，从而完成整体排序。\n2. 合并操作：合并两个有序子数组时，需要额外空间来暂存数据，因此空间复杂度为 O(n)。\n3. 稳定性：归并排序是稳定的排序算法，即相等元素的相对顺序在排序后保持不变。\n4. 时间复杂度：无论输入数据如何，归并排序的时间复杂度始终为 O(n log n)，不会退化。\n5. 递归实现：通常采用自上而下的递归方式，也可用自下而上的迭代方式实现。\n\n## 应用场景\n归并排序适用于对大规模数据进行稳定排序，尤其在链表排序中表现优异，因为链表无需额外空间即可高效合并。它也常用于外部排序，当数据量超过内存容量时，可分段排序后合并。\n\n## 相关概念\n归并排序与快速排序同属分治算法，但快速排序是原地排序且不稳定，而归并排序需要额外空间但稳定。此外，归并排序的合并操作与逆序对计数问题密切相关，可用于计算数组中的逆序对数量。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

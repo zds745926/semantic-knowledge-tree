@@ -19,5 +19,34 @@
       "content_preview": "参数传递机制: Python parameter passing is 'pass by object reference'. Mutable objects can be modified, while immutable objects cannot be changed. To illustrate this concept with a brief Python code example: ```python # Example of pass by object reference in Python def modify_list(lst): lst.append(4) # Modifying the mutable list def modify_number(n): n = 10 # This does not change the original immutable number my_list = [1, 2, 3] my_number = 5 modify_list(my_list) modify_number(my_number) print(my_list) # Output: [1, 2, 3, 4] print(my_number) # Output: 5 ``` In this example: - `my_list` is a mutable object (list), and modifying it inside the function changes its state outside the function. - `my_number` is an immutable object (integer), and assigning a new value to `n` inside the function does not affect the original `my_number`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nPython 的参数传递机制是“对象引用传递”（pass-by-object-reference），即函数接收的是实参对象的引用，而不是对象本身的副本。这意味着对于可变对象（如列表、字典），函数内部修改会影响原始对象；对于不可变对象（如整数、字符串），由于不可变性，修改会创建新对象，不影响原始变量。\n\n## 何时使用\n理解参数传递机制对于编写可预测、无副作用的函数至关重要。它适用于所有函数定义和调用场景，尤其是在处理可变对象（如列表、字典、自定义类实例）作为参数时，需要明确知道函数内部修改是否会波及外部。此外，在实现算法、数据结构操作或需要共享状态时，正确利用引用传递可以避免不必要的内存复制。\n\n## 示例\n```Python\ndef modify_list(lst):\n    lst.append(4)  # 修改原始列表\n\ndef reassign_list(lst):\n    lst = [1, 2, 3]  # 重新绑定局部变量，不影响外部\n\nmy_list = [1, 2, 3]\nmodify_list(my_list)\nprint(my_list)  # 输出 [1, 2, 3, 4]\n\nreassign_list(my_list)\nprint(my_list)  # 输出 [1, 2, 3, 4]（未变）\n```\n\n## 反例\n错误地认为函数内对可变参数的重新赋值会修改外部变量，导致外部变量未按预期改变。例如，在函数内使用 `lst = []` 清空列表，外部列表不会被清空。\n\n## 边界条件\n注意默认参数的可变性陷阱：如果默认参数是可变对象（如空列表），多次调用函数会累积修改该默认对象。应使用 `None` 作为默认值，并在函数内创建新对象。",
+    "code_pattern": "def process_data(data, default=None):\n    if default is None:\n        default = []\n    # 对 data 进行只读操作，避免修改外部对象\n    result = data[:]  # 创建副本\n    result.append(1)\n    return result",
+    "common_pitfalls": [
+      "默认参数使用可变对象（如空列表 `[]`）作为默认值，导致多次调用函数时共享同一个对象，产生累积副作用。应使用 `None` 并在函数内初始化。",
+      "在函数内部对可变参数进行重新赋值（如 `param = new_value`），误以为这会修改外部变量。实际上只是局部变量重新绑定，外部对象不变。",
+      "混淆不可变对象（如整数、字符串）的修改：在函数内对不可变参数执行 `+=` 等操作，会创建新对象并重新绑定局部变量，不会影响外部变量。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

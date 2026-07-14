@@ -17,5 +17,13 @@
     "description": "结构型模式: Structural design patterns focus on the composition of classes and objects. Here is an example using Python to illustrate the Adapter pattern, which is a structural design pattern: ```python from abc import ABC, abstractmethod # Target interface class Target(ABC): @abstractmethod def request(self) -> str: pass # Adaptee class class Adaptee: def specific_request(self) -> str: return \".eetpad\" # Adapter class class Adapter(Target): def __init__(self, adaptee: Adaptee): self._adaptee = adaptee def request(self) -> str: return f\"Adapter: {self._adaptee.specific_request()[::-1]}\" # Client code if __name__ == \"__main__\": adaptee = Adaptee() adapter = Adapter(adaptee) print(adapter.request()) # Output: Adapter: deetpad ``` This example demonstrates how the `Adapter` class adapts the interface of `Adaptee` to match that of `Target`."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "结构型模式是软件工程中设计模式的一个重要分支，主要关注如何通过组合类和对象来形成更大的结构，同时保持系统的灵活性和高效性。本分支涵盖适配器模式、代理模式和装饰器模式三种经典模式。适配器模式用于解决接口不兼容问题，通过转换接口使原本无法一起工作的类能够协同工作；代理模式为其他对象提供一种代理以控制对这个对象的访问，常用于延迟加载、访问控制或日志记录；装饰器模式则允许动态地向对象添加新功能，而无需修改其原有结构，通过包装对象来实现功能的扩展。这三种模式都涉及对象间的组合与交互，但侧重点不同：适配器强调接口转换，代理强调控制访问，装饰器强调功能增强。学习路径建议先理解适配器模式，因为它最直观地展示了结构型模式的核心思想；接着学习代理模式，掌握如何通过间接层控制对象访问；最后学习装饰器模式，深入理解如何通过递归组合实现灵活的功能扩展。掌握这些模式有助于设计出更健壮、可维护的软件架构。",
+  "example_queries": [
+    "适配器模式与桥接模式有什么区别？",
+    "在什么场景下应该使用代理模式而不是装饰器模式？",
+    "如何用装饰器模式实现一个日志记录功能？",
+    "适配器模式在现实系统中有哪些典型应用？",
+    "代理模式如何实现延迟加载？"
+  ]
 }

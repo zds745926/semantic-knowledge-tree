@@ -19,5 +19,34 @@
       "content_preview": "Vim: Three modes.:wq to save :q! not to save dd/yy/p. In the context of Vim text editor, here are the translations with brief Python code examples for related concepts: 1. **Save (\":wq\")**: - In Vim, `:wq` is used to save and quit. - In Python, saving data can be done using file handling methods like `open()` and `write()`. ```python with open('example.txt', 'w') as file: file.write(\"Hello, world!\") ``` 2. **Quit without Saving (\":q!\")**: - In Vim, `:q!` is used to quit the editor without saving changes. - This concept doesn't directly translate into Python code but can be related to handling exceptions or skipping operations. 3. **Delete a Line (`dd`)**: - In Vim, `dd` deletes the current line. - In Python, deleting elements from a list is done using methods like `remove()` or slicing. ```python my_list = ['a', 'b', 'c'] del my_list[1] # Removes 'b' print(my_list) # Output: ['a', 'c'] ``` 4. **Yank a Line (`yy`)**: - In Vim, `yy` copies the current line. - In Python, copying elements can be done using slicing or other methods like `copy()` for lists. ```python my_list = ['a', 'b', 'c'] copied_list = my_list[:] # Copies the entire list print(copied_list) # Output: ['a', 'b', 'c'] ``` 5. **Paste (`p`)**: - In Vim, `p` pastes the yanked line below the current cursor position. - In Python, inserting elements into a list can be done using methods like `insert()` or slicing. ```python my_list = ['a', 'b', 'c'] my_list.insert(1, 'x') # Inserts 'x' at index 1 print(my_list) # Output: ['a', 'x', 'b', 'c'] ``` These examples provide a basic understanding of how these Vim commands can be related to Python programming concepts."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tar_gzip_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_csv_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_glob_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_requirements_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nVim 是一个高度可配置的、基于模式的文本编辑器，最初由 Bram Moolenaar 从 vi 编辑器改进而来。它以其强大的编辑能力、丰富的插件系统和高效的键盘操作著称，是 Linux 和 Unix 系统中系统管理员和开发者的常用工具。\n\n## 核心要点\n- **模式编辑**：Vim 拥有多种操作模式，包括普通模式、插入模式、可视模式和命令行模式，用户通过切换模式来执行不同的编辑操作，从而减少对鼠标的依赖。\n- **键盘驱动**：几乎所有操作都可通过键盘完成，例如使用 `dd` 删除一行、`yy` 复制一行，以及 `p` 粘贴，这极大提升了编辑效率。\n- **可扩展性**：通过 Vimscript 或 Lua 脚本语言，用户可以编写插件来扩展功能，例如语法高亮、文件浏览和版本控制集成。\n- **跨平台**：Vim 可在 Linux、macOS、Windows 等多种操作系统上运行，并提供一致的编辑体验。\n- **轻量级**：Vim 占用资源极少，启动迅速，即使在远程服务器或低配硬件上也能流畅运行。\n\n## 应用场景\nVim 常用于系统管理中的配置文件编辑（如 `/etc/nginx/nginx.conf`）、代码编写（尤其是 C、Python、Shell 等语言）以及快速文本处理。它也是许多开发者进行远程服务器维护时的首选编辑器，因为其无需图形界面即可高效工作。\n\n## 相关概念\n- **vi**：Vim 的前身，一个经典的 Unix 文本编辑器，Vim 在 vi 的基础上增加了多级撤销、语法高亮和插件支持。\n- **Neovim**：Vim 的一个分支，旨在重构代码库、改进插件架构并支持异步操作，以提供更现代化的编辑体验。\n- **Emacs**：另一个功能强大的文本编辑器，与 Vim 并称为编辑器领域的两大阵营，Emacs 更强调可扩展性和集成环境。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,38 @@
       "content_preview": "管道: One-way data flow. Unnamed pipes are limited to parent-child processes, while named pipes use `mkfifo`. Shell pipe operator `|`. Here's a brief explanation with Python code examples for the concepts mentioned: 1. **Unnamed Pipes**: - These are used for communication between parent and child processes. - Example in Python using subprocess (though not directly creating unnamed pipes): ```python import subprocess # Start a process that will write to stdout proc = subprocess.Popen(['echo', 'Hello, world!'], stdout=subprocess.PIPE) # Read the output of the process output = proc.communicate()[0] print(output.decode()) ``` 2. **Named Pipes (FIFOs)**: - Named pipes are created using `mkfifo` and can be used for communication between any processes, not just parent-child. - Example in Python to create a named pipe: ```python import os # Create a FIFO file os.mkfifo('myfifo') # Write to the FIFO from one process with open('myfifo', 'w') as f: f.write('Hello, world!') # Read from the FIFO in another process with open('myfifo', 'r') as f: print(f.read()) ``` 3. **Shell Pipe Operator (`|`)**: - The pipe operator is used to connect the output of one command to the input of another. - Example using shell commands: ```sh echo \"Hello, world!\" | grep \"world\" ``` - In Python, you can simulate this with subprocess: ```python import subprocess # Use a pipe to pass data from one process to another result = subprocess.run(['echo', 'Hello, world!'], stdout=subprocess.PIPE) output = subprocess.run(['grep', 'world'], input=result.stdout, text=True, capture_output=True).stdout print(output) ``` These examples should help illustrate the concepts in a practical context."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "deadlock_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_thread_safety_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_tempfile_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "ls_cd_pwd_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n管道是操作系统中一种用于进程间通信（IPC）的机制，它允许一个进程的输出直接作为另一个进程的输入，从而形成数据流。管道通常以字节流的形式在内存中传输数据，遵循先进先出（FIFO）的原则，且默认是单向通信。\n\n## 核心要点\n- 管道分为匿名管道和命名管道：匿名管道仅用于有亲缘关系的进程（如父子进程），而命名管道（FIFO）支持无亲缘关系的进程间通信。\n- 管道是半双工的，数据只能沿一个方向流动；若需双向通信，通常需要创建两个管道。\n- 管道基于文件描述符实现，在Unix/Linux系统中通过`pipe()`系统调用创建，返回读端和写端两个文件描述符。\n- 管道具有容量限制（缓冲区大小），当写端写入速度过快或读端读取过慢时，写操作可能阻塞。\n- 管道通信是字节流式的，无消息边界，需要应用程序自行定义消息格式或使用分隔符。\n\n## 应用场景\n管道常用于Shell命令组合，例如`ls | grep txt`中，`ls`的输出通过管道传递给`grep`进行过滤。在编程中，管道可用于父子进程间的数据传递，如父进程生成数据，子进程处理数据，实现简单的生产者-消费者模型。此外，命名管道常用于不同程序间的临时数据交换，无需网络协议。\n\n## 相关概念\n管道与信号、消息队列、共享内存等同属进程间通信机制，但管道更简单且仅适用于流式数据。信号用于异步通知，消息队列支持结构化消息，共享内存提供高速数据共享但需同步机制。管道与重定向（如`>`和`<`）密切相关，重定向将数据导向文件或设备，而管道则连接进程。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -17,5 +17,13 @@
     "description": "网络配置: Linux network configuration includes `ip` and `ss` commands, iptables firewall, and SSH remote connection. Here are brief explanations for each component: 1. **ip and ss commands**: These are modern command-line tools in Linux for managing network interfaces and connections. - Example of using the `ip` command to set an IP address: ```python # Python code example (not executable, just a representation) import subprocess def set_ip_address(interface='eth0', ip='192.168.1.100'): cmd = f\"sudo ip addr add {ip} dev {interface}\" subprocess.run(cmd, shell=True) # Usage set_ip_address() ``` 2. **iptables firewall**: This is a powerful packet filter for Linux systems that can be used to configure the system's packet filtering rules. - Example of setting up a basic iptables rule: ```python # Python code example (not executable, just a representation) import subprocess def add_firewall_rule(chain='INPUT', rule='-p tcp --dport 22 -j ACCEPT'): cmd = f\"sudo iptables -A {chain} {rule}\" subprocess.run(cmd, shell=True) # Usage add_firewall_rule() ``` 3. **SSH remote connection**: This is a secure way to connect to and manage Linux servers. - Example of using the `paramiko` library in Python for SSH connections: ```python # Python code example (using paramiko) import paramiko def ssh_connect(hostname='192.168.1.10', username='user', password='password'): client = paramiko.SSHClient() client.set_missing_host_key_policy(paramiko.AutoAddPolicy()) client.connect(hostname, username=username, password=password) print(\"Connected successfully\") # Usage ssh_connect() ``` These examples provide a basic understanding of how to interact with these components in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Linux系统管理中网络配置的核心工具与概念，包括网络接口配置、路由设置、连接监控、防火墙规则及远程访问。子节点中，'ip/ss' 是新一代网络配置与诊断工具，用于查看和修改IP地址、路由、链路状态以及套接字信息，替代了传统的ifconfig和netstat；'iptables/nftables' 是Linux内核包过滤框架，用于定义防火墙规则、NAT和流量控制，其中nftables是iptables的现代替代品，提供更简洁的语法和更好的性能；'SSH' 是安全的远程登录与文件传输协议，用于加密管理远程系统。这些子主题相互关联：ip/ss提供网络状态的基础信息，iptables/nftables基于这些状态实施安全策略，而SSH则依赖网络连通性和防火墙规则实现安全访问。学习路径建议先掌握ip/ss进行网络诊断，再学习iptables/nftables配置防火墙，最后结合SSH实现远程管理，从而构建完整的网络配置能力。",
+  "example_queries": [
+    "如何使用ip命令查看和修改网络接口的IP地址？",
+    "ss命令与netstat相比有哪些优势，如何用它监控TCP连接？",
+    "iptables和nftables的主要区别是什么，如何将iptables规则迁移到nftables？",
+    "如何配置SSH密钥认证以提高远程登录的安全性？",
+    "在Linux中如何设置端口转发或NAT规则？"
+  ]
 }

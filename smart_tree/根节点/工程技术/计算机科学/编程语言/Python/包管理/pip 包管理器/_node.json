@@ -18,5 +18,13 @@
     "description": "pip 包管理器: pip is the official package manager for Python. It installs third-party packages from PyPI (Python Package Index) and supports dependency resolution and virtual environments. Here's a brief example of using pip to install a package and create a virtual environment in Python: ```python # Install a package, e.g., requests !pip install requests # Create a virtual environment named 'myenv' !pip install virtualenv !virtualenv myenv # Activate the virtual environment (example for Unix-based systems) import os os.system(\"source myenv/bin/activate\") ``` Note: The `!` before commands in Jupyter Notebook or similar environments indicates that these are shell commands, not Python code. In a standard Python script, you would run these commands directly in your terminal or command prompt."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于 Python 生态中的核心包管理工具——pip。pip 是 Python 官方推荐的包安装器，用于从 Python 包索引（PyPI）及其他索引中安装、管理第三方库。该分支涵盖 pip 的基本使用命令，包括 `pip install`（安装包）、`pip uninstall`（卸载包）、`pip freeze`（列出已安装包及其版本）以及 `requirements.txt` 文件（用于批量记录和复现依赖）。这些子主题相互关联：`pip install` 是日常最常用的命令，支持从 PyPI 或本地文件安装；`pip uninstall` 用于移除不再需要的包；`pip freeze` 生成当前环境的依赖列表，通常输出到 `requirements.txt` 中；而 `requirements.txt` 则作为依赖管理的标准文件，通过 `pip install -r requirements.txt` 可一键复现环境。学习路径建议从 `pip install` 入手，掌握安装、升级、指定版本等操作；然后学习 `pip uninstall` 清理环境；接着使用 `pip freeze` 查看依赖；最后掌握 `requirements.txt` 的编写与使用，实现环境迁移与项目协作。该分支是 Python 开发的基础，适用于初学者至高级开发者。",
+  "example_queries": [
+    "如何使用 pip 安装指定版本的包？",
+    "如何通过 requirements.txt 批量安装项目依赖？",
+    "pip freeze 命令的输出如何保存到文件？",
+    "如何卸载 pip 安装的包及其依赖？",
+    "pip install 和 pip install -r 有什么区别？"
+  ]
 }

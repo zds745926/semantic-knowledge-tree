@@ -19,5 +19,34 @@
       "content_preview": "LEGB 规则: Python variable lookup follows the order Local → Enclosing → Global → Built-in. To illustrate this with a simple Python code example: ```python # Define a global variable global_var = \"I am global\" def outer_function(): # Define an enclosing (non-local) variable enclosing_var = \"I am enclosing\" def inner_function(): # Try to use the local, enclosing, global variables print(local_var) # This will raise a NameError as local_var is not defined here print(enclosing_var) print(global_var) inner_function() outer_function() ``` In this example: - `local_var` would cause a `NameError` because it's not defined in any of the scopes. - `enclosing_var` and `global_var` are accessible within their respective scopes, demonstrating the lookup order."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nLEGB 规则是 Python 中变量作用域解析的顺序规则，即 Local（局部作用域）→ Enclosing（闭包外层函数作用域）→ Global（全局作用域）→ Built-in（内置作用域），用于确定变量名在代码中的绑定关系。\n\n## 何时使用\n当你在函数内部引用变量时，Python 解释器会按照 LEGB 顺序查找变量的定义。理解此规则有助于避免变量遮蔽、意外修改全局变量等问题，尤其在嵌套函数、闭包和模块化编程中至关重要。\n\n## 示例\n```Python\nx = \"global\"\ndef outer():\n    x = \"enclosing\"\n    def inner():\n        x = \"local\"\n        print(x)  # 输出 local\n    inner()\n    print(x)      # 输出 enclosing\nouter()\nprint(x)          # 输出 global\n```\n\n## 反例\n错误地认为在函数内部可以直接修改全局变量而不使用 `global` 声明，例如 `x = 5` 在函数内只会创建一个局部变量，而非修改全局变量，导致意外行为。\n\n## 边界条件\n注意 `global` 和 `nonlocal` 关键字可以强制改变 LEGB 查找顺序；另外，在类定义中，类体本身是一个局部作用域，但方法内部遵循 LEGB 规则时，类变量属于 Enclosing 作用域。",
+    "code_pattern": "def outer():\n    x = \"enclosing\"\n    def inner():\n        x = \"local\"\n        return x\n    return inner()\n\ndef demo():\n    global_var = \"global\"\n    def use_global():\n        global global_var\n        global_var = \"modified\"\n    return use_global",
+    "common_pitfalls": [
+      "在函数内部直接赋值给变量名，而未使用 global 或 nonlocal 声明，会创建一个新的局部变量，而不是修改外层变量，导致数据不一致。",
+      "在嵌套函数中，如果内层函数引用了外层函数的变量，但该变量在内层函数中被重新赋值（未用 nonlocal），会引发 UnboundLocalError，因为 Python 将其视为局部变量。",
+      "误认为内置作用域（builtins）中的名称可以被随意覆盖而不影响其他代码，实际上覆盖内置函数（如 print）可能导致全局范围内的意外行为。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

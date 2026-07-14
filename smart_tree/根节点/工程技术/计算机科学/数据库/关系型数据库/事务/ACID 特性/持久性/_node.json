@@ -19,5 +19,34 @@
       "content_preview": "持久性: The committed results are permanently stored. Redo logs are used for replaying transactions. Here is a brief explanation of \"Redo logs\" with an associated Python code example to illustrate how they might be implemented in a simple logging context: Redo logs are used in database systems to ensure that all committed transactions are written to the data files, even if there is a system failure. This helps in recovering the database state after a crash. Python Code Example: ```python class RedoLog: def __init__(self): self.log = [] def record_transaction(self, transaction): # Simulate recording a transaction (could be a database write) print(f\"Recording transaction: {transaction}\") self.log.append(transaction) def replay_transactions(self): # Simulate replaying transactions print(\"Replaying transactions:\") for transaction in self.log: print(f\" Replay: {transaction}\") # Example usage redo_log = RedoLog() redo_log.record_transaction(\"Transaction1\") redo_log.record_transaction(\"Transaction2\") # Simulating a crash and recovery print(\"\\nSimulating crash and recovery...\") redo_log.replay_transactions() ``` This example demonstrates how transactions can be recorded in a redo log, which can then be replayed to recover the state of a system."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cap_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "sql_injection_v4",
+      "type": "application"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n持久性是数据库事务ACID特性之一，指一旦事务成功提交，其对数据库所做的修改就是永久性的，即使系统发生崩溃或故障，数据也不会丢失。它确保了已提交事务的结果能够被持久保存，不会因后续错误而回滚。\n\n## 核心要点\n- 事务提交后，数据库必须将修改写入非易失性存储（如磁盘），而非仅保留在内存中。\n- 持久性通常通过日志机制（如预写日志WAL）实现，在事务提交前先记录日志，确保故障后能恢复。\n- 数据库系统需具备故障恢复能力，如使用检查点、备份和冗余存储来保障数据不丢失。\n- 持久性不保证单条语句的修改立即持久化，而是以事务为单位保证提交后的整体持久性。\n- 硬件故障（如磁盘损坏）可能破坏持久性，因此常结合RAID、复制等技术增强可靠性。\n\n## 应用场景\n持久性广泛应用于金融系统、电商平台和在线交易处理中，确保订单、转账等关键操作完成后数据不会丢失。在数据库备份与恢复、分布式系统的主从复制中，持久性也是保障数据一致性的基础。\n\n## 相关概念\n持久性与原子性、一致性、隔离性共同构成ACID模型。原子性确保事务全做或全不做，一致性维护数据规则，隔离性管理并发访问，而持久性则聚焦于提交后的数据保存。此外，持久性常与“非易失性存储”、“日志恢复”和“崩溃恢复”等技术概念紧密关联。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,26 @@
       "content_preview": "Barrier: Threading Barrier. All n threads wait until they reach the barrier point and then proceed simultaneously. This allows for phased parallelism. Here's a brief Python code example using `threading.Barrier`: ```python import threading def worker(id, barrier): print(f\"Worker {id} is starting.\") # Simulate some work import time time.sleep(1) # Wait at the barrier print(f\"Worker {id} waiting at the barrier.\") barrier.wait() print(f\"All workers have reached the barrier. Continuing...\") # Create a barrier for 3 threads barrier = threading.Barrier(3) # Start worker threads threads = [threading.Thread(target=worker, args=(i, barrier)) for i in range(3)] for t in threads: t.start() for t in threads: t.join() ``` In this example, three worker threads are created and each waits at the barrier. Once all threads have reached the barrier point, they proceed simultaneously as indicated by the print statements."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_thread_safety_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nBarrier（栅栏）是Python多线程编程中的一种同步原语，用于让多个线程在某个执行点相互等待，直到所有线程都到达该点后才继续执行。\n\n## 何时使用\n当需要将多个线程的执行划分为多个阶段，且每个阶段必须所有线程都完成才能进入下一阶段时使用Barrier。例如，在并行计算中，多个线程分别处理数据的不同部分，每完成一轮计算后需要同步结果再开始下一轮。\n\n## 示例\n```Python\nimport threading\nimport time\n\ndef worker(barrier, name):\n    print(f\"{name} 开始第一阶段工作\")\n    time.sleep(1)  # 模拟工作\n    print(f\"{name} 到达屏障\")\n    barrier.wait()  # 等待所有线程\n    print(f\"{name} 开始第二阶段工作\")\n\nbarrier = threading.Barrier(3)  # 需要3个线程\nthreads = [threading.Thread(target=worker, args=(barrier, f\"线程{i}\")) for i in range(3)]\nfor t in threads:\n    t.start()\nfor t in threads:\n    t.join()\n```\n\n## 反例\n错误地设置Barrier的parties参数小于实际线程数，导致部分线程永远无法到达屏障而阻塞。例如，创建Barrier(2)但启动3个线程，则只有前两个线程能通过屏障，第三个线程永远等待。\n\n## 边界条件\nBarrier的wait()方法可以设置超时，若超时则抛出BrokenBarrierError异常，屏障进入broken状态，后续所有wait()都会立即抛出异常。此外，若某个线程在等待时被中断或异常退出，屏障也会broken。",
+    "code_pattern": "import threading\n\ndef worker(barrier, args):\n    # 阶段1工作\n    # ...\n    barrier.wait()  # 同步点\n    # 阶段2工作\n    # ...\n\nbarrier = threading.Barrier(n_threads)\nthreads = [threading.Thread(target=worker, args=(barrier, i)) for i in range(n_threads)]\nfor t in threads:\n    t.start()\nfor t in threads:\n    t.join()",
+    "common_pitfalls": [
+      "Barrier的parties参数必须与实际参与线程数完全一致，否则会导致线程永久阻塞或屏障提前broken。",
+      "若某个线程在wait()时抛出异常（如超时），屏障会进入broken状态，其他线程的wait()也会失败，需用try/except捕获BrokenBarrierError并重置屏障。",
+      "Barrier的wait()方法默认无超时，若线程因死锁或无限循环无法到达屏障，整个程序将挂起，因此建议设置超时参数。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

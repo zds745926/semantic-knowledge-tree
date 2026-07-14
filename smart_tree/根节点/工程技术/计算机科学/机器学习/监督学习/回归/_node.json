@@ -16,5 +16,13 @@
     "description": "回归: Regression for predicting continuous values. Linear regression and logistic regression are the most basic regression algorithms. For context: - **Linear Regression**: This is used when you want to predict a continuous outcome variable (dependent variable) based on one or more predictor variables (independent variables). The relationship between these variables can be modeled using a linear equation. Example in Python: ```python import numpy as np from sklearn.linear_model import LinearRegression # Sample data: X is the feature, y is the target variable X = np.array([[1], [2], [3], [4], [5]]) y = np.array([2.1, 3.9, 6.0, 8.7, 10.2]) # Create a linear regression model model = LinearRegression() # Train the model using the training sets model.fit(X, y) # Predicting new values print(\"Predicted value for [3]: \", model.predict([[3]])) ``` - **Logistic Regression**: This is used when you want to predict a binary outcome (0 or 1) based on one or more predictor variables. The output of logistic regression is the probability that the target variable belongs to a certain class. Example in Python: ```python from sklearn.linear_model import LogisticRegression # Sample data: X is the feature, y is the binary target variable (0 or 1) X = np.array([[1], [2], [3], [4], [5]]) y = np.array([0, 0, 1, 1, 1]) # Create a logistic regression model model = LogisticRegression() # Train the model using the training sets model.fit(X, y) # Predicting new values print(\"Predicted class for [3]: \", model.predict([[3]])) ```"
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "回归是监督学习中的核心分支，旨在建立输入特征与连续或离散目标变量之间的映射关系。本分支涵盖线性回归和逻辑回归两大子主题：线性回归用于预测连续数值（如房价、温度），通过最小二乘法拟合线性函数；逻辑回归虽名为“回归”，实则处理二分类问题（如垃圾邮件检测），通过Sigmoid函数将线性输出映射为概率值。两者共享线性模型的基础假设，但目标函数和损失函数不同（线性回归使用均方误差，逻辑回归使用交叉熵）。学习路径建议：先掌握线性回归的原理、梯度下降优化及评估指标（R²、MSE），再过渡到逻辑回归，理解其分类本质、决策边界及正则化技术（L1/L2）。后续可拓展至多项式回归、岭回归等变体，以及Softmax回归（多分类）。该分支是机器学习入门的基石，为神经网络、支持向量机等复杂模型提供理论支撑。",
+  "example_queries": [
+    "线性回归和逻辑回归的根本区别是什么？",
+    "如何用梯度下降法求解线性回归的参数？",
+    "逻辑回归中为什么使用交叉熵损失函数而不是均方误差？",
+    "在房价预测中，如何评估线性回归模型的好坏？",
+    "逻辑回归如何处理多分类问题？"
+  ]
 }

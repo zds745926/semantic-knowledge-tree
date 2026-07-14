@@ -19,5 +19,34 @@
       "content_preview": "hashlib 模块: hashlib.md5/sha1/sha256. The `update()` method accumulates data. The `hexdigest()` method produces a hexadecimal digest. Password hashing uses bcrypt. Here are brief Python code examples for each: ```python import hashlib # Example using md5 md5_hash = hashlib.md5() md5_hash.update(b\"Hello World\") print(md5_hash.hexdigest()) # Example using sha1 sha1_hash = hashlib.sha1() sha1_hash.update(b\"Hello World\") print(sha1_hash.hexdigest()) # Example using sha256 sha256_hash = hashlib.sha256() sha256_hash.update(b\"Hello World\") print(sha256_hash.hexdigest()) ``` For bcrypt, you would typically use a library like `bcrypt`: ```python import bcrypt password = b\"supersecret\" # Generate a salt and hash the password hashed_password = bcrypt.hashpw(password, bcrypt.gensalt()) print(hashed_password) ```"
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_functools_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nhashlib 模块是 Python 标准库中用于安全哈希和消息摘要的模块，提供了多种哈希算法（如 MD5、SHA1、SHA256 等）的接口，用于将任意长度的数据转换为固定长度的哈希值。\n\n## 何时使用\n当需要验证数据完整性、存储密码的哈希值、生成文件指纹或进行数字签名时，应使用 hashlib 模块。它适用于任何需要确保数据未被篡改或安全存储敏感信息的场景。\n\n## 示例\n```Python\nimport hashlib\n\n# 计算字符串的 SHA256 哈希值\ndata = \"Hello, World!\"\nhash_object = hashlib.sha256(data.encode('utf-8'))\nhex_dig = hash_object.hexdigest()\nprint(f\"SHA256 哈希值: {hex_dig}\")\n\n# 使用 update 方法分块计算\nhash_object = hashlib.sha256()\nhash_object.update(b'Hello, ')\nhash_object.update(b'World!')\nprint(f\"分块更新后的哈希值: {hash_object.hexdigest()}\")\n```\n\n## 反例\n直接使用 MD5 或 SHA1 进行密码存储，因为这些算法已不再安全，容易受到碰撞攻击。应使用更安全的算法如 SHA256 或 bcrypt。\n\n## 边界条件\n注意输入数据必须是字节串（bytes），字符串需要先编码为字节串。对于大文件，应使用分块更新（update 方法）避免内存溢出。",
+    "code_pattern": "import hashlib\n\ndef compute_hash(data: bytes, algorithm: str = 'sha256') -> str:\n    \"\"\"计算给定数据的哈希值。\"\"\"\n    try:\n        hash_func = hashlib.new(algorithm)\n        hash_func.update(data)\n        return hash_func.hexdigest()\n    except ValueError:\n        raise ValueError(f\"不支持的哈希算法: {algorithm}\")\n\n# 使用示例\nif __name__ == \"__main__\":\n    data = b\"Hello, World!\"\n    print(compute_hash(data))\n    print(compute_hash(data, 'md5'))",
+    "common_pitfalls": [
+      "忘记将字符串编码为字节串，直接传入字符串导致 TypeError，应使用 data.encode('utf-8') 或 b'string'。",
+      "在密码存储中直接使用简单哈希（如 MD5）而不加盐，容易被彩虹表攻击，应使用 hashlib.pbkdf2_hmac 或第三方库如 bcrypt。",
+      "对大文件一次性读取到内存中计算哈希，导致内存溢出，应使用分块读取和 update 方法。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

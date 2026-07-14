@@ -19,5 +19,38 @@
       "content_preview": "泛型: List<T> type parameter. Wildcards <? extends E> / <? super E>. Type erasure. Here's a brief explanation with a related Python code example: - **List[T] type parameter**: In generic programming, `T` is a type variable that can be replaced by any valid type when the class or method is instantiated. - **Wildcards <? extends E> / <? super E>**: - `<? extends E>`: This wildcard means that the type can be any subtype of `E`. For example, if `E` is `List`, then `<? extends List>` could be a `StringList` or an `IntegerList`. - `<? super E>`: This wildcard means that the type can be any supertype of `E`. However, in Python, this concept is not directly applicable as Python uses dynamic typing and does not have explicit generic bounds like Java. - **Type erasure**: In languages like Java, generics are implemented using type erasure. At runtime, all type information about generics is removed, but the compiler ensures that only valid operations are performed based on the types at compile time. Here's a Python code example to illustrate the concept of `<? extends E>`: ```python from typing import List, TypeVar T = TypeVar('T') def process_elements(elements: List[T]) -> None: for element in elements: print(element) # Example usage with a list of strings process_elements([\"apple\", \"banana\", \"cherry\"]) # Example usage with a list of integers (Python does not enforce this at runtime, but it's a valid type) process_elements([1, 2, 3]) ``` In Python, the `List[T]` is more flexible and doesn't require explicit bounds like in Java. However, the concept of using wildcards to represent generic types can be understood through similar examples."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "java_vm_basics_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "java_map_v4",
+      "type": "application"
+    },
+    {
+      "id": "cpp_oop_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "immutability_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n泛型（Generics）是 Java 中一种参数化类型的机制，允许在类、接口和方法中使用类型参数，从而在编译时提供更强的类型检查并消除显式类型转换。\n\n## 何时使用\n当需要编写可适用于多种类型的通用代码（如集合类、算法工具类）时，使用泛型可以避免重复编写针对不同具体类型的代码。它也常用于构建类型安全的容器，确保在编译期捕获类型不匹配的错误，而不是在运行时抛出 ClassCastException。\n\n## 示例\n```Java\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic class GenericExample {\n    public static void main(String[] args) {\n        // 使用泛型声明一个只能存储 String 的 List\n        List<String> list = new ArrayList<>();\n        list.add(\"Hello\");\n        list.add(\"World\");\n        // 不需要强制转换，直接获取 String\n        String first = list.get(0);\n        System.out.println(first);\n    }\n}\n```\n\n## 反例\n不使用泛型时，集合可以存放任意类型对象，取出时必须手动强制转换，容易引发 ClassCastException。例如：`List rawList = new ArrayList(); rawList.add(123); String s = (String) rawList.get(0);` 会在运行时抛出异常。\n\n## 边界条件\n泛型类型参数不能是基本类型（如 int、double），必须使用对应的包装类（如 Integer、Double）。另外，泛型在运行时会被擦除（Type Erasure），因此无法在运行时获取类型参数的具体信息，例如不能使用 `instanceof T` 或 `new T()`。",
+    "code_pattern": "public class Box<T> {\n    private T content;\n\n    public void set(T content) {\n        this.content = content;\n    }\n\n    public T get() {\n        return content;\n    }\n\n    public static <U> Box<U> createEmpty() {\n        return new Box<>();\n    }\n}",
+    "common_pitfalls": [
+      "误用原始类型（Raw Type）：如使用 `List` 而不带类型参数，会失去编译期类型检查，容易引发运行时类型转换异常。",
+      "不能实例化泛型数组：如 `new T[10]` 是不允许的，因为类型擦除后无法确定数组元素类型，通常应使用 `ArrayList<T>` 替代。",
+      "泛型静态上下文中无法使用类型参数：静态字段或静态方法的类型参数不能引用类的类型参数，因为静态成员属于类而非实例，例如 `private static T item;` 会编译错误。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

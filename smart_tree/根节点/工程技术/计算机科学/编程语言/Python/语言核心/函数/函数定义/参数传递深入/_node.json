@@ -17,5 +17,13 @@
     "description": "参数传递深入: A deep understanding of Python's parameter passing mechanisms and definition methods is crucial for writing high-quality functions. To illustrate some key concepts with Python code examples: 1. Positional Arguments: ```python def add(a, b): return a + b result = add(3, 4) # result will be 7 ``` 2. Keyword Arguments: ```python def greet(name, message=\"Hello\"): print(f\"{message}, {name}!\") greet(name=\"Alice\") # prints \"Hello, Alice!\" greet(message=\"Hi\", name=\"Bob\") # prints \"Hi, Bob!\" ``` 3. Default Arguments: ```python def power(base, exponent=2): return base ** exponent print(power(2)) # Output: 4 print(power(2, 3)) # Output: 8 ``` 4. Variable-Length Argument Lists: ```python def sum_all(*args): return sum(args) print(sum_all(1, 2, 3, 4)) # Output: 10 ``` 5. Keyword-Only Arguments (Python 3.0+): ```python def log(message, *, level=\"INFO\"): print(f\"{level}: {message}\") log(\"Error occurred\", level=\"CRITICAL\") # prints \"CRITICAL: Error occurred\" ``` 6. Arbitrary Keyword Arguments: ```python def build_person(first_name, last_name, **kwargs): person = {\"first\": first_name, \"last\": last_name} for key, value in kwargs.items(): person[key] = value return person print(build_person(\"John\", \"Doe\", age=30, city=\"New York\")) # Output: {'first': 'John', 'last': 'Doe', 'age': 30, 'city': 'New York'} ``` These examples cover some of the main ways to define and pass parameters in Python functions. Understanding these mechanisms is essential for writing flexible and robust code."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支深入探讨 Python 函数定义中参数传递的高级机制，涵盖三个核心子主题：参数传递机制、仅关键字参数以及 *args 和 **kwargs。参数传递机制解释了 Python 中对象引用传递的本质，区分可变与不可变对象在函数内部的影响，是理解其他两个主题的基础。仅关键字参数允许在函数调用时强制使用关键字形式传递特定参数，增强了代码的可读性和安全性，通常出现在参数列表的 * 之后。*args 和 **kwargs 则提供了处理可变数量参数的能力，*args 用于接收任意数量的位置参数（以元组形式），**kwargs 用于接收任意数量的关键字参数（以字典形式），它们常与仅关键字参数结合使用，以实现灵活且健壮的函数接口。学习路径建议先掌握参数传递机制，再学习仅关键字参数，最后掌握 *args 和 **kwargs 的用法与组合。",
+  "example_queries": [
+    "Python 函数参数传递是传值还是传引用？",
+    "如何在函数中强制要求某些参数必须以关键字形式传递？",
+    "*args 和 **kwargs 分别用于什么场景？",
+    "如何定义一个函数，使其既能接受任意数量的位置参数，又能接受特定关键字参数？",
+    "在函数内部修改传入的可变对象会影响外部变量吗？"
+  ]
 }

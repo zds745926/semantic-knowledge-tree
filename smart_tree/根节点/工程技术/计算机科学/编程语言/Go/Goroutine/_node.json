@@ -19,5 +19,42 @@
       "content_preview": "Goroutine: The `go` function启动s lightweight goroutines. Handling millions of concurrent requests is effortless. The stack size starts small and can dynamically expand. Here's a brief Python code example to illustrate the concept, although note that Python does not have built-in support for goroutines like Go: ```python import threading def worker(): print(\"Worker thread started\") # Simulate some work import time time.sleep(2) print(\"Worker thread finished\") # Start a new thread (lightweight concurrent execution) thread = threading.Thread(target=worker) thread.start() print(\"Main program continues to run\") ``` In this example, `threading.Thread` is used to start a new thread in Python, which is similar to starting a lightweight goroutine in Go. However, the underlying implementation and behavior differ significantly between the two languages."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nGoroutine 是 Go 语言中的轻量级线程，由 Go 运行时管理，用于实现并发执行。\n\n## 何时使用\n当需要并发执行多个任务，如处理多个网络请求、并行计算或异步 I/O 操作时，使用 Goroutine 可以高效地利用多核 CPU 资源。它适合 I/O 密集型或需要高并发的场景，但应避免在 CPU 密集型任务中创建过多 Goroutine 导致调度开销。\n\n## 示例\n```Go\npackage main\n\nimport (\n\t\"fmt\"\n\t\"time\"\n)\n\nfunc printNumbers() {\n\tfor i := 1; i <= 5; i++ {\n\t\ttime.Sleep(100 * time.Millisecond)\n\t\tfmt.Println(i)\n\t}\n}\n\nfunc main() {\n\tgo printNumbers()\n\ttime.Sleep(1 * time.Second)\n\tfmt.Println(\"Main done\")\n}\n```\n\n## 反例\n在 Goroutine 中直接修改共享变量而不使用同步机制，会导致数据竞争。例如多个 Goroutine 同时递增一个计数器而不加锁。\n\n## 边界条件\nGoroutine 的栈初始很小（几 KB），但可动态增长，因此创建大量 Goroutine 通常不会耗尽内存，但过多（如数十万）仍可能导致调度器压力。另外，主 Goroutine 退出时所有 Goroutine 都会强制终止，需确保主 Goroutine 等待子 Goroutine 完成。",
+    "code_pattern": "package main\n\nimport (\n\t\"fmt\"\n\t\"sync\"\n)\n\nfunc worker(id int, wg *sync.WaitGroup) {\n\tdefer wg.Done()\n\tfmt.Printf(\"Worker %d starting\\n\", id)\n\t// 执行任务\n\tfmt.Printf(\"Worker %d done\\n\", id)\n}\n\nfunc main() {\n\tvar wg sync.WaitGroup\n\tfor i := 1; i <= 3; i++ {\n\t\twg.Add(1)\n\t\tgo worker(i, &wg)\n\t}\n\twg.Wait()\n}",
+    "common_pitfalls": [
+      "未使用 WaitGroup 或 channel 等待 Goroutine 完成，导致主 Goroutine 提前退出，子 Goroutine 被强制终止。",
+      "在 Goroutine 中直接访问共享变量未加锁，导致数据竞争和未定义行为。",
+      "创建 Goroutine 时未传递循环变量副本，导致所有 Goroutine 共享同一变量，最终得到错误结果。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

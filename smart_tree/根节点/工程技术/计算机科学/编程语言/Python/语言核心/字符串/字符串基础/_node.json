@@ -19,5 +19,34 @@
       "content_preview": "字符串基础: String is an immutable sequence. ' and \" are used to define strings. f-string is the best format for string interpolation: `f'value: {x}'`. Here's a brief Python code example using f-strings: ```python x = 42 print(f'value: {x}') # Output: value: 42 ``` This example demonstrates how to use an f-string to embed expressions inside string literals, which are replaced with their values."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n字符串是 Python 中用于表示文本数据的一种不可变序列类型，由零个或多个字符组成，通常用单引号、双引号或三引号括起来。\n\n## 何时使用\n当需要处理文本数据（如用户输入、文件内容、网络消息）时，字符串是首选数据类型。它也适用于需要不可变序列的场景，例如作为字典的键或集合的元素。此外，字符串常用于格式化输出和正则表达式匹配。\n\n## 示例\n```Python\n# 创建字符串\ns1 = 'Hello'\ns2 = \"World\"\ns3 = '''多行\n字符串'''\n\n# 基本操作\nprint(s1 + ' ' + s2)  # 拼接: Hello World\nprint(s1 * 3)          # 重复: HelloHelloHello\nprint(s1[0])           # 索引: H\nprint(s1[1:4])         # 切片: ell\nprint(len(s1))         # 长度: 5\n\n# 常用方法\nprint(s1.upper())      # HELLO\nprint(s1.replace('l', 'p'))  # Heppo\nprint('He' in s1)      # True\n```\n\n## 反例\n不要使用字符串拼接来构建大量字符串（如在循环中频繁使用 `+`），因为字符串不可变，每次拼接都会创建新对象，导致性能低下。应改用列表收集片段，最后用 `''.join()` 合并。\n\n## 边界条件\n注意空字符串 `''` 长度为 0，但仍然是有效的字符串。索引超出范围会引发 `IndexError`，切片操作则不会（超出部分被忽略）。字符串不可变，任何修改操作（如 `replace`）都会返回新字符串，原字符串不变。",
+    "code_pattern": "def process_string(s: str) -> str:\n    \"\"\"处理字符串的模板函数\"\"\"\n    if not isinstance(s, str):\n        raise TypeError(\"输入必须是字符串\")\n    # 去除首尾空白\n    s = s.strip()\n    # 转换为小写\n    s = s.lower()\n    # 替换特定字符\n    s = s.replace(' ', '_')\n    # 分割并重新组合\n    parts = s.split('_')\n    result = '_'.join([p.capitalize() for p in parts])\n    return result",
+    "common_pitfalls": [
+      "字符串是不可变的，使用 `+=` 在循环中拼接字符串会创建大量临时对象，导致 O(n^2) 时间复杂度，应改用列表收集再 `join`。",
+      "索引和切片混淆：索引从 0 开始，负索引从 -1 开始；切片 `s[start:stop:step]` 不包含 stop 索引处的字符，且 step 为负时可反向切片。",
+      "字符串比较时，`==` 比较内容，`is` 比较对象身份，不要用 `is` 来比较字符串值，因为 Python 可能缓存短字符串导致意外结果。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

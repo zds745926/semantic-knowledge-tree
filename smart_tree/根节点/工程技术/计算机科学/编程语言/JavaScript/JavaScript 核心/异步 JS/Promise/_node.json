@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "js_event_loop_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nPromise 是 JavaScript 中用于处理异步操作的对象，它代表一个可能尚未完成但最终会成功或失败的操作，并提供统一的 .then()、.catch() 和 .finally() 方法来注册回调。\n\n## 何时使用\n当需要处理异步操作（如网络请求、文件读取、定时器）并希望避免回调地狱时，使用 Promise。它特别适合链式调用多个异步任务，以及在多个并发异步操作完成后统一处理结果。\n\n## 示例\n```JavaScript\nconst fetchData = (url) => {\n  return new Promise((resolve, reject) => {\n    setTimeout(() => {\n      if (url) {\n        resolve(`数据来自 ${url}`);\n      } else {\n        reject(new Error('URL 不能为空'));\n      }\n    }, 1000);\n  });\n};\n\nfetchData('https://api.example.com')\n  .then(data => console.log(data))\n  .catch(err => console.error(err));\n```\n\n## 反例\n在 Promise 内部直接调用 resolve 或 reject 后继续执行其他代码，导致状态混乱。例如，在 resolve 之后又调用 reject，但 Promise 状态已锁定，后续调用无效。\n\n## 边界条件\nPromise 构造函数中的执行器函数是同步执行的，只有 .then() 和 .catch() 中的回调才是异步的。另外，如果 Promise 内部抛出错误且没有 catch 处理，错误会被吞没，不会抛出到全局。",
+    "code_pattern": "const myPromise = new Promise((resolve, reject) => {\n  // 异步操作\n  const success = true;\n  if (success) {\n    resolve('成功值');\n  } else {\n    reject(new Error('失败原因'));\n  }\n});\n\nmyPromise\n  .then(result => {\n    console.log(result);\n    return result;\n  })\n  .catch(error => {\n    console.error(error);\n  })\n  .finally(() => {\n    console.log('完成');\n  });",
+    "common_pitfalls": [
+      "忘记在 Promise 链中 return 值，导致下一个 .then() 接收 undefined 而非预期结果。例如，在 .then() 中执行异步操作但未 return 该 Promise，链式调用会提前继续。",
+      "在 Promise 内部调用 resolve 或 reject 后继续执行代码，虽然状态已锁定，但后续代码仍会执行，可能导致意外副作用。正确的做法是在 resolve/reject 后使用 return 终止。",
+      "未处理 Promise 的拒绝（rejection），导致错误被静默吞没。始终在链末尾添加 .catch() 或在全局监听 unhandledrejection 事件。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

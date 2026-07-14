@@ -173,8 +173,21 @@ class TreePersistence:
             print("[持久化] 树为空")
             return None
 
+        # 检测存储向量类型以选择正确的编码器
+        # FallbackEncoder 生成稀疏二值向量（大部分 0.0），SemanticEncoder 生成稠密浮点向量
+        encoder = None
         try:
-            encoder = SemanticEncoder("all-MiniLM-L6-v2")
+            # 采样一个向量文件检查稀疏度
+            vec_files = list(self.tree_path.rglob("vector.txt"))
+            if vec_files:
+                sample = vec_files[0].read_text(encoding="utf-8").strip().split(",")
+                floats = [float(x) for x in sample[:100] if x.strip()]
+                zeros = sum(1 for f in floats if abs(f) < 1e-6)
+                # 如果超过 30% 的值是 0 → FallbackEncoder
+                if zeros / max(len(floats), 1) > 0.3:
+                    encoder = FallbackEncoder(384)
+            if encoder is None:
+                encoder = SemanticEncoder("all-MiniLM-L6-v2")
         except Exception:
             encoder = FallbackEncoder(384)
 

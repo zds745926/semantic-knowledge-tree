@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "py_functools_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nitertools 是 Python 标准库中用于创建高效迭代器的模块，提供了许多用于操作迭代对象的函数，能够以函数式编程风格处理数据流。\n\n## 何时使用\n当需要处理大量数据或无限序列时，itertools 可以避免一次性加载所有数据到内存，从而节省内存并提高性能。它特别适用于组合生成、数据分组、循环迭代等场景，例如生成排列组合、对连续元素分组、或创建无限计数器。\n\n## 示例\n```Python\nimport itertools\n\n# 生成 1 到 5 的排列\nperms = list(itertools.permutations([1, 2, 3], 2))\nprint(perms)  # 输出: [(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)]\n\n# 使用 chain 连接多个可迭代对象\ncombined = list(itertools.chain('ABC', 'DEF'))\nprint(combined)  # 输出: ['A', 'B', 'C', 'D', 'E', 'F']\n```\n\n## 反例\n错误地将 itertools 函数的结果直接用于需要多次遍历的场景，例如对迭代器进行两次 for 循环，因为迭代器只能消费一次。\n\n## 边界条件\n注意 itertools 返回的是迭代器对象，不是列表，因此只能遍历一次；如果需要多次使用，应转换为列表。另外，对于无限迭代器（如 count），必须设置停止条件，否则会导致无限循环。",
+    "code_pattern": "import itertools\n\ndef process_data(data):\n    # 示例：对数据进行分组\n    grouped = itertools.groupby(sorted(data), key=lambda x: x[0])\n    result = {key: list(group) for key, group in grouped}\n    return result\n\n# 使用示例\ndata = [('a', 1), ('b', 2), ('a', 3)]\nprint(process_data(data))",
+    "common_pitfalls": [
+      "迭代器只能消费一次：itertools 返回的是迭代器，如果多次遍历同一个迭代器，第二次会得到空结果，需要转换为列表或重新创建。",
+      "无限迭代器未设停止条件：使用 count、cycle 等无限迭代器时，如果没有在循环中设置 break 条件，会导致程序无限运行。",
+      "groupby 要求输入已排序：itertools.groupby 只对连续相同的元素分组，如果输入未排序，分组结果可能不符合预期，需要先排序。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

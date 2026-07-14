@@ -19,5 +19,22 @@
       "content_preview": "MongoDB: Document Database (BSON). Schema-less. Replica Set + Sharding for Horizontal Scaling. Here is an additional explanation with a brief Python code example to illustrate the concept of a document database using PyMongo, a popular Python driver for MongoDB: ```python from pymongo import MongoClient # Connect to the MongoDB server client = MongoClient('mongodb://localhost:27017/') # Select the database and collection db = client['mydatabase'] collection = db['mycollection'] # Insert a document into the collection (schema-less) document = {\"name\": \"John Doe\", \"age\": 30, \"email\": \"johndoe@example.com\"} result = collection.insert_one(document) print(f\"Inserted document with ID: {result.inserted_id}\") # Query documents from the collection documents = collection.find({\"age\": 30}) for doc in documents: print(doc) ``` This Python code snippet demonstrates connecting to a MongoDB server, inserting a document into a collection (which is schema-less), and querying documents based on a specific field."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_json_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nMongoDB是一种开源的、面向文档的NoSQL数据库管理系统，它使用类似JSON的BSON（二进制JSON）格式存储数据，支持灵活的模式设计。与传统关系型数据库不同，MongoDB通过集合（Collections）和文档（Documents）组织数据，无需预定义表结构，从而能够高效处理大规模、半结构化或非结构化的数据。\n\n## 核心要点\n- **文档存储**：MongoDB以BSON文档为单位存储数据，每个文档可以包含嵌套字段和数组，支持动态模式，允许同一集合中的文档拥有不同的字段结构。\n- **高可扩展性**：通过内置的分片（Sharding）机制，MongoDB能够将数据水平分布到多个服务器上，实现线性扩展，支持海量数据存储和高吞吐量操作。\n- **丰富的查询语言**：提供强大的查询表达式，支持字段过滤、聚合管道（Aggregation Pipeline）、地理空间查询、文本搜索以及索引优化，满足复杂的数据检索需求。\n- **高可用与自动故障转移**：通过副本集（Replica Set）实现数据冗余，主节点故障时自动选举新主节点，确保服务持续可用，并支持读写分离以提升性能。\n- **原子性操作**：单个文档的更新操作是原子的，支持多字段更新和数组操作，结合事务功能（多文档事务）可保证数据一致性。\n\n## 应用场景\nMongoDB广泛应用于需要快速迭代和灵活数据模型的项目，如内容管理系统、实时分析、物联网（IoT）数据采集、移动应用后端以及日志存储。其高写入性能和水平扩展能力特别适合处理海量、高并发的数据流，例如社交媒体动态、用户行为跟踪和产品目录管理。此外，MongoDB的聚合框架也常用于实时报表和仪表盘生成。\n\n## 相关概念\nMongoDB常与关系型数据库（如MySQL、PostgreSQL）对比，后者强调严格模式、ACID事务和表间关联，而MongoDB牺牲部分一致性以换取灵活性和扩展性。其他NoSQL数据库如Cassandra（列族存储）和Redis（键值存储）也各有侧重，但MongoDB的文档模型更接近开发者的对象思维。此外，MongoDB的聚合管道类似于Unix管道，支持数据流式处理，而GridFS则用于存储超过16MB的大文件。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,30 @@
       "content_preview": "适配器模式: Translate the given Chinese technical text to English: \"Convert incompatible interfaces to match what the client expects. Class Adapter/Object Adapter.\" For further elaboration, let's provide a brief explanation of class adapter and object adapter patterns in Python with examples. ### Class Adapter Pattern The class adapter pattern is used when you want to adapt an existing class that cannot be modified (because it might be final or not open for modification) into another interface. This can be achieved by creating a new class that extends the target class and implements the adapted interface. **Example:** ```python from abc import ABC, abstractmethod # Target Interface class Target(ABC): @abstractmethod def request(self): pass # Adaptee Class (the existing incompatible interface) class Adaptee: def specific_request(self): return \"Adaptee's specific request\" # Adapter Class that adapts the Adaptee to the Target class ClassAdapter(Target): def __init__(self, adaptee: Adaptee): self._adaptee = adaptee def request(self): # Convert Adaptee's interface to match the Target's interface return f\"Class Adapter: {self._adaptee.specific_request()}\" # Client Code if __name__ == \"__main__\": adaptee = Adaptee() adapter = ClassAdapter(adaptee) print(adapter.request()) ``` ### Object Adapter Pattern The object adapter pattern is used when you want to adapt an existing class that can be modified (i.e., it's not final) into another interface. This can be achieved by wrapping the existing class with a new one and delegating the calls. **Example:** ```python from abc import ABC, abstractmethod # Target Interface class Target(ABC): @abstractmethod def request(self): pass # Adaptee Class (the existing incompatible interface) class Adaptee: def specific_request(self): return \"Adaptee's specific request\" # Adapter Object that adapts the Adaptee to the Target class ObjectAdapter(Target): def __init__(self, adaptee: Adaptee): self._adaptee = adaptee def request(self): # Convert Adaptee's interface to match the Target's interface return f\"Object Adapter: {self._adaptee.specific_request()}\" # Client Code if __name__ == \"__main__\": adaptee = Adaptee() adapter = ObjectAdapter(adaptee) print(adapter.request()) ``` Both examples demonstrate how to adapt an existing class (`Adaptee`) into a new interface (`Target`) using either the class or object adapter pattern."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n适配器模式是一种结构型设计模式，它允许将不兼容的接口转换为客户端期望的另一个接口。该模式通过一个适配器类来包装一个现有类，使其接口与客户端所需接口匹配，从而让原本因接口不匹配而无法一起工作的类能够协同工作。\n\n## 核心要点\n- **目标接口（Target）**：客户端期望使用的接口，定义了客户端需要的方法。\n- **适配者（Adaptee）**：需要被适配的现有类，其接口与目标接口不兼容。\n- **适配器（Adapter）**：核心类，实现目标接口并持有适配者实例，将目标接口的调用转换为适配者接口的调用。\n- **对象适配器 vs 类适配器**：对象适配器通过组合实现（更灵活），类适配器通过多重继承实现（在支持多继承的语言中可用）。\n- **透明性**：客户端通过目标接口与适配器交互，无需感知适配过程，实现解耦。\n\n## 应用场景\n适配器模式常用于系统集成或复用遗留代码时，例如将第三方库的接口适配为项目内部的标准接口。在数据转换场景中，如将不同格式的数据（XML、JSON）统一为系统所需格式。此外，在UI组件库中，适配器可用于让不同框架的组件在统一容器中运行。\n\n## 相关概念\n- **桥接模式**：两者都涉及接口转换，但桥接模式旨在将抽象与实现分离，而适配器模式专注于解决接口不兼容问题。\n- **外观模式**：外观模式为子系统提供统一接口，而适配器模式转换单个类的接口。\n- **装饰器模式**：装饰器动态增强对象功能，不改变接口；适配器改变接口，不增强功能。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

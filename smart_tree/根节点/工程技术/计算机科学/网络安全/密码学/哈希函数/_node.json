@@ -19,5 +19,30 @@
       "content_preview": "哈希函数: SHA-256/3. Non-reversible and collision-resistant. bcrypt/argon2 password hashing. For the coding/programming concepts, here are brief Python code examples: 1. **SHA-256**: ```python import hashlib def sha256_hash(input_string): hash_object = hashlib.sha256() hash_object.update(input_string.encode()) return hash_object.hexdigest() # Example usage print(sha256_hash(\"Hello, World!\")) ``` 2. **bcrypt**: ```python import bcrypt def bcrypt_hash(password): salt = bcrypt.gensalt() hashed_password = bcrypt.hashpw(password.encode(), salt) return hashed_password.decode() # Example usage print(bcrypt_hash(\"password123\")) ``` 3. **argon2**: ```python from argon2 import PasswordHasher def argon2_hash(password): ph = PasswordHasher() hashed_password = ph.hash(password) return hashed_password # Example usage print(argon2_hash(\"password123\")) ``` These examples provide a basic understanding of how to use SHA-256, bcrypt, and argon2 for hashing in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_hashlib_v4",
+      "type": "application"
+    },
+    {
+      "id": "csrf_v4",
+      "type": "application"
+    },
+    {
+      "id": "sql_injection_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n哈希函数是一种将任意长度的输入数据映射为固定长度输出（哈希值）的数学函数。其核心特性是单向性，即从哈希值无法逆向推导出原始输入，且不同的输入应产生不同的哈希值（抗碰撞性）。\n\n## 核心要点\n- 固定输出长度：无论输入数据大小，哈希函数生成的哈希值长度固定，如SHA-256输出256位。\n- 单向性：从哈希值几乎不可能还原出原始数据，保障数据隐私。\n- 抗碰撞性：难以找到两个不同的输入产生相同的哈希值，确保数据完整性。\n- 高效性：计算哈希值的过程快速，适用于大规模数据处理。\n- 雪崩效应：输入数据的微小变化会导致哈希值显著不同，增强安全性。\n\n## 应用场景\n哈希函数广泛应用于密码存储（如保存密码哈希值而非明文）、数字签名（验证文件完整性）和区块链技术（如比特币的工作量证明）。此外，它还用于数据校验（如文件下载后的哈希比对）和消息认证码（MAC）中。\n\n## 相关概念\n哈希函数与加密算法不同，后者是可逆的，而哈希函数不可逆。常见哈希算法包括MD5（已不安全）、SHA-1（已淘汰）和SHA-256（当前安全标准）。哈希函数常与数字签名结合，形成哈希签名方案，提升效率。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

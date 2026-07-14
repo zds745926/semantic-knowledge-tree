@@ -19,5 +19,34 @@
       "content_preview": "字符串切片进阶: The slicing notation `s[start:stop:step]` allows for negative steps to reverse the string. For instance, `s[::-1]` reverses the string. Here is a brief Python code example demonstrating this concept: ```python # Example usage of s[::-1] original_string = \"hello\" reversed_string = original_string[::-1] print(reversed_string) # Output: \"olleh\" ``` This code snippet demonstrates how to reverse a string using the slicing notation with a step size of `-1`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n字符串切片进阶是指利用Python字符串的切片语法，通过指定起始索引、结束索引和步长，灵活获取子字符串或反转字符串的操作。\n\n## 何时使用\n当需要从字符串中提取连续或不连续的子序列时，例如截取特定位置的数据、每隔几个字符取样、反转字符串等。它常用于文本处理、数据清洗和算法实现中，能够高效地操作字符串片段。\n\n## 示例\n```Python\n# 基本切片：提取子字符串\ntext = \"Hello, World!\"\nprint(text[0:5])  # 输出: Hello\nprint(text[7:12]) # 输出: World\n\n# 使用步长：每隔一个字符取一个\nprint(text[::2])  # 输出: Hlo ol!\n\n# 负数索引：从末尾开始\nprint(text[-6:-1]) # 输出: World\n\n# 反转字符串\nprint(text[::-1]) # 输出: !dlroW ,olleH\n\n# 省略边界：从开头到结尾\nprint(text[:5])   # 输出: Hello\nprint(text[7:])   # 输出: World!\n```\n\n## 反例\n错误用法：使用切片时索引超出范围不会报错，但可能得到意外结果，例如 text[100:200] 返回空字符串，而不是错误提示。\n\n## 边界条件\n切片索引可以超出字符串长度，Python会静默处理为边界值；步长不能为0，否则会引发 ValueError。",
+    "code_pattern": "def slice_string(s, start=None, stop=None, step=None):\n    \"\"\"返回字符串s的切片结果，支持灵活参数。\"\"\"\n    return s[start:stop:step]\n\n# 使用示例\nif __name__ == \"__main__\":\n    sample = \"abcdefghij\"\n    print(slice_string(sample, 2, 8, 2))  # 输出: ceg\n    print(slice_string(sample, step=-1))   # 输出: jihgfedcba\n    print(slice_string(sample, stop=5))    # 输出: abcde",
+    "common_pitfalls": [
+      "步长为0会导致ValueError: slice step cannot be zero，必须确保步长非零。",
+      "负步长时起始索引应大于结束索引才能得到非空结果，否则返回空字符串，例如 'abc'[2:0:-1] 返回 'cb'，但 'abc'[0:2:-1] 返回空。",
+      "切片不会修改原字符串，而是创建新字符串，频繁切片可能影响性能，尤其是大字符串时。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,34 @@
       "content_preview": "daemon 线程: Daemon thread, which automatically terminates when the main thread exits without blocking the program's exit. Python code example: ```python import threading def worker(): while True: print(\"Working...\") # Create a daemon thread daemon_thread = threading.Thread(target=worker, daemon=True) daemon_thread.start() print(\"Main thread continues to run...\") ``` In this example, `daemon=True` is used when creating a thread. The main thread will exit without waiting for the daemon thread to complete its execution."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_condition_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\ndaemon 线程（守护线程）是一种后台线程，当主线程（程序入口）结束时，所有 daemon 线程会立即被强制终止，无论其任务是否完成。\n\n## 何时使用\n适用于需要持续运行但不影响程序退出的后台任务，例如日志记录、监控、心跳检测或垃圾回收。当主程序完成主要逻辑后，这些后台线程无需等待即可随程序一起终止，避免资源泄漏或手动管理线程生命周期。\n\n## 示例\n```Python\nimport threading\nimport time\n\ndef background_task():\n    while True:\n        print(\"Daemon thread running...\")\n        time.sleep(1)\n\ndaemon_thread = threading.Thread(target=background_task, daemon=True)\ndaemon_thread.start()\n\ntime.sleep(3)\nprint(\"Main thread exiting...\")\n# 程序退出，daemon 线程自动终止\n```\n\n## 反例\n在主线程结束后仍期望 daemon 线程完成关键操作（如保存文件或发送网络请求），但 daemon 线程会被强制终止，导致数据丢失或状态不一致。\n\n## 边界条件\n- daemon 线程中创建的子线程默认也是 daemon 线程，除非显式设置 daemon=False。\n- 若所有非 daemon 线程都已结束，主线程会立即退出，无需等待 daemon 线程。",
+    "code_pattern": "import threading\nimport time\n\ndef daemon_worker():\n    while True:\n        # 执行后台任务\n        time.sleep(1)\n\nthread = threading.Thread(target=daemon_worker, daemon=True)\nthread.start()\n\n# 主线程继续执行其他任务\n# 程序退出时 daemon 线程自动终止",
+    "common_pitfalls": [
+      "误将 daemon 线程用于需要确保完成的关键操作（如文件写入、数据库提交），导致数据丢失或状态不一致。",
+      "忘记设置 daemon=True 导致线程默认非守护，程序无法退出，尤其在交互式环境或长时间运行脚本中。",
+      "在 daemon 线程中启动子线程未显式设置 daemon=False，导致子线程也变为守护线程，行为不可控。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,34 @@
       "content_preview": "LifoQueue: queue.LifoQueue is a Last-In-First-Out (LIFO) data structure, similar to a stack. It supports put and get methods. This data structure is suitable for Depth-First Search (DFS) traversal. Here's a brief Python code example using LifoQueue for DFS: ```python from queue import LifoQueue def dfs(graph, start): stack = LifoQueue() visited = set() stack.put(start) while not stack.empty(): vertex = stack.get() if vertex not in visited: print(vertex) # Process the node (e.g., print it) visited.add(vertex) for neighbor in graph[vertex]: stack.put(neighbor) # Example usage graph = { 'A': ['B', 'C'], 'B': ['D', 'E'], 'C': ['F'], 'D': [], 'E': ['F'], 'F': [] } dfs(graph, 'A') ``` This code defines a depth-first search (DFS) function using `LifoQueue` to manage the traversal order."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_thread_safety_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "deadlock_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_collections_module_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nLifoQueue（后进先出队列）是 Python queue 模块中的一个线程安全队列类，它基于栈（Stack）数据结构实现，遵循后进先出（LIFO）原则，即最后放入队列的元素最先被取出。\n\n## 何时使用\nLifoQueue 适用于需要实现“后进先出”顺序的任务处理场景，例如撤销操作栈、深度优先搜索的待探索节点管理、或需要优先处理最新任务的调度系统。当多个线程需要安全地共享一个栈结构时，LifoQueue 提供了内置的锁机制，避免了手动同步的复杂性。\n\n## 示例\n```Python\nimport queue\nimport threading\nimport time\n\ndef worker(q):\n    while True:\n        item = q.get()\n        if item is None:\n            break\n        print(f\"处理: {item}\")\n        time.sleep(0.1)\n        q.task_done()\n\nq = queue.LifoQueue()\nfor i in range(5):\n    q.put(i)\n\nthreads = []\nfor _ in range(2):\n    t = threading.Thread(target=worker, args=(q,))\n    t.start()\n    threads.append(t)\n\nq.join()\nfor _ in range(2):\n    q.put(None)\nfor t in threads:\n    t.join()\n```\n\n## 反例\n错误地将 LifoQueue 用于需要公平调度的任务队列，例如 Web 请求处理，因为后进先出会导致最新请求总是被优先处理，而旧请求可能永远得不到服务（饥饿）。\n\n## 边界条件\n当 LifoQueue 为空时调用 get() 会阻塞，直到有元素放入；设置 maxsize 参数可限制队列容量，超出时 put() 会阻塞。注意：LifoQueue 不保证同一优先级元素的顺序，仅保证后进先出。",
+    "code_pattern": "import queue\n\n# 创建后进先出队列，可选 maxsize\nlifo_queue = queue.LifoQueue(maxsize=10)\n\n# 生产者：放入元素\nlifo_queue.put(item)\n\n# 消费者：取出元素（阻塞直到有元素）\nitem = lifo_queue.get()\n\n# 标记任务完成（用于 join）\nlifo_queue.task_done()\n\n# 等待所有任务完成\nlifo_queue.join()",
+    "common_pitfalls": [
+      "误以为 LifoQueue 是线程不安全的，实际上它内部已实现锁机制，无需额外同步。",
+      "忘记调用 task_done() 导致 join() 永远阻塞，特别是在多线程消费者中，每个 get() 后必须对应一个 task_done()。",
+      "在 LifoQueue 为空时调用 get(block=False) 或 get_nowait() 会抛出 queue.Empty 异常，未捕获会导致程序崩溃。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

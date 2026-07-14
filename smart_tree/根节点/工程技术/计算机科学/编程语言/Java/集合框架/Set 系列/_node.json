@@ -19,5 +19,30 @@
       "content_preview": "Set 系列: HashSet/TreeSet/LinkedHashSet. In Java, these are three different implementations of the Set interface, each with its own characteristics and use cases. Here's a brief description of each: 1. **HashSet**: This implementation provides no guarantees as to the order of elements; it may return the elements in any order. Internally, HashSet uses a hash table for storage. 2. **TreeSet**: This implementation orders the elements according to their natural ordering or by a Comparator provided at set creation time. It is backed by a red-black tree and thus maintains a sorted order. 3. **LinkedHashSet**: This implementation extends HashSet and links the entries in the order they are inserted, providing both fast access (like HashSet) and iteration over the elements in insertion order. Here's a brief Python code example to illustrate their usage: ```python # Example of using HashSet/TreeSet/LinkedHashSet concepts from collections import defaultdict, OrderedDict class MyHashSet: def __init__(self): self.set = set() def add(self, key: int) -> None: self.set.add(key) def remove(self, key: int) -> None: if key in self.set: self.set.remove(key) def contains(self, key: int) -> bool: return key in self.set class MyTreeSet: def __init__(self): self.tree = sortedcontainers.SortedSet() def add(self, key: int) -> None: self.tree.add(key) def remove(self, key: int) -> None: if key in self.tree: self.tree.discard(key) def contains(self, key: int) -> bool: return key in self.tree class MyLinkedHashSet: def __init__(self): self.linked_set = OrderedDict() def add(self, key: int) -> None: if key not in self.linked_set: self.linked_set[key] = None # Using None as a placeholder value self.linked_set.move_to_end(key) def remove(self, key: int) -> None: if key in self.linked_set: del self.linked_set[key] def contains(self, key: int) -> bool: return key in self.linked_set # Example usage hash_set = MyHashSet() tree_set = MyTreeSet() linked_hash_set = MyLinkedHashSet() print(hash_set.add(1)) # Output: None print(tree_set.add(2)) # Output: None print(linked_hash_set.add(3)) # Output: None print(hash_set.contains(1)) # Output: True print(tree_set.contains(2)) # Output: True print(linked_hash_set.contains(3)) # Output: True print(hash_set.remove(1)) # Output: None print(tree_set.remove(2)) # Output: None print(linked_hash_set.remove(3)) # Output: None # Note: The Python examples use collections and sortedcontainers libraries for demonstration purposes. ``` In this example, `MyHashSet`, `MyTreeSet`, and `MyLinkedHashSet` classes are created to mimic the behavior of HashSet, TreeSet, and LinkedHashSet respectively."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "bst_search_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "avl_tree_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nSet 系列是 Java 集合框架中用于存储不重复元素的接口，主要实现包括 HashSet、LinkedHashSet 和 TreeSet，分别基于哈希表、链表和红黑树实现元素的唯一性。\n\n## 何时使用\n当需要确保集合中不包含重复元素时使用 Set。例如，去重用户 ID、存储唯一标签或实现数学集合运算（交集、并集）。如果还要求元素有序，可选择 TreeSet 或 LinkedHashSet。\n\n## 示例\n```Java\nimport java.util.*;\n\npublic class SetExample {\n    public static void main(String[] args) {\n        Set<String> set = new HashSet<>();\n        set.add(\"apple\");\n        set.add(\"banana\");\n        set.add(\"apple\"); // 重复，不会添加\n        System.out.println(set); // 输出: [banana, apple]（顺序不定）\n        \n        Set<Integer> treeSet = new TreeSet<>();\n        treeSet.add(5);\n        treeSet.add(1);\n        treeSet.add(3);\n        System.out.println(treeSet); // 输出: [1, 3, 5]（自然顺序）\n    }\n}\n```\n\n## 反例\n错误地使用 Set 来存储需要按插入顺序访问的元素，却选择了 HashSet，导致顺序不可预测。应使用 LinkedHashSet 或 List。\n\n## 边界条件\nSet 的 equals 和 hashCode 方法必须正确实现，否则元素去重可能失效。TreeSet 要求元素实现 Comparable 或提供 Comparator，否则运行时抛出 ClassCastException。",
+    "code_pattern": "import java.util.*;\n\npublic class SetTemplate {\n    public static void main(String[] args) {\n        Set<String> set = new HashSet<>();\n        set.add(\"element1\");\n        set.add(\"element2\");\n        // 遍历\n        for (String s : set) {\n            System.out.println(s);\n        }\n        // 检查存在\n        if (set.contains(\"element1\")) {\n            // 操作\n        }\n        // 删除\n        set.remove(\"element1\");\n    }\n}",
+    "common_pitfalls": [
+      "未重写 hashCode 和 equals 方法：当存储自定义对象时，若未正确重写这两个方法，Set 无法正确判断元素重复，导致重复元素被添加。",
+      "在迭代过程中修改 Set：使用 for-each 或 Iterator 遍历 Set 时，直接调用 add 或 remove 会抛出 ConcurrentModificationException，应使用 Iterator 的 remove 方法。",
+      "混淆 HashSet 与 TreeSet 的性能：HashSet 提供 O(1) 的插入和查找，但无序；TreeSet 提供 O(log n) 操作，但保持排序。错误选择会导致性能或顺序不符合预期。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,35 @@
       "content_preview": "scikit-learn: Classic machine learning library. Classification/regression/clustering/dimensionality reduction. Unified fit/predict API. Seamless integration with NumPy/Pandas. Here's a brief Python code example that demonstrates the use of such a library, specifically scikit-learn, for a classification task: ```python from sklearn.datasets import load_iris from sklearn.model_selection import train_test_split from sklearn.preprocessing import StandardScaler from sklearn.neighbors import KNeighborsClassifier # Load dataset data = load_iris() X, y = data.data, data.target # Split the dataset into training and testing sets X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Feature scaling scaler = StandardScaler() X_train_scaled = scaler.fit_transform(X_train) X_test_scaled = scaler.transform(X_test) # Train a KNN classifier knn = KNeighborsClassifier(n_neighbors=3) knn.fit(X_train_scaled, y_train) # Predict on the test set predictions = knn.predict(X_test_scaled) print(predictions) ``` This example uses scikit-learn to perform classification using k-nearest neighbors (KNN). It demonstrates loading a dataset, splitting it into training and testing sets, scaling features, fitting a model, and making predictions."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "pca_v4",
+      "type": "application"
+    },
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_scipy_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nscikit-learn 是一个基于 Python 的开源机器学习库，提供统一的 API 用于分类、回归、聚类、降维、模型选择和数据预处理等任务。\n\n## 何时使用\n当需要快速实现标准机器学习算法（如逻辑回归、支持向量机、随机森林）并进行模型评估时，scikit-learn 是最佳选择。它特别适合中小规模数据集（样本数通常小于 10 万）的探索性分析和原型开发，其一致的 fit/predict/transform 接口使得算法切换和管道构建非常便捷。\n\n## 示例\n```Python\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\n\n# 加载数据\niris = load_iris()\nX, y = iris.data, iris.target\n\n# 划分训练集和测试集\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# 训练随机森林分类器\nclf = RandomForestClassifier(n_estimators=100, random_state=42)\nclf.fit(X_train, y_train)\n\n# 预测并评估\ny_pred = clf.predict(X_test)\nprint(f\"Accuracy: {accuracy_score(y_test, y_pred):.2f}\")\n```\n\n## 反例\n直接使用未归一化的特征训练 SVM 模型，导致模型收敛缓慢或性能低下。正确的做法是先使用 StandardScaler 对特征进行标准化。\n\n## 边界条件\nscikit-learn 默认假设数据为 NumPy 数组或类似数组结构，特征矩阵应为二维（样本数 x 特征数），标签应为一维。对于缺失值，大多数估计器不支持 NaN，需要先使用 SimpleImputer 进行填充。",
+    "code_pattern": "from sklearn.model_selection import train_test_split\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.metrics import classification_report\n\n# 构建管道：先标准化，再分类\npipeline = Pipeline([\n    ('scaler', StandardScaler()),\n    ('clf', RandomForestClassifier(n_estimators=100, random_state=42))\n])\n\n# 划分数据\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# 训练\npipeline.fit(X_train, y_train)\n\n# 预测与评估\ny_pred = pipeline.predict(X_test)\nprint(classification_report(y_test, y_pred))",
+    "common_pitfalls": [
+      "忘记对特征进行缩放：许多算法（如 SVM、KNN、PCA）对特征尺度敏感，未标准化会导致模型偏向数值大的特征，应使用 StandardScaler 或 MinMaxScaler。",
+      "在训练集上使用测试集信息：例如先对整个数据集进行标准化再划分训练/测试集，造成数据泄露，正确做法是只对训练集 fit，再用同一 scaler transform 测试集。",
+      "忽略随机种子设置：多次运行结果不一致，难以调试和复现，应在 train_test_split 和模型初始化时设置 random_state 参数。",
+      "混淆分类与回归任务：例如使用回归指标（如 MSE）评估分类模型，或反之，应根据任务类型选择正确的评估指标和模型。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

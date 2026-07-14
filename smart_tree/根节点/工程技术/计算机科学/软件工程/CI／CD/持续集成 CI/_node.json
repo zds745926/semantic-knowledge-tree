@@ -19,5 +19,26 @@
       "content_preview": "持续集成 CI: Automatic build and test on every push. Jenkins/GitLab CI/GitHub Actions. For illustration purposes, here are some brief Python code examples for each of these continuous integration tools: ### Jenkins ```python # Example of a simple Jenkins pipeline script in Python (using the Jenkins Pipeline API) def jenkins_pipeline(): return \"\"\" pipeline { agent any stages { stage('Build') { steps { echo 'Building...' } } stage('Test') { steps { sh 'python3 -m unittest discover' } } } } \"\"\" ``` ### GitLab CI ```python # Example of a simple GitLab CI configuration in Python (using the GitLab API) def gitlab_ci(): return \"\"\" stages: - build - test build_job: stage: build script: - echo 'Building...' test_job: stage: test script: - python3 -m unittest discover \"\"\" ``` ### GitHub Actions ```python # Example of a simple GitHub Actions workflow in Python (using the GitHub API) def github_actions(): return \"\"\" name: Python application on: [push] jobs: build: runs-on: ubuntu-latest steps: - uses: actions/checkout@v2 - name: Set up Python uses: actions/setup-python@v2 with: python-version: '3.x' - name: Install dependencies run: | python -m pip install --upgrade pip pip install -r requirements.txt - name: Run tests run: | python -m unittest discover \"\"\" ``` These examples provide a basic structure for each CI/CD tool, demonstrating how you might set up build and test stages."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "git_basics_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n持续集成（Continuous Integration，简称CI）是一种软件开发实践，要求开发团队频繁地将代码变更合并到共享主干仓库中，通常每天多次。每次合并后，通过自动化构建和测试流程来快速验证新代码的正确性，从而尽早发现集成错误。\n\n## 核心要点\n1. **频繁提交**：开发者应频繁（如每天多次）将代码变更推送到共享仓库，减少分支间的差异，降低合并冲突风险。\n2. **自动化构建**：每次提交都会触发自动化构建过程，包括编译、打包等步骤，确保代码能够成功构建。\n3. **自动化测试**：构建后自动运行单元测试、集成测试等，快速检测代码中的缺陷，避免问题流入后续阶段。\n4. **快速反馈**：CI系统在几分钟内提供构建和测试结果，使开发者能立即修正错误，缩短修复周期。\n5. **主干稳定**：通过持续集成，主干代码始终保持可发布状态，提升团队交付信心和效率。\n\n## 应用场景\n持续集成广泛应用于各类软件开发项目，尤其是敏捷开发和DevOps团队。它适用于微服务架构、移动应用开发、Web应用开发等场景，帮助团队在频繁迭代中保持代码质量，加速产品交付。例如，一个电商平台团队每天多次集成代码，通过CI流水线自动运行数千个测试用例，确保新功能不会破坏现有系统。\n\n## 相关概念\n持续集成与持续交付（CD）和持续部署紧密相关，三者共同构成CI/CD流水线。持续交付在CI基础上，确保代码可随时部署到生产环境；持续部署则自动将通过测试的代码部署到生产。此外，版本控制系统（如Git）是CI的基础，而自动化测试框架和构建工具（如Jenkins、GitLab CI）是CI的关键支撑。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

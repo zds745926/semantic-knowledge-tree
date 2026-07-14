@@ -16,5 +16,13 @@
     "description": "C 核心: The core of C includes pointers, memory management, structures, and preprocessing. To provide more context and include a brief Python code example for each concept: 1. **Pointers**: In C, pointers are variables that store memory addresses. ```python # Example in Python (Note: Python does not have native pointer support like C) address = id(\"example\") # Using the id() function to get the memory address of a string print(f\"Memory address: {address}\") ``` 2. **Memory Management**: Memory management involves allocating and deallocating memory. ```python # Example in Python (using list as an example for dynamic array) arr = [1, 2, 3] # Dynamically allocated array del arr # Deallocate the array ``` 3. **Structures**: Structures allow grouping related data together. ```python # Example in Python (using a class to simulate C structures) class Person: def __init__(self, name, age): self.name = name self.age = age person = Person(\"Alice\", 30) # Creating an instance of the structure print(f\"Name: {person.name}, Age: {person.age}\") ``` 4. **Preprocessing**: Preprocessing involves macros and conditional compilation. ```python # Example in Python (using a simple if-else statement to simulate preprocessing) def preprocess(value): if value > 10: return \"Greater than 10\" else: return \"Less than or equal to 10\" result = preprocess(20) print(result) # Output: Greater than 10 ```"
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "C核心是C语言编程的基础与精髓，涵盖了语言的基本语法、数据类型、控制结构、函数、数组、字符串、结构体、联合体、枚举、预处理指令以及标准库的使用。其子节点“指针”和“内存管理”是C语言最强大也最复杂的部分，二者紧密相关：指针是直接操作内存地址的工具，而内存管理则涉及动态分配（如malloc、free）、栈与堆的区别、内存泄漏、野指针等问题。学习C核心的路径通常从基本语法和数据类型入手，逐步掌握函数与作用域，然后深入理解指针的声明、运算、与数组和函数的关系，最后学习动态内存分配与释放技巧。只有扎实掌握指针和内存管理，才能真正理解C语言的高效与灵活，并为后续学习数据结构、操作系统等高级主题打下基础。",
+  "example_queries": [
+    "C语言中指针和数组有什么区别？",
+    "如何正确使用malloc和free避免内存泄漏？",
+    "什么是野指针？如何避免？",
+    "C语言中函数指针的用法是什么？",
+    "结构体中的指针成员如何安全地管理内存？"
+  ]
 }

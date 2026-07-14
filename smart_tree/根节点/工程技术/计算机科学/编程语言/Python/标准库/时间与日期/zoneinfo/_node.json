@@ -19,5 +19,38 @@
       "content_preview": "zoneinfo: zoneinfo.ZoneInfo(3.9+) IANA Time Zone. datetime.replace(tzinfo=). Here is an example of how you might use `ZoneInfo` and `replace` in Python: ```python from datetime import datetime import zoneinfo # Get the current date and time with a specific timezone current_time = datetime.now() target_timezone = \"America/New_York\" # Example IANA Time Zone ID local_time = current_time.astimezone(zoneinfo.ZoneInfo(target_timezone)) # Replace the timezone information in an existing datetime object existing_time = datetime(2023, 10, 1, 12, 0) # Example date and time new_time_with_tz = existing_time.replace(tzinfo=zoneinfo.ZoneInfo(target_timezone)) print(\"Local Time:\", local_time) print(\"New Time with TZ:\", new_time_with_tz) ``` This example demonstrates how to use `ZoneInfo` from the `zoneinfo` module to handle time zones in Python, and shows how to replace the timezone information in a `datetime` object."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_hashlib_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_tempfile_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nzoneinfo 是 Python 3.9 引入的标准库模块，用于访问 IANA 时区数据库，提供基于操作系统时区数据的时区对象，支持时区转换和本地化时间操作。\n\n## 何时使用\n当需要处理跨时区的日期时间计算、将 UTC 时间转换为特定时区的本地时间、或解析带有时区信息的字符串时，应使用 zoneinfo。它替代了已弃用的 pytz 库，并与 Python 的 datetime 模块原生集成，适用于 Web 应用、日志记录、国际化和数据聚合等场景。\n\n## 示例\n```Python\nfrom datetime import datetime, timezone, timedelta\nfrom zoneinfo import ZoneInfo\n\n# 创建带时区的时间\nutc_time = datetime(2023, 10, 1, 12, 0, 0, tzinfo=timezone.utc)\nprint(\"UTC时间:\", utc_time)\n\n# 转换为纽约时区\nny_tz = ZoneInfo(\"America/New_York\")\nny_time = utc_time.astimezone(ny_tz)\nprint(\"纽约时间:\", ny_time)\n\n# 创建本地时区时间\ntokyo_tz = ZoneInfo(\"Asia/Tokyo\")\ntokyo_time = datetime(2023, 10, 1, 21, 0, 0, tzinfo=tokyo_tz)\nprint(\"东京时间:\", tokyo_time)\n\n# 时区转换\nutc_from_tokyo = tokyo_time.astimezone(timezone.utc)\nprint(\"转换回UTC:\", utc_from_tokyo)\n```\n\n## 反例\n错误地使用固定偏移量（如 timedelta(hours=8)）代替时区名称，会导致忽略夏令时变化，例如将北京时间硬编码为 UTC+8 在夏令时期间会出错。\n\n## 边界条件\nzoneinfo 依赖操作系统时区数据，在 Windows 上可能缺失某些时区，需安装 tzdata 包；时区名称需符合 IANA 规范（如 \"Asia/Shanghai\"），大小写敏感；处理历史日期时，时区规则可能变化，需注意数据版本。",
+    "code_pattern": "from datetime import datetime, timezone\nfrom zoneinfo import ZoneInfo\n\ndef convert_timezone(dt: datetime, from_tz: str, to_tz: str) -> datetime:\n    \"\"\"将时间从 from_tz 转换到 to_tz\"\"\"\n    if dt.tzinfo is None:\n        dt = dt.replace(tzinfo=ZoneInfo(from_tz))\n    return dt.astimezone(ZoneInfo(to_tz))\n\n# 使用示例\nutc_dt = datetime(2023, 10, 1, 12, 0, 0, tzinfo=timezone.utc)\nlocal_dt = convert_timezone(utc_dt, \"UTC\", \"America/New_York\")\nprint(local_dt)",
+    "common_pitfalls": [
+      "在 Windows 上运行代码时，zoneinfo 可能找不到时区数据，需安装 tzdata 包（pip install tzdata），否则抛出 ZoneInfoNotFoundError。",
+      "使用 datetime.now() 创建的时间没有时区信息，直接调用 astimezone() 会默认使用系统本地时区，可能导致意外结果，应显式指定 tzinfo。",
+      "时区名称拼写错误（如 'Asia/Shanghai' 误写为 'Asia/ShangHai'）会导致 KeyError，需严格遵循 IANA 时区数据库的命名规范。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

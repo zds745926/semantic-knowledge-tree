@@ -17,5 +17,13 @@
     "description": "DevOps: DevOps leverages automation tools and cultural practices to facilitate collaboration between development and operations. Key components include containerization, Kubernetes, and observability. Here's a brief Python code example for containerization using Docker: ```python import docker client = docker.from_env() # Pull an image from Docker Hub image = client.images.pull('nginx:latest') # Run a container based on the pulled image container = client.containers.run(image, detach=True) print(f\"Container ID: {container.id}\") ``` This Python script uses the `docker` library to interact with Docker. It pulls the latest Nginx image from Docker Hub and runs a container based on that image. For Kubernetes integration, you might use libraries like `kubernetes` in Python: ```python from kubernetes import client, config # Load kubeconfig file (usually located at ~/.kube/config) config.load_kube_config() v1 = client.CoreV1Api() pods = v1.list_pod_for_all_namespaces(watch=False) for pod in pods.items: print(f\"Pod Name: {pod.metadata.name}, Namespace: {pod.metadata.namespace}\") ``` This script loads the Kubernetes configuration and lists all pods across namespaces."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "DevOps 是软件开发与运维的融合实践，旨在通过自动化、协作和持续反馈，缩短开发周期、提高部署频率并保障系统可靠性。本分支涵盖容器化、可观测性和云原生基础三大核心子主题。容器化（如 Docker、Kubernetes）提供轻量级、可移植的运行环境，是微服务和持续部署的基石；可观测性（包括日志、指标、追踪）确保系统运行状态透明，帮助团队快速定位问题；云原生基础（如基础设施即代码、CI/CD、服务网格）则定义了在云环境中构建和运行弹性、可扩展应用的最佳实践。三者相互支撑：容器化实现应用的标准化打包与编排，可观测性为容器化环境提供监控与诊断能力，而云原生基础则整合前两者，形成从开发到生产的完整自动化流水线。学习路径建议从容器化入手，掌握 Docker 和 Kubernetes 基础；然后学习可观测性工具（如 Prometheus、Grafana、ELK Stack）；最后深入云原生架构，理解 CI/CD 工具链、基础设施即代码（如 Terraform）和服务网格。",
+  "example_queries": [
+    "如何使用 Docker 和 Kubernetes 实现微服务的容器化部署？",
+    "在 Kubernetes 集群中，如何通过 Prometheus 和 Grafana 搭建可观测性监控系统？",
+    "云原生架构下，CI/CD 流水线如何设计以实现持续集成与持续部署？",
+    "什么是基础设施即代码（IaC），Terraform 如何管理云资源？",
+    "服务网格（如 Istio）在微服务通信中如何提供流量管理和安全策略？"
+  ]
 }

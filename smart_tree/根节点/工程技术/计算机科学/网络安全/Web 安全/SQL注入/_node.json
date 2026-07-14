@@ -19,5 +19,22 @@
       "content_preview": "SQL注入: Malicious SQL injection into queries. Parameterized queries/ORM protection. ### Example in Python To illustrate the difference between vulnerable and secure practices, consider the following examples: #### Vulnerable Code (SQL Injection) ```python def get_user_by_id(user_id): query = \"SELECT * FROM users WHERE id = \" + user_id cursor.execute(query) # This is vulnerable to SQL injection ``` #### Secure Code (Parameterized Query) ```python import sqlite3 def get_user_by_id(user_id): conn = sqlite3.connect('example.db') cursor = conn.cursor() query = \"SELECT * FROM users WHERE id = ?\" cursor.execute(query, (user_id,)) result = cursor.fetchone() print(result) conn.close() ``` In the secure example, the `?` placeholder is used in the SQL query and passed as a tuple to the `execute` method. This ensures that user input is treated as data rather than executable code, preventing SQL injection attacks."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "xss_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nSQL注入是一种常见的Web安全漏洞，攻击者通过在用户输入中插入恶意的SQL代码，欺骗后端数据库执行非预期的命令。这种攻击可以导致数据泄露、篡改或删除，甚至完全控制数据库服务器。\n\n## 核心要点\n1. 攻击原理：攻击者利用应用程序对用户输入过滤不严，将恶意SQL语句拼接到正常查询中。\n2. 常见类型：包括基于错误的注入、联合查询注入、盲注（布尔盲注和时间盲注）等。\n3. 危害程度：轻则窃取敏感数据（如用户密码、信用卡信息），重则获取系统权限。\n4. 防御措施：使用参数化查询（预编译语句）、输入验证与转义、最小权限原则。\n5. 检测方法：通过自动化扫描工具或手动测试输入特殊字符（如单引号、双引号）观察响应。\n\n## 应用场景\nSQL注入主要出现在Web应用程序中，尤其是登录页面、搜索框、URL参数等用户输入点。攻击者常用于窃取数据库中的用户凭证、支付信息或进行权限提升。此外，在旧版CMS、论坛或未更新补丁的系统中尤为常见。\n\n## 相关概念\nSQL注入与跨站脚本（XSS）同属注入类攻击，但目标不同：XSS攻击客户端，SQL注入攻击服务端数据库。此外，它与NoSQL注入类似，但针对非关系型数据库。防御时需结合Web应用防火墙（WAF）和代码审计来增强安全性。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

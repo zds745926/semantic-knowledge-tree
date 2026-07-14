@@ -19,5 +19,26 @@
       "content_preview": "页面置换算法: FIFO/LRU/Clock. Page fault rate affects performance. ### Explanation: - **FIFO (First-In-First-Out)**: A memory replacement policy where the oldest page is replaced when a new page needs to be loaded into memory. ```python from collections import deque class FIFOPageReplacer: def __init__(self, capacity): self.capacity = capacity self.queue = deque() def replace_page(self, page_to_replace): if len(self.queue) >= self.capacity: return self.queue.popleft() # Replace the oldest page else: return None def add_page(self, page): if page in self.queue: self.queue.remove(page) self.queue.append(page) ``` - **LRU (Least Recently Used)**: A memory replacement policy where the least recently used page is replaced when a new page needs to be loaded into memory. ```python from collections import OrderedDict class LRUPageReplacer: def __init__(self, capacity): self.capacity = capacity self.cache = OrderedDict() def replace_page(self, page_to_replace): return self.cache.popitem(last=False)[0] # Replace the least recently used page def add_page(self, page): if page in self.cache: del self.cache[page] elif len(self.cache) >= self.capacity: self.replace_page(page) self.cache[page] = None ``` - **Clock**: A memory replacement policy that uses a circular linked list to keep track of pages. It checks each page in the order they were added, and if a page is not recently used, it replaces it. ```python class ClockPageReplacer: def __init__(self, capacity): self.capacity = capacity self.clock_hand = None self.pages = {} def replace_page(self, page_to_replace): current = self.clock_hand while True: if current not in self.pages or self.pages[current] == 0: # If the page is not recently used return current else: self.pages[current][1] = 0 # Mark as not recently used next_page = current.next if next_page is None: next_page = self.clock_hand current = next_page def add_page(self, page): if page in self.pages: self.pages[page][1] = 1 # Mark as recently used else: if len(self.pages) >= self.capacity: to_replace = self.replace_page(page) del self.pages[to_replace] self.pages[page] = [0, 1] # Add new page and mark as not recently used but recently used ``` - **Page fault rate**: The frequency at which a requested page is not found in the memory and needs to be fetched from the disk. A higher page fault rate can significantly impact system performance. These examples provide basic implementations of these memory replacement policies, which are commonly used in operating systems for managing virtual memory."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n页面置换算法是操作系统中虚拟内存管理的关键机制，用于在物理内存不足时，决定哪些页面应从内存中移出以腾出空间给新页面。其核心目标是减少缺页率，提升系统性能。\n\n## 核心要点\n- 最佳置换算法（OPT）理论上性能最优，但无法实现，仅作为衡量其他算法的基准。\n- 先进先出算法（FIFO）实现简单，但可能产生Belady异常，即增加内存页数反而导致缺页率上升。\n- 最近最久未使用算法（LRU）通过记录页面访问历史来置换最长时间未使用的页面，性能较好但硬件开销大。\n- 时钟算法（Clock）是LRU的近似实现，通过循环扫描和访问位标记来高效选择置换页面。\n- 工作集算法基于进程当前活跃页面集合进行置换，能有效避免抖动现象。\n\n## 应用场景\n页面置换算法广泛应用于现代操作系统的虚拟内存管理，如Windows、Linux等，确保多进程环境下内存的高效利用。同时，在数据库缓存、Web服务器缓存等需要管理有限内存资源的系统中也有重要应用。\n\n## 相关概念\n页面置换算法与缺页中断、页表、物理内存管理紧密相关。缺页中断是触发置换的机制，页表记录页面映射关系，而物理内存管理负责实际页框分配。此外，工作集、抖动等概念也直接关联算法设计和性能评估。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

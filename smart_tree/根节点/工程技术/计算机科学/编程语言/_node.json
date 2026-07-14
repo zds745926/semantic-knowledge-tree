@@ -20,5 +20,13 @@
     "description": "编程语言: Programming languages are formal languages for communication between humans and computers. Each language has its design philosophy, type system, and applicable scenarios. Mainstream programming languages include Python, Java, JavaScript, C/C++, Go, Rust, etc. Here is a brief example of Python code to illustrate a simple concept: ```python # A simple Python function that adds two numbers def add_numbers(a, b): return a + b # Example usage: result = add_numbers(5, 3) print(\"The result is:\", result) # Output: The result is: 8 ``` This example demonstrates the basic structure of a Python function and how to call it."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "编程语言是计算机科学的核心分支，涵盖从底层系统开发到高层应用构建的多种语言。本分支包括Python、Java、JavaScript、C/C++、Go和Rust等主流语言。Python以简洁易读著称，适用于数据科学、人工智能和快速原型开发；Java强调跨平台性和企业级应用，常用于大型系统；JavaScript是Web前端开发的基石，也通过Node.js扩展到后端；C/C++提供对硬件的精细控制，性能卓越，适合操作系统、游戏引擎和嵌入式开发；Go由Google设计，注重并发和简洁，适合云服务和微服务；Rust则聚焦内存安全和零成本抽象，用于系统编程和性能敏感场景。这些语言各有侧重，但相互补充：学习路径通常从Python或JavaScript入门，再深入C/C++理解底层原理，进而掌握Java、Go或Rust应对特定领域。理解它们的设计哲学和适用场景，有助于开发者根据项目需求选择合适工具。",
+  "example_queries": [
+    "Python和Java在Web开发中的主要区别是什么？",
+    "如何从C++过渡到Rust，需要注意哪些内存管理差异？",
+    "JavaScript的异步编程模型（Promise、async/await）是如何工作的？",
+    "Go语言的并发模型（goroutine和channel）相比传统线程有什么优势？",
+    "在系统编程中，C/C++和Rust的性能对比如何？"
+  ]
 }

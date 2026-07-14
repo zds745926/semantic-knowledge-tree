@@ -19,5 +19,34 @@
       "content_preview": "观察者模式: One-to-many dependency, state change notifies all observers. Publish-subscribe pattern. In the context of software design patterns, this refers to the Observer pattern. Here is a brief Python code example for implementing the Observer pattern: ```python from abc import ABC, abstractmethod # Define the Subject interface class Subject(ABC): @abstractmethod def attach(self, observer): pass @abstractmethod def detach(self, observer): pass @abstractmethod def notify(self): pass # ConcreteSubject implementation class ConcreteSubject(Subject): _state = None _observers = [] def attach(self, observer): self._observers.append(observer) def detach(self, observer): self._observers.remove(observer) def notify(self): for observer in self._observers: observer.update(self._state) def change_state(self, state): self._state = state self.notify() # Define the Observer interface class Observer(ABC): @abstractmethod def update(self, state): pass # ConcreteObserver implementation class ConcreteObserverA(Observer): def update(self, state): print(f\"Observer A received new state: {state}\") class ConcreteObserverB(Observer): def update(self, state): print(f\"Observer B received new state: {state}\") # Usage example if __name__ == \"__main__\": subject = ConcreteSubject() observer_a = ConcreteObserverA() observer_b = ConcreteObserverB() subject.attach(observer_a) subject.attach(observer_b) subject.change_state(\"New State 1\") ``` This code demonstrates the Observer pattern where `ConcreteSubject` maintains a list of observers and notifies them when its state changes. Each `Observer` is updated with the new state by calling their `update` method."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "js_promise_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "application"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n观察者模式（Observer Pattern）是一种行为型设计模式，它定义了对象之间的一对多依赖关系，当一个对象（被观察者）的状态发生变化时，所有依赖于它的对象（观察者）都会自动收到通知并更新。这种模式实现了对象间的松耦合，使得被观察者无需知道观察者的具体实现细节。\n\n## 核心要点\n- 主题与观察者分离：被观察者（Subject）维护一个观察者列表，并提供注册、删除和通知机制，观察者（Observer）则定义更新接口。\n- 自动通知与更新：当主题状态改变时，会遍历所有注册的观察者并调用其更新方法，确保状态一致性。\n- 松耦合设计：主题和观察者之间通过抽象接口交互，可以独立扩展或修改，不影响对方。\n- 支持广播通信：一个主题可以同时通知多个观察者，适用于一对多的消息传播场景。\n- 可动态订阅：观察者可以在运行时动态加入或退出观察者列表，灵活性高。\n\n## 应用场景\n观察者模式广泛应用于事件驱动系统，如GUI框架中的按钮点击监听、消息队列中的发布-订阅机制、以及数据绑定（如MVVM架构中视图模型与视图的同步）。此外，在实时监控系统（如股票价格更新、传感器数据推送）中也常被使用，确保多个展示组件能同时响应数据变化。\n\n## 相关概念\n观察者模式与发布-订阅模式（Publish-Subscribe）本质相似，但发布-订阅通常引入消息代理（Broker）实现更彻底的解耦。它与中介者模式（Mediator）的区别在于：中介者集中控制对象间交互，而观察者模式是直接通知。此外，观察者模式常与单例模式（Singleton）结合，确保全局唯一的被观察者实例。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

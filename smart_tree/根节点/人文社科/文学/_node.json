@@ -19,5 +19,26 @@
       "content_preview": "文学: Literature is an art that reflects social life through language and text. Major genres include poetry, novels, essays, and drama. Python code examples for some of these concepts might be: 1. **Poetry**: A simple program to generate a haiku. ```python def generate_haiku(): seasons = [\"spring\", \"summer\", \"autumn\", \"winter\"] nature_words = [\"blossoms\", \"leaves\", \"snowflakes\", \"crickets\"] season = seasons[0] # For simplicity, always use 'spring' word1 = nature_words[0] word2 = nature_words[1] return f\"Whispering {word1} in the {season},\\nCrickets chirp under the moonlight,\\n{word2} fall gently.\" print(generate_haiku()) ``` 2. **Novel**: A basic structure to outline a novel. ```python class Novel: def __init__(self, title, author): self.title = title self.author = author self.chapters = [] def add_chapter(self, chapter_title): self.chapters.append(chapter_title) novel = Novel(\"The Quest for Knowledge\", \"Jane Scholar\") novel.add_chapter(\"Introduction to the World of Academia\") novel.add_chapter(\"Exploring the Library\") print(novel.title) ``` 3. **Essay**: A simple function to format an essay. ```python def write_essay(title, introduction, body, conclusion): return f\"Title: {title}\\n\\n{introduction}\\n\\n{body}\\n\\n{conclusion}\" essay = write_essay( \"The Importance of Reading\", \"Reading is a fundamental activity that enriches the mind and soul.\", \"It opens up new worlds, broadens perspectives, and enhances critical thinking skills.\", \"In today's fast-paced world, reading remains an essential tool for personal growth.\" ) print(essay) ``` 4. **Drama**: A simple script to represent a short dialogue. ```python def drama_script(character1, character2, lines): return f\"{character1}: {lines[0]}\\n{character2}: {lines[1]}\" script = drama_script(\"Alice\", \"Bob\", [\"Hello, how are you?\", \"I'm fine, thanks for asking.\"]) print(script) ``` These examples provide a basic structure and can be expanded upon to create more complex literary works."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "hum_philo",
+      "type": "related_pattern"
+    },
+    {
+      "id": "hum_history",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n文学是以语言文字为工具，形象化地反映客观现实、表现作家心灵世界的艺术形式，包括诗歌、散文、小说、戏剧等体裁。它通过虚构或非虚构的叙事与抒情，传递人类的情感、思想与经验，是文化传承与审美教育的重要载体。\n\n## 核心要点\n- **语言艺术性**：文学通过修辞、韵律、象征等手法，使语言超越日常交流功能，成为审美对象。\n- **情感与思想表达**：文学既抒发个人情感，也探讨社会、历史、哲学等深层议题，具有认知与教化作用。\n- **虚构与想象**：多数文学作品基于虚构或重构现实，激发读者的想象力与共情能力。\n- **文化传承**：文学记录并塑造民族记忆、价值观与时代精神，是文明对话的桥梁。\n- **审美多样性**：不同流派、风格与时代背景的文学作品，提供多元的审美体验与解读空间。\n\n## 应用场景\n文学广泛应用于教育领域，用于提升语言能力、批判性思维与人文素养；在娱乐产业中，文学作品常被改编为影视、戏剧或游戏；此外，文学治疗（如阅读疗法）被用于心理疏导，而文学批评则推动文化研究与公共讨论。\n\n## 相关概念\n- **文学理论**：研究文学本质、创作规律与批评方法的学科，为文学实践提供框架。\n- **文学批评**：对文学作品的分析、解释与评价，帮助读者深化理解。\n- **比较文学**：跨文化、跨学科研究文学现象，揭示不同文学传统的互动与差异。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

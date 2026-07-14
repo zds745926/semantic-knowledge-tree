@@ -19,5 +19,42 @@
       "content_preview": "FastAPI: Modern asynchronous web framework. Automatic OpenAPI documentation. Pydantic validation. Type annotation-driven. Python code example for type annotation and Pydantic validation: ```python from pydantic import BaseModel, Field class Item(BaseModel): name: str = Field(..., title=\"The name of the item\", description=\"A brief description of the item\") price: float = Field(..., gt=0, title=\"The price of the item\") # Example usage: item_data = {\"name\": \"Apple\", \"price\": 1.2} item = Item(**item_data) print(item.name) # Output: Apple ``` This example demonstrates a simple Pydantic model with type annotations and validation constraints."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    },
+    {
+      "id": "rest_api_v4",
+      "type": "application"
+    },
+    {
+      "id": "http_methods_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "http_status_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "prometheus_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nFastAPI 是一个现代、快速（高性能）的 Python Web 框架，基于 Starlette 和 Pydantic，用于构建 API，尤其擅长异步编程和自动生成交互式文档。\n\n## 何时使用\n当需要快速开发高性能 RESTful API，且希望自动生成 OpenAPI 文档时，FastAPI 是理想选择。它特别适合需要异步处理、数据验证和类型提示的项目，如微服务、实时应用或机器学习模型部署。\n\n## 示例\n```Python\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int, q: str = None):\n    return {\"item_id\": item_id, \"q\": q}\n```\n\n## 反例\n错误用法：在同步视图函数中使用阻塞 I/O（如 time.sleep）而不声明异步，会导致性能下降。应使用异步函数或声明依赖。\n\n## 边界条件\n注意：路径参数类型需与声明一致，否则 FastAPI 会返回 422 验证错误。另外，生产环境应配置 CORS 中间件和限流。",
+    "code_pattern": "from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/\")\ndef root():\n    return {\"message\": \"Hello World\"}\n\nif __name__ == \"__main__\":\n    import uvicorn\n    uvicorn.run(app, host=\"0.0.0.0\", port=8000)",
+    "common_pitfalls": [
+      "在同步视图函数中执行阻塞 I/O 操作（如 time.sleep 或 requests.get）而未使用异步，导致服务器响应变慢。应使用 async def 或在线程池中运行。",
+      "忽略 Pydantic 模型验证，直接使用 dict 作为请求体，导致类型错误或安全漏洞。应始终定义 Pydantic 模型。",
+      "未正确配置 CORS 中间件，导致前端跨域请求被拒绝。需添加 CORSMiddleware 并设置 allow_origins。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

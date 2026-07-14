@@ -19,5 +19,35 @@
       "content_preview": "PDM: PEP 582 does not provide a virtual environment solution. It supports `pdm add`, `pdm install`, and `pdm lock`. This tool also supports multiple Python versions. Here is an example of how you might use `pdm` to manage dependencies in a Python project: ```python # Example usage of pdm to add a dependency import subprocess def add_dependency(package_name): try: result = subprocess.run(['pdm', 'add', package_name], check=True, text=True) print(result.stdout) except subprocess.CalledProcessError as e: print(f\"An error occurred: {e}\") # Example usage of pdm to install dependencies def install_dependencies(): try: result = subprocess.run(['pdm', 'install'], check=True, text=True) print(result.stdout) except subprocess.CalledProcessError as e: print(f\"An error occurred: {e}\") # Example usage of pdm to lock the dependencies def lock_dependencies(): try: result = subprocess.run(['pdm', 'lock'], check=True, text=True) print(result.stdout) except subprocess.CalledProcessError as e: print(f\"An error occurred: {e}\") ``` This Python script demonstrates how you can use the `subprocess` module to interact with `pdm` commands for adding, installing, and locking dependencies in a project."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_tempfile_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_hashlib_v4",
+      "type": "application"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nPDM（Python Development Master）是一个现代的 Python 包管理和依赖管理工具，它使用 PEP 582 的本地包目录（__pypackages__）机制，无需虚拟环境即可隔离项目依赖。\n\n## 何时使用\n当你希望摆脱传统虚拟环境（如 venv、conda）的切换开销，或需要更严格的依赖锁定（如锁定传递依赖的哈希值）时，PDM 是理想选择。它也适合需要支持 PEP 517/518 构建系统、或希望使用中央缓存减少重复下载的团队。\n\n## 示例\n```Python\n# 初始化项目并安装依赖\n# 1. 安装 PDM: pip install pdm\n# 2. 在项目根目录运行:\n#    pdm init          # 交互式创建 pyproject.toml\n#    pdm add requests  # 安装 requests 并写入 pyproject.toml\n#    pdm install       # 根据 lock 文件安装所有依赖\n# 3. 使用 PDM 运行脚本:\n#    pdm run python script.py\n# 4. 查看依赖树:\n#    pdm list --graph\n```\n\n## 反例\n直接使用 `pip install` 安装依赖而不通过 PDM 管理，会导致 pyproject.toml 和 pdm.lock 与真实环境不一致，破坏可复现性。\n\n## 边界条件\nPDM 要求 Python 3.7+；在 CI/CD 环境中，建议使用 `pdm install --prod` 仅安装生产依赖以加快构建速度。",
+    "code_pattern": "# pyproject.toml (PDM 配置文件示例)\n[project]\nname = \"my-project\"\nversion = \"0.1.0\"\ndescription = \"\"\nauthors = []\ndependencies = [\n    \"requests>=2.28.0\",\n]\nrequires-python = \">=3.8\"\n\n[build-system]\nrequires = [\"pdm-backend\"]\nbuild-backend = \"pdm.backend\"\n\n[tool.pdm]\n# 可选: 指定 Python 路径\n# python.path = \"/usr/bin/python3.10\"",
+    "common_pitfalls": [
+      "忘记执行 `pdm install` 就运行代码，导致模块找不到。PDM 不会自动安装依赖，必须显式运行安装命令。",
+      "在已有虚拟环境（如 venv 激活状态）中使用 PDM，可能造成路径冲突。建议先 deactivate 虚拟环境，或使用 `pdm use` 指定 Python 解释器。",
+      "直接修改 pdm.lock 文件来更新依赖版本，这会导致校验失败。应使用 `pdm update` 命令安全更新。",
+      "将 `__pypackages__` 目录提交到版本控制，该目录应被 .gitignore 忽略，因为它是本地生成且与平台相关的。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

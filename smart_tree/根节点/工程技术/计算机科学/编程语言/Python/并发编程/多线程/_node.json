@@ -24,5 +24,13 @@
     "description": "多线程: The `threading` module creates threads. GIL limits CPU parallelism, making it suitable for I/O-bound tasks. Here's a brief explanation of the concepts with a Python code example: - **Threading Module**: The `threading` module in Python is used to create and manage threads. ```python import threading def print_numbers(): for i in range(5): print(i) # Creating two threads thread1 = threading.Thread(target=print_numbers) thread2 = threading.Thread(target=print_numbers) # Starting the threads thread1.start() thread2.start() # Waiting for both threads to complete thread1.join() thread2.join() ``` - **GIL (Global Interpreter Lock)**: The Global Interpreter Lock is a mutex that prevents multiple native threads from executing Python bytecodes at once. This lock is necessary because Python's memory management is not thread-safe. ```python import threading def print_numbers(): for i in range(5): print(i) # Creating two threads thread1 = threading.Thread(target=print_numbers) thread2 = threading.Thread(target=print_numbers) # Starting the threads thread1.start() thread2.start() # Waiting for both threads to complete thread1.join() thread2.join() ``` In this example, even though we have multiple threads, due to GIL, they will not run in true parallel on a multi-core CPU. This is why the `threading` module is more suitable for I/O-bound tasks where waiting for external resources (like network or file operations) can be effectively managed by switching between threads."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "该分支聚焦于Python多线程编程的核心概念与实践。它从最基础的`threading`模块开始，涵盖了线程的创建、启动与管理。随后深入线程同步机制，这是多线程编程的关键，用于避免数据竞争和保证线程安全。子节点详细介绍了各种同步原语：`Lock`与`RLock`用于基本的互斥访问；`Condition`允许线程等待特定条件；`Event`用于线程间简单的事件通知；`Barrier`使多个线程在某个点同步等待；`Timer`用于延迟执行任务。最后，`线程局部存储(TLS)`提供了线程独有的数据副本，避免了共享数据的同步开销。学习路径建议从`threading基础`入手，理解线程生命周期；然后学习`Lock`与`RLock`解决基本竞争问题；接着掌握`Condition`、`Event`、`Barrier`等高级同步工具；最后了解`Timer`和`TLS`作为补充。整个分支构成了一个从基础到高级、从简单同步到复杂协调的完整知识体系。",
+  "example_queries": [
+    "在Python中，Lock和RLock有什么区别？分别在什么场景下使用？",
+    "如何使用Condition对象实现生产者-消费者模式？",
+    "Event和Barrier在线程同步中各自的作用是什么？如何选择？",
+    "Python的threading.Timer是如何工作的？能否用于定时任务调度？",
+    "什么是线程局部存储(TLS)？在Python中如何通过threading.local实现线程安全的数据隔离？"
+  ]
 }

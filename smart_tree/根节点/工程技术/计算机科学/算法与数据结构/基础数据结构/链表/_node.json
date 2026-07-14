@@ -19,5 +19,34 @@
       "content_preview": "链表: Nodes contain data and pointers. Singly linked list / doubly linked list / circular linked list. Insertion/deletion O(1). Here's a brief explanation with Python code examples for the concepts mentioned: - **Node**: A node in a linked list contains data and a pointer to the next node. ```python class Node: def __init__(self, data): self.data = data self.next = None ``` - **Singly Linked List**: Each node has a reference to only one other node (the next node). ```python class SinglyLinkedList: def __init__(self): self.head = None def append(self, data): new_node = Node(data) if not self.head: self.head = new_node return last_node = self.head while last_node.next: last_node = last_node.next last_node.next = new_node ``` - **Doubly Linked List**: Each node has references to both the next and previous nodes. ```python class DoublyNode: def __init__(self, data): self.data = data self.next = None self.prev = None class DoublyLinkedList: def __init__(self): self.head = None def append(self, data): new_node = DoublyNode(data) if not self.head: self.head = new_node return last_node = self.head while last_node.next: last_node = last_node.next last_node.next = new_node new_node.prev = last_node ``` - **Circular Linked List**: The last node points back to the first node, forming a circle. ```python class CircularNode: def __init__(self, data): self.data = data self.next = None class CircularLinkedList: def __init__(self): self.head = None def append(self, data): new_node = CircularNode(data) if not self.head: self.head = new_node new_node.next = self.head return last_node = self.head while last_node.next != self.head: last_node = last_node.next last_node.next = new_node new_node.next = self.head ``` - **Insertion/Deletion O(1)**: In some cases, certain operations can be performed in constant time. For example, inserting or deleting a node at the head of a singly linked list is an O(1) operation. ```python def insert_at_head(self, data): new_node = Node(data) if self.head: new_node.next = self.head self.head = new_node else: self.head = new_node def delete_at_head(self): if not self.head: return None temp = self.head self.head = self.head.next return temp.data ``` These examples provide a basic understanding of the concepts and their implementation in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "union_find_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "merge_sort_v4",
+      "type": "application"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "application"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n链表是一种线性数据结构，由一系列节点组成，每个节点包含数据域和指向下一个节点的指针域。与数组不同，链表在内存中不连续存储，通过指针将节点串联起来，支持动态内存分配。\n\n## 核心要点\n- 节点结构：每个节点包含数据和指向下一个节点的指针，双向链表还包含指向前一个节点的指针。\n- 动态大小：链表可以在运行时动态增加或删除节点，无需预先分配固定内存。\n- 插入与删除高效：在已知位置插入或删除节点的时间复杂度为O(1)，但查找节点需要O(n)时间。\n- 内存开销：每个节点需要额外存储指针，因此内存利用率低于数组。\n- 类型多样：常见类型包括单向链表、双向链表和循环链表，各有适用场景。\n\n## 应用场景\n链表常用于实现栈、队列等抽象数据类型，尤其在需要频繁插入和删除操作的场景中表现出色。例如，操作系统的进程调度、音乐播放器的播放列表、以及哈希表中的链地址法解决冲突。此外，链表还用于构建更复杂的数据结构，如图的邻接表表示。\n\n## 相关概念\n链表与数组是两种基本的线性数据结构，数组支持随机访问但插入删除成本高，链表则相反。栈和队列常基于链表实现，利用其高效的头尾操作。此外，链表与树、图等非线性结构关系密切，例如二叉树的节点结构类似双向链表，而图的邻接表本质上是链表数组。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

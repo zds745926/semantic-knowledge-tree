@@ -19,5 +19,34 @@
       "content_preview": "pickle: pickle.dump/pickle.load for serializing Python objects. Insecure (arbitrary code execution). Not language-agnostic. Here is a brief Python code example to illustrate the use of `pickle`: ```python import pickle # Serializing an object using pickle data = {'key': 'value'} with open('example.pickle', 'wb') as file: pickle.dump(data, file) # Deserializing an object using pickle with open('example.pickle', 'rb') as file: loaded_data = pickle.load(file) print(loaded_data) # Output: {'key': 'value'} ``` Note that while this example demonstrates the basic usage of `pickle`, it is important to be cautious when using `pickle` with untrusted data, as it can execute arbitrary code."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "durability_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_tempfile_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\npickle是Python标准库中用于对象序列化和反序列化的模块，能够将任意Python对象转换为字节流，并可从字节流恢复原始对象。\n\n## 何时使用\n当需要在不同Python程序之间或同一程序的不同运行之间持久化保存Python对象状态时，pickle是首选方案。它特别适合保存复杂的数据结构（如嵌套列表、字典、自定义类实例）以及机器学习模型等。但注意，pickle仅适用于Python，且存在安全风险，不应反序列化不可信数据。\n\n## 示例\n```Python\nimport pickle\n\ndata = {'name': 'Alice', 'scores': [85, 92, 78], 'active': True}\n\n# 序列化到文件\nwith open('data.pkl', 'wb') as f:\n    pickle.dump(data, f)\n\n# 从文件反序列化\nwith open('data.pkl', 'rb') as f:\n    loaded_data = pickle.load(f)\n\nprint(loaded_data)  # 输出: {'name': 'Alice', 'scores': [85, 92, 78], 'active': True}\n```\n\n## 反例\n不要使用pickle来序列化用户输入或来自不可信来源的数据，因为恶意构造的pickle数据可以在反序列化时执行任意代码，导致安全漏洞。\n\n## 边界条件\npickle无法序列化lambda函数、生成器、文件句柄、网络连接等运行时对象；不同Python版本之间的pickle格式可能不兼容，建议使用protocol=2或更高版本以提高兼容性。",
+    "code_pattern": "import pickle\n\ndef save_object(obj, filepath):\n    with open(filepath, 'wb') as f:\n        pickle.dump(obj, f, protocol=pickle.HIGHEST_PROTOCOL)\n\ndef load_object(filepath):\n    with open(filepath, 'rb') as f:\n        return pickle.load(f)\n\n# 使用示例\n# data = {'key': 'value'}\n# save_object(data, 'data.pkl')\n# loaded = load_object('data.pkl')",
+    "common_pitfalls": [
+      "反序列化不可信数据：pickle.load()会执行任意代码，若数据来源不可信，可能导致远程代码执行攻击，应始终使用json或其它安全格式处理外部数据。",
+      "版本兼容性问题：不同Python版本生成的pickle格式可能不兼容，尤其是使用默认protocol=0时，建议显式指定protocol=2或更高，并在相同或兼容版本间使用。",
+      "序列化非picklable对象：尝试序列化lambda、生成器、文件对象等会导致PicklingError，需先转换为可序列化的形式（如字符串或基本类型）。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

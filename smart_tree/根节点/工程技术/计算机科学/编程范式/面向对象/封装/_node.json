@@ -19,5 +19,22 @@
       "content_preview": "封装: Encapsulation binds data with the methods that operate on that data, achieving information hiding through access control (public/protected/private). Here is a brief Python code example to illustrate encapsulation: ```python class MyClass: def __init__(self): self.public_attribute = \"I'm public\" self._protected_attribute = \"I'm protected\" self.__private_attribute = \"I'm private\" def public_method(self): print(\"This is a public method.\") def _protected_method(self): print(\"This is a protected method.\") # Accessing the protected attribute print(self._protected_attribute) def __private_method(self): print(\"This is a private method.\") # Accessing the private attribute print(self.__private_attribute) ``` In this example, `public_attribute` and `public_method` are accessible from outside the class. `_protected_attribute` and `_protected_method` can be accessed within the class and its subclasses (though it's considered bad practice to access them directly). `__private_attribute` and `__private_method` are intended to be private and cannot be accessed directly from outside the class, demonstrating information hiding through Python's name mangling."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cpp_oop_v4",
+      "type": "cross_lang_equivalent"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n封装是面向对象编程的核心原则之一，它将数据（属性）和操作数据的方法（行为）捆绑在一个单元（对象）中，并对外隐藏内部实现细节。通过定义清晰的公共接口，封装保护了对象的内部状态不被外部直接访问和修改，从而降低了系统的复杂性并提高了安全性。\n\n## 核心要点\n- 信息隐藏：封装通过访问修饰符（如 private、protected）限制对内部数据的直接访问，只暴露必要的公共方法（如 getter/setter）来与外界交互。\n- 模块化：每个对象是一个独立的模块，拥有自己的状态和行为，便于开发、测试和维护。\n- 降低耦合：外部代码仅依赖对象的公共接口，内部实现的变化不会影响其他部分，增强了代码的灵活性和可扩展性。\n- 数据保护：通过控制访问权限，可以防止非法或不合理的操作，确保对象状态始终处于有效范围内。\n- 接口与实现分离：封装允许在不改变接口的前提下修改内部实现，支持代码的重构和优化。\n\n## 应用场景\n封装广泛应用于构建复杂软件系统，例如在银行系统中，账户余额被封装为私有属性，只能通过存款、取款等公共方法修改，从而保证交易的安全性。在图形用户界面（GUI）框架中，每个控件（如按钮、文本框）封装了自己的绘制逻辑和事件处理，开发者只需调用标准接口即可使用。此外，在大型团队协作中，封装有助于划分职责，使不同开发者可以独立工作于不同模块。\n\n## 相关概念\n封装与抽象密切相关，抽象关注于隐藏复杂细节以简化使用，而封装则强调将数据和操作绑定在一起并保护数据。继承允许子类复用父类的封装特性，但可能破坏封装性（如通过继承访问受保护成员）。多态则依赖于封装提供的公共接口，使得不同对象可以通过统一方式被调用。此外，设计模式如工厂模式、单例模式等也常利用封装来管理对象的创建和生命周期。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

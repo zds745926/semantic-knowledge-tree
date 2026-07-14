@@ -16,5 +16,13 @@
     "description": "网络安全: Network security protection systems safeguard networks and data from attacks. Key areas include cryptography, web security, and network offense-defense. Here are brief Python code examples for some of the mentioned concepts: 1. **Cryptography**: - Simple encryption using Caesar Cipher: ```python def caesar_cipher_encrypt(text, shift): encrypted_text = \"\" for char in text: if char.isalpha(): shifted_char = chr(((ord(char) + shift - 65) % 26) + 65) encrypted_text += shifted_char.upper() else: encrypted_text += char return encrypted_text # Example usage print(caesar_cipher_encrypt(\"Hello, World!\", 3)) # Output: Khoor, Zruog! ``` 2. **Web Security**: - Basic example of validating user input to prevent SQL injection: ```python import re def validate_sql_input(input_str): if re.match(r\"^[a-zA-Z0-9_]*$\", input_str): return True else: raise ValueError(\"Invalid input: contains special characters\") # Example usage try: print(validate_sql_input(\"user123\")) # Valid print(validate_sql_input(\"user@123\")) # Invalid, will raise an error except ValueError as e: print(e) ``` 3. **Network Offense-Defense**: - Simple example of a basic network scanner using Python's `socket` library to check if a port is open: ```python import socket def is_port_open(host, port): sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) sock.settimeout(1) # Set timeout for the connection attempt try: result = sock.connect_ex((host, port)) if result == 0: return True else: return False except socket.error as e: print(f\"Socket error: {e}\") return False finally: sock.close() # Example usage host = \"127.0.0.1\" port = 80 if is_port_open(host, port): print(f\"Port {port} on {host} is open.\") else: print(f\"Port {port} on {host} is closed or filtered.\") ``` These examples provide a basic understanding of the concepts mentioned in the Chinese text."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "网络安全是计算机科学的重要分支，专注于保护网络系统、数据和用户免受未经授权的访问、攻击和破坏。本分支涵盖密码学与Web安全两大核心子主题。密码学是网络安全的基础，涉及加密、解密、哈希、数字签名等技术，用于确保数据的机密性、完整性和真实性。Web安全则聚焦于保护Web应用程序、服务器和用户免受常见攻击，如跨站脚本（XSS）、SQL注入、跨站请求伪造（CSRF）等。两者紧密关联：密码学为Web安全提供加密通信、身份验证和会话管理等关键工具；Web安全则在实际应用中检验并推动密码学的发展。学习路径建议：先掌握密码学基础（对称/非对称加密、哈希函数、数字证书），再深入Web安全（HTTP协议、OWASP Top 10、安全开发实践），最后结合两者进行综合实践（如HTTPS配置、安全API设计）。",
+  "example_queries": [
+    "如何防止SQL注入攻击？",
+    "对称加密与非对称加密的区别是什么？",
+    "什么是跨站脚本攻击（XSS）？如何防御？",
+    "数字证书在HTTPS中如何工作？",
+    "OWASP Top 10 安全风险有哪些？"
+  ]
 }

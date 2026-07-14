@@ -19,5 +19,22 @@
       "content_preview": "线性搜索: Traverse from start to end. O(n). The simplest but least efficient. Suitable for unordered data. Python example: ```python def traverse_unordered_data(data): for item in data: print(item) ``` This function iterates over a collection of unordered data, printing each item. While simple, it may not be the most efficient method if the data is large or needs to be processed multiple times, as it requires visiting each element exactly once."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "binary_search_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n线性搜索（Linear Search），又称顺序搜索，是一种最简单的搜索算法。它从数据结构（如数组或列表）的第一个元素开始，逐个检查每个元素，直到找到目标元素或遍历完所有元素。该算法不要求数据预先排序，适用于任何线性数据结构。\n\n## 核心要点\n- 线性搜索按顺序遍历整个数据结构，时间复杂度为O(n)，其中n是元素数量。\n- 它不需要数据预先排序，因此对无序数据同样有效。\n- 实现简单，只需一个循环和条件判断即可完成。\n- 当目标元素位于数据开头时，最佳时间复杂度为O(1)；位于末尾或不存在时，最坏时间复杂度为O(n)。\n- 对于小型数据集或一次性搜索，线性搜索可能比复杂算法更高效，因为其常数因子小且无预处理开销。\n\n## 应用场景\n线性搜索常用于数据量较小或数据无序的场景，例如在未排序的数组中查找特定值、在链表中搜索元素，或作为其他复杂算法的子过程。此外，在实时系统中，若数据频繁变化且无法预先排序，线性搜索也是合理选择。\n\n## 相关概念\n线性搜索与二分搜索形成对比：二分搜索要求数据已排序，时间复杂度为O(log n)，但实现更复杂。哈希表搜索通过键值映射实现平均O(1)查找，但需要额外空间和哈希函数。线性搜索是这些高级搜索算法的基础，理解它有助于掌握更复杂的搜索策略。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,34 @@
       "content_preview": "类高级功能: English translation: - `classmethod`: A class method receives the class as implicit first argument, just like an instance method receives the instance. To declare a class method, use this idiom: ```python from functools import wraps def classmethod(func): @wraps(func) def wrapper(cls, *args, **kwargs): return func(cls, *args, **kwargs) return wrapper # Example usage: class MyClass: @classmethod def my_class_method(cls): print(f\"Called my_class_method of {cls.__name__}\") ``` - `staticmethod`: A static method does not receive an implicit first argument. To declare a static method, use this idiom: ```python from functools import wraps def staticmethod(func): @wraps(func) def wrapper(*args, **kwargs): return func(*args, **kwargs) return wrapper # Example usage: class MyClass: @staticmethod def my_static_method(): print(\"Called my_static_method\") ``` - `property`: A property provides a way of customizing access to instance attributes. To declare a property, use this idiom: ```python class MyClass: def __init__(self): self._my_attribute = None @property def my_attribute(self): return self._my_attribute @my_attribute.setter def my_attribute(self, value): self._my_attribute = value @my_attribute.deleter def my_attribute(self): del self._my_attribute ``` - `ABC`: An abstract base class is a way of defining interfaces in Python. To declare an abstract base class, use this idiom: ```python from abc import ABC, abstractmethod class MyAbstractClass(ABC): @abstractmethod def my_abstract_method(self): pass ``` - `abstractmethod`: An abstract method is a method that has a declaration but does not have an implementation. To declare an abstract method, use this idiom: ```python from abc import ABC, abstractmethod class MyAbstractClass(ABC): @abstractmethod def my_abstract_method(self): pass ``` - `dataclass`: A dataclass is a class that is primarily used to store data. To declare a dataclass, use the `@dataclass` decorator: ```python from dataclasses import dataclass @dataclass class MyDataClass: my_attribute: int ``` Note: The `classmethod`, `staticmethod`, and `property` examples are using custom decorators for demonstration purposes. In practice, you would use the built-in decorators provided by Python (`@classmethod`, `@staticmethod`, `@property`)."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cpp_oop_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "py_collections_module_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "adapter_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n类高级功能指在基础类定义之上，通过特殊方法、属性、描述符、元类等机制，实现更灵活、强大的对象行为控制与代码复用。\n\n## 何时使用\n当需要自定义属性访问、运算符重载、上下文管理、迭代器行为，或对类的创建过程进行定制时使用。例如，实现一个只读属性、一个可迭代的集合类，或一个自动注册子类的框架。\n\n## 示例\n```Python\nclass ReadOnlyDescriptor:\n    def __init__(self, value):\n        self._value = value\n\n    def __get__(self, obj, objtype=None):\n        return self._value\n\n    def __set__(self, obj, value):\n        raise AttributeError(\"Cannot modify read-only attribute\")\n\nclass MyClass:\n    name = ReadOnlyDescriptor(\"fixed\")\n\nobj = MyClass()\nprint(obj.name)  # 输出: fixed\n# obj.name = \"new\"  # 抛出 AttributeError\n```\n\n## 反例\n滥用元类或描述符导致代码难以理解和维护。例如，为每个简单属性都创建自定义描述符，而不是使用@property装饰器。\n\n## 边界条件\n注意描述符的优先级：数据描述符（同时定义__get__和__set__）优先于实例字典；非数据描述符（仅__get__）优先级低于实例字典。另外，元类中的__new__和__init__调用顺序需谨慎处理。",
+    "code_pattern": "class Descriptor:\n    def __init__(self, initval=None):\n        self.val = initval\n    def __get__(self, obj, objtype):\n        return self.val\n    def __set__(self, obj, value):\n        self.val = value\n\nclass MyClass:\n    attr = Descriptor(0)\n\nobj = MyClass()\nprint(obj.attr)\nobj.attr = 10\nprint(obj.attr)",
+    "common_pitfalls": [
+      "忘记在描述符的__set__中处理实例参数，导致所有实例共享同一个值。",
+      "在元类中修改类属性时，未正确处理继承链，导致子类意外覆盖父类行为。",
+      "重载__getattr__和__setattr__时未调用基类方法，造成无限递归或属性访问异常。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

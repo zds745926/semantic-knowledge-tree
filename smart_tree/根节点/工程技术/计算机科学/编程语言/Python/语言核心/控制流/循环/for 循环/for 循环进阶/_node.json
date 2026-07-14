@@ -17,5 +17,13 @@
     "description": "for 循环进阶: The advanced usage of the `for` loop includes the `for-else` clause, parallel iteration with `zip`, and reverse or sorted iteration using `reversed` and `sorted`. Here are brief examples in Python for each: 1. **For-Elses Clause**: This structure allows you to execute a block of code after the `for` loop has finished executing, provided that the loop did not encounter a `break` statement. ```python numbers = [2, 3, 5] found = False for number in numbers: if number > 4: print(f\"Found a number greater than 4: {number}\") found = True break else: # This block runs only if the loop completes without a break statement. print(\"No number was greater than 4.\") ``` 2. **Parallel Iteration with `zip`**: The `zip` function can be used to iterate over multiple lists in parallel. ```python names = [\"Alice\", \"Bob\", \"Charlie\"] ages = [25, 30, 35] for name, age in zip(names, ages): print(f\"{name} is {age} years old.\") ``` 3. **Reverse or Sorted Iteration**: You can use `reversed` to iterate over a sequence in reverse order and `sorted` to sort elements before iterating. ```python # Reverse iteration numbers = [1, 2, 3, 4] for number in reversed(numbers): print(number) # Sorted iteration scores = [85, 90, 78, 92] for score in sorted(scores, reverse=True): # Sort in descending order print(score) ``` These examples illustrate how to use these advanced `for` loop features effectively."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支“for 循环进阶”聚焦于 Python for 循环的高级用法，旨在提升循环的灵活性、可读性和效率。子主题包括：for-else 子句，用于在循环正常结束（未触发 break）时执行特定代码，常用于搜索或验证场景；zip 并行迭代，允许同时遍历多个可迭代对象，自动以最短长度为准，避免索引访问；reversed/sorted 迭代，分别提供逆序和排序后的迭代视图，不修改原对象。这些子主题相互独立但互补：for-else 扩展了循环的控制逻辑，zip 解决了多序列同步遍历问题，reversed/sorted 则优化了遍历顺序。学习路径建议先掌握标准 for 循环，再依次学习 zip（最常用）、reversed/sorted（基础迭代变体），最后理解 for-else（特殊控制结构）。",
+  "example_queries": [
+    "如何在 Python 中判断一个列表是否包含某个元素，并在未找到时执行特定操作？",
+    "如何同时遍历两个列表并一一对应处理元素？",
+    "如何逆序或排序遍历一个列表而不修改原列表？",
+    "for-else 子句在什么场景下比使用标志变量更简洁？",
+    "zip 函数在并行迭代时如何处理长度不同的可迭代对象？"
+  ]
 }

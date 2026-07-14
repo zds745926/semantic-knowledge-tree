@@ -19,5 +19,30 @@
       "content_preview": "仅关键字参数: The subsequent parameters must be passed using name=value, enhancing code readability. For a coding/programming context, if you want to demonstrate passing parameters in Python with the `name=value` format, here is an example: ```python def display_info(name=\"John\", age=30): print(f\"Name: {name}, Age: {age}\") # Example of calling the function with name=value parameters display_info(age=25, name=\"Jane\") ``` This Python code defines a function `display_info` that takes parameters using the `name=value` format. When calling the function, you can specify the parameters by their names to improve readability and maintainability."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_functools_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n仅关键字参数（Keyword-Only Arguments）是指在函数定义中，必须使用关键字形式传递的参数，不能通过位置传递。在Python中，通过在参数列表中使用一个单独的星号（*）来分隔，星号之后的参数即为仅关键字参数。\n\n## 何时使用\n当函数有多个参数，且某些参数的含义不明确或容易混淆时，强制使用关键字参数可以提高代码可读性和安全性。例如，在配置函数、回调函数或需要明确语义的API中，使用仅关键字参数可以避免因参数顺序错误导致的bug。此外，当函数需要接收可变数量的位置参数（*args）后，后续参数自然成为仅关键字参数。\n\n## 示例\n```Python\ndef create_user(name, age, *, email=None, phone=None):\n    \"\"\"创建用户，email和phone必须通过关键字传递\"\"\"\n    return {\"name\": name, \"age\": age, \"email\": email, \"phone\": phone}\n\n# 正确调用\nuser1 = create_user(\"Alice\", 30, email=\"alice@example.com\")\nuser2 = create_user(\"Bob\", 25, phone=\"1234567890\")\nprint(user1)\nprint(user2)\n\n# 错误调用（会引发TypeError）\n# create_user(\"Charlie\", 35, \"charlie@example.com\")\n```\n\n## 反例\n错误用法：试图通过位置传递仅关键字参数，例如 `create_user(\"Charlie\", 35, \"charlie@example.com\")`，这会引发TypeError，因为第三个位置参数被解释为位置参数，但函数定义中在星号之后没有位置参数可接受。\n\n## 边界条件\n注意：仅关键字参数可以有默认值，也可以没有默认值，但调用时必须显式提供关键字。如果函数同时使用*args和仅关键字参数，则仅关键字参数必须放在*args之后。另外，在Python 3.8+中，可以使用单独的/来标记仅位置参数，但仅关键字参数仍用*。",
+    "code_pattern": "def func(pos1, pos2, *args, kw_only1, kw_only2=None):\n    \"\"\"\n    参数说明：\n    - pos1, pos2: 位置参数\n    - *args: 可变位置参数（可选）\n    - kw_only1: 必须的关键字参数\n    - kw_only2: 可选的关键字参数，默认None\n    \"\"\"\n    # 函数体\n    result = (pos1, pos2, args, kw_only1, kw_only2)\n    return result\n\n# 调用示例\n# func(1, 2, 3, 4, kw_only1=10, kw_only2=20)\n# func(1, 2, kw_only1=10)",
+    "common_pitfalls": [
+      "忘记在星号后添加逗号：如果星号后没有参数，则星号仅用于强制后续参数为关键字参数，但若星号后直接跟冒号，则语法错误。正确写法是 `def f(*, a):` 而不是 `def f(*: a):`。",
+      "混淆仅关键字参数与默认参数：仅关键字参数可以有默认值，但即使有默认值，也不能通过位置传递。例如 `def f(*, a=1):` 调用时 `f(1)` 会报错，必须 `f(a=1)`。",
+      "在存在*args时误用：当函数定义包含*args时，*args之后的参数自动成为仅关键字参数，但新手可能误以为这些参数仍可通过位置传递，导致TypeError。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

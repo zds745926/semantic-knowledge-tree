@@ -17,5 +17,13 @@
     "description": "设计模式: Design patterns are reusable solutions to common problems in software design. They are categorized into three types: creational, structural, and behavioral. Here's a brief explanation of each category with Python code examples: 1. **Creational Patterns**: These patterns deal with object creation mechanisms, aiming to make it flexible and efficient to instantiate objects. - Example: Singleton Pattern ```python class Singleton: _instance = None def __new__(cls): if cls._instance is None: cls._instance = super().__new__(cls) return cls._instance def some_business_logic(self): pass # Some business logic here ``` 2. **Structural Patterns**: These patterns deal with class and object composition, providing ways to compose objects into more complex structures while keeping the structure flexible. - Example: Adapter Pattern ```python from abc import ABC, abstractmethod class Target(ABC): @abstractmethod def request(self) -> str: pass class Adaptee: def specific_request(self) -> str: return \".eetpad\" class Adapter(Target): def __init__(self, adaptee: Adaptee): self._adaptee = adaptee def request(self) -> str: return f\"Adapter: {self._adaptee.specific_request()[::-1]}\" ``` 3. **Behavioral Patterns**: These patterns are concerned with communication between objects. - Example: Observer Pattern ```python from abc import ABC, abstractmethod class Subject(ABC): @abstractmethod def attach(self, observer: 'Observer') -> None: pass @abstractmethod def detach(self, observer: 'Observer') -> None: pass @abstractmethod def notify(self) -> None: pass class Observer(ABC): @abstractmethod def update(self, subject: 'Subject') -> None: pass class ConcreteSubject(Subject): _observers = [] _state = 0 def attach(self, observer: Observer) -> None: self._observers.append(observer) def detach(self, observer: Observer) -> None: self._observers.remove(observer) def notify(self) -> None: for observer in self._observers: observer.update(self) def some_business_logic(self): self._state = 1 self.notify() class ConcreteObserver(Observer): def update(self, subject: Subject) -> None: if subject._state > 0: print(f\"Observer: Reacted to the state {subject._state}\") ``` These examples provide a basic understanding of how design patterns can be implemented in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "设计模式是软件工程中针对常见问题的可复用解决方案，本分支涵盖创建型、结构型和行为型三大类模式。创建型模式关注对象的创建机制，如单例、工厂方法等，旨在提高灵活性和复用性；结构型模式处理类或对象的组合，如适配器、装饰器等，用于构建更大的结构；行为型模式涉及对象间的职责分配和通信，如观察者、策略等，优化交互与算法。这三类模式相互补充：创建型解决对象如何生成，结构型定义如何组织，行为型规范如何协作。学习路径建议先掌握创建型模式以理解对象生命周期，再学习结构型模式以构建系统架构，最后深入行为型模式以优化交互逻辑。通过模式组合，开发者能设计出高内聚、低耦合的软件系统。",
+  "example_queries": [
+    "如何用单例模式确保全局唯一实例？",
+    "适配器模式与装饰器模式有何区别？",
+    "观察者模式在事件驱动系统中如何应用？",
+    "工厂方法模式与抽象工厂模式的选择依据是什么？",
+    "策略模式如何替代复杂的条件语句？"
+  ]
 }

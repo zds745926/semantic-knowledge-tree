@@ -19,5 +19,30 @@
       "content_preview": "时间片轮转 RR: Fixed-time slice cyclic execution. Responsive. Time slice selection is critical. ### Example in Python To illustrate the concept of fixed-time slice cyclic execution, consider a simple timer-based task scheduler where tasks are executed at regular intervals: ```python import time def task1(): print(\"Task 1 executed\") def task2(): print(\"Task 2 executed\") # Define the time slice (in seconds) time_slice = 0.5 while True: # Execute Task 1 task1() # Execute Task 2 task2() # Sleep for the remaining part of the time slice time.sleep(time_slice - 0.1) # Adjusting to ensure we don't exceed the time slice ``` In this example, `task1` and `task2` are executed in a cyclic manner with each iteration lasting for a fixed time slice (in this case, 0.5 seconds). The `time.sleep()` function is used to manage the timing accurately. Adjusting the sleep duration ensures that the total execution time does not exceed the defined time slice."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "sjf_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n时间片轮转（Round Robin, RR）是一种基于时间片的抢占式进程调度算法。系统将CPU时间划分为固定长度的时间片，并按照就绪队列的FIFO顺序轮流为每个进程分配一个时间片执行，当进程时间片用完或主动阻塞时，调度器立即切换至下一个进程。\n\n## 核心要点\n- 时间片大小是RR算法的关键参数，过小会导致频繁上下文切换增加开销，过大则退化为先来先服务算法。\n- 所有就绪进程以循环方式获得CPU，保证每个进程在给定时间间隔内都能得到响应，实现公平性。\n- 进程在时间片内未完成时被强制剥夺CPU，放入就绪队列尾部等待下一轮调度。\n- 算法适用于分时系统，能有效支持交互式任务，响应时间与就绪进程数成线性关系。\n- 上下文切换开销与时间片长度成反比，设计时需在响应速度和系统吞吐量间权衡。\n\n## 应用场景\nRR算法广泛应用于现代操作系统的分时调度，如Linux、Windows等系统的用户进程调度，尤其适合需要公平响应且任务数量动态变化的交互式环境。在实时系统中，RR也常用于非硬实时任务，以提供可预测的响应时间。\n\n## 相关概念\nRR与先来先服务（FCFS）同属非抢占式基础，但RR通过时间片实现抢占；与优先级调度结合可形成多级反馈队列（MLFQ），后者通过动态调整时间片和优先级优化调度性能。此外，时间片大小与上下文切换开销的平衡是系统性能调优的核心问题。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

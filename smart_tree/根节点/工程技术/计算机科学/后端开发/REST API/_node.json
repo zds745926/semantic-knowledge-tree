@@ -19,5 +19,30 @@
       "content_preview": "REST API: Resource-oriented. GET/POST/PUT/DELETE. Stateless. OpenAPI documentation. Here is an additional explanation with a brief Python code example for the `GET` method, which is commonly used in resource-oriented APIs: Resource-oriented. This architectural style focuses on resources and their representations. Each resource can be identified by a unique URI (Uniform Resource Identifier). Stateless. The server does not store any session state or client context between requests. OpenAPI documentation. This is an API description format that allows for the definition of RESTful web services, including GET/POST/PUT/DELETE methods and their parameters. Python code example for a simple `GET` method using Flask: ```python from flask import Flask, jsonify app = Flask(__name__) # Define a resource @app.route('/resource', methods=['GET']) def get_resource(): # Example data data = { 'id': 1, 'name': 'Example Resource' } return jsonify(data) if __name__ == '__main__': app.run(debug=True) ``` This example demonstrates a simple Flask application that defines a resource at the `/resource` endpoint and responds to `GET` requests with JSON data."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "https_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "auth_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_requests_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nREST API（Representational State Transfer Application Programming Interface）是一种基于HTTP协议、遵循REST架构风格的应用程序编程接口。它通过资源（Resource）的概念将数据和服务抽象为统一资源标识符（URI），并利用标准的HTTP方法（如GET、POST、PUT、DELETE）对资源进行操作，从而实现客户端与服务器之间的无状态通信。\n\n## 核心要点\n- **资源导向**：每个API端点代表一个资源（如用户、订单），通过URI唯一标识，而非操作。\n- **无状态性**：每个请求包含所有必要信息，服务器不保存客户端上下文，提高可伸缩性和可靠性。\n- **统一接口**：使用标准HTTP方法（GET读取、POST创建、PUT更新、DELETE删除）和状态码（如200成功、404未找到）进行交互。\n- **可缓存性**：响应可被缓存（如HTTP缓存），减少网络延迟和服务器负载。\n- **分层系统**：客户端无需知道直接连接的服务器，中间层（如负载均衡、缓存）可透明介入。\n\n## 应用场景\nREST API广泛应用于Web和移动应用的后端服务，例如社交媒体平台（获取用户动态）、电商系统（管理商品和订单）、云服务（如AWS S3的对象存储操作）。它也常用于微服务架构中，作为服务间通信的轻量级协议，以及第三方API集成（如支付网关、地图服务）。\n\n## 相关概念\n- **HTTP协议**：REST API的基础，定义了请求方法、状态码和头信息等通信规则。\n- **JSON/XML**：常用的数据交换格式，REST API通常返回JSON（轻量、易解析）或XML（可扩展）。\n- **CRUD操作**：对应资源的创建（Create）、读取（Read）、更新（Update）和删除（Delete），与HTTP方法一一映射。\n- **GraphQL**：另一种API设计范式，允许客户端精确指定所需数据，与REST的固定资源结构形成对比。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

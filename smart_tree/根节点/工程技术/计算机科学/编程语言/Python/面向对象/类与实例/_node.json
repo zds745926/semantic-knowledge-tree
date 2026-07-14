@@ -21,5 +21,13 @@
     "description": "类与实例: A class defines a class, and __init__ is the constructor. self is an instance reference. classmethod, staticmethod, property. Python code examples: 1. Defining a class with an `__init__` method: ```python class ExampleClass: def __init__(self, value): self.value = value # self refers to the instance of the class example_instance = ExampleClass(10) print(example_instance.value) # Output: 10 ``` 2. Using `classmethod`: ```python class ExampleClass: @classmethod def example_class_method(cls): print(f\"Called with class: {cls}\") ExampleClass.example_class_method() # Output: Called with class: <class '__main__.ExampleClass'> ``` 3. Using `staticmethod`: ```python class ExampleClass: @staticmethod def example_static_method(): print(\"This is a static method\") ExampleClass.example_static_method() # Output: This is a static method ``` 4. Using `property`: ```python class ExampleClass: def __init__(self, value): self._value = value @property def value(self): return self._value example_instance = ExampleClass(20) print(example_instance.value) # Output: 20 ``` These examples illustrate the use of class methods, static methods, and properties in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python面向对象编程中“类与实例”的核心概念与高级特性。从最基本的class定义开始，涵盖如何创建类、实例化对象、定义属性和方法。在此基础上，深入探讨类的高级功能，如类方法、静态方法、特殊方法（__init__、__str__等）以及属性访问控制。继承与多态是面向对象的重要机制，本分支详细讲解单继承、多继承、方法重写以及鸭子类型。property装饰器用于将方法伪装成属性，实现更优雅的接口设计。dataclasses数据类简化了数据容器的定义，自动生成__init__、__repr__等方法。enum枚举提供了一种定义常量的方式，增强代码可读性和安全性。ABC抽象基类用于定义接口和抽象方法，强制子类实现特定行为。这些子主题之间层层递进：先掌握基础定义，再学习高级特性，然后理解继承与多态，最后掌握property、dataclasses、enum和ABC等实用工具。学习路径建议从class定义开始，逐步深入，最终能够灵活运用这些特性构建健壮、可维护的Python程序。",
+  "example_queries": [
+    "如何在Python中定义一个类并创建实例？",
+    "Python中的继承和多态是如何实现的？",
+    "property装饰器有什么作用？如何使用？",
+    "dataclasses和普通类有什么区别？",
+    "抽象基类（ABC）在Python中如何定义和使用？"
+  ]
 }

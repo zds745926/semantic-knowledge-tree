@@ -17,5 +17,13 @@
     "description": "系统设计: The design and construction of large-scale distributed systems involve technologies and architectures related to distributed systems, caching, message queues, etc. To provide a more concrete example, here is a brief Python code snippet that demonstrates the use of a distributed system concept—using a simple task queue with `multiprocessing` for parallel processing: ```python from multiprocessing import Pool def worker(task): # Simulate some work being done on each task return f\"Processed {task}\" if __name__ == \"__main__\": tasks = [1, 2, 3, 4, 5] with Pool() as p: results = p.map(worker, tasks) print(results) ``` This example uses Python's `multiprocessing` module to create a simple task queue where each task is processed in parallel. This is a basic form of distributed processing within a single machine, which can be extended to a full-fledged distributed system with more complex coordination and communication mechanisms."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "系统设计是计算机科学中构建可扩展、高可用、高性能软件系统的核心学科。本分支涵盖分布式系统、缓存和消息队列三大子主题。分布式系统研究如何将计算任务分散到多台机器上协同工作，解决数据一致性、容错和负载均衡等基础问题；缓存通过临时存储高频访问数据，显著降低延迟和数据库压力，是提升系统响应速度的关键技术；消息队列则实现异步解耦，让不同服务通过消息传递进行通信，增强系统的弹性和可扩展性。三者紧密关联：分布式系统常依赖缓存加速数据访问，并利用消息队列协调跨节点任务；缓存可作为消息队列的中间存储，消息队列也能辅助缓存更新。学习路径建议先掌握分布式系统的基本原理（如CAP定理、一致性协议），再深入缓存策略（如LRU、缓存穿透/击穿/雪崩），最后学习消息队列的模型（如发布-订阅、点对点）和常用中间件（如Kafka、RabbitMQ）。",
+  "example_queries": [
+    "如何设计一个支持百万并发的高可用分布式系统？",
+    "缓存穿透、缓存击穿和缓存雪崩分别是什么？如何解决？",
+    "消息队列如何保证消息不丢失、不重复消费？",
+    "在分布式系统中，如何实现数据强一致性？",
+    "如何选择缓存和消息队列的中间件（如Redis、Kafka）？"
+  ]
 }

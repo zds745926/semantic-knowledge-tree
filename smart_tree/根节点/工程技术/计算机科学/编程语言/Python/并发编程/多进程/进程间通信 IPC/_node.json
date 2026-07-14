@@ -19,5 +19,43 @@
       "content_preview": "进程间通信 IPC: Pipe (Bidirectional Pipeline) / Queue / Shared Memory. Value/Array Sharing via ctypes. Here is an example of how you might use `ctypes` in Python to share a simple value between processes: ```python import multiprocessing as mp # Define the shared value using ctypes shared_value = mp.Value('i', 0) def worker(shared_val): # Increment the shared value with shared_val.get_lock(): shared_val.value += 1 print(f\"Value incremented to {shared_val.value}\") if __name__ == \"__main__\": processes = [] # Create a process that increments the shared value p = mp.Process(target=worker, args=(shared_value,)) processes.append(p) p.start() processes.append(p) # Wait for all processes to complete for p in processes: p.join() print(f\"Final value: {shared_value.value}\") ``` In this example, `mp.Value` is used to create a shared integer value that can be safely modified by multiple processes. The `get_lock()` method ensures thread safety when accessing the shared variable."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n进程间通信（IPC，Inter-Process Communication）是指在不同进程之间传输数据或信号的机制，用于协调多进程程序的执行。\n\n## 何时使用\n当需要让多个独立进程共享数据、同步操作或传递消息时使用IPC。例如，在Python多进程编程中，使用`multiprocessing`模块创建的子进程默认不共享全局变量，必须通过IPC机制（如队列、管道、共享内存）交换信息。\n\n## 示例\n```Python\nfrom multiprocessing import Process, Queue\n\ndef worker(q):\n    q.put('Hello from child')\n\nif __name__ == '__main__':\n    q = Queue()\n    p = Process(target=worker, args=(q,))\n    p.start()\n    print(q.get())  # 输出: Hello from child\n    p.join()\n```\n\n## 反例\n错误地使用全局变量或普通队列（如`queue.Queue`）进行跨进程通信，因为子进程会复制父进程内存空间，导致数据不同步。\n\n## 边界条件\n注意IPC对象的序列化要求：通过`Queue`或`Pipe`传递的对象必须可pickle序列化；共享内存（如`Value`、`Array`）只支持基本类型和`ctypes`类型。",
+    "code_pattern": "from multiprocessing import Process, Queue\n\ndef worker(q, data):\n    q.put(data)\n\nif __name__ == '__main__':\n    queue = Queue()\n    proc = Process(target=worker, args=(queue, 'example'))\n    proc.start()\n    result = queue.get()\n    proc.join()",
+    "common_pitfalls": [
+      "使用`queue.Queue`而不是`multiprocessing.Queue`：`queue.Queue`是线程安全的，但不支持跨进程，会导致子进程无法正确访问。",
+      "忘记在`if __name__ == '__main__':`中启动进程：在Windows上，多进程代码必须放在该保护块内，否则会无限递归创建进程。",
+      "传递不可pickle的对象：通过`Queue`或`Pipe`传递的对象必须可序列化（如lambda函数、打开的文件句柄会失败）。",
+      "未正确处理死锁：当`Queue`满时`put()`会阻塞，`Queue`空时`get()`会阻塞，需设置超时或使用非阻塞方法避免死锁。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

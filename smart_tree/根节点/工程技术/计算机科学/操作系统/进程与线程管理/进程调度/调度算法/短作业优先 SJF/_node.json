@@ -19,5 +19,30 @@
       "content_preview": "短作业优先 SJF: Select the process with the shortest CPU burst time. This minimizes average waiting time. However, this cannot be predicted in advance. Python code example (using a simple simulation to illustrate the concept): ```python import heapq class Process: def __init__(self, pid, burst_time): self.pid = pid # Process ID self.burst_time = burst_time # Burst time def __lt__(self, other): return self.burst_time < other.burst_time def shortest_burst_time_scheduler(processes): heapq.heapify(processes) # Convert the list into a min-heap based on burst time while processes: current_process = heapq.heappop(processes) # Pop the process with the smallest burst time print(f\"Scheduling process {current_process.pid} with burst time {current_process.burst_time}\") # Example usage processes = [Process(1, 5), Process(2, 3), Process(3, 8)] shortest_burst_time_scheduler(processes) ``` This Python code defines a `Process` class and implements the shortest CPU burst time scheduling algorithm using a min-heap. The example demonstrates how to schedule processes based on their burst times."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n短作业优先（Shortest Job First, SJF）是一种进程调度算法，它优先选择预计执行时间最短的进程来占用CPU。该算法旨在最小化平均等待时间，从而提高系统的整体响应效率。\n\n## 核心要点\n- 非抢占式SJF：一旦进程开始执行，就会一直运行到完成，期间不会被其他更短的进程打断。\n- 抢占式SJF（最短剩余时间优先）：如果新到达的进程剩余时间比当前运行进程的剩余时间更短，则当前进程被抢占。\n- 平均等待时间最小：理论上，SJF在给定进程集合下能实现最小的平均等待时间，但需要预先知道每个进程的执行时间。\n- 可能导致饥饿：长作业可能长期得不到CPU，因为不断有更短的进程插入队列。\n- 实现困难：实际系统中很难准确预估进程的执行时间，通常使用历史数据或用户提供的信息来近似。\n\n## 应用场景\nSJF常用于批处理系统，其中作业的执行时间可以预先估算，例如在科学计算或数据分析任务中。它也适用于交互式系统，但通常需要结合其他算法（如时间片轮转）来避免长作业饥饿。\n\n## 相关概念\nSJF与先来先服务（FCFS）同属非抢占式调度，但SJF通过选择最短作业优化了平均等待时间。它与最高响应比优先（HRRN）类似，但HRRN考虑了等待时间以平衡长短作业。此外，SJF是短作业优先思想的基础，而最短剩余时间优先（SRTF）是其抢占式变体。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,26 @@
       "content_preview": "历史: History studies human past through the examination of historical records. It encompasses various branches such as political history, economic history, cultural history, and scientific history. Sima Qian's \"Records of the Grand Historian\" is considered China's first comprehensive chronological history. Here’s a brief Python code example to illustrate how one might programmatically access and process historical data: ```python import json # Example JSON data representing historical records historical_data = ''' { \"year\": 2023, \"events\": [ {\"event\": \"Python 3.11 released\", \"details\": \"New features include improved performance and new modules.\"}, {\"event\": \"Historical event: Sima Qian's Records of the Grand Historian completed\", \"details\": \"A monumental work in Chinese historiography\"} ] } ''' # Load JSON data data = json.loads(historical_data) # Print historical events for event in data['events']: print(f\"{event['event']} - {event['details']}\") ``` This Python script demonstrates how to parse and display historical records stored in a JSON format."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "hum_philo",
+      "type": "related_pattern"
+    },
+    {
+      "id": "hum_lit",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n历史是人类社会过去的事件和活动的系统记录、研究与解释，它通过时间维度揭示文明演进、社会变迁和人类行为的规律。历史不仅是对事实的客观陈述，更包含对因果关系的分析和对未来的启示。\n\n## 核心要点\n- 历史以时间顺序为基础，强调事件的先后关系与时代背景，帮助理解社会发展的脉络。\n- 历史研究依赖史料，包括文献、考古发现、口述资料等，需通过考据和批判性分析确保真实性。\n- 历史具有解释性，不同视角和理论（如唯物史观、文明史观）会导致对同一事件的不同解读。\n- 历史是动态的，随着新证据的发现和认知的深化，对过去的理解会不断修正和完善。\n- 历史具有连续性，过去、现在与未来相互关联，研究历史有助于预测趋势和避免重蹈覆辙。\n\n## 应用场景\n历史知识广泛应用于教育领域，帮助学生建立时间观念和批判思维；在政策制定中，历史案例为决策者提供经验教训，如经济危机应对或外交策略；此外，历史也是文化认同和民族凝聚力的重要来源，用于博物馆展览、影视创作和公共纪念活动。\n\n## 相关概念\n历史学是研究历史的学科，强调方法论和理论框架；考古学通过实物遗存补充文字记载的不足；编年史以时间顺序记录事件，而通史则注重跨时代的综合叙述。历史哲学探讨历史的意义和规律，如黑格尔的历史理性或汤因比的文明循环论。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

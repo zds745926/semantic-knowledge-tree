@@ -19,5 +19,30 @@
       "content_preview": "函数定义基础: A function in Python is defined as `def function_name(parameters): function_body`. It can include positional arguments, default arguments, *args, and **kwargs. Example with brief explanations: 1. Positional Arguments: ```python def add(a, b): return a + b print(add(5, 3)) # Output: 8 ``` 2. Default Arguments: ```python def greet(name, msg=\"Hello\"): print(f\"{msg}, {name}!\") greet(\"Alice\") # Output: Hello, Alice! greet(\"Bob\", \"Hi\") # Output: Hi, Bob! ``` 3. *args (Variable-length non-keyword arguments): ```python def sum_all(*args): return sum(args) print(sum_all(1, 2, 3, 4)) # Output: 10 ``` 4. **kwargs (Variable-length keyword arguments): ```python def print_info(**kwargs): for key, value in kwargs.items(): print(f\"{key}: {value}\") print_info(name=\"Alice\", age=30) # Output: # name: Alice # age: 30 ``` These examples illustrate the different ways to define and use parameters in Python functions."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_functools_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n函数定义基础是指在 Python 中通过 `def` 关键字创建可复用代码块的过程，函数可以接受参数、执行特定操作并返回结果。\n\n## 何时使用\n当需要将重复使用的逻辑封装成独立模块时，应使用函数定义。它适用于任何需要组织代码、提高可读性、减少冗余的场景，例如数据处理、算法实现或 API 调用。函数定义也是实现模块化编程和测试的基础。\n\n## 示例\n```Python\ndef greet(name):\n    \"\"\"返回问候语\"\"\"\n    return f\"Hello, {name}!\"\n\nprint(greet(\"Alice\"))  # 输出: Hello, Alice!\n```\n\n## 反例\n错误用法：在函数内部使用全局变量而不通过参数传递，导致函数依赖外部状态，难以测试和复用。例如：`def add(): return a + b` 依赖于全局 `a` 和 `b`。\n\n## 边界条件\n函数定义时参数可以有默认值，但默认参数应避免使用可变对象（如列表、字典），因为默认值在函数定义时只计算一次，多次调用会共享同一对象。另外，函数内部定义的变量作用域仅限于函数体，外部无法访问。",
+    "code_pattern": "def function_name(param1, param2=None):\n    \"\"\"简短描述函数功能\"\"\"\n    # 参数校验\n    if param2 is None:\n        param2 = []\n    # 核心逻辑\n    result = param1 + len(param2)\n    return result",
+    "common_pitfalls": [
+      "默认参数使用可变对象（如列表、字典），导致多次调用时共享同一对象，产生意外副作用。例如：`def append_to(element, target=[]): target.append(element); return target` 每次调用都会修改同一个列表。",
+      "函数内部修改全局变量而未使用 `global` 关键字，导致局部变量遮蔽全局变量或引发 UnboundLocalError。",
+      "忘记写 `return` 语句或返回多个值时未正确解包，导致函数默认返回 `None` 或返回元组但调用方未处理。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

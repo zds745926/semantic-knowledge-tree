@@ -19,5 +19,26 @@
       "content_preview": "reversed/sorted 迭代: `reversed(seq)` performs reverse iteration. `sorted(seq)` performs iteration after sorting. `reversed` returns an iterator. Python code examples: ```python # Example of using reversed() original_list = [1, 2, 3, 4] for item in reversed(original_list): print(item) # Output: # 4 # 3 # 2 # 1 # Example of using sorted() with reverse=True for sorting and iteration original_list = [1, 2, 3, 4] for item in sorted(original_list, reverse=True): print(item) # Output: # 4 # 3 # 2 # 1 ``` These examples demonstrate how to use the `reversed()` function for reverse iteration and the `sorted()` function with a custom sort order."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_enumerate_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nreversed/sorted 迭代是指使用内置函数 reversed() 和 sorted() 对可迭代对象进行反向或排序后，再通过 for 循环进行遍历的技术。\n\n## 何时使用\n当需要按逆序处理序列（如列表、元组、字符串）中的元素时，使用 reversed()；当需要按特定顺序（默认升序或自定义排序规则）遍历元素，且不修改原序列时，使用 sorted()。这两个函数都返回迭代器或新列表，适合在循环中直接使用。\n\n## 示例\n```Python\n# reversed 示例：逆序遍历列表\nnums = [3, 1, 4, 1, 5]\nfor num in reversed(nums):\n    print(num, end=' ')  # 输出: 5 1 4 1 3\n\n# sorted 示例：排序后遍历\nwords = ['banana', 'apple', 'cherry']\nfor word in sorted(words):\n    print(word, end=' ')  # 输出: apple banana cherry\n\n# sorted 带 key 参数：按长度排序\nfor word in sorted(words, key=len):\n    print(word, end=' ')  # 输出: apple banana cherry\n```\n\n## 反例\n不要试图在遍历过程中修改原序列，例如 `for x in reversed(lst): lst.remove(x)`，这会导致意外的跳过或索引错误。应创建副本或使用列表推导式。\n\n## 边界条件\nreversed() 要求对象有 `__reversed__` 方法或支持序列协议（即实现了 `__len__` 和 `__getitem__`），对于集合、字典等无序类型，reversed() 会抛出 TypeError。sorted() 总是返回新列表，即使输入是迭代器，也会消耗所有元素。",
+    "code_pattern": "def process_items(items):\n    # 逆序处理\n    for item in reversed(items):\n        # 处理逻辑\n        pass\n\n    # 排序后处理（默认升序）\n    for item in sorted(items):\n        # 处理逻辑\n        pass\n\n    # 自定义排序\n    for item in sorted(items, key=lambda x: x.attribute, reverse=True):\n        # 处理逻辑\n        pass",
+    "common_pitfalls": [
+      "reversed() 对字典或集合直接使用会抛出 TypeError，因为这些类型没有顺序。应先将它们转换为列表，如 `reversed(list(dict_items))`。",
+      "sorted() 返回新列表，如果原对象很大，会占用额外内存。对于只需要遍历一次的场景，考虑使用 `sorted()` 的生成器版本（如 `sorted(itertools.chain(...))`）或改用 `heapq.nsmallest`。",
+      "在循环中修改正在被 reversed 或 sorted 的原始列表会导致不可预测的行为，因为 reversed 返回的是迭代器，而 sorted 返回的是新列表，但原列表的修改可能影响迭代器的状态（对于 reversed 而言）或导致逻辑错误。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

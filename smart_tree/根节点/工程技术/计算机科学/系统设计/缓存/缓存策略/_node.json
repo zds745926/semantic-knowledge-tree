@@ -19,5 +19,34 @@
       "content_preview": "缓存策略: Cache Aside - This is a design pattern where data that would normally be cached is instead read directly from the database. It's often used to avoid unnecessary cache invalidation. Cascading Failure / Snowflake Effect / Fallback - These terms refer to situations in distributed systems where the failure of one component can lead to the failure of others, causing a chain reaction similar to an avalanche or a domino effect. Bloom Filter - A space-efficient probabilistic data structure that is used to test whether an element is a member of a set. False positives are possible, but false negatives are not. Here's a simple Python example: ```python from bloomfilter import BloomFilter # Create a Bloom filter with 10 bits per entry and an initial capacity of 1000 elements bf = BloomFilter(capacity=1000, error_rate=0.001) # Add some items to the filter items = ['apple', 'banana', 'cherry'] for item in items: bf.add(item) # Check if an item is in the filter (returns True for known items and possibly False positives) print(bf.check('apple')) # True print(bf.check('orange')) # False or possibly True (false positive) ``` Note: The `bloomfilter` package used in the example needs to be installed. You can install it using pip: ```sh pip install bloom-filter ``` Mutex Lock - A mutex lock is a type of mutual exclusion object that allows one thread to exclusive access to a resource at a time, ensuring that only one thread can execute a particular piece of code at any given moment. Here's an example in Python using the `threading` module: ```python import threading # Define a shared resource shared_resource = 0 # Create a mutex lock lock = threading.Lock() def increment(): global shared_resource # Acquire the lock before accessing the shared resource with lock: temp = shared_resource temp += 1 shared_resource = temp print(f\"Resource incremented to {shared_resource}\") # Create multiple threads that will increment the resource threads = [threading.Thread(target=increment) for _ in range(5)] # Start all threads for thread in threads: thread.start() # Wait for all threads to complete for thread in threads: thread.join() ``` This example demonstrates how a mutex lock can be used to ensure that the shared resource is accessed exclusively by one thread at a time, preventing race conditions."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cap_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n缓存策略是一组规则和算法，用于决定何时将数据存入缓存、何时从缓存中移除数据，以及如何管理缓存空间。其核心目标是平衡缓存命中率与资源消耗，从而提升系统响应速度和降低后端负载。\n\n## 核心要点\n- **缓存淘汰算法**：如LRU（最近最少使用）、LFU（最不经常使用）、FIFO（先进先出），决定缓存满时移除哪些数据。\n- **写入策略**：包括写直达（Write-Through，同步写入缓存和数据库）、写回（Write-Behind，异步写入数据库）和写旁路（Write-Around，直接写入数据库，仅读取时缓存），影响数据一致性和性能。\n- **过期与失效**：通过TTL（生存时间）或主动失效机制，确保缓存数据不会无限期保留，避免提供过时信息。\n- **缓存穿透、击穿与雪崩**：分别指查询不存在的数据、热点数据过期瞬间大量请求、以及大量缓存同时失效，需通过布隆过滤器、互斥锁、随机过期时间等策略防范。\n\n## 应用场景\n缓存策略广泛应用于Web应用、数据库查询加速、CDN（内容分发网络）和分布式系统中。例如，电商网站使用缓存存储热门商品详情，减少数据库压力；CDN利用缓存策略将静态资源分发到边缘节点，降低用户访问延迟。\n\n## 相关概念\n缓存策略与**缓存一致性**（确保缓存与源数据同步）、**缓存分层**（如本地缓存与分布式缓存结合）以及**预取**（提前加载可能被访问的数据）紧密相关。此外，**缓存容量规划**和**监控指标**（如命中率、延迟）是优化策略的基石。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

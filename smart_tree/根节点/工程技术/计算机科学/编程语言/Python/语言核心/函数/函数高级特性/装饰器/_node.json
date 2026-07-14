@@ -21,5 +21,22 @@
   ],
   "related_nodes": [
     "py_adv_deco_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n装饰器是一种用于修改或增强函数或方法行为的高阶函数，它接受一个函数作为参数并返回一个新函数，允许在不修改原函数代码的情况下添加额外功能。\n\n## 何时使用\n装饰器适用于需要在不改变函数原有逻辑的前提下，为多个函数统一添加日志记录、性能计时、权限校验、缓存等横切关注点（cross-cutting concerns）的场景。当项目中多个函数需要重复相同的预处理或后处理逻辑时，使用装饰器可以避免代码重复，提高可维护性。\n\n## 示例\n```Python\nimport time\n\ndef timer_decorator(func):\n    def wrapper(*args, **kwargs):\n        start = time.time()\n        result = func(*args, **kwargs)\n        end = time.time()\n        print(f\"{func.__name__} took {end - start:.4f} seconds\")\n        return result\n    return wrapper\n\n@timer_decorator\ndef compute_square(n):\n    return n * n\n\nprint(compute_square(1000000))\n```\n\n## 反例\n错误用法：在装饰器内部直接修改原函数的签名或返回值类型，导致调用方依赖的行为发生变化。例如，装饰器返回的wrapper函数没有使用functools.wraps保留原函数的元信息，使得函数名、文档字符串丢失，影响调试和文档生成。\n\n## 边界条件\n注意事项：装饰器应用于类方法时，需注意self参数的传递；多个装饰器叠加时，执行顺序是从下往上（离函数定义最近的装饰器最先执行）；装饰器本身也可以带参数，此时需要额外一层嵌套。",
+    "code_pattern": "import functools\n\ndef decorator_name(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        # 前置操作\n        result = func(*args, **kwargs)\n        # 后置操作\n        return result\n    return wrapper",
+    "common_pitfalls": [
+      "忘记使用@functools.wraps保留原函数的元信息（如__name__、__doc__），导致调试和文档工具无法正确识别函数身份。",
+      "装饰器内部返回的wrapper函数签名与原始函数不一致，导致参数检查或调用时出错，尤其是在使用*args, **kwargs时未正确处理。",
+      "多个装饰器叠加时顺序理解错误，实际执行顺序是从下往上（离函数定义最近的装饰器先执行），容易混淆。",
+      "装饰器本身带参数时，需要额外一层嵌套，若忘记返回内部装饰器函数会导致TypeError。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,34 @@
       "content_preview": "自定义异常: English translation: ```python class MyError(Exception): pass # A custom exception. ``` This Python code defines a custom exception called `MyError` that inherits from the base `Exception` class. The `pass` statement indicates that this exception class does not implement any additional methods or properties beyond what is provided by the base `Exception` class."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n自定义异常是用户通过继承内置异常类（如Exception）创建的异常类，用于表达特定于应用程序的错误条件，使错误处理更精确、可读性更强。\n\n## 何时使用\n当内置异常无法准确描述业务逻辑中的特定错误时（如用户余额不足、文件格式无效），应定义自定义异常。它帮助将错误处理逻辑与正常业务逻辑分离，并允许调用方通过捕获特定异常来做出针对性响应。\n\n## 示例\n```Python\nclass InsufficientFundsError(Exception):\n    \"\"\"账户余额不足时抛出的异常。\"\"\"\n    def __init__(self, balance, amount):\n        self.balance = balance\n        self.amount = amount\n        super().__init__(f'余额 {balance} 不足，需要 {amount}')\n\ndef withdraw(balance, amount):\n    if amount > balance:\n        raise InsufficientFundsError(balance, amount)\n    return balance - amount\n\ntry:\n    new_balance = withdraw(100, 150)\nexcept InsufficientFundsError as e:\n    print(f'错误: {e}')\n```\n\n## 反例\n不要为每个函数都定义自定义异常，或滥用异常来控制正常流程（如用异常替代if-else判断），这会降低代码可读性和性能。\n\n## 边界条件\n自定义异常应继承自Exception而非BaseException，以避免捕获系统退出等信号。同时，确保异常类名以Error结尾，遵循Python惯例。",
+    "code_pattern": "class CustomError(Exception):\n    \"\"\"自定义异常，用于描述特定错误。\"\"\"\n    def __init__(self, message=\"发生自定义错误\"):\n        self.message = message\n        super().__init__(self.message)\n\n# 使用示例\ndef risky_function(value):\n    if not isinstance(value, int):\n        raise CustomError(\"参数必须是整数\")\n    return value * 2\n\ntry:\n    result = risky_function(\"abc\")\nexcept CustomError as e:\n    print(f\"捕获异常: {e}\")",
+    "common_pitfalls": [
+      "直接继承BaseException而不是Exception，导致捕获到SystemExit或KeyboardInterrupt等系统异常，破坏程序正常退出机制。",
+      "自定义异常类中未定义__init__或未调用父类__init__，导致异常消息无法正确显示或丢失上下文信息。",
+      "在异常处理中过度使用自定义异常，为每个小错误都创建新类，造成异常层次结构臃肿，增加维护成本。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

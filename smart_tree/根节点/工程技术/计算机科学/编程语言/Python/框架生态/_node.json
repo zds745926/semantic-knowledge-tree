@@ -24,5 +24,13 @@
     "description": "框架生态: Python boasts a rich framework ecosystem that covers web development, data science, machine learning, and more. Here are some brief examples to illustrate coding/programming concepts in these areas: 1. **Web Development**: ```python from flask import Flask app = Flask(__name__) @app.route('/') def home(): return \"Hello, World!\" if __name__ == '__main__': app.run() ``` 2. **Data Science**: ```python import pandas as pd # Load a sample dataset df = pd.read_csv('data.csv') # Display the first few rows of the dataframe print(df.head()) ``` 3. **Machine Learning**: ```python from sklearn.datasets import load_iris from sklearn.model_selection import train_test_split from sklearn.neighbors import KNeighborsClassifier # Load iris dataset iris = load_iris() X, y = iris.data, iris.target # Split the data into training and testing sets X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Train a K-Nearest Neighbors classifier knn = KNeighborsClassifier(n_neighbors=3) knn.fit(X_train, y_train) # Make predictions on the testing set predictions = knn.predict(X_test) ``` These examples provide a glimpse into how Python can be used in various technical domains."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Python编程语言的核心框架与库生态，包括Web开发框架（Django、FastAPI、Flask）和科学计算与数据分析库（NumPy、Pandas、Matplotlib、SciPy、scikit-learn）。Web框架中，Django为全栈框架，适合大型项目；Flask轻量灵活，适合微服务；FastAPI基于异步，性能高，适合API开发。科学计算库中，NumPy提供多维数组与数学函数，是数据科学基础；Pandas用于数据清洗与操作；Matplotlib用于数据可视化；SciPy扩展科学计算功能；scikit-learn提供机器学习算法。学习路径建议：先掌握Python基础，然后学习NumPy和Pandas进行数据处理，接着用Matplotlib可视化，再用SciPy进行科学计算，最后用scikit-learn进行机器学习。Web开发方面，可从Flask入门，再学习FastAPI或Django。这些工具相互补充，构成Python在数据科学和Web开发中的强大生态。",
+  "example_queries": [
+    "Django和Flask的主要区别是什么？如何选择？",
+    "如何使用Pandas进行数据清洗和预处理？",
+    "FastAPI相比Flask有哪些优势？适合什么场景？",
+    "NumPy和SciPy在科学计算中分别扮演什么角色？",
+    "scikit-learn支持哪些常见的机器学习算法？如何快速上手？"
+  ]
 }

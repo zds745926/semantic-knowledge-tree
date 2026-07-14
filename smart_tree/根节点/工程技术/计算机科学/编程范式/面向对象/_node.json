@@ -17,5 +17,13 @@
     "description": "面向对象: Object-oriented programming (OOP) is organized around the concepts of classes and objects, with core features including encapsulation, inheritance, and polymorphism. Java and C++ are typical representatives of OOP and are widely used in the development of large-scale software systems. Here's a brief Python code example to illustrate some of these concepts: ```python # Example of a simple class definition class Animal: def __init__(self, name): self.name = name # Encapsulation: attributes are defined within the class def speak(self): raise NotImplementedError(\"Subclasses must implement this method\") # Polymorphism: defining an abstract method # Inheritance example class Dog(Animal): def speak(self): return f\"{self.name} says Woof!\" # Overriding the speak method from the parent class # Creating objects and using methods my_dog = Dog(\"Buddy\") print(my_dog.speak()) # Output: Buddy says Woof! ``` In this example, `Animal` is a base class with an `__init__` method for initialization (encapsulation) and a `speak` method that is meant to be overridden by subclasses. The `Dog` class inherits from `Animal`, overriding the `speak` method to provide specific behavior (polymorphism)."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "面向对象编程（OOP）是计算机科学中一种重要的编程范式，它通过将数据与操作数据的方法封装成对象，来模拟现实世界中的实体与交互。本分支涵盖面向对象的三大核心特性：封装、继承和多态。封装确保对象的内部状态只能通过公开的接口访问，提高了代码的安全性和可维护性；继承允许子类复用父类的属性和方法，支持代码的层次化组织与扩展；多态则使得不同类的对象可以通过统一的接口调用各自的具体实现，增强了程序的灵活性和可扩展性。这三者相辅相成：封装是基础，为对象提供清晰的边界；继承在封装之上实现代码复用与层级关系；多态则利用继承机制，实现接口与实现的分离，从而支持动态绑定和运行时行为变化。学习面向对象编程，通常从理解封装入手，掌握如何设计类与对象；然后学习继承，理解类之间的层次关系；最后深入多态，掌握接口、抽象类以及方法重写等高级概念。通过本分支的学习，学习者能够设计出高内聚、低耦合的软件系统，并具备解决实际工程问题的能力。",
+  "example_queries": [
+    "封装、继承和多态在面向对象编程中分别解决什么问题？",
+    "如何通过多态实现策略模式？",
+    "继承与组合在代码复用上各有什么优缺点？",
+    "面向对象设计原则（如SOLID）与封装、继承、多态的关系是什么？",
+    "在Python中如何实现多态？"
+  ]
 }

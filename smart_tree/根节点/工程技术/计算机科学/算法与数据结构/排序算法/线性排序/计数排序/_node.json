@@ -19,5 +19,34 @@
       "content_preview": "计数排序: Count occurrences → accumulate → output. O(n+k), limited to integers with not too large a range. Python code example: ```python from collections import Counter def count_and_accumulate(numbers): # Count occurrences of each number counts = Counter(numbers) # Accumulate the counts (for simplicity, just summing up here as an example) accumulated_counts = sum(counts.values()) return accumulated_counts # Example usage: numbers = [1, 2, 2, 3, 3, 3] result = count_and_accumulate(numbers) print(result) # Output: 6 ``` This Python code uses the `Counter` class from the `collections` module to count occurrences of each number in a list. It then accumulates these counts by summing them up. The time complexity is O(n+k), where n is the number of elements and k is the range of numbers, which matches the description provided."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "quick_sort_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "bst_search_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "avl_tree_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n计数排序是一种非比较的整数排序算法，通过统计每个元素出现的次数来确定其在输出序列中的位置。它适用于待排序元素为有限范围内的整数，且范围较小的情况，时间复杂度为 O(n+k)，其中 n 是元素个数，k 是元素范围。\n\n## 核心要点\n1. 计数排序基于键值范围创建计数数组，统计每个键值出现的次数。\n2. 通过累加计数数组，得到每个元素在排序后数组中的最终位置。\n3. 算法稳定，即相等元素的相对顺序在排序后保持不变。\n4. 空间复杂度为 O(k)，当 k 远大于 n 时效率较低。\n5. 仅适用于非负整数或可映射为整数的数据，且范围不宜过大。\n\n## 应用场景\n计数排序常用于处理大量重复整数的排序，如考试成绩排名、年龄统计等。在数据范围小且数据量大的场景下，它比比较排序（如快速排序）更高效。此外，它常作为基数排序的子过程。\n\n## 相关概念\n计数排序与桶排序、基数排序同属线性时间排序算法。桶排序将数据分到多个桶中再排序，而基数排序按位多次排序。计数排序是基数排序的基础，用于对每一位进行稳定排序。与比较排序不同，计数排序不依赖元素比较，因此能突破 O(n log n) 的下界。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

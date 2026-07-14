@@ -19,5 +19,30 @@
       "content_preview": "CSS 盒模型: Content/padding/border/margin. box-sizing. display. In CSS (Cascading Style Sheets), these are fundamental properties used to control the layout and appearance of elements on a webpage: - **Content**: The actual content or text within an element. ```python # Example: Setting the content in Python using a simple string content = \"Hello, World!\" ``` - **Padding**: The space between the content and the border. It is invisible but affects layout calculations. ```python # Example: Padding can be set for an element in CSS-like syntax (hypothetical) padding = \"10px\" ``` - **Border**: The line that surrounds the content and padding. ```python # Example: Border can be set for an element in CSS-like syntax (hypothetical) border = \"2px solid black\" ``` - **Margin**: The space outside the border, which affects the layout by creating gaps between elements. ```python # Example: Margin can be set for an element in CSS-like syntax (hypothetical) margin = \"15px\" ``` - **Box-Sizing**: Determines how the total width and height of an element are calculated. Common values include `content-box` (default) and `border-box`. ```python # Example: Setting box-sizing in CSS-like syntax (hypothetical) box_sizing = \"border-box\" ``` - **Display**: Specifies how an element should be displayed, such as block, inline, or none. ```python # Example: Display can be set for an element in CSS-like syntax (hypothetical) display = \"block\" ``` These properties are crucial for precise control over the layout and appearance of web elements."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nCSS盒模型是CSS布局的基础概念，它将每个HTML元素视为一个矩形盒子，由内容（content）、内边距（padding）、边框（border）和外边距（margin）四个区域组成。这些区域共同决定了元素在页面中的尺寸和位置。\n\n## 核心要点\n- 内容区域是盒子的核心，用于显示文本、图片等实际内容，其尺寸由width和height属性控制。\n- 内边距位于内容区域和边框之间，用于在内容周围创建空白空间，增加可读性，可通过padding属性设置。\n- 边框包裹内边距和内容，用于视觉上分隔元素，可通过border属性定义其宽度、样式和颜色。\n- 外边距位于边框之外，用于在元素之间创建间距，防止元素紧贴，可通过margin属性设置，且相邻元素的外边距可能发生折叠。\n- 盒模型分为标准盒模型（W3C盒模型）和IE盒模型（怪异盒模型），标准盒模型中width/height仅指内容区域，而IE盒模型中包含padding和border，可通过box-sizing属性切换。\n\n## 应用场景\nCSS盒模型广泛应用于网页布局中，例如通过调整padding和margin控制元素间距，实现卡片、按钮等组件的设计。在响应式设计中，利用box-sizing: border-box可简化尺寸计算，避免因padding和border导致的布局溢出。此外，理解盒模型有助于调试元素尺寸异常问题，确保页面在不同浏览器中表现一致。\n\n## 相关概念\n- 文档流：盒模型元素在正常流中按顺序排列，影响外边距折叠和布局行为。\n- 定位：通过position属性（如relative、absolute）可改变元素的盒模型位置，脱离文档流。\n- 弹性盒（Flexbox）和网格（Grid）：现代布局模块依赖盒模型，但提供了更灵活的尺寸和排列控制，简化复杂布局。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

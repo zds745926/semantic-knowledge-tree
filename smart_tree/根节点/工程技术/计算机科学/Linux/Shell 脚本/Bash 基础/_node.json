@@ -19,5 +19,38 @@
       "content_preview": "Bash 基础: #!/bin/bash. Variable ${var}. $0/$1/$#/$. Command substitution: $(cmd). Here's an explanation with a brief Python code example for each concept: - `#!/bin/bash`: This is a shebang line indicating that the script should be run using the Bash shell. ```python #!/usr/bin/env python3 ``` - `Variable ${var}`: This refers to accessing or setting a variable in a shell script. ```python var = \"Hello, World!\" print(var) ``` - `$0/$1/$#/?$`: These are special parameters in Bash: - `$0` is the name of the script. - `$1` is the first argument passed to the script. - `$#` is the number of arguments passed to the script. - `$?` holds the exit status of the last command. ```python import sys print(f\"Script name: {sys.argv[0]}\") if len(sys.argv) > 1: print(f\"First argument: {sys.argv[1]}\") print(f\"Number of arguments: {len(sys.argv) - 1}\") ``` - `$(cmd)`: This is command substitution in Bash, which runs the command and replaces it with its output. ```python import subprocess result = subprocess.run(['ls'], capture_output=True, text=True) print(result.stdout) ``` Note that Python does not use `$` for variables or special parameters as shown above. The examples are provided to illustrate the concepts in a way familiar to Python programmers."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tar_gzip_v4",
+      "type": "application"
+    },
+    {
+      "id": "ps_top_v4",
+      "type": "application"
+    },
+    {
+      "id": "sudo_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_fnmatch_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_while_basic_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nBash（Bourne Again SHell）是Linux和macOS等类Unix系统中最常用的命令行解释器之一，也是Shell脚本编程的核心环境。它基于Bourne Shell（sh）并融合了Korn Shell（ksh）和C Shell（csh）的许多特性，为用户提供了强大的命令行交互和脚本自动化能力。\n\n## 核心要点\n- **命令执行与环境控制**：Bash可以直接执行系统命令、管理进程，并通过环境变量（如PATH、HOME）控制命令查找路径和用户工作环境。\n- **脚本编程能力**：支持变量、条件判断（if/else）、循环（for/while）、函数定义等编程结构，能够编写自动化任务脚本。\n- **输入输出重定向与管道**：通过`>`、`<`、`>>`等符号重定向标准输入输出，利用`|`将多个命令串联，实现复杂的数据处理流水线。\n- **通配符与扩展**：支持文件名通配符（如`*`、`?`）、花括号扩展（如`{a,b,c}`）以及命令替换（`$(command)`），提高操作效率。\n- **作业控制与历史功能**：允许后台运行任务（`&`）、暂停/恢复进程，并提供命令历史记录（`history`）和快速检索（`Ctrl+R`）。\n\n## 应用场景\nBash广泛应用于系统管理（如批量文件操作、日志分析、定时任务）、开发环境配置（如自动化构建、部署脚本）以及日常运维（如监控系统状态、备份数据）。无论是简单的命令组合还是复杂的自动化流程，Bash都是高效完成任务的利器。\n\n## 相关概念\n- **Shell**：泛指命令行解释器，Bash是其中最流行的一种；其他常见Shell包括Zsh、Fish等。\n- **环境变量**：影响Shell行为的键值对，如`PATH`决定命令搜索路径，`PS1`控制提示符样式。\n- **脚本**：将一系列Bash命令保存为文件（通常以`.sh`结尾），通过解释器执行，实现任务自动化。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

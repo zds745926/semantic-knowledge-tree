@@ -19,5 +19,30 @@
       "content_preview": "IPv6: 128-bit address in colon-separated hexadecimal notation. No NAT, no checksum. Plug-and-play SLAAC. Here's a brief explanation of the terms: - **128-bit address**: This refers to an IPv6 address. - **Colon-separated hexadecimal notation**: This is the standard format for writing IPv6 addresses, where each 4-bit segment (hex digit) is separated by colons. - **No NAT**: No Network Address Translation, meaning devices will use their full IP addresses directly on the network. - **No checksum**: The address does not include a checksum or error detection mechanism. - **Plug-and-play SLAAC**: Stateless Address Autoconfiguration with Automatic Private IP Addressing. This is an IPv6 addressing method where devices automatically configure their own IP addresses based on the local network's prefix. Here’s a Python code example to illustrate how you might represent and print such an address: ```python # Example of representing a 128-bit (IPv6) address in colon-separated hexadecimal notation ipv6_address = \"2001:db8::1\" def print_ipv6_address(address): print(f\"IPv6 Address: {address}\") print_ipv6_address(ipv6_address) ``` This code defines an IPv6 address and prints it in the standard format."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tcp_bbr_v4",
+      "type": "application"
+    },
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nIPv6（Internet Protocol version 6）是互联网协议第六版，旨在替代IPv4以解决地址枯竭问题。它使用128位地址空间，提供约3.4×10^38个唯一地址，并改进了数据包处理、安全性和移动性支持。\n\n## 核心要点\n- **更大的地址空间**：IPv6采用128位地址，相比IPv4的32位，显著增加了可用地址数量，支持更多设备直接连接互联网。\n- **简化的报头格式**：IPv6报头固定为40字节，去除了校验和、选项字段等，提高了路由效率。\n- **内置安全性**：IPsec（互联网协议安全）是IPv6的强制组成部分，提供认证和加密，增强数据传输安全。\n- **无状态地址自动配置**：设备可自动生成链路本地地址，无需DHCP服务器，简化网络配置。\n- **改进的多播和任播**：IPv6扩展了多播功能，并引入任播地址，支持更高效的一对多和最近节点通信。\n\n## 应用场景\nIPv6广泛应用于物联网（IoT）设备、移动网络、云计算和数据中心，解决海量设备接入需求。同时，在5G网络和智能城市基础设施中，IPv6提供更高效的寻址和路由，支持低延迟和高可靠性通信。\n\n## 相关概念\nIPv6与IPv4共存于双栈网络中，通过隧道技术或翻译机制（如NAT64）实现互操作。相关概念包括：链路本地地址、全局单播地址、邻居发现协议（NDP），以及过渡技术如6to4和Teredo。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -16,5 +16,13 @@
     "description": "UDP 协议: UDP is connectionless and unreliable, with only an 8-byte header. It is suitable for real-time applications and simple requests. Python code example: ```python import socket # Create a UDP socket sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) # Send data without establishing a connection message = \"Hello, UDP!\" server_address = ('localhost', 10000) sock.sendto(message.encode(), server_address) # Receive response (if any) data, address = sock.recvfrom(4096) print(\"Received: \", data.decode()) # Close the socket sock.close() ``` This code snippet demonstrates creating a UDP socket and sending/receiving data without establishing a connection, which aligns with the characteristics of UDP as described."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于UDP协议，位于计算机网络传输层，是TCP/IP协议栈的重要组成部分。UDP（用户数据报协议）是一种无连接的、不可靠的传输层协议，常用于对实时性要求高、允许少量丢包的应用场景，如视频流、在线游戏和DNS查询。该分支下包含两个核心子主题：'UDP基础'和'UDP vs TCP'。'UDP基础'介绍协议的工作原理、报文结构、端口号、校验和机制以及典型应用；'UDP vs TCP'则对比UDP与TCP在连接方式、可靠性、流量控制、拥塞控制、头部开销和应用场景等方面的差异，帮助学习者理解何时选择UDP而非TCP。学习路径建议从UDP基础入手，掌握其无连接、不可靠、低延迟等核心特性，再通过对比TCP，深化对两者设计哲学和适用场景的理解，从而在实际网络编程和系统设计中做出合理选择。",
+  "example_queries": [
+    "UDP协议的工作原理是什么？它如何实现无连接通信？",
+    "UDP报文头部包含哪些字段？各字段的作用是什么？",
+    "UDP和TCP的主要区别有哪些？在什么情况下应该使用UDP而不是TCP？",
+    "UDP校验和是如何计算的？如果校验和出错会怎样？",
+    "为什么视频通话和在线游戏通常使用UDP而不是TCP？"
+  ]
 }

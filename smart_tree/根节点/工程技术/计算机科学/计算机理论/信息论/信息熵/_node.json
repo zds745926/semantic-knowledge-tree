@@ -19,5 +19,34 @@
       "content_preview": "信息熵: Information entropy H(X) = -∑p(x)log₂p(x) measures the uncertainty of a random variable, with units in bits. The higher the entropy, the greater the information content. Here's a brief Python code example to calculate the entropy of a probability distribution: ```python import math def calculate_entropy(probabilities): \"\"\" Calculate the Shannon entropy of a given probability distribution. :param probabilities: A list or tuple of probabilities for each event. :return: The calculated entropy value in bits. \"\"\" entropy = -sum(p * math.log2(p) for p in probabilities if p > 0) return entropy # Example usage: probabilities = [0.5, 0.3, 0.2] entropy_value = calculate_entropy(probabilities) print(f\"Entropy: {entropy_value} bits\") ``` This code defines a function `calculate_entropy` that computes the Shannon entropy of a given probability distribution and prints out the result for an example set of probabilities."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "boolean_algebra_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cap_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n信息熵是信息论中用于量化信息不确定性的核心概念，由克劳德·香农于1948年提出。它衡量一个随机变量可能结果的平均信息量，熵值越高表示不确定性越大，所需信息量也越大。\n\n## 核心要点\n- 信息熵的计算基于概率分布，公式为 H(X) = -∑ p(x) log₂ p(x)，其中 p(x) 是事件 x 发生的概率。\n- 当所有事件等概率发生时，熵达到最大值，表示完全不确定；当某个事件概率为1时，熵为0，表示确定。\n- 信息熵的单位通常为比特（bit），反映编码该信息所需的最少二进制位数。\n- 熵具有可加性，即独立事件的联合熵等于各事件熵之和。\n- 条件熵和互信息是熵的扩展，用于衡量变量间的依赖关系。\n\n## 应用场景\n信息熵广泛应用于数据压缩（如哈夫曼编码）、机器学习中的特征选择（如决策树分裂标准）、密码学中的密钥强度评估，以及自然语言处理中的语言模型评估。它帮助量化信息的冗余度和复杂度，优化存储与传输效率。\n\n## 相关概念\n信息熵与交叉熵、KL散度密切相关，后者用于衡量两个概率分布间的差异。此外，联合熵、条件熵和互信息构成信息论的核心框架，用于分析变量间的信息共享。这些概念在统计推断、通信系统和人工智能中具有基础性作用。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

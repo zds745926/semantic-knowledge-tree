@@ -19,5 +19,34 @@
       "content_preview": "事件循环: JS is single-threaded. It manages tasks through macrotasks (e.g., `setTimeout`) and microtasks (e.g., `Promise`). The execution order of these tasks is controlled by the JavaScript event loop. Here's a brief explanation with Python code examples to illustrate: In JavaScript: - Macrotasks are executed in the order they are added, but only after all microtasks have been processed. - Microtasks are processed immediately after each JavaScript call stack finishes executing. Python doesn't have exactly the same concurrency model as JavaScript due to its Global Interpreter Lock (GIL), but we can simulate a similar behavior using threads or asynchronous programming with libraries like `asyncio`. ### Python Example ```python import asyncio # Simulating microtasks and macrotasks def process_microtask(): print(\"Microtask processing\") async def main(): # Microtasks are processed immediately after the async function finishes await asyncio.gather( asyncio.to_thread(process_microtask), # Simulate a microtask asyncio.sleep(1) # Simulate a macrotask ) # Run the event loop to process tasks asyncio.run(main()) ``` In this Python example, `process_microtask` simulates a microtask that is processed immediately after the async function finishes. The `asyncio.gather` function waits for both a simulated microtask and a macrotask (simulated by `asyncio.sleep(1)`)."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_timer_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n事件循环是 JavaScript 运行时用于处理异步操作的核心机制，它通过一个无限循环不断从任务队列中取出回调函数并执行，使得单线程的 JavaScript 能够非阻塞地处理 I/O、定时器、用户交互等异步事件。\n\n## 何时使用\n当你需要理解 JavaScript 中异步代码（如 setTimeout、Promise、async/await、事件监听）的执行顺序时，必须掌握事件循环。它适用于任何涉及非阻塞操作的场景，例如处理用户输入、发起网络请求、执行定时任务或动画帧。理解事件循环有助于避免回调地狱、竞态条件和意外的执行顺序。\n\n## 示例\n```JavaScript\nconsole.log('1: 同步开始');\n\nsetTimeout(() => {\n  console.log('2: 宏任务 setTimeout');\n}, 0);\n\nPromise.resolve().then(() => {\n  console.log('3: 微任务 Promise.then');\n});\n\nconsole.log('4: 同步结束');\n\n// 输出顺序：\n// 1: 同步开始\n// 4: 同步结束\n// 3: 微任务 Promise.then\n// 2: 宏任务 setTimeout\n```\n\n## 反例\n错误地假设 setTimeout(fn, 0) 会立即执行，导致在微任务之前依赖其回调结果。例如在 Promise.then 中修改状态后，期望 setTimeout 回调立即读取到最新值，但实际微任务先执行，宏任务后执行，可能造成逻辑错误。\n\n## 边界条件\n注意：微任务（如 Promise.then、MutationObserver）会在每个宏任务执行完毕后立即清空，而 requestAnimationFrame 属于宏任务但优先级高于普通宏任务。此外，嵌套的微任务会递归执行直到队列清空，可能阻塞事件循环。",
+    "code_pattern": "function eventLoopDemo() {\n  console.log('同步代码开始');\n  \n  // 宏任务\n  setTimeout(() => {\n    console.log('宏任务执行');\n  }, 0);\n  \n  // 微任务\n  Promise.resolve().then(() => {\n    console.log('微任务执行');\n  });\n  \n  console.log('同步代码结束');\n  // 输出顺序：同步代码开始 -> 同步代码结束 -> 微任务执行 -> 宏任务执行\n}\neventLoopDemo();",
+    "common_pitfalls": [
+      "误以为 setTimeout(fn, 0) 会立即执行，实际上它被放入宏任务队列，需等待当前同步代码和所有微任务完成后才执行。",
+      "在微任务中递归创建新微任务（如 Promise.then 中再 resolve 一个 Promise），会导致微任务队列无限增长，阻塞事件循环，使页面无响应。",
+      "混淆宏任务与微任务的执行顺序，例如在 async 函数中 await 一个 Promise，后续代码被当作微任务，容易与 setTimeout 等宏任务产生预期外的时序。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

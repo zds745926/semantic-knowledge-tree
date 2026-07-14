@@ -19,5 +19,30 @@
       "content_preview": "布隆过滤器: Bit array + multiple hash. Determine if something is 'definitely not' or 'possibly in'. Prevents cache penetration/de-duplication. Here's a brief explanation with Python code examples for the concepts mentioned: 1. **Bit Array**: A bit array is a space-efficient data structure that holds a sequence of bits (0s and 1s). It can be used to track the presence or absence of elements in a set. ```python # Example: Using a bit array to check if an element exists bit_array = [False] * 1024 # Initialize a bit array of size 1024 def add_element(index): \"\"\"Add an element by setting the corresponding bit.\"\"\" bit_array[index] = True def is_element_present(index): \"\"\"Check if the element is present by checking the corresponding bit.\"\"\" return bit_array[index] # Usage add_element(500) print(is_element_present(500)) # Output: True ``` 2. **Multiple Hash**: Using multiple hash functions can help distribute data more evenly and reduce collisions, which is useful in scenarios like cache penetration prevention. ```python import hashlib def hash_function1(key): \"\"\"Simple hash function using SHA-256.\"\"\" return int(hashlib.sha256(str(key).encode()).hexdigest(), 16) % 1024 def hash_function2(key): \"\"\"Another simple hash function.\"\"\" return sum(ord(c) for c in str(key)) % 1024 # Example: Using multiple hashes to check if a key is present keys = [hash_function1('key1'), hash_function2('key1')] print(keys) # Output will vary based on the input and hashing functions used ``` 3. **Prevent Cache Penetration**: Cache penetration occurs when a cache miss happens due to a request that should have hit the cache but didn't because of some issue, such as incorrect configuration or data corruption. ```python from functools import lru_cache @lru_cache(maxsize=128) def get_data(key): \"\"\"Simulate getting data from a database.\"\"\" print(f\"Fetching data for key: {key}\") return f\"data for {key}\" # Usage print(get_data('key1')) # Output: Fetching data for key: key1, followed by the cached result on subsequent calls ``` 4. **De-duplication**: To prevent duplicate entries in a cache or database. ```python seen = set() def process_item(item): \"\"\"Process an item and avoid duplicates.\"\"\" if item not in seen: seen.add(item) # Process the item here # Example usage items = ['item1', 'item2', 'item1', 'item3'] for item in items: process_item(item) print(seen) # Output: {'item1', 'item2', 'item3'} ``` These examples should help illustrate the concepts and provide a practical understanding of how they can be implemented in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "trie_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "union_find_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "fulltext_index_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n布隆过滤器是一种空间效率极高的概率性数据结构，用于判断一个元素是否属于一个集合。它通过多个哈希函数将元素映射到一个位数组上，能够快速回答“元素不在集合中”或“元素可能在集合中”。\n\n## 核心要点\n- 布隆过滤器使用一个固定大小的位数组和多个独立的哈希函数，每个元素经过哈希后会将对应位置的位设为1。\n- 查询时，若所有哈希位置均为1，则元素“可能存在”；若有任一位置为0，则元素“一定不存在”。\n- 存在误判率（假阳性），即可能将不在集合中的元素误判为存在，但不会漏判（假阴性率为0）。\n- 无法删除元素，因为删除一个元素可能影响其他元素的判断；但可通过计数布隆过滤器等变体支持删除。\n- 空间效率高，适合处理海量数据，但误判率随位数组大小和哈希函数数量调整。\n\n## 应用场景\n布隆过滤器常用于缓存系统（如防止缓存穿透）、垃圾邮件过滤、网页爬虫去重、数据库查询优化（如HBase、Cassandra）以及比特币交易验证等场景，以极低的内存开销快速过滤掉大部分不存在的元素。\n\n## 相关概念\n布隆过滤器与哈希表类似，但牺牲了精确性换取空间效率。相关概念包括计数布隆过滤器（支持删除）、布谷鸟过滤器（支持删除且误判率更低）、以及布隆过滤器的变体如压缩布隆过滤器。此外，布隆过滤器常与缓存、数据库索引等系统结合使用。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

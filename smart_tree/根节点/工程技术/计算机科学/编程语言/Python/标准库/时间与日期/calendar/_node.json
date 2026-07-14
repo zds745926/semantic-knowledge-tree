@@ -19,5 +19,35 @@
       "content_preview": "calendar: - `calendar.month/day`: Calendar textual representation of the month or day. - `isleap`: Determine if a year is a leap year. - `weekday`: Get the day of the week as an integer (where Monday is 0 and Sunday is 6). Python code example for `weekday`: ```python import calendar # Example: Get the weekday of January 1, 2023 year = 2023 month = 1 day = 1 weekday_index = calendar.weekday(year, month, day) print(f\"The weekday index for {day}/{month}/{year} is {weekday_index}.\") # Output will be the integer representing Monday (0) to Sunday (6) ``` Note: The `calendar` module in Python provides functions like `weekday`, which returns an integer indicating the day of the week."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_tempfile_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_gettext_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\ncalendar 是 Python 标准库中用于处理日期和时间的模块，提供与日历相关的函数和类，包括生成日历文本、计算日期、判断闰年、获取星期信息等。\n\n## 何时使用\n当你需要生成文本格式的月历或年历、计算某个月的天数、判断某年是否为闰年、或者获取某一天是星期几时，可以使用 calendar 模块。它也适用于需要处理基于周历的日期计算，例如获取某个月第一个星期一的日期。\n\n## 示例\n```Python\nimport calendar\n\n# 生成 2023 年 3 月的日历文本\ncal_text = calendar.month(2023, 3)\nprint(cal_text)\n\n# 判断 2024 年是否为闰年\nprint(calendar.isleap(2024))  # True\n\n# 获取 2023 年 3 月的第一天是星期几（0 表示星期一）\nprint(calendar.weekday(2023, 3, 1))  # 2（星期三）\n\n# 获取 2023 年 3 月的天数\nprint(calendar.monthrange(2023, 3))  # (2, 31)\n```\n\n## 反例\n错误地认为 calendar.weekday() 返回的星期值中 0 代表星期日，实际上 0 代表星期一，6 代表星期日。另外，直接使用 calendar.month() 返回的字符串进行日期解析，而不是使用结构化数据。\n\n## 边界条件\n注意 calendar 模块默认将星期一作为一周的第一天，可以通过 setfirstweekday() 修改。对于公元 1 年之前的年份，部分函数可能不支持或产生不可靠结果。",
+    "code_pattern": "import calendar\n\ndef get_month_calendar(year, month):\n    \"\"\"返回指定年月的日历文本\"\"\"\n    return calendar.month(year, month)\n\ndef get_month_days(year, month):\n    \"\"\"返回指定年月的天数\"\"\"\n    _, days = calendar.monthrange(year, month)\n    return days\n\ndef is_leap_year(year):\n    \"\"\"判断是否为闰年\"\"\"\n    return calendar.isleap(year)\n\ndef get_weekday(year, month, day):\n    \"\"\"返回指定日期是星期几（0=星期一）\"\"\"\n    return calendar.weekday(year, month, day)",
+    "common_pitfalls": [
+      "calendar.weekday() 返回的星期值中 0 代表星期一，而不是星期日，容易与 datetime 模块混淆（datetime 中 0 代表星期日）。",
+      "calendar.monthrange() 返回的元组第一个元素是当月第一天是星期几（0-6），第二个元素是当月天数，初学者常忘记解包或误解顺序。",
+      "使用 calendar.month() 或 calendar.calendar() 生成的文本日历包含前导空格和换行，直接用于字符串比较或解析时容易出错。",
+      "calendar 模块的 TextCalendar 和 HTMLCalendar 类需要实例化才能使用，直接调用类方法可能导致 AttributeError。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

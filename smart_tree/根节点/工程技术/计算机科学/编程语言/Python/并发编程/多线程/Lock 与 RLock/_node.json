@@ -21,5 +21,22 @@
   ],
   "related_nodes": [
     "py_thread_sync_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nLock（原始锁）和 RLock（可重入锁）是 Python threading 模块提供的两种同步原语。Lock 是最基本的互斥锁，同一线程不能多次 acquire；RLock 允许同一线程多次 acquire，但必须对应相同次数的 release。\n\n## 何时使用\n当多个线程需要安全地访问共享资源时，使用 Lock 防止竞态条件。当需要在同一线程内递归地获取锁（例如递归函数或嵌套锁场景）时，应使用 RLock 以避免死锁。\n\n## 示例\n```Python\nimport threading\nimport time\n\n# Lock 示例\nlock = threading.Lock()\nshared_data = 0\n\ndef increment():\n    global shared_data\n    for _ in range(100000):\n        lock.acquire()\n        shared_data += 1\n        lock.release()\n\nthreads = [threading.Thread(target=increment) for _ in range(4)]\nfor t in threads: t.start()\nfor t in threads: t.join()\nprint(f\"Lock result: {shared_data}\")  # 正确输出 400000\n\n# RLock 示例（同一线程可重入）\nrlock = threading.RLock()\n\ndef recursive_func(n):\n    rlock.acquire()\n    if n > 0:\n        recursive_func(n-1)\n    rlock.release()\n\nrecursive_func(3)  # 不会死锁\n```\n\n## 反例\n使用 Lock 在递归函数中获取锁会导致死锁，因为同一线程无法再次 acquire 尚未 release 的 Lock。例如：`lock.acquire(); recursive_func(); lock.release()` 中 recursive_func 再次 acquire 会阻塞。\n\n## 边界条件\nRLock 的 acquire 和 release 必须成对出现，且 release 次数不能超过 acquire 次数，否则会抛出 RuntimeError。Lock 在未持有锁的线程中调用 release 也会抛出异常。",
+    "code_pattern": "import threading\n\nlock = threading.Lock()  # 或 threading.RLock()\nshared_resource = []\n\ndef thread_safe_operation():\n    lock.acquire()\n    try:\n        # 临界区代码\n        shared_resource.append(1)\n    finally:\n        lock.release()\n\n# 创建线程\nthreads = [threading.Thread(target=thread_safe_operation) for _ in range(10)]\nfor t in threads: t.start()\nfor t in threads: t.join()",
+    "common_pitfalls": [
+      "忘记在 finally 块中释放锁，导致死锁或资源泄露。应始终使用 try-finally 或 with 语句。",
+      "在非递归场景下误用 RLock，虽然不会死锁但性能略低于 Lock，且容易掩盖设计问题。",
+      "在持有锁时调用可能阻塞的 I/O 操作，导致其他线程长时间等待，应尽量缩短临界区。",
+      "混淆 Lock 和 RLock 的 acquire 超时参数，Lock 的 acquire(timeout) 在超时后返回 False，但 RLock 不支持 timeout 参数。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

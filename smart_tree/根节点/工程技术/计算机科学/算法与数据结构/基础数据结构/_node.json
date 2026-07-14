@@ -18,5 +18,13 @@
     "description": "基础数据结构: Basic data structures include arrays, linked lists, stacks, and queues, which form the basis for more complex structures. Python examples: 1. Array (using Python's built-in list): ```python # Creating an array (list) arr = [1, 2, 3, 4] print(arr) # Output: [1, 2, 3, 4] ``` 2. Linked List: ```python class Node: def __init__(self, value): self.value = value self.next = None # Creating a linked list node head = Node(1) second = Node(2) third = Node(3) head.next = second second.next = third ``` 3. Stack (using Python's built-in list as a stack): ```python stack = [] stack.append(1) # Push operation stack.append(2) print(stack) # Output: [1, 2] stack.pop() # Pop operation print(stack) # Output: [1] ``` 4. Queue (using Python's collections.deque for efficient appends and pops): ```python from collections import deque queue = deque() queue.append(1) # Enqueue operation queue.append(2) print(queue) # Output: deque([1, 2]) queue.popleft() # Dequeue operation print(queue) # Output: deque([2]) ``` These examples provide a basic understanding of how these data structures can be implemented in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖基础数据结构，包括数组、链表、栈和队列，它们是计算机科学中算法与数据结构的核心基石。数组提供连续内存空间和随机访问能力，适合静态数据；链表通过节点指针实现动态内存管理，支持高效插入删除；栈遵循后进先出（LIFO）原则，常用于函数调用、表达式求值等场景；队列遵循先进先出（FIFO）原则，适用于任务调度、缓冲区等。这些结构相互关联：数组和链表是线性存储的两种基本形式，栈和队列可基于数组或链表实现，是受限的线性表。学习路径建议从数组和链表入手，理解内存布局和操作复杂度，再学习栈和队列的抽象特性及其应用，最后通过综合练习（如用栈实现队列）加深理解。掌握这些基础为后续学习树、图、哈希表等高级结构奠定坚实基础。",
+  "example_queries": [
+    "数组和链表在插入和删除操作上的时间复杂度有何不同？",
+    "如何用两个栈实现一个队列？",
+    "栈在括号匹配问题中如何应用？",
+    "队列在广度优先搜索（BFS）中的作用是什么？",
+    "动态数组（如Python列表）的扩容机制是怎样的？"
+  ]
 }

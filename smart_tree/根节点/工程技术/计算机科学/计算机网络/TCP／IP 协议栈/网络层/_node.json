@@ -16,5 +16,13 @@
     "description": "网络层: The network layer is responsible for packet routing and forwarding, with the core protocol being the IP (Internet Protocol). Python code example to illustrate basic IP addressing and routing concepts: ```python import ipaddress # Define an IPv4 address ip = ipaddress.IPv4Address('192.0.2.1') print(f\"IPv4 Address: {ip}\") # Define a network using the same prefix network = ipaddress.IPv4Network('192.0.2.0/24', strict=False) print(f\"Network: {network}\") print(f\"First IP in Network: {network.network_address}\") print(f\"Last IP in Network: {network.broadcast_address}\") # Check if an address is within the network test_ip = ipaddress.IPv4Address('192.0.2.5') if test_ip in network: print(f\"{test_ip} is part of the network {network}.\") else: print(f\"{test_ip} is not part of the network {network}.\") ``` This code snippet demonstrates basic operations with IP addresses and networks, which are fundamental concepts in understanding how the network layer functions."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "网络层是TCP/IP协议栈中的核心层，主要负责数据包从源主机到目的主机的路由选择和转发。本分支涵盖IP协议和路由协议两大子主题。IP协议提供无连接、不可靠的数据报传输服务，是网络层的基础，定义了数据包的格式、地址分配（IPv4/IPv6）和分片重组机制。路由协议则负责动态或静态地构建和维护路由表，指导数据包在网络中的最佳路径，包括内部网关协议（如RIP、OSPF）和外部网关协议（如BGP）。学习路径建议先掌握IP协议的基本原理，包括IP地址分类、子网划分和CIDR，再深入理解路由协议的工作机制和算法。两者紧密关联：IP协议提供数据封装和寻址能力，路由协议则利用这些信息实现路径决策。掌握网络层是理解互联网通信、网络故障排查和网络设计的关键。",
+  "example_queries": [
+    "IP地址的分类和子网掩码是如何工作的？",
+    "OSPF和RIP路由协议有什么区别？",
+    "IPv4和IPv6的主要差异是什么？",
+    "路由表中的默认路由是什么意思？",
+    "数据包在网络层是如何进行分片和重组的？"
+  ]
 }

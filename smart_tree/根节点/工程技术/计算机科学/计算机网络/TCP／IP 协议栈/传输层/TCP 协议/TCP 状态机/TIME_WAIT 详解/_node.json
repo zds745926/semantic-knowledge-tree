@@ -19,5 +19,22 @@
       "content_preview": "TIME_WAIT 详解: The active closing side enters the TIME_WAIT state for approximately 60 seconds after sending the final ACK. This ensures that the ACK has been received and that old packets have disappeared. Python code example (to illustrate the concept, not a real implementation): ```python import socket # Simulate an active close scenario in Python using sockets def simulate_active_close(): # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect to server server_address = ('localhost', 10000) sock.connect(server_address) try: # Send data message = b'Hello, world' sock.sendall(message) # Simulate receiving an ACK (in a real scenario, this would be handled by the OS) print(\"Waiting for ACK...\") sock.settimeout(1) # Set a timeout to simulate waiting for the ACK response = sock.recv(1024) if response: print(f\"Received: {response}\") # Simulate sending the final ACK (in a real scenario, this would be handled by the OS) print(\"Sending final ACK...\") sock.sendall(b'ACK') finally: # Close the socket print(\"Closing socket...\") sock.close() # The TIME_WAIT state is not directly simulated here but conceptually it would follow after closing the socket. print(\"Socket closed. Waiting for TIME_WAIT (not implemented).\") # Call the function to simulate active close simulate_active_close() ``` Note: This Python code is a simplified simulation and does not fully represent the actual behavior of the TCP stack or the TIME_WAIT state. It's intended to illustrate the concept rather than provide an accurate implementation."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "four_way_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nTIME_WAIT 是 TCP 协议状态机中的一个状态，出现在主动关闭连接的一端。当 TCP 连接关闭时，主动关闭方在发送最后一个 ACK 确认报文后，会进入 TIME_WAIT 状态，并等待 2 倍的最大报文段生存时间（2MSL）后才完全关闭连接。该状态确保所有延迟的报文段在网络中消失，避免新连接被旧报文干扰。\n\n## 核心要点\n- TIME_WAIT 状态持续时间为 2MSL（通常为 1-4 分钟），目的是让所有属于旧连接的报文段在网络中过期。\n- 主动关闭方进入 TIME_WAIT，被动关闭方不会进入该状态，而是直接进入 CLOSED 状态。\n- 该状态防止因最后一个 ACK 丢失导致被动关闭方重传 FIN 时，主动关闭方已关闭而无法响应。\n- 在高并发服务器中，大量 TIME_WAIT 连接会占用端口和内存资源，可能影响新连接建立。\n- 通过调整系统参数（如 tcp_tw_reuse 或 tcp_tw_recycle）可减少 TIME_WAIT 的影响，但需谨慎使用以避免数据混乱。\n\n## 应用场景\nTIME_WAIT 常见于 Web 服务器、数据库连接等频繁发起关闭的场景，确保数据传输的可靠性。例如，HTTP/1.0 中每个请求后服务器主动关闭连接，会产生大量 TIME_WAIT。在负载均衡或代理服务器中，合理管理 TIME_WAIT 状态对维持连接池效率和系统稳定性至关重要。\n\n## 相关概念\n- MSL（Maximum Segment Lifetime）：报文段在网络中的最大生存时间，通常为 30 秒或 1 分钟。\n- 四次挥手：TCP 连接关闭过程，TIME_WAIT 出现在第四次挥手后。\n- 端口复用（SO_REUSEADDR）：允许新连接重用处于 TIME_WAIT 状态的端口，常用于服务器快速重启。\n- 半关闭：TCP 允许一端停止发送数据但仍可接收，TIME_WAIT 与半关闭机制共同保证连接可靠关闭。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

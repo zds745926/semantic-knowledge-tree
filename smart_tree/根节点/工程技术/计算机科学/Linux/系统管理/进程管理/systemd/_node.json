@@ -19,5 +19,38 @@
       "content_preview": "systemd: System and service management. `systemctl`, `unit`, `journalctl`. Here are brief explanations with related Python code examples where applicable: - **`systemctl`**: This is a command-line tool used to control the systemd system and service manager. ```python # Example of using systemctl in a Python script (using subprocess for shell commands) import subprocess def start_service(service_name): try: result = subprocess.run(['sudo', 'systemctl', 'start', service_name], check=True, text=True) print(f\"Service {service_name} started: {result.stdout}\") except subprocess.CalledProcessError as e: print(f\"Failed to start service {service_name}: {e.stderr}\") # Example usage start_service('nginx') ``` - **`unit`**: A unit is a configuration file that describes the desired state of a system resource, such as a service. Units are used by `systemd`. ```python # Example of creating a simple systemd unit file in Python (for demonstration purposes) def create_systemd_unit(service_name): with open(f'/etc/systemd/system/{service_name}.service', 'w') as f: f.write(f\"[Unit]\\nDescription={service_name} Service\\n\\n[Service]\\nExecStart=/usr/bin/python3 /path/to/your/script.py\\n\\n[Install]\\nWantedBy=multi-user.target\") # Example usage create_systemd_unit('example_service') ``` - **`journalctl`**: This command is used to inspect the system and application logs managed by `journald`, which is a journaling service of `systemd`. ```python # Example of using journalctl in a Python script (using subprocess for shell commands) import subprocess def get_journal_entries(service_name): try: result = subprocess.run(['journalctl', '-u', service_name], check=True, text=True) print(f\"Journal entries for {service_name}:\\n{result.stdout}\") except subprocess.CalledProcessError as e: print(f\"Failed to retrieve journal entries: {e.stderr}\") # Example usage get_journal_entries('nginx') ``` These examples provide a basic understanding of how these tools can be interacted with programmatically using Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_timer_v4",
+      "type": "application"
+    },
+    {
+      "id": "sudo_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "sed_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nsystemd 是 Linux 系统中的一个系统和服务管理器，作为 PID 1 的 init 程序启动，负责引导系统、管理进程和服务。它采用并行启动技术，显著提高系统启动速度，并提供了统一的配置和管理接口。\n\n## 核心要点\n- **单元（Unit）管理**：systemd 使用单元文件（.service、.target 等）来管理系统资源，每个单元代表一个服务、挂载点、设备等，通过 systemctl 命令进行控制。\n- **依赖与并行启动**：通过定义单元间的依赖关系（Requires、Wants 等），systemd 能并行启动无依赖冲突的服务，大幅缩短启动时间。\n- **日志系统（Journald）**：集成了二进制日志服务 journald，集中收集系统日志，支持结构化查询和持久化存储，替代传统的 syslog。\n- **套接字与 D-Bus 激活**：支持基于套接字和 D-Bus 的按需启动服务，只在需要时才激活服务，节省系统资源。\n- **目标（Target）**：类似于运行级别，但更灵活，通过 target 单元定义系统状态（如 multi-user.target、graphical.target），并支持动态切换。\n\n## 应用场景\nsystemd 广泛应用于现代 Linux 发行版（如 Fedora、Ubuntu、Debian、CentOS）中，用于管理系统服务（如 Web 服务器、数据库）、定时任务（timer 单元替代 cron）、容器和虚拟化环境（如 systemd-nspawn）。它也常用于嵌入式系统和服务器，提供统一的系统状态监控和故障恢复机制。\n\n## 相关概念\n- **SysV init**：传统的 System V init 系统，使用脚本和运行级别，已被 systemd 取代，但部分发行版仍保留兼容性。\n- **Upstart**：Ubuntu 早期使用的 init 系统，基于事件驱动，现已被 systemd 替代。\n- **cgroups**：控制组，用于资源隔离和限制，systemd 通过 cgroups 管理服务资源，实现更精细的进程控制。\n- **D-Bus**：进程间通信机制，systemd 利用 D-Bus 进行服务通信和激活，增强模块化。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

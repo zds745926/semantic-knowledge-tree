@@ -17,5 +17,13 @@
     "description": "进程管理: Linux process management involves using tools like `ps` and `top` for monitoring, `kill` for termination, and `systemd` for service management. Here are brief explanations of each concept with Python code examples where applicable: 1. **Using `ps` and `top` to Monitor Processes:** - The `ps` command is used to display information about active processes. - The `top` command provides a dynamic real-time view of a running system, showing the top resource-consuming processes. ```python # Example Python code to run ps command using subprocess module import subprocess def get_process_info(): result = subprocess.run(['ps', 'aux'], capture_output=True, text=True) print(result.stdout) get_process_info() ``` 2. **Using `kill` for Process Termination:** - The `kill` command is used to send a signal to a process to terminate it gracefully or forcefully. ```python # Example Python code to simulate sending a kill signal using subprocess module import subprocess def terminate_process(pid): result = subprocess.run(['kill', str(pid)], capture_output=True, text=True) print(result.stdout) terminate_process(1234) # Replace 1234 with the actual process ID ``` 3. **Using `systemd` for Service Management:** - `systemd` is a system and service manager that controls services and processes on Linux systems. ```python # Example Python code to manage systemd services using subprocess module import subprocess def start_service(service_name): result = subprocess.run(['systemctl', 'start', service_name], capture_output=True, text=True) print(result.stdout) def stop_service(service_name): result = subprocess.run(['systemctl', 'stop', service_name], capture_output=True, text=True) print(result.stdout) start_service('nginx') # Replace with the actual service name stop_service('nginx') # Replace with the actual service name ``` These examples provide a basic understanding of how to interact with Linux process management tools using Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "进程管理是Linux系统管理的核心分支，涵盖进程的监控、调度、控制与资源管理。本分支以ps/top、systemd和kill/nice三个子节点构成完整的学习路径：ps/top提供实时进程快照与动态监控，是诊断系统负载和资源占用的基础工具；systemd作为现代Linux的初始化系统和服务管理器，负责进程的启动、守护与依赖管理，是理解系统启动流程和服务生命周期控制的关键；kill/nice则聚焦于进程的信号控制与优先级调整，用于终止异常进程或优化CPU资源分配。三者相互关联：ps/top用于发现进程状态，systemd管理长期运行的服务进程，kill/nice则提供对单个进程的干预手段。学习时应先掌握ps/top的常用参数（如ps aux、top -u），再理解systemd的unit概念与systemctl命令，最后学习信号类型（SIGTERM/SIGKILL）和nice值调整。该分支能解决进程查看、服务管理、异常进程处理、资源优先级调整等实际问题。",
+  "example_queries": [
+    "如何查看当前系统中CPU占用率最高的进程？",
+    "如何使用systemd设置一个开机自启的Python服务？",
+    "如何强制终止一个无响应的进程？",
+    "如何降低某个后台进程的CPU优先级？",
+    "top命令中各个字段（如VIRT、RES、SHR）分别代表什么含义？"
+  ]
 }

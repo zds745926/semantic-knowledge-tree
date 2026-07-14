@@ -16,5 +16,13 @@
     "description": "缓存: Caching enhances system performance. Key strategies include Cache Aside and distributed caching. Here are brief explanations for each strategy with corresponding Python code examples: 1. **Cache Aside (Pessimistic Caching):** This approach involves fetching data from the cache first, and if it's not available, then fetching it from the database or other persistent storage. ```python import time def get_data_from_db(key): # Simulate a slow database operation time.sleep(2) return f\"Data for {key} fetched from DB\" def cache_aside(key): cache = {} # In practice, this would be a more sophisticated caching mechanism like Redis or Memcached if key in cache: print(\"Cache Hit\") return cache[key] else: print(\"Cache Miss - Fetching from DB\") data = get_data_from_db(key) cache[key] = data return data # Example usage result1 = cache_aside('key1') time.sleep(0.5) # Simulate a short delay to show the cache hit/miss behavior result2 = cache_aside('key1') # Should be faster due to cache hit ``` 2. **Distributed Caching:** This strategy involves using multiple nodes or servers to store and manage cached data, ensuring that the cache is available across a network. ```python from redis import Redis # Initialize a Redis client (assuming it's running on localhost) cache = Redis(host='localhost', port=6379) def get_data_from_db(key): time.sleep(2) return f\"Data for {key} fetched from DB\" def distributed_caching(key): if cache.exists(key): # Check if the key exists in the cache print(\"Cache Hit\") return cache.get(key).decode('utf-8') else: print(\"Cache Miss - Fetching from DB\") data = get_data_from_db(key) cache.setex(key, 3600, data) # Set the key with an expiration time of 1 hour return data # Example usage result1 = distributed_caching('key2') time.sleep(0.5) # Simulate a short delay to show the cache hit/miss behavior result2 = distributed_caching('key2') # Should be faster due to cache hit ``` These examples illustrate how caching can be implemented in Python, with `Cache Aside` focusing on local caching and `Distributed Caching` leveraging a distributed cache like Redis."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "缓存是系统设计中用于提升数据访问速度、降低延迟和减轻后端负载的关键技术。本分支涵盖缓存的核心概念、常见策略以及分布式缓存的实现与挑战。缓存策略包括LRU、LFU、TTL等，决定了数据如何被存储、淘汰和更新；分布式缓存则解决单机缓存在容量、可用性和一致性上的局限，涉及一致性哈希、缓存穿透、雪崩、失效等问题。学习本分支时，应先理解缓存的基本原理和命中率等指标，再掌握不同策略的适用场景，最后深入分布式缓存的架构设计与优化方法。通过系统学习，能够设计出高效、可靠的缓存系统，应对高并发场景下的性能需求。",
+  "example_queries": [
+    "什么是缓存穿透、缓存击穿和缓存雪崩？如何解决？",
+    "LRU和LFU缓存淘汰策略有什么区别？各自适用什么场景？",
+    "如何设计一个分布式缓存系统？需要考虑哪些一致性、可用性和分区容错问题？",
+    "缓存和数据库如何保证数据一致性？有哪些常见的同步策略？",
+    "一致性哈希在分布式缓存中如何工作？为什么能减少节点变动带来的影响？"
+  ]
 }

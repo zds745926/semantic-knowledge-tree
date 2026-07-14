@@ -19,5 +19,30 @@
       "content_preview": "优化器: SGD/Adam/RMSprop/AdamW. Learning rate scheduling. Here are brief descriptions and corresponding Python code examples for each optimizer: 1. **SGD (Stochastic Gradient Descent)** - A simple optimization algorithm that updates the model parameters based on the negative gradient of the loss function. ```python from torch.optim import SGD # Example usage with PyTorch optimizer = SGD(model.parameters(), lr=0.01) ``` 2. **Adam (Adaptive Moment Estimation)** - An adaptive learning rate optimization algorithm that computes individual adaptive learning rates for different parameters. ```python from torch.optim import Adam # Example usage with PyTorch optimizer = Adam(model.parameters(), lr=0.001) ``` 3. **RMSprop (Root Mean Square Propagation)** - An optimization algorithm that computes a moving average of squared gradients and uses it to normalize the gradient. ```python from torch.optim import RMSprop # Example usage with PyTorch optimizer = RMSprop(model.parameters(), lr=0.01, alpha=0.99) ``` 4. **AdamW (Adam with Weight Decay)** - A variant of Adam that includes weight decay directly in the optimization process. ```python from torch.optim import AdamW # Example usage with PyTorch optimizer = AdamW(model.parameters(), lr=0.001, weight_decay=0.01) ``` 5. **Learning Rate Scheduling** - A technique to adjust the learning rate during training to improve model performance. ```python from torch.optim.lr_scheduler import StepLR # Example usage with PyTorch scheduler = StepLR(optimizer, step_size=30, gamma=0.1) ``` These examples use PyTorch as the framework for illustration purposes."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cap_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n优化器是深度学习中用于更新模型参数以最小化（或最大化）损失函数的算法。它基于梯度下降的思想，通过计算损失函数对参数的梯度，并按照一定规则调整参数，使模型逐步收敛到最优解。优化器的核心在于如何高效、稳定地引导参数更新，避免陷入局部最优或震荡。\n\n## 核心要点\n- **梯度下降基础**：优化器依赖损失函数对参数的梯度（一阶导数）来指示下降方向，参数沿负梯度方向更新。\n- **学习率控制**：学习率决定每次更新的步长，过大易导致发散，过小则收敛缓慢；许多优化器（如Adam）能自适应调整学习率。\n- **动量机制**：引入动量（如SGD with Momentum）可加速收敛并抑制震荡，通过累积历史梯度方向平滑更新。\n- **自适应方法**：像Adam、RMSprop等优化器能针对每个参数单独调整学习率，适用于稀疏梯度或非平稳目标。\n- **收敛稳定性**：良好的优化器能在训练初期快速下降，后期精细调整，避免在鞍点或局部极小值处停滞。\n\n## 应用场景\n优化器广泛应用于各类深度学习模型的训练，包括图像分类（如ResNet）、自然语言处理（如Transformer）和生成对抗网络（GAN）。在实际工程中，选择适当的优化器（如Adam用于快速原型，SGD用于精细调优）能显著影响模型收敛速度和最终性能。此外，在迁移学习、强化学习等场景中，优化器也用于调整预训练参数或策略网络。\n\n## 相关概念\n优化器与损失函数（如交叉熵、均方误差）紧密配合，后者提供优化目标。学习率调度（如余弦退火、阶梯衰减）常与优化器结合，动态调整步长。此外，正则化技术（如L2正则化、Dropout）通过修改损失函数或网络结构间接影响优化过程。梯度裁剪（Gradient Clipping）则用于防止梯度爆炸，保障优化稳定性。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

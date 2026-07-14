@@ -19,5 +19,38 @@
       "content_preview": "socket 底层 API: - `socket.socket`: This function creates a new socket object using the specified address family and socket type. In Python, you can create a TCP socket as follows: ```python import socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) ``` - `bind`: This method binds the socket to an address (host and port). The address must be available on the host machine. ```python sock.bind(('localhost', 12345)) ``` - `listen`: This method starts listening for connections. It makes the socket a server socket, which can accept connections from clients. ```python sock.listen(5) ``` - `accept`: This method waits for an incoming connection and returns a new socket object representing the connection and a tuple holding the address of the client. ```python client_socket, client_address = sock.accept() ``` - `connect`: This function connects to a remote socket at the specified address. It is used by clients to establish a connection with a server. ```python import socket client = socket.socket(socket.AF_INET, socket.SOCK_STREAM) client.connect(('localhost', 12345)) ``` - `recv`: This method receives data from the socket. The size of the buffer (in bytes) is specified as an argument to this function. ```python data = client_socket.recv(1024) ``` - `send`: This method sends data over the socket. The data to be sent and the length in bytes are passed as arguments. ```python client_socket.send(b'Hello, world!') ``` These examples provide a basic understanding of how these methods can be used in Python for network programming."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "tcp_bbr_v4",
+      "type": "application"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nSocket 底层 API 是操作系统提供的网络通信接口，允许应用程序通过文件描述符进行跨进程或跨主机的数据交换，Python 的 `socket` 模块封装了这些系统调用，支持 TCP、UDP 等协议。\n\n## 何时使用\n当需要实现自定义网络协议、处理非标准通信模式（如原始套接字、多播）或对性能有精细控制时，应直接使用 socket 底层 API。它也适用于构建网络服务器、客户端以及进行底层网络调试。\n\n## 示例\n```Python\nimport socket\n\n# TCP 客户端示例\nclient = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nclient.connect(('127.0.0.1', 8888))\nclient.sendall(b'Hello, Server!')\ndata = client.recv(1024)\nprint(f'Received: {data.decode()}')\nclient.close()\n```\n\n## 反例\n错误用法：在未检查 `recv` 返回值的情况下假设一次接收完整数据，或忽略 `send` 可能未发送全部字节（应使用 `sendall`）。\n\n## 边界条件\n注意 `recv` 返回空字节表示对端关闭连接；`bind` 时端口可能被占用需捕获 `OSError`；非阻塞模式下需处理 `BlockingIOError`。",
+    "code_pattern": "import socket\n\ndef create_tcp_server(host='0.0.0.0', port=8888):\n    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)\n    server.bind((host, port))\n    server.listen(5)\n    print(f'Server listening on {host}:{port}')\n    while True:\n        conn, addr = server.accept()\n        with conn:\n            data = conn.recv(1024)\n            if data:\n                conn.sendall(data)\n    server.close()",
+    "common_pitfalls": [
+      "未设置 SO_REUSEADDR 导致服务器重启时端口被占用，抛出 OSError: Address already in use。",
+      "使用 recv 时假设一次接收完整消息，实际 TCP 是流协议，需循环接收直到满足长度或连接关闭。",
+      "在非阻塞模式下未捕获 BlockingIOError 导致程序崩溃，应使用 try/except 或 select/poll 管理。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,26 @@
       "content_preview": "Bash 控制流: if/for/while/case. Conditional statements [[ ]]. Explanation of the technical terms and addition of a brief Python code example: - `if`, `for`, `while`, `case`: These are control flow structures in programming languages used to make decisions or repeat actions based on certain conditions. - `if` is used for conditional execution. - `for` and `while` are loop constructs that allow repeated execution of a block of code as long as a specified condition is true. - `case` is part of a switch-case statement, which allows you to execute different blocks of code based on the value of an expression. Here's a brief Python example for each: ```python # if statement temperature = 30 if temperature > 25: print(\"It's warm outside!\") # for loop fruits = [\"apple\", \"banana\", \"cherry\"] for fruit in fruits: print(fruit) # while loop count = 0 while count < 5: print(count) count += 1 # case statement (Python does not have a built-in switch-case, but you can simulate it with dictionaries) def switch_case(value): return { 'a': lambda: print(\"Case A\"), 'b': lambda: print(\"Case B\"), 'c': lambda: print(\"Case C\") }.get(value, lambda: print(\"Default\"))() switch_case('b') ``` This example covers the basic usage of `if`, `for`, and `while` in Python. The switch-case is simulated using a dictionary to map values to functions."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "ls_cd_pwd_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_fnmatch_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nBash 控制流是指在 Bash Shell 脚本中用于控制命令执行顺序和逻辑的语法结构。它通过条件判断、循环和分支等机制，使脚本能够根据不同的条件或重复执行特定任务，从而实现自动化处理。\n\n## 核心要点\n- **条件判断**：使用 `if`、`elif`、`else` 和 `case` 语句，根据命令的退出状态或条件表达式决定执行路径。\n- **循环结构**：包括 `for`、`while` 和 `until` 循环，用于重复执行代码块，直到满足特定条件。\n- **循环控制**：`break` 和 `continue` 语句可提前退出循环或跳过当前迭代，增强灵活性。\n- **逻辑运算符**：`&&` 和 `||` 用于组合命令，实现基于前一条命令成功或失败的短路执行。\n- **测试命令**：`test` 或 `[ ]` 用于检查文件属性、字符串比较和数值比较，为条件判断提供基础。\n\n## 应用场景\nBash 控制流广泛应用于系统管理脚本，如自动备份、日志轮转、用户管理；也用于开发工具中的构建和部署流程，例如根据环境变量选择配置、循环处理文件列表。此外，在数据处理和定时任务中，控制流可实现条件过滤和重复操作，提升效率。\n\n## 相关概念\n- **退出状态**：每个命令执行后返回的数值（0 表示成功，非 0 表示失败），是条件判断的基础。\n- **函数**：将控制流封装为可复用的代码块，提高脚本模块化。\n- **变量与参数**：控制流常依赖变量存储条件值或循环计数器，参数传递可动态调整行为。\n- **重定向与管道**：与控制流结合，可将命令输出导入循环或条件处理，实现复杂的数据流控制。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,38 @@
       "content_preview": "Floyd-Warshall: All nodes find the shortest path. Dynamic programming. O(V³). The code is extremely concise. Here's an example of how you might implement this in Python using dynamic programming to solve the all-pairs shortest path problem (APSP) with Floyd-Warshall algorithm: ```python def floyd_warshall(graph): V = len(graph) dist = [[float('inf')] * V for _ in range(V)] # Initialize the distance matrix for i in range(V): for j in range(V): if graph[i][j] != 0: dist[i][j] = graph[i][j] elif i == j: dist[i][j] = 0 # Floyd-Warshall algorithm for k in range(V): for i in range(V): for j in range(V): if dist[i][k] + dist[k][j] < dist[i][j]: dist[i][j] = dist[i][k] + dist[k][j] return dist # Example graph represented as an adjacency matrix graph = [ [0, 3, float('inf'), 7], [8, 0, 2, float('inf')], [5, float('inf'), 0, 1], [2, float('inf'), float('inf'), 0] ] shortest_paths = floyd_warshall(graph) print(shortest_paths) ``` This Python code implements the Floyd-Warshall algorithm to find the shortest paths between all pairs of nodes in a graph. The `graph` is represented as an adjacency matrix where `float('inf')` indicates no direct edge between two nodes."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "bst_search_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "avl_tree_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nFloyd-Warshall算法是一种用于求解加权图中所有顶点对之间最短路径的动态规划算法。它通过逐步考虑每个顶点作为中间节点，更新任意两点间的距离，最终得到全局最短路径矩阵。该算法适用于有向图或无向图，能处理正负权边，但要求图中不存在负权回路。\n\n## 核心要点\n- 动态规划思想：算法核心是递推关系式，通过引入中间节点k，逐步优化任意两点i和j之间的最短路径。\n- 三重循环结构：算法使用三层嵌套循环，分别枚举中间节点k、起点i和终点j，时间复杂度为O(n³)，其中n为顶点数。\n- 初始化与更新：初始时，距离矩阵由直接边或无穷大构成；每次迭代中，若通过k的路径更短，则更新距离。\n- 负权边处理：算法能正确计算负权边的最短路径，但若存在负权回路，则会导致距离无限减小，需额外检测。\n- 路径记录：通过维护前驱矩阵，可在算法结束后回溯得到具体最短路径。\n\n## 应用场景\nFloyd-Warshall算法常用于需要查询任意两点间最短路径的静态图场景，例如交通网络规划、通信网络路由计算以及社交网络分析中的中心度计算。由于算法简洁且易于实现，它也常作为图算法教学中的经典案例。\n\n## 相关概念\n该算法与Dijkstra算法和Bellman-Ford算法同属最短路径算法家族，但Floyd-Warshall专注于所有点对，而Dijkstra针对单源正权图，Bellman-Ford可处理负权边但也是单源。此外，算法中使用的动态规划思想与矩阵乘法求路径计数有相似之处，后者通过矩阵幂运算计算路径数量。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

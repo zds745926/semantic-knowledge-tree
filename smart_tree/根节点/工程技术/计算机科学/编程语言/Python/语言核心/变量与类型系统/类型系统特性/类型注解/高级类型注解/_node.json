@@ -19,5 +19,39 @@
       "content_preview": "高级类型注解: Generic TypeVar, Union or |, Callable, Literal. Static type checking with mypy. Here are brief explanations and corresponding Python code examples for each term: 1. **TypeVar**: - A way to define generic types in Python. ```python from typing import TypeVar T = TypeVar('T') # Define a generic type variable 'T' def identity(x: T) -> T: return x ``` 2. **Union or |**: - Represents multiple possible types for a single variable. ```python from typing import Union def print_length(s: Union[str, list]) -> None: print(len(s)) ``` 3. **Callable**: - Used to specify that a function should accept certain parameters and return a specific type. ```python from typing import Callable def apply_function(func: Callable[[int], int], x: int) -> int: return func(x) ``` 4. **Literal**: - Represents values exactly as they are written in the source code, useful for specifying exact types of constants. ```python from typing import Literal def greet(greeting: Literal['hello', 'hi']) -> None: print(greeting + ', world!') ``` 5. **mypy Static Type Checking**: - A static type checker that can be used to verify the correctness of Python code. ```python # Example mypy command to check a script # mypy example.py ``` These examples should help illustrate how these concepts are used in Python with the `typing` module and how they can be checked using `mypy`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n高级类型注解是指在Python类型注解中使用`typing`模块提供的泛型、联合类型、可选类型、字面量类型、协议等复杂类型构造器，以精确描述函数参数、返回值和变量的类型约束，支持更细粒度的静态类型检查。\n\n## 何时使用\n当函数参数或返回值可以是多种类型（如`Union[int, str]`）、需要约束容器内元素类型（如`List[int]`）、或者需要定义可选的参数（如`Optional[str]`）时使用。此外，在需要描述可调用对象签名、固定字面值集合或结构子类型（Protocol）时，高级类型注解能显著提升代码可读性和类型安全性。\n\n## 示例\n```Python\nfrom typing import List, Optional, Union, Literal, Protocol\n\n# 泛型容器与可选类型\ndef process_items(items: List[Union[int, str]]) -> Optional[int]:\n    if not items:\n        return None\n    return len([x for x in items if isinstance(x, int)])\n\n# 字面量类型\ndef set_mode(mode: Literal[\"auto\", \"manual\"]) -> None:\n    pass\n\n# 协议（结构子类型）\nclass Drawable(Protocol):\n    def draw(self) -> None: ...\n\ndef render(obj: Drawable) -> None:\n    obj.draw()\n```\n\n## 反例\n错误用法：在不需要泛型时滥用`Any`，例如`def foo(x: Any) -> Any:`，这会完全绕过类型检查，失去注解的意义。正确做法是尽量使用具体类型或联合类型。\n\n## 边界条件\n注意：`Optional[X]`等价于`Union[X, None]`，但不应嵌套使用（如`Optional[Optional[int]]`）。另外，`List`等泛型容器在Python 3.9+中可直接用`list[int]`，但旧版本仍需`typing.List`。协议（Protocol）仅在结构上匹配，不会强制继承关系。",
+    "code_pattern": "from typing import List, Optional, Union, Literal, Protocol\n\ndef advanced_example(data: List[Union[int, str]], flag: Optional[bool] = None) -> Literal[\"ok\", \"fail\"]:\n    if flag is None:\n        return \"fail\"\n    if isinstance(data[0], int):\n        return \"ok\"\n    return \"fail\"\n\nclass Drawable(Protocol):\n    def draw(self) -> None: ...\n\ndef render(obj: Drawable) -> None:\n    obj.draw()",
+    "common_pitfalls": [
+      "在Python 3.8及以下版本中直接使用`list[int]`会导致运行时错误，必须从`typing`导入`List`。",
+      "将`Optional[str]`误写为`str or None`，后者在类型检查器中不被识别为有效注解。",
+      "在`Protocol`中定义方法时忘记使用`...`（Ellipsis）作为函数体，导致运行时语法错误。",
+      "过度使用`Any`类型，使得类型检查器无法捕获类型错误，违背了类型注解的初衷。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

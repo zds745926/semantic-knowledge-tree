@@ -18,5 +18,13 @@
     "description": "C++ 核心: The core of C++ includes OOP (Object-Oriented Programming), templates, and STL (Standard Template Library). Smart pointers using RAII manage resources. Here are brief Python code examples for some related concepts: 1. **OOP in Python**: ```python class Dog: def __init__(self, name): self.name = name def bark(self): return f\"{self.name} says Woof!\" my_dog = Dog(\"Buddy\") print(my_dog.bark()) # Output: Buddy says Woof! ``` 2. **Using Python's `contextlib` for RAII-like behavior**: ```python from contextlib import contextmanager @contextmanager def managed_resource(resource): try: yield resource finally: print(f\"Releasing {resource}\") with managed_resource(\"Database connection\"): # Code that uses the database connection pass # Placeholder for actual code ``` 3. **Python's `collections` module for STL-like functionality**: ```python from collections import deque dq = deque([1, 2, 3]) dq.append(4) print(dq) # Output: deque([1, 2, 3, 4], maxlen=4) ``` These examples illustrate key concepts in C++ and their Python equivalents."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "C++ 核心分支涵盖了 C++ 语言中面向对象编程、泛型编程以及标准库的核心内容。子节点包括 C++ OOP（面向对象编程）、模板、STL 标准库和智能指针。C++ OOP 是基础，涉及类、继承、多态和封装，为构建复杂系统提供结构。模板是泛型编程的核心，允许编写类型无关的代码，与 OOP 结合可实现高度抽象。STL 标准库基于模板实现，提供容器、算法和迭代器，是模板的典型应用。智能指针是 RAII（资源获取即初始化）思想的体现，管理动态内存，避免内存泄漏，常与 OOP 和 STL 容器配合使用。学习路径建议先掌握 C++ OOP 基础，然后学习模板，再深入 STL 标准库，最后理解智能指针的内存管理机制。该分支是 C++ 进阶的关键，为高效、安全的编程奠定基础。",
+  "example_queries": [
+    "C++ 中虚函数如何实现多态？",
+    "模板特化与偏特化有什么区别？",
+    "STL 中 vector 和 list 的底层实现及适用场景是什么？",
+    "智能指针 unique_ptr 和 shared_ptr 的用法及区别？",
+    "如何在 C++ 中通过模板实现类型安全的容器？"
+  ]
 }

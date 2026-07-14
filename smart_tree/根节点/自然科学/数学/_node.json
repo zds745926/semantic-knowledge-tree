@@ -16,5 +16,13 @@
     "description": "数学: Mathematics is a discipline that studies quantities, structures, changes, and spaces, encompassing branches such as algebra, geometry, calculus, probability statistics, and discrete mathematics. It serves as the language of natural sciences and the theoretical foundation of computer science, forming a rigorous logical system from basic arithmetic to abstract algebra. Here's an example in Python that demonstrates some fundamental concepts: ```python # Basic Arithmetic Operations a = 10 b = 5 print(\"Addition:\", a + b) # Output: Addition: 15 # Algebraic Expression Evaluation def quadratic_equation(a, b, c): discriminant = (b**2 - 4*a*c)**0.5 root1 = (-b + discriminant) / (2*a) root2 = (-b - discriminant) / (2*a) return root1, root2 # Example usage of the quadratic equation function roots = quadratic_equation(1, -3, 2) print(\"Roots:\", roots) # Output: Roots: (2.0, 1.0) # Discrete Mathematics: Fibonacci Sequence def fibonacci(n): if n <= 0: return \"Input should be a positive integer.\" elif n == 1: return [0] elif n == 2: return [0, 1] else: fib_seq = [0, 1] for i in range(2, n): next_value = fib_seq[-1] + fib_seq[-2] fib_seq.append(next_value) return fib_seq # Example usage of the Fibonacci function fib_sequence = fibonacci(10) print(\"Fibonacci Sequence:\", fib_sequence) # Output: Fibonacci Sequence: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34] ``` This Python code example covers basic arithmetic operations, solving a quadratic equation (a fundamental algebraic concept), and generating the first `n` numbers in the Fibonacci sequence (an important topic in discrete mathematics)."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "数学是自然科学的基础学科，研究数量、结构、变化、空间等抽象概念。本分支涵盖代数和微积分两大核心子领域。代数是研究数、量、方程和结构的数学分支，包括初等代数（如方程求解、多项式）和抽象代数（如群、环、域），为更高级的数学提供语言和工具。微积分则研究变化率和累积量，包括微分学（导数、切线、极值）和积分学（面积、体积、微分方程），是分析学和物理学的基石。代数和微积分紧密相连：代数提供微积分所需的符号和运算规则，而微积分中的许多问题（如求导、积分）最终归结为代数运算。学习路径通常先掌握代数基础（如方程、函数、指数对数），再学习微积分入门（极限、导数、基本积分），随后可深入线性代数、抽象代数或多元微积分。该分支适用于工程、物理、经济、计算机科学等领域，是理解自然规律和解决实际问题的关键工具。",
+  "example_queries": [
+    "如何解一元二次方程？",
+    "什么是导数，如何计算？",
+    "微积分基本定理是什么？",
+    "群论在数学中有什么应用？",
+    "如何用积分求曲线下的面积？"
+  ]
 }

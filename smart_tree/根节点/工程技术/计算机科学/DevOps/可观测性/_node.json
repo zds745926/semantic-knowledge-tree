@@ -16,5 +16,13 @@
     "description": "可观测性: Observability encompasses three main pillars: Metrics, Tracing, and Logging. Here are brief explanations for each term: 1. **Metrics**: This refers to the collection of numerical data that provides insight into system performance over time. In Python, you can use libraries like `psutil` or `prometheus_client` to collect metrics. ```python import psutil # Example: Collecting CPU usage percentage cpu_usage = psutil.cpu_percent(interval=1) print(f\"CPU Usage: {cpu_usage}%\") ``` 2. **Tracing**: This involves tracking the flow of requests through a system, often used in distributed systems to understand how different services interact with each other. The `opentracing` library can be used for this purpose. ```python from opentracing import Tracer # Example: Starting a span (a unit of work) tracer = Tracer() with tracer.start_active_span('process_request'): print(\"Request processed\") ``` 3. **Logging**: This is the practice of recording information about the operations within an application, which can be used for debugging and monitoring. Python’s built-in `logging` module is commonly used. ```python import logging # Example: Logging a message logging.basicConfig(level=logging.INFO) logging.info(\"This is an info message\") ``` These examples provide a basic understanding of how these concepts can be implemented in Python, though the actual implementation may vary based on specific use cases and requirements."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "可观测性是现代DevOps实践中的核心概念，旨在通过度量、日志和追踪等手段，使系统内部状态能够被外部工具所理解和监控。本分支涵盖从数据采集、存储、查询到可视化的完整链路。Prometheus作为主流的开源监控系统，专注于指标数据的抓取、聚合与告警，其强大的PromQL查询语言支持多维数据模型，适合对基础设施、应用性能进行实时监控。Grafana则是一个跨平台的可视化平台，能够对接Prometheus等多种数据源，将原始指标转化为直观的仪表盘，便于运维和开发人员快速定位问题。两者结合构成了典型的监控栈：Prometheus负责数据层（采集与存储），Grafana负责展示层（可视化与告警），共同支撑起系统可观测性的核心需求。学习路径建议先从Prometheus的指标类型、Exporter部署和PromQL语法入手，再学习Grafana的数据源配置、仪表盘设计和告警规则设置，最后通过实际项目（如监控Kubernetes集群或微服务应用）综合运用。",
+  "example_queries": [
+    "如何用Prometheus监控Kubernetes集群中的Pod资源使用情况？",
+    "Grafana如何配置Prometheus数据源并创建CPU使用率的仪表盘？",
+    "Prometheus的PromQL如何计算过去5分钟内的平均请求延迟？",
+    "如何设置Prometheus和Grafana实现应用宕机时的邮件告警？",
+    "在微服务架构中，如何通过Prometheus和Grafana实现全链路监控？"
+  ]
 }

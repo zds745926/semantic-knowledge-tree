@@ -15,5 +15,13 @@
     "description": "版本控制: Version control records the history of file changes, supporting collaborative development and rollbacks. Git is currently the most popular version control system. Python code example (to illustrate a basic concept in Git): ```python import subprocess def git_clone(repo_url, destination_path): try: # Clone a repository using Git command result = subprocess.run(['git', 'clone', repo_url, destination_path], check=True) print(\"Repository cloned successfully to:\", destination_path) except subprocess.CalledProcessError as e: print(f\"Failed to clone the repository: {e}\") # Example usage repo_url = \"https://github.com/user/repo.git\" destination_path = \"./my_repo\" git_clone(repo_url, destination_path) ``` This Python function `git_clone` demonstrates how you might use a subprocess to run a Git command for cloning a repository. Note that this is a simplified example and does not cover all aspects of version control or Git usage."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "版本控制是软件工程中的核心实践，用于追踪和管理源代码、文档等文件的变更历史。本分支涵盖版本控制的基本概念、工作流程、分布式与集中式系统的对比，以及主流工具如Git、SVN等的使用。子主题包括版本控制原理（如提交、分支、合并、标签）、协作模型（如Git Flow、GitHub Flow）、冲突解决策略、以及CI/CD集成。学习路径建议从理解版本控制的核心价值开始，然后掌握Git的基本操作（clone、commit、push、pull），再深入学习分支策略和远程协作，最后探索高级主题如子模块、钩子和性能优化。Git作为当前最流行的分布式版本控制系统，是本分支的重点，它通过快照而非差异存储数据，支持离线操作和强大的分支管理，使得团队协作更加灵活高效。本分支还涉及版本控制的最佳实践，如提交信息规范、代码审查流程和备份策略，帮助开发者避免常见陷阱，提升项目管理的可追溯性和可复现性。",
+  "example_queries": [
+    "如何撤销Git中最后一次提交但保留工作区的更改？",
+    "Git合并冲突的常见原因和解决方法是什么？",
+    "Git Flow和GitHub Flow的主要区别是什么？",
+    "如何在团队中规范Git提交信息格式？",
+    "版本控制系统如何与持续集成/持续部署（CI/CD）工具集成？"
+  ]
 }

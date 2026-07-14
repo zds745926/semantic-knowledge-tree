@@ -24,5 +24,13 @@
     "description": "Python: Python is an interpreted, object-oriented, high-level programming language with a dynamic type system. It was invented by Guido van Rossum at the end of 1989 and its first public release was in 1991. Python's syntax is clean and concise, emphasizing code readability, and it supports multiple programming paradigms. It is widely used in web development, data science, artificial intelligence, automation scripting, and more. Here’s a brief example of Python code that demonstrates some of its features: ```python # A simple function to illustrate Python's syntax and readability def greet(name): \"\"\"Prints a greeting message.\"\"\" print(f\"Hello, {name}!\") # Calling the function with an argument greet(\"World\") # Example of multiple programming paradigms: functional and object-oriented class Person: def __init__(self, name): self.name = name def say_hello(person): return f\"Hello, {person.name}!\" # Creating an instance of the Person class p = Person(\"Alice\") print(say_hello(p)) ``` This code snippet includes a simple function definition and a class definition to showcase Python's support for both procedural (function) and object-oriented programming."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "Python分支涵盖了从语言核心到框架生态的完整知识体系。语言核心是基础，包括语法、变量、控制流等；内置数据结构（如列表、字典、元组、集合）是编程的基石，用于高效组织数据；面向对象编程（类、继承、多态）提供了代码复用的机制；高级特性（如装饰器、生成器、上下文管理器）提升了代码的简洁性与灵活性；标准库提供了丰富的模块（如os、sys、re、json、datetime），支撑日常开发；并发编程（多线程、多进程、异步IO）用于提升程序性能；网络编程（socket、HTTP、urllib）实现网络通信；框架生态（Django、Flask、FastAPI等）则用于快速构建Web应用。子主题之间层层递进：先掌握核心语法与数据结构，再理解面向对象与高级特性，进而熟悉标准库，最后学习并发、网络与框架。典型学习路径为：基础→进阶→应用→生态。",
+  "example_queries": [
+    "Python中列表和元组的区别是什么？",
+    "如何在Python中实现装饰器？",
+    "Python标准库中处理JSON的模块有哪些？",
+    "Python多线程与多进程的适用场景有何不同？",
+    "Flask和Django框架的主要区别是什么？"
+  ]
 }

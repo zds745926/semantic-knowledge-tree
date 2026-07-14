@@ -19,5 +19,31 @@
       "content_preview": "字符串方法: - join: This function concatenates sequences (such as strings) into one string with a specified separator. Example in Python: ```python parts = ['Hello', 'World'] separator = ' ' result = separator.join(parts) print(result) # Output: Hello World ``` - split: This method splits a string into a list where each word is a list item, using the specified separator. Example in Python: ```python text = \"Hello World\" separators = \" \" words = text.split(separators) print(words) # Output: ['Hello', 'World'] ``` - strip: This function removes any leading and trailing characters (whitespace by default). Example in Python: ```python text = \" Hello, World! \" result = text.strip() print(result) # Output: \"Hello, World!\" ``` - replace: This method replaces a specified phrase with another specified phrase. Example in Python: ```python text = \"Hello, World!\" new_text = text.replace(\"World\", \"Python\") print(new_text) # Output: Hello, Python! ``` - startswith: This function checks if the string starts with a specified value and returns True or False accordingly. Example in Python: ```python text = \"Hello, World!\" result = text.startswith(\"Hello\") print(result) # Output: True ``` - endswith: This function checks if the string ends with a specified value and returns True or False accordingly. Example in Python: ```python text = \"Hello, World!\" result = text.endswith(\"World!\") print(result) # Output: True ```"
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n字符串方法是指 Python 中 str 类型对象所拥有的内置函数，用于对字符串进行查询、修改、格式化、分割、拼接等操作，返回新的字符串或布尔值、列表等结果，且不修改原字符串（字符串不可变）。\n\n## 何时使用\n当需要处理文本数据时，例如清洗用户输入、解析日志文件、格式化输出或验证字符串内容，应使用字符串方法。它们提供了高效且可读性强的操作方式，避免手动编写循环和条件判断。\n\n## 示例\n```Python\n# 演示常用字符串方法：strip、split、join、replace、find、upper\ntext = \"  hello, world!  \"\ncleaned = text.strip()\nprint(cleaned)  # 输出: \"hello, world!\"\n\nparts = cleaned.split(\", \")\nprint(parts)    # 输出: ['hello', 'world!']\n\njoined = \"-\".join(parts)\nprint(joined)   # 输出: \"hello-world!\"\n\nreplaced = joined.replace(\"!\", \"\")\nprint(replaced) # 输出: \"hello-world\"\n\nindex = replaced.find(\"world\")\nprint(index)    # 输出: 6\n\nupper_case = replaced.upper()\nprint(upper_case) # 输出: \"HELLO-WORLD\"\n```\n\n## 反例\n错误用法：直接修改字符串，如 `text.strip()` 后认为 `text` 已改变，但实际未赋值给变量，导致原字符串不变。正确做法是 `text = text.strip()`。\n\n## 边界条件\n- 当字符串为空时，大多数方法（如 strip、split）仍能正常工作，返回空字符串或空列表。\n- 使用 split 时，若分隔符不存在，返回包含原字符串的列表。\n- find 方法在找不到子串时返回 -1，而非抛出异常，需注意与 index 方法的区别。",
+    "code_pattern": "def process_string(s: str) -> str:\n    \"\"\"清洗并格式化字符串：去除首尾空格，替换特定字符，转为小写。\"\"\"\n    s = s.strip()\n    s = s.replace(\"\\t\", \" \")\n    s = s.replace(\"\\n\", \" \")\n    s = s.lower()\n    return s\n\n# 使用示例\nraw = \"  Hello\\tWorld!\\n  \"\ncleaned = process_string(raw)\nprint(cleaned)  # 输出: \"hello world!\"",
+    "common_pitfalls": [
+      "误认为字符串方法会原地修改字符串，忘记赋值给变量，导致原字符串不变。",
+      "混淆 find 和 index 方法：find 找不到返回 -1，index 找不到抛出 ValueError，未处理异常会导致程序崩溃。",
+      "使用 split 时未考虑连续分隔符的情况，例如 \"a,,b\".split(\",\") 返回 ['a', '', 'b']，空字符串可能引起后续逻辑错误。",
+      "在大量字符串拼接时使用 + 运算符而非 join，导致性能低下，应使用 ''.join(list_of_strings)。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

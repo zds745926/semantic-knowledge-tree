@@ -17,5 +17,13 @@
     "description": "二叉搜索树 BST: BST is the most commonly used variant of binary trees. The left subtree < root < right subtree, and an in-order traversal yields a sorted sequence. Here's a brief Python code example to demonstrate an in-order traversal of a BST: ```python class TreeNode: def __init__(self, key): self.left = None self.right = None self.val = key def inorder_traversal(root): \"\"\" Perform in-order traversal of the binary search tree. \"\"\" if root: # Traverse left subtree inorder_traversal(root.left) # Visit root node print(root.val, end=' ') # Traverse right subtree inorder_traversal(root.right) # Example usage: # Constructing a simple BST root = TreeNode(20) root.left = TreeNode(8) root.right = TreeNode(42) root.left.left = TreeNode(4) root.left.right = TreeNode(12) root.right.left = TreeNode(35) root.right.right = TreeNode(50) # Perform in-order traversal inorder_traversal(root) # Expected output: 4 8 12 20 35 42 50 ``` This code defines a simple BST and performs an in-order traversal, which prints the nodes in sorted order."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于二叉搜索树（BST）这一基础数据结构，涵盖其核心操作：搜索、插入以及遍历的实现。BST 是一种特殊的二叉树，其中每个节点的左子树所有节点值均小于该节点值，右子树所有节点值均大于该节点值，这一性质使得 BST 在动态数据集合中能够高效地完成查找、插入和删除操作。子主题之间紧密关联：BST 搜索是利用树的有序性快速定位目标值的过程，是其他操作的基础；BST 插入则是在保持 BST 性质的前提下将新节点加入树中，其实现依赖于搜索过程找到合适的插入位置；遍历实现则包括前序、中序、后序和层序遍历，其中中序遍历能够按升序输出所有节点值，是验证 BST 正确性的重要手段。学习路径建议先掌握 BST 的定义和性质，然后依次学习搜索、插入和遍历算法，最后通过综合练习巩固理解。本分支为后续学习平衡二叉树（如 AVL 树、红黑树）以及更复杂的树结构奠定基础。",
+  "example_queries": [
+    "如何在二叉搜索树中查找一个元素？",
+    "二叉搜索树的插入操作如何保持树的有序性？",
+    "二叉搜索树的中序遍历为什么能输出有序序列？",
+    "二叉搜索树的前序、中序、后序遍历分别如何实现？",
+    "给定一个二叉搜索树，如何判断它是否平衡？"
+  ]
 }

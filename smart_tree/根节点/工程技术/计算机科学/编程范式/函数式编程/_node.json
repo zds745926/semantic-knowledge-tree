@@ -19,5 +19,13 @@
     "description": "函数式编程: Functional programming centers around pure functions, emphasizing immutability and side-effect-free operations. Key concepts include pure functions, higher-order functions, currying, and monads. Languages like Haskell, Scala, and Clojure support functional programming, while modern languages such as JavaScript, Python, and Kotlin have incorporated many functional features. Here's a brief example of using a higher-order function in Python: ```python def apply_function(func, value): return func(value) # Example usage with a pure function (a simple lambda) result = apply_function(lambda x: x * 2, 5) # result will be 10 print(result) ``` In this example, `apply_function` is a higher-order function that takes another function (`func`) and a value as arguments. The provided function is then applied to the given value."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "函数式编程是编程范式中的一种重要分支，强调使用函数作为基本构建块，并避免状态变化和副作用。本分支涵盖的核心概念包括：纯函数（无副作用，输出仅由输入决定）、不可变性（数据一旦创建即不可修改，需通过创建新数据来变更）、高阶函数（接受函数作为参数或返回函数）、柯里化（将多参数函数转换为单参数函数链）以及Monad（一种用于处理副作用和组合计算的抽象结构）。这些概念相互关联：纯函数和不可变性是函数式编程的基础，保证了代码的可预测性和可测试性；高阶函数和柯里化则提供了强大的函数组合能力，使代码更简洁、模块化；Monad则在保持纯函数特性的同时，优雅地处理了输入/输出、异常等副作用。学习路径建议从纯函数和不可变性入手，理解其优势；然后学习高阶函数和柯里化，掌握函数组合技巧；最后深入Monad，理解如何在实际应用中管理副作用。",
+  "example_queries": [
+    "什么是纯函数？它有什么优点？",
+    "不可变性在函数式编程中如何实现？",
+    "高阶函数和柯里化有什么区别？",
+    "Monad在函数式编程中起什么作用？",
+    "如何用函数式编程思想解决实际编程问题？"
+  ]
 }

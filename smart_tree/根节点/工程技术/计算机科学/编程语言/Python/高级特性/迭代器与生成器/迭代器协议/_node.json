@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "py_for_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n迭代器协议是 Python 中用于实现迭代行为的一组规则，要求对象实现 `__iter__()` 方法（返回迭代器自身）和 `__next__()` 方法（返回下一个元素，无元素时抛出 `StopIteration` 异常）。\n\n## 何时使用\n当需要自定义一个可迭代对象（如自定义容器类）或实现惰性计算（如按需生成数据序列）时，应遵循迭代器协议。它允许对象支持 `for` 循环、`in` 运算符以及 `iter()` 和 `next()` 内置函数，从而融入 Python 的迭代生态。\n\n## 示例\n```Python\nclass CountDown:\n    def __init__(self, start):\n        self.start = start\n\n    def __iter__(self):\n        self.current = self.start\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        value = self.current\n        self.current -= 1\n        return value\n\n# 使用\nfor num in CountDown(3):\n    print(num)\n# 输出: 3 2 1\n```\n\n## 反例\n错误地让 `__next__()` 在无元素时返回 `None` 而非抛出 `StopIteration`，会导致迭代无法正确终止，引发无限循环或意外行为。\n\n## 边界条件\n- 迭代器通常是有状态的，多次迭代需重新创建迭代器对象（或重设状态）。\n- 若 `__iter__()` 返回的不是自身，需确保返回的对象也实现了完整的迭代器协议。",
+    "code_pattern": "class MyIterator:\n    def __init__(self, data):\n        self.data = data\n        self.index = 0\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.index >= len(self.data):\n            raise StopIteration\n        result = self.data[self.index]\n        self.index += 1\n        return result",
+    "common_pitfalls": [
+      "忘记在 `__next__()` 中抛出 `StopIteration` 异常，导致迭代无法终止，引发无限循环或 `for` 循环崩溃。",
+      "将迭代器与可迭代对象混淆：可迭代对象实现 `__iter__()` 返回新迭代器，而迭代器自身同时实现 `__iter__()` 和 `__next__()`，若将迭代器直接用于多次 `for` 循环，第二次循环会因状态耗尽而无效。",
+      "在 `__iter__()` 中返回 `self` 但未重置状态，导致多次迭代时行为异常（如第二次 `for` 循环立即结束）。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

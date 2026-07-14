@@ -19,5 +19,42 @@
       "content_preview": "PriorityQueue: queue.PriorityQueue is a priority queue implemented as a min-heap. `put((priority, item))`. Here's a brief Python code example to illustrate how you might use this: ```python import heapq # Initialize an empty list to simulate the PriorityQueue pq = [] def add_task(priority, task): # Use heapq.heappush to add elements to the heap in O(log N) time heapq.heappush(pq, (priority, task)) def get_next_task(): # Pop the smallest element from the heap in O(log N) time return heapq.heappop(pq) # Example usage: add_task(3, 'Task 1') add_task(2, 'Task 2') add_task(4, 'Task 3') print(get_next_task()) # Output: (2, 'Task 2') print(get_next_task()) # Output: (3, 'Task 1') ``` In this example, `heapq` is used to simulate the behavior of a `PriorityQueue`. The `heappush` function adds elements to the heap with their priority, and `heappop` retrieves the smallest element based on its priority."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "sjf_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nPriorityQueue 是 Python queue 模块中提供的一个线程安全的优先级队列实现。它基于堆数据结构，允许元素按照优先级顺序（默认升序）出队，优先级由元素本身或元组中的第一个元素决定。\n\n## 何时使用\n当需要在多线程环境中按照优先级处理任务时，例如任务调度、事件驱动系统或资源分配场景。它确保高优先级任务优先被消费，同时避免手动管理锁和条件变量。\n\n## 示例\n```Python\nimport queue\nimport threading\nimport time\n\ndef worker(q):\n    while True:\n        priority, item = q.get()\n        if item is None:\n            break\n        print(f\"Processing {item} with priority {priority}\")\n        time.sleep(0.1)\n        q.task_done()\n\nq = queue.PriorityQueue()\nq.put((2, \"task low\"))\nq.put((1, \"task high\"))\nq.put((3, \"task medium\"))\n\nthreads = []\nfor _ in range(2):\n    t = threading.Thread(target=worker, args=(q,))\n    t.start()\n    threads.append(t)\n\nq.join()\n\nfor _ in range(2):\n    q.put((0, None))\nfor t in threads:\n    t.join()\n```\n\n## 反例\n错误地将可变对象作为优先级元素，导致堆排序时比较失败或抛出 TypeError。例如，`q.put([3, \"data\"])` 会因列表不可比较而报错。\n\n## 边界条件\n注意 PriorityQueue 默认按元素第一个元素排序，若优先级相同则按后续元素比较，因此确保所有元素类型一致且可比较。队列满时 put() 会阻塞，空时 get() 也会阻塞，需合理设置 maxsize 或使用非阻塞方法。",
+    "code_pattern": "import queue\n\n# 创建优先级队列\npq = queue.PriorityQueue()\n\n# 入队：元素为 (priority, data) 元组\npq.put((1, 'high'))\npq.put((2, 'medium'))\npq.put((3, 'low'))\n\n# 出队：按优先级升序\npriority, data = pq.get()\nprint(data)  # 输出 'high'\n\n# 非阻塞获取\nif not pq.empty():\n    try:\n        priority, data = pq.get_nowait()\n    except queue.Empty:\n        pass",
+    "common_pitfalls": [
+      "元素不可比较：如果放入队列的元素不是可比较的类型（如自定义对象未实现 __lt__ 或 __gt__），会抛出 TypeError。解决方案是使用元组 (priority, item) 或确保自定义类定义了比较方法。",
+      "优先级相同导致顺序不确定：当多个元素优先级相同时，它们的出队顺序取决于堆排序的稳定性，但 Python 的 heapq 不保证稳定，因此相同优先级的任务可能以任意顺序出队。",
+      "忘记处理队列空/满异常：在 get() 或 put() 时未捕获 queue.Empty 或 queue.Full 异常，或未使用 timeout 参数，可能导致线程永久阻塞。建议使用 get_nowait() 或 put_nowait() 并配合 try-except。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

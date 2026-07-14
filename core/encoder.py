@@ -99,8 +99,9 @@ class FallbackEncoder:
         tokens = self._tokenize(text)
         # 使用哈希将token映射到向量维度
         vec = np.zeros(self._dim, dtype=np.float32)
+        import hashlib
         for token in tokens:
-            idx = hash(token) % self._dim
+            idx = int(hashlib.md5(token.encode("utf-8")).hexdigest(), 16) % self._dim
             vec[idx] = 1.0
         # 归一化
         norm = np.linalg.norm(vec)

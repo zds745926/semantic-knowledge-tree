@@ -17,5 +17,13 @@
     "description": "虚拟环境: Virtual environments create isolated Python runtime environments to avoid package version conflicts. `venv` is the official solution, while `virtualenv` and `conda` are alternatives. Here's a brief example of creating and activating a virtual environment using `venv` in Python: ```python # Create a new virtual environment named 'myenv' !python -m venv myenv # Activate the virtual environment on Windows !myenv\\Scripts\\activate # Or activate it on Unix or MacOS #!source myenv/bin/activate ``` This code uses shell commands to create and activate a virtual environment, which can be executed in a Python script or directly in a terminal."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python编程中的虚拟环境管理，这是包管理的关键环节。虚拟环境允许开发者为不同项目创建隔离的Python运行环境，避免依赖冲突。该分支涵盖三种主流工具：venv（Python内置的轻量级模块，无需额外安装，适合简单项目）、virtualenv（第三方工具，功能更强大，支持Python 2和3，可创建独立解释器）和conda（跨语言包管理器，尤其适合数据科学场景，能管理Python和非Python依赖，支持环境快速复制与导出）。三者关系互补：venv和virtualenv专为Python设计，virtualenv在venv基础上扩展了更多特性；conda则提供更广泛的生态支持。学习路径建议：从venv入门，掌握基本创建与激活；再过渡到virtualenv，理解其高级功能；最后学习conda，适应复杂项目或数据科学工作流。掌握这些工具能显著提升项目可移植性和团队协作效率。",
+  "example_queries": [
+    "如何使用venv为Python项目创建隔离环境？",
+    "virtualenv和venv的主要区别是什么？",
+    "conda如何管理不同Python版本的环境？",
+    "如何将虚拟环境导出为requirements.txt或environment.yml？",
+    "在团队协作中，如何确保所有成员使用一致的虚拟环境配置？"
+  ]
 }

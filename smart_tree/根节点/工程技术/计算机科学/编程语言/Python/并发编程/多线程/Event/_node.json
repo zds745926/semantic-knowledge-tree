@@ -19,5 +19,38 @@
       "content_preview": "Event: Threading Event flag. Methods include `set()`, `clear()`, and `wait()`. Used for multiple threads to wait for a specific event to occur. Here's a brief Python code example using threading.Event: ```python import threading def worker(event): print(\"Worker thread is waiting for the event...\") event.wait() # Wait until the event is set print(\"Event occurred, continuing execution...\") # Create an Event object event = threading.Event() # Start a new thread that will wait for the event thread = threading.Thread(target=worker, args=(event,)) thread.start() # Simulate some time passing or other work import time time.sleep(2) # Set the event to signal all waiting threads event.set() ``` In this example, `worker` is a function that waits for an event using `event.wait()`. The main thread sets the event after a delay of 2 seconds, which signals the worker thread to continue execution."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "semaphore_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "application"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nEvent是Python多线程编程中用于线程间通信的一种同步原语，它允许一个线程通知其他线程某个事件已经发生，从而实现线程间的协调与同步。\n\n## 何时使用\n当需要让一个或多个线程等待某个条件成立后再继续执行时，可以使用Event。例如，主线程等待工作线程完成初始化后再开始处理任务，或者多个工作线程等待一个信号同时开始执行。Event特别适合一次性事件通知场景。\n\n## 示例\n```Python\nimport threading\nimport time\n\nevent = threading.Event()\n\ndef worker():\n    print(\"Worker waiting for event...\")\n    event.wait()\n    print(\"Worker received event, proceeding.\")\n\nthread = threading.Thread(target=worker)\nthread.start()\n\ntime.sleep(2)\nprint(\"Main thread setting event.\")\nevent.set()\n\nthread.join()\n```\n\n## 反例\n错误地使用Event进行多次触发或重置，例如在事件被设置后立即清除，导致等待线程可能错过信号。正确做法是确保事件设置后等待线程已响应再清除。\n\n## 边界条件\nEvent对象一旦被设置，除非显式调用clear()，否则所有等待线程都会立即通过。如果事件被设置后没有清除，后续的wait()调用会立即返回，这可能导致逻辑错误。另外，Event不是线程安全的用于数据传递，仅用于信号通知。",
+    "code_pattern": "import threading\n\nevent = threading.Event()\n\ndef worker():\n    event.wait()\n    # 执行事件后的操作\n    pass\n\nthreads = [threading.Thread(target=worker) for _ in range(5)]\nfor t in threads:\n    t.start()\n\n# 在某个时刻触发事件\nevent.set()\n\nfor t in threads:\n    t.join()",
+    "common_pitfalls": [
+      "忘记调用clear()导致事件永久有效：如果事件被设置后未清除，后续所有wait()调用都会立即返回，可能造成线程过早执行。",
+      "在事件设置后立即清除：如果在set()后马上调用clear()，等待线程可能还未被唤醒，导致信号丢失。",
+      "使用Event传递数据：Event只适合信号通知，不适合传递复杂数据，应使用Queue或其他数据结构。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

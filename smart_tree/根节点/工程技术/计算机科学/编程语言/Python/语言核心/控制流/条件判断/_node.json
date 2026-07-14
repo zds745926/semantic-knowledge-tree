@@ -16,5 +16,13 @@
     "description": "条件判断: Condition judgment is implemented through branch logic using the `if`, `elif`, and `else` keywords in Python. There is no built-in `switch/case` statement. Here's a brief example of how to use these keywords in Python: ```python # Example condition judgment with if, elif, else temperature = 25 if temperature > 30: print(\"It's too hot!\") elif temperature > 20: print(\"The weather is nice.\") else: print(\"It's a bit cold.\") print(\"End of program\") ``` This code checks the `temperature` variable and prints different messages based on its value."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "条件判断是编程语言中控制程序执行流程的核心机制，在Python中主要通过`if`语句和`match`语句（模式匹配）实现。本分支涵盖从基础的条件分支到高级的模式匹配，帮助开发者根据不同的条件执行不同的代码块。`if`语句是条件判断的基础，支持单分支、双分支、多分支（`if-elif-else`）以及嵌套结构，适用于简单的布尔表达式判断。`match`语句是Python 3.10引入的新特性，提供更强大的模式匹配能力，可以匹配常量、变量、序列、映射、类实例等复杂结构，并支持守卫条件（`if`子句），适合处理多分支、结构化的条件逻辑。学习路径建议从`if`语句入手，掌握基本条件判断和布尔运算，再过渡到`match`语句，理解模式匹配的语法和适用场景。两者相辅相成：`if`适用于简单条件，`match`适用于复杂结构匹配。掌握条件判断是编写逻辑清晰、健壮代码的基础。",
+  "example_queries": [
+    "Python中if语句的语法和常见用法是什么？",
+    "Python的match语句如何匹配列表或字典结构？",
+    "if-elif-else和match语句在什么场景下选择使用？",
+    "如何在match语句中使用守卫条件（if子句）？",
+    "Python条件判断中常见的布尔运算符有哪些？"
+  ]
 }

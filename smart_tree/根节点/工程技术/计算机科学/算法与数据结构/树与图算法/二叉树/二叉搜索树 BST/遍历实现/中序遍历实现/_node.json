@@ -19,5 +19,30 @@
       "content_preview": "中序遍历实现: Left → Root → Right. This is the in-order sequence of a BST (Binary Search Tree). It can be simulated using a stack. Here's a brief explanation and Python code example for simulating an in-order traversal of a binary search tree: ```python class TreeNode: def __init__(self, val=0, left=None, right=None): self.val = val self.left = left self.right = right def in_order_traversal(root): stack = [] current = root while True: if current is not None: stack.append(current) current = current.left else: if len(stack) == 0: break current = stack.pop() print(current.val, end=' ') current = current.right # Example usage: # Constructing a simple BST root = TreeNode(27) root.left = TreeNode(14) root.right = TreeNode(35) root.left.left = TreeNode(10) root.left.right = TreeNode(19) root.right.left = TreeNode(31) root.right.right = TreeNode(42) # Perform in-order traversal in_order_traversal(root) ``` This code defines a `TreeNode` class for the nodes of the binary search tree and an `in_order_traversal` function that uses a stack to simulate the in-order traversal. The example constructs a simple BST and performs the in-order traversal, printing out the values in sorted order: 10 14 19 27 31 35 42."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "bst_search_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "avl_tree_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n中序遍历是二叉树遍历的一种方式，其访问顺序为：先遍历左子树，然后访问根节点，最后遍历右子树。对于二叉搜索树（BST），中序遍历会按升序输出所有节点的值。\n\n## 核心要点\n- 递归实现：中序遍历可以通过递归函数轻松实现，函数先递归调用左子树，再处理当前节点，最后递归调用右子树。\n- 迭代实现：使用栈模拟递归过程，从根节点开始，不断将左子节点压栈，直到左子树为空，然后弹出节点访问，再转向右子树。\n- 时间复杂度：中序遍历的时间复杂度为 O(n)，其中 n 是节点数量，因为每个节点恰好被访问一次。\n- 空间复杂度：递归实现的空间复杂度为 O(h)，h 为树的高度，最坏情况下（链状树）为 O(n)；迭代实现同样需要 O(h) 的栈空间。\n- 有序性：在二叉搜索树中，中序遍历的结果是一个递增的有序序列，这是 BST 的重要特性。\n\n## 应用场景\n中序遍历常用于二叉搜索树中获取有序数据，例如实现排序、查找第 k 小元素、验证 BST 的合法性（检查中序序列是否递增）。此外，在表达式树中，中序遍历可生成中缀表达式（需加括号处理优先级）。\n\n## 相关概念\n中序遍历与前序遍历、后序遍历共同构成二叉树的三种深度优先遍历方式。前序遍历先访问根节点，后序遍历最后访问根节点。此外，层序遍历（广度优先）与中序遍历不同，它按层从上到下访问节点。理解这些遍历的区别有助于解决树相关的算法问题。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

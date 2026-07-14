@@ -19,5 +19,39 @@
       "content_preview": "Process 类: multiprocessing.Process. target/args. start()/join()/terminate(). Here are the explanations and corresponding Python code examples: 1. **multiprocessing.Process**: This is a class in Python's `multiprocessing` module that represents a process. You can create instances of this class to spawn new processes. ```python from multiprocessing import Process def worker_function(): print(\"Worker function running\") # Create a process p = Process(target=worker_function) ``` 2. **target/args**: The `target` parameter is the callable that is passed to the process, and `args` are the arguments for this callable. ```python def worker_function(arg1, arg2): print(f\"Arguments: {arg1}, {arg2}\") # Create a process with arguments p = Process(target=worker_function, args=(\"Hello\", \"World\")) ``` 3. **start()**: This method starts the process's activity. ```python # Start the process p.start() ``` 4. **join()**: This method waits for the process to terminate and then returns. It can be used to ensure that a parent process waits for its child processes to complete before continuing. ```python # Wait for the process to finish p.join() ``` 5. **terminate()**: This method sends a termination signal to the process, which may cause it to terminate abruptly if it is not properly handling signals. ```python # Terminate the process (may be abrupt) p.terminate() ``` These methods and concepts are fundamental for managing processes in Python's `multiprocessing` module."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "application"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nProcess 类是 Python multiprocessing 模块中用于创建和管理独立进程的核心类，通过启动子进程实现并行执行任务，每个进程拥有独立的 Python 解释器和内存空间。\n\n## 何时使用\n当需要利用多核 CPU 进行 CPU 密集型计算（如大规模数据处理、图像渲染）或需要隔离任务以避免全局解释器锁（GIL）限制时，应使用 Process 类。它适合执行独立且计算量大的任务，或需要并行执行多个阻塞操作（如网络请求）的场景。\n\n## 示例\n```Python\nimport multiprocessing\nimport time\n\ndef worker(name):\n    print(f'Worker {name} starting')\n    time.sleep(2)\n    print(f'Worker {name} finished')\n\nif __name__ == '__main__':\n    processes = []\n    for i in range(3):\n        p = multiprocessing.Process(target=worker, args=(i,))\n        processes.append(p)\n        p.start()\n    for p in processes:\n        p.join()\n    print('All workers completed')\n```\n\n## 反例\n错误地将 Process 用于 I/O 密集型任务（如大量文件读写）而不考虑进程间通信开销，导致资源浪费和性能下降。例如，为每个小文件创建单独进程，而进程创建和销毁的开销远超实际任务时间。\n\n## 边界条件\n注意主进程必须使用 `if __name__ == '__main__':` 保护入口，否则在 Windows 上会无限递归创建进程。另外，子进程无法直接共享全局变量，需使用 Queue、Pipe 或共享内存进行通信。",
+    "code_pattern": "import multiprocessing\n\ndef task(arg1, arg2):\n    # 执行任务逻辑\n    return arg1 + arg2\n\nif __name__ == '__main__':\n    processes = []\n    for i in range(4):\n        p = multiprocessing.Process(target=task, args=(i, i*2))\n        processes.append(p)\n        p.start()\n    for p in processes:\n        p.join()",
+    "common_pitfalls": [
+      "忘记在 Windows 上使用 `if __name__ == '__main__':` 保护，导致子进程无限递归创建新进程，引发 RuntimeError。",
+      "子进程尝试修改全局变量或共享对象（如列表），但每个进程有独立内存空间，修改不会反映到其他进程，需显式使用 multiprocessing.Manager 或 Queue。",
+      "未调用 `join()` 导致主进程提前退出，子进程可能成为孤儿进程，资源无法正确回收，且输出可能不完整。",
+      "传递非可 pickle 序列化的对象作为参数（如 lambda 函数、某些自定义类），导致 PicklingError 异常。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

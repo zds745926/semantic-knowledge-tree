@@ -16,5 +16,13 @@
     "description": "传输层: The transport layer provides end-to-end communication and mainly includes two protocols: TCP (reliable) and UDP (unreliable). Python code examples: For TCP: ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) print(f'connecting to {server_address[0]} port {server_address[1]}') sock.connect(server_address) try: # Send data message = 'This is the message. It will be repeated.' print(f'sending \"{message}\"') sock.sendall(message.encode()) finally: print('closing socket') sock.close() ``` For UDP: ```python import socket # Create a UDP socket sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) server_address = ('localhost', 10000) print(f'sending to {server_address[0]} port {server_address[1]}') message = 'This is the message. It will be repeated.' try: # Send data sent = sock.sendto(message.encode(), server_address) finally: print('closing socket') sock.close() ```"
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "传输层是TCP/IP协议栈中的核心层，位于网络层与应用层之间，主要提供端到端的通信服务。本分支涵盖两个主要子节点：TCP协议和UDP协议。TCP（传输控制协议）是一种面向连接的、可靠的传输协议，通过三次握手建立连接、确认与重传机制保证数据完整有序，适用于对可靠性要求高的应用，如网页浏览、文件传输和电子邮件。UDP（用户数据报协议）则是无连接的、不可靠的协议，传输效率高但无差错控制，适用于实时性要求高的场景，如视频直播、在线游戏和DNS查询。两者共同构成了传输层的核心功能：TCP确保可靠交付，UDP追求低延迟。学习路径建议先理解传输层的基本职责（端口复用、分段与重组），再分别深入TCP的流量控制、拥塞控制和连接管理，以及UDP的轻量特性，最后对比两者在不同应用中的选择依据。",
+  "example_queries": [
+    "TCP和UDP的主要区别是什么？各自适用于哪些应用场景？",
+    "TCP的三次握手和四次挥手过程是怎样的？",
+    "什么是TCP的流量控制和拥塞控制？它们如何工作？",
+    "UDP为什么不可靠？它在实时通信中如何保证服务质量？",
+    "如何根据应用需求选择TCP或UDP协议？"
+  ]
 }

@@ -19,5 +19,30 @@
       "content_preview": "前序遍历实现: Root → Left → Right. Recursive and Iterative (using stack) implementation. Used for copying tree structures. ### Example Code #### Recursive Implementation in Python: ```python class TreeNode: def __init__(self, val=0, left=None, right=None): self.val = val self.left = left self.right = right def copy_tree_recursive(root): if not root: return None new_root = TreeNode(root.val) new_root.left = copy_tree_recursive(root.left) new_root.right = copy_tree_recursive(root.right) return new_root # Example usage: # Constructing a simple tree root = TreeNode(1, TreeNode(2), TreeNode(3, TreeNode(4), TreeNode(5))) new_root = copy_tree_recursive(root) ``` #### Iterative Implementation using Stack in Python: ```python def copy_tree_iterative(root): if not root: return None stack = [root] new_root = TreeNode(root.val) node_map = {root: new_root} while stack: current_node = stack.pop() current_new_node = node_map[current_node] if current_node.left: left_new_node = TreeNode(current_node.left.val) current_new_node.left = left_new_node node_map[current_node.left] = left_new_node stack.append(current_node.left) if current_node.right: right_new_node = TreeNode(current_node.right.val) current_new_node.right = right_new_node node_map[current_node.right] = right_new_node stack.append(current_node.right) return new_root # Example usage (same as above): root = TreeNode(1, TreeNode(2), TreeNode(3, TreeNode(4), TreeNode(5))) new_root = copy_tree_iterative(root) ``` These examples demonstrate how to recursively and iteratively copy a tree structure in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "bst_search_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "avl_tree_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n前序遍历是二叉树的一种深度优先遍历方法，其核心访问顺序为：先访问根节点，然后递归地遍历左子树，最后递归地遍历右子树。这种遍历方式确保每个节点在其子节点之前被处理，常用于复制二叉树或生成前缀表达式。\n\n## 核心要点\n- 访问顺序固定：根节点 → 左子树 → 右子树，递归或迭代实现均可。\n- 递归实现简洁：先处理当前节点，再递归调用左子节点和右子节点。\n- 迭代实现需借助栈：先压入右子节点再压入左子节点，以保证左子树先被弹出访问。\n- 时间复杂度为 O(n)，其中 n 为节点数，每个节点恰好访问一次。\n- 空间复杂度最坏 O(n)（退化为链表时），平均 O(log n)（平衡树时）。\n\n## 应用场景\n前序遍历常用于二叉树的序列化与反序列化，例如将树结构保存为文件或网络传输。此外，在表达式树中，前序遍历可生成前缀表达式（波兰表示法），便于计算机无括号解析。\n\n## 相关概念\n前序遍历与中序、后序遍历共同构成二叉树的三种深度优先遍历方式。其中，中序遍历按左-根-右顺序访问，适用于二叉搜索树的有序输出；后序遍历按左-右-根顺序，常用于删除树或计算子树大小。三者结合可唯一确定一棵二叉树结构。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

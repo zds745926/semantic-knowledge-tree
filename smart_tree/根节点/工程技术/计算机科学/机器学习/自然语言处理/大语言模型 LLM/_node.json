@@ -19,5 +19,34 @@
       "content_preview": "大语言模型 LLM: GPT/Claude/LLaMA/Qwen. Scaling Law. RLHF/DPO Alignment. Here are brief explanations for each term: 1. **GPT/Claude/LLaMA/Qwen**: These are names of large language models developed by different organizations. 2. **Scaling Law**: This refers to the principle that increasing the size or complexity of a model can lead to improvements in performance, often following a specific mathematical relationship. 3. **RLHF (Reinforcement Learning from Human Feedback)**: A method where a machine learning model is trained using reinforcement learning by incorporating feedback from human evaluators. 4. **DPO (Data-Policy Optimization)**: An approach that aims to optimize the policy of an agent based on data, often used in reinforcement learning. Here's a brief Python code example for RLHF: ```python import torch from transformers import GPT2LMHeadModel, GPT2Tokenizer # Load pre-trained model and tokenizer model = GPT2LMHeadModel.from_pretrained('gpt2') tokenizer = GPT2Tokenizer.from_pretrained('gpt2') def rlhf_example(prompt): # Tokenize the input prompt inputs = tokenizer(prompt, return_tensors='pt') # Generate text using the model outputs = model.generate(inputs['input_ids'], max_length=100) # Decode and print the generated text response = tokenizer.decode(outputs[0], skip_special_tokens=True) print(response) # Example usage rlhf_example(\"Once upon a time, in a far away land...\") ``` This example demonstrates how to use a pre-trained GPT-2 model for generating text based on human feedback, which is a simplified representation of RLHF."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cap_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n大语言模型（Large Language Model, LLM）是一种基于深度学习技术、在海量文本数据上预训练而成的自然语言处理模型。它通过自监督学习掌握语言的统计规律和语义知识，能够生成连贯、符合上下文的文本，并具备强大的泛化能力。\n\n## 核心要点\n- **规模巨大**：LLM通常拥有数十亿甚至数千亿个参数，模型容量远超传统语言模型，从而能捕捉更复杂的语言模式。\n- **预训练与微调**：先在大规模无标注语料上进行预训练，学习通用语言表示；再通过少量标注数据微调，适配特定任务。\n- **上下文学习**：LLM能利用输入中的上下文信息（如示例或指令）进行推理和生成，无需额外训练即可完成新任务。\n- **涌现能力**：当模型规模突破一定阈值后，会展现出推理、翻译、编程等未显式训练的能力，称为涌现能力。\n\n## 应用场景\nLLM广泛应用于智能对话系统（如聊天机器人）、内容生成（如文章撰写、代码生成）、机器翻译、文本摘要、问答系统以及教育辅导等领域。此外，它还能辅助科研文献分析、法律文书起草和医疗咨询等专业场景。\n\n## 相关概念\n- **Transformer**：LLM的核心架构，基于自注意力机制，支持并行计算和长距离依赖建模。\n- **GPT与BERT**：GPT是自回归式LLM的代表，擅长文本生成；BERT是自编码式模型，擅长理解任务。\n- **参数与训练数据**：模型参数数量和训练数据规模直接影响LLM的性能，通常遵循“规模越大，效果越好”的规律。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

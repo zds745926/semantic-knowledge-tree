@@ -17,5 +17,13 @@
     "description": "IP 协议: The IP protocol provides a connectionless datagram transmission service. IPv4 (32-bit) / IPv6 (128-bit). To provide a brief example of how these protocols might be referenced in Python code, consider the following: For handling IPv4 addresses: ```python import ipaddress ipv4_address = ipaddress.IPv4Address('192.0.2.1') print(f\"IPv4 Address: {ipv4_address}\") ``` For handling IPv6 addresses: ```python import ipaddress ipv6_address = ipaddress.IPv6Address('2001:db8::1') print(f\"IPv6 Address: {ipv6_address}\") ``` These examples demonstrate how to work with IP addresses using the `ipaddress` module in Python, which is useful for understanding and manipulating IPv4 and IPv6 addresses programmatically."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "IP协议是TCP/IP协议栈中网络层的核心协议，负责将数据包从源主机路由到目标主机。本分支涵盖IPv4、IPv6和NAT三个子主题。IPv4是目前广泛使用的32位地址版本，面临地址枯竭问题；IPv6是128位地址的新一代协议，旨在解决地址不足并优化路由和安全性；NAT（网络地址转换）是一种过渡技术，通过将私有IP映射为公共IP来缓解IPv4地址短缺，同时提供一定的安全隔离。学习路径建议先掌握IPv4的地址结构、分类和子网划分，再理解IPv6的改进和地址表示，最后学习NAT的工作原理及其在IPv4向IPv6过渡中的作用。三者共同构成了现代互联网地址分配和路由的基础。",
+  "example_queries": [
+    "IPv4地址如何分类？什么是子网掩码？",
+    "IPv6相比IPv4有哪些主要改进？",
+    "NAT的工作原理是什么？它如何缓解IPv4地址短缺？",
+    "如何配置IPv6地址？",
+    "NAT有哪些类型（如静态NAT、动态NAT、PAT）？"
+  ]
 }

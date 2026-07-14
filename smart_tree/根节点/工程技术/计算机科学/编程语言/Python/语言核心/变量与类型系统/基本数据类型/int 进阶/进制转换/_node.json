@@ -19,5 +19,34 @@
       "content_preview": "进制转换: `bin(x)` binary, `oct(x)` octal, `hex(x)` hexadecimal. `int('1010', 2)` string to integer. Python code example for conversion: ```python # Example of converting between different numeral systems # Binary to integer binary_str = '1010' integer_from_binary = int(binary_str, 2) print(f\"Binary {binary_str} as integer: {integer_from_binary}\") # Octal to integer octal_str = '12' integer_from_octal = int(octal_str, 8) print(f\"Octal {octal_str} as integer: {integer_from_octal}\") # Hexadecimal to integer hex_str = 'A' integer_from_hex = int(hex_str, 16) print(f\"Hexadecimal {hex_str} as integer: {integer_from_hex}\") ``` This code snippet demonstrates how to convert strings representing numbers in binary, octal, and hexadecimal formats into integers using Python's `int()` function."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_int_bitops_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n进制转换是指将一个数值从一种进位制表示转换为另一种进位制表示的过程，常见于二进制、八进制、十进制和十六进制之间的相互转换。\n\n## 何时使用\n当需要处理不同进制表示的数据时，例如读取二进制文件、配置网络地址或进行底层编程时，常需将十进制转换为二进制、八进制或十六进制。此外，在调试或显示数据时，也可能需要将其他进制转换为十进制以便于人类理解。\n\n## 示例\n```Python\n# 十进制转二进制、八进制、十六进制\ndecimal_num = 255\nbinary_str = bin(decimal_num)  # '0b11111111'\noctal_str = oct(decimal_num)   # '0o377'\nhex_str = hex(decimal_num)     # '0xff'\n\n# 其他进制转十进制\nbinary_str = '0b1010'\ndecimal_from_bin = int(binary_str, 2)  # 10\noctal_str = '0o12'\ndecimal_from_oct = int(octal_str, 8)  # 10\nhex_str = '0xA'\ndecimal_from_hex = int(hex_str, 16)   # 10\n\n# 自定义进制转换（2-36进制）\n# 使用int函数，base参数指定原进制\ncustom_str = '1z'  # 假设是36进制\ndecimal_custom = int(custom_str, 36)  # 71\n```\n\n## 反例\n错误地使用int函数时未指定进制，导致默认按十进制解析。例如：`int('0b1010')` 会抛出ValueError，因为字符串包含非数字字符。正确做法是显式指定base参数：`int('0b1010', 2)`。\n\n## 边界条件\n- 进制基数必须在2到36之间，否则int函数会抛出ValueError。\n- 字符串中的字母大小写均可，但前缀（如0b、0o、0x）在指定base参数时是可选的，但若包含前缀，base参数必须与进制匹配，否则可能出错。",
+    "code_pattern": "def convert_base(value, from_base, to_base):\n    \"\"\"将value从from_base进制转换为to_base进制，返回字符串\"\"\"\n    # 先转换为十进制整数\n    decimal = int(value, from_base) if isinstance(value, str) else value\n    # 再转换为目标进制\n    if to_base == 10:\n        return str(decimal)\n    elif to_base == 2:\n        return bin(decimal)[2:]\n    elif to_base == 8:\n        return oct(decimal)[2:]\n    elif to_base == 16:\n        return hex(decimal)[2:]\n    else:\n        # 通用转换（2-36进制）\n        digits = '0123456789abcdefghijklmnopqrstuvwxyz'\n        result = ''\n        if decimal == 0:\n            return '0'\n        while decimal > 0:\n            result = digits[decimal % to_base] + result\n            decimal //= to_base\n        return result",
+    "common_pitfalls": [
+      "使用int函数转换时忘记指定base参数，导致字符串中的字母或前缀引发ValueError。例如int('ff', 16)正确，但int('ff')会报错。",
+      "混淆bin、oct、hex返回的字符串包含前缀（0b、0o、0x），在拼接或比较时未去除前缀导致逻辑错误。",
+      "进行自定义进制转换时，未处理数值为0的情况，导致循环不执行返回空字符串。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

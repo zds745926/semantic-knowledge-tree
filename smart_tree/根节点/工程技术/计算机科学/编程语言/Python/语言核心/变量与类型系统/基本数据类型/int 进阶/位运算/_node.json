@@ -19,5 +19,35 @@
       "content_preview": "位运算: Bitwise AND (&), Bitwise OR (|), Bitwise XOR (^), Left Shift (<<), Right Shift (>>). These operations are faster than arithmetic operations and are commonly used for permission marking and low-level optimization. Here are some brief Python code examples to illustrate these bitwise operations: ```python # Example of Bitwise AND (&) a = 5 # binary: 0101 b = 3 # binary: 0011 print(a & b) # Output: 1 (binary: 0001) # Example of Bitwise OR (|) a = 5 # binary: 0101 b = 3 # binary: 0011 print(a | b) # Output: 7 (binary: 0111) # Example of Bitwise XOR (^) a = 5 # binary: 0101 b = 3 # binary: 0011 print(a ^ b) # Output: 6 (binary: 0110) # Example of Left Shift (<<) a = 2 # binary: 0010 print(a << 2) # Output: 8 (binary: 1000) # Example of Right Shift (>>) a = 8 # binary: 1000 print(a >> 2) # Output: 2 (binary: 0010) ``` These examples demonstrate how bitwise operations can be used in Python to manipulate bits directly, which is often more efficient for certain tasks."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "boolean_algebra_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "application"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n位运算是对整数的二进制位进行直接操作的一类运算，包括按位与(&)、按位或(|)、按位异或(^)、按位取反(~)、左移(<<)和右移(>>)六种基本操作。\n\n## 何时使用\n位运算适用于需要高效处理二进制标志位、权限控制、数据压缩、加密算法等场景。当需要快速判断奇偶性、计算2的幂、交换变量值或进行状态压缩时，位运算能提供极高的性能。\n\n## 示例\n```Python\n# 判断奇偶性\ndef is_odd(n: int) -> bool:\n    return n & 1 == 1\n\n# 交换两个变量\na, b = 5, 3\na ^= b\nb ^= a\na ^= b\nprint(a, b)  # 输出 3 5\n\n# 计算2的幂\npower = 1 << 10  # 2^10 = 1024\nprint(power)\n\n# 设置和清除标志位\nflags = 0b0000\nflags |= 0b0010  # 设置第1位\nflags &= ~0b0010  # 清除第1位\nprint(bin(flags))\n```\n\n## 反例\n错误地将位运算符用于浮点数或非整数类型，会导致TypeError；在Python中，负数右移时高位补1，可能产生意料之外的结果。\n\n## 边界条件\nPython中整数是无限精度的，位运算对负数采用补码表示，但Python的~x等于-x-1；左移操作可能导致非常大的整数，注意内存使用；右移负数时，结果向下取整。",
+    "code_pattern": "def bit_operations_example(x: int, y: int) -> dict:\n    \"\"\"演示常见的位运算操作\"\"\"\n    return {\n        'and': x & y,\n        'or': x | y,\n        'xor': x ^ y,\n        'not_x': ~x,\n        'left_shift': x << 2,\n        'right_shift': x >> 2,\n        'is_odd': bool(x & 1),\n        'power_of_two': 1 << x,\n        'clear_lowest_bit': x & (x - 1),\n        'isolate_lowest_bit': x & -x\n    }",
+    "common_pitfalls": [
+      "混淆逻辑运算符与位运算符：误将&当作and使用，导致条件判断错误，例如 if a & b 在a和b都是非零整数时可能为假，而 if a and b 才是逻辑与。",
+      "忽视负数位运算的符号扩展：在Python中，负数右移(>>)会保留符号位，即高位补1，这与无符号整数的行为不同，可能导致无限循环或意外的大数。",
+      "位运算优先级低于比较运算符：例如 if x & 1 == 1 实际被解析为 if x & (1 == 1)，应写成 if (x & 1) == 1。",
+      "对浮点数使用位运算：Python中位运算只支持整数，对浮点数直接使用会抛出TypeError，需要先转换为整数。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

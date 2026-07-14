@@ -16,5 +16,13 @@
     "description": "二叉树: A binary tree has at most two children for each node. A binary search tree (BST) follows the property that for any given node, all values in its left subtree are smaller and all values in its right subtree are larger. In-order traversal of a BST yields an ordered sequence. Here is a brief Python code example to demonstrate in-order traversal of a BST: ```python class TreeNode: def __init__(self, value=0, left=None, right=None): self.value = value self.left = left self.right = right def in_order_traversal(root): if root is None: return [] result = [] stack = [] current = root while True: if current is not None: stack.append(current) current = current.left elif stack: current = stack.pop() result.append(current.value) current = current.right else: break return result # Example usage: # Constructing a simple BST root = TreeNode(10) root.left = TreeNode(5) root.right = TreeNode(15) root.left.left = TreeNode(3) root.left.right = TreeNode(7) print(in_order_traversal(root)) # Output: [3, 5, 7, 10, 15] ``` This code defines a `TreeNode` class for the nodes of the BST and an `in_order_traversal` function to perform in-order traversal. The example constructs a simple BST and prints its elements in sorted order using in-order traversal."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "二叉树是计算机科学中一种基础且核心的数据结构，每个节点最多有两个子节点（左子节点和右子节点）。本分支涵盖二叉树的基本概念、遍历方式（前序、中序、后序、层序）、存储结构（链式与数组）以及常见操作（插入、删除、查找）。其子主题包括二叉搜索树（BST）和平衡树。二叉搜索树是二叉树的一种特殊形式，它满足左子树所有节点值小于根节点，右子树所有节点值大于根节点，因此支持高效的查找、插入和删除操作。平衡树（如AVL树、红黑树）则是在二叉搜索树的基础上，通过旋转等机制保持树的高度平衡，从而避免最坏情况下的性能退化，确保操作时间复杂度稳定在O(log n)。学习路径建议：先掌握二叉树的基本概念和遍历算法，再深入学习二叉搜索树的特性与实现，最后进阶到平衡树的原理与自平衡机制。本分支是算法与数据结构领域的重要基石，广泛应用于数据库索引、编译器设计、网络路由等场景。",
+  "example_queries": [
+    "如何实现二叉树的先序遍历（递归与非递归）？",
+    "二叉搜索树中插入一个节点的时间复杂度是多少？",
+    "AVL树和红黑树的主要区别是什么？",
+    "如何判断一棵二叉树是否为二叉搜索树？",
+    "平衡树如何通过旋转操作维持平衡？"
+  ]
 }

@@ -19,5 +19,22 @@
       "content_preview": "感知机: y = σ(w · x + b). A multilayer perceptron (MLP) can fit any function. Python code example for a simple MLP concept: ```python import numpy as np # Sigmoid activation function def sigmoid(z): return 1 / (1 + np.exp(-z)) # Weights and bias initialization w = np.random.rand() # Random weight b = np.random.rand() # Random bias # Input value x = 2.5 # Example input # Compute the output using the MLP formula y = sigmoid(w * x + b) print(f\"Output: {y}\") ``` This code snippet demonstrates a simple implementation of an MLP with one neuron, where `w` and `b` are randomly initialized weights and bias, respectively. The `sigmoid` function is used as the activation function to compute the output `y`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "conv_layer_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n感知机（Perceptron）是神经网络的基础单元，由Frank Rosenblatt于1957年提出。它是一种二分类的线性分类模型，通过将输入特征与权重相乘并加上偏置，经过激活函数（如阶跃函数）输出预测结果。感知机旨在通过训练数据自动学习权重和偏置，从而将线性可分的样本正确分类。\n\n## 核心要点\n- 感知机模型由输入层、权重、偏置和激活函数组成，输出为二值结果（如0或1）。\n- 学习算法基于随机梯度下降，每次迭代根据误分类样本更新权重和偏置，直到所有样本正确分类。\n- 感知机只能处理线性可分问题，对于非线性问题（如异或问题）无法收敛。\n- 激活函数通常使用阶跃函数，输出非0即1，缺乏平滑性，限制了其表达能力。\n- 感知机是支持向量机（SVM）和多层神经网络的前身，奠定了深度学习的基础。\n\n## 应用场景\n感知机常用于简单的二分类任务，如文本分类中的垃圾邮件识别、图像中的二值模式识别（如手写数字0和1的区分）。在工业界，它可作为快速原型模型用于线性可分数据的初步分类，或作为教学工具展示神经网络的基本原理。\n\n## 相关概念\n感知机与逻辑回归类似，但逻辑回归使用Sigmoid函数输出概率，而感知机使用阶跃函数输出硬分类。多层感知机（MLP）通过堆叠多个感知机层并引入非线性激活函数（如ReLU），解决了感知机无法处理非线性问题的局限。支持向量机（SVM）通过最大化间隔和核技巧，在感知机基础上提升了泛化能力。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,26 @@
       "content_preview": "插入排序: O(n²) but O(n) for nearly sorted small-scale data. Components of Timsort. To provide a more detailed explanation, Timsort is a hybrid sorting algorithm derived from merge sort and insertion sort. It was designed to perform well on many kinds of real-world data. Here's a brief overview of its components: 1. **Run Detection**: Timsort identifies sequences in the array that are already sorted (referred to as \"runs\"). This helps it achieve O(n) performance when the input is nearly sorted. 2. **Merging Runs**: Once runs are identified, they are merged using a merge operation similar to that used in merge sort. Here's a simplified Python code example to illustrate how Timsort might be implemented (note that this is not an exact implementation but rather a conceptual one): ```python def timsort(arr): # Detect runs and insertionsort small ones for i in range(len(arr) - 1): if arr[i] > arr[i + 1]: # Insertion sort to handle nearly sorted small segments insertion_sort(arr, i) # Merge the runs run = 0 while run < len(arr): start = run end = min(run + 32, len(arr)) for j in range(start + 1, end): if arr[j - 1] > arr[j]: merge(arr, start, j) break else: run += 32 def insertion_sort(arr, n): # Simple insertion sort to handle small segments for i in range(1, n + 1): key = arr[i] j = i - 1 while j >= 0 and arr[j] > key: arr[j + 1] = arr[j] j -= 1 arr[j + 1] = key def merge(arr, start, end): # Simple merge operation to combine two sorted segments temp = [] i = start j = end while i < end and j < len(arr): if arr[i] <= arr[j]: temp.append(arr[i]) i += 1 else: temp.append(arr[j]) j += 1 while i < end: temp.append(arr[i]) i += 1 while j < len(arr): temp.append(arr[j]) j += 1 arr[start:end] = temp # Example usage arr = [5, 9, 1, 3, 4, 6, 6, 3, 2] timsort(arr) print(arr) # Output should be a sorted array ``` This example provides a conceptual understanding of how Timsort might work by combining insertion sort for small segments and merging those segments."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "quick_sort_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "merge_sort_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n插入排序是一种简单直观的比较排序算法，其核心思想是将待排序序列分为已排序和未排序两部分，每次从未排序部分取出一个元素，将其插入到已排序部分的正确位置，直到所有元素有序。\n\n## 核心要点\n1. 插入排序通过构建有序序列，对未排序数据在已排序序列中从后向前扫描，找到相应位置并插入。\n2. 该算法在最好情况下（输入序列已有序）时间复杂度为O(n)，最坏和平均情况为O(n²)，空间复杂度为O(1)。\n3. 插入排序是稳定排序算法，即相等元素的相对顺序在排序后保持不变。\n4. 对于小规模数据或基本有序的数据，插入排序效率较高，常作为其他高级排序算法的辅助手段。\n5. 实现简单，适合教学和理解排序的基本原理。\n\n## 应用场景\n插入排序常用于数据量较小（如n<50）或数据基本有序的场景，例如在线排序（数据逐步到达）、作为快速排序等高级算法在递归到小规模子数组时的优化。此外，在嵌入式系统或内存受限环境中，因其原地排序和低空间开销而被采用。\n\n## 相关概念\n插入排序与选择排序、冒泡排序同属简单排序算法，但插入排序在部分有序数据上性能更优。希尔排序是插入排序的改进版，通过分组插入减少移动次数。此外，二分插入排序利用二分查找优化插入位置，但仍需移动元素，时间复杂度不变。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

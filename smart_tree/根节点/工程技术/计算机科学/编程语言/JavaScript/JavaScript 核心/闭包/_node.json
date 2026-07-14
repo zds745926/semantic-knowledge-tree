@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "js_async_await_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n闭包是指一个函数能够访问并记住其词法作用域中的变量，即使该函数在其词法作用域之外执行。\n\n## 何时使用\n闭包常用于创建私有变量、实现数据隐藏和封装，以及实现函数工厂（如生成特定配置的函数）。它也广泛用于回调函数和事件处理中，以保持对特定状态的引用。\n\n## 示例\n```JavaScript\nfunction createCounter() {\n  let count = 0;\n  return function() {\n    count++;\n    return count;\n  };\n}\n\nconst counter = createCounter();\nconsole.log(counter()); // 1\nconsole.log(counter()); // 2\n```\n\n## 反例\n在循环中创建闭包时，如果直接引用循环变量，会导致所有闭包共享同一个最终值，而不是每次迭代的独立值。例如，使用 var 声明循环变量时，所有 setTimeout 回调都会打印相同的值。\n\n## 边界条件\n闭包会保持对外部变量的引用，导致这些变量无法被垃圾回收，可能造成内存泄漏。因此，在不需要闭包时，应手动解除引用（如将闭包设为 null）。",
+    "code_pattern": "function outerFunction(outerParam) {\n  let outerVar = outerParam;\n  return function innerFunction(innerParam) {\n    // 可以访问 outerVar 和 innerParam\n    return outerVar + innerParam;\n  };\n}\nconst closure = outerFunction(10);\nconsole.log(closure(5)); // 15",
+    "common_pitfalls": [
+      "在循环中使用 var 声明变量创建闭包时，所有闭包共享同一个变量，导致最终值相同。应使用 let 或立即执行函数表达式（IIFE）来捕获每次迭代的值。",
+      "闭包意外地保持对大对象的引用，导致内存无法释放。例如，在事件监听器中引用大型 DOM 元素，即使元素被移除，闭包仍持有引用，造成内存泄漏。",
+      "在闭包中修改外部函数的变量时，如果多个闭包共享同一变量，可能导致意外的状态共享和竞争条件。应谨慎设计闭包的作用域和生命周期。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

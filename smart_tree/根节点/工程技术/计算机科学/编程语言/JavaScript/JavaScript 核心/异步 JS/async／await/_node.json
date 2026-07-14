@@ -19,5 +19,34 @@
       "content_preview": "async/await: The `async function` returns a Promise. The `await` keyword pauses execution until the Promise resolves. Here is an example to illustrate this in Python-like pseudocode: ```python # Define an asynchronous function using async/await async def fetch_data(url): response = await get_request(url) # Await the promise returned by get_request return response.json() # Process the resolved value # Example usage of the async function result = fetch_data(\"https://api.example.com/data\") print(result) # This will print the JSON data once the Promise is resolved ``` In this example, `fetch_data` is an asynchronous function that uses `await` to wait for a promise (in this case, returned by `get_request`) to resolve before proceeding. The result of the promise resolution is then processed and can be used in further operations."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "js_promise_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nasync/await 是 JavaScript 中基于 Promise 的语法糖，用于以同步方式编写异步代码，使异步操作更易读和维护。\n\n## 何时使用\n当需要处理多个依赖异步操作（如 API 请求、文件读写）时，使用 async/await 可以避免回调地狱和 Promise 链的嵌套。特别适合需要顺序执行异步任务或需要捕获错误的情况，例如用户登录后获取个人信息再更新 UI。\n\n## 示例\n```JavaScript\nasync function fetchUserData(userId) {\n  try {\n    const response = await fetch(`https://api.example.com/users/${userId}`);\n    if (!response.ok) throw new Error('Network response was not ok');\n    const data = await response.json();\n    console.log('User data:', data);\n    return data;\n  } catch (error) {\n    console.error('Fetch failed:', error);\n    throw error;\n  }\n}\n\nfetchUserData(123).then(user => console.log('Done'));\n```\n\n## 反例\n错误地将 await 用于非 Promise 值，或忘记在 async 函数内部使用 await 导致 Promise 未解析。例如：`const data = fetch(url);` 会得到 Promise 对象而非实际数据。\n\n## 边界条件\n1. await 只能在 async 函数内部使用，否则会抛出语法错误。\n2. 多个无依赖的异步操作应使用 Promise.all 并行执行，而非顺序 await，以避免不必要的等待。",
+    "code_pattern": "async function example() {\n  try {\n    const result1 = await asyncOperation1();\n    const result2 = await asyncOperation2(result1);\n    return result2;\n  } catch (error) {\n    console.error('Error:', error);\n    throw error;\n  }\n}",
+    "common_pitfalls": [
+      "忘记在调用 async 函数时使用 await 或 .then()，导致函数返回 Promise 而非实际值，后续代码可能无法正确使用结果。",
+      "在循环中使用 await 导致顺序执行，而实际上多个异步操作可以并行，应使用 Promise.all 提升性能。",
+      "未正确处理错误，例如在 async 函数中遗漏 try/catch，导致未捕获的 Promise 拒绝，可能引发程序崩溃或难以调试。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

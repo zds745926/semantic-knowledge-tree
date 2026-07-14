@@ -19,5 +19,22 @@
       "content_preview": "BST 搜索: Starting from the root, go left if the node is smaller than the root and go right if it is larger. The average time complexity is O(log n), while the worst-case scenario is O(n). Python code example for a binary search tree (BST) insertion, which follows this principle: ```python class TreeNode: def __init__(self, key): self.left = None self.right = None self.val = key def insert(root, key): if root is None: return TreeNode(key) else: if root.val < key: root.right = insert(root.right, key) else: root.left = insert(root.left, key) return root ``` This code defines a simple binary search tree and demonstrates the principle of going left or right based on the comparison with the root node."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "binary_search_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n二叉搜索树（BST）搜索是一种在二叉搜索树中查找特定值的高效算法。其核心思想是利用BST的性质：对于任意节点，其左子树所有节点的值均小于该节点，右子树所有节点的值均大于该节点，从而通过比较目标值与当前节点值，递归地在左或右子树中继续搜索，直到找到目标或到达空节点。\n\n## 核心要点\n- 搜索过程从根节点开始，每次比较目标值与当前节点值，决定下一步方向。\n- 平均时间复杂度为O(log n)，其中n为节点数；最坏情况下（树退化为链表）为O(n)。\n- 空间复杂度取决于实现方式：递归实现为O(h)（h为树高），迭代实现为O(1)。\n- 搜索过程中无需遍历所有节点，每次比较排除一半子树，效率较高。\n- 搜索操作不修改树结构，仅读取节点值。\n\n## 应用场景\nBST搜索广泛应用于需要高效查找的动态数据集合，如数据库索引、内存中的符号表、字典实现等。它特别适合频繁插入、删除和查找操作的场景，例如操作系统中的进程管理、编译器的符号表解析。此外，BST搜索也是许多高级数据结构（如平衡树、红黑树）的基础操作。\n\n## 相关概念\nBST搜索与二叉搜索树的插入、删除操作紧密相关，三者共同构成BST的基本操作集。平衡二叉树（如AVL树、红黑树）通过旋转保持树平衡，确保搜索时间复杂度稳定在O(log n)。此外，BST搜索与二分查找算法思想类似，但二分查找适用于有序数组，而BST搜索适用于动态变化的树结构。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

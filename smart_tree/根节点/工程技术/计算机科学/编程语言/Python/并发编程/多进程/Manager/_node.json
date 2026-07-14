@@ -19,5 +19,34 @@
       "content_preview": "Manager: `multiprocessing.Manager` shared object proxies. `list`, `dict`, `Queue`, `Namespace`. Explanation of terms and a brief Python code example: - **`multiprocessing.Manager`**: This is a class in the `multiprocessing` module that allows you to create objects in a shared memory space, which can be accessed by multiple processes. - **Shared Object Proxies**: These are proxy objects created by `Manager` that allow multiple processes to access and modify the same data. Here's a brief Python code example: ```python from multiprocessing import Process, Manager def worker(data): # Modify the shared list data.append('new item') if __name__ == '__main__': with Manager() as manager: # Create a shared list shared_list = manager.list(['item1', 'item2']) # Start processes that modify the shared list processes = [Process(target=worker, args=(shared_list,)) for _ in range(5)] for p in processes: p.start() for p in processes: p.join() print('Final state of shared_list:', shared_list) ``` In this example, multiple processes can modify the same `list` object created by `Manager`, demonstrating how shared objects work in multiprocessing."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nManager 是 Python multiprocessing 模块提供的一种机制，用于在多个进程之间安全地共享数据，它通过代理对象管理共享状态，自动处理锁和同步，支持列表、字典、命名空间等复杂数据结构。\n\n## 何时使用\n当需要在多个进程之间共享可变数据结构（如列表、字典）时，Manager 是比 Queue 或 Pipe 更灵活的选择。它适用于需要频繁读写共享状态且数据量适中的场景，例如分布式任务中的配置共享或结果聚合。\n\n## 示例\n```Python\nfrom multiprocessing import Process, Manager\n\ndef worker(d, key, value):\n    d[key] = value\n\nif __name__ == '__main__':\n    with Manager() as manager:\n        shared_dict = manager.dict()\n        processes = []\n        for i in range(5):\n            p = Process(target=worker, args=(shared_dict, i, i*2))\n            processes.append(p)\n            p.start()\n        for p in processes:\n            p.join()\n        print(shared_dict)  # 输出类似 {0: 0, 1: 2, 2: 4, 3: 6, 4: 8}\n```\n\n## 反例\n错误用法：直接传递普通字典给子进程，因为普通字典不是进程安全的，会导致数据竞争或丢失。例如 `shared_dict = {}` 然后传给多个进程修改，结果不可预测。\n\n## 边界条件\nManager 启动时会创建一个单独的服务器进程，因此性能开销较大，不适合高频小数据操作。另外，Manager 代理对象不能直接序列化，不能通过 Queue 或 Pipe 传递，必须通过参数传递。",
+    "code_pattern": "from multiprocessing import Process, Manager\n\ndef worker(shared_obj, arg):\n    shared_obj[arg] = arg * 2\n\nif __name__ == '__main__':\n    with Manager() as manager:\n        shared_list = manager.list()\n        shared_dict = manager.dict()\n        processes = []\n        for i in range(4):\n            p = Process(target=worker, args=(shared_dict, i))\n            processes.append(p)\n            p.start()\n        for p in processes:\n            p.join()\n        print(shared_dict)",
+    "common_pitfalls": [
+      "Manager 启动的服务器进程是单线程的，大量并发写操作可能导致性能瓶颈，应避免在高频场景下使用。",
+      "Manager 代理对象（如 DictProxy）不是真正的 dict，不支持所有 dict 方法（如 update 可能不原子），需要谨慎使用。",
+      "Manager 对象不能跨进程通过 Queue 传递，因为代理对象依赖于原始 Manager 进程，传递后无法正常工作。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

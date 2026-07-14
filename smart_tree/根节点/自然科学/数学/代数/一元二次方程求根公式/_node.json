@@ -19,5 +19,22 @@
       "content_preview": "一元二次方程求根公式: The root formula for a quadratic equation \\(ax^2 + bx + c = 0\\) (where \\(a \\neq 0\\)) is given by \\(x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}\\). The discriminant, denoted as \\(\\Delta\\), is \\(b^2 - 4ac\\). Here's a brief Python code example to solve the quadratic equation: ```python import math def solve_quadratic(a, b, c): # Calculate the discriminant delta = b**2 - 4*a*c # Check if the discriminant is non-negative if delta >= 0: # Two real roots root1 = (-b + math.sqrt(delta)) / (2 * a) root2 = (-b - math.sqrt(delta)) / (2 * a) return root1, root2 else: # Complex roots real_part = -b / (2 * a) imaginary_part = math.sqrt(-delta) / (2 * a) return complex(real_part, imaginary_part), complex(real_part, -imaginary_part) # Example usage a, b, c = 1, -3, 2 roots = solve_quadratic(a, b, c) print(\"The roots are:\", roots) ``` This code defines a function `solve_quadratic` that calculates the roots of a quadratic equation based on the provided coefficients \\(a\\), \\(b\\), and \\(c\\). It handles both real and complex roots."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "vieta_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n一元二次方程求根公式是用于求解形式为 ax² + bx + c = 0（其中 a ≠ 0）的一元二次方程的根的公式。该公式为 x = [-b ± √(b² - 4ac)] / (2a)，它直接给出了方程的两个根（可能为实数或复数）。\n\n## 核心要点\n1. 判别式 Δ = b² - 4ac 决定根的性质：Δ > 0 时有两个不等实根，Δ = 0 时有两个相等实根，Δ < 0 时有两个共轭复根。\n2. 公式中的 ± 符号表示两个根：x₁ = [-b + √Δ] / (2a) 和 x₂ = [-b - √Δ] / (2a)。\n3. 使用公式前必须确保方程已化为标准形式，且二次项系数 a ≠ 0。\n4. 该公式由配方法推导得出，是代数中基本且重要的工具。\n\n## 应用场景\n求根公式广泛应用于物理、工程、经济学等领域，用于解决涉及抛物线运动、电路分析、利润最大化等实际问题中的二次方程。例如，在计算物体抛射轨迹时，常需要求解时间或距离的二次方程。\n\n## 相关概念\n相关概念包括二次函数、判别式、配方法、韦达定理（根与系数的关系）。二次函数的图像是一条抛物线，其顶点和与x轴的交点可通过求根公式确定；韦达定理则提供了根的和与积与系数的关系。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

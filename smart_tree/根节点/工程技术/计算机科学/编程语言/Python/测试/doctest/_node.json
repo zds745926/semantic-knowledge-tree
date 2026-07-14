@@ -19,5 +19,34 @@
       "content_preview": "doctest: Test cases in docstrings. `python -m doctest module.py`. Documentation as tests. Here is an example to illustrate this concept with a simple Python function: ```python def add(a, b): \"\"\" Add two numbers and return the result. >>> add(2, 3) 5 >>> add(-1, 1) 0 \"\"\" return a + b ``` To run these tests, you would use: ```sh python -m doctest module.py ```"
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "py_tempfile_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\ndoctest 是 Python 标准库中的一个模块，允许开发者将测试用例嵌入到文档字符串中，通过运行文档字符串中的示例代码来验证代码的正确性。\n\n## 何时使用\ndoctest 适用于编写轻量级、自文档化的测试，特别是当代码的用法简单且直观时。它常用于库或模块的快速验证，以及教学示例中确保示例代码的正确性。对于复杂逻辑或需要大量测试的场景，建议使用 unittest 或 pytest 等更强大的测试框架。\n\n## 示例\n```Python\ndef add(a, b):\n    \"\"\"\n    返回两个数的和。\n\n    >>> add(2, 3)\n    5\n    >>> add(-1, 1)\n    0\n    >>> add(0.1, 0.2)\n    0.3\n    \"\"\"\n    return a + b\n\nif __name__ == \"__main__\":\n    import doctest\n    doctest.testmod()\n```\n\n## 反例\n错误用法：在文档字符串中编写不匹配实际输出的示例，例如期望 `add(2, 3)` 返回 `6`，但实际返回 `5`，这会导致测试失败。此外，不要在文档字符串中编写依赖外部状态或副作用的示例，如修改全局变量，因为 doctest 每次运行会重置环境。\n\n## 边界条件\n注意事项：doctest 对浮点数比较敏感，直接比较浮点数可能因精度问题失败，建议使用 `round()` 或 `math.isclose()` 处理。另外，doctest 默认忽略空白差异，但严格匹配输出字符串，包括换行和缩进。",
+    "code_pattern": "def function_name(param1, param2):\n    \"\"\"\n    Brief description of the function.\n\n    >>> function_name(arg1, arg2)\n    expected_output\n    >>> function_name(arg3, arg4)\n    expected_output2\n    \"\"\"\n    # implementation\n    return result\n\nif __name__ == \"__main__\":\n    import doctest\n    doctest.testmod()",
+    "common_pitfalls": [
+      "浮点数比较：doctest 直接比较浮点数输出，由于浮点精度问题，如 0.1+0.2 可能不等于 0.3，导致测试失败。应使用 round() 或格式化输出。",
+      "依赖顺序或随机性：如果函数输出依赖随机数或集合顺序，doctest 可能因每次运行结果不同而失败。应固定随机种子或对输出排序。",
+      "忽略异常输出：doctest 中异常输出需要精确匹配，包括异常类型和消息。如果异常消息跨平台或版本不同，可能导致测试失败。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

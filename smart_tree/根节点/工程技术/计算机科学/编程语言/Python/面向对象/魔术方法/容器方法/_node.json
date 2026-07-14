@@ -19,5 +19,34 @@
       "content_preview": "容器方法: Here is the translation of the provided Chinese technical text into English, along with brief explanations and corresponding Python code examples for each method: 1. **`__len__`**: - This special method returns the length (number of items) of an object. ```python class MyList: def __init__(self): self.items = [] def __len__(self): return len(self.items) my_list = MyList() print(len(my_list)) # Output: 0 ``` 2. **`__getitem__`**: - This method is used to access an item in the object using square bracket notation (e.g., `obj[key]`). ```python class MyDict: def __init__(self): self.data = {} def __getitem__(self, key): return self.data.get(key) my_dict = MyDict() my_dict['key'] = 'value' print(my_dict['key']) # Output: value ``` 3. **`__setitem__`**: - This method is used to set an item in the object using square bracket notation (e.g., `obj[key] = value`). ```python class MyDict: def __init__(self): self.data = {} def __setitem__(self, key, value): self.data[key] = value my_dict = MyDict() my_dict['key'] = 'value' print(my_dict.data) # Output: {'key': 'value'} ``` 4. **`__iter__`**: - This method is used to return an iterator for the object, allowing it to be iterated over. ```python class MyIterable: def __init__(self): self.items = [1, 2, 3] def __iter__(self): return iter(self.items) my_iterable = MyIterable() for item in my_iterable: print(item) # Output: 1 2 3 ``` 5. **`__contains__`**: - This method is used to check if an object contains a certain value, and it's called when using the `in` keyword. ```python class MySet: def __init__(self): self.data = set() def add(self, item): self.data.add(item) def __contains__(self, item): return item in self.data my_set = MySet() my_set.add('apple') print('apple' in my_set) # Output: True ``` These examples should give you a clear understanding of how these special methods work and their typical usage in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n容器方法（Container Methods）是 Python 中用于定义类实例如何模拟容器行为（如列表、字典、集合）的一组特殊方法，包括 `__len__`、`__getitem__`、`__setitem__`、`__delitem__`、`__contains__`、`__iter__`、`__reversed__` 等，使自定义对象支持索引、切片、成员检测、迭代等操作。\n\n## 何时使用\n当需要创建自定义数据结构（如链表、树、缓存、数据库封装）或让类对象表现得像内置容器时，应实现容器方法。例如，实现一个只读的序列类，或一个支持键值访问的配置对象。这些方法让自定义类无缝融入 Python 的迭代、成员检测和索引语法中。\n\n## 示例\n```Python\nclass RangeList:\n    def __init__(self, start, end):\n        self._data = list(range(start, end))\n\n    def __len__(self):\n        return len(self._data)\n\n    def __getitem__(self, index):\n        return self._data[index]\n\n    def __setitem__(self, index, value):\n        self._data[index] = value\n\n    def __contains__(self, item):\n        return item in self._data\n\n    def __iter__(self):\n        return iter(self._data)\n\n# 使用\nrl = RangeList(1, 6)\nprint(len(rl))          # 5\nprint(rl[2])            # 3\nrl[2] = 10\nprint(10 in rl)         # True\nfor x in rl:\n    print(x, end=' ')   # 1 2 10 4 5\n```\n\n## 反例\n错误地假设 `__getitem__` 会自动处理切片，而未实现 `__setitem__` 却尝试赋值，或忘记实现 `__iter__` 导致 `for` 循环退化为索引迭代，性能低下且可能出错。\n\n## 边界条件\n实现 `__getitem__` 时应处理负索引和切片（返回新序列或视图）；`__setitem__` 需支持切片赋值；`__delitem__` 需处理索引越界。若类不可变，则不应实现 `__setitem__` 和 `__delitem__`。",
+    "code_pattern": "class Container:\n    def __init__(self, items=None):\n        self._items = list(items) if items else []\n\n    def __len__(self):\n        return len(self._items)\n\n    def __getitem__(self, index):\n        if isinstance(index, slice):\n            return self.__class__(self._items[index])\n        return self._items[index]\n\n    def __setitem__(self, index, value):\n        self._items[index] = value\n\n    def __delitem__(self, index):\n        del self._items[index]\n\n    def __contains__(self, item):\n        return item in self._items\n\n    def __iter__(self):\n        return iter(self._items)\n\n    def __repr__(self):\n        return f'{self.__class__.__name__}({self._items})'",
+    "common_pitfalls": [
+      "未处理切片类型：在 `__getitem__` 中直接返回 `self._items[index]`，当 index 是 slice 时返回列表而非自定义容器对象，破坏类型一致性。应检查 `isinstance(index, slice)` 并返回同类型实例。",
+      "忽略负索引：实现 `__getitem__` 时不处理负索引，导致 `container[-1]` 抛出异常。应依赖底层列表的负索引支持，或手动转换。",
+      "忘记实现 `__iter__`：虽然 `__getitem__` 可让 for 循环工作（通过索引迭代），但效率低且不支持 `iter()` 协议。应显式实现 `__iter__` 返回迭代器。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

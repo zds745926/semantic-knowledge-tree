@@ -19,5 +19,42 @@
       "content_preview": "threading 基础: Thread creation/start/join. Daemon threads. GIL and its impact on CPU parallelism. Here are the translations with added Python code examples for clarity: 1. **Thread Creation/Start/Join** - In Python, you can create a thread using the `threading` module. ```python import threading def worker(): print(\"Worker thread is running\") # Create a new thread t = threading.Thread(target=worker) # Start the thread t.start() # Join the thread to wait for it to complete t.join() ``` 2. **Daemon Threads** - Daemon threads are background threads that do not prevent the program from exiting when all non-daemon threads have finished. ```python import threading def daemon_worker(): print(\"Daemon worker is running\") # Create a new thread and set it as a daemon t = threading.Thread(target=daemon_worker) t.daemon = True # Set the thread as a daemon # Start the thread t.start() # Main program continues to run, but will exit when all non-daemon threads have finished ``` 3. **GIL and Its Impact on CPU Parallelism** - The Global Interpreter Lock (GIL) is a mechanism that prevents multiple native threads from executing Python bytecodes at the same time in CPython. ```python import threading def cpu_bound_task(n): result = 0 for i in range(n): result += sum([i**2 for i in range(10000)]) return result # Create two threads to run the CPU-bound task t1 = threading.Thread(target=lambda: cpu_bound_task(100000)) t2 = threading.Thread(target=lambda: cpu_bound_task(100000)) # Start both threads t1.start() t2.start() # Join both threads to wait for them to complete t1.join() t2.join() print(\"Tasks completed\") ``` Note that the GIL can be a limitation in Python when it comes to CPU-bound tasks, as it allows only one thread to execute at a time even on multi-core systems. For I/O-bound or network-bound tasks, however, threading can still provide concurrency benefits due to the nature of waiting for external resources."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_condition_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nthreading 基础指的是 Python 标准库 threading 模块提供的基本多线程编程能力，允许程序在同一进程内创建和管理多个并发执行流，每个线程共享进程的内存空间，但拥有独立的执行栈和局部变量。\n\n## 何时使用\n适用于 I/O 密集型任务，如网络请求、文件读写、数据库查询等，因为多线程可以在等待 I/O 时让出 CPU 给其他线程，提高整体效率。对于 CPU 密集型任务（如大量计算），由于 Python 的全局解释器锁（GIL）限制，多线程无法实现真正的并行，应使用 multiprocessing 模块。\n\n## 示例\n```Python\nimport threading\nimport time\n\ndef worker(name, delay):\n    print(f\"Thread {name}: starting\")\n    time.sleep(delay)\n    print(f\"Thread {name}: finished\")\n\nthreads = []\nfor i in range(3):\n    t = threading.Thread(target=worker, args=(f\"T{i}\", i))\n    threads.append(t)\n    t.start()\n\nfor t in threads:\n    t.join()\n\nprint(\"All threads done\")\n```\n\n## 反例\n错误地使用多线程来加速 CPU 密集型计算，例如在循环中执行大量数学运算，由于 GIL 的存在，多线程反而可能比单线程更慢。\n\n## 边界条件\n线程间共享数据时需注意线程安全问题，必须使用锁（threading.Lock）或其他同步机制避免竞态条件。另外，线程数量不宜过多（通常不超过 CPU 核心数的 2-4 倍），否则上下文切换开销会抵消并发收益。",
+    "code_pattern": "import threading\nimport time\n\ndef task(arg):\n    # 线程执行逻辑\n    result = arg * 2\n    time.sleep(0.1)\n    return result\n\nthreads = []\nfor i in range(5):\n    t = threading.Thread(target=task, args=(i,))\n    threads.append(t)\n    t.start()\n\nfor t in threads:\n    t.join()",
+    "common_pitfalls": [
+      "忘记调用 join() 导致主线程提前退出，子线程可能未完成就被强制终止，造成数据丢失或资源泄漏。",
+      "共享变量不加锁导致竞态条件，例如多个线程同时修改同一个列表或字典，可能引发数据不一致或程序崩溃。",
+      "线程数量过多（如创建数千个线程）导致系统资源耗尽或上下文切换开销巨大，应使用线程池（concurrent.futures.ThreadPoolExecutor）控制并发度。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

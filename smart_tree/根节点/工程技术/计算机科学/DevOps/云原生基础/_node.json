@@ -16,5 +16,13 @@
     "description": "云原生基础: Cloud-native technologies utilize cloud computing models to build and run applications. To provide a more detailed explanation, cloud-native technologies are designed to take full advantage of the capabilities offered by modern cloud environments. These include automated deployment, scaling, and management of applications using containerization (e.g., Docker), service meshes, and other tools that facilitate efficient application development and operation in a cloud environment. Here is a brief Python code example demonstrating how one might use containers with Docker to run an application: ```python # This script demonstrates running a simple Python Flask web server inside a Docker container import subprocess def start_flask_app(): # Start the Flask app using Docker try: result = subprocess.run(['docker', 'run', '-p', '5000:5000', 'flask-app'], check=True) print(\"Flask application is running on port 5000\") except subprocess.CalledProcessError as e: print(f\"Failed to start Flask app: {e}\") if __name__ == \"__main__\": start_flask_app() ``` In this example, the `subprocess.run` function is used to execute a Docker command that runs a Flask application container and maps port 5000 of the host machine to port 5000 inside the container."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "云原生基础是DevOps领域的一个核心分支，专注于利用云计算的优势来设计、构建和运行可弹性扩展的应用。本分支涵盖从基础设施即代码到容器化部署的核心理念。其子节点包括AWS（亚马逊云服务）和Terraform（基础设施即代码工具）。AWS提供了构建云原生应用所需的计算、存储、网络等基础云服务，是云原生实践的常见平台。Terraform则是一种声明式的基础设施编排工具，允许用户通过代码来定义和提供云资源，是实现基础设施自动化、版本化和可重复部署的关键。两者之间的关系紧密：Terraform常被用于管理AWS上的资源，实现从手动操作到自动化管理的转变。学习路径建议：首先掌握云计算基本概念和AWS核心服务（如EC2、S3、VPC），然后学习Terraform的HCL语法和状态管理，最后通过实践项目将两者结合，实现完整的云基础设施自动化部署。",
+  "example_queries": [
+    "如何使用Terraform在AWS上创建一个包含VPC、子网和EC2实例的完整基础设施？",
+    "AWS云原生应用的最佳实践有哪些，如何结合Terraform实现基础设施即代码？",
+    "Terraform状态文件如何管理，以及在多团队协作中如何避免状态冲突？",
+    "在AWS上部署一个高可用的Web应用，需要用到哪些核心服务，以及如何用Terraform编排？",
+    "云原生基础中，容器化与基础设施即代码（如Terraform）的关系是什么？"
+  ]
 }

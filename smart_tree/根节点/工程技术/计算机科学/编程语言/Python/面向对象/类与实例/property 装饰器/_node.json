@@ -21,5 +21,22 @@
   ],
   "related_nodes": [
     "py_dataclass_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nproperty 装饰器是 Python 内置的装饰器，用于将类的方法转换为属性，使得对方法的调用可以像访问属性一样自然，同时允许在获取、设置或删除属性时执行自定义逻辑。\n\n## 何时使用\n当需要控制对类属性的访问，例如在获取属性时进行验证、计算或转换，在设置属性时执行类型检查或触发副作用时，使用 property 装饰器。它特别适合用于实现只读属性、延迟计算属性，以及在不破坏现有接口的前提下将属性访问改为方法调用。\n\n## 示例\n```Python\nclass Circle:\n    def __init__(self, radius):\n        self._radius = radius\n\n    @property\n    def radius(self):\n        return self._radius\n\n    @radius.setter\n    def radius(self, value):\n        if value < 0:\n            raise ValueError(\"Radius cannot be negative\")\n        self._radius = value\n\n    @property\n    def area(self):\n        return 3.14159 * self._radius ** 2\n\nc = Circle(5)\nprint(c.radius)  # 5\nc.radius = 10\nprint(c.area)    # 314.159\n# c.radius = -1  # 抛出 ValueError\n```\n\n## 反例\n错误用法：将 property 用于不需要任何额外逻辑的简单属性，例如直接返回私有属性而不做任何处理，这只会增加代码复杂度而无实际收益。\n\n## 边界条件\n注意：property 装饰器会覆盖同名实例属性，因此不要将 property 与同名的实例属性混用；另外，property 的 getter 和 setter 方法名必须一致，否则会创建新的 property 对象。",
+    "code_pattern": "class MyClass:\n    def __init__(self, value):\n        self._value = value\n\n    @property\n    def value(self):\n        return self._value\n\n    @value.setter\n    def value(self, new_value):\n        if not isinstance(new_value, int):\n            raise TypeError(\"Value must be an integer\")\n        self._value = new_value\n\n    @value.deleter\n    def value(self):\n        del self._value",
+    "common_pitfalls": [
+      "忘记在 setter 中使用 @属性名.setter 装饰器，而是直接使用 @property 导致 setter 未生效，从而无法通过赋值修改属性。",
+      "在 getter 中不小心返回了可变对象（如列表）的引用，导致外部修改影响内部状态，应返回副本或使用不可变类型。",
+      "property 与实例属性同名时，会导致递归调用（如 getter 中访问 self.attr 而非 self._attr），造成无限递归栈溢出。",
+      "在 setter 中未进行类型或范围验证，使得 property 失去控制访问的意义，退化为普通属性。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

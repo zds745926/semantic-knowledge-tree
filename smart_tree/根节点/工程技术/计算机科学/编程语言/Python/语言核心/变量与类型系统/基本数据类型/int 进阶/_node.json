@@ -17,5 +17,13 @@
     "description": "int 进阶: Advanced knowledge of Python `int` includes large integer arithmetic, bitwise operations, and base conversion. Bitwise operations are generally faster than arithmetic operations and are suitable for low-level optimization. Here's a brief example in Python to illustrate some of these concepts: ```python # Large integer arithmetic large_number = 12345678901234567890 print(f\"Large number: {large_number}\") # Bitwise operations a = 0b1010 # Binary representation of 10 b = 0b1100 # Binary representation of 12 # Bitwise AND result_and = a & b print(f\"Bitwise AND (10 & 12): {bin(result_and)}\") # Bitwise OR result_or = a | b print(f\"Bitwise OR (10 | 12): {bin(result_or)}\") # Bitwise XOR result_xor = a ^ b print(f\"Bitwise XOR (10 ^ 12): {bin(result_xor)}\") # Base conversion hex_value = int('A1', 16) # Convert hexadecimal to integer print(f\"Hexadecimal 'A1' to decimal: {hex_value}\") octal_value = int('145', 8) # Convert octal to integer print(f\"Octal '145' to decimal: {octal_value}\") ``` This code demonstrates large integer handling, bitwise operations (AND, OR, XOR), and base conversion in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python中int类型的进阶用法，涵盖大整数运算、位运算和进制转换三大子主题。大整数运算探讨Python对任意精度整数的支持，包括基本算术、大数分解与模幂运算等；位运算则深入讲解按位与、或、异或、取反、左移、右移等操作，以及它们在掩码、标志位处理、性能优化中的典型应用；进制转换覆盖十进制、二进制、八进制、十六进制之间的相互转换，以及自定义进制表示与字符串格式化。三者相互关联：位运算常与二进制表示结合，进制转换是理解位运算的基础，而大整数运算则扩展了位运算的应用范围（如大数位操作）。学习路径建议先掌握进制转换，再理解位运算原理，最后深入大整数运算的高级技巧。通过本分支的学习，读者能够高效处理整数底层操作，提升代码性能与灵活性。",
+  "example_queries": [
+    "Python中如何进行大整数的快速幂取模运算？",
+    "如何利用位运算判断一个整数是否为2的幂？",
+    "Python中如何将十进制整数转换为任意进制的字符串？",
+    "位运算在权限管理（如文件权限掩码）中如何应用？",
+    "大整数在Python中的内存占用和性能特点是什么？"
+  ]
 }

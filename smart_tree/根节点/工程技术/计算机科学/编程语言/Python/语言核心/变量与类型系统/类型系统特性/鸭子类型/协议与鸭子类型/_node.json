@@ -19,5 +19,26 @@
       "content_preview": "协议与鸭子类型: The `collections.abc` module defines abstract base classes like `Iterable` and `Sized` as the formal definitions of protocols. Here's a brief Python code example to illustrate using these abstract base classes: ```python from collections.abc import Iterable, Sized class MyCollection(Sized): def __init__(self, items): self.items = items def __len__(self): return len(self.items) # Check if an instance is iterable my_collection = MyCollection([1, 2, 3]) print(isinstance(my_collection, Iterable)) # Output: True # Check the size of the collection print(len(my_collection)) # Output: 3 ``` In this example, `MyCollection` class inherits from `Sized`, which requires it to implement the `__len__` method. The `Iterable` protocol is checked using `isinstance`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_collections_module_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n协议与鸭子类型是Python中一种动态类型设计理念：不关心对象的具体类型，只关心对象是否实现了所需的方法或属性（即“像鸭子一样走路、游泳、叫，那它就是鸭子”）。\n\n## 何时使用\n当需要编写灵活、可复用的代码，且不依赖继承或显式接口时，使用协议与鸭子类型。例如，在函数中接受任意支持迭代或上下文管理协议的对象，无需强制要求特定基类。\n\n## 示例\n```Python\nclass Duck:\n    def quack(self):\n        return \"嘎嘎\"\n\nclass Person:\n    def quack(self):\n        return \"模仿鸭子叫\"\n\ndef make_it_quack(thing):\n    print(thing.quack())\n\nmake_it_quack(Duck())   # 输出: 嘎嘎\nmake_it_quack(Person()) # 输出: 模仿鸭子叫\n```\n\n## 反例\n错误地假设对象必须属于某个特定类，导致代码僵化。例如，使用`isinstance(obj, Duck)`来检查，而不是直接调用`obj.quack()`，这限制了传入其他具有相同行为的对象。\n\n## 边界条件\n注意：鸭子类型可能引发运行时错误（如AttributeError），因此需确保对象确实实现了所需方法。另外，不要过度依赖鸭子类型而忽略文档或类型提示，否则代码可读性会下降。",
+    "code_pattern": "def process(obj):\n    # 假设 obj 实现了 required_method\n    result = obj.required_method()\n    return result\n\nclass MyClass:\n    def required_method(self):\n        return \"实现\"\n\n# 使用\nobj = MyClass()\noutput = process(obj)",
+    "common_pitfalls": [
+      "忘记检查方法是否存在：直接调用对象方法而不做任何检查，当传入的对象缺少该方法时会抛出AttributeError，导致程序崩溃。",
+      "过度使用鸭子类型导致代码难以调试：没有明确的接口文档或类型提示，使得调用者必须阅读源码才能知道需要实现哪些方法。",
+      "与静态类型检查冲突：在类型注解环境下，鸭子类型可能无法通过mypy等工具检查，需要配合Protocol类（Python 3.8+）来显式定义协议。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

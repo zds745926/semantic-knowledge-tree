@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "py_os_module_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\npathlib 是 Python 标准库中用于面向对象文件系统路径操作的模块，它提供 Path 类来封装路径字符串，并支持跨平台路径操作。\n\n## 何时使用\n当需要处理文件路径（如拼接、拆分、检查文件存在性、读写文件等）时，应优先使用 pathlib 替代 os.path 模块。它适用于文件遍历、目录创建、文件属性获取等场景，代码更简洁且可读性更强。\n\n## 示例\n```Python\nfrom pathlib import Path\n\n# 创建路径对象\np = Path('/tmp/example.txt')\n# 检查文件是否存在\nif p.exists():\n    # 读取文件内容\n    content = p.read_text()\n    print(content)\nelse:\n    # 创建目录并写入文件\n    p.parent.mkdir(parents=True, exist_ok=True)\n    p.write_text('Hello, pathlib!')\n```\n\n## 反例\n使用字符串拼接路径，如 `os.path.join('/tmp', 'subdir', 'file.txt')`，容易出错且跨平台兼容性差。\n\n## 边界条件\n注意 Path 对象在 Windows 和 Unix 系统上的路径分隔符差异；使用 `/` 运算符拼接路径时，确保左侧是 Path 对象，右侧是字符串。",
+    "code_pattern": "from pathlib import Path\n\ndef process_file(file_path: str) -> None:\n    path = Path(file_path)\n    if not path.exists():\n        path.parent.mkdir(parents=True, exist_ok=True)\n        path.write_text('default content')\n    else:\n        content = path.read_text()\n        print(f'File content: {content}')\n\nif __name__ == '__main__':\n    process_file('/tmp/data.txt')",
+    "common_pitfalls": [
+      "使用 Path 对象直接与字符串拼接（如 str(path) + '/subdir'）会导致跨平台问题，应使用 path / 'subdir' 或 path.joinpath('subdir')。",
+      "在 Windows 上，Path 对象使用反斜杠作为分隔符，但打印或转换为字符串时可能显示为反斜杠，导致与其他库交互时出错，需用 as_posix() 方法转换为正斜杠。",
+      "调用 Path.mkdir() 时未设置 parents=True 会导致中间目录不存在时抛出 FileNotFoundError，应始终使用 parents=True 和 exist_ok=True 避免错误。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

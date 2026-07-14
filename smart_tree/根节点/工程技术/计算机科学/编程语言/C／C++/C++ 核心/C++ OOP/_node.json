@@ -19,5 +19,34 @@
       "content_preview": "C++ OOP: - `class`: A user-defined data type that can have methods and attributes. In Python, you define a class using the `class` keyword. - `public`: Access level for members of a class that can be accessed from anywhere outside the class. In Python, all members are public by default. - `protected`: Access level for members of a class that can only be accessed within the class and its subclasses. In Python, there is no built-in protected access level, but you can use a convention like prefixing with an underscore `_`. - `private`: Access level for members of a class that cannot be accessed outside the class. In Python, private members are typically indicated by prefixing with double underscores `__`. - `virtual function (vtable)`: A feature in C++ where functions can be overridden in derived classes and managed through a virtual table (`vtable`). This allows polymorphism. - `pure virtual function abstract class`: An abstract class in C++ that contains at least one pure virtual function, which must be implemented by any non-abstract subclass. In Python, this concept is not directly supported, but can be simulated using abstract base classes from the `abc` module. Python code example for a simple abstract class with a pure virtual function (using `abc`): ```python from abc import ABC, abstractmethod class AbstractClass(ABC): @abstractmethod def pure_virtual_function(self): pass # This will raise an error if you try to instantiate the AbstractClass directly. # a = AbstractClass() # Uncommenting this line will result in a TypeError. class ConcreteClass(AbstractClass): def pure_virtual_function(self): print(\"This function is implemented.\") # You can now create instances of ConcreteClass c = ConcreteClass() c.pure_virtual_function() ``` Note: The concept of `virtual` functions and `vtable` is more relevant to C++ than Python, where method overriding is achieved through inheritance."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "cross_lang_equivalent"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nC++ 面向对象编程（OOP）是一种以类（class）和对象（object）为核心，通过封装、继承和多态三大特性来组织代码的编程范式。\n\n## 何时使用\n当需要将数据与操作数据的函数绑定在一起，形成高内聚低耦合的模块时，应使用 OOP。它也适用于需要复用代码（通过继承）或通过统一接口处理不同类型对象（通过多态）的场景。\n\n## 示例\n```C/C++\n#include <iostream>\n#include <string>\n\nclass Animal {\npublic:\n    virtual void speak() const { std::cout << \"Animal speaks\" << std::endl; }\n    virtual ~Animal() = default;\n};\n\nclass Dog : public Animal {\npublic:\n    void speak() const override { std::cout << \"Dog barks\" << std::endl; }\n};\n\nvoid makeSound(const Animal& a) { a.speak(); }\n\nint main() {\n    Dog d;\n    makeSound(d);  // 输出: Dog barks\n    return 0;\n}\n```\n\n## 反例\n错误地将所有成员变量设为 public，破坏封装性，导致外部代码可以直接修改内部状态，增加维护难度。\n\n## 边界条件\n注意虚析构函数：当基类指针指向派生类对象时，若基类析构函数非虚，则删除对象时不会调用派生类析构函数，导致资源泄漏。",
+    "code_pattern": "#include <iostream>\nclass Base {\npublic:\n    virtual void doSomething() const = 0;\n    virtual ~Base() = default;\n};\nclass Derived : public Base {\npublic:\n    void doSomething() const override {\n        std::cout << \"Derived implementation\" << std::endl;\n    }\n};\nvoid useBase(const Base& b) { b.doSomething(); }\nint main() {\n    Derived d;\n    useBase(d);\n    return 0;\n}",
+    "common_pitfalls": [
+      "忘记声明虚析构函数：当基类指针指向派生类对象时，若基类析构函数非虚，delete 时不会调用派生类析构函数，导致资源泄漏。",
+      "对象切片：将派生类对象按值传递给接受基类对象的函数，会丢失派生类特有成员，应使用指针或引用传递。",
+      "在构造函数或析构函数中调用虚函数：此时虚函数机制不按预期工作，因为派生类部分尚未构造或已销毁，应避免此类调用。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

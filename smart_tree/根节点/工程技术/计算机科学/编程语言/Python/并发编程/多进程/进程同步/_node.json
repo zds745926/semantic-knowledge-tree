@@ -19,5 +19,35 @@
       "content_preview": "进程同步: Multiprocessing Lock/RLock/Semaphore/Event/Condition for inter-process synchronization. Here are some brief examples in Python to illustrate these concepts: 1. **Lock**: A simple lock that can be used to ensure exclusive access to a resource. ```python from multiprocessing import Process, Lock def increment_value(lock): for _ in range(100000): with lock: global shared_value shared_value += 1 if __name__ == \"__main__\": shared_value = 0 lock = Lock() processes = [Process(target=increment_value, args=(lock,)) for _ in range(5)] for p in processes: p.start() for p in processes: p.join() print(f\"Final value: {shared_value}\") ``` 2. **RLock (Reentrant Lock)**: A lock that can be acquired multiple times by the same thread. ```python from multiprocessing import Process, RLock def increment_value(lock): for _ in range(100000): with lock: global shared_value shared_value += 1 if __name__ == \"__main__\": shared_value = 0 lock = RLock() processes = [Process(target=increment_value, args=(lock,)) for _ in range(5)] for p in processes: p.start() for p in processes: p.join() print(f\"Final value: {shared_value}\") ``` 3. **Semaphore**: A synchronization primitive that controls access to a resource by a fixed number of threads. ```python from multiprocessing import Process, Semaphore def increment_value(semaphore): for _ in range(100000): with semaphore: global shared_value shared_value += 1 if __name__ == \"__main__\": shared_value = 0 semaphore = Semaphore(3) # Only allow 3 threads to access at a time processes = [Process(target=increment_value, args=(semaphore,)) for _ in range(5)] for p in processes: p.start() for p in processes: p.join() print(f\"Final value: {shared_value}\") ``` 4. **Event**: A synchronization primitive that can be used to block threads until a condition is met. ```python from multiprocessing import Process, Event def wait_for_event(event): event.wait() # Wait for the event to be set print(\"Event received, continuing...\") if __name__ == \"__main__\": event = Event() process = Process(target=wait_for_event, args=(event,)) process.start() import time time.sleep(2) # Simulate some work before setting the event event.set() # Set the event to unblock the waiting thread process.join() ``` 5. **Condition**: A synchronization primitive that allows threads to wait for a condition and be notified when it changes. ```python from multiprocessing import Process, Condition def consumer(condition): with condition: print(\"Consumer waiting...\") condition.wait() # Wait until the producer sets the condition print(\"Consumer received notification\") if __name__ == \"__main__\": condition = Condition() consumer_process = Process(target=consumer, args=(condition,)) consumer_process.start() import time time.sleep(2) # Simulate some work before notifying the consumer with condition: condition.notify() # Notify the waiting consumer consumer_process.join() ``` These examples demonstrate how to use `Lock`, `RLock`, `Semaphore`, `Event`, and `Condition` in Python for inter-process synchronization."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "deadlock_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_thread_safety_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_lifo_queue_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n进程同步是指在多进程并发执行时，通过特定的机制协调各进程的执行顺序，以避免竞态条件、死锁等问题，确保共享资源的安全访问和数据的一致性。\n\n## 何时使用\n当多个进程需要访问共享资源（如文件、数据库、共享内存）或需要按特定顺序执行时，必须使用进程同步。例如，在生产者-消费者问题中，需要同步生产者和消费者对缓冲区的访问；在多个进程同时写入同一日志文件时，也需要同步以防止数据错乱。\n\n## 示例\n```Python\nimport multiprocessing\nimport time\n\ndef worker(lock, shared_list):\n    with lock:\n        # 临界区：安全地修改共享资源\n        shared_list.append(multiprocessing.current_process().name)\n        time.sleep(0.1)\n\nif __name__ == '__main__':\n    lock = multiprocessing.Lock()\n    manager = multiprocessing.Manager()\n    shared_list = manager.list()\n    processes = []\n    for i in range(5):\n        p = multiprocessing.Process(target=worker, args=(lock, shared_list))\n        processes.append(p)\n        p.start()\n    for p in processes:\n        p.join()\n    print(shared_list)\n```\n\n## 反例\n不使用锁时，多个进程同时修改共享列表可能导致数据丢失或顺序错乱，例如两个进程同时执行append操作，可能只写入一个值。\n\n## 边界条件\n锁必须在使用后正确释放，否则会导致死锁；使用multiprocessing.Lock时，注意锁对象必须通过参数传递给子进程，不能直接共享。",
+    "code_pattern": "import multiprocessing\n\ndef worker(lock, shared_data):\n    with lock:\n        # 临界区操作\n        shared_data.append('data')\n\ndef main():\n    lock = multiprocessing.Lock()\n    manager = multiprocessing.Manager()\n    shared_list = manager.list()\n    processes = [multiprocessing.Process(target=worker, args=(lock, shared_list)) for _ in range(4)]\n    for p in processes:\n        p.start()\n    for p in processes:\n        p.join()\n    print(shared_list)\n\nif __name__ == '__main__':\n    main()",
+    "common_pitfalls": [
+      "忘记释放锁：使用Lock时，如果未在异常情况下释放锁（如未使用with语句），会导致死锁，进程永久阻塞。",
+      "锁对象未正确传递：在multiprocessing中，锁必须作为参数传递给子进程，如果使用全局变量或闭包，子进程会创建新的锁副本，失去同步效果。",
+      "使用普通list代替Manager.list：普通list在子进程中修改不会反映到主进程，必须使用multiprocessing.Manager提供的共享数据结构。",
+      "忽略死锁条件：多个锁嵌套使用时，如果进程获取锁的顺序不一致，容易产生死锁，需要统一锁的获取顺序。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

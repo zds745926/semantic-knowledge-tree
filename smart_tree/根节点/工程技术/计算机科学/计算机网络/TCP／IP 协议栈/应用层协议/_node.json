@@ -17,5 +17,13 @@
     "description": "应用层协议: Application layer protocols provide network services for applications, including HTTP, DNS, and FTP. Python code examples: 1. **HTTP (using `requests` library)**: ```python import requests response = requests.get('https://www.example.com') print(response.status_code) ``` 2. **DNS (using built-in `socket` module)**: ```python import socket hostname = 'example.com' ip_address = socket.gethostbyname(hostname) print(ip_address) ``` 3. **FTP (using `ftplib` library)**: ```python from ftplib import FTP ftp = FTP('ftp.example.com') ftp.login(user='username', passwd='password') print(ftp.getwelcome()) ftp.quit() ``` These examples demonstrate basic interactions with HTTP, DNS, and FTP using Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "应用层协议是TCP/IP协议栈中的最高层，直接为用户提供网络服务。本分支涵盖HTTP、DNS和CDN三大核心子主题。HTTP是万维网的数据通信基础，定义了客户端与服务器之间的请求-响应模式；DNS作为域名系统，将人类可读的域名转换为机器可读的IP地址，是网络访问的“翻译官”；CDN则通过分布式服务器缓存内容，加速用户访问，降低延迟。三者紧密关联：用户通过DNS解析域名获取IP地址，再通过HTTP请求内容，而CDN则优化这一过程，将内容分发至离用户最近的节点。学习路径建议从HTTP协议的基础（如请求方法、状态码、报文结构）入手，再深入DNS的工作原理（如递归查询、缓存机制），最后理解CDN的架构（如边缘节点、负载均衡）及其与HTTP、DNS的协同。掌握这些协议有助于理解网页加载、网络优化及现代互联网服务。",
+  "example_queries": [
+    "HTTP协议中GET和POST请求有什么区别？",
+    "DNS解析过程中递归查询和迭代查询有何不同？",
+    "CDN如何通过边缘节点加速网站访问？",
+    "HTTPS与HTTP相比，在安全性上做了哪些改进？",
+    "如何通过DNS缓存优化减少域名解析时间？"
+  ]
 }

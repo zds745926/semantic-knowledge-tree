@@ -19,5 +19,26 @@
       "content_preview": "信号量: P(V)/Wait/Signal. Managing multiple resources. Classic problem: Producer-Consumer. Here is a brief explanation and a corresponding Python code example for the producer-consumer problem: In this context, P(V) and V(V) are semaphore operations used to manage access to shared resources. The `P` operation (also known as Wait or Decrement) decreases the value of the semaphore by one; if the new value is less than zero, it blocks the process until the semaphore's value becomes non-negative. The `V` operation (also known as Signal or Increment) increases the semaphore's value by one and wakes up a waiting process if there are any. Python code example: ```python import threading class ProducerConsumer: def __init__(self): self.buffer = [] self.lock = threading.Lock() self.not_empty = threading.Semaphore(0) self.not_full = threading.Semaphore(10) # Maximum buffer size def produce(self, item): self.not_full.acquire() # P(not_full) self.lock.acquire() self.buffer.append(item) self.lock.release() self.not_empty.release() # V(not_empty) def consume(self): self.not_empty.acquire() # P(not_empty) self.lock.acquire() item = self.buffer.pop(0) self.lock.release() self.not_full.release() # V(not_full) return item # Example usage producer_consumer = ProducerConsumer() def producer(): for i in range(10): producer_consumer.produce(i) def consumer(): for _ in range(10): print(producer_consumer.consume()) # Running the example (in a real scenario, you would run these in separate threads) consumer() # This will block until items are produced ``` In this Python code: - `not_empty` and `not_full` semaphores manage the buffer's state. - The producer function uses `produce` to add an item to the buffer. - The consumer function uses `consume` to remove an item from the buffer."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "deadlock_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_thread_safety_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n信号量是一种用于多线程或多进程环境下实现同步与互斥的机制，本质上是一个整型变量，支持两种原子操作：P（等待，减1）和V（释放，加1）。当信号量值为0时，执行P操作的线程会被阻塞，直到其他线程执行V操作将其唤醒。\n\n## 核心要点\n- **原子性**：P和V操作必须不可中断，通常由操作系统或硬件保证，避免竞态条件。\n- **计数信号量与二值信号量**：计数信号量可管理多个资源实例，值大于1；二值信号量（值为0或1）常用于实现互斥锁。\n- **阻塞与唤醒**：P操作在信号量≤0时阻塞线程，V操作唤醒一个等待线程，避免忙等待。\n- **资源管理**：信号量值代表可用资源数量，初始值设为资源总数，每次P消耗一个资源，V归还一个资源。\n- **避免死锁**：使用信号量需谨慎设计获取顺序，否则可能导致多个进程相互等待。\n\n## 应用场景\n信号量广泛应用于操作系统中的进程同步，例如生产者-消费者问题中控制缓冲区访问，以及读者-写者问题中协调读写操作。在数据库系统、网络服务器等并发环境中，信号量也用于限制对共享资源的并发访问数量。\n\n## 相关概念\n信号量与互斥锁（Mutex）类似，但互斥锁通常只允许一个线程访问资源，而信号量可允许多个。条件变量（Condition Variable）常与互斥锁配合实现更复杂的等待/通知模式，信号量则自身包含等待队列。管程（Monitor）是高级同步原语，内部使用信号量或互斥锁实现，但提供更结构化的接口。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

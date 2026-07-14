@@ -19,5 +19,30 @@
       "content_preview": "HTTP 状态码: HTTP status codes are categorized into four classes: - 2xx Success - 3xx Redirection - 4xx Client Error - 5xx Server Error Python code example for checking HTTP response status: ```python import requests response = requests.get('https://api.example.com/data') status_code = response.status_code if 200 <= status_code < 300: print(f\"Success: {status_code}\") elif 300 <= status_code < 400: print(f\"Redirection: {status_code}\") elif 400 <= status_code < 500: print(f\"Client Error: {status_code}\") else: print(f\"Server Error: {status_code}\") ``` This Python script uses the `requests` library to send a GET request and checks the response's status code, categorizing it according to the HTTP status classes."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "csrf_v4",
+      "type": "application"
+    },
+    {
+      "id": "sql_injection_v4",
+      "type": "application"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nHTTP 状态码是服务器在响应客户端请求时返回的三位数字代码，用于表示请求的处理结果。它帮助客户端理解请求是否成功、是否需要重定向或是否发生了错误。\n\n## 核心要点\n1. 状态码分为五类：1xx（信息性）、2xx（成功）、3xx（重定向）、4xx（客户端错误）、5xx（服务器错误），每类代表不同的响应语义。\n2. 常见的状态码包括：200 OK（请求成功）、301 Moved Permanently（永久重定向）、404 Not Found（资源不存在）、500 Internal Server Error（服务器内部错误）。\n3. 状态码是HTTP协议的核心组成部分，确保客户端和服务器之间的通信具有一致性和可预测性。\n4. 状态码通常与响应头中的原因短语（如“OK”）一起使用，但数字代码是机器可读的关键信息。\n5. 状态码的标准化由互联网号码分配局（IANA）维护，确保了跨平台和应用的互操作性。\n\n## 应用场景\n在Web开发中，状态码用于调试和优化网络请求，例如通过检查404错误修复缺失的页面，或利用301重定向管理网站迁移。在API设计中，状态码帮助客户端正确处理响应，如使用201 Created表示资源创建成功，或使用429 Too Many Requests限制请求频率。\n\n## 相关概念\n状态码与HTTP方法（如GET、POST）协同工作，共同定义请求-响应模型。它与缓存机制（如通过304 Not Modified减少带宽消耗）和错误处理（如通过5xx状态码触发服务器监控告警）紧密相关。此外，状态码是RESTful API设计中的关键元素，用于表达资源的操作结果。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

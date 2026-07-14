@@ -22,5 +22,13 @@
   "related_nodes": [
     "py_thread_pool_executor_v4",
     "py_process_pool_executor_v4"
+  ],
+  "summary": "concurrent.futures 是 Python 标准库中用于简化并发编程的高级接口，位于并发编程分支下。该分支主要涵盖 ThreadPoolExecutor（线程池执行器）、ProcessPoolExecutor（进程池执行器）、Future 对象、as_completed 函数以及 map 方法。这些子主题之间的关系是：ThreadPoolExecutor 和 ProcessPoolExecutor 是两种核心执行器，分别用于管理线程池和进程池，以并行执行任务；Future 对象代表异步操作的结果，用于获取任务的状态和返回值；as_completed 函数用于迭代已完成的任务，便于处理结果；map 方法则提供了一种简洁的方式来将函数应用于可迭代对象并并行执行。学习路径建议从理解执行器的基本用法开始，然后深入学习 Future 对象的管理，再掌握 as_completed 和 map 方法以优化任务处理。该分支适合需要提升 I/O 密集型或 CPU 密集型任务执行效率的开发者。",
+  "example_queries": [
+    "如何使用 ThreadPoolExecutor 并发执行多个网络请求？",
+    "ProcessPoolExecutor 和 ThreadPoolExecutor 在什么场景下选择使用？",
+    "Future 对象如何获取异步任务的返回结果或异常？",
+    "as_completed 函数与 wait 函数在任务处理上有何区别？",
+    "如何利用 map 方法简化并发任务的提交和结果收集？"
   ]
 }

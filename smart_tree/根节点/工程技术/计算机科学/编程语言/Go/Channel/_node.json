@@ -19,5 +19,42 @@
       "content_preview": "Channel: `ch := make(chan int)` creates an integer channel. `ch <- val` sends a value `<-ch` receives a value. `select` is used for multiplexing. Python code example (using similar concepts): ```python import threading # Create a thread-safe queue using Python's threading module queue = [] def producer(val): # Simulate sending a value to the channel print(f\"Producing: {val}\") queue.append(val) def consumer(): # Simulate receiving a value from the channel if queue: val = queue.pop(0) print(f\"Consuming: {val}\") # Example usage producer(42) # Produces: Producing: 42 consumer() # Consumes: Consuming: 42 # Using select-like behavior with threading def multiplex(): events = [threading.Event(), threading.Event()] def producer_event(val): print(f\"Producing event for {val}\") events[val].set() def consumer_event(): val = next((i for i, e in enumerate(events) if e.is_set()), None) if val is not None: print(f\"Consuming event for {val}\") events[val].clear() producer_event(0) # Produces: Producing event for 0 consumer_event() # Consumes: Consuming event for 0 multiplex() ``` Note that Python does not have built-in channels like Go, but we can simulate similar behavior using lists and threading events. The `select` concept is approximated here with the use of multiple events to handle multiplexing between different threads or processes."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "js_promise_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_condition_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nChannel 是 Go 语言中用于 goroutine 之间通信和同步的管道，遵循 CSP（Communicating Sequential Processes）模型，通过发送和接收操作传递数据。\n\n## 何时使用\n当需要在并发执行的 goroutine 之间安全地传递数据或同步执行顺序时，应使用 Channel。它特别适合生产者-消费者模式、任务分发、结果收集以及控制并发数量等场景。\n\n## 示例\n```Go\npackage main\n\nimport (\n\t\"fmt\"\n\t\"time\"\n)\n\nfunc worker(id int, jobs <-chan int, results chan<- int) {\n\tfor j := range jobs {\n\t\tfmt.Printf(\"Worker %d processing job %d\\n\", id, j)\n\t\ttime.Sleep(time.Second)\n\t\tresults <- j * 2\n\t}\n}\n\nfunc main() {\n\tjobs := make(chan int, 5)\n\tresults := make(chan int, 5)\n\n\tfor w := 1; w <= 3; w++ {\n\t\tgo worker(w, jobs, results)\n\t}\n\n\tfor j := 1; j <= 5; j++ {\n\t\tjobs <- j\n\t}\n\tclose(jobs)\n\n\tfor r := 1; r <= 5; r++ {\n\t\t<-results\n\t}\n}\n```\n\n## 反例\n未关闭 channel 导致 goroutine 泄漏：当发送方不再发送数据时，若不关闭 channel，接收方在 range 循环中会永久阻塞等待新数据，导致 goroutine 无法退出。\n\n## 边界条件\n1. 向已关闭的 channel 发送数据会引发 panic。\n2. 从已关闭的 channel 接收数据会立即返回零值，且不会阻塞，需通过第二个返回值 ok 判断 channel 是否已关闭。",
+    "code_pattern": "package main\n\nfunc main() {\n\tch := make(chan int, 10) // 带缓冲 channel\n\tdone := make(chan struct{})\n\n\tgo func() {\n\t\tfor v := range ch {\n\t\t\t_ = v // 处理数据\n\t\t}\n\t\tdone <- struct{}{}\n\t}()\n\n\tfor i := 0; i < 5; i++ {\n\t\tch <- i\n\t}\n\tclose(ch)\n\t<-done\n}",
+    "common_pitfalls": [
+      "向已关闭的 channel 发送数据会引发 panic，必须在发送前确保 channel 未关闭，或使用 select 配合 default 分支安全发送。",
+      "从 nil channel 发送或接收操作会永久阻塞，导致 goroutine 泄漏，需确保 channel 已初始化。",
+      "在多个 goroutine 中同时读写同一个 channel 而不加同步时，虽然 channel 本身是并发安全的，但关闭 channel 的操作必须由发送方执行，否则可能导致重复关闭 panic。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

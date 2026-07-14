@@ -19,5 +19,30 @@
       "content_preview": "可串行化: Highest level. Serial execution of transactions. No concurrency issues. Lowest performance. Python code example (to illustrate serial transaction execution): ```python def process_transaction(transaction): # Simulate a database operation print(f\"Processing {transaction}...\") # List of transactions to be processed transactions = [\"Transaction1\", \"Transaction2\", \"Transaction3\"] # Serial execution of transactions for transaction in transactions: process_transaction(transaction) ``` This example demonstrates serial execution, where each transaction is processed one after another without any concurrency."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "deadlock_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "read_committed_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "py_thread_safety_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n可串行化是关系型数据库中最高级别的隔离级别，确保多个并发事务的执行结果与这些事务按某种顺序串行执行的结果完全相同。它通过完全避免脏读、不可重复读和幻读等并发问题，提供最强的数据一致性保证。\n\n## 核心要点\n- 可串行化隔离级别要求所有事务完全隔离，仿佛系统中只有一个事务在运行，从而消除所有并发异常。\n- 实现可串行化通常采用两阶段锁（2PL）或乐观并发控制（如多版本并发控制MVCC的严格版本），但会显著降低系统并发性能。\n- 在可串行化下，事务的读写操作不会受到其他事务的干扰，每个事务看到的数据都是一致的快照或加锁后的结果。\n- 该级别能防止脏写、脏读、不可重复读和幻读，是数据一致性要求最高场景的首选。\n- 由于性能开销大，实际应用中很少使用可串行化，而是根据业务需求选择更低的隔离级别（如可重复读或读已提交）。\n\n## 应用场景\n可串行化适用于金融交易、账户余额更新、库存扣减等对数据一致性要求极其严格的场景。例如，在银行转账中，必须确保两个账户的更新操作完全隔离，避免出现资金丢失或重复扣款。此外，在分布式数据库或高并发系统中，可串行化也用于保证复杂事务的原子性和一致性。\n\n## 相关概念\n可串行化与可重复读、读已提交等隔离级别共同构成SQL标准中的隔离级别层次。可重复读虽然能防止不可重复读，但可能允许幻读；而可串行化则完全杜绝所有并发问题。此外，可串行化与事务的ACID属性中的隔离性（I）紧密相关，是实现隔离性最高级别的体现。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

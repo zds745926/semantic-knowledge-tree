@@ -17,5 +17,13 @@
     "description": "进程与线程管理: Processes are the basic units for resource allocation, while threads are the basic units for CPU scheduling. The operating system decides which process gets the CPU through a scheduling algorithm. Here's a brief Python code example to illustrate thread creation and execution using the `threading` module: ```python import threading def thread_function(name): \"\"\"A simple function that runs in a separate thread.\"\"\" print(f\"Thread {name}: starting\") # Simulate some work being done by sleeping for 2 seconds import time time.sleep(2) print(f\"Thread {name}: finishing\") # Create threads threads = [] for i in range(5): thread = threading.Thread(target=thread_function, args=(i,)) threads.append(thread) thread.start() # Wait for all threads to complete for thread in threads: thread.join() print(\"All threads have finished execution.\") ``` This example demonstrates creating and managing multiple threads in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "进程与线程管理是操作系统核心功能之一，主要研究如何高效、公平地分配CPU资源给多个并发执行的任务。本分支涵盖进程调度、进程间通信（IPC）以及同步与互斥三个子主题。进程调度负责决定哪个进程获得CPU使用权，其算法直接影响系统响应速度和吞吐量；进程间通信（IPC）提供进程间数据交换的机制，如管道、消息队列、共享内存等；同步与互斥则解决多个进程或线程访问共享资源时的竞争条件问题，确保数据一致性和系统稳定性，常用工具包括信号量、互斥锁、条件变量等。这三个子主题紧密关联：调度策略影响通信效率，而同步机制是安全通信的前提。学习路径建议先掌握进程与线程的基本概念，然后深入调度算法，接着学习IPC机制，最后重点攻克同步与互斥的经典问题（如生产者-消费者、哲学家就餐）。",
+  "example_queries": [
+    "什么是进程调度？常见的调度算法有哪些？",
+    "进程间通信有哪些方式？各自适用于什么场景？",
+    "如何用信号量解决生产者-消费者问题？",
+    "死锁产生的四个必要条件是什么？如何预防？",
+    "线程和进程的区别是什么？"
+  ]
 }

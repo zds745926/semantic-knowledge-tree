@@ -19,5 +19,30 @@
       "content_preview": "DNS: Domain Name → IP. Recursive/Iterative Query. A/A AAA/CNAME/MX Records. 13 Root Server Groups. Here's a brief explanation with Python code examples for some of the concepts: Recursive/Iterative Query: ```python import dns.resolver def query_domain(domain_name): answers = dns.resolver.resolve(domain_name, 'A') for rdata in answers: print(f'{domain_name} A record: {rdata}') query_domain('example.com') ``` A/A AAA/CNAME/MX Records: ```python import dns.resolver def get_records(domain_name): a_record = dns.resolver.resolve(domain_name, 'A') aaa_record = dns.resolver.resolve(domain_name, 'AAAA') cname_record = dns.resolver.resolve(domain_name, 'CNAME') mx_record = dns.resolver.resolve(domain_name, 'MX') print(f'{domain_name} A record: {a_record}') print(f'{domain_name} AAAA record: {aaa_record}') print(f'{domain_name} CNAME record: {cname_record}') print(f'{domain_name} MX record: {mx_record}') get_records('example.com') ``` Root Server 13 Groups: The root server IP addresses are managed by the Internet Corporation for Assigned Names and Numbers (ICANN). Here's a Python example to query one of the root servers: ```python import socket def query_root_server(domain_name): root_servers = [ 'a.root-servers.net', 'b.root-servers.net', 'c.root-servers.net', # ... other 10 root servers ] for server in root_servers: try: ip_address = socket.gethostbyname(server) print(f'{server} IP: {ip_address}') except socket.gaierror as e: print(f'Failed to resolve {server}: {e}') query_root_server('a.root-servers.net') ``` Note that the root server list is static and should be kept up-to-date with the latest root servers provided by ICANN."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cap_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nDNS（域名系统）是互联网的一项核心服务，它将人类易记的域名（如 www.example.com）转换为机器可读的IP地址（如 192.0.2.1）。它作为TCP/IP协议栈中应用层协议，采用分布式数据库架构，确保全球域名解析的可靠与高效。\n\n## 核心要点\n- 层次化命名空间：DNS采用树状结构，从根域到顶级域（如.com、.cn），再到二级域和子域，实现全球唯一命名。\n- 分布式解析过程：当用户查询域名时，递归或迭代查询从本地DNS缓存开始，逐级向上至根服务器，最终返回目标IP。\n- 缓存机制：DNS服务器和客户端会缓存查询结果，减少重复查询，提升响应速度并降低网络负载。\n- 记录类型多样：除基本的A记录（IPv4地址）和AAAA记录（IPv6地址）外，还有MX（邮件交换）、CNAME（别名）等，支持多种服务。\n- 安全性增强：DNSSEC（DNS安全扩展）通过数字签名验证数据完整性，防止缓存投毒等攻击。\n\n## 应用场景\nDNS广泛应用于日常网络访问，如浏览器输入网址时自动解析；也用于负载均衡，通过返回不同IP分散流量；此外，邮件路由依赖MX记录，内容分发网络（CDN）利用DNS将用户导向最近节点。\n\n## 相关概念\n- IP地址：DNS解析的最终目标，是网络设备的唯一标识。\n- 根服务器：DNS层次结构的顶端，全球共13组根服务器，负责指引顶级域查询。\n- DHCP：动态主机配置协议，常与DNS配合，自动分配IP并指定DNS服务器地址。\n- HTTP：超文本传输协议，依赖DNS获取服务器IP后建立连接。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

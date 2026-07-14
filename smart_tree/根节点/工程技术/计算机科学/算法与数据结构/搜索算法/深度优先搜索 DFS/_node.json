@@ -19,5 +19,38 @@
       "content_preview": "深度优先搜索 DFS: Recursive calls or stack overflow until backtracking. O(V+E). Applications: Connected Components / Topological Sorting. Here are brief Python code examples for the applications mentioned: ### Connected Components in a Graph ```python def dfs(graph, v, visited): visited[v] = True for neighbor in graph[v]: if not visited[neighbor]: dfs(graph, neighbor, visited) def find_connected_components(graph): num_nodes = len(graph) visited = [False] * num_nodes components = [] for node in range(num_nodes): if not visited[node]: component = [] dfs(graph, node, visited) components.append(component) return components # Example graph represented as an adjacency list graph = { 0: [1, 2], 1: [2], 2: [0, 3], 3: [3] } print(find_connected_components(graph)) ``` ### Topological Sorting of a Directed Acyclic Graph (DAG) ```python from collections import defaultdict def dfs_topo_sort(graph, node, visited, stack): visited[node] = True for neighbor in graph[node]: if not visited[neighbor]: dfs_topo_sort(graph, neighbor, visited, stack) stack.append(node) def topological_sort(graph): num_nodes = len(graph) visited = [False] * num_nodes stack = [] for node in range(num_nodes): if not visited[node]: dfs_topo_sort(graph, node, visited, stack) return stack[::-1] # Example graph represented as an adjacency list graph = { 0: [1], 1: [2], 2: [] } print(topological_sort(graph)) ``` These examples illustrate how to implement the concepts of connected components and topological sorting in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "bst_search_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "avl_tree_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n深度优先搜索（DFS）是一种用于遍历或搜索树或图数据结构的算法。它从根节点（或任意起始节点）开始，沿着一条路径尽可能深地探索，直到无法继续，然后回溯到上一个分支点，继续探索其他未访问的路径。这种策略类似于在迷宫中沿着一条路走到尽头，再回头探索其他岔路。\n\n## 核心要点\n1. **递归或栈实现**：DFS 通常通过递归函数或显式栈来模拟回溯过程，递归方式更直观，而栈实现则避免了递归深度过大的风险。\n2. **访问标记**：为避免重复访问节点导致死循环，需要为每个节点设置访问状态（如未访问、已访问），尤其在图中至关重要。\n3. **回溯机制**：当当前路径无法继续时，算法会回退到最近的有未探索分支的节点，这是 DFS 区别于广度优先搜索的关键。\n4. **时间复杂度**：对于图，DFS 的时间复杂度为 O(V+E)，其中 V 是节点数，E 是边数；对于树，则为 O(N)，N 为节点数。\n5. **空间复杂度**：最坏情况下，递归栈或显式栈的深度等于图的最大深度，因此空间复杂度为 O(V)。\n\n## 应用场景\nDFS 广泛应用于图的连通性检测、拓扑排序、路径查找（如迷宫求解）、生成树的构建以及解决数独、八皇后等回溯问题。在人工智能中，它也常用于状态空间搜索，例如在游戏 AI 中探索可能的走法。此外，DFS 是许多高级算法（如强连通分量 Tarjan 算法）的基础。\n\n## 相关概念\nDFS 与广度优先搜索（BFS）形成对比，BFS 按层级逐层扩展，而 DFS 优先深入。回溯法是一种基于 DFS 的算法设计范式，常用于约束满足问题。此外，DFS 与树的前序、中序、后序遍历紧密相关，这些遍历本质上是 DFS 在二叉树上的特例。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

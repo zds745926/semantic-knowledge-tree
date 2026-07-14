@@ -19,5 +19,30 @@
       "content_preview": "kill/nice: `kill -9` force. `nice`/`renice` adjust priority. Python code examples: For `kill -9`, this is typically used in shell scripting or command-line operations, and there isn't a direct equivalent in Python for sending signals to processes. However, you can simulate the concept by terminating a process using its PID (Process ID): ```python import os import signal def kill_process(pid): try: # Send SIGKILL signal to terminate the process forcefully os.kill(pid, signal.SIGKILL) print(f\"Process {pid} has been terminated.\") except ProcessLookupError: print(f\"No such process with PID: {pid}\") # Example usage kill_process(1234) # Replace 1234 with the actual process ID you want to terminate. ``` For `nice`/`renice`, this is used to adjust the priority of a running process. In Python, you can use the `os.nice()` function to change the scheduling priority of the current process: ```python import os def set_priority(priority): try: # Set the nice value (priority) for the current process os.nice(priority) print(f\"Priority has been set to: {priority}\") except Exception as e: print(f\"Failed to set priority: {e}\") # Example usage set_priority(10) # Lower values mean higher priority. ``` Note that `os.nice()` only affects the current process and cannot be used to change the priority of other processes. For changing the priority of another process, you would typically use a system call or shell command like `renice`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "sudo_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "deadlock_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nkill 和 nice 是 Linux 系统中用于进程管理的两个重要命令。kill 用于向进程发送信号，通常用于终止进程；nice 用于以指定的优先级启动进程，影响其 CPU 调度。\n\n## 核心要点\n- kill 命令通过发送信号（如 SIGTERM、SIGKILL）来控制进程，默认发送 SIGTERM（15），请求进程正常退出；若进程无响应，可使用 SIGKILL（9）强制终止。\n- nice 命令允许用户设置进程的“友好值”（nice value），范围从 -20（最高优先级）到 19（最低优先级），普通用户只能降低优先级（增加 nice 值），root 用户可提升优先级。\n- 使用 kill 时需指定进程 ID（PID），例如 `kill -9 1234`；而 nice 在启动命令时使用，如 `nice -n 10 ./program` 将程序以较低优先级运行。\n- 已运行进程的优先级可通过 renice 命令调整，例如 `renice -5 -p 1234` 将 PID 为 1234 的进程优先级提高。\n- kill 和 nice 都依赖于 Linux 内核的进程调度机制，合理使用可优化系统资源分配和响应速度。\n\n## 应用场景\n当某个进程占用过多 CPU 资源导致系统响应缓慢时，可使用 nice 降低其优先级，或使用 kill 终止异常进程。在服务器环境中，管理员常用 kill 强制关闭无响应的服务进程，而 nice 则用于确保后台批处理任务不干扰前台交互式应用的性能。\n\n## 相关概念\n进程管理还涉及 top、ps、pkill 等工具，top 可实时查看进程资源占用，ps 用于列出进程状态。信号机制是 kill 的基础，不同信号（如 SIGSTOP、SIGCONT）可暂停或恢复进程。调度策略（如 SCHED_OTHER、SCHED_FIFO）与 nice 值共同决定进程的 CPU 时间分配。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

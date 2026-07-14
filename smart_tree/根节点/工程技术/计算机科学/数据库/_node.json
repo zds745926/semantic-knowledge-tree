@@ -17,5 +17,13 @@
     "description": "数据库: Database systems systematically store and manage data. The two most commonly used types are relational databases (SQL) and non-relational databases (NoSQL). Key concepts include SQL, indexing, transactions, ACID properties, and distribution. Here's a brief Python code example to illustrate the use of SQL in interacting with a database: ```python import sqlite3 # Connect to SQLite database (or create it if it doesn't exist) conn = sqlite3.connect('example.db') # Create a cursor object using the cursor method cursor = conn.cursor() # Create table - an example of SQL command execution cursor.execute('''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)''') # Insert data into the table cursor.execute(\"INSERT INTO users (name, age) VALUES ('Alice', 30)\") # Commit the transaction to save changes conn.commit() # Query the database - another example of SQL command execution cursor.execute('SELECT * FROM users') print(cursor.fetchall()) # Close the connection conn.close() ``` This code snippet demonstrates basic operations such as creating a table, inserting data, querying the database, and closing the connection."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "数据库是计算机科学中用于存储、管理和检索数据的核心技术分支。本分支涵盖关系型数据库、NoSQL数据库和分布式数据库三大子主题。关系型数据库以结构化数据存储和SQL查询为核心，强调ACID事务特性，适用于需要强一致性的业务场景；NoSQL数据库则针对非结构化或半结构化数据，提供灵活的数据模型和高扩展性，如文档、键值、列族和图数据库；分布式数据库则解决数据在多个节点间的存储、一致性和可用性问题，常结合CAP理论进行设计。三者之间并非替代关系，而是互补：关系型数据库适合传统事务处理，NoSQL应对大数据和实时应用，分布式数据库则支撑大规模系统的高可用和水平扩展。学习路径建议从关系型数据库（如MySQL）入手，掌握SQL和范式设计；再学习NoSQL（如MongoDB、Redis）理解不同数据模型；最后深入分布式数据库（如TiDB、Cassandra）了解分片、复制和一致性协议。",
+  "example_queries": [
+    "关系型数据库和NoSQL数据库的主要区别是什么？",
+    "如何设计一个支持高并发的分布式数据库系统？",
+    "在什么场景下应该选择文档型数据库而不是关系型数据库？",
+    "分布式数据库如何保证数据一致性？",
+    "数据库索引的工作原理是什么？"
+  ]
 }

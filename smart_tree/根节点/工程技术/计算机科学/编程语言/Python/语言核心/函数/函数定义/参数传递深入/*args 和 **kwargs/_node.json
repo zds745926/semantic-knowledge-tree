@@ -19,5 +19,30 @@
       "content_preview": "*args 和 **kwargs: `*args` collects extra positional arguments as a tuple, and `**kwargs` collects extra keyword arguments as a dictionary. The unpacking operator is used in function calls. Here's an example to illustrate this concept: ```python def print_info(*args, **kwargs): # Print positional arguments (as a tuple) print(\"Positional arguments:\", args) # Print keyword arguments (as a dictionary) print(\"Keyword arguments:\", kwargs) # Example call with *args and **kwargs print_info(1, 2, 3, name=\"Alice\", age=25) ``` In this example: - `*args` collects the positional arguments `(1, 2, 3)` into a tuple. - `**kwargs` collects the keyword arguments `{'name': 'Alice', 'age': 25}` into a dictionary."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n`*args` 和 `**kwargs` 是 Python 中用于在函数定义中捕获可变数量参数的特殊语法。`*args` 捕获所有额外的位置参数，并将其作为一个元组传递给函数；`**kwargs` 捕获所有额外的关键字参数，并将其作为一个字典传递给函数。\n\n## 何时使用\n当函数需要处理不确定数量的参数时，例如装饰器、回调函数、API 封装或需要将参数转发给另一个函数时，使用 `*args` 和 `**kwargs` 可以保持代码的灵活性和可扩展性。它们特别适用于编写通用包装器或需要接受任意参数的函数。\n\n## 示例\n```Python\ndef flexible_function(a, b, *args, **kwargs):\n    print(f\"固定参数: a={a}, b={b}\")\n    print(f\"额外位置参数: {args}\")\n    print(f\"额外关键字参数: {kwargs}\")\n\nflexible_function(1, 2, 3, 4, x=5, y=6)\n# 输出:\n# 固定参数: a=1, b=2\n# 额外位置参数: (3, 4)\n# 额外关键字参数: {'x': 5, 'y': 6}\n```\n\n## 反例\n错误用法：在函数定义中同时使用 `*args` 和 `**kwargs` 后，仍然尝试定义额外的位置参数，这会导致语法错误。例如 `def func(*args, x, **kwargs):` 是不允许的，因为 `x` 无法被正确捕获。\n\n## 边界条件\n1. `*args` 必须出现在所有位置参数之后，`**kwargs` 必须出现在所有参数的最后。2. 当同时使用 `*args` 和 `**kwargs` 时，`*args` 必须在 `**kwargs` 之前。3. 如果函数内部修改了 `*args` 元组，会引发 `TypeError`，因为元组是不可变的。",
+    "code_pattern": "def wrapper(*args, **kwargs):\n    # 处理或记录参数\n    print(f\"位置参数: {args}\")\n    print(f\"关键字参数: {kwargs}\")\n    # 调用原始函数或执行其他逻辑\n    return original_function(*args, **kwargs)",
+    "common_pitfalls": [
+      "忘记 `*args` 捕获的是元组，尝试修改它会引发 `TypeError`，例如 `args[0] = 10` 是错误的。",
+      "在函数调用时错误地使用 `*` 和 `**` 解包：例如 `func(**list)` 会失败，因为 `**` 只能用于字典，而 `*` 只能用于可迭代对象。",
+      "混淆 `*args` 和 `**kwargs` 的顺序：在函数定义中，`*args` 必须在 `**kwargs` 之前，否则会引发 `SyntaxError`。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -18,5 +18,13 @@
     "description": "字符串: Python strings (str) are immutable sequences of Unicode characters. They support indexing, slicing, formatting, and a rich set of string methods. Here's a brief Python code example demonstrating some of these features: ```python # Creating a string my_string = \"Hello, World!\" # Indexing print(my_string[0]) # Output: H # Slicing print(my_string[7:]) # Output: World! # String formatting using f-strings name = \"Alice\" greeting = f\"Hello, {name}!\" print(greeting) # Output: Hello, Alice! ``` This example shows how to create a string, access characters by index, slice substrings, and format strings using f-strings."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python语言核心中的字符串处理，涵盖从基础概念到高级技巧的完整知识体系。子主题包括：字符串基础（定义、不可变性、索引与切片）、字符串方法（常用内置方法如split、join、replace、find等）、f-string详解（格式化字符串字面量的语法、表达式嵌入、格式化说明符）、以及字符串进阶（正则表达式、Unicode处理、字符串性能优化、模板字符串等）。这些子主题之间存在递进关系：基础部分建立对字符串本质的理解；方法部分提供常用操作工具；f-string作为现代Python推荐的格式化方式，连接了基础与实用；进阶部分则拓展到复杂场景下的字符串处理能力。学习路径建议从字符串基础入手，掌握不可变性和索引切片，然后熟悉常用方法，接着深入学习f-string的灵活用法，最后探索正则表达式等高级主题，以应对实际开发中的文本处理需求。",
+  "example_queries": [
+    "如何在Python中高效拼接大量字符串？",
+    "f-string中如何格式化浮点数并指定小数位数？",
+    "Python字符串的replace方法与正则表达式替换有什么区别？",
+    "如何检查一个字符串是否只包含数字或字母？",
+    "字符串切片中步长为负数时如何理解其行为？"
+  ]
 }

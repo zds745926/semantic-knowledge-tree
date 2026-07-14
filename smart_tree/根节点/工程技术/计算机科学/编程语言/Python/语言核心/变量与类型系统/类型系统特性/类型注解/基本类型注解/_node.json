@@ -19,5 +19,34 @@
       "content_preview": "基本类型注解: ```python def add(x: int, y: int) -> int: # Declaration of types. typing: List[int]/Dict[str,int]/Optional. return x + y ``` Explanation: - `add(x: int, y: int) -> int:` is a function definition in Python that takes two integer parameters and returns an integer. - The comment \"Declaration of types. typing: List[int]/Dict[str,int]/Optional.\" refers to type hints or annotations used for clarity and static type checking. In this context, it's not directly applicable since the function only deals with integers, but I've included a brief explanation in the docstring. Here is an example of how you might use `List` and `Dict` from the `typing` module: ```python from typing import List, Dict, Optional def process_numbers(numbers: List[int]) -> None: \"\"\" Process a list of integers. :param numbers: A list of integers. \"\"\" print(\"Processing numbers:\", numbers) def get_value(d: Dict[str, int], key: str) -> Optional[int]: \"\"\" Get the value from a dictionary with string keys and integer values. :param d: A dictionary mapping strings to integers. :param key: The key to look up in the dictionary. :return: The corresponding integer value or None if the key is not found. \"\"\" return d.get(key) ``` This example demonstrates how to use `List` and `Dict` from the `typing` module for type hints."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n基本类型注解是指在 Python 代码中为变量、函数参数和返回值指定预期数据类型的一种语法，它使用冒号和箭头来标注类型，帮助开发者明确代码意图并支持静态类型检查。\n\n## 何时使用\n在需要提高代码可读性和可维护性的场景下使用，例如大型项目协作、公共 API 设计或需要静态类型检查工具（如 mypy）进行错误检测时。它能让其他开发者快速理解变量和函数的预期类型，减少运行时类型错误。\n\n## 示例\n```Python\ndef greet(name: str) -> str:\n    return \"Hello, \" + name\n\nage: int = 25\npi: float = 3.14159\nis_active: bool = True\nitems: list = [1, 2, 3]\n\nprint(greet(\"Alice\"))\nprint(age, pi, is_active, items)\n```\n\n## 反例\n错误用法：在函数内部随意改变变量类型，导致类型注解与实际值不匹配，例如将 `age: int` 赋值为字符串 `\"25\"`，这会误导阅读者并可能使类型检查工具报错。\n\n## 边界条件\n注意：类型注解在运行时不会强制检查类型，它仅用于静态分析和文档目的。Python 解释器会忽略类型注解，因此即使类型不匹配，代码仍可能正常运行，但应遵循注解以保持一致性。",
+    "code_pattern": "def function_name(param1: type1, param2: type2) -> return_type:\n    # 函数体\n    result: return_type = param1 + param2\n    return result\n\nvariable_name: type = initial_value\n\n# 示例\nx: int = 10\ny: float = 3.14\nz: str = \"hello\"\nflag: bool = False",
+    "common_pitfalls": [
+      "在变量注解后，后续赋值了不同类型的值，例如先写 `x: int = 5` 然后 `x = \"string\"`，这会导致类型不一致，静态检查工具会报错。",
+      "忘记为函数参数或返回值添加注解，尤其是在复杂函数中，这会降低代码的可读性和可维护性。",
+      "在注解中使用未导入的类型，例如使用 `Optional` 或 `List` 时忘记从 `typing` 模块导入，导致 NameError。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

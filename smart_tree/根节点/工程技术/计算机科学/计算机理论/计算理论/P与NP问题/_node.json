@@ -19,5 +19,38 @@
       "content_preview": "P与NP问题: P-class problems can be solved in polynomial time, whereas NP-class problems can be verified in polynomial time. Is P = NP? This is the most important open question in computer science. Here's a brief explanation of these concepts with a Python code example: - **P Class**: Problems that can be solved efficiently (in polynomial time). ```python def is_prime(n): if n <= 1: return False for i in range(2, int(n**0.5) + 1): if n % i == 0: return False return True # Example: Check if a number is prime (efficiently solvable) print(is_prime(17)) # Output: True ``` - **NP Class**: Problems for which a proposed solution can be verified efficiently (in polynomial time). ```python def verify_solution(n, solution): return all(solution[i] in [0, 1] and sum(solution) == n // 2 for i in range(len(solution))) # Example: Verify if a given list of 0s and 1s sums to half the length (efficiently verifiable) print(verify_solution(8, [1, 0, 1, 0, 1, 0, 1, 0])) # Output: True ``` The question \"Is P = NP?\" asks whether every problem whose solution can be quickly verified can also be quickly solved."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "boolean_algebra_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cap_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "application"
+    },
+    {
+      "id": "avl_tree_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nP与NP问题是计算理论中的核心未解难题，涉及问题求解的复杂度分类。P类问题指能在多项式时间内由确定性图灵机求解的问题，而NP类问题指能在多项式时间内由非确定性图灵机求解，或能在多项式时间内验证解的正确性的问题。该问题的本质是询问是否所有能在多项式时间内验证解的问题，也都能在多项式时间内求解。\n\n## 核心要点\n1. P类问题代表高效可解的问题，例如排序、最短路径等，其求解时间随输入规模增长呈多项式级增长。\n2. NP类问题包括难以求解但易于验证的问题，如旅行商问题、数独等，其解可在多项式时间内验证，但求解可能需指数时间。\n3. NP完全问题是NP中最难的一类，任何NP问题都可多项式归约到它，若一个NP完全问题有高效解法，则所有NP问题都有高效解法。\n4. P与NP是否相等是千禧年七大数学难题之一，目前普遍认为P≠NP，但尚未被证明。\n5. 该问题对密码学至关重要，因为许多加密算法依赖于NP问题的难解性，若P=NP则现有加密体系可能被颠覆。\n\n## 应用场景\nP与NP问题的研究直接影响算法设计与优化，例如在物流、调度、生物信息学等领域，通过识别NP完全问题可避免盲目追求最优解，转而采用近似算法或启发式方法。此外，密码学中RSA等公钥系统基于大数分解的NP难性，若P=NP则这些系统将不再安全，需重新设计。\n\n## 相关概念\n多项式时间归约是NP完全性证明的核心工具，允许将一个问题转化为另一个问题。确定性图灵机与非确定性图灵机是计算模型的基础，前者每一步只有一个动作，后者可同时探索多个分支。此外，NP难问题指至少与NP问题一样难的问题，但不一定属于NP类，例如停机问题。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

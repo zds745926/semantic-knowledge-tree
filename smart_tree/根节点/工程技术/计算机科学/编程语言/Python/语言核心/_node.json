@@ -18,5 +18,13 @@
     "description": "语言核心: The core of the Python language includes basic syntax elements such as variable and type systems, control flow, function definitions, string operations, etc. The design philosophy of Python emphasizes simplicity and readability; 'Pythonic' refers to high-quality code styles that conform to the language's conventions. Here is a brief example in Python to illustrate some of these concepts: ```python # Example demonstrating variables, types, control flow, functions, and strings def greet(name: str) -> None: \"\"\"Prints a greeting message.\"\"\" print(f\"Hello, {name}!\") greet(\"World\") # Output: Hello, World! # Control flow example using if-else statement age = 20 if age >= 18: print(\"You are an adult.\") else: print(\"You are a minor.\") # String operations text = \"Python is fun!\" print(text.upper()) # Output: PYTHON IS FUN! ``` This code snippet includes function definitions, type annotations, string manipulation methods (`upper()`), and basic control flow structures (`if-else`)."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Python编程语言的核心基础，包括变量与类型系统、控制流、函数和字符串四个子主题。变量与类型系统定义了数据的存储方式和类型规则，是构建程序的基础；控制流（如条件判断和循环）决定了代码的执行路径；函数实现了代码的模块化与复用；字符串作为最常用的数据类型之一，其操作贯穿整个编程过程。这四个子主题相互关联：变量与类型系统为控制流和函数提供数据支持，控制流和函数则利用变量和字符串实现逻辑处理。学习路径建议从变量与类型系统入手，理解Python的动态类型和基本数据类型；接着学习控制流，掌握条件语句和循环结构；然后深入函数，理解参数传递、作用域和返回值；最后系统学习字符串的常用方法和格式化技巧。掌握这些核心概念后，学习者将能编写简单的Python程序，并为后续学习数据结构、面向对象编程等高级主题奠定坚实基础。",
+  "example_queries": [
+    "Python中变量是如何声明和赋值的？有哪些基本数据类型？",
+    "Python的if-elif-else语句和for循环、while循环如何使用？",
+    "如何定义和调用一个函数？函数参数有哪些类型（位置参数、默认参数、关键字参数等）？",
+    "Python字符串有哪些常用方法（如split、join、replace）？如何进行字符串格式化？",
+    "Python中的可变与不可变类型有什么区别？对函数参数传递有何影响？"
+  ]
 }

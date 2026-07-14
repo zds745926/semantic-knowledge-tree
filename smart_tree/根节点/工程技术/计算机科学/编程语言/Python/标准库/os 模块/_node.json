@@ -19,5 +19,34 @@
       "content_preview": "os 模块: The `os` module provides operating system interfaces: file operations (e.g., `os.remove()`, `os.rename()`), directory traversal (`os.walk()`), and environment variables (`os.environ`). Here are brief Python code examples for each: 1. **File Operations**: - Deleting a file: ```python import os try: os.remove(\"example.txt\") except FileNotFoundError: print(\"The file does not exist.\") ``` - Renaming a file: ```python import os os.rename(\"old_name.txt\", \"new_name.txt\") ``` 2. **Directory Traversal**: - Listing files in a directory and its subdirectories: ```python import os for root, dirs, files in os.walk(\"/path/to/directory\"): for file in files: print(os.path.join(root, file)) ``` 3. **Environment Variables**: - Accessing an environment variable: ```python import os print(os.environ.get(\"PATH\")) ``` These examples illustrate how to use the `os` module functions in Python for common tasks related to file and directory management."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_tempfile_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_fnmatch_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "ls_cd_pwd_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nos 模块是 Python 标准库中提供操作系统接口的模块，允许程序与底层操作系统进行交互，包括文件和目录操作、进程管理、环境变量访问等。\n\n## 何时使用\n当需要执行跨平台的文件路径操作、创建或删除目录、获取当前工作目录、运行系统命令或访问环境变量时，应使用 os 模块。它适用于需要与操作系统直接交互的脚本和应用程序开发。\n\n## 示例\n```Python\nimport os\n\n# 获取当前工作目录\ncurrent_dir = os.getcwd()\nprint(f\"当前目录: {current_dir}\")\n\n# 创建新目录\nos.mkdir(\"new_folder\")\n\n# 列出目录内容\nitems = os.listdir(\".\")\nprint(f\"目录内容: {items}\")\n\n# 重命名文件\nos.rename(\"old.txt\", \"new.txt\")\n\n# 删除文件\nos.remove(\"new.txt\")\n\n# 删除目录\nos.rmdir(\"new_folder\")\n```\n\n## 反例\n错误用法：直接使用 os.system() 执行用户输入的命令，可能导致命令注入安全漏洞。例如 `os.system(f\"rm -rf {user_input}\")` 是危险的，应使用 subprocess 模块替代。\n\n## 边界条件\n注意：os 模块的函数在不同操作系统上行为可能不同，例如路径分隔符在 Windows 上是反斜杠，在 Linux/macOS 上是正斜杠。建议使用 os.path.join() 或 pathlib 模块处理路径，以确保跨平台兼容性。",
+    "code_pattern": "import os\nimport sys\n\ndef safe_operate(path):\n    \"\"\"安全地操作文件和目录\"\"\"\n    if not os.path.exists(path):\n        print(f\"路径 {path} 不存在\")\n        return\n    \n    # 获取绝对路径\n    abs_path = os.path.abspath(path)\n    print(f\"绝对路径: {abs_path}\")\n    \n    # 分割路径和文件名\n    dir_name, file_name = os.path.split(abs_path)\n    print(f\"目录: {dir_name}, 文件: {file_name}\")\n    \n    # 检查是否为目录\n    if os.path.isdir(abs_path):\n        items = os.listdir(abs_path)\n        print(f\"目录内容: {items}\")\n    elif os.path.isfile(abs_path):\n        print(f\"文件大小: {os.path.getsize(abs_path)} 字节\")\n\nif __name__ == \"__main__\":\n    if len(sys.argv) > 1:\n        safe_operate(sys.argv[1])\n    else:\n        safe_operate(\".\")",
+    "common_pitfalls": [
+      "使用 os.system() 执行命令时，若命令字符串包含用户输入，容易引发命令注入攻击。应改用 subprocess.run() 并传递参数列表。",
+      "os.remove() 只能删除文件，不能删除非空目录。若尝试删除非空目录会抛出 OSError，应使用 shutil.rmtree() 或先清空目录。",
+      "在 Windows 上，os.chmod() 的权限模式可能不按预期工作，因为 Windows 权限模型与 Unix 不同。建议使用 stat 模块或第三方库处理 Windows 权限。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

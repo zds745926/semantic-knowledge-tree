@@ -19,5 +19,22 @@
       "content_preview": "DMA: The device directly reads and writes memory without occupying the CPU. Transmission completion triggers an interrupt notification. This is essential for high-speed devices. Python code example (to illustrate direct memory access, though actual hardware interaction would be done via system calls or specific library functions): ```python import mmap import os # Open a file in binary mode for memory mapping with open(\"example.txt\", \"r+b\") as f: # Map the file into memory mm = mmap.mmap(f.fileno(), 0) # Directly write to the mapped memory (simulating direct hardware access) mm[10:20] = b\"direct write\" # Flush changes to disk mm.flush() # Close the mapping mm.close() # This is a simplified example. Actual device interaction would require specific drivers or system calls. ``` Note: The above Python code uses memory-mapped files as an analogy for direct hardware access, but actual low-level device interactions typically involve operating system-specific APIs and drivers."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "c_memory_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nDMA（Direct Memory Access，直接存储器访问）是一种允许硬件设备（如磁盘、网卡）直接与系统内存进行数据交换，而无需CPU干预的I/O技术。它通过专门的DMA控制器管理数据传输，从而显著提升系统效率。\n\n## 核心要点\n- **CPU解放**：DMA传输期间，CPU可执行其他任务，仅在传输开始和结束时参与，大幅降低CPU占用率。\n- **高速传输**：DMA控制器直接控制总线，实现块数据的高速传输，适用于大数据量场景。\n- **突发模式**：DMA通常以突发方式占用总线，连续传输多个数据字，减少总线切换开销。\n- **周期窃取**：DMA控制器在CPU不访问总线时“窃取”一个或多个总线周期进行传输，不影响CPU正常操作。\n- **通道优先级**：多DMA通道可配置优先级，确保关键设备（如硬盘）优先获得总线使用权。\n\n## 应用场景\nDMA广泛应用于需要高速、大量数据搬运的场合，例如磁盘读写、网络数据包收发、音频视频流处理以及图形渲染中的帧缓冲区更新。它也是嵌入式系统中传感器数据采集和内存间数据复制的高效手段。\n\n## 相关概念\nDMA与中断（Interrupt）协同工作：DMA完成传输后触发中断通知CPU。它常与I/O端口、内存映射I/O（MMIO）对比，后者需要CPU逐字搬运数据。此外，DMA与缓存一致性（Cache Coherency）密切相关，需确保DMA操作的内存区域与CPU缓存数据一致。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

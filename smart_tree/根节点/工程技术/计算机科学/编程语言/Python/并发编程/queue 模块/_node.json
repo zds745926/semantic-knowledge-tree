@@ -18,5 +18,13 @@
     "description": "queue 模块: The `queue` module provides thread-safe queue implementations. It supports FIFO, LIFO (stack), and priority queues. A core component of the producer-consumer pattern, it enables safe data transfer in multi-threaded programming. Here's a brief Python code example demonstrating the use of the `queue` module for a simple producer-consumer scenario: ```python import queue import threading import time # Define a function for producers to add items to the queue def producer(q): for i in range(5): item = f'item_{i}' q.put(item) print(f'Produced {item}') time.sleep(1) # Define a function for consumers to consume items from the queue def consumer(q): while True: item = q.get() if item is None: # Sentinel value to indicate end of production break print(f'Consumed {item}') q.task_done() # Indicate that a formerly enqueued task is complete # Create a queue and start the producer and consumer threads q = queue.Queue() producer_thread = threading.Thread(target=producer, args=(q,)) consumer_thread = threading.Thread(target=consumer, args=(q,)) producer_thread.start() consumer_thread.start() # Wait for all items to be processed by consumers q.join() # Signal the end of production to the consumer for _ in range(2): # Send two sentinel values q.put(None) ``` This example demonstrates a basic producer-consumer model using Python's `queue` module, where producers add items to the queue and consumers remove them."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "queue 模块是 Python 并发编程中用于线程安全数据交换的核心组件。本分支涵盖四种主要队列类型：FIFO（先进先出）队列 Queue、LIFO（后进先出）队列 LifoQueue、优先级队列 PriorityQueue 以及轻量级无锁队列 SimpleQueue。这些队列都实现了线程安全的 put 和 get 操作，支持阻塞和非阻塞模式，并可选设置最大容量。Queue 是最通用的队列，适用于生产者-消费者模式；LifoQueue 适用于需要后进先出场景，如回溯算法；PriorityQueue 根据元素优先级排序，常用于任务调度；SimpleQueue 是 Python 3.7 引入的简化版，不支持 maxsize 和任务跟踪，性能更高。学习路径建议：先掌握 Queue 的基本使用，理解 put/get 阻塞机制；再学习 LifoQueue 和 PriorityQueue 的差异；最后了解 SimpleQueue 的适用场景。这些队列是构建多线程应用的基础，能有效避免竞态条件和死锁。",
+  "example_queries": [
+    "如何在 Python 多线程中使用 Queue 实现生产者-消费者模式？",
+    "PriorityQueue 和普通列表排序有什么区别？",
+    "SimpleQueue 和 Queue 在性能上有何差异？",
+    "如何设置队列的最大容量并处理队列满时的阻塞？",
+    "LifoQueue 在什么场景下比 Queue 更合适？"
+  ]
 }

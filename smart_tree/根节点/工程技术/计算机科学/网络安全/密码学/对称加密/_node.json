@@ -19,5 +19,30 @@
       "content_preview": "对称加密: AES/Rijndael. GCM mode is recommended. Key distribution issues. Python code example for using AES in GCM mode: ```python from Crypto.Cipher import AES from Crypto.Random import get_random_bytes from Crypto.Protocol.KDF import scrypt # Generate a random 32-byte key (for AES-256) key = get_random_bytes(32) # Derive the key using scrypt for better security derived_key = scrypt(password=b\"password\", salt=b\"salt\", N=2**14, r=8, p=1, key_len=32, dpapi=False) cipher = AES.new(derived_key, AES.MODE_GCM) data = b\"Hello, World!\" ciphertext, tag = cipher.encrypt_and_digest(data) # The ciphertext and tag can now be sent over the network print(\"Ciphertext:\", ciphertext) print(\"Tag:\", tag) # To decrypt: decipher = AES.new(derived_key, AES.MODE_GCM, nonce=cipher.nonce) plaintext = decipher.decrypt(ciphertext) if decipher.tag_valid(tag): print(\"Decrypted data:\", plaintext.decode()) else: print(\"Invalid tag\") ``` Note: This example uses the `pycryptodome` library. You can install it via pip with `pip install pycryptodome`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_hashlib_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n对称加密是一种加密方式，通信双方使用相同的密钥进行数据的加密和解密。发送方用密钥将明文加密成密文，接收方用同一密钥将密文解密回明文。这种加密算法计算速度快，适合大量数据的加密处理。\n\n## 核心要点\n- 密钥管理：对称加密的安全性完全依赖于密钥的保密性，密钥必须在通信双方之间安全传递，一旦泄露，加密即失效。\n- 算法类型：常见的对称加密算法包括AES（高级加密标准）、DES（数据加密标准）和3DES等，其中AES因其高安全性和效率被广泛采用。\n- 加密模式：对称加密可采用多种模式，如ECB（电子密码本模式）、CBC（密码块链模式）等，不同模式影响加密的安全性和适用场景。\n- 性能优势：相比非对称加密，对称加密的运算速度更快，资源消耗更低，适用于实时通信和大规模数据加密。\n- 局限性：对称加密无法解决密钥分发和数字签名问题，通常需要与非对称加密结合使用以增强安全性。\n\n## 应用场景\n对称加密广泛应用于数据存储加密，如硬盘加密和数据库加密，确保静态数据安全。在网络安全中，它用于保护传输中的数据，例如HTTPS协议中利用对称加密加密实际传输内容。此外，VPN和无线网络加密（如WPA2）也依赖对称加密来保障通信隐私。\n\n## 相关概念\n对称加密与非对称加密相对，后者使用公钥和私钥对，解决了密钥分发问题但速度较慢。密钥交换协议（如Diffie-Hellman）常与对称加密结合，安全地共享密钥。哈希函数虽不用于加密，但常与对称加密配合实现数据完整性验证。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

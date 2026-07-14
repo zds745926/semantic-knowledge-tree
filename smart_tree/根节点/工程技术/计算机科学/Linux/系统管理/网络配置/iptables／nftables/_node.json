@@ -19,5 +19,30 @@
       "content_preview": "iptables/nftables: Filter table INPUT/FORWARD/OUTPUT. Rule match actions. Here are some brief explanations for each part: - **Filter Table**: In Linux networking, the `filter` table is one of the built-in tables used by the Netfilter framework to manage packet filtering rules. - **INPUT Chain**: This chain processes packets destined for the local host (i.e., packets that arrive on the network interface). - **FORWARD Chain**: This chain processes packets that are being routed through the system (i.e., packets not destined for the local host but intended for another host). - **OUTPUT Chain**: This chain processes packets originating from the local host (i.e., packets sent out by the machine). Here is a brief Python code example using `iptables` to illustrate how you might set up rules in these chains: ```python import subprocess def add_filter_rule(chain, rule): \"\"\" Add a rule to the specified chain. :param chain: The chain name (INPUT, FORWARD, OUTPUT) :param rule: The rule string to be added \"\"\" command = f\"iptables -A {chain} -j {rule}\" subprocess.run(command.split(), check=True) # Example usage: add_filter_rule(\"INPUT\", \"ACCEPT\") add_filter_rule(\"FORWARD\", \"DROP\") add_filter_rule(\"OUTPUT\", \"LOG --log-prefix 'OUTPUT: '\") print(\"Rules added successfully.\") ``` This Python script uses the `subprocess` module to run `iptables` commands, adding rules to the specified chains."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tcp_bbr_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "boolean_algebra_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\niptables和nftables是Linux系统中用于配置网络包过滤规则的工具，它们通过定义规则集来控制进出网络接口的数据包。iptables是传统的基于表的框架，而nftables是其现代替代品，提供了更统一的语法和更高的性能。\n\n## 核心要点\n- iptables使用预定义的链（如INPUT、OUTPUT、FORWARD）和表（如filter、nat、mangle）来组织规则，规则按顺序匹配并执行动作（如ACCEPT、DROP）。\n- nftables引入了新的命令行工具nft，它使用单一语法处理所有协议族（IPv4、IPv6、ARP等），并支持动态规则更新和更好的错误报告。\n- 两者都支持状态跟踪（connection tracking），允许基于连接状态（如NEW、ESTABLISHED）进行过滤，提高安全性。\n- nftables在性能上优于iptables，因为它减少了内核中的代码路径，并支持更高效的规则集编译。\n- 迁移从iptables到nftables可通过兼容层（如iptables-nft）实现，但推荐直接使用nft语法以发挥全部优势。\n\n## 应用场景\niptables和nftables常用于构建防火墙规则，保护服务器免受未授权访问，例如限制特定端口的入站连接。它们也用于网络地址转换（NAT），如端口转发或共享上网，以及实现流量控制（如限速）和日志记录。\n\n## 相关概念\n这些工具与Netfilter框架紧密相关，Netfilter是Linux内核中处理网络包的内核模块。此外，它们常与路由表、网络命名空间和策略路由结合使用，以实现复杂的网络隔离和转发策略。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

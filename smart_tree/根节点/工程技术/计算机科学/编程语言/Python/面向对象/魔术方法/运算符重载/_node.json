@@ -19,5 +19,34 @@
       "content_preview": "运算符重载: `__add__`, `__eq__`, `__lt__`, `__hash__`, `__call__`. Explanation of the terms and a brief Python code example for each: 1. **`__add__`**: This special method is used to define behavior when the `+` operator is used with an instance of your class. ```python class Vector: def __init__(self, x, y): self.x = x self.y = y def __add__(self, other): return Vector(self.x + other.x, self.y + other.y) v1 = Vector(1, 2) v2 = Vector(3, 4) print(v1 + v2) # Output: <__main__.Vector object at ...> ``` 2. **`__eq__`**: This special method is used to define behavior when the `==` operator is used with an instance of your class. ```python class Point: def __init__(self, x, y): self.x = x self.y = y def __eq__(self, other): return (self.x, self.y) == (other.x, other.y) p1 = Point(1, 2) p2 = Point(1, 2) print(p1 == p2) # Output: True ``` 3. **`__lt__`**: This special method is used to define behavior when the `<` operator is used with an instance of your class. ```python class Number: def __init__(self, value): self.value = value def __lt__(self, other): return self.value < other.value n1 = Number(5) n2 = Number(3) print(n1 < n2) # Output: False ``` 4. **`__hash__`**: This special method is used to define the hash value of an object, which is required for objects to be used as dictionary keys. ```python class MyObject: def __init__(self, key): self.key = key def __hash__(self): return hash(self.key) obj1 = MyObject('key1') d = {obj1: 'value'} print(d[obj1]) # Output: value ``` 5. **`__call__`**: This special method is used to make an instance of a class callable like a function. ```python class Counter: def __init__(self): self.count = 0 def __call__(self, increment=1): self.count += increment return self.count counter = Counter() print(counter(5)) # Output: 5 print(counter()) # Output: 6 (since count was incremented by 1) ``` These examples illustrate how these special methods can be implemented in Python to customize the behavior of your classes."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cpp_oop_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n运算符重载是指为自定义类赋予Python内置运算符（如+、-、*、==等）新的行为，通过实现特定的魔术方法（如`__add__`、`__sub__`、`__eq__`）来定义对象在运算符作用下的运算逻辑。\n\n## 何时使用\n当需要让自定义对象支持直观的算术运算、比较或类型转换时使用，例如向量加法、矩阵乘法、复数运算等。它使代码更自然、可读性更高，避免显式调用方法。\n\n## 示例\n```Python\nclass Vector:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n    def __add__(self, other):\n        if isinstance(other, Vector):\n            return Vector(self.x + other.x, self.y + other.y)\n        return NotImplemented\n\n    def __repr__(self):\n        return f\"Vector({self.x}, {self.y})\"\n\nv1 = Vector(1, 2)\nv2 = Vector(3, 4)\nprint(v1 + v2)  # 输出: Vector(4, 6)\n```\n\n## 反例\n不要重载运算符使其行为与常规语义相悖，例如让`__add__`执行减法，这会严重降低代码可读性和可维护性。\n\n## 边界条件\n注意处理类型不匹配的情况，应返回`NotImplemented`而非抛出异常，以便Python尝试反向操作；同时避免重载过多运算符导致类接口臃肿。",
+    "code_pattern": "class MyClass:\n    def __init__(self, value):\n        self.value = value\n\n    def __add__(self, other):\n        if isinstance(other, MyClass):\n            return MyClass(self.value + other.value)\n        return NotImplemented\n\n    def __eq__(self, other):\n        if isinstance(other, MyClass):\n            return self.value == other.value\n        return NotImplemented\n\n    def __repr__(self):\n        return f\"MyClass({self.value})\"",
+    "common_pitfalls": [
+      "忘记返回NotImplemented导致类型不匹配时抛出TypeError，而不是优雅地降级到反向操作或返回False。",
+      "重载比较运算符时未同时实现__hash__，导致对象在集合或字典中行为异常（例如__eq__返回True但__hash__不同）。",
+      "过度重载运算符，例如为字符串类重载__mul__表示重复，但与其他类型交互时产生歧义。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

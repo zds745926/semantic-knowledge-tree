@@ -19,5 +19,30 @@
       "content_preview": "CSRF: User login is induced to perform unwanted actions. CSRF Token and SameSite Cookie protection. To illustrate the implementation of these concepts in Python using Flask (a popular web framework), here are some brief examples: 1. **CSRF Token Implementation**: ```python from flask import Flask, request, session, redirect, url_for app = Flask(__name__) app.secret_key = 'your_secret_key' # Set a secret key for session management @app.route('/login', methods=['POST']) def login(): if request.form.get('csrf_token') != session.pop('_csrf_token', None): return \"Invalid CSRF token\", 403 # Proceed with the actual login logic... return redirect(url_for('success')) from itsdangerous import TimedCSRFToken class CustomForm: def __init__(self, form_data): self.form_data = form_data @property def csrf_token(self): token = TimedCSRFToken(app) session['_csrf_token'] = token.generate() return token.token # Example usage in a route @app.route('/login', methods=['GET']) def login_form(): form = CustomForm(request.form) return f\"CSRF Token: {form.csrf_token}\" ``` 2. **SameSite Cookie Implementation**: ```python from flask import Flask, make_response app = Flask(__name__) @app.route('/set_cookie') def set_cookie(): response = make_response(\"Cookie set\") response.set_cookie('user', 'test_user', samesite='Strict') # Set SameSite attribute to Strict return response ``` These examples demonstrate how to implement CSRF protection and configure cookies with the `SameSite` attribute in a Flask application."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "xss_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "http_methods_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "rest_api_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n跨站请求伪造（CSRF）是一种攻击方式，攻击者诱使用户在已登录的Web应用中执行非本意的操作。它利用用户已认证的身份，向目标网站发送伪造请求，从而实现恶意操作。\n\n## 核心要点\n1. CSRF攻击依赖于用户已登录目标网站的身份认证信息（如Cookie）。\n2. 攻击者通过构造恶意链接或表单，诱使用户在不知情的情况下提交请求。\n3. 攻击通常针对状态改变的操作，如转账、修改密码等，而非数据查询。\n4. 防御措施包括使用CSRF Token、同源检测、双重Cookie验证等。\n5. CSRF与XSS不同，XSS利用用户对网站的信任，而CSRF利用网站对用户浏览器的信任。\n\n## 应用场景\nCSRF常见于社交网站、银行系统、电商平台等需要用户登录并执行敏感操作的场景。例如，攻击者可能伪造一个转账请求，当用户点击恶意链接时，自动向银行发送转账指令。\n\n## 相关概念\nCSRF与XSS（跨站脚本攻击）常被混淆，但两者机制不同：XSS注入恶意脚本，而CSRF伪造请求。此外，CSRF与点击劫持也有相似之处，但点击劫持通过透明覆盖层诱导用户点击。理解这些区别有助于制定更全面的安全策略。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

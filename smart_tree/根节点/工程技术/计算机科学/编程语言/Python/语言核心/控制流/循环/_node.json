@@ -16,5 +16,13 @@
     "description": "循环: Python loops include `for` loops (iterating over iterable objects) and `while` loops (driven by conditions). The `break` and `continue` statements control the flow of the loop, while an `else` clause is executed when the loop terminates normally. Here are brief examples to illustrate these concepts: For loop example: ```python # Iterate over a list of numbers numbers = [1, 2, 3, 4, 5] for number in numbers: if number == 3: break # Exit the loop when number is 3 print(number) else: # This block runs only if the loop exits normally (not via a break statement) print(\"Loop completed without breaking\") ``` While loop example: ```python # A simple counter that stops after reaching 5 count = 0 while count < 5: count += 1 if count == 3: continue # Skip the rest of this iteration and go back to the condition check print(\"Loop completed\") ``` These examples demonstrate how `break` and `continue` can be used within loops, as well as the use of an `else` clause with a loop."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Python编程语言中控制流的核心部分——循环结构，主要包括for循环和while循环。for循环适用于遍历可迭代对象（如列表、字符串、字典等），执行固定次数的迭代；while循环则基于条件判断，在条件为真时重复执行代码块，适用于不确定迭代次数的场景。两者共同构成了Python中实现重复操作的基础，是自动化处理、数据遍历和算法实现的关键工具。学习路径建议先掌握for循环的基本语法和常见应用（如遍历序列、使用range()），再学习while循环及其与break、continue等控制语句的配合，最后通过综合练习（如嵌套循环、循环与条件判断结合）提升实际编程能力。理解循环的边界条件和效率优化（如避免无限循环）也是重要环节。",
+  "example_queries": [
+    "如何在Python中使用for循环遍历字典的键和值？",
+    "while循环和for循环在什么场景下选择使用？",
+    "如何用循环实现1到100的累加求和？",
+    "Python中break和continue在循环中的作用是什么？",
+    "如何避免while循环陷入无限循环？"
+  ]
 }

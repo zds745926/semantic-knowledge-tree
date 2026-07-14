@@ -19,5 +19,31 @@
       "content_preview": "ThreadPoolExecutor: Thread pool executor. `max_workers` controls the number of threads. `submit` returns a Future object. Suitable for I/O-bound tasks. Here's an example using Python's `concurrent.futures` module: ```python import concurrent.futures def task(n): return n * n with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor: future = executor.submit(task, 3) result = future.result() print(result) # Output: 9 ``` In this example, `ThreadPoolExecutor` is used with a maximum of 5 worker threads. The `submit` method is called to schedule the `task` function for execution, and it returns a `Future` object that can be used to retrieve the result later."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_thread_safety_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "deadlock_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nThreadPoolExecutor 是 Python concurrent.futures 模块中用于管理线程池的类，它提供了一种高级接口来异步执行可调用对象，自动管理线程的创建、复用和销毁，从而简化多线程编程。\n\n## 何时使用\n当需要并发执行多个 I/O 密集型任务（如网络请求、文件读写、数据库查询）时，使用 ThreadPoolExecutor 可以显著提高程序效率。它特别适合任务数量较多且每个任务执行时间较短的情况，因为线程创建和销毁的开销被池化复用所抵消。此外，当需要统一管理异步任务的结果和异常时，ThreadPoolExecutor 提供了 submit() 和 map() 等便捷方法。\n\n## 示例\n```Python\nimport concurrent.futures\nimport time\n\ndef fetch_url(url):\n    time.sleep(1)  # 模拟网络请求\n    return f\"Data from {url}\"\n\nurls = [\"http://example.com\", \"http://test.org\", \"http://demo.net\"]\n\nwith concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:\n    futures = [executor.submit(fetch_url, url) for url in urls]\n    for future in concurrent.futures.as_completed(futures):\n        result = future.result()\n        print(result)\n```\n\n## 反例\n错误用法：在 ThreadPoolExecutor 中执行 CPU 密集型任务（如大量数学计算），由于全局解释器锁（GIL）的存在，多线程无法并行执行 CPU 密集型代码，反而因线程切换增加开销，此时应使用 ProcessPoolExecutor。\n\n## 边界条件\n注意：当 max_workers 设置过大时，可能因系统资源限制导致线程创建失败或性能下降；另外，submit() 提交的任务如果抛出未捕获的异常，会在调用 future.result() 时重新抛出，因此必须处理异常，否则可能导致程序崩溃。",
+    "code_pattern": "import concurrent.futures\n\ndef worker(arg):\n    # 处理单个任务\n    return result\n\nwith concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:\n    futures = {executor.submit(worker, item): item for item in items}\n    for future in concurrent.futures.as_completed(futures):\n        try:\n            data = future.result()\n        except Exception as e:\n            print(f\"Task failed: {e}\")",
+    "common_pitfalls": [
+      "在 ThreadPoolExecutor 中执行 CPU 密集型任务，由于 GIL 限制无法利用多核，应改用 ProcessPoolExecutor。",
+      "忘记调用 future.result() 或未处理异常，导致任务失败静默忽略，程序行为不可预测。",
+      "max_workers 设置过大，超出系统线程限制（如 ulimit），导致线程创建失败或系统资源耗尽。",
+      "在 with 块外访问 future 对象，导致线程池已关闭而 future 未完成，引发 RuntimeError。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

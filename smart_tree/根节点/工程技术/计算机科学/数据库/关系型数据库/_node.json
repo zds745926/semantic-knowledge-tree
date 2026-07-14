@@ -17,5 +17,13 @@
     "description": "关系型数据库: Relational databases organize data into tables (relations) and support ACID transactions and SQL queries. Here is a brief Python code example using the `sqlite3` module to demonstrate creating a table and executing an SQL query: ```python import sqlite3 # Connect to SQLite database (or create it if it doesn't exist) conn = sqlite3.connect('example.db') cursor = conn.cursor() # Create a new table cursor.execute(''' CREATE TABLE IF NOT EXISTS users ( id INTEGER PRIMARY KEY, name TEXT NOT NULL, email TEXT UNIQUE NOT NULL ) ''') # Insert data into the table cursor.execute(\"INSERT INTO users (name, email) VALUES ('Alice', 'alice@example.com')\") conn.commit() # Execute a SQL query to retrieve data cursor.execute('SELECT * FROM users') rows = cursor.fetchall() for row in rows: print(row) # Close the connection conn.close() ``` This example demonstrates basic operations with a relational database using Python and SQLite."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "关系型数据库是工程技术/计算机科学/数据库领域的重要分支，以关系模型为基础，通过二维表格组织数据，并利用SQL语言进行数据定义、操作和查询。本分支涵盖SQL语言、索引和事务三个核心子主题。SQL语言是用户与数据库交互的桥梁，负责数据的增删改查及模式定义；索引是提升数据检索效率的关键技术，通过B+树、哈希等结构加速查询，但需权衡写入性能与存储开销；事务则保证数据的一致性和完整性，通过ACID特性（原子性、一致性、隔离性、持久性）处理并发操作与系统故障。三者紧密关联：SQL语句的执行依赖索引优化，而事务的隔离级别会影响索引的读写行为。学习路径建议先掌握SQL基础语法与数据建模，再深入索引原理与优化策略，最后理解事务机制与并发控制，从而构建从操作到性能再到可靠性的完整知识体系。",
+  "example_queries": [
+    "如何设计一个满足第三范式的关系数据库表结构？",
+    "B+树索引在范围查询中的性能优势是什么？",
+    "事务的隔离级别有哪些？如何避免脏读、不可重复读和幻读？",
+    "在SQL中，JOIN操作与子查询在性能上有什么区别？",
+    "如何通过索引优化来加速慢查询？"
+  ]
 }

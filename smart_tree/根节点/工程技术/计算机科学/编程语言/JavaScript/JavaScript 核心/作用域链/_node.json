@@ -19,5 +19,34 @@
       "content_preview": "作用域链: Variable lookup traverses up the scope chain. `let` and `const` define block-level scope. Closures retain references to external variables. Here's a brief Python code example to illustrate these concepts: ```python def outer_function(): x = 10 # This is in the outer function's scope def inner_function(): print(x) # Accessing the variable from the outer scope inner_function() # This will print 10 outer_function() ``` In this example, `inner_function` has access to the variable `x` defined in the `outer_function`, demonstrating how closures retain references to external variables. Note that Python uses lexical scoping, which is similar to block-level scope with `let` and `const` in JavaScript."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "js_promise_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n作用域链是 JavaScript 中用于解析变量标识符的机制，它由当前执行上下文的作用域和所有父级作用域组成，形成一条链式结构，确保内部函数可以访问外部函数的变量。\n\n## 何时使用\n作用域链在每次访问变量时隐式使用，尤其在嵌套函数、闭包和模块模式中至关重要。当需要从内部函数访问外部函数的变量，或者希望保持变量私有性时，作用域链决定了变量的可访问性。\n\n## 示例\n```JavaScript\nfunction outer() {\n  let outerVar = '外部变量';\n  function inner() {\n    let innerVar = '内部变量';\n    console.log(outerVar); // 通过作用域链访问外部变量\n  }\n  inner();\n}\nouter();\n```\n\n## 反例\n错误地假设内部函数可以访问外部函数的变量，但实际由于作用域链的静态特性，在外部函数执行完毕后，内部函数仍能通过闭包访问外部变量，这可能导致意外的内存泄漏。\n\n## 边界条件\n注意，作用域链在函数定义时确定，而非调用时；使用 let 和 const 声明的变量具有块级作用域，不会提升到函数作用域顶部，因此循环中创建闭包时需小心。",
+    "code_pattern": "function createCounter() {\n  let count = 0;\n  return function() {\n    count++;\n    return count;\n  };\n}\nconst counter = createCounter();\nconsole.log(counter()); // 1\nconsole.log(counter()); // 2",
+    "common_pitfalls": [
+      "在循环中使用 var 声明变量并创建闭包时，所有闭包共享同一个变量，导致最终值相同；应使用 let 或立即执行函数表达式。",
+      "错误地认为作用域链在运行时动态改变，实际上它基于函数定义时的词法环境，导致某些变量意外被保留。",
+      "在异步回调中访问循环变量时，由于作用域链的延迟绑定，可能得到预期之外的值，需使用闭包或 let 解决。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

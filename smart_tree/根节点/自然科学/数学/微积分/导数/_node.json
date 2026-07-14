@@ -19,5 +19,22 @@
       "content_preview": "导数: The derivative \\( f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\) represents the instantaneous rate of change of a function at a particular point. Here is a brief Python code example using the sympy library to calculate the derivative of a simple function: ```python import sympy as sp # Define the variable and function x = sp.symbols('x') f = x**2 + 3*x - 4 # Example function: f(x) = x^2 + 3x - 4 # Calculate the derivative of the function f_prime = sp.diff(f, x) print(\"The derivative of the function is:\", f_prime) ``` This code defines a symbolic variable `x` and a function \\( f(x) = x^2 + 3x - 4 \\), then calculates its derivative using sympy's `diff` function."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "integral_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n导数是微积分学中的核心概念，描述函数在某一点处的瞬时变化率。从几何上看，它表示函数曲线在该点切线的斜率。数学上，函数 f(x) 在点 x0 处的导数定义为极限：f'(x0) = lim_{h->0} [f(x0+h) - f(x0)] / h。\n\n## 核心要点\n1. 导数反映函数变化的快慢，正值表示函数递增，负值表示递减。\n2. 可导必连续，但连续不一定可导，例如绝对值函数在尖点处不可导。\n3. 基本初等函数的导数有固定公式，如幂函数、指数函数、对数函数和三角函数的导数。\n4. 导数的运算法则包括和差积商法则以及链式法则，用于求复合函数的导数。\n5. 高阶导数是对导数再次求导，用于描述变化率的变化趋势。\n\n## 应用场景\n导数在物理学中用于计算瞬时速度和加速度，在经济学中用于分析边际成本和边际收益。在工程优化中，通过求导找到函数的最大值或最小值，从而解决最优化问题。\n\n## 相关概念\n微分是导数的线性近似，用于函数值的近似计算。积分是导数的逆运算，用于求曲线下的面积。导数和积分共同构成微积分的基本框架，通过微积分基本定理相互联系。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

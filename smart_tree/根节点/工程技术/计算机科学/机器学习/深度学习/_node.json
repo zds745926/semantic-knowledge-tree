@@ -17,5 +17,13 @@
     "description": "深度学习: Deep learning uses multi-layer neural networks to learn complex patterns and representations. The core architectures include Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN), and Transformers. Here are brief Python code examples for each: 1. **Convolutional Neural Network (CNN):** ```python from tensorflow.keras import layers, models def create_cnn(): model = models.Sequential() model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(64, 64, 3))) model.add(layers.MaxPooling2D((2, 2))) model.add(layers.Conv2D(64, (3, 3), activation='relu')) model.add(layers.MaxPooling2D((2, 2))) model.add(layers.Flatten()) model.add(layers.Dense(64, activation='relu')) model.add(layers.Dense(10)) # Assuming a classification task with 10 classes return model cnn_model = create_cnn() ``` 2. **Recurrent Neural Network (RNN):** ```python from tensorflow.keras import layers, models def create_rnn(): model = models.Sequential() model.add(layers.SimpleRNN(50, input_shape=(100, 64))) model.add(layers.Dense(32, activation='relu')) model.add(layers.Dense(1)) # Assuming a regression task return model rnn_model = create_rnn() ``` 3. **Transformer:** ```python from transformers import TFAutoModelForSequenceClassification # Using Hugging Face's Transformers library for simplicity model = TFAutoModelForSequenceClassification.from_pretrained('bert-base-uncased') ``` These examples provide a basic structure to get started with each architecture in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "深度学习是机器学习的一个子领域，基于人工神经网络模拟人脑处理信息的方式。本分支涵盖从基础理论到核心架构的演进路径。首先，神经网络基础包括感知机、多层感知机、激活函数、反向传播和梯度下降等核心概念，是理解后续模型的前提。接着，卷积神经网络（CNN）专门处理具有网格结构的数据（如图像），通过卷积层、池化层和全连接层提取空间特征，广泛应用于计算机视觉任务。最后，Transformer架构基于自注意力机制，摒弃了循环和卷积结构，擅长处理序列数据，在自然语言处理（如BERT、GPT）和多模态领域取得突破。子主题之间层层递进：神经网络基础提供通用原理，CNN和Transformer则是针对不同数据模态的专门化设计。学习路径建议先掌握神经网络基础，再分别学习CNN和Transformer，并可通过对比两者在图像和文本任务中的差异加深理解。",
+  "example_queries": [
+    "深度学习中的反向传播算法是如何计算梯度的？",
+    "卷积神经网络中的池化层有什么作用？",
+    "Transformer的自注意力机制是如何处理序列依赖关系的？",
+    "CNN和Transformer在图像分类任务中各自的优缺点是什么？",
+    "如何从零开始搭建一个简单的多层感知机？"
+  ]
 }

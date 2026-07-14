@@ -19,5 +19,13 @@
     "description": "并发编程: Python supports three concurrency models: multi-threading, multiprocessing, and asynchronous programming, each with its own applicable scenarios. Here are brief examples for each: 1. **Multi-threading**: ```python import threading def print_numbers(): for i in range(5): print(i) thread = threading.Thread(target=print_numbers) thread.start() ``` 2. **Multiprocessing**: ```python from multiprocessing import Process def print_numbers(): for i in range(5): print(i) process = Process(target=print_numbers) process.start() ``` 3. **Asynchronous Programming (using `asyncio`)**: ```python import asyncio async def print_numbers(): for i in range(5): print(i) await asyncio.sleep(1) # Simulate I/O-bound task loop = asyncio.get_event_loop() loop.run_until_complete(print_numbers()) ``` These examples illustrate the basic usage of each concurrency model in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Python中实现并发编程的核心技术，包括多线程、多进程、异步编程、concurrent.futures和queue模块。多线程适用于I/O密集型任务，通过共享内存实现轻量级并发，但受GIL限制；多进程则利用独立进程绕过GIL，适合CPU密集型任务，但进程间通信成本较高；异步编程基于事件循环和协程，高效处理高I/O并发，尤其适合网络请求和文件操作；concurrent.futures提供高级接口（ThreadPoolExecutor和ProcessPoolExecutor），简化线程/进程池管理；queue模块（如Queue、PriorityQueue）为线程/进程间安全传递数据提供支持。这些子主题相互补充：多线程和多进程解决不同场景的并行需求，异步编程优化I/O等待，concurrent.futures统一调度，queue确保数据同步。学习路径建议先掌握多线程和多进程基础，再深入异步编程，最后结合concurrent.futures和queue构建健壮并发系统。",
+  "example_queries": [
+    "Python中多线程和多进程的主要区别是什么？如何选择？",
+    "如何使用asyncio实现异步HTTP请求？",
+    "concurrent.futures模块的ThreadPoolExecutor和ProcessPoolExecutor用法示例",
+    "如何在多线程中安全地使用queue模块传递数据？",
+    "Python GIL对多线程性能有什么影响？如何绕过？"
+  ]
 }

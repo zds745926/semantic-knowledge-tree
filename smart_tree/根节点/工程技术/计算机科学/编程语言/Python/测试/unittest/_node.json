@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "py_mock_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nunittest是Python标准库中的单元测试框架，用于编写和运行可重复的测试用例，验证代码的各个单元（如函数、方法、类）是否按预期工作。\n\n## 何时使用\n当你需要确保代码的各个独立部分（如函数、方法）在修改后仍能正确运行时，应使用unittest。它特别适合用于回归测试、持续集成环境中的自动化测试，以及作为测试驱动开发（TDD）的基础工具。\n\n## 示例\n```Python\nimport unittest\n\n# 被测试函数\ndef add(a, b):\n    return a + b\n\nclass TestAddFunction(unittest.TestCase):\n    def test_add_positive_numbers(self):\n        self.assertEqual(add(2, 3), 5)\n\n    def test_add_negative_numbers(self):\n        self.assertEqual(add(-1, -1), -2)\n\nif __name__ == '__main__':\n    unittest.main()\n```\n\n## 反例\n错误用法：在测试方法中直接调用被测试函数但不使用任何断言方法（如assertEqual），导致测试即使失败也不会报告。例如，只写`add(2, 3)`而不检查结果，测试永远通过。\n\n## 边界条件\n注意测试方法名必须以`test_`开头，否则unittest不会自动执行。另外，每个测试方法应独立，避免依赖其他测试的执行顺序或共享状态。",
+    "code_pattern": "import unittest\n\nclass TestMyClass(unittest.TestCase):\n    def setUp(self):\n        # 初始化测试环境，如创建对象\n        pass\n\n    def tearDown(self):\n        # 清理测试环境\n        pass\n\n    def test_feature_one(self):\n        # 测试功能1\n        self.assertEqual(actual, expected)\n\n    def test_feature_two(self):\n        # 测试功能2\n        self.assertTrue(condition)\n\nif __name__ == '__main__':\n    unittest.main()",
+    "common_pitfalls": [
+      "测试方法名不以test_开头：unittest只会执行以test_开头的方法，其他方法会被忽略，导致测试遗漏。",
+      "测试间共享状态：在测试类中定义实例变量并在多个测试方法中修改，会导致测试相互影响，结果不可预测。应使用setUp和tearDown来隔离状态。",
+      "忽略异常测试：使用try/except捕获异常而不断言，导致测试通过但实际代码有bug。应使用assertRaises上下文管理器来验证异常。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

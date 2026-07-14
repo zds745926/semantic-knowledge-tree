@@ -19,5 +19,30 @@
       "content_preview": "Next.js: React Full-Stack Framework. SSR/SSG/ISR. App Router. Server Components. Here are brief explanations and corresponding Python code examples for some of the concepts: 1. **SSR (Server-Side Rendering) / SSG (Static Site Generation) / ISR (Incremental Static Regeneration)**: - **SSR**: Render content on the server side, sending a fully rendered HTML page to the client. - **SSG**: Generate static files at build time and serve them directly from the filesystem or CDN. - **ISR**: Re-generate static pages periodically based on user interactions. 2. **App Router**: - A new routing system in React that allows for more complex routing scenarios, including server-side rendering and API routes. 3. **Server Components**: - Server components are React components that can be rendered on the server side, allowing for better SEO and improved performance by reducing client-side JavaScript execution. Here's a simple Python code example to illustrate SSR using Flask: ```python from flask import Flask, render_template_string app = Flask(__name__) @app.route('/') def home(): # Server-side rendering with Jinja2 template engine return render_template_string('Hello, World!') if __name__ == '__main__': app.run() ``` This example uses Flask to create a simple server that renders a static HTML page on the server side."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "auth_v4",
+      "type": "application"
+    },
+    {
+      "id": "https_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_locale_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nNext.js 是一个基于 React 的开源前端开发框架，用于构建服务器端渲染（SSR）和静态网站生成（SSG）的 Web 应用。它提供了文件系统路由、自动代码分割、预渲染等功能，旨在简化 React 应用的开发并提升性能。\n\n## 核心要点\n- **混合渲染模式**：支持静态生成（SSG）和服务器端渲染（SSR），可根据页面需求选择最佳渲染方式，兼顾 SEO 和加载速度。\n- **文件系统路由**：基于 pages 或 app 目录结构自动生成路由，无需手动配置，支持动态路由和嵌套布局。\n- **增量静态生成（ISR）**：允许在运行时更新静态页面，无需重新构建整个站点，平衡了静态内容的性能与动态内容的实时性。\n- **内置优化**：自动进行图片优化、脚本加载、代码分割和预获取，提升用户体验和 Core Web Vitals 指标。\n- **API 路由**：可在同一项目中创建后端 API 端点，实现全栈开发，简化前后端交互。\n\n## 应用场景\nNext.js 适用于需要良好 SEO 的营销网站、电商平台、博客和内容管理系统，以及需要快速首屏加载的移动端 Web 应用。它也常用于构建全栈应用，例如仪表盘、社交平台或 SaaS 产品，利用其 SSR 和 API 路由实现动态数据交互。\n\n## 相关概念\n- **React**：Next.js 基于 React 构建，继承了其组件化、声明式 UI 和状态管理特性。\n- **Vercel**：Next.js 的创建者和主要维护者，提供针对 Next.js 优化的云部署平台，支持自动 CI/CD 和边缘函数。\n- **静态网站生成（SSG）**：在构建时生成 HTML 文件，部署到 CDN 后快速响应，适用于内容不频繁变化的页面。\n- **服务器端渲染（SSR）**：在每次请求时动态生成 HTML，适合需要实时数据的页面，但会增加服务器负载。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

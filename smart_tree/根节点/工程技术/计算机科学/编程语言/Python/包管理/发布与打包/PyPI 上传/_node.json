@@ -19,5 +19,35 @@
       "content_preview": "PyPI 上传: ```python # Command for uploading to PyPI twine upload dist/* # Test the upload on TestPyPI first twine upload --repository-url https://test.pypi.org/legacy/ dist/* # API token authentication is required for both commands above ``` Explanation: - `twine upload dist/*`: This command uploads the distribution files (usually created by tools like `python setup.py sdist bdist_wheel`) to the Python Package Index (PyPI). - `twine upload --repository-url https://test.pypi.org/legacy/ dist/*`: This is used to test the upload process on TestPyPI, which is a testing environment for PyPI. - API token authentication: Both commands require an API token for authentication. You can obtain this by registering on PyPI and generating a personal access token from your account settings. Note that `twine` is a command-line utility used to upload Python packages to PyPI or other package indexes, and it handles the necessary authentication and metadata validation."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_hashlib_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_tempfile_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nPyPI上传是指将Python包构建为可分发的格式（如wheel或sdist）并发布到Python Package Index（PyPI）官方仓库或私有仓库的过程，使其他用户可以通过pip install命令安装该包。\n\n## 何时使用\n当您开发了一个可复用的Python库、工具或框架，并希望分享给社区或团队使用时，需要将其上传到PyPI。此外，当您需要管理包的版本迭代、依赖关系，并确保用户能通过标准方式安装时，也应使用PyPI上传。\n\n## 示例\n```Python\n# 首先确保已安装必要的工具\n# pip install setuptools wheel twine\n\n# 项目结构示例：\n# my_package/\n# ├── my_package/\n# │   └── __init__.py\n# ├── setup.py\n# └── README.md\n\n# setup.py 内容：\nfrom setuptools import setup, find_packages\n\nsetup(\n    name='my-package',\n    version='0.1.0',\n    packages=find_packages(),\n    install_requires=[],\n    author='Your Name',\n    description='A sample package',\n)\n\n# 构建并上传命令（在项目根目录执行）：\n# python setup.py sdist bdist_wheel\n# twine upload dist/*\n```\n\n## 反例\n错误用法：直接使用`python setup.py upload`（已废弃且不安全），或上传前未清理旧的`dist/`目录导致重复上传相同版本。\n\n## 边界条件\n上传前需确保包名在PyPI上唯一，且版本号符合PEP 440规范（如`0.1.0`）。若使用TestPyPI测试，需指定仓库URL：`twine upload --repository-url https://test.pypi.org/legacy/ dist/*`。",
+    "code_pattern": "from setuptools import setup, find_packages\n\nsetup(\n    name='your-package-name',\n    version='0.1.0',\n    packages=find_packages(),\n    install_requires=[],\n    author='Your Name',\n    author_email='your@email.com',\n    description='A short description',\n    long_description=open('README.md').read(),\n    long_description_content_type='text/markdown',\n    url='https://github.com/your/repo',\n    classifiers=[\n        'Programming Language :: Python :: 3',\n        'License :: OSI Approved :: MIT License',\n    ],\n    python_requires='>=3.6',\n)",
+    "common_pitfalls": [
+      "未在PyPI上注册账户或未配置API令牌，导致twine upload时认证失败。需先创建账户并在~/.pypirc中配置令牌。",
+      "上传前未更新版本号，导致重复上传相同版本被拒绝。每次发布必须递增版本号。",
+      "忘记包含README或LICENSE文件，导致包描述为空或缺失许可证信息，影响用户使用。",
+      "使用已废弃的python setup.py upload命令，该方式会明文传输密码，应改用twine工具。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

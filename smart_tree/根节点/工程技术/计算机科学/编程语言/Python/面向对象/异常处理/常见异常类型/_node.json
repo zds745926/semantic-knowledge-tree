@@ -19,5 +19,38 @@
       "content_preview": "常见异常类型: ValueError/TypeError/KeyError/IndexError/FileNotFoundError/AttributeError. Python code examples: 1. `ValueError`: ```python try: int(\"abc\") except ValueError as e: print(e) ``` 2. `TypeError`: ```python try: 5 + \"3\" except TypeError as e: print(e) ``` 3. `KeyError`: ```python try: d = {\"name\": \"Alice\"} print(d[\"age\"]) except KeyError as e: print(e) ``` 4. `IndexError`: ```python try: lst = [1, 2, 3] print(lst[5]) except IndexError as e: print(e) ``` 5. `FileNotFoundError`: ```python try: with open(\"non_existent_file.txt\"): pass except FileNotFoundError as e: print(e) ``` 6. `AttributeError`: ```python try: 5.length except AttributeError as e: print(e) ```"
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "sql_injection_v4",
+      "type": "application"
+    },
+    {
+      "id": "csrf_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n常见异常类型是指在Python程序执行过程中，由于各种错误条件而自动引发的预定义异常类，如ValueError、TypeError、IndexError等，它们继承自BaseException，用于指示特定的错误情况。\n\n## 何时使用\n在编写健壮的Python代码时，应针对可能出现的错误场景捕获相应的异常类型。例如，当处理用户输入或外部数据时，使用try-except块捕获ValueError以处理无效数据；当访问列表或元组时，捕获IndexError以避免索引越界导致程序崩溃。\n\n## 示例\n```Python\ndef divide_numbers(a, b):\n    try:\n        result = a / b\n    except ZeroDivisionError:\n        print(\"错误：除数不能为零\")\n        return None\n    except TypeError:\n        print(\"错误：输入必须是数字\")\n        return None\n    else:\n        return result\n\nprint(divide_numbers(10, 2))  # 输出: 5.0\nprint(divide_numbers(10, 0))  # 输出: 错误：除数不能为零\nprint(divide_numbers(10, \"a\"))  # 输出: 错误：输入必须是数字\n```\n\n## 反例\n错误用法：使用一个宽泛的except捕获所有异常而不区分类型，例如`except:`，这会隐藏意料之外的错误，导致调试困难。\n\n## 边界条件\n注意异常类型的继承层次，例如捕获Exception会同时捕获其子类如ValueError、TypeError等，但不会捕获SystemExit或KeyboardInterrupt。另外，在except块中重新引发异常时，应使用`raise`而不带参数以保留原始堆栈信息。",
+    "code_pattern": "try:\n    # 可能引发异常的代码\n    risky_operation()\nexcept ValueError as e:\n    # 处理特定异常\n    print(f\"值错误: {e}\")\nexcept (TypeError, IndexError) as e:\n    # 处理多个异常\n    print(f\"类型或索引错误: {e}\")\nexcept Exception as e:\n    # 处理其他异常（谨慎使用）\n    print(f\"未预期错误: {e}\")\nelse:\n    # 无异常时执行\n    print(\"操作成功\")\nfinally:\n    # 总是执行\n    cleanup()",
+    "common_pitfalls": [
+      "使用裸`except:`捕获所有异常，包括SystemExit和KeyboardInterrupt，导致程序无法正常退出或中断，应改为`except Exception:`。",
+      "忽略异常类型继承关系，例如先捕获Exception再捕获ValueError，导致ValueError永远不会被触发，应确保子类异常在前。",
+      "在except块中不必要地使用`pass`静默忽略异常，导致错误被隐藏，应至少记录日志或重新引发异常。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

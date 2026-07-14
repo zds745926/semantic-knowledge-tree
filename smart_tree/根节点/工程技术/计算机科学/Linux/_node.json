@@ -16,5 +16,13 @@
     "description": "Linux: Linux is a free and open-source operating system kernel that is widely used in servers, embedded systems, and cloud computing. Known for its stability, security, and flexibility, it serves as the core of internet infrastructure. Here's an example Python code snippet to illustrate working with Linux commands using the `subprocess` module: ```python import subprocess def run_command(command): \"\"\"Run a command in the shell and return the output.\"\"\" process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True) stdout, stderr = process.communicate() if stderr: print(f\"Error: {stderr.decode('utf-8')}\") else: print(stdout.decode('utf-8')) # Example usage run_command(\"ls -l\") ``` This code defines a function `run_command` that takes a command as input, runs it in the shell using `subprocess.Popen`, and prints the output or any error messages."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "Linux分支属于工程技术/计算机科学领域，主要涵盖Linux操作系统的核心概念、系统管理以及Shell脚本编程。系统管理子主题涉及用户与权限管理、进程与服务控制、文件系统管理、网络配置、软件包管理、系统监控与日志分析等，是运维和开发的基础。Shell脚本子主题则关注Bash等Shell的语法、变量、条件判断、循环、函数、管道与重定向、正则表达式以及自动化任务编写。两者紧密关联：系统管理提供操作对象与环境，Shell脚本则通过编程方式高效完成管理任务，实现自动化运维。学习路径建议先掌握基础系统管理命令与概念，再学习Shell脚本编程，最后通过综合项目（如自动化部署脚本）巩固技能。该分支适合系统管理员、DevOps工程师及后端开发者，能解决从日常维护到复杂自动化的一系列问题。",
+  "example_queries": [
+    "如何在Linux中创建新用户并设置密码？",
+    "如何编写一个Shell脚本定时备份指定目录？",
+    "Linux下如何查看CPU和内存使用情况？",
+    "如何使用find命令查找最近7天内修改过的文件？",
+    "Shell脚本中如何判断文件是否存在并执行相应操作？"
+  ]
 }

@@ -19,5 +19,26 @@
       "content_preview": "死锁: Four necessary conditions. Prevention/Avoidance/Detection/Recovery. Banker's Algorithm. Here are the translations with added Python code examples for the coding/programming concept: 1. **Prevention** ```python # Example of a function that prevents an error by checking input validity def safe_divide(a, b): if b == 0: raise ValueError(\"Cannot divide by zero\") return a / b ``` 2. **Avoidance** ```python # Example of using try-except to avoid handling errors explicitly try: result = 10 / 0 except ZeroDivisionError as e: print(f\"Caught an error: {e}\") else: print(\"No error occurred, result is:\", result) ``` 3. **Detection** ```python # Example of a function that detects if a number is prime def is_prime(n): if n <= 1: return False for i in range(2, int(n**0.5) + 1): if n % i == 0: return False return True print(is_prime(7)) # Output: True ``` 4. **Recovery** ```python # Example of a function that recovers from an error by retrying the operation def safe_write(file_path, data): attempts = 3 while attempts > 0: try: with open(file_path, 'w') as file: file.write(data) break except IOError as e: print(f\"IOError occurred: {e}\") attempts -= 1 safe_write('example.txt', 'Hello, world!') ``` 5. **Banker's Algorithm** ```python # Example of the Banker's algorithm for deadlock avoidance in a simple system def banker_algorithm(num_processes, num_resources, max_demand, allocation, need): available = [0] * len(num_resources) # Available resources vector # Initialize available with total - allocated for i in range(len(available)): available[i] = num_resources[i] for i in range(len(allocation)): for j in range(len(allocation[0])): available[j] -= allocation[i][j] safe_sequence = [] # Safe sequence of processes while len(safe_sequence) < len(num_processes): found = False for process in range(len(num_processes)): if process not in safe_sequence and can_allocate(process, need, available, max_demand[process], allocation): safe_sequence.append(process) allocate_resources(process, allocation, need, available) found = True if not found: break # No safe sequence exists return safe_sequence def can_allocate(process, need, available, max_demand, allocation): for i in range(len(need[0])): if need[process][i] > available[i]: return False for i in range(len(max_demand)): if max_demand[i] - allocation[i] < need[process]: return False return True def allocate_resources(process, allocation, need, available): for i in range(len(need[0])): available[i] += allocation[process][i] allocation[process][i] = 0 # Example usage num_processes = [1, 2, 3] num_resources = [5, 5, 5] max_demand = [[7, 5, 3], [3, 2, 2], [9, 0, 2]] allocation = [[0, 1, 0], [2, 0, 0], [3, 0, 2]] need = [[7, 4, 3], [1, 2, 2], [6, 0, 0]] print(banker_algorithm(num_processes, num_resources, max_demand, allocation, need)) ``` This code provides examples for each of the four necessary conditions and the Banker's algorithm."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_thread_safety_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "rust_borrow_checker_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n死锁是指两个或多个进程在执行过程中，因争夺资源而造成的一种互相等待的现象，若无外力作用，这些进程都将无法向前推进。它通常发生在并发系统中，当每个进程持有部分资源并等待其他进程释放其所需要的资源时。\n\n## 核心要点\n- 死锁的四个必要条件：互斥、持有并等待、不可剥夺、循环等待，缺一不可。\n- 预防死锁可通过破坏四个条件之一实现，例如要求进程一次性申请所有资源。\n- 避免死锁使用银行家算法等动态检查资源分配状态，确保系统处于安全状态。\n- 检测与恢复：允许死锁发生，通过资源分配图检测，并采取终止进程或资源剥夺策略恢复。\n- 死锁的常见模型包括资源分配图和等待图，用于分析和诊断死锁。\n\n## 应用场景\n死锁在操作系统、数据库管理系统和分布式系统中常见，例如多线程程序中的锁竞争、数据库事务的锁等待。实际应用中，通过超时机制、锁顺序规范或使用无锁数据结构来减少死锁风险。\n\n## 相关概念\n死锁与饥饿、活锁相关但不同：饥饿是进程无限等待资源但可能最终获得，而活锁是进程不断改变状态却无进展。此外，资源分配图是分析死锁的图形工具，银行家算法是经典的死锁避免方法。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

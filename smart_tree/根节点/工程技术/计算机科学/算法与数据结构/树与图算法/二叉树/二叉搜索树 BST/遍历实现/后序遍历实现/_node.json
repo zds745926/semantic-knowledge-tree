@@ -19,5 +19,22 @@
       "content_preview": "后序遍历实现: Left → Right → Root. First delete the child nodes and then delete the parent node (release the tree). Implemented using two stacks. Here's a brief Python code example to illustrate this concept: ```python class TreeNode: def __init__(self, value=0, left=None, right=None): self.value = value self.left = left self.right = right def release_tree(root): if not root: return stack1 = [root] stack2 = [] while stack1 or stack2: # Process nodes from stack1 to stack2 while stack1: node = stack1.pop() if node.left: stack2.append(node.left) if node.right: stack2.append(node.right) # Now process the nodes in stack2 (which were originally in stack1's children) while stack2: node = stack2.pop() # Here you would perform any necessary operations, like deleting or freeing memory for `node` print(f\"Processing node with value: {node.value}\") # At this point, all nodes have been processed and can be safely deleted del root # This is a simplified example; in practice, you'd need to ensure all nodes are properly cleaned up # Example usage: root = TreeNode(1) root.left = TreeNode(2) root.right = TreeNode(3) root.left.left = TreeNode(4) root.left.right = TreeNode(5) release_tree(root) ``` This Python code defines a simple tree structure and demonstrates how to traverse it using two stacks, effectively implementing the \"Left → Right → Root\" order. The `release_tree` function processes nodes in such an order and could be adapted for actual node deletion or memory management tasks."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "merge_sort_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n后序遍历是二叉树遍历的一种方式，其访问顺序为：先遍历左子树，再遍历右子树，最后访问根节点。这种遍历方式常用于需要先处理子节点再处理父节点的场景，如删除二叉树或计算表达式树的值。\n\n## 核心要点\n- 后序遍历遵循“左-右-根”的递归顺序，确保子节点在父节点之前被访问。\n- 递归实现简洁明了，但可能因树深度过大导致栈溢出；迭代实现需借助双栈或标记法模拟递归过程。\n- 后序遍历的结果序列中，根节点总是最后一个元素，这有助于快速定位根节点。\n- 对于二叉搜索树，后序遍历可用于重建树结构，因为最后一个元素是根节点，且左右子树分别满足二叉搜索树性质。\n- 后序遍历的时间复杂度为 O(n)，空间复杂度在最坏情况下为 O(n)（递归栈或迭代栈）。\n\n## 应用场景\n后序遍历常用于需要先释放子节点再释放父节点的内存管理，例如删除二叉树时避免悬空指针。在表达式树中，后序遍历可生成逆波兰表达式，便于计算机高效计算算术表达式。此外，在文件系统目录遍历中，后序顺序可确保先删除子文件再删除父目录。\n\n## 相关概念\n前序遍历（根-左-右）和中序遍历（左-根-右）是后序遍历的对称变体，三者共同构成二叉树深度优先遍历的三种基本顺序。后序遍历与逆波兰表达式紧密相关，后者是编译原理中后缀表示法的核心。此外，后序遍历结果与二叉搜索树的唯一性重建问题密切相关，常与中序遍历结果结合使用。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

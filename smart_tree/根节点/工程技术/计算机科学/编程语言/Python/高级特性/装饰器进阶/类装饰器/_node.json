@@ -19,5 +19,34 @@
       "content_preview": "类装饰器: Implementing the `__call__` method as a decorator allows for scenarios where persistent state is needed. Here’s an example to illustrate this concept: In Python, you can define a class that acts both as a regular object and as a callable (decorator) by implementing the `__call__` method. This is particularly useful when you need to maintain some state across multiple calls. ```python class PersistentDecorator: def __init__(self): self.state = 0 def __call__(self, func): def wrapper(*args, **kwargs): nonlocal self print(f\"State before function call: {self.state}\") result = func(*args, **kwargs) self.state += 1 print(f\"State after function call: {self.state}\") return result return wrapper @PersistentDecorator() def sample_function(x): print(f\"Function called with argument: {x}\") # Using the decorator sample_function(5) sample_function(10) ``` In this example, `PersistentDecorator` maintains a state (`self.state`) that persists across multiple calls to `sample_function`. Each time `sample_function` is called through the decorator, it prints the current state and increments it."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_timer_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n类装饰器是指通过实现 `__call__` 方法的类来装饰函数或类，从而在调用时执行额外逻辑，同时保持可配置性和状态管理能力。\n\n## 何时使用\n当需要为多个函数或类添加可配置、带状态的横切关注点（如日志、计时、权限校验）时，类装饰器比函数装饰器更灵活。它也适用于需要维护装饰器内部状态（如调用计数）或需要参数化装饰行为的场景。\n\n## 示例\n```Python\nimport time\n\nclass Timer:\n    def __init__(self, func):\n        self.func = func\n        self.calls = 0\n\n    def __call__(self, *args, **kwargs):\n        self.calls += 1\n        start = time.time()\n        result = self.func(*args, **kwargs)\n        end = time.time()\n        print(f\"{self.func.__name__} called {self.calls} times, took {end-start:.4f}s\")\n        return result\n\n@Timer\ndef slow_add(a, b):\n    time.sleep(0.1)\n    return a + b\n\nprint(slow_add(1, 2))\nprint(slow_add(3, 4))\n```\n\n## 反例\n错误地将类装饰器用于无状态且无需配置的简单场景，例如仅打印日志而不需要任何状态或参数，此时函数装饰器更简洁。\n\n## 边界条件\n注意类装饰器返回的是类实例而非函数，因此被装饰函数的元数据（如 `__name__`、`__doc__`）会丢失，建议使用 `functools.wraps` 或手动复制。另外，如果装饰器需要参数，则需嵌套一层工厂函数。",
+    "code_pattern": "class DecoratorClass:\n    def __init__(self, func):\n        self.func = func\n        # 初始化状态\n\n    def __call__(self, *args, **kwargs):\n        # 前置处理\n        result = self.func(*args, **kwargs)\n        # 后置处理\n        return result\n\n@DecoratorClass\ndef target_function(...):\n    ...",
+    "common_pitfalls": [
+      "丢失被装饰函数的元数据（如 __name__、__doc__），导致调试困难，应使用 functools.wraps 或手动复制。",
+      "类装饰器实例化后作为可调用对象，若装饰器内部有可变状态，在多线程环境下可能引发竞态条件，需加锁或使用线程安全容器。",
+      "当装饰器需要参数时，忘记再嵌套一层工厂函数，导致直接传入参数而非函数，引发 TypeError。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

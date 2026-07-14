@@ -19,5 +19,34 @@
       "content_preview": "生成器表达式: The given Chinese text translates to: \"This is a lazy evaluation, which saves memory compared to list comprehension. For example, in Python: ```python gen = (x**2 for x in range(10)) ``` This generator expression `gen` generates squared values on the fly without creating an intermediate list, thus saving memory.\" In this translation: - \"惰性求值\" is translated as \"lazy evaluation,\" which is a common term in programming. - The Python code example demonstrates how to use a generator expression, which is a form of lazy evaluation."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n生成器表达式是一种简洁的、惰性求值的迭代器构造方式，使用圆括号包裹类似列表推导式的语法，按需生成元素而非一次性创建整个序列。\n\n## 何时使用\n适用于处理大型或无限数据流，以节省内存开销。当只需要遍历一次序列且无需随机访问时，优先使用生成器表达式替代列表推导式。也常用于函数参数中，如 sum()、min()、max() 等接受可迭代对象的函数。\n\n## 示例\n```Python\n# 计算 0 到 999999 的平方和，使用生成器表达式避免创建大列表\nsquares_sum = sum(x * x for x in range(1000000))\nprint(squares_sum)  # 输出: 333332833333500000\n\n# 从文件中读取非空行，惰性处理\nwith open('data.txt') as f:\n    non_empty_lines = (line.strip() for line in f if line.strip())\n    for line in non_empty_lines:\n        print(line)\n```\n\n## 反例\n错误地将生成器表达式用于需要多次遍历或索引访问的场景，例如试图对生成器进行切片或重复迭代，会导致结果不符合预期或抛出异常。\n\n## 边界条件\n生成器表达式只能迭代一次，迭代结束后再次使用将返回空序列。若需多次使用，应转换为列表或重新创建生成器。另外，生成器表达式中引用的变量在求值时才绑定，注意闭包陷阱。",
+    "code_pattern": "def process_data(data):\n    # 生成器表达式作为参数传递给函数\n    result = sum(x * 2 for x in data if x > 0)\n    return result\n\n# 使用示例\nnumbers = [1, -2, 3, 0, 5]\nprint(process_data(numbers))  # 输出: 18 (1*2 + 3*2 + 5*2)\n\n# 惰性读取文件行\nwith open('input.txt') as f:\n    lines = (line.rstrip('\\n') for line in f if line.strip())\n    for line in lines:\n        # 处理每一行\n        pass",
+    "common_pitfalls": [
+      "生成器表达式只能迭代一次，若在循环后再次遍历同一生成器变量，将得到空序列，需重新创建生成器。",
+      "在生成器表达式中引用外部变量时，变量在求值时才绑定，可能导致闭包陷阱，例如在循环中创建多个生成器，所有生成器共享循环变量的最终值。",
+      "生成器表达式不支持索引或切片操作，若需要随机访问元素，应使用列表推导式或先转换为列表。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

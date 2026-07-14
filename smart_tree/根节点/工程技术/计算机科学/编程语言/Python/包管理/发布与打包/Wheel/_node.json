@@ -19,5 +19,34 @@
       "content_preview": "Wheel: .whl Binary distribution format. pip install is faster than installing from source code. Pure Python/platform-specific wheel. Here's an explanation with a brief Python code example to illustrate the use of `.whl` files: ```python # Example of using pip to install a package in .whl format import subprocess def install_wheel(package_name): \"\"\" Install a package using pip in .whl format. :param package_name: Name of the package (e.g., \"numpy-1.21.0-cp39-cp39-linux_x86_64.whl\") \"\"\" try: # Use subprocess to run pip install command result = subprocess.run(['pip', 'install', package_name], check=True, stdout=subprocess.PIPE) print(result.stdout.decode()) except subprocess.CalledProcessError as e: print(f\"Failed to install {package_name}: {e}\") # Example usage install_wheel(\"numpy-1.21.0-cp39-cp39-linux_x86_64.whl\") ``` This code demonstrates how to use the `subprocess` module in Python to run a pip command that installs a package from a `.whl` file."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nWheel 是 Python 的一种内置包格式（.whl），旨在加速安装过程并减少构建步骤，是当前 Python 包分发的标准格式之一。\n\n## 何时使用\n当你需要发布一个 Python 包供他人通过 pip 安装时，应优先构建 Wheel 包。它适用于纯 Python 包以及包含 C 扩展的包，能显著缩短安装时间，尤其适合在持续集成（CI）或生产环境中快速部署依赖。\n\n## 示例\n```Python\n# 假设你有一个简单的包 mypackage，结构如下：\n# mypackage/\n#   __init__.py\n# setup.py\n# setup.py 内容：\nfrom setuptools import setup, find_packages\n\nsetup(\n    name='mypackage',\n    version='0.1.0',\n    packages=find_packages(),\n)\n\n# 在终端运行以下命令构建 Wheel：\n# python setup.py bdist_wheel\n# 或使用现代方式：\n# python -m build --wheel\n\n# 安装生成的 .whl 文件：\n# pip install dist/mypackage-0.1.0-py3-none-any.whl\n```\n\n## 反例\n不要直接分发源码 tar.gz 而不提供 Wheel，因为用户安装时可能因缺少构建工具（如 C 编译器）而失败。例如，仅使用 `python setup.py sdist` 发布源码包，而未生成 Wheel。\n\n## 边界条件\nWheel 文件名中的标签（如 py3-none-any）必须与目标 Python 版本和平台匹配，否则 pip 可能拒绝安装。对于包含 C 扩展的包，需要为不同平台构建多个 Wheel。",
+    "code_pattern": "from setuptools import setup, find_packages\n\nsetup(\n    name='mypackage',\n    version='0.1.0',\n    packages=find_packages(),\n    # 其他元数据如 author, description 等\n)\n\n# 构建命令：python -m build --wheel\n# 安装命令：pip install dist/mypackage-0.1.0-py3-none-any.whl",
+    "common_pitfalls": [
+      "忘记安装 wheel 包：运行 `python setup.py bdist_wheel` 前需确保已安装 wheel 库（`pip install wheel`），否则会报错。",
+      "平台标签不匹配：为 Windows 构建的 Wheel 可能无法在 Linux 上安装，需使用 `--plat-name` 或 CI 工具为多平台构建。",
+      "忽略纯 Python 包的通用标签：纯 Python 包应使用 `py3-none-any` 标签，但若错误指定了平台特定标签，会导致兼容性下降。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

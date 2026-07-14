@@ -19,5 +19,30 @@
       "content_preview": "柯里化: Curring transforms a multi-argument function into a chain of single-argument functions: `f(a, b, c) → f(a)(b)(c)`. Here is a brief Python code example to illustrate currying: ```python def curry(func): def curried(*args): if len(args) >= func.__code__.co_argcount: return func(*args) else: def wrapper(*more_args): return curried(*(args + more_args)) return wrapper return curried @curry def add(a, b, c): return a + b + c # Usage examples result1 = add(1)(2)(3) # Result: 6 result2 = add(1, 2)(3) # Result: 6 result3 = add(1)(2, 3) # Result: 6 ``` In this example, the `curry` function takes a multi-argument function and returns a curried version of it. The `add` function is then defined using the `@curry` decorator, allowing us to call it in a curried manner as shown in the usage examples."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "js_promise_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n柯里化（Currying）是函数式编程中的一种技术，它将一个接受多个参数的函数转换为一系列嵌套的单参数函数。每个嵌套函数依次接收一个参数，并返回下一个函数，直到所有参数都被提供后才返回最终结果。\n\n## 核心要点\n- 柯里化通过将多参数函数分解为单参数函数链，实现了参数的部分应用，即可以逐步传入参数。\n- 它提升了函数的灵活性和复用性，允许开发者创建更具体的函数变体，例如通过固定某些参数来生成新函数。\n- 柯里化与高阶函数紧密相关，因为返回的函数本身也是函数，常用于组合和管道操作中。\n- 在支持闭包的语言中（如JavaScript、Haskell），柯里化能自然实现，因为内部函数可以捕获外部函数的参数。\n- 柯里化不是语言内置特性，而是通过手动编写或使用库（如lodash的_.curry）来实现。\n\n## 应用场景\n柯里化常用于函数组合和管道处理，例如在数据处理流水线中，将多个步骤（如过滤、映射、归约）柯里化后可以灵活组合。它也广泛应用于配置函数，比如创建一个日志函数，先固定日志级别，再传入具体消息。此外，在事件处理或回调中，柯里化可以预填参数，减少重复代码。\n\n## 相关概念\n柯里化与部分应用（Partial Application）容易混淆，部分应用是固定部分参数生成新函数，而柯里化是自动将多参数函数转换为单参数链。它与高阶函数（返回或接收函数的函数）互为支撑，柯里化函数本身就是高阶函数。此外，柯里化常与函数组合（Composition）一起使用，通过组合多个柯里化函数来构建复杂逻辑。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

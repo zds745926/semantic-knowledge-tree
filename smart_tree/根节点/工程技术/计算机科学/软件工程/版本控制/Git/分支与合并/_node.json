@@ -19,5 +19,38 @@
       "content_preview": "分支与合并: Branching/checkouting/merging. Conflict resolution. Rebasing. Git Flow. Python code examples for some of these concepts: 1. Branching and Merging: ```python # Example using GitPython to create a new branch and merge it from git import Repo repo = Repo('path/to/repo') # Create a new branch new_branch = repo.create_head('new-branch') new_branch.checkout() # Make some changes... # Switch back to master branch repo.heads.master.checkout() ``` 2. Conflict Resolution: ```python # Example of resolving a merge conflict using GitPython from git import Repo repo = Repo('path/to/repo') # Assuming there's a merge conflict in 'file.txt' conflicted_file_path = 'file.txt' # Manually resolve the conflicts in the file with open(conflicted_file_path, 'r+') as f: content = f.read() # Resolve conflicts and write back to the file # Stage the resolved file for commit repo.git.add(conflicted_file_path) ``` 3. Rebasing: ```python # Example of rebasing a branch using GitPython from git import Repo repo = Repo('path/to/repo') # Rebase 'feature-branch' onto master origin = repo.remotes.origin origin.pull() repo.heads.feature_branch.checkout() repo.git.rebase('origin/master') ``` 4. Git Flow: ```python # Example of using a hypothetical GitFlow wrapper in Python (not actual code) from gitflow import GitFlow git_flow = GitFlow(repo) # Create a new feature branch git_flow.init_repo() # Initialize the repository if needed git_flow.feature('new-feature') # Start a new feature branch # Deploy to production git_flow.release('1.0') # Create and push a release branch ``` Note: The above examples use GitPython, an open-source Python library for working with Git repositories. For actual implementation, you would need to install the `GitPython` package using pip or another package manager."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "cap_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "js_promise_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n分支与合并是版本控制系统（如Git）中的核心机制。分支允许开发者从主开发线（如主分支）上创建独立的代码副本，以便并行开发新功能、修复错误或进行实验，而不会影响稳定版本。合并则是将一个分支的更改集成到另一个分支（通常是主分支）的过程，确保不同开发路径的成果能够统一。\n\n## 核心要点\n- 分支创建：通过`git branch`或`git checkout -b`命令创建新分支，每个分支拥有独立的历史记录和文件状态。\n- 分支切换：使用`git checkout`或`git switch`在不同分支间切换，工作目录会相应更新。\n- 合并操作：通过`git merge`将目标分支的更改合并到当前分支，Git会自动尝试合并更改，若存在冲突需手动解决。\n- 冲突解决：当两个分支修改了同一文件的同一部分时，合并会产生冲突，开发者需编辑文件选择保留或组合更改。\n- 分支策略：常见策略包括Git Flow（主分支、开发分支、功能分支等）和GitHub Flow（主分支和功能分支），用于规范开发流程。\n\n## 应用场景\n分支与合并广泛应用于团队协作开发，例如：开发新功能时创建功能分支，完成后合并到主分支；修复紧急Bug时从主分支创建修复分支，修复后合并回主分支；进行实验性开发时使用独立分支，避免影响主线代码。此外，在发布版本管理中，通过分支隔离不同版本的代码，确保稳定性和可追溯性。\n\n## 相关概念\n- 远程分支：存储在远程仓库（如GitHub）上的分支，用于团队共享和协作，通过`git push`和`git pull`同步。\n- 标签（Tag）：用于标记特定提交（如版本发布点），与分支不同，标签通常不移动，作为历史快照。\n- 变基（Rebase）：另一种整合分支的方式，将当前分支的提交“移植”到目标分支顶部，使历史更线性，但需谨慎使用以避免重写公共历史。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,34 @@
       "content_preview": "lambda 表达式: Lambda parameters: expression creates an anonymous function. It is commonly used in `sorted(key=...)` and `map()`/`filter()` functions. Here are brief Python code examples for each: 1. Using lambda with `sorted()` to sort a list of dictionaries by a specific key: ```python items = [{'name': 'apple', 'price': 2}, {'name': 'banana', 'price': 3}] sorted_items = sorted(items, key=lambda x: x['price']) print(sorted_items) ``` 2. Using lambda with `map()` to square each element in a list: ```python numbers = [1, 2, 3, 4] squared_numbers = map(lambda x: x**2, numbers) print(list(squared_numbers)) ``` 3. Using lambda with `filter()` to filter out even numbers from a list: ```python numbers = [1, 2, 3, 4, 5] odd_numbers = filter(lambda x: x % 2 != 0, numbers) print(list(odd_numbers)) ```"
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nlambda 表达式是一种创建小型匿名函数的方式，它允许在一行内定义一个简单的函数，通常用于需要函数对象作为参数的场合。\n\n## 何时使用\n当需要一个简单的、一次性的函数，且该函数逻辑足够简单（通常只有单个表达式）时，使用 lambda 表达式可以避免定义完整的命名函数，使代码更简洁。常见于高阶函数（如 map、filter、sorted）的回调参数中。\n\n## 示例\n```Python\n# 使用 lambda 表达式对列表进行排序\nstudents = [('Alice', 25), ('Bob', 20), ('Charlie', 23)]\nsorted_students = sorted(students, key=lambda student: student[1])\nprint(sorted_students)  # 输出: [('Bob', 20), ('Charlie', 23), ('Alice', 25)]\n```\n\n## 反例\n在需要复杂逻辑（如多行语句、循环、异常处理）时使用 lambda 表达式，会导致代码难以阅读和维护。例如：`lambda x: [i for i in range(x) if i % 2 == 0]` 虽然可行，但不如定义一个命名函数清晰。\n\n## 边界条件\nlambda 表达式只能包含单个表达式，不能包含语句（如赋值、return、raise 等）。另外，lambda 表达式会捕获其所在作用域中的变量，但捕获的是引用而非值，可能导致延迟绑定问题。",
+    "code_pattern": "from typing import List, Callable\n\ndef apply_function(func: Callable[[int], int], values: List[int]) -> List[int]:\n    return [func(v) for v in values]\n\n# 使用 lambda 作为参数\nresult = apply_function(lambda x: x * 2, [1, 2, 3])\nprint(result)  # [2, 4, 6]\n\n# 在排序中使用 lambda\npairs = [(1, 'one'), (2, 'two'), (3, 'three')]\nsorted_by_word = sorted(pairs, key=lambda pair: pair[1])\nprint(sorted_by_word)  # [(1, 'one'), (3, 'three'), (2, 'two')]",
+    "common_pitfalls": [
+      "在循环中创建 lambda 并捕获循环变量时，所有 lambda 都引用同一个变量最终值，导致延迟绑定问题。例如：`funcs = [lambda: i for i in range(5)]` 中所有函数都返回 4。",
+      "lambda 表达式内使用可变默认参数时，默认参数在定义时只计算一次，可能导致意外共享状态。例如：`lambda x, lst=[]: lst.append(x)` 每次调用都会修改同一个列表。",
+      "过度使用 lambda 使代码可读性下降，尤其是在逻辑复杂时。应优先考虑使用命名函数或局部函数，以提升代码清晰度。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

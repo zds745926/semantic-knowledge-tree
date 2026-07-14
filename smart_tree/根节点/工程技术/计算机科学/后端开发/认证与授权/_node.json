@@ -19,5 +19,38 @@
       "content_preview": "认证与授权: JWT Stateless / OAuth2.0 Authorization / Session-Cookie Stateful / RBAC Permissions. ### Explanation: - **JWT (JSON Web Token) Stateless**: - A JSON web token is a compact, URL-safe means of representing claims to be transferred between two parties. It does not rely on the server's state and can be used in various contexts such as API authentication. ```python import jwt # Example: Creating a JWT with PyJWT payload = { 'sub': '1234567890', 'name': 'John Doe', 'iat': 1516239022 } token = jwt.encode(payload, 'secret', algorithm='HS256') print(token) ``` - **OAuth2.0 Authorization**: - OAuth2.0 is an open-standard authorization protocol or framework for accessing resources and performing actions on behalf of a user. It enables applications to obtain limited access to user accounts on an HTTP service without sharing passwords. ```python from oauthlib.oauth2 import BackendApplicationClient from requests_oauthlib import RequestTokenSession # Example: Using OAuth2.0 with requests-oauthlib client = BackendApplicationClient(client_id='your_client_id') oauth = RequestTokenSession(client=client) token = oauth.fetch_token(token_url='https://example.com/oauth/token', client_id='your_client_id', client_secret='your_client_secret') print(token) ``` - **Session-Cookie Stateful**: - A stateful session cookie maintains the user's session on the server side, allowing for persistent tracking of a user’s activity. This is often used in web applications where maintaining a session between requests is necessary. ```python from flask import Flask, request, make_response app = Flask(__name__) @app.route('/') def index(): response = make_response(\"Hello World\") # Example of setting a stateful cookie response.set_cookie('session_id', '1234567890') return response ``` - **RBAC (Role-Based Access Control) Permissions**: - Role-based access control is an authorization technique that restricts system access based on user roles. It defines what actions a user can perform within the application. ```python class User: def __init__(self, role): self.role = role # Example: Simple RBAC implementation def check_permission(user, action): if user.role == 'admin': return True elif user.role == 'user': return action in ['read', 'write'] else: return False user = User('admin') print(check_permission(user, 'delete')) # Output: True ```"
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "csrf_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "sql_injection_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "sudo_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "cap_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n认证与授权是后端开发中安全体系的两大核心机制。认证（Authentication）用于验证用户身份的真实性，确认“你是谁”；授权（Authorization）则决定已认证用户能够访问哪些资源或执行哪些操作，即“你能做什么”。两者相辅相成，共同保障系统的访问安全。\n\n## 核心要点\n- 认证过程通常通过用户名/密码、令牌（Token）、生物特征等方式实现，常见协议包括OAuth 2.0、OpenID Connect和JWT。\n- 授权基于角色（RBAC）或权限（ABAC）模型，控制用户对API、数据或功能的访问级别。\n- 认证与授权必须分离：先认证身份，再授权访问，避免未授权用户绕过认证直接操作资源。\n- 会话管理（如Session、Cookie）和令牌刷新机制是认证持续性的关键，需防范令牌泄露和重放攻击。\n- 安全最佳实践包括使用HTTPS传输、密码哈希存储、多因素认证（MFA）以及最小权限原则。\n\n## 应用场景\n在Web应用和API服务中，认证与授权用于保护用户登录、支付接口、管理后台等敏感操作。例如，电商网站通过JWT令牌认证用户，再根据角色（如普通用户、管理员）授权访问订单或商品管理页面。微服务架构中，网关统一处理认证，各服务基于令牌进行细粒度授权。\n\n## 相关概念\n- 单点登录（SSO）：允许用户一次认证访问多个系统，常与OAuth 2.0和OpenID Connect结合使用。\n- 访问控制列表（ACL）：一种基于资源权限的授权方式，与RBAC互补。\n- 安全断言标记语言（SAML）：用于企业级身份联合，实现跨域认证。\n- 零信任架构：强调“永不信任，始终验证”，要求每次请求都进行认证和授权检查。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

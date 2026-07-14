@@ -19,5 +19,22 @@
       "content_preview": "自注意力: QKV Mechanism: softmax(QK^T/√d)V. O(n²) complexity. In the context of neural networks, particularly in self-attention mechanisms like those used in transformers, the QKV mechanism involves three vectors for each token: Query (Q), Key (K), and Value (V). The attention score is computed using a softmax function on the dot product of the query and key vectors, scaled by the square root of the dimension size \\(d\\), followed by multiplying with the value vector. Here's a brief Python code example to illustrate this concept: ```python import torch def qkv_attention(q, k, v): d_k = q.size(-1) scores = torch.matmul(q, k.transpose(-2, -1)) / math.sqrt(d_k) # QK^T/√d p_attn = torch.softmax(scores, dim=-1) # softmax(QK^T/√d) output = torch.matmul(p_attn, v) # softmax(QK^T/√d)V return output # Example usage: q = torch.randn(10, 8, 64) # Query vector of shape (batch_size, num_heads, seq_length, d_k) k = torch.randn(10, 8, 64) # Key vector of the same shape v = torch.randn(10, 8, 64) # Value vector of the same shape output = qkv_attention(q, k, v) print(output.shape) # Should print: torch.Size([10, 8, 64]) ``` This code defines a function `qkv_attention` that takes query (`q`), key (`k`), and value (`v`) tensors as input and returns the attention output. The example usage demonstrates how to call this function with random tensor inputs of appropriate shapes."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "conv_layer_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n自注意力（Self-Attention）是一种机制，允许模型在处理序列数据时，动态地关注序列中不同位置的信息，从而捕捉长距离依赖关系。它通过计算序列中每个元素与其他所有元素之间的注意力权重，生成加权表示，使模型能够根据上下文调整对每个元素的关注程度。\n\n## 核心要点\n- **全局依赖捕获**：自注意力直接计算序列中任意两个位置之间的关联，不受距离限制，能有效建模长程依赖。\n- **并行计算**：与循环神经网络（RNN）不同，自注意力可同时处理整个序列，显著提升训练效率。\n- **多头注意力**：通过多个注意力头并行学习不同子空间的特征，增强模型表达能力。\n- **位置编码**：由于自注意力本身不具备顺序感知能力，需引入位置编码（如正弦波或可学习嵌入）来注入位置信息。\n- **缩放点积注意力**：常用实现方式，通过查询（Q）、键（K）和值（V）的矩阵运算，并除以缩放因子避免梯度消失。\n\n## 应用场景\n自注意力是Transformer架构的核心，广泛应用于自然语言处理（如机器翻译、文本生成）、计算机视觉（如图像分类、目标检测）以及多模态任务（如视觉-语言模型）。此外，在时间序列预测、推荐系统等领域也展现出强大潜力。\n\n## 相关概念\n- **Transformer**：完全基于自注意力的序列到序列模型，摒弃了循环和卷积结构。\n- **注意力机制**：自注意力是注意力机制的一种特例，其中查询、键和值均来自同一序列。\n- **多头注意力**：将自注意力拆分为多个子空间，分别计算后拼接，提升模型对不同模式的关注能力。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

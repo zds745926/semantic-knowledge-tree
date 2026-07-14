@@ -19,5 +19,34 @@
       "content_preview": "cp/mv/rm: `cp -r` recursively copies directories. `mv` moves and renames files or directories. `rm -rf` is dangerous to use and should be used with caution. Python code example for `cp -r` (directory copying): ```python import shutil # Example: Copying a directory named 'source_dir' to 'destination_dir' shutil.copytree('source_dir', 'destination_dir') ``` Python code example for `mv` (file or directory moving and renaming): ```python import os # Example: Moving and renaming a file from 'old_path' to 'new_path' os.rename('old_path', 'new_path') ``` Python code example for `rm -rf` (directory removal, use with caution!): ```python import shutil # Example: Removing a directory named 'dir_to_remove' and its contents shutil.rmtree('dir_to_remove') ``` Note: The `rm -rf` equivalent in Python is `shutil.rmtree`, which forcefully removes directories and their contents. Use this function carefully to avoid accidental data loss."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "ls_cd_pwd_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_tempfile_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_fnmatch_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "sudo_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\ncp、mv、rm是Linux系统中用于文件管理的三个基本命令。cp用于复制文件或目录，mv用于移动或重命名文件或目录，rm用于删除文件或目录。它们都是命令行工具，通过指定源路径和目标路径来执行操作。\n\n## 核心要点\n- cp命令通过`cp [选项] 源 目标`复制文件，常用选项`-r`递归复制目录、`-i`交互式提示覆盖。\n- mv命令通过`mv [选项] 源 目标`移动文件，若目标为同一目录下的新名称则实现重命名，默认不提示覆盖。\n- rm命令通过`rm [选项] 文件`删除文件，常用选项`-r`递归删除目录、`-f`强制删除不提示、`-i`交互式确认。\n- 使用rm时需谨慎，因为删除操作不可逆（除非使用特殊工具恢复），建议先使用`-i`选项或`ls`确认。\n- 这些命令支持通配符（如`*`、`?`）批量操作，但需注意避免误操作。\n\n## 应用场景\ncp常用于备份文件或复制配置到新位置，例如将配置文件复制到安全目录。mv常用于整理文件结构，如将日志文件移动到归档目录，或重命名文件以符合命名规范。rm用于清理临时文件或删除不再需要的文件，释放磁盘空间。\n\n## 相关概念\n这些命令与文件权限（如读、写、执行权限）密切相关，操作文件时需具备相应权限。它们也常与管道（`|`）和重定向（`>`）结合使用，例如通过`find`命令查找文件后传递给rm批量删除。此外，`rsync`命令提供更高级的复制功能，支持增量备份和远程同步。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

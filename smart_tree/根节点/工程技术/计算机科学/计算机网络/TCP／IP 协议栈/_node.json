@@ -17,5 +17,13 @@
     "description": "TCP/IP 协议栈: TCP/IP Four-Layer Model: Network Interface → Internet Layer → Transport Layer → Application Layer. This is the communication foundation of the internet. Here's a brief explanation with Python code examples for some concepts: 1. **Network Interface Layer**: This layer deals with hardware interfaces and physical transmission. - Example: Using sockets to send data over a network. ```python import socket # Create a TCP/IP socket sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Connect the socket to the port where the server is listening server_address = ('localhost', 10000) sock.connect(server_address) ``` 2. **Internet Layer**: This layer handles IP addressing and routing. - Example: Using `ipaddress` module for handling IP addresses. ```python import ipaddress # Create an IPv4 address object ip = ipaddress.IPv4Address('192.168.0.1') print(ip) ``` 3. **Transport Layer**: This layer is responsible for end-to-end communication and error recovery. - Example: Using TCP to send a message. ```python import socket # Send data message = 'This is the message. It will be repeated.' sock.sendall(message.encode()) ``` 4. **Application Layer**: This layer provides services for applications, such as HTTP or FTP. - Example: Using `requests` to make an HTTP request. ```python import requests # Make a GET request to fetch data from a web server response = requests.get('http://example.com') print(response.text) ``` These examples illustrate key concepts at each layer of the TCP/IP model."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "TCP/IP协议栈是计算机网络的核心架构，定义了数据如何在网络中传输。本分支涵盖传输层、网络层和应用层协议。传输层（如TCP、UDP）负责端到端的数据传输与可靠性控制；网络层（如IP）负责数据包的路由与寻址；应用层协议（如HTTP、FTP、DNS）则直接为用户应用提供服务。三者层层封装、协同工作：应用层生成数据，传输层分段并添加端口信息，网络层封装为IP包并选择路径。学习路径建议从应用层入手理解常见服务，再深入传输层掌握可靠传输机制，最后理解网络层的路由原理。掌握TCP/IP协议栈是理解互联网通信、网络故障排查和网络安全的基础。",
+  "example_queries": [
+    "TCP和UDP的主要区别是什么？分别在什么场景下使用？",
+    "IP地址和端口号在网络通信中各起什么作用？",
+    "应用层协议HTTP和HTTPS有什么区别？",
+    "TCP三次握手和四次挥手的过程是怎样的？",
+    "如何通过抓包分析TCP/IP协议栈的工作过程？"
+  ]
 }

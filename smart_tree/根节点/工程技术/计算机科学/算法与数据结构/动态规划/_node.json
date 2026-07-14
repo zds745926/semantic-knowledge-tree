@@ -18,5 +18,13 @@
     "description": "动态规划: Dynamic programming breaks down problems into overlapping subproblems. Core components: - State definition → Transition equation → Boundary conditions → Iteration order. Here's a brief explanation with a Python code example for clarity: In dynamic programming, you define the state of your problem (often denoted as `dp[i]`), formulate a transition equation that relates one state to another, specify boundary conditions, and determine an appropriate iteration or recursion order. For instance, consider the classic Fibonacci sequence problem using dynamic programming: ```python def fibonacci(n): # State definition: dp[i] stores the i-th Fibonacci number dp = [0] * (n + 1) # Boundary conditions dp[0], dp[1] = 0, 1 # Transition equation and iteration order for i in range(2, n + 1): dp[i] = dp[i - 1] + dp[i - 2] return dp[n] # Example usage: print(fibonacci(10)) # Output: 55 ``` In this example, `dp` is the state array where each element represents a Fibonacci number. The transition equation updates each element based on its predecessors, and we iterate from 2 to `n` to fill in the array."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "动态规划是算法与数据结构中的核心方法，通过将复杂问题分解为重叠子问题并存储子问题解来避免重复计算，从而高效求解最优化问题。本分支涵盖从基础概念到经典应用的全路径：DP基础介绍状态定义、转移方程和边界条件，是后续所有子主题的基石；背包问题（如0-1背包、完全背包）是资源分配类问题的典型代表，强调容量与价值的权衡；最长公共子序列（LCS）和最长递增子序列（LIS）则聚焦于序列处理，分别解决两序列相似度与单序列有序性度量。这些子主题层层递进：基础理论为背包和序列问题提供通用框架，而背包与序列问题又相互独立，但都强化了状态设计和优化技巧（如空间压缩）。学习路径建议先掌握DP基础，再依次攻克背包和序列问题，以全面理解动态规划的思想与应用。",
+  "example_queries": [
+    "如何用动态规划解决0-1背包问题？",
+    "最长公共子序列（LCS）的状态转移方程是什么？",
+    "怎样优化最长递增子序列（LIS）到O(n log n)时间复杂度？",
+    "动态规划中状态定义和转移方程如何设计？",
+    "完全背包和0-1背包的区别及代码实现差异？"
+  ]
 }

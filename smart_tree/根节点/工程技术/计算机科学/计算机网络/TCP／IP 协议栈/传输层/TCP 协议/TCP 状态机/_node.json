@@ -16,5 +16,13 @@
     "description": "TCP 状态机: TCP connection goes through 11 states, established via three-way handshaking and terminated with four-way finishing (or挥手 in Chinese, which literally means waving hands). Here are the detailed states: 1. **CLOSED**: No connection. 2. **LISTEN**: Listening for a connection request from a client. 3. **SYN-SENT**: Initiated a connection attempt by sending a SYN segment. 4. **SYN-RECEIVED**: Received a SYN segment and sent a SYN-ACK in response. 5. **ESTABLISHED**: Connection is established, data transfer can occur. 6. **FIN-WAIT-1**: Sent a FIN to shut down the sender side of the connection. 7. **FIN-WAIT-2**: Waiting for an ACK of the shutdown of the receiver side. 8. **TIMED-WAIT (CLOSING)**: Waiting for enough time to pass to be sure that the final ACK arrived at the other end. 9. **LAST-ACK**: Received the last ACK from the remote and is waiting to close. 10. **CLOSE-WAIT**: Waiting for data from the receiver side before closing. 11. **LAST- CLOSE**: The connection has been closed by both sides. Here's a brief Python code example using `socket` to simulate a simple TCP client that connects, sends data, and then closes the connection: ```python import socket def tcp_client(): # Create a socket object s = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # Define server address and port server_address = ('localhost', 10000) try: # Connect to the server s.connect(server_address) print(\"Connected to\", server_address) # Send data message = 'Hello, Server!' s.sendall(message.encode('utf-8')) print(f\"Sent: {message}\") # Receive response amount_received = 0 amount_expected = len(message) while amount_received < amount_expected: data = s.recv(16) amount_received += len(data) print(f\"Received: {data.decode('utf-8')}\") finally: # Close the connection s.close() print(\"Connection closed\") tcp_client() ``` This code demonstrates a simple TCP client that connects to a server, sends a message, and then closes the connection."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支专注于TCP状态机，这是TCP协议实现可靠连接管理的关键机制。TCP状态机定义了连接从建立到终止的完整生命周期，包括11种状态（如CLOSED、LISTEN、SYN_SENT、ESTABLISHED等）以及状态之间的转移规则。子节点“状态转移详解”深入剖析了三次握手、四次挥手等核心过程，以及同时打开、同时关闭等特殊场景下的状态变化；而“TIME_WAIT详解”则专门探讨了主动关闭方在连接终止后进入的TIME_WAIT状态，包括其持续时间（2MSL）、存在的必要性（确保旧连接数据消失、防止延迟数据干扰新连接）以及可能带来的资源占用问题。学习路径建议：先掌握TCP状态机的整体框架和状态定义，再理解状态转移的详细过程，最后深入分析TIME_WAIT的机制与优化策略。",
+  "example_queries": [
+    "TCP三次握手过程中状态如何变化？",
+    "为什么TCP连接终止时需要四次挥手？",
+    "TIME_WAIT状态持续多长时间？为什么需要这个状态？",
+    "如何优化或避免过多的TIME_WAIT连接？",
+    "TCP同时打开和同时关闭场景下的状态转移是怎样的？"
+  ]
 }

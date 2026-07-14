@@ -19,5 +19,26 @@
       "content_preview": "locale: `locale.setlocale` sets the locale. `currency`, `format`, and `strcoll` are sorting methods. `LC_ALL` and `LC_TIME` are locale categories. Python code examples: ```python import locale # Set the locale to a specific language (e.g., French) locale.setlocale(locale.LC_ALL, 'fr_FR.UTF-8') # Example of using currency formatting price = 1234.56 formatted_price = locale.currency(price, grouping=True) print(formatted_price) # Output will depend on the locale settings # Example of sorting strings according to the current locale rules strings = ['banana', 'apple', 'cherry'] sorted_strings = sorted(strings, key=locale.strxfrm) print(sorted_strings) # Sorted based on the current locale's collation rules # LC_ALL setting affects all categories locale.setlocale(locale.LC_TIME, 'en_US.UTF-8') current_date = \"2023-10-05\" formatted_date = current_date.strftime(\"%A %B %d, %Y\") print(formatted_date) # Output will depend on the locale settings # LC_TIME setting affects date and time formatting ``` Note: The actual output of `locale.currency` and `strftime` depends on the system's locale settings."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_calendar_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n`locale` 模块是 Python 标准库中用于处理区域设置（国际化）的模块，它允许程序根据用户的语言、地区、货币、日期格式等文化习惯调整输出和行为。\n\n## 何时使用\n当你的程序需要支持多语言、多地区用户，或需要按本地习惯格式化数字、货币、日期、时间时，应使用 `locale` 模块。例如，开发一个面向全球用户的 Web 应用，要求根据用户浏览器语言显示本地化的价格和日期。\n\n## 示例\n```Python\nimport locale\n\n# 设置区域为美国英语\nlocale.setlocale(locale.LC_ALL, 'en_US.UTF-8')\n\n# 格式化数字\nformatted_number = locale.format_string('%d', 1234567, grouping=True)\nprint(formatted_number)  # 输出: 1,234,567\n\n# 格式化货币\nformatted_currency = locale.currency(1234.56, grouping=True)\nprint(formatted_currency)  # 输出: $1,234.56\n\n# 格式化日期\nimport datetime\ndate = datetime.date(2023, 12, 25)\nformatted_date = date.strftime('%x')\nprint(formatted_date)  # 输出: 12/25/2023\n```\n\n## 反例\n错误用法：未设置区域直接使用格式化函数，或设置不存在的区域。例如，`locale.setlocale(locale.LC_ALL, 'invalid_locale')` 会抛出 `locale.Error` 异常。\n\n## 边界条件\n- `setlocale` 是进程全局的，多线程环境下需谨慎，建议在程序启动时设置一次。\n- 不同操作系统支持的 locale 名称不同（如 Windows 上使用 'en_US' 而非 'en_US.UTF-8'），需做兼容处理。",
+    "code_pattern": "import locale\nimport sys\n\ndef setup_locale(locale_name: str = None) -> bool:\n    \"\"\"设置全局区域，返回是否成功。\"\"\"\n    try:\n        if locale_name:\n            locale.setlocale(locale.LC_ALL, locale_name)\n        else:\n            # 尝试使用用户默认区域\n            locale.setlocale(locale.LC_ALL, '')\n        return True\n    except locale.Error:\n        print(f\"Warning: Locale '{locale_name}' not available, using default.\", file=sys.stderr)\n        return False\n\ndef format_number(num: float, grouping: bool = True) -> str:\n    return locale.format_string('%.2f', num, grouping=grouping)\n\ndef format_currency(amount: float) -> str:\n    return locale.currency(amount, grouping=True)\n\n# 使用示例\nif __name__ == '__main__':\n    setup_locale('en_US.UTF-8')\n    print(format_number(1234567.89))\n    print(format_currency(1234.56))",
+    "common_pitfalls": [
+      "未设置 locale 直接调用 format 函数：在未调用 setlocale 前，locale 模块使用 C 默认区域（通常为 'C'），导致格式化不产生千位分隔符等本地化效果。",
+      "跨平台 locale 名称不兼容：Linux 上常用 'en_US.UTF-8'，而 Windows 上需用 'English_United States.1252'，直接硬编码会导致程序在另一平台崩溃。",
+      "多线程环境下 setlocale 的全局影响：setlocale 修改的是进程全局状态，在多线程 Web 服务器中，一个线程修改区域会影响其他线程，建议只在初始化时设置一次。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

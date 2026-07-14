@@ -17,5 +17,13 @@
     "description": "调度算法: Scheduling algorithms affect the system's throughput, response time, and fairness. To provide a more comprehensive explanation, let's consider an example of a simple round-robin scheduling algorithm in Python. In this context, \"throughput\" can be thought of as the number of tasks completed per unit time, \"response time\" is the average time taken to complete a task, and \"fairness\" ensures that each process gets an equal share of CPU time. Here's a simple round-robin scheduling algorithm in Python: ```python class Process: def __init__(self, name, burst_time): self.name = name self.burst_time = burst_time def round_robin(processes, quantum=2): remaining_time = [p.burst_time for p in processes] time_slice = 0 while any(remaining_time): for i, process in enumerate(processes): if remaining_time[i] > 0: if remaining_time[i] <= quantum: time_slice += remaining_time[i] remaining_time[i] = 0 else: time_slice += quantum remaining_time[i] -= quantum return time_slice # Example usage processes = [Process(\"P1\", 5), Process(\"P2\", 3), Process(\"P3\", 4)] total_time = round_robin(processes) print(f\"Total time slice: {total_time}\") ``` In this example, the `round_robin` function simulates a simple round-robin scheduling algorithm where each process is given a quantum of CPU time. The `Process` class represents a process with a name and burst time (the total execution time). The `round_robin` function calculates the total time slice used by all processes under this scheduling algorithm, which can be related to throughput in terms of how much work gets done over time. This example helps illustrate how different scheduling algorithms can impact system performance metrics like throughput, response time, and fairness."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于操作系统进程调度中的核心调度算法，涵盖先来先服务（FCFS）、短作业优先（SJF）和时间片轮转（RR）三种经典策略。这些算法共同解决了“如何从就绪队列中选择下一个执行进程”这一关键问题，但各自侧重不同的调度目标：FCFS强调公平性与简单性，按到达顺序执行；SJF追求最小化平均等待时间，优先处理执行时间短的进程；RR则通过固定时间片实现响应时间的均衡，适用于交互式系统。三者之间既有对比又有互补：FCFS和SJF属于非抢占式，而RR是典型的抢占式算法；SJF在批处理系统中表现优异，但可能导致长作业饥饿，而RR通过时间片轮转避免了饥饿问题。学习路径建议从FCFS入手理解基本调度逻辑，再对比SJF掌握优化思想，最后通过RR理解抢占与时间片管理。掌握这些算法是理解更高级调度策略（如多级队列、多级反馈队列）的基础。",
+  "example_queries": [
+    "先来先服务（FCFS）算法如何计算平均周转时间和平均等待时间？",
+    "短作业优先（SJF）算法在非抢占和抢占模式下有何区别？",
+    "时间片轮转（RR）算法中时间片大小对系统性能有何影响？",
+    "FCFS、SJF和RR三种算法分别适用于哪些类型的系统？",
+    "如何通过调度算法避免进程饥饿问题？"
+  ]
 }

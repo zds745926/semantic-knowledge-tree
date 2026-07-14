@@ -17,5 +17,13 @@
     "description": "函数定义: The `def` statement defines a function, and `return` is used to return values. It supports various combinations of parameter types. Here's a brief Python code example: ```python def add_numbers(a, b): \"\"\" This function takes two numbers as input and returns their sum. :param a: First number (int or float) :param b: Second number (int or float) :return: Sum of the two numbers (int or float) \"\"\" return a + b # Example usage: result = add_numbers(5, 3.2) print(result) # Output: 8.2 ``` This example demonstrates defining a function `add_numbers` that takes two parameters and returns their sum."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python函数定义的核心概念与进阶机制，涵盖函数定义基础、参数传递深入和返回值三个子主题。函数定义基础是入门环节，介绍def语句、函数命名、文档字符串及基本调用方式，为后续学习奠定语法基础。参数传递深入则探讨Python中参数传递的本质（对象引用传递）、位置参数、默认参数、可变参数（*args、**kwargs）以及关键字参数等高级用法，帮助理解函数如何灵活接收和处理输入。返回值部分讲解return语句的多种形式（单值、多值返回为元组、无返回值时的None），以及如何设计清晰的返回逻辑以增强函数可用性。三个子主题层层递进：先掌握函数的基本定义与调用，再深入参数传递的细节与灵活性，最后理解如何有效返回结果。学习路径建议从基础定义入手，逐步实践参数传递的各种模式，最后结合返回值设计完整函数。",
+  "example_queries": [
+    "Python中如何定义函数并添加文档字符串？",
+    "Python函数参数传递是传值还是传引用？",
+    "如何使用*args和**kwargs实现可变参数函数？",
+    "Python函数如何返回多个值？",
+    "函数定义中默认参数有哪些注意事项？"
+  ]
 }

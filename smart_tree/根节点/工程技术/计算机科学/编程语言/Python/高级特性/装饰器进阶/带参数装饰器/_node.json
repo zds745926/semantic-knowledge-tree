@@ -19,5 +19,30 @@
       "content_preview": "带参数装饰器: Here is the English translation of the provided Chinese technical text, including a brief Python code example for the coding/programming concept: English translation: ```python # A three-layer nested decorator function in Python def decorator(args): def inner(func): # The actual logic of the decorator would go here def wrapper(*args_func, **kwargs): print(\"Before calling\", func.__name__) result = func(*args_func, **kwargs) print(\"After calling\", func.__name__) return result return wrapper return inner # Example usage: @decorator('some_args') def sample_function(param1, param2): print(f\"Function called with {param1} and {param2}\") sample_function('arg1', 'arg2') ``` In this example, `decorator` is a three-layer nested function. The outermost `decorator` takes an argument `args`, the middle `inner` function takes a function `func`, and the innermost `wrapper` function handles the actual logic of the decorator (in this case, printing messages before and after calling the decorated function)."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n带参数装饰器是指装饰器本身可以接受参数，从而根据参数值动态调整装饰行为，本质上是装饰器工厂函数，返回一个真正的装饰器。\n\n## 何时使用\n当装饰器的行为需要根据外部参数（如日志级别、重试次数、权限角色等）进行定制时使用。例如，需要为不同函数设置不同的日志输出级别，或为API接口设置不同的限流阈值。\n\n## 示例\n```Python\nimport functools\nimport time\n\ndef retry(max_attempts=3, delay=1):\n    \"\"\"带参数装饰器：函数执行失败时重试\"\"\"\n    def decorator(func):\n        @functools.wraps(func)\n        def wrapper(*args, **kwargs):\n            for attempt in range(1, max_attempts + 1):\n                try:\n                    return func(*args, **kwargs)\n                except Exception as e:\n                    if attempt == max_attempts:\n                        raise\n                    time.sleep(delay)\n            return None\n        return wrapper\n    return decorator\n\n@retry(max_attempts=3, delay=0.5)\ndef unstable_api():\n    import random\n    if random.random() < 0.7:\n        raise ConnectionError(\"网络波动\")\n    return \"成功\"\n\nprint(unstable_api())\n```\n\n## 反例\n错误地将带参数装饰器直接用于函数而不加括号，例如 `@retry` 而非 `@retry()`，导致 `max_attempts` 被误认为函数对象，引发类型错误。\n\n## 边界条件\n1. 装饰器参数支持默认值，但调用时必须显式使用关键字参数或位置参数，避免歧义。\n2. 若装饰器参数为可变对象（如列表），需注意多次装饰时参数共享问题，建议在内部深拷贝。",
+    "code_pattern": "import functools\n\ndef decorator_with_args(arg1, arg2):\n    def decorator(func):\n        @functools.wraps(func)\n        def wrapper(*args, **kwargs):\n            # 使用 arg1, arg2 定制行为\n            result = func(*args, **kwargs)\n            return result\n        return wrapper\n    return decorator\n\n@decorator_with_args(arg1='value1', arg2='value2')\ndef my_function():\n    pass",
+    "common_pitfalls": [
+      "忘记在装饰器工厂函数外层加括号：使用 `@decorator_with_args` 而非 `@decorator_with_args(arg1=...)`，导致 `arg1` 被当作被装饰函数，引发 `TypeError: decorator_with_args() missing required positional argument`。",
+      "参数默认值使用可变对象：如 `def decorator_with_args(cache=[])`，多次装饰时共享同一个列表，导致状态污染。应使用 `None` 并在内部创建新对象。",
+      "未使用 `functools.wraps`：导致被装饰函数的元信息（如 `__name__`, `__doc__`）丢失，影响调试和文档生成。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

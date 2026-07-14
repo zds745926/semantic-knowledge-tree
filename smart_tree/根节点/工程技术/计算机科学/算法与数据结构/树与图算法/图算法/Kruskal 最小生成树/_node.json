@@ -19,5 +19,22 @@
       "content_preview": "Kruskal 最小生成树: Translate the Chinese technical text to English: \"Sort edges by their weights and add them in that order as long as they do not form a cycle. Use Union-Find (or Disjoint Set Union, DSU) to detect cycles. Time complexity: O(E log E).\" Python code example for Union-Find with path compression and union by rank: ```python class UnionFind: def __init__(self, n): self.parent = list(range(n)) self.rank = [0] * n def find(self, x): if self.parent[x] != x: self.parent[x] = self.find(self.parent[x]) return self.parent[x] def union(self, x, y): rootX = self.find(x) rootY = self.find(y) if rootX != rootY: if self.rank[rootX] > self.rank[rootY]: self.parent[rootY] = rootX elif self.rank[rootX] < self.rank[rootY]: self.parent[rootX] = rootY else: self.parent[rootY] = rootX self.rank[rootX] += 1 def kruskal_mst(edges, n): edges.sort(key=lambda x: x[2]) # Sort edges by weight mst = [] uf = UnionFind(n) for u, v, w in edges: if uf.find(u) != uf.find(v): # No cycle mst.append((u, v, w)) uf.union(u, v) return mst # Example usage: edges = [(0, 1, 7), (0, 2, 8), (1, 2, 5), (1, 3, 9), (2, 3, 4)] n = 4 mst = kruskal_mst(edges, n) print(mst) # Output: [(2, 3, 4), (0, 1, 7), (2, 1, 5)] ``` This code defines a `UnionFind` class for managing disjoint sets and implements Kruskal's algorithm to find the Minimum Spanning Tree (MST). The example usage demonstrates how to use this implementation with a set of weighted edges."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "union_find_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nKruskal最小生成树算法是一种用于在加权无向图中寻找最小生成树的贪心算法。它通过按边权重递增的顺序依次选择边，并确保所选边不会与已选边形成环，最终连接所有顶点且总权重最小。\n\n## 核心要点\n1. 贪心策略：算法始终选择当前未处理边中权重最小的边，体现了贪心选择性质。\n2. 环检测：使用并查集（Union-Find）数据结构高效判断添加一条边是否会形成环。\n3. 终止条件：当已选边的数量等于顶点数减1时，算法结束，此时得到最小生成树。\n4. 时间复杂度：主要取决于排序步骤，通常为O(E log E)，其中E为边数。\n5. 适用图：适用于稀疏图，因为其效率与边数相关，与顶点数关系较小。\n\n## 应用场景\nKruskal算法广泛应用于网络设计，如构建成本最低的通信网络、电力网络或交通网络。此外，在聚类分析、图像分割等领域，也常被用于提取数据的连通结构。\n\n## 相关概念\n最小生成树（MST）是连接图中所有顶点且总边权最小的树形子图。并查集是Kruskal算法中用于动态维护连通分量的关键数据结构。与Prim算法相比，Kruskal侧重于边选择，而Prim侧重于顶点扩展。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

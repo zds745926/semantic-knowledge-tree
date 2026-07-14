@@ -19,5 +19,34 @@
       "content_preview": "分片: Horizontal Sharding: Distributed by Hashing/Ranges/List. The shard key is chosen based on criticality. Python code example for horizontal sharding using a hash-based approach: ```python def get_shard_key(user_id): # Example of a simple hash-based shard key return user_id % 4 # Simulate a list of users and their data users = [ {\"user_id\": 1, \"name\": \"Alice\"}, {\"user_id\": 2, \"name\": \"Bob\"}, {\"user_id\": 3, \"name\": \"Charlie\"}, {\"user_id\": 4, \"name\": \"David\"}, {\"user_id\": 5, \"name\": \"Eve\"} ] # Shard the users based on the shard key shards = {i: [] for i in range(4)} for user in users: shard_key = get_shard_key(user[\"user_id\"]) shards[shard_key].append(user) print(\"Sharded Users:\") for shard, users_in_shard in shards.items(): print(f\"Shard {shard}: {users_in_shard}\") ``` This example demonstrates how to distribute a list of user data across four shards using a simple modulo operation as the shard key."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cap_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    },
+    {
+      "id": "durability_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n分片（Sharding）是一种将大型数据库水平分割成多个更小、更易于管理的部分（称为分片）的技术。每个分片独立存储数据子集，并通常运行在独立的服务器上，从而提升系统的可扩展性和性能。\n\n## 核心要点\n- 水平分割：分片通过按行拆分数据表，将数据分布到多个节点，而非按列垂直分割。\n- 分片键选择：分片键是决定数据分布的关键字段，需均匀分布以避免热点问题。\n- 数据独立性：每个分片可独立处理查询和事务，减少单点负载。\n- 扩展性：分片支持线性扩展，通过增加分片节点即可提升整体存储和吞吐能力。\n- 复杂性增加：分片引入跨分片查询、数据迁移和一致性维护等挑战，需额外管理机制。\n\n## 应用场景\n分片广泛应用于大规模互联网服务，如电商平台的用户订单数据、社交网络的用户信息存储。它适用于数据量巨大且读写请求频繁的场景，通过分散负载来避免单数据库瓶颈。\n\n## 相关概念\n- 分区：分片是分区的一种特殊形式，但分区通常指单机内的表分区，而分片强调跨机器分布。\n- 复制：复制用于数据冗余和高可用，常与分片结合使用，每个分片可配置副本。\n- 分布式事务：分片环境下，跨分片的事务需通过两阶段提交等协议保证原子性。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

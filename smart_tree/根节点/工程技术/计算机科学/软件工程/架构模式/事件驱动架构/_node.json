@@ -19,5 +19,34 @@
       "content_preview": "事件驱动架构: Components communicate through events, achieving loose coupling and high scalability. Kafka/RabbitMQ. Here is an example of how components might use RabbitMQ for communication in a Python application: ```python import pika # Establishing the connection to RabbitMQ server connection = pika.BlockingConnection(pika.ConnectionParameters('localhost')) channel = connection.channel() # Declaring the queue where messages will be sent and received channel.queue_declare(queue='component_queue') def callback(ch, method, properties, body): print(f\"Received message: {body}\") # Setting up a consumer to listen for messages on the declared queue channel.basic_consume(queue='component_queue', on_message_callback=callback, auto_ack=True) print('Waiting for messages. To exit press CTRL+C') channel.start_consuming() ``` This example demonstrates how components can use RabbitMQ as an event bus for communication in a Python application."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "microservices_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "js_promise_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n事件驱动架构是一种软件架构模式，其中系统组件通过生成、检测和响应事件来进行通信和协作。在这种架构中，事件是状态变化的显著表示，组件之间松耦合，通过事件总线或消息代理异步交换信息。\n\n## 核心要点\n- 松耦合：事件生产者和消费者不直接依赖，生产者发布事件，消费者独立订阅和处理，便于独立开发、测试和部署。\n- 异步通信：事件处理通常是非阻塞的，生产者无需等待消费者响应，提升系统吞吐量和响应性。\n- 事件溯源：可记录所有事件作为持久化日志，用于审计、调试和重建系统状态，增强数据一致性。\n- 可扩展性：通过添加更多消费者实例或分区事件流，系统能水平扩展以应对高负载。\n- 容错性：单个消费者失败不影响其他组件，事件可重试或路由到备用处理器，提高系统韧性。\n\n## 应用场景\n事件驱动架构广泛应用于实时数据处理系统，如物联网设备数据流处理、金融交易监控和用户行为分析。它也常用于微服务架构中服务间异步集成，以及构建可扩展的电商订单处理和通知系统。\n\n## 相关概念\n事件驱动架构与消息队列（如Kafka、RabbitMQ）紧密相关，后者常作为事件传输的中间件。它也与领域驱动设计中的事件风暴和CQRS（命令查询职责分离）模式关联，共同支持复杂业务逻辑的建模和实现。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -16,5 +16,13 @@
     "description": "while 循环: While condition loop, often used in iteration scenarios with an uncertain number of iterations. Python code example: ```python # Example of a while loop for an uncertain number of iterations count = 0 while count < 5: print(f\"Count is {count}\") count += 1 ``` This Python code demonstrates a `while` loop that continues to execute as long as the condition (`count < 5`) remains true. Each iteration prints the current value of `count`, and then increments it by 1."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于 Python 编程语言中的 while 循环，它是控制流中循环结构的重要组成部分。while 循环基于一个布尔条件重复执行代码块，直到条件变为 False。该分支包含两个核心子主题：'while 基础' 和 'while 典型用法'。'while 基础' 涵盖 while 循环的语法、条件判断、循环体缩进、无限循环的避免以及 break 和 continue 语句的使用，为初学者打下坚实基础。'while 典型用法' 则深入探讨 while 循环在实际编程中的常见模式，例如：使用计数器控制循环次数、与用户输入交互（如验证输入）、实现状态机、处理不确定迭代次数的场景（如文件读取或网络请求重试），以及结合 else 子句在循环正常结束时执行特定操作。这两个子主题之间是递进关系：先掌握基础语法与机制，再学习如何将其应用于解决实际问题。学习路径建议从 'while 基础' 开始，通过简单示例理解循环执行流程，然后过渡到 'while 典型用法'，通过案例练习掌握 while 循环在复杂场景下的灵活运用，从而全面掌握这一重要的控制流工具。",
+  "example_queries": [
+    "while 循环的基本语法是什么？如何避免无限循环？",
+    "在 while 循环中，break 和 continue 语句有什么区别？",
+    "如何使用 while 循环实现用户输入验证，直到输入正确为止？",
+    "while 循环的 else 子句在什么情况下执行？",
+    "请给出一个使用 while 循环模拟状态机的代码示例。"
+  ]
 }

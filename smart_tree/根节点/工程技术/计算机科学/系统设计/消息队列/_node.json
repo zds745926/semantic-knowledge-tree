@@ -16,5 +16,13 @@
     "description": "消息队列: Message queues decouple services by providing asynchronous communication, smoothing out peaks and valleys in traffic, and enabling traffic control. Python code example for asynchronous communication using a message queue (using the `pika` library as an example): ```python import pika def callback(ch, method, properties, body): print(\"Received message: %r\" % body) connection = pika.BlockingConnection(pika.ConnectionParameters('localhost')) channel = connection.channel() channel.queue_declare(queue='task_queue', durable=True) channel.basic_consume(callback, queue='task_queue') print('Waiting for messages. To exit press CTRL+C') channel.start_consuming() ``` This code sets up a basic message consumer that listens to a queue named `task_queue`. When a message is received, it prints the message body. The `pika` library is used here as an example of how one might implement asynchronous communication using a message queue in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "消息队列是系统设计中的关键组件，用于实现异步通信、解耦、削峰填谷和日志处理等核心功能。本分支涵盖消息队列的基本概念、工作原理、常见协议以及主流实现，如Kafka和RabbitMQ。Kafka是一个高吞吐量、持久化的分布式消息系统，适用于日志收集、流式处理和事件驱动架构；而RabbitMQ是一个功能丰富的消息代理，支持多种消息协议和灵活的路由模式，适合企业级应用中的任务分发和微服务通信。学习本分支时，建议先理解消息队列的核心概念（如生产者、消费者、主题、队列、消息确认机制），然后对比Kafka和RabbitMQ的设计哲学与适用场景，最后通过实际项目（如构建实时数据管道或异步任务系统）加深理解。掌握消息队列有助于设计高可用、可扩展的分布式系统。",
+  "example_queries": [
+    "Kafka和RabbitMQ在架构设计上有什么主要区别？",
+    "如何保证消息队列中的消息不丢失？",
+    "在微服务架构中，使用消息队列有哪些最佳实践？",
+    "消息队列如何实现削峰填谷？",
+    "Kafka的分区机制是如何提升吞吐量的？"
+  ]
 }

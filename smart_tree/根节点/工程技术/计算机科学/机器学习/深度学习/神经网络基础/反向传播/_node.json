@@ -19,5 +19,22 @@
       "content_preview": "反向传播: The chain rule is used to compute gradients. Forward → Loss → Backward → Update. In the context of neural networks and machine learning, this process can be described as follows: 1. **Forward Pass**: Propagate input data through the network to get predictions. 2. **Loss Calculation**: Compute a loss function based on the difference between predicted values and actual values. 3. **Backward Pass (Backpropagation)**: Use the chain rule to compute gradients of the loss with respect to each parameter in the model. 4. **Parameter Update**: Adjust the parameters using an optimization algorithm like gradient descent. Here is a brief Python code example for backpropagation in a simple neural network: ```python import torch # Define a simple neural network class SimpleNN(torch.nn.Module): def __init__(self): super(SimpleNN, self).__init__() self.linear = torch.nn.Linear(1, 1) # One input and one output neuron def forward(self, x): return self.linear(x) # Initialize the model model = SimpleNN() # Define a loss function and an optimizer criterion = torch.nn.MSELoss() optimizer = torch.optim.SGD(model.parameters(), lr=0.01) # Forward pass: Compute predicted y by passing x to the model x = torch.tensor([[1.0]], requires_grad=True) y_pred = model(x) # Compute loss loss = criterion(y_pred, torch.tensor([[2.0]])) # Example target value # Backward pass: compute gradient of the loss with respect to all the learnable parameters of the model loss.backward() # Update weights using gradient descent optimizer.step() ``` This example demonstrates how gradients are computed and used to update the model's parameters in a neural network."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "conv_layer_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n反向传播是训练深度神经网络的核心算法，通过计算损失函数关于网络权重的梯度，并利用链式法则从输出层向输入层逐层传递误差，从而高效地更新网络参数。它使得多层神经网络能够通过梯度下降法进行优化，是深度学习成功的关键技术之一。\n\n## 核心要点\n- 反向传播基于链式法则，将输出层的误差信号逐层反向传播到每一层，计算每个权重的梯度。\n- 算法分为前向传播（计算预测值和损失）和反向传播（计算梯度）两个阶段，交替进行。\n- 梯度计算依赖于激活函数的导数，如Sigmoid或ReLU的导数，因此激活函数需可微。\n- 反向传播的复杂度与网络层数和参数数量成正比，但通过矩阵运算可高效实现。\n- 梯度消失或爆炸是常见问题，可通过选择合适的激活函数（如ReLU）或使用批量归一化来缓解。\n\n## 应用场景\n反向传播广泛应用于各类深度神经网络的训练，包括图像分类（如卷积神经网络）、自然语言处理（如循环神经网络和Transformer）以及强化学习中的策略网络优化。它使得模型能够从大量数据中自动学习特征，从而在计算机视觉、语音识别和机器翻译等领域取得突破性成果。\n\n## 相关概念\n反向传播与梯度下降法紧密相关，后者利用反向传播计算的梯度来更新权重。此外，前向传播是反向传播的基础，而损失函数（如交叉熵或均方误差）定义了优化目标。自动微分技术是现代深度学习框架（如TensorFlow和PyTorch）实现反向传播的核心机制，它自动计算梯度，简化了模型开发过程。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

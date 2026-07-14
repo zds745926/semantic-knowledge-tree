@@ -19,5 +19,27 @@
       "content_preview": "Timer: Threading Timer. Executes the `function` after a specified `interval`. The `cancel` method can be used to cancel the timer. Here is an example of how you might use it in Python: ```python import threading def my_function(): print(\"Function executed at\", threading.current_thread().name) # Create a Timer that will call my_function after 5 seconds timer = threading.Timer(5.0, my_function) timer.start() print(\"Timer started...\") # Cancel the timer before it finishes its interval timer.cancel() ``` In this example, `my_function` is scheduled to run after 5 seconds using a `threading.Timer`. The `start()` method starts the timer, and `cancel()` stops it from executing if called before the interval ends."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_thread_safety_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nTimer是Python threading模块中的一个类，用于在指定延迟后执行一个函数，提供一次性定时任务功能。\n\n## 何时使用\n当需要延迟执行某个操作，如定时提醒、延迟重试或超时控制时，可使用Timer。它适用于非阻塞的异步定时任务，但注意Timer只执行一次，不重复触发。\n\n## 示例\n```Python\nimport threading\nimport time\n\ndef greet(name):\n    print(f\"Hello, {name}!\")\n\nt = threading.Timer(3.0, greet, args=[\"Alice\"])\nt.start()\nprint(\"Timer started, waiting...\")\ntime.sleep(5)\n```\n\n## 反例\n错误地认为Timer会重复执行，或忘记调用start()导致任务不触发。例如：\n```Python\nt = threading.Timer(2.0, lambda: print(\"Once\"))\n# 未调用 t.start()，定时器不启动\n```\n\n## 边界条件\nTimer的延迟时间以秒为单位，可以是浮点数。如果Timer在触发前被取消（调用cancel()），则函数不会执行。注意Timer不是守护线程，默认会阻止程序退出。",
+    "code_pattern": "import threading\n\ndef delayed_action(param):\n    print(f\"Action executed with param: {param}\")\n\ndef start_timer(delay, func, *args, **kwargs):\n    timer = threading.Timer(delay, func, args=args, kwargs=kwargs)\n    timer.daemon = False  # 设为True则程序退出时自动终止\n    timer.start()\n    return timer\n\n# 使用示例\nif __name__ == \"__main__\":\n    timer = start_timer(2.0, delayed_action, \"test\")\n    # 如需取消：timer.cancel()",
+    "common_pitfalls": [
+      "忘记调用start()方法：创建Timer对象后必须显式调用start()，否则定时任务不会启动。",
+      "误以为Timer会重复执行：Timer只执行一次，如需重复执行需在回调中重新创建Timer。",
+      "未处理Timer的取消：调用cancel()后，如果Timer已经触发则无效，需确保在触发前取消。",
+      "Timer线程非守护导致程序无法退出：默认Timer线程会阻止主线程退出，应设置daemon=True或显式join。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,22 @@
       "content_preview": "全文索引: Inverted Index: Word → Document List. MATCH AGAINST. Here is an explanation with a brief Python code example for creating and using an inverted index: An inverted index is a data structure used in information retrieval to map words to the documents that contain them. This allows for efficient searching of documents based on keywords. Python Example: ```python class InvertedIndex: def __init__(self): self.index = {} def add_document(self, doc_id, content): words = content.split() for word in set(words): # Use a set to avoid duplicate entries per document if word not in self.index: self.index[word] = [] self.index[word].append(doc_id) def search(self, query): results = [] for word in query.split(): if word in self.index: results.extend(self.index[word]) return list(set(results)) # Remove duplicates # Example usage ii = InvertedIndex() ii.add_document(1, \"This is the first document.\") ii.add_document(2, \"This document is the second document.\") print(ii.search(\"document\")) # Output: [1, 2] ``` In this example, we define a simple `InvertedIndex` class that can add documents and search for words. The `add_document` method splits the content into words and adds each unique word to the index with its corresponding document ID. The `search` method takes a query string, splits it into words, and returns a list of document IDs containing any of those words."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "trie_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n全文索引是一种在数据库或搜索引擎中用于快速检索文本数据中关键词的索引技术。它通过预先分析文本内容，建立词与文档位置的映射关系，从而支持高效的模糊匹配、短语查询和自然语言搜索。与传统的B树索引不同，全文索引专注于处理大量非结构化文本，能够实现类似搜索引擎的搜索体验。\n\n## 核心要点\n- 分词处理：全文索引首先对文本进行分词，将连续文本拆分为独立的词语或词组，这是索引构建的基础。\n- 倒排索引结构：核心数据结构是倒排索引，记录每个词出现在哪些文档及具体位置，支持快速定位。\n- 相关性排序：查询结果通常按相关性排序，基于词频、逆文档频率等算法，确保最匹配的结果优先展示。\n- 支持复杂查询：能够处理模糊匹配、通配符、短语搜索、布尔操作（如AND、OR、NOT）等高级查询。\n- 性能优化：通过停用词过滤、词干提取等技术减少索引大小，提升搜索速度和准确性。\n\n## 应用场景\n全文索引广泛应用于需要高效文本搜索的系统中，例如电商网站的商品搜索、内容管理系统的文章检索、社交媒体平台的帖子查找。它还常用于日志分析、法律文档检索和学术论文数据库，帮助用户从海量文本中快速找到相关信息。在关系型数据库中，如MySQL的InnoDB引擎支持全文索引，用于实现站内搜索功能。\n\n## 相关概念\n全文索引与普通索引（如B树索引）不同，后者更适合精确匹配和范围查询，而前者专为文本模糊搜索设计。倒排索引是全文索引的核心实现，与正排索引相对，后者以文档为中心记录词列表。此外，搜索引擎（如Elasticsearch）和数据库中的全文索引功能类似，但搜索引擎通常提供更强大的分布式搜索和实时分析能力。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

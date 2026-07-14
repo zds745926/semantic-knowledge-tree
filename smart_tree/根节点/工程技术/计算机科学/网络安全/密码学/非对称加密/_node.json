@@ -19,5 +19,34 @@
       "content_preview": "非对称加密: RSA/ECC. Public key encryption with private key decryption. Digital signatures. Here are the corresponding concepts in Python using cryptography library examples: For RSA: ```python from cryptography.hazmat.primitives.asymmetric import rsa, padding from cryptography.hazmat.primitives import hashes # Generate a new RSA private key private_key = rsa.generate_private_key( public_exponent=65537, key_size=2048, ) # Extract the corresponding public key public_key = private_key.public_key() # Encrypt data with the public key ciphertext = public_key.encrypt( b\"Secret message\", padding.OAEP( mgf=padding.MGF1(algorithm=hashes.SHA256()), algorithm=hashes.SHA256(), label=None, ) ) # Decrypt data with the private key plaintext = private_key.decrypt( ciphertext, padding.OAEP( mgf=padding.MGF1(algorithm=hashes.SHA256()), algorithm=hashes.SHA256(), label=None, ) ) ``` For ECC: ```python from cryptography.hazmat.primitives.asymmetric import ec # Generate a new EC private key private_key = ec.generate_private_key(ec.SECP384R1()) # Extract the corresponding public key public_key = private_key.public_key() # Sign data with the private key signature = private_key.sign( b\"Message to sign\", ec.ECDSA(hashes.SHA256()) ) # Verify the signature with the public key public_key.verify( signature, b\"Message to sign\", ec.ECDSA(hashes.SHA256()) ) ``` These examples demonstrate basic usage of RSA and ECC for encryption, decryption, and digital signatures."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cap_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "csrf_v4",
+      "type": "application"
+    },
+    {
+      "id": "sql_injection_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "py_hashlib_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n非对称加密是一种密码学算法，它使用一对密钥（公钥和私钥）进行加密和解密。公钥可以公开分享，用于加密数据；私钥必须保密，用于解密数据。这种机制解决了对称加密中密钥分发困难的问题。\n\n## 核心要点\n- 密钥对：非对称加密使用数学上关联但无法互相推导的公钥和私钥，公钥加密的数据只能由对应的私钥解密。\n- 安全性：基于数学难题（如大整数分解、离散对数），即使公钥公开，攻击者也无法在合理时间内计算出私钥。\n- 加密与签名：除了加密，非对称加密还可用于数字签名，私钥签名，公钥验证，确保数据的完整性和身份真实性。\n- 性能：相比对称加密，非对称加密计算速度慢，通常用于加密小量数据或交换对称密钥。\n- 常见算法：包括RSA、ECC（椭圆曲线密码）、ElGamal等，不同算法在安全性和效率上各有特点。\n\n## 应用场景\n非对称加密广泛应用于网络安全领域，如HTTPS协议中的SSL/TLS握手阶段，用于安全交换对称密钥；电子邮件加密（如PGP）和数字证书（如X.509）也依赖非对称加密来验证身份和加密数据。此外，区块链技术中的数字签名和加密货币交易也基于非对称加密。\n\n## 相关概念\n对称加密：使用单一密钥进行加密和解密，速度快但密钥分发困难，常与非对称加密结合使用（如混合加密）。哈希函数：用于生成数据摘要，常与非对称加密配合实现数字签名。公钥基础设施（PKI）：管理公钥的生成、分发和撤销，确保公钥的真实性，是非对称加密实际应用的基础。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

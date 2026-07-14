@@ -19,5 +19,22 @@
       "content_preview": "可重复读: The result of reading the same record multiple times is consistent. This is InnoDB's default behavior. MVCC snapshot reads are used to achieve this. To illustrate the concept with a brief Python code example, we can simulate a simple read operation using a dictionary (which could represent a database record) and demonstrate consistency across multiple reads: ```python # Simulate a database record as a dictionary record = {'id': 1, 'name': 'John Doe', 'age': 30} def read_record(record_id): # Simulate reading the record from \"database\" if record_id == record['id']: return record else: raise ValueError(\"Record not found\") # Multiple reads of the same record should yield consistent results try: print(read_record(1)) # Expected output: {'id': 1, 'name': 'John Doe', 'age': 30} print(read_record(1)) # Consistent result with the first read except ValueError as e: print(e) ``` This example demonstrates that reading the same record multiple times (`read_record(1)`) yields consistent results. In a real-world scenario, this consistency is maintained by MVCC in databases like InnoDB."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "read_committed_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n可重复读是关系型数据库事务隔离级别之一，确保在同一事务内多次读取同一数据时结果一致，避免脏读和不可重复读，但可能允许幻读。它通过锁定读取的行或使用多版本并发控制来实现。\n\n## 核心要点\n1. 可重复读防止脏读和不可重复读，即事务不会读到其他事务未提交的数据，且同一查询在事务内返回相同结果。\n2. 它通常通过行级锁或快照隔离实现，例如在InnoDB中使用MVCC。\n3. 此级别仍可能发生幻读，即其他事务插入新行导致范围查询结果变化。\n4. 相比读已提交，可重复读提供更强的一致性，但可能降低并发性能。\n5. 在MySQL的默认隔离级别是可重复读，而在其他数据库如PostgreSQL中默认是读已提交。\n\n## 应用场景\n可重复读适用于需要稳定数据视图的金融交易、报表生成或数据分析场景，确保事务内多次读取关键数据（如账户余额）一致，避免因其他事务更新导致的错误。它也常用于需要长时间运行的查询，防止中间结果变化。\n\n## 相关概念\n可重复读与读已提交、串行化等隔离级别相关，读已提交允许不可重复读但防止脏读，串行化则完全避免幻读。它常与MVCC机制结合，通过快照实现一致性读取。此外，锁机制（如间隙锁）可用于防止幻读，但会增加开销。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

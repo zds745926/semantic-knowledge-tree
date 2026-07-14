@@ -20,5 +20,13 @@
     "description": "包管理: The Python package management toolchain includes pip for dependency installation, venv for environment isolation, and pyproject.toml for project specifications. Modern tools like PDM and Poetry further simplify dependency management and the release process. Python code example using `pip`: ```python # Install a package using pip !pip install requests # Example of creating a virtual environment with venv import subprocess subprocess.run([\"python\", \"-m\", \"venv\", \"/path/to/new/virtual/environment\"]) # pyproject.toml example (simplified) \"\"\" [tool.poetry] name = \"my_project\" version = \"0.1.0\" [tool.poetry.dependencies] requests = \"^2.25.1\" \"\"\" ``` Note: The `!pip install requests` line is a shell command executed within a Python script, which is not directly executable in standard Python environments without using subprocess or similar modules to run it."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于 Python 生态中的包管理，涵盖从依赖管理、虚拟环境隔离到项目打包与发布的完整流程。子节点中，“虚拟环境 venv”和“虚拟环境”共同解决项目间依赖隔离问题，是包管理的基础；“pip 包管理器”是核心工具，负责包的安装、卸载与版本控制；“pyproject.toml”是现代 Python 项目配置的标准文件，统一了构建系统与元数据声明；“依赖管理”关注依赖的锁定、解析与更新，确保环境可复现；“发布与打包”则指导如何将项目封装为可分发的格式并上传至 PyPI。学习路径建议从理解虚拟环境与 pip 的基本使用入手，再掌握 pyproject.toml 的配置，进而学习依赖锁定与版本管理，最后实践打包与发布流程。",
+  "example_queries": [
+    "如何使用 venv 创建和激活虚拟环境？",
+    "pip 如何安装指定版本的包并生成 requirements.txt？",
+    "pyproject.toml 文件的结构和常用配置项有哪些？",
+    "如何将 Python 项目打包并发布到 PyPI？",
+    "依赖管理中 pip freeze 和 pip-compile 的区别是什么？"
+  ]
 }

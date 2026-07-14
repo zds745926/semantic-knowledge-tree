@@ -19,5 +19,30 @@
       "content_preview": "管道与重定向: Pipes. Redirections. 2>&1 Merge errors. Tee split. Here are the technical terms translated with brief explanations and a Python code example for the `tee` command: - **Pipes**: Used to connect the output of one process to the input of another. ```python import subprocess # Example: Using pipes to pass output from one command to another result = subprocess.run(['ls', '|', 'grep', 'test'], shell=True, capture_output=True, text=True) print(result.stdout) ``` - **Redirections**: Used to change the input or output of a command. ```python # Example: Redirecting stdout and stderr to files with open('stdout.txt', 'w') as f: result = subprocess.run(['ls', '/nonexistent'], stdout=f, stderr=subprocess.STDOUT) ``` - **2>&1 Merge errors**: Merges standard error (stderr) with standard output (stdout). ```python # Example: Merging stdout and stderr result = subprocess.run(['ls', '/nonexistent'], capture_output=True, text=True) print(result.stdout + result.stderr) ``` - **Tee split**: The `tee` command writes its input to both the standard output and one or more files. ```python # Example: Using tee to write output to a file and stdout with open('output.txt', 'w') as f: result = subprocess.run(['ls'], stdout=f, stderr=subprocess.STDOUT) ``` These examples provide a basic understanding of how these concepts can be implemented in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_ipc_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "grep_v4",
+      "type": "application"
+    },
+    {
+      "id": "sed_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n管道与重定向是 Linux Shell 中用于控制命令输入输出流向的核心机制。重定向允许将命令的标准输入、标准输出或标准错误流从默认的终端设备转向文件或其他设备；管道则能将一个命令的标准输出直接作为另一个命令的标准输入，实现命令间的数据流传递。\n\n## 核心要点\n- 重定向符号包括 >（覆盖输出）、>>（追加输出）、<（输入重定向）和 2>（错误重定向），可灵活控制数据流向。\n- 管道符号 | 连接多个命令，形成处理链，例如 `ls -l | grep .txt` 先列出文件再过滤出文本文件。\n- 管道与重定向可以组合使用，如 `command1 | command2 > output.txt`，将管道处理后的结果写入文件。\n- 标准错误流默认不参与管道传递，需使用 `2>&1` 或 `|&` 将错误流合并到标准输出后再处理。\n- 使用 `tee` 命令可在管道中同时将数据输出到文件和下一个命令，实现数据分流。\n\n## 应用场景\n管道与重定向广泛应用于日志处理、数据过滤和自动化脚本中。例如，使用 `cat log.txt | grep error | sort > errors.txt` 提取并排序错误日志；在备份脚本中，通过重定向将命令输出保存到日志文件以便后续审计。\n\n## 相关概念\n管道与重定向常与文件描述符（0、1、2 分别代表标准输入、输出、错误）和进程间通信（IPC）相关联。此外，`xargs` 命令常与管道配合，将输入转换为命令参数；`/dev/null` 作为特殊文件用于丢弃不需要的输出。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -19,5 +19,30 @@
       "content_preview": "鸭子类型定义: If it walks like a duck and quacks like a duck, then it is a duck. Implementing the `__iter__` method satisfies the Iterable protocol. Here's a brief Python code example to illustrate implementing the `__iter__` method: ```python class Duck: def __iter__(self): # This method should return an iterator object. # For simplicity, let's assume it returns self as an iterator. return self def __next__(self): # This method should define how to get the next item in the iteration. raise StopIteration # In a real implementation, this would return the next value. # Example usage: duck = Duck() try: for quack in duck: print(quack) except StopIteration: pass ``` In this example, the `Duck` class implements both the `__iter__` and `__next__` methods to satisfy the Iterable protocol. Note that a real implementation would need to define how to generate or access the items being iterated over."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cpp_oop_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "adapter_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n鸭子类型（Duck Typing）是一种动态类型语言的类型系统特性，其核心思想是“如果它走起来像鸭子、叫起来像鸭子，那么它就是鸭子”。在 Python 中，这意味着对象的适用性不取决于其继承自某个特定类，而取决于它是否实现了所需的方法或属性。\n\n## 何时使用\n当函数或方法需要接受多种不同类型的对象，但这些对象都支持相同的接口（如方法或属性）时，应使用鸭子类型。它特别适用于编写通用代码、实现策略模式或适配器模式，以及处理来自不同库或框架的对象。\n\n## 示例\n```Python\ndef make_sound(animal):\n    # 不检查类型，直接调用方法\n    return animal.quack()\n\nclass Duck:\n    def quack(self):\n        return \"嘎嘎\"\n\nclass Person:\n    def quack(self):\n        return \"我模仿鸭子叫\"\n\nprint(make_sound(Duck()))    # 输出: 嘎嘎\nprint(make_sound(Person()))  # 输出: 我模仿鸭子叫\n```\n\n## 反例\n错误用法是过度依赖类型检查，例如使用 isinstance() 或 type() 来限制参数类型，这违背了鸭子类型的设计初衷，降低了代码的灵活性和可扩展性。\n\n## 边界条件\n注意，如果对象缺少所需的方法，会在运行时抛出 AttributeError。因此，在调用前应确保对象确实具有所需接口，或者使用 try/except 进行异常处理。另外，鸭子类型不适用于需要严格类型安全的场景，如大型团队协作的底层库。",
+    "code_pattern": "def process_item(item):\n    # 假设 item 有 process 方法\n    return item.process()\n\nclass MyClass:\n    def process(self):\n        return \"processed\"\n\n# 使用\nresult = process_item(MyClass())",
+    "common_pitfalls": [
+      "使用 isinstance() 进行类型检查，破坏了鸭子类型的灵活性，导致代码无法接受其他实现了相同接口的类。",
+      "假设对象一定具有某个方法而不做任何防御性编程，当传入的对象不满足接口时会导致 AttributeError 崩溃。",
+      "在文档或注释中未明确说明期望的接口（即需要哪些方法），导致其他开发者难以理解如何正确使用函数。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

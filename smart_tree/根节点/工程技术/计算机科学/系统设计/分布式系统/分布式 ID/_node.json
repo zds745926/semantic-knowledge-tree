@@ -19,5 +19,30 @@
       "content_preview": "分布式 ID: Snowflake Algorithm: Timestamp + Machine ID + Sequence Number. UUID. ### Snowflake Algorithm (Python Example) The Snowflake algorithm is commonly used for generating unique IDs in distributed systems. Below is a simplified Python example to illustrate how you might implement the core logic of the Snowflake algorithm: ```python import time class Snowflake: TWEPOCH = 1420070400000 # The timestamp when the epoch starts (in milliseconds) WORKER_ID_BITS = 5 # Machine ID bits SEQUENCE_BITS = 12 # Sequence number bits MAX_WORKER_ID = -1 ^ (-1 << WORKER_ID_BITS) # Maximum machine ID SEQUENCE_MASK = -1 ^ (-1 << SEQUENCE_BITS) # Sequence mask def __init__(self, worker_id): if worker_id > self.MAX_WORKER_ID or worker_id < 0: raise ValueError(f\"worker Id can't be greater than {self.MAX_WORKER_ID} or less than 0\") self.worker_id = worker_id self.sequence = 0 self.last_timestamp = -1 def _gen_timestamp(self): return int(time.time() * 1000) def get_id(self): timestamp = self._gen_timestamp() if timestamp < self.last_timestamp: raise Exception(\"Clock moved backwards. Refusing to generate id for %i milliseconds\" % (self.last_timestamp - timestamp)) if timestamp == self.last_timestamp: self.sequence = (self.sequence + 1) & self.SEQUENCE_MASK if self.sequence == 0: timestamp = self._til_next_millis(self.last_timestamp) else: self.sequence = 0 self.last_timestamp = timestamp return ((timestamp - self.TWEPOCH) << self.WORKER_ID_BITS | self.worker_id << self.SEQUENCE_BITS | self.sequence) def _til_next_millis(self, last_timestamp): timestamp = self._gen_timestamp() while timestamp <= last_timestamp: timestamp = self._gen_timestamp() return timestamp # Example usage if __name__ == \"__main__\": snowflake = Snowflake(worker_id=1) print(snowflake.get_id()) ``` This example demonstrates the basic structure of a Snowflake generator in Python. Note that this is a simplified version and does not cover all edge cases or optimizations found in production implementations."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cap_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "microservices_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n分布式ID是指在分布式系统中，用于唯一标识一条记录或一个请求的全局唯一标识符。它需要满足全局唯一、高可用、高性能、趋势递增等特性，以支持大规模系统的数据分片、消息追踪和业务隔离。\n\n## 核心要点\n- 全局唯一性：分布式ID必须在整个系统范围内不重复，避免数据冲突。\n- 趋势递增：通常要求ID随时间递增，便于数据库索引优化和排序。\n- 高可用与低延迟：ID生成服务需具备高并发处理能力和容错机制，确保系统稳定。\n- 有序性：部分场景要求ID按时间或业务规则有序，利于分库分表。\n- 安全性：ID应避免暴露系统信息（如机器数量、时间戳细节），防止被恶意猜测。\n\n## 应用场景\n分布式ID广泛应用于订单号、用户ID、消息ID、日志记录等场景，尤其在微服务架构、分库分表、分布式缓存中，用于唯一标识数据分片和实现跨服务追踪。例如，电商系统的订单号需全局唯一且趋势递增，以支持分库分表后的高效查询。\n\n## 相关概念\n分布式ID与全局唯一ID、雪花算法、UUID、数据库自增ID等概念密切相关。雪花算法是常用的分布式ID生成方案，通过时间戳、机器ID和序列号组合实现唯一性；UUID虽简单但无序且长度较长；数据库自增ID在单机下有效，但分布式下需额外协调。此外，分布式ID常与分布式锁、一致性哈希等配合，确保系统一致性。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

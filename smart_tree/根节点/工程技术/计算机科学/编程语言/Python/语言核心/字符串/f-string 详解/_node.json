@@ -19,5 +19,39 @@
       "content_preview": "f-string 详解: The given Chinese text can be translated to English as follows: `f'...{expression}...' Embed variables. Format specifiers: {x:.2f} for retaining two decimal places, {x:>10} for right-aligning. Here is a brief Python code example demonstrating the use of these format specifiers: ```python value = 3.14159 # Using .2f to retain two decimal places formatted_value_1 = f'Value: {value:.2f}' print(formatted_value_1) # Output: Value: 3.14 # Using >10 for right-aligning formatted_value_2 = f'{value:>10.2f}' print(formatted_value_2) # Output: 3.14 ``` In this example, `:.2f` is used to format the floating-point number to retain two decimal places, and `:>10.2f` is used for right-aligning the formatted value within a field of width 10 characters."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nf-string（格式化字符串字面量）是 Python 3.6+ 引入的一种字符串格式化机制，允许在字符串中嵌入表达式，并在运行时求值，以简洁、高效的方式生成格式化字符串。\n\n## 何时使用\n当需要将变量、表达式或函数调用的结果嵌入到字符串中，且希望代码可读性强、执行效率高时，应优先使用 f-string。它特别适用于日志输出、报告生成、用户界面文本构建等场景，替代传统的 % 格式化或 str.format() 方法。\n\n## 示例\n```Python\nname = \"Alice\"\nage = 30\nheight = 1.75\n# 基本用法\nprint(f\"{name} is {age} years old and {height} meters tall.\")\n# 输出: Alice is 30 years old and 1.75 meters tall.\n\n# 表达式与函数调用\nprint(f\"Next year, {name} will be {age + 1}.\")\nprint(f\"{name.upper()} has {len(name)} letters.\")\n# 输出: Next year, Alice will be 31.\n# 输出: ALICE has 5 letters.\n\n# 格式化控制\nprint(f\"Height: {height:.2f} meters\")\n# 输出: Height: 1.75 meters\n```\n\n## 反例\n不要使用 f-string 来拼接用户输入或不可信数据，因为 f-string 会执行任意表达式，可能导致安全风险。例如，`f\"{user_input}\"` 如果 user_input 包含恶意代码，可能造成注入攻击。应始终对用户输入进行验证或转义。\n\n## 边界条件\nf-string 中的表达式不能包含反斜杠，因此无法在表达式内使用转义字符（如换行符 \\n）。如果需要，应先将转义字符赋值给变量再嵌入。另外，f-string 在 Python 3.12 之前不支持嵌套花括号，但 Python 3.12+ 允许有限嵌套。",
+    "code_pattern": "def format_user_profile(name: str, age: int, scores: list) -> str:\n    avg_score = sum(scores) / len(scores) if scores else 0.0\n    return f\"User: {name}, Age: {age}, Average Score: {avg_score:.2f}\"\n\n# 使用示例\nprofile = format_user_profile(\"Bob\", 25, [88, 92, 85])\nprint(profile)  # 输出: User: Bob, Age: 25, Average Score: 88.33",
+    "common_pitfalls": [
+      "在 f-string 表达式中使用字典键时，必须用引号包裹键名，例如 f\"{data['key']}\"，而不能用 f\"{data[key]}\"（除非 key 是变量）。",
+      "f-string 表达式内不能包含反斜杠转义，如 f\"{name}\\n\" 会引发语法错误；应改为先赋值再嵌入，例如 newline = '\\n'; f\"{name}{newline}\"。",
+      "在 Python 3.6 至 3.11 中，f-string 内不能使用嵌套花括号，例如 f\"{{ {x} }}\" 会报错；应使用 f\"{{{x}}}\" 来输出单个花括号。",
+      "f-string 在运行时求值，如果表达式中包含副作用（如修改全局变量），可能导致难以调试的 bug；应避免在 f-string 中使用有副作用的表达式。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

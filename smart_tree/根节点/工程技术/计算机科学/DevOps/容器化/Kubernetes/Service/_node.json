@@ -19,5 +19,30 @@
       "content_preview": "Service: Pod Stable Access Entry Points. ClusterIP/NodePort/LoadBalancer/Ingress. ### Explanation: - **ClusterIP**: This is the default service type that exposes the service on a cluster-internal IP. It's not accessible from outside the cluster. ```python # Example of creating a ClusterIP service in Kubernetes using Python with kubernetes client from kubernetes import client, config def create_clusterip_service(): v1 = client.CoreV1Api() body = { \"apiVersion\": \"v1\", \"kind\": \"Service\", \"metadata\": {\"name\": \"example-clusterip\"}, \"spec\": { \"selector\": {\"app\": \"example\"}, \"ports\": [{\"port\": 80, \"targetPort\": 9376}] } } v1.create_namespaced_service(namespace=\"default\", body=body) ``` - **NodePort**: This service exposes the service on each Node's IP at a static port (the `nodePort` field). It can be accessed from outside the cluster. ```python # Example of creating a NodePort service in Kubernetes using Python with kubernetes client def create_nodeport_service(): v1 = client.CoreV1Api() body = { \"apiVersion\": \"v1\", \"kind\": \"Service\", \"metadata\": {\"name\": \"example-nodeport\"}, \"spec\": { \"type\": \"NodePort\", \"selector\": {\"app\": \"example\"}, \"ports\": [{\"port\": 80, \"targetPort\": 9376}] } } v1.create_namespaced_service(namespace=\"default\", body=body) ``` - **LoadBalancer**: This service type is used to expose the service externally. It works with cloud providers and load balancers to provide a public IP address. ```python # Example of creating a LoadBalancer service in Kubernetes using Python with kubernetes client def create_loadbalancer_service(): v1 = client.CoreV1Api() body = { \"apiVersion\": \"v1\", \"kind\": \"Service\", \"metadata\": {\"name\": \"example-loadbalancer\"}, \"spec\": { \"type\": \"LoadBalancer\", \"selector\": {\"app\": \"example\"}, \"ports\": [{\"port\": 80, \"targetPort\": 9376}] } } v1.create_namespaced_service(namespace=\"default\", body=body) ``` - **Ingress**: This is a resource that manages external access to the services in a cluster. It typically sits in front of one or more services and defines routing rules. ```python # Example of creating an Ingress resource in Kubernetes using Python with kubernetes client def create_ingress(): networking_v1 = client.NetworkingV1Api() body = { \"apiVersion\": \" Networking.istio.io/v1alpha3\", \"kind\": \"Ingress\", \"metadata\": {\"name\": \"example-ingress\"}, \"spec\": { \"rules\": [ {\"host\": \"example.com\", \"http\": {\"paths\": [{\"path\": \"/\", \"backend\": {\"service\": {\"name\": \"example-service\", \"port\": {\"number\": 80}}}]}}} ] } } networking_v1.create_namespaced_ingress(namespace=\"default\", body=body) ``` These examples use the Kubernetes Python client to create services and an Ingress resource."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "k8s_deploy_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "prometheus_v4",
+      "type": "application"
+    },
+    {
+      "id": "rest_api_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nService是Kubernetes中用于定义一组Pod访问策略的抽象层，它为一组功能相同的Pod提供稳定的网络入口和负载均衡功能。通过Service，客户端无需关心Pod的具体IP地址变化，即可实现服务发现与流量分发。\n\n## 核心要点\n- **稳定访问入口**：Service拥有固定的虚拟IP和DNS名称，即使后端Pod发生扩缩容或故障重启，客户端仍可通过该入口访问服务。\n- **负载均衡**：Service默认基于轮询算法将请求分发到后端多个Pod，确保流量均匀分布，提升系统可用性。\n- **多种类型**：支持ClusterIP（集群内访问）、NodePort（节点端口映射）、LoadBalancer（云负载均衡器）和ExternalName（外部服务别名），适应不同网络场景。\n- **标签选择器**：通过标签选择器动态关联一组Pod，当Pod标签匹配时自动加入服务后端，实现松耦合。\n- **服务发现集成**：与Kubernetes DNS组件配合，Pod可通过服务名直接访问Service，无需硬编码IP。\n\n## 应用场景\nService广泛应用于微服务架构中的内部服务间通信，例如前端Pod通过Service调用后端API。同时，NodePort或LoadBalancer类型的Service常用于将集群内应用暴露给外部用户，如Web服务或数据库访问入口。\n\n## 相关概念\n- **Pod**：Service的后端工作负载单元，通过标签选择器与Service关联。\n- **Endpoint**：存储Service后端Pod的实际IP和端口列表，由Kubernetes自动维护。\n- **Ingress**：提供HTTP/HTTPS七层路由功能，可视为Service的增强入口，支持域名和路径转发。\n- **DNS**：Kubernetes内置DNS服务，将Service名称解析为ClusterIP，实现服务发现。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

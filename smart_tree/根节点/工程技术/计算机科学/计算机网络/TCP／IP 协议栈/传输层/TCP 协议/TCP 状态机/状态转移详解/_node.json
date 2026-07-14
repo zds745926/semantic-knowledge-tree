@@ -19,5 +19,26 @@
       "content_preview": "状态转移详解: 11 States: CLOSED, LISTEN, SYN_SENT, SYN_RCVD, ESTABLISHED, etc. Transitions between states are triggered by packets. Here's a brief Python code example using the `socket` library to illustrate how these states might be managed in a simple TCP server: ```python import socket class SimpleTCPServer: def __init__(self): self.state = 'CLOSED' def handle_packet(self, packet): if self.state == 'CLOSED': # Handle connection request (SYN) if 'SYN' in packet: self.state = 'SYN_SENT' response = 'SYN-ACK' else: return elif self.state == 'SYN_SENT': # Handle ACK for SYN if 'ACK' in packet and 'SYN' in packet: self.state = 'ESTABLISHED' print(\"Connection established\") else: return elif self.state == 'ESTABLISHED': # Handle data transfer pass # Implement data handling logic here # Example usage server = SimpleTCPServer() packet = {'SYN': True} # Simulate a packet with SYN flag set server.handle_packet(packet) ``` This example demonstrates how the state transitions might be managed in response to packets, though it's simplified for illustrative purposes."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "four_way_v4",
+      "type": "application"
+    },
+    {
+      "id": "tcp_congestion_avoid_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n状态转移详解是指对TCP协议状态机中各个状态之间转换条件、触发事件以及转换过程的详细说明。它描述了TCP连接从建立到终止的完整生命周期中，如何通过报文段交换和定时器超时等机制，在CLOSED、LISTEN、SYN_SENT、SYN_RCVD、ESTABLISHED、FIN_WAIT_1、FIN_WAIT_2、CLOSE_WAIT、CLOSING、LAST_ACK、TIME_WAIT等状态间进行迁移。\n\n## 核心要点\n1.  **三次握手建立连接**：客户端发送SYN进入SYN_SENT，服务端回应SYN+ACK进入SYN_RCVD，客户端再发送ACK后双方进入ESTABLISHED，完成可靠连接建立。\n2.  **四次挥手释放连接**：主动关闭方发送FIN进入FIN_WAIT_1，被动方回复ACK进入CLOSE_WAIT并发送FIN，主动方收到FIN后进入TIME_WAIT并等待2MSL后关闭。\n3.  **同时打开与同时关闭**：两端同时发送SYN会进入SYN_SENT并最终同时进入ESTABLISHED；同时发送FIN则经过FIN_WAIT_1、CLOSING后进入TIME_WAIT。\n4.  **定时器触发状态转移**：如重传定时器超时导致数据重传，保活定时器在空闲时探测对端存活，2MSL定时器确保TIME_WAIT状态持续足够长。\n5.  **异常处理**：收到RST报文会立即强制关闭连接进入CLOSED，或收到重复ACK触发快速重传和拥塞控制，改变发送状态。\n\n## 应用场景\n状态转移详解广泛应用于网络协议栈实现、TCP性能调优和故障排查中。开发人员通过理解状态机，能正确设计服务器并发模型、优化连接超时参数，并诊断诸如半开连接、端口耗尽等问题。\n\n## 相关概念\n相关概念包括TCP状态机、三次握手、四次挥手、半关闭、TIME_WAIT、2MSL、保活定时器、重传定时器、拥塞控制、滑动窗口等。这些概念共同构成了TCP可靠传输与连接管理的完整体系，状态转移详解是理解它们之间动态交互的基础。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

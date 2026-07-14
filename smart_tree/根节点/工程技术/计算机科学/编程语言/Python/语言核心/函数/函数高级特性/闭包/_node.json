@@ -19,5 +19,34 @@
       "content_preview": "闭包: A closure refers to an inner function that captures and remembers the variables from its enclosing (external) function. Even after the external function has returned, the closure can still access these external variables. Here's a brief Python code example illustrating this concept: ```python def outer_function(x): def inner_function(y): return x + y # The inner function uses the variable 'x' from the outer scope return inner_function # Using the outer function to create a closure closure = outer_function(10) print(closure(5)) # Output: 15, even though outer_function has already returned ``` In this example, `inner_function` is a closure that retains access to the variable `x` from its enclosing scope (`outer_function`). This allows `inner_function` to remember and use the value of `x` even after `outer_function` has finished executing."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n闭包（Closure）是指在一个内部函数中引用了外部函数作用域中的变量，并且该内部函数可以在其外部函数执行完毕后仍然访问这些变量的机制。\n\n## 何时使用\n闭包常用于需要保留状态或实现数据隐藏的场景，例如创建带有私有状态的函数、延迟计算、装饰器以及回调函数。它能够避免使用全局变量，同时提供一种简洁的方式来封装行为和数据。\n\n## 示例\n```Python\ndef make_multiplier(factor):\n    def multiplier(x):\n        return x * factor\n    return multiplier\n\ndouble = make_multiplier(2)\ntriple = make_multiplier(3)\nprint(double(5))  # 输出 10\nprint(triple(5))  # 输出 15\n```\n\n## 反例\n错误地将闭包用于循环中创建多个函数，导致所有函数共享同一个循环变量的最终值，而不是各自捕获迭代时的值。例如，使用 `lambda` 在循环中创建函数列表时，未使用默认参数绑定当前值。\n\n## 边界条件\n注意闭包中引用的变量是延迟绑定的，即内部函数执行时才查找变量值，而非定义时。因此，在循环中创建闭包时，应使用默认参数或 `functools.partial` 来立即绑定当前值。另外，闭包会增加内存开销，因为外部函数的变量不会被垃圾回收直到闭包本身被销毁。",
+    "code_pattern": "def outer_function(outer_param):\n    # 外部变量\n    captured_var = outer_param\n    \n    def inner_function(inner_param):\n        # 使用外部变量\n        return inner_param + captured_var\n    \n    return inner_function\n\n# 使用示例\nclosure_instance = outer_function(10)\nresult = closure_instance(5)  # 返回 15",
+    "common_pitfalls": [
+      "循环中创建闭包时，所有闭包共享同一个循环变量的最终值，而非各自迭代时的值。例如：`funcs = [lambda x: x * i for i in range(5)]` 会导致所有函数都乘以 4。",
+      "闭包中修改外部变量时，需要使用 `nonlocal` 声明，否则会创建新的局部变量，导致无法修改外部变量。",
+      "闭包会延长外部变量的生命周期，可能导致内存泄漏，尤其是在长时间运行的程序中，如果闭包被长期持有，外部大对象无法释放。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

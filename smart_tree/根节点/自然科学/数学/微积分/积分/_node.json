@@ -19,5 +19,22 @@
       "content_preview": "积分: Integration is the inverse operation of differentiation. A definite integral ∫ₐᵇ f(x)dx represents the area between the curve and the x-axis. Here's a brief Python code example using the `scipy` library to compute a definite integral: ```python from scipy.integrate import quad import math # Define the function to integrate def integrand(x): return math.sin(x) # Compute the definite integral from 0 to pi result, error = quad(integrand, 0, math.pi) print(f\"The area under the curve is approximately {result} with an estimated error of {error}\") ``` This code calculates the definite integral of `sin(x)` from 0 to π, which corresponds to the area under the sine curve in that interval."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "derivative_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n积分是微积分学中的核心概念之一，与微分互为逆运算。它主要分为定积分和不定积分，定积分用于计算曲线下面积、累积量等，而不定积分则表示为原函数的集合。\n\n## 核心要点\n- 积分的基本思想是“无限求和”，通过将区域分割成无数微小部分并求和来得到整体量。\n- 定积分有明确的上下限，结果是一个数值，常用于计算面积、体积和物理中的累积效应。\n- 不定积分没有上下限，结果是一个函数族，表示所有导数为被积函数的函数。\n- 微积分基本定理将积分与微分联系起来，指出定积分可以通过原函数的差值来计算。\n- 积分方法包括换元积分法、分部积分法等，用于处理不同类型的被积函数。\n\n## 应用场景\n积分在物理学中用于计算位移、功和电荷量；在工程学中用于求解曲线长度、旋转体体积；在经济学中用于计算消费者剩余和总成本。此外，积分也是概率论中计算连续随机变量期望和方差的基础工具。\n\n## 相关概念\n微分是积分的逆运算，两者通过微积分基本定理紧密相连。黎曼积分是定积分的一种经典定义方式，而勒贝格积分则推广了积分概念以适应更复杂的函数。原函数是积分运算的直接结果，其导数等于被积函数。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

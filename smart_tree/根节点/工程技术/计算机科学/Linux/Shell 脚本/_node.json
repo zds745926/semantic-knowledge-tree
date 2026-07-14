@@ -17,5 +17,13 @@
     "description": "Shell 脚本: Bash scripts are the core tools for automation in Linux, supporting variables, control flow, pipelines, and redirection. Here's a brief explanation with a corresponding Python code example to illustrate some of these concepts: - **Variables**: In Bash, you can define variables like this: ```bash # Bash variable definition username=\"JohnDoe\" echo $username ``` - **Control Flow**: You can use conditional statements in Bash as follows: ```bash # Bash control flow example with if statement age=25 if [ $age -ge 18 ]; then echo \"You are an adult.\" else echo \"You are a minor.\" fi ``` - **Pipelines**: Pipelines in Bash allow you to chain commands together: ```bash # Example of using pipelines in Bash ls -l | grep \"txt\" ``` - **Redirection**: Redirection allows you to redirect input and output: ```bash # Redirecting output to a file in Bash echo \"Hello, world!\" > hello.txt ``` These examples should give you an idea of how these concepts are implemented in both Bash and Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "Shell脚本是Linux系统中自动化任务的核心工具，本分支涵盖从基础语法到高级用法的完整知识体系。Bash基础是入门关键，包括变量定义、字符串操作、数组、算术运算及函数等基本元素，为后续学习奠定语法基础。Bash控制流则引入条件判断（if-else、case）和循环结构（for、while、until），使脚本具备逻辑决策和重复执行能力，是编写复杂自动化脚本的骨架。管道与重定向是Shell脚本的精髓，通过管道（|）将命令输出直接传递给另一命令作为输入，实现命令间高效协作；重定向（>、>>、<、2>&1等）则控制数据的输入输出流向，支持文件读写和错误处理。三者层层递进：先掌握基础语法，再学习控制逻辑，最后利用管道与重定向组合命令，形成强大的脚本能力。学习路径建议从Bash基础开始，通过编写简单脚本熟悉语法；然后练习控制流实现条件分支和循环；最后深入管道与重定向，结合系统命令完成文件处理、日志分析等实际任务。掌握本分支后，用户能编写自动化备份、批量文件处理、系统监控等实用脚本，显著提升运维效率。",
+  "example_queries": [
+    "如何在Shell脚本中判断文件是否存在并执行相应操作？",
+    "使用管道和重定向如何实现日志文件的关键字统计？",
+    "Bash脚本中for循环和while循环的区别及适用场景是什么？",
+    "如何编写一个Shell脚本实现每日自动备份指定目录？",
+    "管道命令中如何同时输出到文件和屏幕（tee命令）？"
+  ]
 }

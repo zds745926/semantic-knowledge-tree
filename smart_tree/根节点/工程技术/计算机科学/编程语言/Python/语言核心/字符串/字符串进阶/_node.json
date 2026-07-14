@@ -17,5 +17,13 @@
     "description": "字符串进阶: Advanced string handling includes encoding conversion, advanced slicing, and regular expressions. Here are brief explanations for each concept along with Python code examples: 1. **Encoding Conversion**: This involves converting a string from one character encoding to another. ```python # Example of encoding conversion in Python original_string = \"你好，世界\" encoded_bytes = original_string.encode('utf-8') # Convert to bytes using UTF-8 encoding decoded_string = encoded_bytes.decode('utf-8') # Convert back to string print(decoded_string) # Output: 你好，世界 ``` 2. **Advanced Slicing**: Advanced slicing allows for more complex and flexible ways of extracting substrings from a string. ```python # Example of advanced slicing in Python text = \"The quick brown fox jumps over the lazy dog\" sliced_text = text[::2] # Extract every second character starting from index 0 print(sliced_text) # Output: T e uickbrwnfoxjmpsoverthelaydog ``` 3. **Regular Expressions**: Regular expressions provide a powerful way to match patterns within strings. ```python import re # Example of using regular expressions in Python text = \"The quick brown fox jumps over the lazy dog\" pattern = r\"\\b\\w{5}\\b\" # Pattern to find words with exactly 5 letters matches = re.findall(pattern, text) print(matches) # Output: ['quick', 'brown'] ``` These examples should give you a good understanding of how these advanced string handling techniques can be implemented in Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支“字符串进阶”是Python语言核心中字符串部分的深化与扩展，主要涵盖三个子主题：编码与bytes、字符串切片进阶、字符串正则进阶。编码与bytes是理解字符串在计算机中存储与传输的基础，涉及Unicode、UTF-8等编码方式及bytes与str的互转；字符串切片进阶则深入探讨切片语法、步长、负索引及切片在字符串处理中的高效应用；字符串正则进阶则引入正则表达式，实现复杂模式匹配、搜索、替换与分割。三者之间层层递进：编码与bytes解决底层数据表示问题，切片进阶提升字符串操作效率，正则进阶则赋予字符串处理强大的模式识别能力。学习路径建议先掌握编码与bytes，再练习切片技巧，最后攻克正则表达式，从而全面掌握Python字符串的高级操作。",
+  "example_queries": [
+    "Python中如何将字符串编码为UTF-8 bytes？",
+    "如何利用切片实现字符串反转？",
+    "正则表达式如何匹配邮箱地址？",
+    "字符串切片中的步长负值是什么意思？",
+    "如何用正则替换字符串中所有数字？"
+  ]
 }

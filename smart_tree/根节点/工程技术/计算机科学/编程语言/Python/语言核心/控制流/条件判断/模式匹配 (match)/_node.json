@@ -19,5 +19,35 @@
       "content_preview": "模式匹配 (match): Python 3.10+ supports the `match/case` pattern with various modes including literal values, wildcards, sequence unpacking, and guard conditions. Here's a brief Python code example demonstrating some of these features: ```python def handle_value(value): match value: case 42: # Literal value print(\"The answer to everything!\") case _ as x if isinstance(x, int) and x > 100: # Guard condition with wildcard print(f\"Value is an integer greater than 100: {x}\") case [a, b]: # Sequence unpacking print(f\"Parsed a list: {a}, {b}\") case _: # Default case print(\"Unknown value\") # Example usage: handle_value(42) # The answer to everything! handle_value(101) # Value is an integer greater than 100: 101 handle_value([1, 2]) # Parsed a list: 1, 2 handle_value(\"hello\") # Unknown value ``` This example demonstrates using literal values (`42`), guard conditions with wildcards ( `_ as x if ...` ), sequence unpacking (`[a, b]`), and a default case (`_`)."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "boolean_algebra_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n模式匹配（match）是 Python 3.10 引入的一种结构化控制流机制，允许将一个值与一系列模式进行比较，并根据匹配的模式执行对应代码块，类似于其他语言中的 switch/case 但更强大，支持解构、守卫和类型匹配。\n\n## 何时使用\n当需要根据数据的结构、类型或值进行多分支判断时，模式匹配比 if-elif-else 更清晰、更简洁。特别适合处理枚举值、元组、列表、字典等复合数据，以及需要同时检查类型和内容的情况。\n\n## 示例\n```Python\ndef process_command(command):\n    match command:\n        case \"quit\" | \"exit\":\n            print(\"Goodbye!\")\n        case \"greet\" as action:\n            print(f\"Hello, action is {action}\")\n        case [\"move\", x, y] if x > 0 and y > 0:\n            print(f\"Move to ({x}, {y})\")\n        case {\"name\": name, \"age\": age}:\n            print(f\"{name} is {age} years old\")\n        case _:\n            print(\"Unknown command\")\n\nprocess_command(\"quit\")   # Goodbye!\nprocess_command(\"greet\")  # Hello, action is greet\nprocess_command([\"move\", 10, 20])  # Move to (10, 20)\nprocess_command({\"name\": \"Alice\", \"age\": 30})  # Alice is 30 years old\n```\n\n## 反例\n错误地将 match 当作普通 switch 使用，忽略模式匹配的结构化能力，例如用 match 对整数做简单相等判断，不如直接用 if-elif。另外，在 case 中重复使用同一个变量名会导致变量绑定冲突，例如 `case [x, x]:` 会引发错误，因为 x 被绑定两次。\n\n## 边界条件\n模式匹配中的守卫（if 子句）只在模式匹配成功后才求值，因此守卫中可安全访问模式绑定的变量。注意，通配符 `_` 不绑定值，不能在其他地方引用；若需要捕获值应使用变量名。模式匹配是短路求值的，多个模式按顺序检查，第一个匹配的 case 被执行。",
+    "code_pattern": "def handle_data(value):\n    match value:\n        case 0:\n            return \"zero\"\n        case int(n) if n > 0:\n            return f\"positive integer {n}\"\n        case [first, *rest]:\n            return f\"list starting with {first}\"\n        case {\"key\": val}:\n            return f\"dict with key = {val}\"\n        case _:\n            return \"default\"",
+    "common_pitfalls": [
+      "忘记通配符 `_` 不绑定值，试图在后续代码中使用 `_` 会导致 NameError。",
+      "在 case 中重复使用同一个变量名（如 `case [x, x]:`），Python 会认为这是两个不同的绑定，引发 `SyntaxError`，应使用守卫或嵌套模式。",
+      "模式匹配按顺序检查，如果前面的 case 过于宽泛（如 `case _:` 放在最前），后续 case 永远不会匹配，导致逻辑错误。",
+      "误以为 match 语句会穿透（fall-through），实际上每个 case 执行完自动退出，不需要 break。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

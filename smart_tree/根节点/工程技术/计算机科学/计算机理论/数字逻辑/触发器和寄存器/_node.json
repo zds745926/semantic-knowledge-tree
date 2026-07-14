@@ -19,5 +19,34 @@
       "content_preview": "触发器和寄存器: Triggers are the basic units that store 1-bit information. Multiple D triggers connected in parallel form a register, which is the foundation of CPU registers. To provide a more detailed explanation and include a Python code example for a simple D trigger simulation: A D trigger (D-type flip-flop) can be simulated using Python to demonstrate its functionality. Here's a basic example: ```python class DTrigger: def __init__(self): self.state = 0 # Initial state is low (0) def update(self, d_input): \"\"\" Update the trigger state based on the input. :param d_input: The data input to set the trigger state to. \"\"\" self.state = d_input # Example usage: if __name__ == \"__main__\": # Create a D trigger instance d_trigger = DTrigger() # Update the state with new data inputs print(\"Initial state:\", d_trigger.state) # Output: Initial state: 0 d_trigger.update(1) print(\"State after update to 1:\", d_trigger.state) # Output: State after update to 1: 1 d_trigger.update(0) print(\"State after update to 0:\", d_trigger.state) # Output: State after update to 0: 0 ``` This Python class `DTrigger` simulates the behavior of a D trigger, where the state is updated based on the input value. Multiple instances of this class could be used to simulate registers in a CPU."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "boolean_algebra_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "application"
+    },
+    {
+      "id": "semaphore_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n触发器是数字逻辑电路中具有记忆功能的基本存储单元，能够存储一位二进制信息（0或1）。寄存器是由多个触发器组成的、用于暂时存储一组二进制数据的逻辑部件，通常用于存储指令、地址或数据。\n\n## 核心要点\n- 触发器具有两个稳定状态（0和1），在输入信号作用下可从一个状态切换到另一个状态，从而实现数据存储。\n- 常见触发器类型包括SR触发器、D触发器、JK触发器和T触发器，其中D触发器最常用于寄存器设计，因其输入与输出直接对应。\n- 寄存器通常由多个D触发器并行连接而成，共享时钟信号，实现同步存储多位数据。\n- 触发器对时钟边沿敏感（边沿触发）或电平敏感（电平触发），寄存器常采用边沿触发以确保数据在时钟跳变时稳定捕获。\n- 寄存器可设计为移位寄存器（串行输入/输出）或并行寄存器，支持数据的移位、存储和传输操作。\n\n## 应用场景\n触发器广泛用于计数器、状态机、分频器和存储器单元中，是时序逻辑电路的基础。寄存器是CPU内部的关键组件，用于暂存指令、操作数和计算结果，也用于数据缓冲、地址锁存和串行通信中的移位操作。\n\n## 相关概念\n触发器和寄存器属于时序逻辑电路，与组合逻辑电路（如与门、或门）不同，它们具有记忆功能。锁存器是另一种存储单元，与触发器的区别在于其对电平敏感而非边沿触发。寄存器堆是多个寄存器的集合，常见于处理器架构中，用于快速数据存取。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

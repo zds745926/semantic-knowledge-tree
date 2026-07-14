@@ -19,5 +19,26 @@
       "content_preview": "time: - `time.time()` timestamp. - `time.sleep()` pause. - `time.localtime`, `time.mktime`, `time.strptime`. Python code examples: ```python import time # Example of using time.time() to get the current timestamp current_timestamp = time.time() print(\"Current Timestamp:\", current_timestamp) # Example of using time.sleep() to pause execution for 5 seconds print(\"Pausing for 5 seconds...\") time.sleep(5) print(\"Resume execution\") # Example of converting a string to a struct_time object and back timestamp = time.time() struct_time_obj = time.localtime(timestamp) print(\"Local Time:\", struct_time_obj) string_time = \"2023-10-04 12:00:00\" time_struct = time.strptime(string_time, \"%Y-%m-%d %H:%M:%S\") print(\"Time Struct:\", time_struct) ``` These examples demonstrate the usage of `time.time()`, `time.sleep()`, and conversions between string and struct_time using `time.strptime()` and `time.localtime()`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_calendar_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\ntime模块是Python标准库中用于处理时间相关操作的基础模块，提供了获取当前时间、时间格式化、时间延迟以及时间转换等核心功能。\n\n## 何时使用\n当需要获取当前时间戳或进行时间格式化输出时，使用time模块。它也适用于实现简单的程序暂停（如sleep）、测量代码执行时间，以及在不同时间表示形式（如时间戳、结构化时间、字符串）之间进行转换。\n\n## 示例\n```Python\nimport time\n\n# 获取当前时间戳\ncurrent_timestamp = time.time()\nprint(f\"当前时间戳: {current_timestamp}\")\n\n# 将时间戳转换为结构化时间\nlocal_time = time.localtime(current_timestamp)\nprint(f\"结构化时间: {local_time}\")\n\n# 格式化输出\nformatted_time = time.strftime(\"%Y-%m-%d %H:%M:%S\", local_time)\nprint(f\"格式化时间: {formatted_time}\")\n\n# 程序暂停2秒\nprint(\"开始暂停...\")\ntime.sleep(2)\nprint(\"暂停结束\")\n```\n\n## 反例\n错误地使用time.sleep(0)来实现微秒级延迟，实际上sleep(0)会立即返回，不会产生任何延迟效果。\n\n## 边界条件\ntime.time()返回的浮点数精度可能因操作系统而异，Windows下精度较低（约15毫秒），不适合高精度计时。time.sleep()在收到信号时可能提前返回，应使用循环检查实际等待时间。",
+    "code_pattern": "import time\n\ndef time_operations():\n    # 获取当前时间戳\n    timestamp = time.time()\n    \n    # 转换为本地结构化时间\n    struct_time = time.localtime(timestamp)\n    \n    # 格式化为字符串\n    time_str = time.strftime(\"%Y-%m-%d %H:%M:%S\", struct_time)\n    \n    # 解析字符串回结构化时间\n    parsed_time = time.strptime(time_str, \"%Y-%m-%d %H:%M:%S\")\n    \n    # 转换为时间戳\n    new_timestamp = time.mktime(parsed_time)\n    \n    return timestamp, time_str, new_timestamp",
+    "common_pitfalls": [
+      "time.time()返回的是浮点数，在不同操作系统上精度不同，Windows下精度约15毫秒，不适合微秒级计时；应使用time.perf_counter()或time.monotonic()进行高精度测量。",
+      "time.sleep()可能被信号中断而提前返回，导致实际睡眠时间小于指定时间；应使用循环检查剩余时间并继续sleep，例如：while remaining > 0: remaining = deadline - time.time(); time.sleep(remaining)。",
+      "time.strftime()和time.strptime()依赖于系统区域设置，不同系统对%Z（时区名称）等格式的支持不一致，可能导致跨平台兼容性问题；建议使用UTC时间或明确指定时区偏移。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

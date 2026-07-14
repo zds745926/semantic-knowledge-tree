@@ -19,5 +19,34 @@
       "content_preview": "特殊浮点值: Infinite values and NaN (Not a Number) are represented as `float('inf')` and `float('nan')`, respectively. The `math.isinf()` and `math.isnan()` functions can be used to determine whether a value is infinite or not-a-number. For NaN, any comparison will return False. Python code examples: ```python import math # Example of checking for infinity value = float('inf') if math.isinf(value): print(f\"{value} is positive infinity\") value = -float('inf') if math.isinf(value): print(f\"{value} is negative infinity\") # Example of checking for NaN nan_value = float('nan') if math.isnan(nan_value): print(f\"{nan_value} is not a number\") ``` This code demonstrates how to use the `math.isinf()` and `math.isnan()` functions to check for infinite values and NaN, respectively."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_int_bitops_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n特殊浮点值是指 IEEE 754 标准中定义的三个非有限数值：正无穷（inf）、负无穷（-inf）和 NaN（Not a Number），用于表示数学上未定义或无法表示的结果。\n\n## 何时使用\n当需要处理数学运算中的溢出、除零或无效操作时，使用特殊浮点值可以避免程序崩溃，并允许后续逻辑判断。例如在科学计算中，无穷大表示结果超出浮点数范围，NaN 表示 0/0 或 sqrt(-1) 等无效运算。\n\n## 示例\n```Python\nimport math\n\n# 正无穷\npositive_inf = float('inf')\nprint(positive_inf)  # inf\nprint(positive_inf > 1e308)  # True\n\n# 负无穷\nnegative_inf = float('-inf')\nprint(negative_inf)  # -inf\n\n# NaN\nnan_value = float('nan')\nprint(nan_value)  # nan\nprint(nan_value == nan_value)  # False，NaN 不等于自身\n\n# 运算产生\nprint(1.0 / 0.0)  # inf\nprint(-1.0 / 0.0)  # -inf\nprint(0.0 / 0.0)  # nan\nprint(math.sqrt(-1.0))  # nan\n```\n\n## 反例\n错误地使用 `==` 判断 NaN，因为 NaN 与任何值（包括自身）比较都返回 False。应使用 `math.isnan()` 或 `numpy.isnan()` 判断。\n\n## 边界条件\n注意浮点运算中溢出不会抛出异常，而是返回 inf；无效操作返回 nan。此外，inf 参与算术运算时遵循数学规则（如 inf + inf = inf），但 inf - inf 结果为 nan。",
+    "code_pattern": "import math\n\ndef handle_special_floats(value):\n    if math.isnan(value):\n        return \"NaN detected\"\n    elif math.isinf(value):\n        if value > 0:\n            return \"Positive infinity\"\n        else:\n            return \"Negative infinity\"\n    else:\n        return f\"Normal float: {value}\"\n\n# 使用示例\nprint(handle_special_floats(float('inf')))\nprint(handle_special_floats(float('-inf')))\nprint(handle_special_floats(float('nan')))\nprint(handle_special_floats(3.14))",
+    "common_pitfalls": [
+      "使用 `==` 比较 NaN 总是返回 False，包括 `nan == nan`，应使用 `math.isnan()` 或 `numpy.isnan()`。",
+      "在数学函数中传入 inf 或 NaN 可能导致意外结果，例如 `math.log(float('inf'))` 返回 inf，但 `math.log(float('-inf'))` 会引发 ValueError，需提前校验。",
+      "序列化特殊浮点值为 JSON 时会失败（JSON 不支持 inf 和 NaN），需自定义编码器或转换为字符串。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

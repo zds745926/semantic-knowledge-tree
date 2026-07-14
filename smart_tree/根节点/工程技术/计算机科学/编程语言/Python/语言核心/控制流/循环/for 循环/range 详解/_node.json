@@ -19,5 +19,34 @@
       "content_preview": "range 详解: The `range(stop)` / `range(start, stop)` / `range(start, stop, step)` functions. Lazy evaluation. Here's a brief explanation with Python code examples: - **`range(stop)`**: Generates a sequence of numbers starting from 0 up to, but not including, the specified `stop` value. ```python for i in range(5): print(i) # Output: 0 1 2 3 4 ``` - **`range(start, stop)`**: Generates a sequence of numbers starting from `start` up to, but not including, the specified `stop` value. ```python for i in range(5, 10): print(i) # Output: 5 6 7 8 9 ``` - **`range(start, stop, step)`**: Generates a sequence of numbers starting from `start`, incrementing by `step`, up to, but not including, the specified `stop` value. ```python for i in range(1, 10, 2): print(i) # Output: 1 3 5 7 9 ``` These functions are designed to be memory-efficient by generating numbers on-the-fly rather than creating a full list."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_keyword_only_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nrange 是 Python 内置的不可变序列类型，用于生成一个整数序列，常与 for 循环配合实现固定次数的迭代。\n\n## 何时使用\n当你需要按指定次数重复执行某段代码，或生成一个等差整数序列（如索引遍历列表）时，使用 range。它比手动构造列表更节省内存，因为 range 对象在迭代时才会逐个计算值。\n\n## 示例\n```Python\n# 打印 0 到 4\nfor i in range(5):\n    print(i)\n\n# 打印 2 到 8，步长为 2\nfor i in range(2, 9, 2):\n    print(i)\n\n# 将 range 转为列表\nnums = list(range(3, 10, 3))  # [3, 6, 9]\n```\n\n## 反例\n不要用 range(len(list)) 遍历列表，应直接遍历元素或使用 enumerate。例如：`for i in range(len(items)): print(items[i])` 应改为 `for item in items: print(item)`。\n\n## 边界条件\n- range 的 stop 参数是开区间，即序列不包含 stop 值。\n- 当 start >= stop 且步长为正时，或 start <= stop 且步长为负时，range 为空序列。\n- range 对象支持索引和切片，但切片返回新的 range 对象。",
+    "code_pattern": "def process_items(items):\n    for i in range(len(items)):\n        item = items[i]\n        # 处理 item，需要索引 i\n        print(f\"Index {i}: {item}\")\n\n# 或使用 enumerate 更简洁\nfor idx, val in enumerate(items):\n    print(f\"Index {idx}: {val}\")",
+    "common_pitfalls": [
+      "误以为 range 包含 stop 值：例如 range(3) 生成 0,1,2 而非 0,1,2,3，导致循环少一次。",
+      "步长为负时 start 和 stop 顺序颠倒：例如 range(5, 0, -1) 生成 5,4,3,2,1，而 range(0, 5, -1) 为空序列。",
+      "在迭代过程中修改 range 对应的列表大小：range 只生成固定索引，若列表被增删元素，会导致索引越界或漏处理。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -17,5 +17,13 @@
     "description": "魔术方法: Magic methods are at the core of the Python object model, named with double underscores (e.g., `__xxx__`), and are used to overload operators and implement protocols. Here's a brief example in Python demonstrating how you might use a magic method for operator overloading: ```python class Vector: def __init__(self, x, y): self.x = x self.y = y # Overload the addition operator (+) def __add__(self, other): return Vector(self.x + other.x, self.y + other.y) # Create two vector objects v1 = Vector(10, 20) v2 = Vector(30, 40) # Use the overloaded addition operator result = v1 + v2 print(result.x, result.y) # Output: 40 60 ``` In this example, the `__add__` magic method is used to define how vector objects should be added together."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Python面向对象编程中的魔术方法（Magic Methods），也称为双下划线方法（Dunder Methods）。这些方法允许用户自定义类与Python内置操作符和函数的行为，从而实现更自然、更强大的对象交互。子主题包括：字符串表示（如__str__、__repr__），用于控制对象的打印和显示；容器方法（如__getitem__、__setitem__、__len__），使自定义类支持索引、切片和迭代等容器操作；运算符重载（如__add__、__eq__、__lt__），让自定义对象支持算术、比较等运算符。这些子主题之间相互关联：字符串表示提供对象的可读性，容器方法赋予对象序列化能力，运算符重载则扩展了对象的数学和逻辑行为。学习路径建议从字符串表示入手，理解对象的显示方式；然后学习容器方法，掌握如何让对象像列表或字典一样工作；最后深入运算符重载，实现自定义运算逻辑。掌握魔术方法是编写Pythonic代码的关键，能显著提升代码的简洁性和可读性。",
+  "example_queries": [
+    "如何通过__str__和__repr__控制对象的打印输出？",
+    "怎样在自定义类中实现索引和切片操作（如obj[0]）？",
+    "如何重载加法运算符（+）使自定义对象支持相加？",
+    "容器方法中__len__和__getitem__如何配合实现迭代？",
+    "运算符重载时如何处理类型不兼容的情况（如返回NotImplemented）？"
+  ]
 }

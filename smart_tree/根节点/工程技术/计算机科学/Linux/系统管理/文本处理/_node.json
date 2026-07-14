@@ -18,5 +18,13 @@
     "description": "文本处理: Linux Text Processing Triad: grep/sed/awk. In the context of Linux text processing, `grep`, `sed`, and `awk` are three essential tools. Here's a brief explanation of each along with Python code examples to illustrate their usage: 1. **grep (Global Regular Expression Print)**: - `grep` is used for searching plain-text data sets for lines that match a regular expression. ```python import re # Example: Find all lines containing the word \"example\" text = \"\"\"This is an example line. Another line without the keyword. This line also contains the example.\"\"\" matches = [line for line in text.split('\\n') if re.search(r'\\bexample\\b', line)] print(matches) ``` 2. **sed (Stream Editor)**: - `sed` is a stream editor that filters or transforms text. ```python import subprocess # Example: Replace \"example\" with \"sample\" input_text = \"\"\"This is an example line. Another line without the keyword. This line also contains the example.\"\"\" output = subprocess.check_output(['echo', input_text], stderr=subprocess.STDOUT) modified_text = subprocess.check_output(['sed', 's/example/sample/g'], input=output.decode()) print(modified_text.decode()) ``` 3. **awk**: - `awk` is a programming language designed for text processing and typically used as a data extraction and reporting tool. ```python import re # Example: Sum the numbers in a line input_line = \"10 20 30\" sum_of_numbers = sum(map(int, re.findall(r'\\d+', input_line))) print(sum_of_numbers) ``` These examples should give you an idea of how these tools can be used in Python to achieve similar functionality."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Linux系统管理中文本处理的核心工具与技术，包括grep、sed、awk和Vim。这些工具共同构成了从文本搜索、编辑到格式化与编程的完整处理链。grep用于快速模式匹配与过滤，sed擅长流式编辑与替换，awk则提供强大的字段处理和报告生成能力，而Vim作为交互式编辑器，支持复杂的手动与脚本化文本操作。它们之间既有互补关系：grep和sed常用于管道中的快速处理，awk适合结构化数据分析，Vim则用于精细编辑；也存在重叠，如sed和awk都能进行替换操作，但各有侧重。学习路径建议从grep入手掌握基础搜索，再学习sed进行行级编辑，接着深入awk处理字段与逻辑，最后通过Vim提升交互编辑效率。掌握这些工具能显著提升日志分析、配置管理、数据提取等日常任务的效率。",
+  "example_queries": [
+    "如何使用grep递归搜索目录下所有文件中包含‘error’的行？",
+    "怎样用sed将文件中的所有‘foo’替换为‘bar’并保留备份？",
+    "awk如何统计一个CSV文件中第二列的总和？",
+    "Vim中如何用正则表达式替换所有匹配‘[0-9]+’的数字为‘NUM’？",
+    "如何组合使用grep和awk从日志文件中提取特定时间段的IP地址？"
+  ]
 }

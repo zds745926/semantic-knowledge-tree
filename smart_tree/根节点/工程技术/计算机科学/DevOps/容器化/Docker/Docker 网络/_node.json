@@ -19,5 +19,26 @@
       "content_preview": "Docker 网络: Bridge networking, host networking, and overlay networking are default configurations for network sharing across hosts. Docker Compose is used for managing multiple containers. Here are the corresponding technical terms with brief Python code examples: 1. **Bridge Networking**: Bridge networking allows containers to communicate with each other and with the host machine on a separate network interface. This is useful when you need isolation between different services or when running containers that require direct access to the host's network stack. ```python # Example of creating a bridge network using Docker SDK for Python from docker import APIClient client = APIClient(base_url='unix://var/run/docker.sock') network_name = 'bridge_network' client.create_network(network_name, driver='bridge') ``` 2. **Host Networking**: Host networking allows containers to share the host's network stack, meaning they will use the same network interface as the host machine. This is useful for performance-critical applications that need direct access to the host's network. ```python # Example of creating a host network using Docker SDK for Python from docker import APIClient client = APIClient(base_url='unix://var/run/docker.sock') container_name = 'host_network_container' client.create_container(image='nginx', name=container_name, networks=[{'Target': 'host'}]) ``` 3. **Overlay Networking**: Overlay networking is used for multi-host communication and can be used in a swarm environment to ensure that containers are reachable across different hosts. ```python # Example of creating an overlay network using Docker SDK for Python from docker import APIClient client = APIClient(base_url='unix://var/run/docker.sock') network_name = 'overlay_network' client.create_network(network_name, driver='overlay') ``` 4. **Docker Compose**: Docker Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, using a single command, you create and start all the services from your configuration. ```python # Example of using docker-compose with Python's subprocess module import subprocess compose_file = 'docker-compose.yml' subprocess.run(['docker', 'compose', '-f', compose_file, 'up']) ``` These examples provide a basic understanding of how to work with these networking configurations and Docker Compose in Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "k8s_deploy_v4",
+      "type": "application"
+    },
+    {
+      "id": "rest_api_v4",
+      "type": "application"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nDocker 网络是 Docker 容器之间以及容器与外部世界进行通信的虚拟网络层。它通过软件定义的网络（SDN）技术，为每个容器提供独立的网络栈，包括 IP 地址、端口映射和路由规则，从而实现容器间的隔离与互联。\n\n## 核心要点\n- **网络驱动类型**：Docker 提供多种内置网络驱动，包括 bridge（默认，用于单主机容器通信）、host（容器直接使用宿主机网络栈）、overlay（跨多主机容器通信）、macvlan（为容器分配 MAC 地址，使其像物理设备）和 none（无网络）。\n- **网络隔离与安全**：每个 Docker 网络默认是一个隔离的广播域，容器只能与同一网络内的其他容器通信，不同网络间的流量被隔离，增强了安全性。\n- **端口映射**：通过 `-p` 或 `--publish` 参数，将容器内部端口映射到宿主机端口，使外部能够访问容器服务，例如 `docker run -p 8080:80 nginx`。\n- **DNS 解析**：Docker 内置 DNS 服务，允许容器通过容器名（而非 IP）相互访问，自动解析同一用户自定义网络内的容器名称。\n- **网络插件扩展**：Docker 支持第三方网络插件（如 Calico、Weave、Flannel），可集成更复杂的网络策略、加密和性能优化。\n\n## 应用场景\nDocker 网络广泛应用于微服务架构中，使多个容器化服务（如 Web 前端、API 后端、数据库）能在隔离的网络中安全通信。它也用于开发环境，模拟生产网络拓扑，以及 CI/CD 流水线中，确保构建和测试阶段的容器间可靠连接。此外，跨主机网络（overlay）支持容器集群（如 Docker Swarm 或 Kubernetes）的分布式部署。\n\n## 相关概念\n- **容器编排**：如 Kubernetes 和 Docker Swarm，它们依赖 Docker 网络（尤其是 overlay 驱动）实现跨节点容器通信和服务发现。\n- **网络命名空间**：Linux 内核特性，Docker 利用它为每个容器创建独立的网络栈，实现隔离。\n- **iptables 与 NAT**：Docker 自动管理宿主机 iptables 规则，实现端口映射和网络地址转换，确保容器与外部网络的连通性。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

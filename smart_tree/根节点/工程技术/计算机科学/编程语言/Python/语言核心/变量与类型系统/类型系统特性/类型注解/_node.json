@@ -16,5 +16,13 @@
     "description": "类型注解: Type annotations add type information to Python variables and function parameters, enhancing code readability and IDE support. Example: ```python def greet(name: str) -> None: print(f\"Hello, {name}!\") greet(\"World\") # This will work as expected # If you try to pass an integer where a string is expected, the type checker will raise an error. # greet(123) # This would cause a type error in a static type checker ``` In this example, `name: str` indicates that the `greet` function expects a string as its parameter. The `-> None` specifies that the function does not return any value. Type annotations like these help improve code clarity and can be used by IDEs to provide better autocompletion and error checking."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支聚焦于Python类型注解机制，涵盖从基础到高级的完整知识体系。基本类型注解包括对变量、函数参数和返回值的简单类型标注，如int、str、List等，旨在提升代码可读性和静态检查能力。高级类型注解则深入泛型、联合类型、可选类型、类型别名、协议（Protocol）以及Typing模块中的复杂构造（如TypeVar、Callable、Literal），支持更灵活和精确的类型约束。子主题之间呈现递进关系：基本注解是入门基础，高级注解解决实际开发中的复杂场景（如多类型兼容、接口抽象、泛型容器）。学习路径建议先掌握基本类型注解的语法和常见用法，再逐步探索高级类型工具，并结合mypy等静态检查工具实践，最终能设计出类型安全的Python代码库。",
+  "example_queries": [
+    "如何在Python函数中标注参数和返回值为列表或字典类型？",
+    "Python的Typing模块中Union和Optional有什么区别？",
+    "如何定义和使用自定义泛型类？",
+    "什么是协议（Protocol）？如何用它实现结构子类型？",
+    "TypeVar和Generic在类型注解中分别起什么作用？"
+  ]
 }

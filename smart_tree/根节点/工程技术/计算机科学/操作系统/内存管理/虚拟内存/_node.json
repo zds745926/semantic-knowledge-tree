@@ -16,5 +16,13 @@
     "description": "虚拟内存: Virtual memory maps a process's logical addresses to physical memory, providing isolation and expansion. To illustrate the concept of virtual memory mapping in Python, consider the following simple example using simulated memory management. Note that this is a simplified representation and does not reflect actual operating system mechanisms: ```python class VirtualMemory: def __init__(self): self.physical_memory = [None] * 1024 # Simulate physical memory with 1KB capacity self.page_table = {} # Simulate page table def map_address(self, logical_address, value): \"\"\"Map a logical address to a physical address.\"\"\" page_size = 4 # Assume each page is 4 bytes for simplicity page_number = logical_address // page_size offset = logical_address % page_size if page_number not in self.page_table: # Simulate page fault and allocate new physical memory self.physical_memory.append(value) self.page_table[page_number] = len(self.physical_memory) - 1 # Map the value to its corresponding physical address physical_address = self.page_table[page_number] * page_size + offset return physical_address, self.physical_memory[physical_address] def read(self, logical_address): \"\"\"Read a value from a logical address.\"\"\" _, value = self.map_address(logical_address, None) return value def write(self, logical_address, value): \"\"\"Write a value to a logical address.\"\"\" physical_address, _ = self.map_address(logical_address, value) self.physical_memory[physical_address] = value # Example usage vm = VirtualMemory() vm.write(0, 1) # Write the value 1 at logical address 0 print(vm.read(0)) # Read the value from logical address 0 ``` This example demonstrates a basic virtual memory mapping mechanism where logical addresses are mapped to physical addresses using a simulated page table and physical memory."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "虚拟内存是操作系统内存管理中的核心技术，旨在通过将物理内存与逻辑地址空间分离，使进程能够使用比实际物理内存更大的地址空间。本分支涵盖虚拟内存的基本概念、实现机制及其关键子主题：分页机制和页面置换算法。分页机制是虚拟内存的基础，它将逻辑地址空间划分为固定大小的页，并将页映射到物理内存中的页框，从而实现非连续分配和按需加载。页面置换算法则是在物理内存不足时，决定哪些页应被换出到磁盘，以腾出空间给新页。常见的置换算法包括先进先出（FIFO）、最近最少使用（LRU）和时钟算法等。学习本分支时，建议先理解分页机制的原理和页表结构，再深入页面置换算法的评价指标（如缺页率）和实现细节。掌握这些内容有助于理解操作系统如何高效管理内存、支持多任务并发，以及优化系统性能。",
+  "example_queries": [
+    "虚拟内存如何通过分页机制实现地址转换？",
+    "常见的页面置换算法有哪些？各自的优缺点是什么？",
+    "缺页中断是如何发生的？对系统性能有何影响？",
+    "如何计算有效访问时间（EAT）并评估页面置换算法的性能？",
+    "在分页系统中，如何设计页表以支持大地址空间？"
+  ]
 }

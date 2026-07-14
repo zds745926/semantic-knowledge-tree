@@ -19,5 +19,30 @@
       "content_preview": "多态: Polymorphism refers to the ability of an operation to exhibit different behaviors in different object types. There are two main forms of polymorphism: compile-time polymorphism (overloading) and run-time polymorphism (overriding). Here’s a brief explanation with Python code examples: 1. **Compile-Time Polymorphism (Overloading)**: This occurs when functions or operators have the same name but differ in their parameters. ```python class Calculator: def add(self, a: int, b: int) -> int: return a + b def add(self, a: str, b: str) -> str: return f\"{a} {b}\" calc = Calculator() print(calc.add(5, 3)) # Output: 8 print(calc.add(\"Hello\", \"World\")) # Output: Hello World ``` 2. **Run-Time Polymorphism (Overriding)**: This happens when a subclass provides its own implementation of a method that is already defined in its superclass. ```python class Animal: def sound(self): pass class Dog(Animal): def sound(self): return \"Woof!\" class Cat(Animal): def sound(self): return \"Meow!\" def make_sound(animal: Animal): print(animal.sound()) dog = Dog() cat = Cat() make_sound(dog) # Output: Woof! make_sound(cat) # Output: Meow! ``` These examples illustrate how polymorphism works in Python, showcasing both overloading and overriding."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "cpp_oop_v4",
+      "type": "cross_lang_equivalent"
+    },
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n多态（Polymorphism）是面向对象编程的核心特性之一，指同一操作作用于不同的对象时，可以产生不同的执行结果。它允许使用统一的接口来操作不同类型的对象，从而提升代码的灵活性和可扩展性。\n\n## 核心要点\n- 多态通过继承和接口实现，子类可以重写父类的方法，使得父类引用指向子类对象时调用的是子类的方法。\n- 编译时多态（方法重载）和运行时多态（方法重写）是两种主要形式，后者更常见且更具动态性。\n- 多态依赖于“向上转型”，即父类引用可以持有子类对象，但只能调用父类中定义的方法。\n- 多态的实现需要满足“继承”和“方法重写”两个前提条件，否则无法体现动态行为。\n- 多态降低了代码的耦合度，使得程序更容易维护和扩展，例如添加新子类时无需修改现有调用代码。\n\n## 应用场景\n多态广泛应用于框架设计、策略模式、工厂模式等场景中。例如，在图形绘制系统中，定义一个Shape基类并让Circle、Rectangle等子类重写draw()方法，通过父类引用数组即可统一绘制所有图形。此外，在事件处理、插件系统等需要动态行为的场合，多态也是关键支撑。\n\n## 相关概念\n多态与继承、封装、抽象并称为面向对象四大特性。继承提供了多态的基础，封装保证了对象内部细节的隐藏，而抽象则定义了统一的接口。此外，接口（Interface）和抽象类（Abstract Class）常作为多态的载体，虚方法（Virtual Method）和动态绑定（Dynamic Binding）是实现多态的技术细节。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

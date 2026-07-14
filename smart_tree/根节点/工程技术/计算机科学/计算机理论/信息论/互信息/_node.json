@@ -19,5 +19,22 @@
       "content_preview": "互信息: Mutual Information I(X;Y) = H(X) - H(X|Y) measures the amount of information that two random variables share. It is widely applied in feature selection. Here's a brief Python code example using the `scikit-learn` library to calculate mutual information: ```python from sklearn.feature_selection import mutual_info_classif import numpy as np # Example data: X and Y are features, y is the target variable X = np.array([[0, 2], [1, 3], [2, 4], [3, 5]]) y = np.array([0, 1, 0, 1]) # Calculate mutual information mi_scores = mutual_info_classif(X, y) print(\"Mutual Information scores:\", mi_scores) ``` This code calculates the mutual information between features `X` and the target variable `y`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "pca_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n互信息是信息论中衡量两个随机变量之间相互依赖程度的度量。它量化了通过观察一个变量所能获得的关于另一个变量的信息量，即两个变量共享的信息。互信息基于熵的概念，定义为两个变量熵之和减去它们的联合熵。\n\n## 核心要点\n- 互信息是非负的，且为零当且仅当两个变量独立。\n- 它对称，即X关于Y的互信息等于Y关于X的互信息。\n- 互信息可以捕捉线性和非线性关系，比相关系数更通用。\n- 它基于概率分布，因此对数据分布敏感，需要准确估计。\n- 互信息可以用于特征选择，帮助识别与目标变量最相关的特征。\n\n## 应用场景\n互信息广泛应用于机器学习中的特征选择，以筛选出对分类或回归任务最有用的特征。在自然语言处理中，它用于词语关联分析和文本聚类。此外，在生物信息学中，互信息用于基因调控网络推断和蛋白质相互作用分析。\n\n## 相关概念\n互信息与熵、条件熵和联合熵紧密相关，是这些概念的组合。它与信息增益等价，常用于决策树算法。互信息也与KL散度有关，可视为两个概率分布之间差异的一种度量。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

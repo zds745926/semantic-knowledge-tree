@@ -17,5 +17,13 @@
     "description": "异步 JS: The JavaScript asynchronous model has evolved from callbacks to Promises and then to async/await. To provide a more detailed explanation along with a Python code example for the `async/await` concept, we can write: The JavaScript asynchronous model has evolved from callbacks to Promises and then to async/await. This progression aims to make handling asynchronous operations cleaner and easier to understand. ### Callbacks In early JavaScript, developers used callbacks to handle asynchronous operations. However, this approach often led to callback hell (nested callbacks) which made the code hard to read and maintain. ```javascript function fetchData(callback) { setTimeout(() => { console.log('Fetching data...'); callback(null, 'Data fetched'); }, 1000); } fetchData((err, data) => { if (err) return console.error(err); console.log(data); // Data fetched }); ``` ### Promises Promises were introduced to address the issues with callbacks. They provide a more structured way of handling asynchronous operations. ```javascript function fetchData() { return new Promise((resolve, reject) => { setTimeout(() => { resolve('Data fetched'); }, 1000); }); } fetchData() .then(data => console.log(data)) // Data fetched .catch(err => console.error(err)); ``` ### Async/Await Async/await is a more modern and cleaner way to handle asynchronous operations, making the code look synchronous. ```javascript async function fetchData() { await new Promise(resolve => setTimeout(() => resolve('Data fetched'), 1000)); return 'Data fetched'; } (async () => { const data = await fetchData(); console.log(data); // Data fetched })(); ``` In Python, the `asyncio` library provides similar functionality: ```python import asyncio async def fetch_data(): await asyncio.sleep(1) return 'Data fetched' async def main(): data = await fetch_data() print(data) # Data fetched # Run the async function asyncio.run(main()) ``` This progression from callbacks to Promises and then to `async/await` in JavaScript mirrors similar advancements in Python with its use of coroutines and `asyncio`."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "异步 JS 是 JavaScript 中处理非阻塞操作的核心机制，涵盖 Promise、async/await 和事件循环三个子主题。Promise 提供了一种链式调用的方式来处理异步结果，解决了回调地狱问题；async/await 是基于 Promise 的语法糖，使异步代码看起来像同步代码，进一步提升了可读性和可维护性；事件循环则是 JavaScript 运行时（如浏览器或 Node.js）的底层机制，负责调度任务队列中的回调函数，确保异步操作按顺序执行。三者紧密关联：事件循环是异步执行的底层基础，Promise 和 async/await 是上层 API，而 async/await 本质上是 Promise 的简化写法。学习路径建议先理解事件循环的工作原理（包括宏任务和微任务），再掌握 Promise 的创建、链式调用和错误处理，最后学习 async/await 的用法及其与 Promise 的转换。",
+  "example_queries": [
+    "Promise 的三种状态是什么？如何从 pending 变为 fulfilled 或 rejected？",
+    "async/await 如何捕获错误？与 Promise 的 .catch() 有何区别？",
+    "事件循环中宏任务和微任务的执行顺序是怎样的？举例说明。",
+    "如何用 Promise 实现一个延迟函数（setTimeout 的 Promise 封装）？",
+    "多个 async 函数并发执行时，如何用 Promise.all 或 Promise.race 控制流程？"
+  ]
 }

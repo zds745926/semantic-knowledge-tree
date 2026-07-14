@@ -17,5 +17,13 @@
     "description": "依赖管理: Modern Python relies on dependency management tools to provide more reliable dependency resolution and locking capabilities. To illustrate the use of a dependency management tool in Python (such as pip or poetry), here is an example using `poetry`: ```python # Using Poetry for dependency management # First, install Poetry if you haven't already: # curl -sSL https://install.python-poetry.org | python3 - # Then, create a new project and initialize dependencies: poetry new my_project # Navigate into the project directory: cd my_project # Add a dependency to your project (e.g., requests): poetry add requests # Lock the dependencies to ensure reproducibility: poetry lock # View the current lock file: cat pyproject.toml ``` In this example, `poetry` is used to manage and resolve Python package dependencies. The commands demonstrate how to install Poetry, create a new project, add a dependency, lock the dependencies, and view the resulting lock file."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "依赖管理是Python包管理领域的重要分支，专注于解决项目依赖的声明、锁定、安装和更新问题。该分支涵盖三个主流工具：Poetry、PDM和Pipenv，它们均旨在替代传统的pip+virtualenv组合，提供更现代化、更自动化的依赖管理体验。Poetry强调声明式配置（pyproject.toml）和依赖解析的确定性，支持构建和发布包；PDM受PEP 582启发，采用本地包安装方案（无需虚拟环境），同样基于pyproject.toml，并支持依赖锁定；Pipenv则通过Pipfile和Pipfile.lock管理依赖，强调与pip的兼容性和易用性。三者虽目标相似，但实现理念和侧重点不同：Poetry和PDM更贴近Python社区的未来方向（如PEP 517/518/582），而Pipenv更注重与现有工作流的衔接。学习路径建议从理解依赖管理的基本概念（如依赖解析、锁定文件、虚拟环境）入手，然后对比各工具的核心机制和适用场景，最后根据项目需求选择工具进行实践。该分支帮助开发者高效管理项目依赖，避免版本冲突，确保环境可复现。",
+  "example_queries": [
+    "如何使用Poetry创建和管理Python项目的依赖？",
+    "PDM与Poetry在依赖管理上有哪些核心区别？",
+    "Pipenv的Pipfile.lock文件是如何确保依赖版本一致性的？",
+    "如何将现有的requirements.txt项目迁移到Poetry或PDM？",
+    "在团队协作中，如何利用依赖锁定文件避免环境不一致问题？"
+  ]
 }

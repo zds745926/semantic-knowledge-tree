@@ -19,5 +19,34 @@
       "content_preview": "装饰器原理: `func = decorator(func)` captures the original function within a closure. `wraps` copies metadata. Python code example for `wraps` usage: ```python from functools import wraps def my_decorator(f): @wraps(f) def wrapper(*args, **kwargs): print(\"Something is happening before the function is called.\") f(*args, **kwargs) print(\"Something is happening after the function is called.\") return wrapper @my_decorator def say_hello(name): \"\"\"Print a greeting.\"\"\" print(f\"Hello {name}!\") say_hello('World') ``` In this example, `wraps` is used to preserve the metadata (such as the docstring and name) of the original function `say_hello`."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_keyword_only_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n装饰器原理是指 Python 中通过高阶函数（或类）在运行时动态修改或增强函数/方法行为而不改变其源代码的机制，本质上是将被装饰函数作为参数传递给装饰器函数，并返回一个替换函数。\n\n## 何时使用\n当需要在不修改原函数代码的前提下，为多个函数统一添加日志记录、性能计时、权限校验、缓存等横切关注点功能时，应使用装饰器。它也常用于框架中的路由注册、参数验证等场景，以保持业务逻辑的清晰和复用。\n\n## 示例\n```Python\nimport functools\nimport time\n\ndef timer(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        result = func(*args, **kwargs)\n        end = time.perf_counter()\n        print(f\"{func.__name__} took {end - start:.6f}s\")\n        return result\n    return wrapper\n\n@timer\ndef slow_add(a, b):\n    time.sleep(0.1)\n    return a + b\n\nprint(slow_add(1, 2))\n```\n\n## 反例\n错误用法：在装饰器内部直接修改原函数的签名或文档字符串而不使用 `functools.wraps`，导致调试时函数元信息丢失。例如，`@timer` 若不使用 `@functools.wraps`，则 `slow_add.__name__` 会变成 `'wrapper'`。\n\n## 边界条件\n注意事项：装饰器在模块导入时即执行，而非在被装饰函数调用时；若装饰器本身需要参数，需额外嵌套一层函数；多个装饰器叠加时，执行顺序从下往上（靠近函数的先装饰），调用顺序从上往下（最外层的装饰器先执行）。",
+    "code_pattern": "import functools\n\ndef decorator(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        # 前置处理\n        result = func(*args, **kwargs)\n        # 后置处理\n        return result\n    return wrapper\n\n@decorator\ndef target_function():\n    pass",
+    "common_pitfalls": [
+      "忘记使用 @functools.wraps 导致被装饰函数的元信息（如 __name__, __doc__）被 wrapper 覆盖，影响调试和文档生成。",
+      "装饰器在模块导入时立即执行，而非在函数调用时，若装饰器中有耗时操作或副作用，会拖慢模块加载速度。",
+      "多个装饰器叠加时，顺序容易混淆：靠近函数的装饰器先应用（内层先装饰），但调用时外层装饰器先执行，导致参数传递和结果处理顺序出错。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

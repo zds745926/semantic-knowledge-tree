@@ -17,5 +17,13 @@
     "description": "内置数据结构: Python comes with a rich set of built-in data structures: lists, dictionaries, sets, and tuples. These data structures are carefully optimized and form the foundation of Python programming. Here are brief examples in Python for each: - **List**: A collection of items that can be of different types. ```python my_list = [1, \"apple\", 3.14] ``` - **Dictionary**: An unordered collection of key-value pairs. ```python my_dict = {\"name\": \"Alice\", \"age\": 25} ``` - **Set**: A collection of unique elements. ```python my_set = {1, 2, 3, 4} ``` - **Tuple**: An immutable sequence of items. ```python my_tuple = (1, \"banana\", 3.14) ```"
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支涵盖Python内置数据结构中的列表(list)、字典(dict)、集合与元组(set和tuple)。列表是有序、可变的序列，支持索引、切片和多种方法，常用于存储有序集合；字典是无序的键值对集合，键唯一且不可变，值任意，适合快速查找和关联数据；集合是无序、不重复元素的集合，支持数学集合运算，如并集、交集等，常用于去重和成员测试；元组是不可变的有序序列，常用于存储不应修改的数据。这些数据结构是Python编程的基础，它们之间既有区别又有联系：列表和元组都是序列，但可变性不同；字典和集合都基于哈希表，但字典存储键值对而集合只存储键；列表和字典是可变类型，元组和集合（frozenset）是不可变类型。学习路径建议从列表和元组开始，掌握序列操作；然后学习字典，理解键值对映射；最后学习集合，掌握集合运算。通过对比练习，如列表与元组的可变性、字典与集合的哈希表原理，可以加深理解。",
+  "example_queries": [
+    "Python中列表和元组的区别是什么？",
+    "如何高效地从字典中获取键对应的值？",
+    "Python集合的并集和交集操作如何实现？",
+    "列表推导式和字典推导式有什么区别？",
+    "在Python中，如何对列表进行排序和反转？"
+  ]
 }

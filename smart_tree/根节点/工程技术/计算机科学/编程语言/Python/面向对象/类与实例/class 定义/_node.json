@@ -21,5 +21,21 @@
   ],
   "related_nodes": [
     "py_except_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nclass 定义是 Python 中创建自定义数据类型的语法结构，它允许将数据（属性）和操作数据的方法封装在一起，形成对象蓝图。\n\n## 何时使用\n当需要表示具有状态和行为的复杂实体时，例如用户账户、游戏角色或数据记录。当代码中重复出现关联的数据和函数时，使用类可以提高可维护性和复用性。\n\n## 示例\n```Python\nclass Dog:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def bark(self):\n        print(f\"{self.name} says woof!\")\n\nmy_dog = Dog(\"Buddy\", 3)\nmy_dog.bark()\n```\n\n## 反例\n不要将类当作简单的函数集合，例如定义一个只有静态方法而没有实例属性的类，这通常应该用模块或函数替代。\n\n## 边界条件\n类定义中的 `__init__` 是构造函数，但不是必须的；如果没有定义，Python 会使用默认的空构造函数。注意类变量和实例变量的区别，类变量在所有实例间共享。",
+    "code_pattern": "class ClassName:\n    \"\"\"文档字符串描述该类的作用\"\"\"\n    class_variable = \"共享值\"\n\n    def __init__(self, param1, param2):\n        self.instance_attr1 = param1\n        self.instance_attr2 = param2\n\n    def method1(self):\n        return f\"{self.instance_attr1} 和 {self.instance_attr2}\"\n\n    @classmethod\n    def class_method(cls):\n        return cls.class_variable\n\n    @staticmethod\n    def static_method():\n        return \"静态方法\"",
+    "common_pitfalls": [
+      "忘记在方法定义中写 self 参数，导致调用时参数数量不匹配错误。",
+      "在 `__init__` 之外直接定义实例属性，容易造成属性访问不一致或 AttributeError。",
+      "混淆类变量和实例变量：修改类变量时通过实例赋值会创建同名实例变量，而不是修改类变量。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

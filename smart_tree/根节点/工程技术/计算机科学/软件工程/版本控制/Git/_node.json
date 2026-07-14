@@ -16,5 +16,13 @@
     "description": "Git: Git is a distributed version control system, with core concepts including commits, branches, merges, and remotes. Here are brief explanations for each of these concepts along with corresponding Python code examples (using the GitPython library): 1. **Commits**: Commits represent changes to the project's files over time. ```python import git repo = git.Repo('path/to/repo') # Create a new commit index = repo.index index.add(['file.txt']) index.commit('Initial commit message') ``` 2. **Branches**: Branches allow you to work on different versions of the project simultaneously. ```python import git repo = git.Repo('path/to/repo') # Create a new branch origin_branch = repo.create_head('new-branch', force=True) ``` 3. **Merges**: Merging combines changes from one branch into another. ```python import git repo = git.Repo('path/to/repo') # Merge 'feature' branch into the current branch origin_branch.checkout() repo.git.merge('feature') ``` 4. **Remotes**: Remotes are used to interact with other repositories, such as those on GitHub or GitLab. ```python import git repo = git.Repo('path/to/repo') # Add a remote repository origin = repo.create_remote('origin', 'https://github.com/user/repo.git') ``` These examples provide a basic understanding of how to work with these core Git concepts using Python."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "Git 分支是版本控制系统中用于独立开发、测试和集成功能的核心机制。本分支涵盖 Git 的基础概念（如仓库、提交、暂存区）以及分支与合并的高级操作（如创建、切换、合并分支、解决冲突）。子主题之间呈现递进关系：先掌握 Git 基础（理解数据模型和基本命令），再深入学习分支与合并策略（包括快进合并、三方合并、rebase 等），从而能够高效管理多线开发流程。学习路径建议从初始化仓库、提交变更开始，逐步过渡到分支创建与切换，最后掌握合并与冲突解决技巧。",
+  "example_queries": [
+    "如何创建一个新分支并切换到该分支？",
+    "Git 合并时出现冲突如何解决？",
+    "什么是快进合并（fast-forward merge）？",
+    "rebase 和 merge 有什么区别？",
+    "如何删除本地和远程分支？"
+  ]
 }

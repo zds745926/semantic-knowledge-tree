@@ -19,5 +19,26 @@
       "content_preview": "grep: Grep pattern search. Common options: - `-i` ignore case - `-r` recursive - `-n` line numbers - `-v` reverse match Here is a brief Python code example to demonstrate using the `re` module for similar functionality: ```python import re def grep_pattern_search(text, pattern, flags=0): \"\"\" A simple function to perform a grep-like search on text. :param text: The input text or file content as a string. :param pattern: The regex pattern to search for. :param flags: Regex flags (e.g., re.IGNORECASE). :return: A list of matches found in the text. \"\"\" matches = re.findall(pattern, text, flags) return matches # Example usage: text = \"Hello World\\nhello world\\nHELLO WORLD\" pattern = r\"hello\" matches = grep_pattern_search(text, pattern, re.IGNORECASE) print(matches) # Output: ['Hello', 'hello', 'HELLO'] ``` This Python function `grep_pattern_search` uses the `re.findall()` method to search for a pattern in a given text with optional flags. The example demonstrates case-insensitive searching similar to the `-i` option in grep."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "sed_v4",
+      "type": "related_pattern"
+    },
+    {
+      "id": "py_regex_v4",
+      "type": "prerequisite"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\ngrep（global regular expression print）是一个强大的文本搜索工具，用于在文件或输入流中查找匹配指定正则表达式的行。它默认输出所有匹配的行，是Linux系统管理中处理文本数据的核心命令之一。\n\n## 核心要点\n- **正则表达式支持**：grep支持基础正则表达式（BRE）和扩展正则表达式（ERE），通过`-E`选项启用ERE，实现复杂模式匹配。\n- **常用选项**：`-i`忽略大小写，`-v`反向匹配（输出不匹配的行），`-c`统计匹配行数，`-n`显示行号，`-r`递归搜索目录。\n- **管道协作**：grep常与管道符`|`结合，从其他命令的输出中过滤信息，例如`ps aux | grep ssh`查找SSH进程。\n- **性能高效**：grep使用确定性有限自动机（DFA）算法，对大型文件处理速度快，适合日志分析和系统监控。\n- **多文件搜索**：可同时搜索多个文件，输出时显示文件名，便于定位匹配内容。\n\n## 应用场景\n- **日志分析**：在系统日志（如`/var/log/syslog`）中快速查找错误、警告或特定事件，例如`grep 'ERROR' app.log`。\n- **配置管理**：从配置文件中提取特定设置，如`grep 'Listen' /etc/httpd/conf/httpd.conf`查看Apache监听端口。\n- **进程管理**：结合`ps`命令过滤进程信息，用于监控或调试，例如`grep -v grep`排除grep自身进程。\n\n## 相关概念\n- **正则表达式**：grep的核心匹配机制，通过元字符（如`^`、`$`、`*`）定义模式，与`sed`、`awk`等工具共享语法。\n- **sed**：流编辑器，可对文本进行替换、删除等操作，常与grep配合完成文本处理任务。\n- **awk**：更强大的文本分析工具，支持字段分割和编程逻辑，适用于结构化数据，而grep更侧重简单搜索。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

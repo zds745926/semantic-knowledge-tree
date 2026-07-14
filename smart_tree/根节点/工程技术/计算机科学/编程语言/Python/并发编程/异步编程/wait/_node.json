@@ -19,5 +19,31 @@
       "content_preview": "wait: The `asyncio.wait(fs)` function waits for the completion of the given futures or tasks. The `return_when` parameter can be set to one of the following values: - `FIRST_COMPLETED`: Returns as soon as at least one task is completed. - `ALL_COMPLETED`: Returns when all tasks are completed. - `FIRST_EXCEPTION`: Returns as soon as one task raises an exception. Here's a brief Python code example using these parameters with `asyncio.wait`: ```python import asyncio async def my_coroutine(i): await asyncio.sleep(1) # Simulate some async operation print(f\"Coroutine {i} completed\") # Create tasks tasks = [my_coroutine(i) for i in range(5)] # Using FIRST_COMPLETED done, pending = asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED) print(\"FIRST_COMPLETED: Done tasks:\", len(done)) # Using ALL_COMPLETED done, pending = asyncio.wait(tasks, return_when=asyncio.ALL_COMPLETED) print(\"ALL_COMPLETED: Done tasks:\", len(done)) # Using FIRST_EXCEPTION done, pending = asyncio.wait(tasks, return_when=asyncio.FIRST_EXCEPTION) print(\"FIRST_EXCEPTION: Done tasks:\", len(done)) ``` This example demonstrates how to use `asyncio.wait` with different `return_when` values."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "deadlock_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "py_thread_safety_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n`asyncio.wait` 是一个用于并发等待多个可等待对象（如协程、任务、Future）完成的异步函数。它接受一个可等待对象的集合，并返回两个集合：`done`（已完成的任务）和 `pending`（未完成的任务）。通过参数 `return_when` 可以控制何时返回，支持 `ALL_COMPLETED`（所有完成）、`FIRST_COMPLETED`（第一个完成）和 `FIRST_EXCEPTION`（第一个异常）三种模式。\n\n## 何时使用\n当需要同时启动多个异步任务，并等待其中一部分或全部完成时，使用 `asyncio.wait`。例如，在爬虫中同时发起多个 HTTP 请求，等待所有请求完成后再汇总结果；或者在竞速场景中，等待第一个成功的响应。它比 `asyncio.gather` 更灵活，因为可以分别处理已完成和未完成的任务。\n\n## 示例\n```Python\nimport asyncio\n\nasync def task(name, delay):\n    await asyncio.sleep(delay)\n    return f\"{name} done\"\n\nasync def main():\n    tasks = [task(\"A\", 2), task(\"B\", 1), task(\"C\", 3)]\n    done, pending = await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)\n    for t in done:\n        print(t.result())  # 输出第一个完成的任务结果\n    print(f\"Pending: {len(pending)}\")  # 剩余未完成的任务数\n\nasyncio.run(main())\n```\n\n## 反例\n错误地将 `asyncio.wait` 用于单个协程，或者忘记 `await` 导致返回协程对象而非结果。例如：`done, pending = asyncio.wait([coro])` 缺少 `await`，会返回一个协程对象而不是元组。\n\n## 边界条件\n- 传入的可等待对象必须是可迭代的集合（如列表、集合），且每个元素必须是协程、任务或 Future，不能混入普通函数。\n- 当 `return_when=asyncio.FIRST_EXCEPTION` 时，如果所有任务都成功完成，则行为等同于 `ALL_COMPLETED`。\n- 任务超时需结合 `asyncio.wait_for` 使用，`asyncio.wait` 本身不支持超时参数。",
+    "code_pattern": "import asyncio\n\nasync def worker(name, delay):\n    await asyncio.sleep(delay)\n    return f\"Result from {name}\"\n\nasync def main():\n    tasks = [worker(f\"Task-{i}\", i) for i in range(1, 4)]\n    done, pending = await asyncio.wait(tasks, return_when=asyncio.ALL_COMPLETED)\n    for t in done:\n        print(t.result())\n\nif __name__ == \"__main__\":\n    asyncio.run(main())",
+    "common_pitfalls": [
+      "忘记 `await`：直接调用 `asyncio.wait(tasks)` 返回的是协程对象，必须使用 `await` 才能获取结果元组，否则后续代码会报类型错误。",
+      "任务列表包含非可等待对象：传入的集合中混入普通函数或整数等，会导致 `TypeError: a coroutine was expected, got ...`，必须确保每个元素都是协程、任务或 Future。",
+      "混淆 `return_when` 参数：误用 `FIRST_COMPLETED` 但期望等待所有任务完成，导致只处理部分结果而遗漏其他任务，需根据场景选择正确的模式。",
+      "未处理异常：如果任务抛出异常，直接调用 `t.result()` 会传播异常，应使用 `t.exception()` 检查或包裹 try-except，否则可能导致程序崩溃。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

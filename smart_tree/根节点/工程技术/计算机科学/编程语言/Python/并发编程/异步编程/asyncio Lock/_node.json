@@ -19,5 +19,30 @@
       "content_preview": "asyncio Lock: Asynchronous Lock in asyncio. `async with lock:`. Semaphore and BoundedSemaphore. Here are the corresponding Python code examples: ```python import asyncio # Example of using an asyncio Lock async def example_lock(): lock = asyncio.Lock() async with lock: print(\"Critical section 1\") async with lock: # This will block until the first async with block is done print(\"Critical section 2\") # Example of using a Semaphore semaphore = asyncio.Semaphore(3) # Allows up to 3 concurrent tasks async def example_semaphore(): async with semaphore: print(f\"Semaphore acquired, {semaphore._value} permits left\") # Example of using a BoundedSemaphore (bounded version of Semaphore) bounded_semaphore = asyncio.BoundedSemaphore(5) # Allows up to 5 concurrent tasks async def example_bounded_semaphore(): async with bounded_semaphore: print(f\"Bounded semaphore acquired, {bounded_semaphore._value} permits left\") ``` Note: The `_value` attribute is used here for illustrative purposes. In practice, you should not rely on or modify these attributes directly as they are implementation details and may change in future versions of Python."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "deadlock_v4",
+      "type": "application"
+    },
+    {
+      "id": "py_thread_safety_v4",
+      "type": "contrast"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nasyncio Lock 是 Python asyncio 库提供的异步互斥锁，用于在协程间同步对共享资源的访问，确保同一时刻只有一个协程能执行被保护的临界区代码。\n\n## 何时使用\n当多个协程并发访问共享资源（如全局变量、文件、数据库连接）且需要避免数据竞争时，应使用 asyncio Lock。它特别适用于异步 I/O 密集型任务，例如多个协程同时向同一个文件写入日志，或更新共享计数器。\n\n## 示例\n```Python\nimport asyncio\n\nasync def worker(lock, data, idx):\n    async with lock:\n        # 临界区：安全修改共享数据\n        data['count'] += 1\n        print(f\"Worker {idx} updated count to {data['count']}\")\n        await asyncio.sleep(0.1)  # 模拟 I/O 操作\n\nasync def main():\n    lock = asyncio.Lock()\n    shared_data = {'count': 0}\n    tasks = [worker(lock, shared_data, i) for i in range(5)]\n    await asyncio.gather(*tasks)\n    print(f\"Final count: {shared_data['count']}\")\n\nasyncio.run(main())\n```\n\n## 反例\n在协程中直接使用 threading.Lock 会导致事件循环阻塞，因为 threading.Lock 的 acquire 是阻塞调用，会挂起整个线程。应始终使用 asyncio.Lock 来保持异步非阻塞特性。\n\n## 边界条件\n- asyncio.Lock 不是可重入的，同一协程不能多次 acquire 同一个锁，否则会死锁。\n- 锁的释放必须通过 async with 或 try/finally 保证，避免异常导致锁未释放。\n- 锁的作用域应尽量小，避免长时间持有锁降低并发性能。",
+    "code_pattern": "import asyncio\n\nasync def critical_section(lock, shared_resource):\n    async with lock:\n        # 修改共享资源\n        shared_resource['value'] += 1\n        await asyncio.sleep(0.01)  # 模拟异步操作\n\nasync def main():\n    lock = asyncio.Lock()\n    data = {'value': 0}\n    tasks = [critical_section(lock, data) for _ in range(10)]\n    await asyncio.gather(*tasks)\n    print(data)\n\nasyncio.run(main())",
+    "common_pitfalls": [
+      "误用 threading.Lock 替代 asyncio.Lock：在协程中使用 threading.Lock 的 acquire() 会阻塞事件循环，导致所有协程暂停，应始终使用 asyncio.Lock。",
+      "忘记释放锁：使用 lock.acquire() 和 lock.release() 时，若异常未捕获会导致锁永久持有，推荐使用 async with 语句自动管理。",
+      "在同一个协程中重复 acquire 锁：asyncio.Lock 不可重入，同一协程连续两次 acquire 会死锁，需使用 asyncio.Condition 或重新设计逻辑。"
+    ]
+  },
+  "quality": {
+    "confidence": 0.8,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

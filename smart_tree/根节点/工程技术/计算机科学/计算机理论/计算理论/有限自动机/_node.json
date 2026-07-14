@@ -19,5 +19,22 @@
       "content_preview": "有限自动机: Finite automata are abstract computational models with only a finite number of states, and they come in two types: Deterministic Finite Automata (DFA) and Non-deterministic Finite Automata (NFA). Regular expressions are equivalent to finite automata. Here is a brief example using Python code for both DFA and NFA: ### Deterministic Finite Automaton (DFA) ```python class DFA: def __init__(self, states, alphabet, transition_function, start_state, accept_states): self.states = states # Set of all possible states self.alphabet = alphabet # Set of input symbols self.transition_function = transition_function # Function that maps (state, symbol) to next state self.start_state = start_state # Initial state self.accept_states = accept_states # Set of accepting states def accepts(self, string): current_state = self.start_state for symbol in string: if (current_state, symbol) not in self.transition_function: return False current_state = self.transition_function[(current_state, symbol)] return current_state in self.accept_states # Example DFA that accepts strings ending with '0' dfa = DFA( states={'q0', 'q1'}, alphabet={'0', '1'}, transition_function={ ('q0', '0'): 'q1', ('q0', '1'): 'q0', ('q1', '0'): 'q1', ('q1', '1'): 'q1' }, start_state='q0', accept_states={'q1'} ) print(dfa.accepts('10')) # True print(dfa.accepts('01')) # False ``` ### Non-deterministic Finite Automaton (NFA) ```python class NFA: def __init__(self, states, alphabet, transition_function, start_state, accept_states): self.states = states # Set of all possible states self.alphabet = alphabet # Set of input symbols self.transition_function = transition_function # Function that maps (state, symbol) to a set of next states self.start_state = start_state # Initial state self.accept_states = accept_states # Set of accepting states def accepts(self, string): current_states = {self.start_state} for symbol in string: new_states = set() for state in current_states: if (state, symbol) in self.transition_function: new_states.update(self.transition_function[(state, symbol)]) current_states = new_states return any(state in self.accept_states for state in current_states) # Example NFA that accepts strings ending with '0' nfa = NFA( states={'q0', 'q1'}, alphabet={'0', '1'}, transition_function={ ('q0', '0'): {'q1'}, ('q0', '1'): set(), ('q1', '0'): {'q1'}, ('q1', '1'): set() }, start_state='q0', accept_states={'q1'} ) print(nfa.accepts('10')) # True print(nfa.accepts('01')) # False ``` These examples demonstrate basic implementations of DFA and NFA in Python, showing how they can be used to recognize simple regular expressions."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "trie_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n有限自动机是一种具有有限个状态的抽象计算模型，它根据输入符号序列和当前状态，按照预定义的转移规则改变状态，并最终决定是否接受该输入序列。它是最简单的计算模型之一，是计算理论中研究形式语言和自动机的基础。\n\n## 核心要点\n- 有限状态集：自动机包含一个有限的状态集合，其中有一个初始状态和若干个接受状态。\n- 输入字母表：自动机处理有限符号组成的输入串，每个符号触发一次状态转移。\n- 确定性 vs. 非确定性：确定性有限自动机（DFA）在每个状态下对每个输入符号有唯一转移；非确定性有限自动机（NFA）则可能有多个转移或空转移，但两者表达能力等价。\n- 接受条件：当输入串处理完毕，若自动机处于接受状态，则输入串被接受，否则被拒绝。\n- 与正则语言对应：有限自动机恰好能识别所有正则语言，即能用正则表达式描述的语言。\n\n## 应用场景\n有限自动机广泛应用于词法分析器（如编译器中的词法分析）、文本搜索和模式匹配（如正则表达式引擎）、数字电路设计（如有限状态机控制器）以及协议验证等领域。它提供了一种高效、确定性的方法来处理有限记忆的序列决策问题。\n\n## 相关概念\n有限自动机与正则表达式、正则文法等价，共同构成正则语言的形式化描述。它也是下推自动机（处理上下文无关语言）和图灵机（处理递归可枚举语言）的基础，后者通过增加存储能力扩展了计算能力。此外，最小化DFA的算法与状态等价类划分密切相关。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

@@ -18,5 +18,13 @@
     "description": "软件工程: Software engineering is an engineering discipline that uses systematic methods to guide the development, operation, and maintenance of software. It encompasses design patterns, version control, CI/CD (Continuous Integration/Continuous Deployment), architectural patterns, and project management. Here's a brief Python code example for Continuous Integration using a simple function: ```python import pytest def add(a, b): return a + b # Example test case to ensure the add function works as expected def test_add(): assert add(1, 2) == 3 assert add('a', 'b') == 'ab' if __name__ == \"__main__\": pytest.main() ``` This example demonstrates a simple integration test using Python's `pytest` framework to ensure that the `add` function works correctly. Continuous Integration would involve running such tests automatically whenever changes are pushed to a version control system."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "软件工程是计算机科学中专注于系统化、规范化、可量化的方法开发、运行和维护软件的分支。本分支涵盖设计模式、版本控制、CI/CD和架构模式四个核心子节点。设计模式提供解决常见设计问题的可复用方案，是构建高质量代码的基础；版本控制（如Git）管理代码变更历史，支持团队协作；CI/CD（持续集成/持续交付）自动化构建、测试和部署流程，确保代码快速、可靠地交付；架构模式（如微服务、分层架构）定义系统的高层结构和组件交互方式。这些子节点紧密关联：设计模式和架构模式指导代码和系统结构设计，版本控制管理设计演进，CI/CD则确保设计变更能高效、安全地集成和部署。学习路径建议从设计模式和版本控制入手，掌握代码级设计和管理，再学习CI/CD自动化流程，最后深入架构模式以构建可扩展系统。",
+  "example_queries": [
+    "在微服务架构中，如何应用设计模式解决服务间通信问题？",
+    "如何利用Git分支策略支持CI/CD流程的自动化测试与部署？",
+    "比较MVC和微服务架构模式在可维护性和扩展性上的优劣。",
+    "设计模式中的单例模式在分布式系统中会遇到哪些问题，如何解决？",
+    "如何设计一个从代码提交到生产部署的完整CI/CD流水线？"
+  ]
 }

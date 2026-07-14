@@ -21,5 +21,17 @@
   ],
   "related_nodes": [
     "grafana_v4"
-  ]
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nPrometheus 是一个开源的系统监控和警报工具包，最初由 SoundCloud 开发，现为 Cloud Native Computing Foundation（CNCF）的毕业项目。它通过拉取（pull）方式采集时间序列数据，并支持灵活的查询语言 PromQL 进行数据分析。\n\n## 核心要点\n- **多维数据模型**：Prometheus 将数据存储为时间序列，每个序列由指标名称和一组键值对标签唯一标识，支持灵活的聚合和切片。\n- **PromQL 查询语言**：提供丰富的函数和操作符，用于实时聚合、计算和可视化时间序列数据，是监控分析的核心。\n- **拉取式采集**：通过 HTTP 端点主动从目标（如应用程序、中间件）抓取指标，简化了配置和故障排查。\n- **服务发现与静态配置**：支持基于 Kubernetes、Consul 等自动发现目标，也支持静态配置文件，适应动态和静态环境。\n- **告警管理**：集成 Alertmanager，处理告警去重、分组、静默和路由，并通过邮件、PagerDuty 等渠道通知。\n\n## 应用场景\nPrometheus 广泛用于云原生和微服务架构的监控，例如跟踪 Kubernetes 集群的节点、Pod 和应用性能，以及监控数据库、消息队列等中间件的运行状态。它适合需要高频率采集和实时告警的场景，如在线服务、持续交付流水线。\n\n## 相关概念\n- **Grafana**：常用于可视化 Prometheus 数据，提供丰富的仪表盘和告警功能。\n- **Exporter**：将第三方系统（如 MySQL、Nginx）的指标转换为 Prometheus 可抓取的格式。\n- **Alertmanager**：与 Prometheus 配合，处理告警通知的发送和管理。\n- **CNCF**：Prometheus 作为 CNCF 项目，与 Kubernetes、Envoy 等云原生生态紧密集成。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

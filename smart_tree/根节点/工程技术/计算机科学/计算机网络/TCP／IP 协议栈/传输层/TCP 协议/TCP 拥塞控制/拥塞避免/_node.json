@@ -19,5 +19,30 @@
       "content_preview": "拥塞避免: When cwnd≥ssthresh, increase cwnd by 1 MSS per RTT (linear growth). AIMD principle. Here's a brief explanation of the terms: - **cwnd**: Congestion Window is the number of bytes that can be sent before receiving an acknowledgment. - **ssthresh**: Slow Start Threshold. When congestion occurs, this threshold determines when to switch from slow start to congestion avoidance. - **RTT**: Round-Trip Time, which is the time it takes for a packet to travel from the sender to the receiver and back. Here's a simple Python code example to illustrate the linear growth of cwnd: ```python def update_cwnd(cwnd, ssthresh, rtts_passed): if cwnd < ssthresh: # Slow start phase: double cwnd each RTT until it reaches ssthresh cwnd = min(2 * cwnd, ssthresh) else: # Congestion avoidance phase: increase cwnd by 1 MSS per RTT cwnd += 1 return cwnd # Example usage cwnd = 10 # Initial congestion window size in MSS ssthresh = 50 # Slow start threshold in MSS rtts_passed = 30 # Number of RTTs that have passed since the last congestion event new_cwnd = update_cwnd(cwnd, ssthresh, rtts_passed) print(f\"Updated cwnd: {new_cwnd} MSS\") ``` In this example: - If `cwnd` is less than `ssthresh`, it doubles with each RTT during the slow start phase. - Once `cwnd` reaches or exceeds `ssthresh`, it increases by 1 MSS per RTT in the congestion avoidance phase."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "tcp_sliding_window_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "tcp_bbr_v4",
+      "type": "contrast"
+    },
+    {
+      "id": "http2_multiplex_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n拥塞避免是TCP拥塞控制中的一个阶段，发生在慢启动阶段之后，当拥塞窗口达到慢启动阈值时进入。其核心思想是采用线性增长的方式探测网络容量，以避免因窗口增长过快导致网络拥塞。\n\n## 核心要点\n- 拥塞避免阶段使用加法增乘法减算法，每经过一个RTT将拥塞窗口增加1个MSS，而非像慢启动那样指数增长。\n- 当检测到丢包时，拥塞窗口会减半（乘法减），并重新进入慢启动或快速恢复阶段。\n- 拥塞避免与慢启动共同构成TCP拥塞控制的主要机制，两者通过慢启动阈值切换。\n- 该阶段旨在平衡网络利用率和拥塞风险，使发送方在接近网络容量时谨慎增加数据量。\n- 实际实现中，拥塞避免通过ACK时钟驱动窗口增长，确保发送速率与接收方处理能力匹配。\n\n## 应用场景\n拥塞避免广泛应用于所有基于TCP的通信场景，如网页浏览、文件传输、视频流和电子邮件等。它帮助TCP连接在共享网络环境中公平地分配带宽，防止单个连接过度占用资源导致全局拥塞。\n\n## 相关概念\n拥塞避免与慢启动、快速重传和快速恢复共同构成TCP拥塞控制的四个阶段。慢启动用于初始探测网络容量，而拥塞避免则用于维持稳定传输。此外，拥塞窗口和慢启动阈值是控制拥塞避免行为的关键参数。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

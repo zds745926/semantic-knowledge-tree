@@ -19,5 +19,34 @@
       "content_preview": "高阶函数: Higher-order functions accept functions as parameters or return functions. `map`, `filter`, and `reduce` are typical examples. Here's a brief explanation of each with Python code examples: 1. **Map**: Applies a function to all items in an input list. ```python def square(x): return x * x numbers = [1, 2, 3, 4] squared_numbers = map(square, numbers) print(list(squared_numbers)) # Output: [1, 4, 9, 16] ``` 2. **Filter**: Filters items from an input list based on a function that tests each element in the list. ```python def is_even(x): return x % 2 == 0 numbers = [1, 2, 3, 4, 5, 6] even_numbers = filter(is_even, numbers) print(list(even_numbers)) # Output: [2, 4, 6] ``` 3. **Reduce**: Continuously applies a function to the items of an iterable and returns a single value. ```python from functools import reduce def add(x, y): return x + y numbers = [1, 2, 3, 4] sum_of_numbers = reduce(add, numbers) print(sum_of_numbers) # Output: 10 ``` These examples illustrate how higher-order functions can be used to process collections of data in a concise and readable manner."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "py_def_basic_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "js_promise_v4",
+      "type": "application"
+    },
+    {
+      "id": "quick_sort_v4",
+      "type": "application"
+    },
+    {
+      "id": "event_driven_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\n高阶函数是指至少满足以下条件之一的函数：接受一个或多个函数作为参数，或者返回一个函数作为结果。它是函数式编程的核心概念，体现了将函数视为一等公民的思想，即函数可以像其他数据类型一样被传递和操作。\n\n## 核心要点\n- 函数作为参数：高阶函数可以将其他函数作为输入，从而抽象出通用的控制流程，例如数组的 `map`、`filter` 和 `reduce` 方法。\n- 函数作为返回值：高阶函数可以动态生成并返回新函数，常用于创建闭包或实现柯里化（Currying）和偏函数应用。\n- 增强代码复用性：通过将行为参数化，高阶函数能减少重复代码，使逻辑更灵活、更模块化。\n- 支持函数组合：高阶函数便于将多个简单函数组合成复杂操作，提升代码的可读性和可维护性。\n- 延迟执行与惰性求值：返回函数的高阶函数可以推迟计算，直到真正需要结果时才执行，优化性能。\n\n## 应用场景\n高阶函数广泛应用于数据处理（如对集合进行映射、过滤和归约）、事件监听与回调（如浏览器中的 `addEventListener`）、装饰器模式（如 Python 的装饰器）以及中间件架构（如 Express 或 Redux 的中间件）。此外，在异步编程中，高阶函数常用于封装异步操作，例如 Promise 的 `then` 方法。\n\n## 相关概念\n高阶函数与闭包紧密相关，因为返回函数的高阶函数常利用闭包捕获外部变量。它与柯里化（将多参数函数转换为单参数函数链）和函数组合（将多个函数串联成新函数）共同构成函数式编程的基础工具。此外，纯函数（无副作用、输出仅依赖输入）通常与高阶函数配合使用，以增强程序的可靠性和可测试性。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

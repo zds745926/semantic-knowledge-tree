@@ -17,5 +17,13 @@
     "description": "ACID 特性: ACID ensures the correct execution of transactions. To provide a more comprehensive explanation and include a relevant Python code example for a transactional context, we can elaborate as follows: ACID ensures the correct execution of transactions. This acronym stands for Atomicity, Consistency, Isolation, and Durability—four properties that guarantee reliable database operations. - **Atomicity**: Ensures that each transaction is treated as a single, indivisible unit of work. - **Consistency**: Ensures that a transaction can only bring the database from one valid state to another. - **Isolation**: Ensures that concurrent transactions do not interfere with each other. - **Durability**: Ensures that once a transaction has been committed, it will remain so even in the event of a system failure. Here is an example using Python and SQLite to demonstrate atomicity. This code snippet ensures that both operations (inserting two records) are treated as one indivisible unit: ```python import sqlite3 def create_table(): conn = sqlite3.connect('example.db') c = conn.cursor() c.execute('''CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER)''') conn.commit() conn.close() def add_items(item1, item2): conn = sqlite3.connect('example.db') c = conn.cursor() try: # Start a transaction c.execute(\"BEGIN\") # Insert the first item c.execute(\"INSERT INTO items (name, quantity) VALUES (?, ?)\", (item1['name'], item1['quantity'])) # Insert the second item c.execute(\"INSERT INTO items (name, quantity) VALUES (?, ?)\", (item2['name'], item2['quantity'])) # Commit the transaction conn.commit() except Exception as e: # Rollback in case of error conn.rollback() print(f\"Transaction failed: {e}\") finally: conn.close() # Example usage create_table() add_items({'name': 'apple', 'quantity': 10}, {'name': 'banana', 'quantity': 5}) ``` In this example, the `BEGIN` and `COMMIT` commands are used to ensure that both insertions are treated as a single atomic transaction. If any part of the transaction fails, it will be rolled back using `ROLLBACK`."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "本分支围绕关系型数据库中的事务核心概念——ACID 特性展开，涵盖原子性（Atomicity）、隔离性（Isolation）和持久性（Durability）三个子节点。原子性确保事务中的所有操作要么全部成功，要么全部失败回滚，是事务完整性的基础；隔离性处理并发事务间的相互影响，通过不同隔离级别（如读未提交、读已提交、可重复读、可串行化）平衡性能与数据一致性；持久性保证已提交事务的结果永久保存，即使系统崩溃也不会丢失。这三个特性与一致性（Consistency）共同构成ACID，但一致性通常由应用层保证，因此本分支聚焦于数据库系统直接支持的原子性、隔离性和持久性。学习路径建议：先理解事务的基本概念和ACID整体框架，然后深入原子性的实现机制（如undo log），接着掌握隔离性的级别与并发控制（如锁、MVCC），最后学习持久性的实现（如redo log、WAL）。通过本分支，可系统掌握事务可靠性与并发控制的核心原理。",
+  "example_queries": [
+    "什么是ACID特性？它们分别解决什么问题？",
+    "数据库的隔离级别有哪些？分别如何影响并发性能和数据一致性？",
+    "原子性是如何通过undo log实现的？",
+    "持久性如何通过redo log和WAL（Write-Ahead Logging）保证？",
+    "在MySQL中，如何设置事务的隔离级别？"
+  ]
 }

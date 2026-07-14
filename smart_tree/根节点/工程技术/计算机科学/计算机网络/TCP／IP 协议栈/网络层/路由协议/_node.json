@@ -16,5 +16,13 @@
     "description": "路由协议: Routing protocols determine the best path for packets from source to destination. To provide a more detailed explanation and an example related to routing in Python, we can use the `netmiko` library to interact with network devices. Below is a simple example of how you might configure a static route on a router using Python: ```python from netmiko import ConnectHandler # Define device connection parameters device = { 'device_type': 'cisco_ios', # Specify the type of network device 'ip': '192.168.1.1', # IP address of the device 'username': 'admin', # Username to log in with 'password': 'password', # Password for login } # Connect to the device connection = ConnectHandler(**device) # Define the command to configure a static route command = \"ip route 192.168.2.0 255.255.255.0 GigabitEthernet0/1\" # Send the command to the device and get output output = connection.send_command(command) print(output) # Print the output of the command # Close the connection connection.disconnect() ``` This script uses `netmiko` to connect to a Cisco router, configure a static route, and then print the output. Note that you need to install the `netmiko` library if you haven't already: ```bash pip install netmiko ``` Make sure to replace the device parameters with actual values for your network setup."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "路由协议是计算机网络中网络层的核心组成部分，负责在互联网络中的路由器之间动态地交换路由信息，从而构建和维护路由表，指导数据包从源主机到目的主机的最佳路径选择。本分支涵盖了两大类主要的路由协议：OSPF（开放最短路径优先）和BGP（边界网关协议）。OSPF属于内部网关协议（IGP），用于在同一个自治系统（AS）内部进行路由计算，它基于链路状态算法，能够快速收敛并支持分层设计，适用于大型企业网络或数据中心。BGP则是外部网关协议（EGP），主要用于不同自治系统之间的路由信息交换，是互联网的骨干路由协议，它基于路径向量算法，强调策略控制和可扩展性，能够处理全球范围内的路由表。两者之间的关系是互补的：在一个大型网络中，内部使用OSPF实现高效的路由，而与其他网络互联时则通过BGP交换路由信息。学习路径建议先掌握OSPF的原理、配置和优化，再深入理解BGP的路径属性、选路原则和策略配置，从而全面理解路由协议在复杂网络中的应用。",
+  "example_queries": [
+    "OSPF和BGP的主要区别是什么？它们各自适用于什么场景？",
+    "如何配置OSPF实现快速收敛？有哪些关键参数可以优化？",
+    "BGP的路径选择过程是怎样的？如何通过修改属性影响选路？",
+    "在大型网络中，如何结合使用OSPF和BGP来设计路由架构？",
+    "OSPF的LSA类型有哪些？它们各自的作用是什么？"
+  ]
 }

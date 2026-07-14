@@ -19,5 +19,30 @@
       "content_preview": "Git 基础: Init/Clone/Add/Commit/Push/Pull. Staging Area Workflow. Explanation: These are common Git commands used in version control systems for software development. Here's a brief explanation and an example using Python to demonstrate the concept: - **Init**: Initializes a new Git repository. ```python import git repo = git.Repo.init('path/to/repo') ``` - **Clone**: Clones an existing remote repository into a local directory. ```python repo = git.Repo.clone_from('https://github.com/user/repo.git', 'local/path') ``` - **Add**: Adds changes from the working tree to the staging area (index). ```python with open('file.txt', 'a') as f: f.write(\"New content\") repo.index.add(['file.txt']) ``` - **Commit**: Commits the staged changes along with a commit message. ```python repo.git.commit('-m', 'Add new content to file') ``` - **Push**: Pushes committed changes to a remote repository. ```python origin = repo.remote(name='origin') origin.push() ``` - **Pull**: Pulls the latest changes from a remote repository and merges them into the local branch. ```python origin.pull() ``` These commands form the basic workflow for managing code changes in Git."
     }
   ],
-  "related_nodes": []
+  "related_nodes": [
+    {
+      "id": "inode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "py_str_bytes_encode_v4",
+      "type": "prerequisite"
+    },
+    {
+      "id": "c_memory_v4",
+      "type": "related_pattern"
+    }
+  ],
+  "content": {
+    "preview": "",
+    "full": "## 定义\nGit 基础是指使用 Git 分布式版本控制系统所需掌握的核心概念和基本操作。它涵盖了从初始化仓库、记录文件变更到管理不同版本的全过程，是协同开发和代码管理的基石。\n\n## 核心要点\n- **仓库（Repository）**：Git 存储项目元数据和对象数据库的地方，分为本地仓库和远程仓库。\n- **提交（Commit）**：将工作区的文件快照永久保存到本地仓库的操作，每个提交都有唯一的哈希值标识。\n- **分支（Branch）**：指向某个提交的指针，用于并行开发不同特性或修复，默认主分支通常为 master 或 main。\n- **暂存区（Staging Area）**：介于工作区和仓库之间的中间区域，用于暂存准备提交的修改。\n- **工作区（Working Directory）**：用户直接编辑文件的目录，与 Git 仓库中的版本对应。\n\n## 应用场景\nGit 基础广泛应用于个人项目版本管理、团队协作开发以及开源项目贡献中。开发者通过 git init、git add、git commit 等命令记录代码演进，利用 git branch、git merge 实现并行开发和代码整合，确保项目历史清晰可追溯。\n\n## 相关概念\nGit 基础与远程仓库（如 GitHub、GitLab）、分布式工作流（如集中式、功能分支工作流）以及标签（Tag）等概念紧密相关。理解这些概念有助于掌握 Git 的完整功能，例如通过远程仓库实现代码备份与协作，通过标签标记发布版本。",
+    "code_pattern": "",
+    "common_pitfalls": []
+  },
+  "quality": {
+    "confidence": 0.7,
+    "version": 1,
+    "reviewers": [],
+    "last_updated": "2026-07-14"
+  }
 }

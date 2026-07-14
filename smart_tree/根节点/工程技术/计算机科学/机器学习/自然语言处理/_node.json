@@ -17,5 +17,13 @@
     "description": "自然语言处理: NLP enables computers to understand, generate, and process human language. Here is a brief Python code example using the `nltk` library for tokenizing text, which is a fundamental step in natural language processing: ```python import nltk # Sample text text = \"Natural Language Processing (NLP) enables computers to understand, generate, and process human language.\" # Tokenize the text into words tokens = nltk.word_tokenize(text) print(tokens) ``` This code imports the `nltk` library, tokenizes a sample text into individual words using `word_tokenize`, and prints the tokens."
   },
   "data_pointers": [],
-  "related_nodes": []
+  "related_nodes": [],
+  "summary": "自然语言处理（NLP）是人工智能与语言学交叉的重要分支，旨在使计算机能够理解、生成和处理人类语言。本分支涵盖从基础文本处理到高级语义建模的完整技术栈。子节点中，“分词”是NLP的基石，负责将连续文本切分为有意义的单元（如词语或子词），为后续分析提供基本输入；“词嵌入”则将离散的词语映射为稠密向量，捕捉语义与语法关系（如Word2Vec、GloVe、BERT嵌入），是实现机器理解的关键桥梁；“大语言模型（LLM）”基于海量文本与Transformer架构（如GPT、LLaMA），通过预训练与微调实现文本生成、问答、翻译等复杂任务，代表了NLP的前沿。三者构成递进关系：分词提供结构化输入，词嵌入赋予语义表示，LLM则利用这些表示进行深层推理与生成。学习路径建议从分词与正则表达式入手，掌握词嵌入原理（如CBOW、Skip-gram），再深入Transformer与LLM的注意力机制、训练策略及伦理考量。该分支广泛应用于搜索引擎、聊天机器人、情感分析、机器翻译等领域。",
+  "example_queries": [
+    "如何用jieba对中文文本进行分词并去除停用词？",
+    "Word2Vec和GloVe在词嵌入中的主要区别是什么？",
+    "大语言模型（如GPT-4）的注意力机制是如何工作的？",
+    "如何利用预训练BERT模型进行文本分类任务？",
+    "在NLP中，分词错误会对下游任务（如情感分析）产生多大影响？"
+  ]
 }
